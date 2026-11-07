@@ -17,6 +17,7 @@
   var FACTIONS = [["a", "Alliance"], ["both", "Les deux|Both"], ["h", "Horde"]];
   var KEY = "fg-faction";
   var page = decodeURIComponent(location.pathname.split("/").pop()) || "index.html";
+  if (!/^[a-z0-9-]+\.html$/.test(page)) page = "index.html"; // jamais de texte libre de l'URL dans le HTML
   var other = (EN ? "../" : "en/") + page;
 
   function getFaction() { try { return localStorage.getItem(KEY) || "both"; } catch (e) { return "both"; } }
