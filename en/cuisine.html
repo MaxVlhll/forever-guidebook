@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cooking WoW Forever</title>
+<meta name="description" content="Cooking 1-300 guide for WoW Forever (Alliance and Horde): recipe-by-recipe path, shopping list, trainers and campfire kits.">
+<meta property="og:title" content="Cooking WoW Forever">
+<meta property="og:description" content="Cooking 1-300 guide for WoW Forever (Alliance and Horde): recipe-by-recipe path, shopping list, trainers and campfire kits.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../cuisine.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #160f0d;
+  --bg-glow: #2c1712;
+  --panel: #211613;
+  --panel-2: #2c1e1a;
+  --stitch: #8a5444;
+  --accent: #ff8a66;
+  --seg1: #ffb8a3; --seg2: #f2876b; --seg3: #b8503a; --seg4: #7d3224;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Cooking</span>
+  <h1>Cooking 1 → 300</h1>
+  <p class="lede">A secondary profession, on top of your two main ones. In Forever, Cooking also makes campfire kits. Enter your skill: the page shows the next step and the meat you still need.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Where you are</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Current skill</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Remove 5 points">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Add 5 points">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Shopping list up to</label>
+      <select id="target">
+        <option value="75">75 (end of Apprentice)</option>
+        <option value="150" selected>150 (end of Journeyman)</option>
+        <option value="225">225 (end of Expert)</option>
+        <option value="300">300 (Artisan)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprentice</div><div class="seg s2">Journeyman</div><div class="seg s3">Expert</div><div class="seg s4">Artisan</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">What you still need</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">The path</h2>
+    <p class="lede" style="margin-top:0">Craft counts are estimates: always keep a margin. Golden rule: as soon as a recipe turns green, move to the next step.</p>
+    <div class="legend" aria-label="Recipe colours">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Orange: +1 every time</span>
+      <span><span class="dot" style="background:var(--sk-yellow)"></span>Yellow: often</span>
+      <span><span class="dot" style="background:var(--sk-green)"></span>Green: rarely</span>
+      <span><span class="dot" style="background:var(--sk-gray)"></span>Grey: never</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Trainers</h2>
+  <p class="lede" style="margin-top:0">In Forever, Expert and Artisan are also learned from a cooking trainer, with no book or quest as in Classic.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alliance</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Unlocks</th><th>Requires</th><th>Trainers (coordinates)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Journeyman</span></td><td class="num">up to 150</td><td>skill 50, level 10</td><td><strong>Stephen Ryback</strong>, Stormwind (75.4, 37.2) · Tomas, Elwynn Forest (44.2, 66.0) · Daryl Riknussun, Ironforge (60.0, 36.8) · Gremlock Pilsnor, Dun Morogh (47.6, 52.4) · Cook Ghilm, Dun Morogh (68.4, 54.4) · Alegorn, Darnassus (48.4, 21.0) · Zarrin, Teldrassil (57.0, 61.2)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">up to 225</td><td>skill 125, level 20</td><td>Any capital cooking trainer. Also: Crystal Boughman, Redridge Mountains (17.6, 43.6) · Gorg, Clearwater Shores (58.6, 44.6)</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">up to 300</td><td>skill 200, level 35</td><td>A cooking trainer (Kami Labs doesn't say which: try Stephen Ryback in Stormwind first)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Unlocks</th><th>Requires</th><th>Trainers (coordinates)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Journeyman</span></td><td class="num">up to 150</td><td>skill 50, level 10</td><td><strong>Zamja</strong>, Orgrimmar (57.4, 53.4) · Cook Torka, Durotar (51.2, 42.4) · Eunice Burch, Undercity (62.2, 44.4) · William Pickman, Tirisfal Glades (61.8, 51.4) · Aska Mistrunner, Thunder Bluff (50.8, 52.4) · Pyall Silentstride, Mulgore (45.0, 61.6)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">up to 225</td><td>skill 125, level 20</td><td>Any capital cooking trainer. Neutral: Duhng, The Barrens (55.2, 31.8) · Mudduk, Stranglethorn Vale (31.4, 28.0) · Gorg, Clearwater Shores (58.6, 44.6)</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">up to 300</td><td>skill 200, level 35</td><td>A cooking trainer (Kami Labs doesn't say which: try Zamja in Orgrimmar first)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Mild and Hot Spices from trade goods and cooking supply vendors.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Forever specifics</h2>
+  <ul class="plain"><li><strong>Basic Campfire Kit</strong> at 20: your camp can hold 3 items.</li><li><strong>Journeyman's Campfire Kit</strong> at 90: 5 items.</li><li><strong>Specialist's Campfire Kit</strong> at 200: 10 items.</li><li>New <strong>teas and frappés</strong> (Tea of Serenity at 25, Royal Tea at 100, Sage's Tea at 250…) and a feast, Macaron's Feast at 140.</li><li>Some dishes give "Well Fed" and an experience bonus on mob kills (announced, not yet confirmed). Method mentions +5% experience for 15 minutes.</li><li><strong>Legacy points</strong> at 150, 225 and 300.</li><li>The profession has 125 recipes, 44 of them new.</li></ul>
+</section>
+
+<footer class="foot"><p>Sources: <a href="https://kami-labs.fr/guide-cuisine-wow-forever/">Kami Labs, WoW Forever Cooking guide</a> · <a href="https://www.method.gg/wow-forever/wow-forever-shaman-leveling-guide-and-talents">Method, shaman guide (experience bonus)</a>.</p><p>Steps above 225 weren't playable in the beta: they're marked "to verify". If a recipe vendor belongs to the other faction, use the auction house. Forever-only names are translated from the French client and may differ slightly in game.</p><p>Unofficial fan guide, updated 7 November 2026. World of Warcraft is a trademark of Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "cuis", "src": {"Chunk of Boar Meat": "farm", "Coyote Meat": "farm", "Burrowing Rat": "farm", "Lean Wolf Flank": "farm", "Red Wolf Meat": "farm", "Raw Spotted Yellowtail": "farm", "Raw Sunscale Salmon": "farm", "Mild Spices": "vendor", "Hot Spices": "vendor"}, "steps": [{"f": 1, "t": 55, "r": "Roasted Boar Meat", "n": 55, "m": {"Chunk of Boar Meat": 1}, "note": "Boars in Durotar and Mulgore (Horde), Elwynn Forest and Dun Morogh (Alliance)."}, {"f": 55, "t": 90, "r": "Coyote Steak", "n": 35, "m": {"Coyote Meat": 1}, "note": "<strong>Learn Journeyman at 50</strong> (level 10), or you get stuck at 75."}, {"f": 90, "t": 156, "r": "Rat Gumbo", "n": 81, "m": {"Burrowing Rat": 1}, "note": "Quest recipe. <strong>Learn Expert at 125</strong> (level 20), or you get stuck at 150."}, {"f": 156, "t": 185, "r": "Lean Wolf Steak", "n": 36, "m": {"Lean Wolf Flank": 1, "Mild Spices": 1}, "note": "Recipe for 16s from Super-Seller 680 (Desolace). The meat drops from wolves in Desolace and Hillsbrad."}, {"f": 185, "t": 209, "r": "Hearty Paleskewer Meat", "n": 25, "m": {"Chunk of Boar Meat": 2, "Mild Spices": 1}, "note": "New Forever recipe, 20s from Martha Wellsworth (Clearwater Shores)."}, {"f": 209, "t": 225, "r": "Hot Wolf Ribs", "n": 17, "m": {"Red Wolf Meat": 1, "Hot Spices": 1}, "note": "Recipe for 50s from Vivianna (Feralas) or Super-Seller 680 (Desolace). <strong>Learn Artisan at 200</strong> (level 35)."}, {"f": 225, "t": 250, "r": "Spotted Yellowtail", "n": 25, "m": {"Raw Spotted Yellowtail": 1}, "p": 1, "note": "Recipe for 1g 60s from Gikkix (Tanaris). Fish it (see the <a href=\"peche.html\">Fishing page</a>) or buy on the AH."}, {"f": 250, "t": 300, "r": "Poached Sunscale Salmon", "n": 51, "m": {"Raw Sunscale Salmon": 1}, "p": 1, "note": "Recipe for 2g from Gikkix (Tanaris)."}], "trainMsg": {"comp": "If you haven't yet, learn Journeyman (level 10) from a cooking trainer: Zamja in Orgrimmar (57.4, 53.4) or Cook Torka in Durotar (51.2, 42.4).", "exp": "If you haven't yet, learn Expert (level 20) from a cooking trainer.", "art": "If you haven't yet, learn Artisan (level 35) from a cooking trainer."}, "done300": "300 reached. Upgrade to the Specialist's Campfire Kit to hold 10 camp items.", "groupTitles": {"farm": "To hunt or fish", "vendor": "From vendors", "ah": "AH", "craft": "Intermediates"}, "trainMsgA": {"comp": "If you haven't yet, learn Journeyman (level 10) from a cooking trainer: Stephen Ryback in Stormwind (75.4, 37.2), Daryl Riknussun in Ironforge (60.0, 36.8) or Alegorn in Darnassus (48.4, 21.0).", "exp": "If you haven't yet, learn Expert (level 20) from a cooking trainer.", "art": "If you haven't yet, learn Artisan (level 35) from a cooking trainer."}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

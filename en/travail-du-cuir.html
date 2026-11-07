@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leatherworking WoW Forever</title>
+<meta name="description" content="Leatherworking 1-300 guide for WoW Forever (Alliance and Horde): recipe-by-recipe path, calculated shopping list, trainers and skinning zones.">
+<meta property="og:title" content="Leatherworking WoW Forever">
+<meta property="og:description" content="Leatherworking 1-300 guide for WoW Forever (Alliance and Horde): recipe-by-recipe path, calculated shopping list, trainers and skinning zones.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../travail-du-cuir.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #17110d;
+  --bg-glow: #2a1d14;
+  --panel: #221913;
+  --panel-2: #2c2119;
+  --stitch: #8a6a43;
+  --ink: #f1e6d3;
+  --muted: #b9a68b;
+  --accent: #e6b84f;
+  --seg1: #c9a36b; --seg2: #b8884f; --seg3: #9c6c3a; --seg4: #7a4f28;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Leatherworking</span>
+  <h1>Leatherworking 1 → 300</h1>
+  <p class="lede">The full path, recipe by recipe, based on Forever beta data. Enter your skill: the page shows where you are, the next step, and everything you still need.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Where you are</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Current skill</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Remove 5 points">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Add 5 points">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Shopping list up to</label>
+      <select id="target">
+        <option value="75">75 (end of Apprentice)</option>
+        <option value="150" selected>150 (end of Journeyman)</option>
+        <option value="225">225 (end of Expert)</option>
+        <option value="300">300 (Artisan)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprentice</div><div class="seg s2">Journeyman</div><div class="seg s3">Expert</div><div class="seg s4">Artisan</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">What you still need</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">The path</h2>
+    <p class="lede" style="margin-top:0">Craft counts are estimates: always keep a margin. Golden rule: as soon as a recipe turns green, move to the next step.</p>
+    <div class="legend" aria-label="Recipe colours">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Orange: +1 every time</span>
+      <span><span class="dot" style="background:var(--sk-yellow)"></span>Yellow: often</span>
+      <span><span class="dot" style="background:var(--sk-green)"></span>Green: rarely</span>
+      <span><span class="dot" style="background:var(--sk-gray)"></span>Grey: never</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Trainers</h2>
+  <p class="lede" style="margin-top:0">Without the right rank, your skill stays stuck at the cap (75, 150, 225). Learn the next rank as soon as you have the required level.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alliance</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Unlocks</th><th>Requires</th><th>Trainers (coordinates)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Journeyman</span></td><td class="num">up to 150</td><td>skill 50, level 10</td><td><strong>Randal Worth</strong>, Stormwind (67.4, 49.4) · Gretta Finespindle, Ironforge (39.0, 32.4) · Darianna, Darnassus (64.2, 21.6) · Adele Fielder, Elwynn Forest (46.4, 62.2) · Nadyia Maneweaver, Teldrassil (41.8, 49.4)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">up to 225</td><td>skill 125, level 20</td><td><strong>Simon Tanner</strong>, Stormwind (67.2, 49.4) · Fimble Finespindle, Ironforge (39.4, 33.0) · Faldron, Darnassus (64.4, 21.4) · Aayndia Floralwind, Ashenvale (35.8, 52.0)</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">up to 300</td><td>skill 200, level 35</td><td><strong>Telonis</strong>, Darnassus (64.4, 21.4)</td></tr><tr><td><span class="pill">High recipes</span></td><td class="num">—</td><td>—</td><td>Hahrana Ironhide, Feralas (74.4, 43.0), at Camp Mojache (Horde village: use the AH for her patterns)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Unlocks</th><th>Requires</th><th>Trainers (coordinates)</th></tr></thead>
+      <tbody>
+        <tr><td><span class="pill">Journeyman</span></td><td class="num">up to 150</td><td>skill 50, level 10</td><td><strong>Waldor</strong>, The Barrens (45.6, 35.6), at the oasis near Wailing Caverns · Kamari, Orgrimmar (63.0, 45.0) · Dan Golthas, Undercity (70.4, 58.4) · Shelene Rhobart, Tirisfal Glades (65.4, 60.0) · Chaw Stronghide, Mulgore (45.0, 61.4) · Mak, Thunder Bluff (42.2, 43.2)</td></tr>
+        <tr><td><span class="pill">Expert</span></td><td class="num">up to 225</td><td>skill 125, level 20</td><td><strong>Krulmoo Fullmoon</strong>, The Barrens (44.8, 59.4), at Camp Taurajo · Karolek, Orgrimmar (62.8, 44.4) · Arthur Moore, Undercity (70.4, 57.4) · Brawn, Stranglethorn Vale (31.6, 28.8) · Narv Hidecrafter, Desolace (55.2, 56.2) · Tarn, Thunder Bluff (42.4, 43.0)</td></tr>
+        <tr><td><span class="pill">Artisan</span></td><td class="num">up to 300</td><td>skill 200, level 35</td><td><strong>Una</strong>, Thunder Bluff (41.4, 42.6)</td></tr>
+        <tr><td><span class="pill">High recipes</span></td><td class="num">—</td><td>—</td><td>Hahrana Ironhide, Feralas (74.4, 43.0), at Camp Mojache</td></tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Salt, thread and dyes are sold by leatherworking supply and trade goods vendors, found in capitals and most large camps.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Where to skin each leather</h2>
+  <p class="lede" style="margin-top:0">Your Skinning has to keep up: below level 20 you need about (mob level − 10) × 10; above it, about level × 5.</p>
+  <div class="cols">
+    <div class="card"><h3>Light leather and hide</h3><span class="lv">Beasts lvl 10 to 22</span><p><span class="fl" data-f="h"><span class="fac h">Horde</span> The Barrens (zhevras, thunder lizards, kodos south of the Crossroads), Stonetalon Mountains.</span><span class="fl" data-f="a"><span class="fac a">Alliance</span> Westfall, Loch Modan, Darkshore.</span></p></div>
+    <div class="card"><h3>Medium leather and hide</h3><span class="lv">Beasts lvl 20 to 30</span><p><span class="fl" data-f="h"><span class="fac h">Horde</span> Stonetalon Mountains, Ashenvale, Thousand Needles, Hillsbrad Foothills.</span><span class="fl" data-f="a"><span class="fac a">Alliance</span> Wetlands, Redridge Mountains, Duskwood, Ashenvale.</span></p></div>
+    <div class="card"><h3>Heavy leather and hide</h3><span class="lv">Beasts lvl 30 to 40</span><p>Arathi Highlands, Desolace, northern Stranglethorn.</p></div>
+    <div class="card"><h3>Thick Leather</h3><span class="lv">Beasts lvl 35 to 45</span><p>Southern Stranglethorn, Feralas, Badlands, Dustwallow Marsh.</p></div>
+    <div class="card"><h3>Rugged Leather</h3><span class="lv">Beasts lvl 48 and up</span><p>Un'Goro Crater, Felwood, Winterspring, Burning Steppes.</p></div>
+    <div class="card"><h3>Thick Scorpid Scales</h3><span class="lv">Scorpids lvl 50 and up</span><p>Silithus, Blasted Lands.</p></div>
+  </div>
+  <p class="foot">Keep the <strong>Pristine Leather</strong> you find while skinning: it's a new Forever component used by many new recipes.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Forever specifics</h2>
+  <ul class="plain">
+    <li><strong>Camp Tent</strong> at 20: grants rested experience (up to 5% of a level). It costs 5 Light Leather.</li>
+    <li><strong>Tanning Rack</strong> at 140: crafts some materials at camp.</li>
+    <li><strong>Sewing Machine</strong> at 300: required for some recipes.</li>
+    <li><strong>Legacy points</strong> at 150, 225 and 300.</li>
+    <li><strong>Specialisations</strong> at Artisan: Dragonscale, Elemental or Tribal. You pick only one.</li>
+    <li>The profession has 510 recipes, 277 of them new. This path follows the best ones for levelling, not the best ones to wear.</li>
+  </ul>
+</section>
+
+<footer class="foot">
+  <p>Sources: <a href="https://kami-labs.fr/guide-travail-du-cuir-wow-forever/">Kami Labs, WoW Forever Leatherworking guide</a> for the path and trainers · <a href="https://seemeta.com/fr/wow-forever/professions/leatherworking">Seemeta</a> for colour thresholds · <a href="https://expcarry.com/fr/guide-depecage-wow-forever">Expcarry</a> for Pristine Leather.</p>
+  <p>Steps above 225 weren't playable in the beta: they're marked "to verify". If a recipe vendor belongs to the other faction, use the auction house. Forever-only names are translated from the French client and may differ slightly in game.</p>
+</footer>
+
+
+</main>
+<script>
+var CONFIG = {
+  key: "tdc",
+  src: {
+    "Light Leather": "farm", "Light Hide": "farm", "Medium Hide": "farm", "Medium Leather": "farm",
+    "Heavy Hide": "farm", "Heavy Leather": "farm", "Thick Leather": "farm", "Rugged Leather": "farm",
+    "Thick Scorpid Scale": "farm",
+    "Salt": "vendor", "Coarse Thread": "vendor", "Fine Thread": "vendor",
+    "Silken Thread": "vendor", "Rune Thread": "vendor", "Gray Dye": "vendor",
+    "Green Dye": "vendor", "Black Dye": "vendor", "Orange Dye": "vendor",
+    "Soul Dust": "ah", "Elixir of Giant Growth": "ah", "Moss Agate": "ah",
+    "Iridescent Pearl": "ah", "Jade": "ah", "Citrine": "ah", "Mageweave Cloth": "ah",
+    "Wildvine": "ah", "Dream Dust": "ah", "Elixir of the Giants": "ah",
+    "Pristine Scale": "ah", "Felhide": "ah", "Stonescale Oil": "ah", "Runecloth": "ah",
+    "Fine Leather Belt": "craft", "Cured Light Hide": "craft", "Cured Medium Hide": "craft",
+    "Cured Heavy Hide": "craft", "Cured Thick Hide": "craft", "Cured Rugged Hide": "craft",
+    "Heavy Armor Kit": "craft", "Rugged Armor Kit": "craft"
+  },
+  sub: {
+    "Cured Light Hide": { "Light Hide": 1, "Salt": 1 },
+    "Cured Medium Hide": { "Medium Hide": 1, "Salt": 1 },
+    "Cured Heavy Hide": { "Heavy Hide": 1, "Salt": 3 },
+    "Fine Leather Belt": { "Light Leather": 6, "Coarse Thread": 2 }
+  },
+  steps: [
+    { f: 1, t: 36, r: "Light Armor Kit", n: 36, m: { "Light Leather": 1 } },
+    { f: 36, t: 62, r: "Cured Light Hide", n: 32, m: { "Light Hide": 1, "Salt": 1 }, out: "Cured Light Hide",
+      note: "Stays yellow until 60, then green until 70. Keep a few: Fine Leather Tunic needs them (see 100-128)." },
+    { f: 62, t: 85, r: "Embossed Leather Gloves", n: 28, m: { "Light Leather": 3, "Coarse Thread": 2 },
+      note: "<strong>Learn Journeyman before 75</strong>, or you stay stuck: {comp}." },
+    { f: 85, t: 100, r: "Fine Leather Belt", n: 20, m: { "Light Leather": 6, "Coarse Thread": 2 }, out: "Fine Leather Belt",
+      note: "Keep 2 belts for step 128-130." },
+    { f: 100, t: 128, r: "Cured Medium Hide", n: 42, m: { "Medium Hide": 1, "Salt": 1 }, out: "Cured Medium Hide",
+      note: "Keep 20 for the next two steps.",
+      alt: "According to another database, this recipe turns grey around 105. If so in game, switch to Fine Leather Tunic (yellow until 105, green until 120): 3 Cured Light Hide, 6 Light Leather, 4 Coarse Thread." },
+    { f: 128, t: 130, r: "Dark Leather Belt", n: 2, m: { "Fine Leather Belt": 1, "Cured Medium Hide": 1, "Fine Thread": 2, "Gray Dye": 1 } },
+    { f: 130, t: 143, r: "Hillman's Shoulders", n: 18, m: { "Cured Medium Hide": 1, "Medium Leather": 4, "Fine Thread": 1 },
+      note: "<strong>Learn Expert at 125</strong> (level 20): {exp}." },
+    { f: 143, t: 150, r: "Energized Heavy Armor Kit", n: 7, m: { "Heavy Armor Kit": 1, "Soul Dust": 2, "Elixir of Giant Growth": 2 },
+      note: "New Forever recipe, 20s from Nioma (The Hinterlands). Craft the Heavy Armor Kits first." },
+    { f: 150, t: 170, r: "Cured Heavy Hide", n: 39, m: { "Heavy Hide": 1, "Salt": 3 }, out: "Cured Heavy Hide",
+      note: "The next steps use more than you make here: the shopping list works out the extra to prepare." },
+    { f: 170, t: 175, r: "Barbaric Leggings", n: 6, m: { "Heavy Leather": 10, "Fine Thread": 2, "Moss Agate": 1 },
+      note: "Recipe for 6s 50c from a vendor (Hammon Karwn or Lardan)." },
+    { f: 175, t: 180, r: "Barbaric Shoulders", n: 6, m: { "Heavy Leather": 8, "Cured Heavy Hide": 1, "Fine Thread": 2 } },
+    { f: 180, t: 185, r: "Green Leather Bracers", n: 6, m: { "Cured Heavy Hide": 2, "Heavy Leather": 6, "Green Dye": 1, "Fine Thread": 1 } },
+    { f: 185, t: 190, r: "Gem-studded Leather Belt", n: 6, m: { "Cured Heavy Hide": 4, "Iridescent Pearl": 2, "Jade": 2, "Citrine": 1, "Fine Thread": 1 },
+      note: "Expensive step in gems: check AH prices before you start." },
+    { f: 190, t: 200, r: "Guardian Gloves", n: 16, m: { "Heavy Leather": 4, "Cured Heavy Hide": 1, "Silken Thread": 1 } },
+    { f: 200, t: 205, r: "Thick Armor Kit", n: 6, m: { "Thick Leather": 5, "Silken Thread": 1 },
+      note: "<strong>Learn Artisan at 200</strong> (level 35): {art}." },
+    { f: 205, t: 217, r: "Nightscape Headband", n: 22, m: { "Thick Leather": 5, "Silken Thread": 2 } },
+    { f: 217, t: 220, r: "Nightscape Shoulders", n: 7, m: { "Thick Leather": 8, "Mageweave Cloth": 6, "Silken Thread": 3 } },
+    { f: 220, t: 225, r: "Wild Leather Shoulders", n: 6, m: { "Thick Leather": 10, "Wildvine": 1, "Cured Thick Hide": 1 },
+      note: "Quest recipe." },
+    { f: 225, t: 235, r: "Wild Leather Helmet", n: 16, m: { "Thick Leather": 10, "Wildvine": 2, "Cured Thick Hide": 1 }, p: 1, note: "Quest recipe." },
+    { f: 235, t: 245, r: "Energized Rugged Armor Kit", n: 13, m: { "Rugged Armor Kit": 1, "Dream Dust": 2, "Elixir of the Giants": 2, "Pristine Scale": 1, "Felhide": 1 }, p: 1,
+      note: "New recipe, 55s from Nioma (The Hinterlands)." },
+    { f: 245, t: 250, r: "Wild Leather Boots", n: 6, m: { "Thick Leather": 14, "Wildvine": 4, "Cured Thick Hide": 2 }, p: 1, note: "Quest recipe." },
+    { f: 250, t: 255, r: "Wild Leather Leggings", n: 6, m: { "Thick Leather": 16, "Wildvine": 2, "Cured Thick Hide": 2 }, p: 1, note: "Quest recipe." },
+    { f: 255, t: 260, r: "Thick Scorpid Bracers", n: 6, m: { "Rugged Leather": 4, "Thick Scorpid Scale": 4, "Rune Thread": 1 }, p: 1,
+      note: "Recipe from Zannok Hidepiercer (Silithus)." },
+    { f: 260, t: 268, r: "Wicked Leather Gauntlets", n: 11, m: { "Rugged Leather": 8, "Black Dye": 1, "Rune Thread": 1 }, p: 1,
+      note: "Recipe from Leonard Porter (Western Plaguelands)." },
+    { f: 268, t: 276, r: "Ornate Leather Armor", n: 8, m: { "Rugged Leather": 16, "Rune Thread": 1, "Orange Dye": 3, "Cured Rugged Hide": 2, "Stonescale Oil": 6 }, p: 1,
+      note: "New recipe, 10g from Pexmit (Mount Hyjal)." },
+    { f: 276, t: 290, r: "Supple Scorpid Vest", n: 14, m: { "Rugged Leather": 20, "Thick Scorpid Scale": 10, "Rune Thread": 1 }, p: 1,
+      note: "New recipe, 10g from Pexmit (Mount Hyjal)." },
+    { f: 290, t: 295, r: "Runic Leather Headband", n: 6, m: { "Rugged Leather": 14, "Runecloth": 10, "Rune Thread": 1 }, p: 1,
+      note: "Recipe from Jase Farlane (Eastern Plaguelands)." },
+    { f: 295, t: 300, r: "Thick Scorpid Helm", n: 6, m: { "Rugged Leather": 8, "Thick Scorpid Scale": 12, "Cured Rugged Hide": 1, "Rune Thread": 1 }, p: 1,
+      note: "Recipe from Zannok Hidepiercer (Silithus)." }
+  ],
+  train: { comp: "Waldor, at the Barrens oasis (45.6, 35.6)", exp: "Krulmoo Fullmoon, Camp Taurajo (44.8, 59.4)", art: "Una, Thunder Bluff (41.4, 42.6)" },
+  trainA: { comp: "Randal Worth in Stormwind (67.4, 49.4), Gretta Finespindle in Ironforge (39.0, 32.4) or Darianna in Darnassus (64.2, 21.6)", exp: "Simon Tanner in Stormwind (67.2, 49.4), Fimble Finespindle in Ironforge (39.4, 33.0) or Faldron in Darnassus (64.4, 21.4)", art: "Telonis in Darnassus (64.4, 21.4)" },
+  done300: "300 reached. Think about the Sewing Machine for your camp.",
+  groupTitles: { farm: "To skin", vendor: "From vendors", ah: "AH or other professions", craft: "Intermediates to keep" }
+};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

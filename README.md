@@ -27,3 +27,9 @@ Le choix Alliance / Horde / les deux est gardé dans le navigateur (`fg-faction`
 - `.nojekyll` : dit à GitHub Pages de servir les fichiers tels quels.
 
 Les anciennes pages faites dans l'appli de bureau sont dans `_originaux/`. Elles ne sont pas liées au site et peuvent être supprimées.
+
+## Langues
+
+- Français à la racine, anglais dans `en/`, avec les mêmes noms de fichiers. Le bouton FR/EN de la barre ouvre la même page dans l'autre langue.
+- `assets/nav.js`, `assets/metier.js` et `assets/recolte.js` lisent `<html lang>` et choisissent leurs textes (`L("français", "english")`).
+- Une modification de contenu se fait dans les deux versions. Les noms d'objets et de PNJ anglais sont ceux de Classic. Ceux propres à Forever sont traduits depuis le client français.

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skinning WoW Forever</title>
+<meta name="description" content="Skinning 1-300 guide for WoW Forever (Alliance and Horde): where to skin, tier by tier, by beast level, with trainers.">
+<meta property="og:title" content="Skinning WoW Forever">
+<meta property="og:description" content="Skinning 1-300 guide for WoW Forever (Alliance and Horde): where to skin, tier by tier, by beast level, with trainers.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../depecage.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #15110f;
+  --bg-glow: #271d17;
+  --panel: #1f1915;
+  --panel-2: #29211c;
+  --stitch: #7d6249;
+  --accent: #d8aa7e;
+  --seg1: #e8d0b8; --seg2: #c9a27e; --seg3: #8f6a4a; --seg4: #5e432d;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Skinning</span>
+  <h1>Skinning 1 → 300</h1>
+  <p class="lede">Where to skin, tier by tier, by beast level. You need a Skinning Knife. Enter your skill: the page shows your tier and the matching zones.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Where you are</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Current skill</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Remove 5 points">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Add 5 points">+5</button>
+      </div>
+    </div>
+    
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprentice</div><div class="seg s2">Journeyman</div><div class="seg s3">Expert</div><div class="seg s4">Artisan</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:14px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Tiers and zones</h2>
+    <p class="lede" style="margin-top:0">What matters is the beasts' level: below level 20 you need about (mob level − 10) × 10 skill; above it, about level × 5. Levels shown are zone levels.</p>
+    <div class="legend"><span><span class="zone">Zone <small>info</small></span> zone counted by Forever</span><span><span class="zone a">Zone</span> Alliance</span><span><span class="zone h">Zone</span> Horde</span><span>unmarked: contested or neutral</span></div>
+  </div>
+  <div class="tiers" id="tiers"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Skinning trainers</h2>
+  <p class="lede" style="margin-top:0">Kami Labs lists the trainers without their ranks. In Forever, crafting professions need skill 50 / 125 / 200 and levels 10 / 20 / 35: it's very likely the same here, to verify in game.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alliance</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Unlocks</th><th>Requires</th><th>Trainers (coordinates)</th></tr></thead>
+      <tbody><tr><td><span class="pill">All ranks</span></td><td class="num">up to 300</td><td>skill 50 / 125 / 200 (probable)</td><td><strong>Maris Granger</strong>, Stormwind (67.4, 49.0) · Balthus Stoneflayer, Ironforge (39.4, 32.4) · Eladriel, Darnassus (64.2, 21.8) · Helene Peltskinner, Elwynn Forest (46.2, 62.2) · Riley Tannepeau, Elwynn Forest (47.0, 39.4) · Brighid Ecorchorage, Dun Morogh (29.0, 67.4) · Radnaal Maneweaver, Teldrassil (42.0, 50.0) · Terunne Sculpte-Ours, Teldrassil (59.4, 38.6)</td></tr><tr><td><span class="pill">Outside capitals</span></td><td class="num">—</td><td>—</td><td>Wilma Ranthal, Redridge Mountains (83.6, 71.0) · Jayla, Ashenvale (50.0, 67.2)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Unlocks</th><th>Requires</th><th>Trainers (coordinates)</th></tr></thead>
+      <tbody><tr><td><span class="pill">All ranks</span></td><td class="num">up to 300</td><td>skill 50 / 125 / 200 (probable)</td><td><strong>Thuwd</strong>, Orgrimmar (63.2, 45.2) · Kagil, Durotar (40.8, 67.8) · Killian Hagey, Undercity (70.2, 58.4) · Rand Rhobart, Tirisfal Glades (65.4, 60.0) · Margaret Tisserand, Tirisfal Glades (32.4, 65.6) · Mooranta, Thunder Bluff (44.4, 42.4) · Yonn Deepcut, Mulgore (45.0, 61.4) · Nawka Chantsauvage, Mulgore (44.4, 76.8)</td></tr><tr><td><span class="pill">Neutral</span></td><td class="num">—</td><td>—</td><td>Dranh, The Barrens (45.0, 59.0) · Malux, Desolace (23.2, 69.8) · Kulleg Stonehorn, Feralas (74.4, 43.0)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">The Skinning Knife is sold by trade supply vendors.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Forever specifics</h2>
+  <ul class="plain"><li>Announced at BlizzCon, not yet confirmed: <strong>Wild Beasts</strong> (+5% damage against beasts and whelps) and better odds of rare hides.</li><li><strong>Pristine Leather</strong>: new Forever component, keep it for <a href="travail-du-cuir.html">Leatherworking</a>.</li><li><strong>Camp Chair</strong> (skinners' camp item): +2% crit according to Method.</li><li><strong>Legacy points</strong> at 150, 225 and 300.</li><li>The ideal levelling combo for leather and mail classes: Skinning + Leatherworking.</li></ul>
+</section>
+
+<footer class="foot"><p>Sources: <a href="https://kami-labs.fr/guide-depecage-wow-forever/">Kami Labs, WoW Forever Skinning guide</a> · <a href="https://kami-labs.fr/metiers-wow-forever/">Kami Labs, WoW Forever professions</a> · <a href="https://www.method.gg/wow-forever/wow-forever-warrior-leveling-guide-and-talents">Method, warrior guide (camp items)</a>.</p><p>The beta stopped at 225: tiers beyond are marked "post-beta". Forever-only names are translated from the French client and may differ slightly in game.</p><p>Unofficial fan guide, updated 7 November 2026. World of Warcraft is a trademark of Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "depec", "done300": "300 reached. Keep Pristine Leather: many new Forever recipes need it.", "train": {"comp": "Consider the Journeyman rank (likely level 10): Thuwd in Orgrimmar (63.2, 45.2).", "exp": "Consider the Expert rank (likely level 20): Thuwd in Orgrimmar (63.2, 45.2).", "art": "Consider the Artisan rank (likely level 35): Thuwd in Orgrimmar (63.2, 45.2)."}, "tiers": [{"f": 1, "t": 25, "res": ["Light Leather", "Light Hide"], "zones": [["Durotar", "lvl 1-10", "h"], ["Mulgore", "lvl 1-10", "h"], ["Tirisfal Glades", "lvl 1-12", "h"], ["Zephras Isle", "lvl 1-12"]], "alliance": "Elwynn Forest, Dun Morogh, Teldrassil.", "horde": "Durotar, Mulgore, Tirisfal Glades."}, {"f": 25, "t": 75, "res": ["Light Leather", "Light Hide"], "zones": [["The Barrens", "lvl 10-33", "h"], ["Silverpine Forest", "lvl 10-20", "h"], ["Loch Modan", "lvl 10-18", "a"], ["Darkshore", "lvl 11-19", "a"]], "note": "Horde side: zhevras, thunder lizards and kodos around the Crossroads.", "alliance": "Westfall, Loch Modan, Darkshore.", "horde": "The Barrens, Silverpine Forest."}, {"f": 75, "t": 125, "res": ["Medium Leather", "Medium Hide"], "zones": [["Stonetalon Mountains", "lvl 15-25"], ["Thousand Needles", "lvl 6-35"], ["Ashenvale", "lvl 19-30"], ["Hillsbrad Foothills", "lvl 20-31"]], "note": "Learn Journeyman before 75.", "alliance": "Loch Modan (boars, bears, crocolisks) then Wetlands.", "horde": "Stonetalon Mountains, Thousand Needles, Hillsbrad Foothills from Tarren Mill."}, {"f": 125, "t": 175, "res": ["Heavy Leather", "Heavy Hide"], "zones": [["Hillsbrad Foothills", "lvl 20-31"], ["Alterac Mountains", "lvl 27-39"], ["Desolace", "lvl 30-39"], ["Arathi Highlands", "lvl 30-40"]], "note": "Learn Expert before 150.", "alliance": "Wetlands (Whelgar's raptors), Hillsbrad Foothills, Arathi Highlands."}, {"f": 175, "t": 225, "res": ["Thick Leather", "Thick Hide"], "zones": [["Stranglethorn Vale", "lvl 30-50"], ["Swamp of Sorrows", "lvl 36-43"], ["Badlands", "lvl 36-45"], ["Clearwater Shores", "lvl 36-44"], ["Tanaris", "lvl 40-50"]], "note": "Learn Artisan before 225."}, {"f": 225, "t": 250, "res": ["Thick Leather", "Rugged Leather"], "zones": [["Feralas", "lvl 41-60"], ["Azshara", "lvl 42-55"], ["The Hinterlands", "lvl 41-56"], ["Searing Gorge", "lvl 43-56"]], "p": 1}, {"f": 250, "t": 275, "res": ["Rugged Leather", "Thick Scorpid Scale"], "zones": [["Un'Goro Crater", "lvl 48-55"], ["Western Plaguelands", "lvl 46-57"], ["Blasted Lands", "lvl 46-63"], ["Burning Steppes", "lvl 50-59"]], "p": 1}, {"f": 275, "t": 300, "res": ["Rugged Leather", "Rugged Hide"], "zones": [["Winterspring", "lvl 55-60"], ["Silithus", "lvl 55-59"], ["Eastern Plaguelands", "lvl 54-59"], ["Deadwind Pass", "lvl 50-60"]], "p": 1}], "trainA": {"comp": "Consider the Journeyman rank (likely level 10): Maris Granger in Stormwind (67.4, 49.0), Balthus Stoneflayer in Ironforge (39.4, 32.4) or Eladriel in Darnassus (64.2, 21.8).", "exp": "Consider the Expert rank (likely level 20): Maris Granger in Stormwind (67.4, 49.0), Balthus Stoneflayer in Ironforge (39.4, 32.4) or Eladriel in Darnassus (64.2, 21.8).", "art": "Consider the Artisan rank (likely level 35): Maris Granger in Stormwind (67.4, 49.0), Balthus Stoneflayer in Ironforge (39.4, 32.4) or Eladriel in Darnassus (64.2, 21.8)."}};
+</script>
+<script src="../assets/recolte.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

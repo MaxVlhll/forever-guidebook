@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mining WoW Forever</title>
+<meta name="description" content="Mining 1-300 guide for WoW Forever (Alliance and Horde): which vein to mine and where, tier by tier, smelting and trainers.">
+<meta property="og:title" content="Mining WoW Forever">
+<meta property="og:description" content="Mining 1-300 guide for WoW Forever (Alliance and Horde): which vein to mine and where, tier by tier, smelting and trainers.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../minage.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #121212;
+  --bg-glow: #24201c;
+  --panel: #1c1a18;
+  --panel-2: #262320;
+  --stitch: #7a6650;
+  --accent: #e09a66;
+  --seg1: #f0c4a0; --seg2: #d9935f; --seg3: #a05f35; --seg4: #6b3d20;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Mining</span>
+  <h1>Mining 1 → 300</h1>
+  <p class="lede">Which vein to mine and where, tier by tier, based on the Forever node census. You need a Mining Pick. Enter your skill: the page shows your tier and the best zone.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Where you are</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Current skill</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Remove 5 points">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Add 5 points">+5</button>
+      </div>
+    </div>
+    
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprentice</div><div class="seg s2">Journeyman</div><div class="seg s3">Expert</div><div class="seg s4">Artisan</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:14px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Tiers and zones</h2>
+    <p class="lede" style="margin-top:0">Classic rule, to confirm in game: an ore gives skill-ups from its required level to about 100 points above. Numbers are the nodes counted per zone.</p>
+    <div class="legend"><span><span class="zone">Zone <small>info</small></span> zone counted by Forever</span><span><span class="zone a">Zone</span> Alliance</span><span><span class="zone h">Zone</span> Horde</span><span>unmarked: contested or neutral</span></div>
+  </div>
+  <div class="tiers" id="tiers"></div>
+</section>
+
+<section class="stitched" aria-labelledby="smelt-h" style="display:grid;gap:12px">
+  <h2 id="smelt-h">Smelting on the way</h2>
+  <p class="lede" style="margin-top:0">Smelting gives a few extra points, but in Forever data it no longer gives skill-ups past 185. Use it to fill a gap, not as your main path.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Skill</th><th>Bar</th><th>Recipe</th></tr></thead>
+    <tbody>
+      <tr><td class="num">25 → 65</td><td><strong>Copper Bar</strong></td><td>1 Copper Ore</td></tr>
+      <tr><td class="num">65 → 75</td><td><strong>Bronze Bar</strong></td><td>1 Copper Bar + 1 Tin Bar</td></tr>
+      <tr><td class="num">75 → 125</td><td><strong>Silver Bar</strong></td><td>1 Silver Ore</td></tr>
+      <tr><td class="num">125 → 140</td><td><strong>Iron Bar</strong></td><td>1 Iron Ore</td></tr>
+      <tr><td class="num">170 → 185</td><td><strong>Gold Bar</strong></td><td>1 Gold Ore</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Mining trainers</h2>
+  <p class="lede" style="margin-top:0">Kami Labs lists the trainers without their ranks. In Forever, crafting professions need skill 50 / 125 / 200 and levels 10 / 20 / 35: it's very likely the same here, to verify in game.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alliance</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Unlocks</th><th>Requires</th><th>Trainers (coordinates)</th></tr></thead>
+      <tbody><tr><td><span class="pill">All ranks</span></td><td class="num">up to 300</td><td>skill 50 / 125 / 200 (probable)</td><td><strong>Gelman Stonehand</strong>, Stormwind (51.0, 17.2) · Geofram Bouldertoe, Ironforge (50.2, 26.0) · Kelsey Fond, Elwynn Forest (47.2, 32.2) · Yarr Hammerstone, Dun Morogh (50.0, 50.4) · Dank Drizzlecut, Dun Morogh (69.2, 55.4) · Brock Stoneseeker, Loch Modan (37.0, 47.8) · Kurdram Stonehammer, Darkshore (38.2, 41.0) · Fanorran Calmechêne, Teldrassil (58.2, 41.4) · Matt Johnson, Duskwood (74.0, 49.4)</td></tr><tr><td><span class="pill">Neutral</span></td><td class="num">—</td><td>—</td><td>Pikkle, Tanaris (51.0, 28.0) · Grungle, Clearwater Shores (77.6, 51.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Unlocks</th><th>Requires</th><th>Trainers (coordinates)</th></tr></thead>
+      <tbody><tr><td><span class="pill">All ranks</span></td><td class="num">up to 300</td><td>skill 50 / 125 / 200 (probable)</td><td><strong>Makaru</strong>, Orgrimmar (73.0, 26.4) · Krunn, Durotar (51.8, 40.8) · Norzsh, Durotar (40.4, 68.0) · Brom Killian, Undercity (55.4, 36.2) · Walter Mason, Tirisfal Glades (32.2, 65.4) · Brek Stonehoof, Thunder Bluff (34.4, 57.4) · Vartha Rochecrin, Mulgore (44.2, 78.2)</td></tr><tr><td><span class="pill">Neutral</span></td><td class="num">—</td><td>—</td><td>Pikkle, Tanaris (51.0, 28.0) · Grungle, Clearwater Shores (77.6, 51.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">The Mining Pick is sold by trade supply vendors.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Forever specifics</h2>
+  <ul class="plain"><li>Announced at BlizzCon, not yet confirmed: <strong>Made of Metal</strong> (+5% total health), extra ore from veins and a chance at rare or combat materials.</li><li><strong>Lodestone</strong> (miners' camp item): melee attack power bonus, according to Method.</li><li>Forever has 38 node types: 2 new (Depleted Copper Vein, Heavy Thorium Vein) and 5 changed.</li><li><strong>Legacy points</strong> at 150, 225 and 300.</li><li>Pairs well with <a href="forge.html">Blacksmithing</a> or <a href="ingenierie.html">Engineering</a>, which eat hundreds of bars.</li></ul>
+</section>
+
+<footer class="foot"><p>Sources: <a href="https://kami-labs.fr/guide-minage-wow-forever/">Kami Labs, WoW Forever Mining guide</a> · <a href="https://kami-labs.fr/metiers-wow-forever/">Kami Labs, WoW Forever professions</a> · <a href="https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents">Method, camp items</a>.</p><p>Faction-specific advice comes from Classic, which Forever builds on. The beta stopped at 225: tiers beyond are marked "post-beta". Forever-only names are translated from the French client and may differ slightly in game.</p><p>Unofficial fan guide, updated 7 November 2026. World of Warcraft is a trademark of Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "minage", "done300": "300 reached. Keep an eye out for the Heavy Thorium Vein, new in Forever.", "train": {"comp": "Consider the Journeyman rank (likely level 10): Makaru in Orgrimmar (73.0, 26.4).", "exp": "Consider the Expert rank (likely level 20): Makaru in Orgrimmar (73.0, 26.4).", "art": "Consider the Artisan rank (likely level 35): Makaru in Orgrimmar (73.0, 26.4)."}, "tiers": [{"f": 1, "t": 65, "res": ["Copper Ore", "Depleted Copper Vein (new)"], "zones": [["Zephras Isle", "≈ 230"], ["Dun Morogh", "≈ 220", "a"], ["Elwynn Forest", "≈ 219", "a"], ["Loch Modan", "≈ 151", "a"]], "horde": "Durotar, Mulgore, Tirisfal Glades, The Barrens.", "note": "Smelt your copper from 25: it gives skill-ups up to 65.", "alliance": "Elwynn Forest, Dun Morogh, Loch Modan."}, {"f": 65, "t": 75, "res": ["Tin Ore", "Incendicite", "Copper"], "zones": [["Redridge Mountains", "≈ 271", "a"], ["Zephras Isle", "≈ 230"]], "horde": "The Barrens, Silverpine Forest, Stonetalon Mountains.", "alliance": "Redridge Mountains, Westfall, Darkshore."}, {"f": 75, "t": 125, "res": ["Silver Ore", "Lesser Bloodstone", "Tin", "Incendicite"], "zones": [["Arathi Highlands", "≈ 208"], ["Thousand Needles", "≈ 204"], ["Hillsbrad Foothills", "≈ 198"], ["Redridge Mountains", "≈ 184", "a"]], "horde": "Thousand Needles, Hillsbrad Foothills, Stonetalon Mountains.", "note": "Learn Journeyman before 75.", "alliance": "Wetlands (by far the best, a cave with tin and incendicite), Redridge Mountains, Hillsbrad Foothills from Southshore."}, {"f": 125, "t": 155, "res": ["Iron Ore", "Silver", "Tin"], "zones": [["Arathi Highlands", "≈ 351"], ["Thousand Needles", "≈ 314"], ["Desolace", "≈ 236"], ["Stranglethorn Vale", "≈ 208"]], "note": "Learn Expert before 150."}, {"f": 155, "t": 175, "res": ["Gold Ore", "Indurium", "Iron"], "zones": [["Arathi Highlands", "≈ 262"], ["Stranglethorn Vale", "≈ 214"], ["Badlands", "≈ 196"], ["Thousand Needles", "≈ 184"]]}, {"f": 175, "t": 230, "res": ["Mithril Ore", "Gold", "Indurium"], "zones": [["Arathi Highlands", "≈ 313"], ["Stranglethorn Vale", "≈ 275"], ["Badlands", "≈ 271"], ["Desolace", "≈ 245"], ["The Hinterlands", "≈ 198"], ["Tanaris", "≈ 179"]], "note": "Learn Artisan before 225."}, {"f": 230, "t": 245, "res": ["Truesilver Ore", "Dark Iron", "Mithril"], "zones": [["The Hinterlands", "≈ 293"], ["Burning Steppes", "≈ 274"], ["Tanaris", "≈ 255"], ["Searing Gorge", "≈ 227"]], "p": 1}, {"f": 245, "t": 300, "res": ["Thorium Ore", "Heavy Thorium Vein (new)", "Truesilver"], "zones": [["Burning Steppes", "≈ 290"], ["Silithus", "≈ 273"], ["Winterspring", "≈ 227"], ["Un'Goro Crater", "≈ 187"]], "p": 1, "note": "Un'Goro and Silithus, both neutral, are the quietest."}], "trainA": {"comp": "Consider the Journeyman rank (likely level 10): Gelman Stonehand in Stormwind (51.0, 17.2) or Geofram Bouldertoe in Ironforge (50.2, 26.0).", "exp": "Consider the Expert rank (likely level 20): Gelman Stonehand in Stormwind (51.0, 17.2) or Geofram Bouldertoe in Ironforge (50.2, 26.0).", "art": "Consider the Artisan rank (likely level 35): Gelman Stonehand in Stormwind (51.0, 17.2) or Geofram Bouldertoe in Ironforge (50.2, 26.0)."}};
+</script>
+<script src="../assets/recolte.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

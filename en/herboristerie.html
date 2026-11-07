@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Herbalism WoW Forever</title>
+<meta name="description" content="Herbalism 1-300 guide for WoW Forever (Alliance and Horde): what to pick and where, tier by tier, with Forever node counts and trainers.">
+<meta property="og:title" content="Herbalism WoW Forever">
+<meta property="og:description" content="Herbalism 1-300 guide for WoW Forever (Alliance and Horde): what to pick and where, tier by tier, with Forever node counts and trainers.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../herboristerie.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #11140d;
+  --bg-glow: #1e2614;
+  --panel: #191e14;
+  --panel-2: #222a1b;
+  --stitch: #66803d;
+  --accent: #b5d84f;
+  --seg1: #d8ec9c; --seg2: #b5d84f; --seg3: #7a9a2c; --seg4: #4f661b;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Herbalism</span>
+  <h1>Herbalism 1 → 300</h1>
+  <p class="lede">Which herb to pick and where, tier by tier, based on the Forever node census. No tool needed. Enter your skill: the page shows your tier and the best zone.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Where you are</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Current skill</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Remove 5 points">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Add 5 points">+5</button>
+      </div>
+    </div>
+    
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprentice</div><div class="seg s2">Journeyman</div><div class="seg s3">Expert</div><div class="seg s4">Artisan</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:14px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Tiers and zones</h2>
+    <p class="lede" style="margin-top:0">A herb gives skill-ups from its required level to about 100 points above (Classic rule, to confirm). Numbers are the nodes counted per zone.</p>
+    <div class="legend"><span><span class="zone">Zone <small>info</small></span> zone counted by Forever</span><span><span class="zone a">Zone</span> Alliance</span><span><span class="zone h">Zone</span> Horde</span><span>unmarked: contested or neutral</span></div>
+  </div>
+  <div class="tiers" id="tiers"></div>
+</section>
+
+<section aria-labelledby="seuil-h" style="display:grid;gap:12px">
+  <h2 id="seuil-h">Herb thresholds</h2>
+  <p class="lede" style="margin-top:0">Herbalism skill required to pick each herb.</p>
+  <div class="cols"><div class="card"><h3>1 to 85</h3><span class="lv">Beginner</span><p>Peacebloom 1 · Silverleaf 1 · Earthroot 15 · Mageroyal 50 · Briarthorn 70 · Stranglekelp 85</p></div><div class="card"><h3>100 to 185</h3><span class="lv">Intermediate</span><p>Bruiseweed 100 · Wild Steelbloom 115 · Grave Moss 120 · Kingsblood 125 · Liferoot 150 · Fadeleaf 160 · Goldthorn 170 · Khadgar's Whisker 185</p></div><div class="card"><h3>195 to 300</h3><span class="lv">Advanced</span><p>Wintersbite 195 · Firebloom 205 · Purple Lotus 210 · Arthas' Tears 220 · Sungrass 230 · Blindweed 235 · Ghost Mushroom 245 · Gromsblood 250 · Golden Sansam 260 · Dreamfoil 270 · Mountain Silversage 280 · Plaguebloom 285 · Icecap 290 · Black Lotus 300</p></div></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Herbalism trainers</h2>
+  <p class="lede" style="margin-top:0">Kami Labs lists the trainers without their ranks. In Forever, crafting professions need skill 50 / 125 / 200 and levels 10 / 20 / 35: it's very likely the same here, to verify in game.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alliance</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Unlocks</th><th>Requires</th><th>Trainers (coordinates)</th></tr></thead>
+      <tbody><tr><td><span class="pill">All ranks</span></td><td class="num">up to 300</td><td>skill 50 / 125 / 200 (probable)</td><td><strong>Tannysa</strong>, Stormwind (44.4, 77.8) · Shylamiir, Stormwind (15.0, 49.4) · Reyna Stonebranch, Ironforge (55.4, 58.4) · Firodren Mooncaller, Darnassus (48.0, 68.4) · Herbalist Pomeroy, Elwynn Forest (39.8, 48.4) · Nancy Chantefleur, Elwynn Forest (52.2, 43.4) · Emrys Barbe-de-silex, Dun Morogh (28.8, 66.4) · Kali Healtouch, Loch Modan (36.4, 48.4) · Malorne Bladeleaf, Teldrassil (57.4, 60.6) · Eleyna Vespebrise, Teldrassil (59.8, 41.4)</td></tr><tr><td><span class="pill">Outside capitals</span></td><td class="num">—</td><td>—</td><td>Alma Jainrose, Redridge Mountains (16.2, 45.6) · Telurinon Moonshadow, Wetlands (8.0, 55.8) · Cylania Rootstalker, Ashenvale (50.4, 67.0) · Brant Jasperbloom, Dustwallow Marsh (64.0, 47.6) · Flora Silverwind, Stranglethorn Vale (27.6, 77.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Unlocks</th><th>Requires</th><th>Trainers (coordinates)</th></tr></thead>
+      <tbody><tr><td><span class="pill">All ranks</span></td><td class="num">up to 300</td><td>skill 50 / 125 / 200 (probable)</td><td><strong>Jandi</strong>, Orgrimmar (55.4, 39.4) · Mishiki, Durotar (55.4, 75.0) · Zor'la, Durotar (42.6, 67.4) · Martha Alliestar, Undercity (54.2, 49.4) · Faruza, Tirisfal Glades (59.8, 52.0) · Florence Belladone, Tirisfal Glades (32.4, 65.2) · Komin Winterhoof, Thunder Bluff (49.4, 39.2) · Garan Haut-Soleil, Mulgore (44.2, 77.8)</td></tr><tr><td><span class="pill">Neutral</span></td><td class="num">—</td><td>—</td><td>Aranae Venomblood, Hillsbrad Foothills (61.4, 19.8) · Angrun and Flora Silverwind, Stranglethorn Vale · Ruw, Feralas (76.0, 43.4)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Forever specifics</h2>
+  <ul class="plain"><li>Announced at BlizzCon, not yet confirmed: <strong>Nature's Gift</strong> (resistance to all magic schools), better odds of rare lotuses and more herbs per node.</li><li>Forever has 48 node types: 2 new (Withered Peacebloom, Stunted Silverleaf) and 8 changed.</li><li><strong>Black Lotus</strong> no longer gives skill-ups.</li><li><strong>Legacy points</strong> at 150, 225 and 300.</li><li>Pairs well with <a href="alchimie.html">Alchemy</a>, and <a href="secourisme.html">First Aid</a> now also needs herbs for healing potions.</li></ul>
+</section>
+
+<footer class="foot"><p>Sources: <a href="https://kami-labs.fr/guide-herboristerie-wow-forever/">Kami Labs, WoW Forever Herbalism guide</a> · <a href="https://kami-labs.fr/metiers-wow-forever/">Kami Labs, WoW Forever professions</a>.</p><p>Faction-specific advice comes from Classic, which Forever builds on. The beta stopped at 225: tiers beyond are marked "post-beta". Forever-only names are translated from the French client and may differ slightly in game.</p><p>Unofficial fan guide, updated 7 November 2026. World of Warcraft is a trademark of Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "herbo", "done300": "300 reached. Black Lotus no longer gives skill-ups: keep it for flasks.", "train": {"comp": "Consider the Journeyman rank (likely level 10): Jandi in Orgrimmar (55.4, 39.4).", "exp": "Consider the Expert rank (likely level 20): Jandi in Orgrimmar (55.4, 39.4).", "art": "Consider the Artisan rank (likely level 35): Jandi in Orgrimmar (55.4, 39.4)."}, "tiers": [{"f": 1, "t": 50, "res": ["Peacebloom", "Silverleaf", "Earthroot (from 15)"], "zones": [["Teldrassil", "≈ 439", "a"], ["Zephras Isle", "≈ 427"], ["Elwynn Forest", "≈ 372", "a"], ["Dun Morogh", "≈ 367", "a"]], "horde": "Durotar, Mulgore, Tirisfal Glades, The Barrens.", "alliance": "Elwynn Forest, Dun Morogh, Teldrassil."}, {"f": 50, "t": 70, "res": ["Mageroyal", "Earthroot", "Peacebloom"], "zones": [["Zephras Isle", "≈ 461"]], "horde": "The Barrens, Silverpine Forest, Stonetalon Mountains.", "alliance": "Westfall, Loch Modan, Darkshore."}, {"f": 70, "t": 115, "res": ["Briarthorn", "Stranglekelp (underwater)", "Bruiseweed (from 100)"], "zones": [["Wetlands", "≈ 345", "a"], ["Ashenvale", "≈ 295"], ["Westfall", "≈ 275", "a"], ["Redridge Mountains", "≈ 229", "a"]], "horde": "The Barrens, Stonetalon Mountains, Ashenvale, Hillsbrad Foothills.", "note": "Learn Journeyman before 75.", "alliance": "Wetlands, Westfall, Redridge Mountains, Loch Modan."}, {"f": 115, "t": 160, "res": ["Wild Steelbloom", "Grave Moss", "Kingsblood"], "zones": [["Wetlands", "≈ 388", "a"], ["Ashenvale", "≈ 330"], ["Stonetalon Mountains", "≈ 309"], ["Stranglethorn Vale", "≈ 304"]], "horde": "Ashenvale, Stonetalon Mountains, Hillsbrad Foothills, Thousand Needles.", "note": "Learn Expert before 150.", "alliance": "Wetlands, Hillsbrad Foothills from Southshore, Ashenvale from Astranaar."}, {"f": 160, "t": 205, "res": ["Fadeleaf", "Liferoot", "Goldthorn (from 170)", "Khadgar's Whisker (from 185)"], "zones": [["Stranglethorn Vale", "≈ 469"], ["Dustwallow Marsh", "≈ 310"], ["Swamp of Sorrows", "≈ 274"], ["Arathi Highlands", "≈ 267"]]}, {"f": 205, "t": 230, "res": ["Firebloom", "Purple Lotus", "Wintersbite", "Arthas' Tears (from 220)"], "zones": [["Stranglethorn Vale", "≈ 305"], ["Feralas", "≈ 264"], ["Dustwallow Marsh", "≈ 182"], ["Alterac Mountains", "≈ 177"]], "note": "Learn Artisan before 225."}, {"f": 230, "t": 270, "res": ["Sungrass", "Blindweed", "Ghost Mushroom (from 245)", "Gromsblood (from 250)", "Golden Sansam (from 260)"], "zones": [["Feralas", "≈ 178"], ["Swamp of Sorrows", "≈ 175"], ["Azshara", "≈ 167"], ["The Hinterlands", "≈ 162"]], "p": 1}, {"f": 270, "t": 300, "res": ["Dreamfoil", "Mountain Silversage (from 280)", "Plaguebloom (from 285)", "Icecap (from 290)"], "zones": [["Eastern Plaguelands", "≈ 333"], ["Azshara", "≈ 228"], ["Felwood", "≈ 228"], ["Un'Goro Crater", "≈ 182"]], "p": 1, "note": "Icecap: Winterspring. Black Lotus at 300."}], "trainA": {"comp": "Consider the Journeyman rank (likely level 10): Tannysa in Stormwind (44.4, 77.8), Reyna Stonebranch in Ironforge (55.4, 58.4) or Firodren Mooncaller in Darnassus (48.0, 68.4).", "exp": "Consider the Expert rank (likely level 20): Tannysa in Stormwind (44.4, 77.8), Reyna Stonebranch in Ironforge (55.4, 58.4) or Firodren Mooncaller in Darnassus (48.0, 68.4).", "art": "Consider the Artisan rank (likely level 35): Tannysa in Stormwind (44.4, 77.8), Reyna Stonebranch in Ironforge (55.4, 58.4) or Firodren Mooncaller in Darnassus (48.0, 68.4)."}};
+</script>
+<script src="../assets/recolte.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

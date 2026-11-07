@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alchemy WoW Forever</title>
+<meta name="description" content="Alchemy 1-300 guide for WoW Forever (Alliance and Horde): recipe-by-recipe path, calculated shopping list, trainers and herbs.">
+<meta property="og:title" content="Alchemy WoW Forever">
+<meta property="og:description" content="Alchemy 1-300 guide for WoW Forever (Alliance and Horde): recipe-by-recipe path, calculated shopping list, trainers and herbs.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../alchimie.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #0f1513;
+  --bg-glow: #17261f;
+  --panel: #17201c;
+  --panel-2: #1f2b26;
+  --stitch: #4f7d68;
+  --ink: #f1e9dc;
+  --muted: #b5a995;
+  --accent: #6fd1a4;
+  --accent-ink: #15100c;
+  --seg1: #9fd9bd; --seg2: #6fbf98; --seg3: #3f8f6c; --seg4: #29624a;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Alchemy</span>
+  <h1>Alchemy 1 → 300</h1>
+  <p class="lede">The full path, recipe by recipe, based on Forever beta data. Enter your skill: the page shows where you are, the next step, and every herb and vial you still need.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Where you are</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Current skill</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Remove 5 points">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Add 5 points">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Shopping list up to</label>
+      <select id="target">
+        <option value="75">75 (end of Apprentice)</option>
+        <option value="150" selected>150 (end of Journeyman)</option>
+        <option value="225">225 (end of Expert)</option>
+        <option value="300">300 (Artisan)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprentice</div><div class="seg s2">Journeyman</div><div class="seg s3">Expert</div><div class="seg s4">Artisan</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">What you still need</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">The path</h2>
+    <p class="lede" style="margin-top:0">Craft counts are estimates: always keep a margin. Golden rule: as soon as a recipe turns green, move to the next step.</p>
+    <div class="legend" aria-label="Recipe colours">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Orange: +1 every time</span>
+      <span><span class="dot" style="background:var(--sk-yellow)"></span>Yellow: often</span>
+      <span><span class="dot" style="background:var(--sk-green)"></span>Green: rarely</span>
+      <span><span class="dot" style="background:var(--sk-gray)"></span>Grey: never</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Trainers</h2>
+  <p class="lede" style="margin-top:0">Without the right rank, your skill stays stuck at the cap (75, 150, 225). Learn the next rank as soon as you have the required level.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alliance</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Unlocks</th><th>Requires</th><th>Trainers (coordinates)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Journeyman</span></td><td class="num">up to 150</td><td>skill 50, level 10</td><td><strong>Tel'Athir</strong>, Stormwind (45.8, 78.2) · Vosur Brakthel, Ironforge (66.4, 55.2) · Milla Fairancora, Darnassus (55.2, 21.4) · Alchemist Mallory, Elwynn Forest (39.8, 48.4) · Cyndra Kindwhisper, Teldrassil (57.6, 60.6) · Ghak Healtouch, Loch Modan (37.0, 49.2)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">up to 225</td><td>skill 125, level 20</td><td><strong>Lilyssia Nightbreeze</strong>, Stormwind (46.4, 79.4) · Tally Berryfizz, Ironforge (66.4, 55.2) · Sylvanna Forestmoon, Darnassus (55.6, 23.4) · Kylanna, Ashenvale (50.8, 67.0) · Alchemist Narett, Dustwallow Marsh (64.0, 47.6)</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">up to 300</td><td>skill 200, level 35</td><td><strong>Ainethil</strong>, Darnassus (55.0, 23.4)</td></tr><tr><td><span class="pill">High recipes</span></td><td class="num">—</td><td>—</td><td>Master Mycologist Shurome, Felwood (51.4, 82.0)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Unlocks</th><th>Requires</th><th>Trainers (coordinates)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Journeyman</span></td><td class="num">up to 150</td><td>skill 50, level 10</td><td><strong>Whuut</strong>, Orgrimmar (55.8, 33.2) · Miao'zan, Durotar (55.4, 74.0) · Doctor Martin Felben, Undercity (45.8, 73.2) · Carolai Anise, Tirisfal Glades (59.4, 52.2) · Kray, Thunder Bluff (46.8, 33.4)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">up to 225</td><td>skill 125, level 20</td><td><strong>Yelmak</strong>, Orgrimmar (56.4, 33.2) · Doctor Marsh, Undercity (51.2, 75.0) · Bena Winterhoof, Thunder Bluff (46.8, 33.4) · Serge Hinott, Hillsbrad Foothills (61.4, 19.2) · Jaxin Chong, Stranglethorn Vale (28.0, 78.0)</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">up to 300</td><td>skill 200, level 35</td><td><strong>Doctor Herbert Halsey</strong>, Undercity (47.4, 73.0)</td></tr><tr><td><span class="pill">High recipes</span></td><td class="num">—</td><td>—</td><td>Master Mycologist Shurome, Felwood (51.4, 82.0)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Vials are sold by alchemy supply and trade goods vendors. Recipe vendors marked Alliance or Horde only serve their faction: the other side uses the auction house.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Where to pick each herb</h2>
+  <p class="lede" style="margin-top:0">These are the Classic zones, which Forever builds on. Swiftthistle can't be picked on its own: it drops as a bonus from Mageroyal and Briarthorn.</p>
+  <div class="cols"><div class="card"><h3>Peacebloom, Silverleaf</h3><span class="lv">Skill 1 to 70</span><p><span class="fl" data-f="h"><span class="fac h">Horde</span> Durotar, Mulgore, Tirisfal Glades, The Barrens.</span><span class="fl" data-f="a"><span class="fac a">Alliance</span> Elwynn Forest, Dun Morogh, Teldrassil, Westfall.</span></p></div><div class="card"><h3>Mageroyal, Briarthorn, Swiftthistle</h3><span class="lv">Skill 50 to 100</span><p><span class="fl" data-f="h"><span class="fac h">Horde</span> The Barrens, Silverpine Forest, Stonetalon Mountains, Ashenvale.</span><span class="fl" data-f="a"><span class="fac a">Alliance</span> Westfall, Loch Modan, Darkshore, Redridge Mountains.</span></p></div><div class="card"><h3>Bruiseweed, Stranglekelp</h3><span class="lv">Skill 85 to 115</span><p><span class="fl" data-f="h"><span class="fac h">Horde</span> Stonetalon Mountains, Ashenvale, Hillsbrad Foothills.</span><span class="fl" data-f="a"><span class="fac a">Alliance</span> Wetlands, Redridge Mountains, Ashenvale.</span><span class="fl">Stranglekelp grows underwater along the coasts.</span></p></div><div class="card"><h3>Goldthorn</h3><span class="lv">Skill 170 and up</span><p>Arathi Highlands, Stranglethorn Vale, Feralas, Swamp of Sorrows.</p></div><div class="card"><h3>Gromsblood, Sungrass, Dreamfoil</h3><span class="lv">Skill 220 to 270</span><p>Felwood, Un'Goro Crater, Plaguelands, Silithus.</p></div><div class="card"><h3>Icecap, Ghost Mushroom</h3><span class="lv">Skill 245 to 290</span><p>Winterspring for Icecap; caves and swamps (The Hinterlands, Swamp of Sorrows) for Ghost Mushroom.</p></div></div>
+  <p class="foot">Small Flame Sacs, Fire Oil, Sharp Claws and Mithril Ore mostly come from the AH: check prices before starting a step.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Forever specifics</h2>
+  <ul class="plain"><li><strong>Healing potions left Alchemy</strong>: First Aid makes them now.</li><li><strong>Mana Well</strong> at 20: restores mana to nearby seated players (doesn't stack with Blessing of Wisdom).</li><li><strong>Fermenter</strong> at 140: crafts some components at camp.</li><li><strong>Alchemy Lab</strong> at 300: required for some recipes.</li><li><strong>Legacy points</strong> at 150, 225 and 300.</li><li>Announced at BlizzCon but not yet confirmed: elixirs and flasks the alchemist drinks would last twice as long and be 25% stronger.</li><li>The profession has 179 recipes, 72 of them new. This path follows the best ones for levelling, not the best ones to sell.</li></ul>
+</section>
+
+<footer class="foot"><p>Sources: <a href="https://kami-labs.fr/guide-alchimie-wow-forever/">Kami Labs, WoW Forever Alchemy guide</a> for the path, recipes and trainers · <a href="https://conquestcapped.com/guides/fr/wow-forever/wow-forever-alchemy/">ConquestCapped</a> for the healing potion move.</p><p>Steps above 225 weren't playable in the beta: they're marked "to verify". Forever-only item and NPC names are translated from the French client and may differ slightly in game.</p></footer>
+
+
+</main>
+<script>
+var CONFIG = {"key": "alch", "src": {"Silverleaf": "farm", "Peacebloom": "farm", "Briarthorn": "farm", "Bruiseweed": "farm", "Swiftthistle": "farm", "Mageroyal": "farm", "Stranglekelp": "farm", "Goldthorn": "farm", "Gromsblood": "farm", "Ghost Mushroom": "farm", "Sungrass": "farm", "Dreamfoil": "farm", "Icecap": "farm", "Empty Vial": "vendor", "Leaded Vial": "vendor", "Crystal Vial": "vendor", "Sharp Claw": "ah", "Small Flame Sac": "ah", "Fire Oil": "ah", "Mithril Ore": "ah", "Stonescale Eel": "ah", "Stonescale Oil": "craft"}, "sub": {"Stonescale Oil": {"Stonescale Eel": 1, "Leaded Vial": 1}}, "steps": [{"f": 1, "t": 71, "r": "Elixir of Minor Defense", "n": 74, "m": {"Silverleaf": 1, "Peacebloom": 1, "Empty Vial": 1}, "note": "<strong>Learn Journeyman at 50</strong> (level 10), or you get stuck at 75."}, {"f": 71, "t": 100, "r": "Rage Potion", "n": 30, "m": {"Sharp Claw": 1, "Briarthorn": 1, "Empty Vial": 1}, "note": "Recipe for 1s from the Defias Profiteer (Westfall) or Xandar Goodbeard (Loch Modan)."}, {"f": 100, "t": 120, "r": "Holy Protection Potion", "n": 20, "m": {"Bruiseweed": 1, "Swiftthistle": 1, "Empty Vial": 1}, "note": "Recipe for 8s from Kzixx (Duskwood), a neutral goblin."}, {"f": 120, "t": 165, "r": "Lesser Mana Potion", "n": 52, "m": {"Mageroyal": 1, "Stranglekelp": 1, "Empty Vial": 1}, "note": "<strong>Learn Expert at 125</strong> (level 20): {exp}."}, {"f": 165, "t": 219, "r": "Fire Protection Potion", "n": 55, "m": {"Small Flame Sac": 1, "Fire Oil": 1, "Leaded Vial": 1}, "note": "Recipe for 15s from Nandar Branson (Hillsbrad Foothills, Southshore) for the Alliance. Horde: use the AH."}, {"f": 219, "t": 250, "r": "Lesser Stoneshield Potion", "n": 38, "m": {"Mithril Ore": 1, "Goldthorn": 1, "Leaded Vial": 1}, "note": "Quest recipe (\"Liquid Stone\"). <strong>Learn Artisan at 200</strong> (level 35): {art}."}, {"f": 250, "t": 258, "r": "Stonescale Oil", "n": 14, "m": {"Stonescale Eel": 1, "Leaded Vial": 1}, "out": "Stonescale Oil", "p": 1, "note": "Keep every oil: Elixir of Superior Defense needs 2 per craft."}, {"f": 258, "t": 267, "r": "Elixir of Demonslaying", "n": 9, "m": {"Gromsblood": 1, "Ghost Mushroom": 1, "Crystal Vial": 1}, "p": 1, "note": "Recipe for 1g from Nina Lightbrew (Blasted Lands)."}, {"f": 267, "t": 295, "r": "Elixir of Superior Defense", "n": 32, "m": {"Stonescale Oil": 2, "Sungrass": 1, "Crystal Vial": 1}, "p": 1, "note": "Recipe for 1g 30s from Soolie Berryfizz (Ironforge) for the Alliance, Kor'geld (Orgrimmar) for the Horde."}, {"f": 295, "t": 300, "r": "Major Mana Potion", "n": 5, "m": {"Dreamfoil": 3, "Icecap": 2, "Crystal Vial": 1}, "p": 1, "note": "Recipe for 3g from Magnus Frostwake (Western Plaguelands)."}], "train": {"comp": "Whuut in Orgrimmar (55.8, 33.2) or Miao'zan in Durotar (55.4, 74.0)", "exp": "Yelmak in Orgrimmar (56.4, 33.2)", "art": "Doctor Herbert Halsey in Undercity (47.4, 73.0)"}, "done300": "300 reached. Think about the Alchemy Lab for your camp.", "groupTitles": {"farm": "To pick (Herbalism)", "vendor": "From vendors", "ah": "AH or other professions", "craft": "Intermediates"}, "trainA": {"comp": "Tel'Athir in Stormwind (45.8, 78.2), Vosur Brakthel in Ironforge (66.4, 55.2) or Milla Fairancora in Darnassus (55.2, 21.4)", "exp": "Lilyssia Nightbreeze in Stormwind (46.4, 79.4), Tally Berryfizz in Ironforge (66.4, 55.2) or Sylvanna Forestmoon in Darnassus (55.6, 23.4)", "art": "Ainethil in Darnassus (55.0, 23.4)"}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

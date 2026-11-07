@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tailoring WoW Forever</title>
+<meta name="description" content="Tailoring 1-300 guide for WoW Forever (Alliance and Horde): recipe-by-recipe path, calculated shopping list, trainers and cloth.">
+<meta property="og:title" content="Tailoring WoW Forever">
+<meta property="og:description" content="Tailoring 1-300 guide for WoW Forever (Alliance and Horde): recipe-by-recipe path, calculated shopping list, trainers and cloth.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../couture.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #160f12;
+  --bg-glow: #2b1720;
+  --panel: #21171b;
+  --panel-2: #2c1f25;
+  --stitch: #8a4f62;
+  --ink: #f1e9dc;
+  --muted: #b5a995;
+  --accent: #f08aa0;
+  --accent-ink: #15100c;
+  --seg1: #f5c0cb; --seg2: #e58a9e; --seg3: #b3536b; --seg4: #7d3448;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Tailoring</span>
+  <h1>Tailoring 1 → 300</h1>
+  <p class="lede">The full path, recipe by recipe, based on Forever beta data. Enter your skill: the page shows where you are, the next step, and all the cloth you still need, bolts included.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Where you are</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Current skill</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Remove 5 points">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Add 5 points">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Shopping list up to</label>
+      <select id="target">
+        <option value="75">75 (end of Apprentice)</option>
+        <option value="150" selected>150 (end of Journeyman)</option>
+        <option value="225">225 (end of Expert)</option>
+        <option value="300">300 (Artisan)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprentice</div><div class="seg s2">Journeyman</div><div class="seg s3">Expert</div><div class="seg s4">Artisan</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">What you still need</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">The path</h2>
+    <p class="lede" style="margin-top:0">Craft counts are estimates: always keep a margin. Golden rule: as soon as a recipe turns green, move to the next step.</p>
+    <div class="legend" aria-label="Recipe colours">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Orange: +1 every time</span>
+      <span><span class="dot" style="background:var(--sk-yellow)"></span>Yellow: often</span>
+      <span><span class="dot" style="background:var(--sk-green)"></span>Green: rarely</span>
+      <span><span class="dot" style="background:var(--sk-gray)"></span>Grey: never</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Trainers</h2>
+  <p class="lede" style="margin-top:0">Without the right rank, your skill stays stuck at the cap (75, 150, 225). Learn the next rank as soon as you have the required level.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alliance</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Unlocks</th><th>Requires</th><th>Trainers (coordinates)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Journeyman</span></td><td class="num">up to 150</td><td>skill 50, level 10</td><td><strong>Lawrence Schneider</strong>, Stormwind (43.4, 73.8) · Uthrar Threx, Ironforge (43.4, 28.2) · Trianna, Darnassus (63.4, 21.4) · Eldrin, Elwynn Forest (79.2, 69.0) · Grondal Moonbreeze, Darkshore (38.2, 40.4)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">up to 225</td><td>skill 125, level 20</td><td><strong>Sellandus</strong>, Stormwind (42.0, 76.2) · Jormund Stonebrow, Ironforge (43.2, 28.4) · Me'lynn, Darnassus (62.4, 22.4) · Grarnik Goodstitch, Stranglethorn Vale (28.6, 76.8)</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">up to 300</td><td>skill 200, level 35</td><td><strong>Georgio Bolero</strong>, Stormwind (43.2, 73.4). Another source names Timothy Worthington in Theramore (Dustwallow Marsh, 66.2, 51.6).</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Unlocks</th><th>Requires</th><th>Trainers (coordinates)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Journeyman / Expert</span></td><td class="num">up to 150 then 225</td><td>skill 50 then 125, levels 10 then 20</td><td><strong>Magar</strong>, Orgrimmar (63.2, 50.6) · Rhiannon Davis, Undercity (70.2, 30.2) · Tepa, Thunder Bluff (43.8, 44.4) · Mahani, The Barrens (44.8, 59.4), at Camp Taurajo · Grarnik Goodstitch, Stranglethorn Vale (28.6, 76.8)</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">up to 300</td><td>skill 200, level 35</td><td><strong>Josef Gregorian</strong>, Undercity (70.4, 30.4). Another source names Daryl Stack, at Tarren Mill (Hillsbrad Foothills).</td></tr><tr><td><span class="pill">Other trainers</span></td><td class="num">—</td><td>—</td><td>Kil'hala, The Barrens (52.2, 31.6), at the Crossroads · Snang, Orgrimmar (62.4, 49.8) · Vhan, Thunder Bluff (43.4, 43.6) · Victor Ward, Undercity (70.2, 29.6)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Sources disagree on the exact rank each tailoring trainer teaches: if one doesn't offer the rank you need, try another from the same row. Thread, dyes and bleach are sold by tailoring supply vendors. Recipe vendors marked Alliance or Horde only serve their faction: the other side uses the auction house.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Where to get each cloth</h2>
+  <p class="lede" style="margin-top:0">Cloth drops from humanoids. The level ranges below are the Classic ones, which Forever builds on.</p>
+  <div class="cols"><div class="card"><h3>Linen Cloth</h3><span class="lv">Humanoids lvl 5 to 15</span><p>Starting zones, The Barrens (centaurs, quilboars), Silverpine Forest.</p></div><div class="card"><h3>Wool Cloth</h3><span class="lv">Humanoids lvl 15 to 25</span><p>Stonetalon Mountains, Ashenvale, Hillsbrad Foothills, Wailing Caverns.</p></div><div class="card"><h3>Silk Cloth</h3><span class="lv">Humanoids lvl 25 to 35</span><p>Thousand Needles, Desolace, Arathi Highlands, Scarlet Monastery.</p></div><div class="card"><h3>Mageweave Cloth</h3><span class="lv">Humanoids lvl 35 to 45</span><p>Stranglethorn Vale, Feralas, Tanaris, The Hinterlands, Zul'Farrak.</p></div><div class="card"><h3>Runecloth</h3><span class="lv">Humanoids lvl 48 to 60</span><p>Felwood (satyrs), Eastern and Western Plaguelands, Winterspring, level 55+ dungeons.</p></div></div>
+  <p class="foot">Keep all the cloth you loot while levelling: it's by far the biggest cost of this profession.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Forever specifics</h2>
+  <ul class="plain"><li><strong>Faction Banner</strong> at 20: raises the Spirit of nearby players.</li><li><strong>Spinning Wheel</strong> at 140: crafts some materials at camp.</li><li><strong>Loom</strong> at 300: required for some recipes.</li><li><strong>Legacy points</strong> at 150, 225 and 300.</li><li>Announced at BlizzCon but not yet confirmed: more cloth from enemies, and a cloak embroidery (attack power, spell power or Stamina).</li><li>The profession has 406 recipes, 180 of them new.</li></ul>
+</section>
+
+<footer class="foot"><p>Sources: <a href="https://kami-labs.fr/guide-couture-wow-forever/">Kami Labs, WoW Forever Tailoring guide</a> for the path, recipes and trainers · <a href="https://conquestcapped.com/guides/fr/wow-forever/wow-forever-tailoring/">ConquestCapped</a> for trainer ranks.</p><p>Steps above 225 weren't playable in the beta: they're marked "to verify". Forever-only names are translated from the French client and may differ slightly in game.</p></footer>
+
+
+</main>
+<script>
+var CONFIG = {"key": "cout", "src": {"Linen Cloth": "farm", "Wool Cloth": "farm", "Silk Cloth": "farm", "Mageweave Cloth": "farm", "Runecloth": "farm", "Coarse Thread": "vendor", "Fine Thread": "vendor", "Silken Thread": "vendor", "Heavy Silken Thread": "vendor", "Rune Thread": "vendor", "Yellow Dye": "vendor", "Blue Dye": "vendor", "Gray Dye": "vendor", "Red Dye": "vendor", "Orange Dye": "vendor", "Black Dye": "vendor", "Bleach": "vendor", "Shadow Silk": "ah", "Ironweb Spider Silk": "ah", "Rugged Leather": "ah", "Bolt of Linen Cloth": "craft", "Bolt of Woolen Cloth": "craft", "Bolt of Silk Cloth": "craft", "Bolt of Mageweave": "craft", "Bolt of Runecloth": "craft"}, "sub": {"Bolt of Linen Cloth": {"Linen Cloth": 2}, "Bolt of Woolen Cloth": {"Wool Cloth": 3}, "Bolt of Silk Cloth": {"Silk Cloth": 4}, "Bolt of Mageweave": {"Mageweave Cloth": 5}, "Bolt of Runecloth": {"Runecloth": 5}}, "steps": [{"f": 1, "t": 26, "r": "Bolt of Linen Cloth", "n": 25, "m": {"Linen Cloth": 2}, "out": "Bolt of Linen Cloth"}, {"f": 26, "t": 75, "r": "Linen Belt", "n": 67, "m": {"Bolt of Linen Cloth": 1, "Coarse Thread": 1}, "note": "<strong>Learn Journeyman at 50</strong> (level 10), or you get stuck at 75."}, {"f": 75, "t": 110, "r": "Woolen Cape", "n": 70, "m": {"Bolt of Woolen Cloth": 1, "Fine Thread": 1}, "note": "Make your own wool bolts (3 Wool Cloth each in Classic, check in game)."}, {"f": 110, "t": 125, "r": "Double-stitched Woolen Shoulders", "n": 19, "m": {"Bolt of Woolen Cloth": 3, "Fine Thread": 2}, "note": "<strong>Learn Expert at 125</strong> (level 20)."}, {"f": 125, "t": 138, "r": "Bolt of Silk Cloth", "n": 13, "m": {"Silk Cloth": 4}, "out": "Bolt of Silk Cloth", "note": "The next steps need many more silk bolts: keep making them after 138, the shopping list counts the total."}, {"f": 138, "t": 149, "r": "Bright Yellow Shirt", "n": 12, "m": {"Bolt of Silk Cloth": 1, "Yellow Dye": 1, "Fine Thread": 1}, "note": "Recipe for 8s from Danielle Zipstitch (Duskwood, Darkshire) for the Alliance. Horde: use the AH."}, {"f": 149, "t": 157, "r": "Azure Silk Hood", "n": 8, "m": {"Bolt of Silk Cloth": 2, "Blue Dye": 2, "Fine Thread": 1}}, {"f": 157, "t": 167, "r": "Dark Silk Shirt", "n": 10, "m": {"Bolt of Silk Cloth": 2, "Gray Dye": 2, "Fine Thread": 1}, "note": "Recipe for 11s from Super-Seller 680 (Desolace) or Sheri Zipstitch (Duskwood)."}, {"f": 167, "t": 170, "r": "Silk Headband", "n": 3, "m": {"Bolt of Silk Cloth": 3, "Fine Thread": 2}}, {"f": 170, "t": 175, "r": "Formal White Shirt", "n": 5, "m": {"Bolt of Silk Cloth": 3, "Bleach": 2, "Fine Thread": 1}}, {"f": 175, "t": 183, "r": "Bolt of Mageweave", "n": 9, "m": {"Mageweave Cloth": 5}, "out": "Bolt of Mageweave"}, {"f": 183, "t": 187, "r": "Red Swashbuckler's Shirt", "n": 4, "m": {"Bolt of Silk Cloth": 3, "Red Dye": 2, "Silken Thread": 1}}, {"f": 187, "t": 205, "r": "Crimson Silk Vest", "n": 18, "m": {"Bolt of Silk Cloth": 4, "Red Dye": 2, "Fine Thread": 2}, "note": "<strong>Learn Artisan at 200</strong> (level 35): {art}."}, {"f": 205, "t": 215, "r": "Black Mageweave Leggings", "n": 10, "m": {"Bolt of Mageweave": 2, "Silken Thread": 3}}, {"f": 215, "t": 223, "r": "Orange Mageweave Shirt", "n": 8, "m": {"Bolt of Mageweave": 1, "Orange Dye": 1, "Heavy Silken Thread": 1}}, {"f": 223, "t": 229, "r": "Black Mageweave Leggings", "n": 7, "m": {"Bolt of Mageweave": 2, "Silken Thread": 3}}, {"f": 229, "t": 235, "r": "Black Mageweave Gloves", "n": 6, "m": {"Bolt of Mageweave": 2, "Heavy Silken Thread": 2}, "p": 1}, {"f": 235, "t": 241, "r": "Simple Black Dress", "n": 6, "m": {"Bolt of Mageweave": 3, "Black Dye": 1, "Heavy Silken Thread": 1, "Bleach": 1}, "p": 1}, {"f": 241, "t": 250, "r": "Black Mageweave Headband", "n": 9, "m": {"Bolt of Mageweave": 3, "Heavy Silken Thread": 2}, "p": 1}, {"f": 250, "t": 259, "r": "Bolt of Runecloth", "n": 11, "m": {"Runecloth": 5}, "out": "Bolt of Runecloth", "p": 1}, {"f": 259, "t": 263, "r": "Shadoweave Mask", "n": 4, "m": {"Bolt of Mageweave": 2, "Shadow Silk": 8, "Heavy Silken Thread": 2}, "p": 1, "note": "Quest recipe."}, {"f": 263, "t": 277, "r": "Runecloth Belt", "n": 15, "m": {"Bolt of Runecloth": 3, "Rune Thread": 1}, "p": 1}, {"f": 277, "t": 283, "r": "Runecloth Cloak", "n": 6, "m": {"Bolt of Runecloth": 4, "Ironweb Spider Silk": 1, "Rune Thread": 1}, "p": 1, "note": "Recipe from Darnall (Moonglade)."}, {"f": 283, "t": 292, "r": "Runecloth Gloves", "n": 9, "m": {"Bolt of Runecloth": 4, "Rugged Leather": 4, "Rune Thread": 1}, "p": 1, "note": "Recipe from Qia (Winterspring)."}, {"f": 292, "t": 300, "r": "Runecloth Boots", "n": 8, "m": {"Bolt of Runecloth": 4, "Ironweb Spider Silk": 2, "Rugged Leather": 4, "Rune Thread": 1}, "p": 1, "note": "Recipe from Darnall (Moonglade)."}], "train": {"comp": "Magar in Orgrimmar (63.2, 50.6) or Mahani at Camp Taurajo (44.8, 59.4)", "exp": "Magar in Orgrimmar (63.2, 50.6) or Rhiannon Davis in Undercity (70.2, 30.2)", "art": "Josef Gregorian in Undercity (70.4, 30.4)"}, "done300": "300 reached. Think about the Loom for your camp.", "groupTitles": {"farm": "To loot (humanoids)", "vendor": "From vendors", "ah": "AH or other professions", "craft": "Bolts"}, "trainA": {"comp": "Lawrence Schneider in Stormwind (43.4, 73.8), Uthrar Threx in Ironforge (43.4, 28.2) or Trianna in Darnassus (63.4, 21.4)", "exp": "Sellandus in Stormwind (42.0, 76.2), Jormund Stonebrow in Ironforge (43.2, 28.4) or Me'lynn in Darnassus (62.4, 22.4)", "art": "Georgio Bolero in Stormwind (43.2, 73.4)"}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>First Aid WoW Forever</title>
+<meta name="description" content="First Aid 1-300 guide for WoW Forever (Alliance and Horde): bandages and healing potions, shopping list, book and Triage quest.">
+<meta property="og:title" content="First Aid WoW Forever">
+<meta property="og:description" content="First Aid 1-300 guide for WoW Forever (Alliance and Horde): bandages and healing potions, shopping list, book and Triage quest.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../secourisme.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #150f10;
+  --bg-glow: #2a1517;
+  --panel: #201718;
+  --panel-2: #2b1f21;
+  --stitch: #874b50;
+  --accent: #ff7b7b;
+  --seg1: #ffb3b3; --seg2: #f07c7c; --seg3: #b8474b; --seg4: #7f2a2f;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · First Aid</span>
+  <h1>First Aid 1 → 300</h1>
+  <p class="lede">A secondary profession, on top of your two main ones. In Forever, it's First Aid that makes healing potions. Enter your skill: the page shows the next step and the cloth you still need.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Where you are</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Current skill</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Remove 5 points">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Add 5 points">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Shopping list up to</label>
+      <select id="target">
+        <option value="75">75 (end of Apprentice)</option>
+        <option value="150" selected>150 (end of Journeyman)</option>
+        <option value="225">225 (end of Expert)</option>
+        <option value="300">300 (Artisan)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprentice</div><div class="seg s2">Journeyman</div><div class="seg s3">Expert</div><div class="seg s4">Artisan</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">What you still need</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">The path</h2>
+    <p class="lede" style="margin-top:0">Craft counts are estimates: always keep a margin. Golden rule: as soon as a recipe turns green, move to the next step.</p>
+    <div class="legend" aria-label="Recipe colours">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Orange: +1 every time</span>
+      <span><span class="dot" style="background:var(--sk-yellow)"></span>Yellow: often</span>
+      <span><span class="dot" style="background:var(--sk-green)"></span>Green: rarely</span>
+      <span><span class="dot" style="background:var(--sk-gray)"></span>Grey: never</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Trainers and milestones</h2>
+  <p class="lede" style="margin-top:0">First Aid keeps its special milestones: a book for Expert, a quest for Artisan.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alliance</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Unlocks</th><th>Requires</th><th>Trainers (coordinates)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Journeyman</span></td><td class="num">up to 150</td><td>skill 50, level 10</td><td><strong>Shaina Fuller</strong>, Stormwind (42.4, 26.8) · Michelle Belle, Elwynn Forest (43.4, 65.6) · Nissa Firestone, Ironforge (54.8, 58.4) · Thamner Pol, Dun Morogh (47.2, 52.4) · Dannelor, Darnassus (51.4, 12.4) · Byancie, Teldrassil (55.2, 56.8)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">up to 225</td><td>Book "Expert First Aid - Under Wraps"</td><td><strong>Deneb Walker</strong>, Arathi Highlands (27.0, 58.8), at Refuge Pointe, who also sells the Heavy Silk and Mageweave Bandage recipes</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">up to 300</td><td>Quest "Triage", level 35, skill 225</td><td><strong>Doctor Gustaf VanHowzen</strong>, Theramore, Dustwallow Marsh (67.6, 48.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Unlocks</th><th>Requires</th><th>Trainers (coordinates)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Journeyman</span></td><td class="num">up to 150</td><td>skill 50, level 10</td><td><strong>Arnok</strong>, Orgrimmar (34.0, 84.4) · Rawrk, Durotar (54.0, 42.0) · Mary Edras, Undercity (73.4, 55.4) · Nurse Neela, Tirisfal Glades (61.8, 52.8) · Pand Stonebinder, Thunder Bluff (29.4, 21.4) · Vira Younghoof, Mulgore (46.0, 63.8)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">up to 225</td><td>Book "Expert First Aid - Under Wraps"</td><td><strong>Balai Lok'Wein</strong>, Dustwallow Marsh, per Classic: to verify in game. Kami Labs only names Deneb Walker (Arathi Highlands, 27.0, 58.8), at Refuge Pointe, an Alliance village</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">up to 300</td><td>Quest "Triage", level 35, skill 225</td><td><strong>Doctor Gregory Victor</strong>, Hammerfall (Arathi Highlands), per Classic: to verify in game</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Vials and spices are sold by trade goods and alchemy supply vendors.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Forever specifics</h2>
+  <ul class="plain"><li><strong>Healing potions</strong> (minor to major) moved from Alchemy to First Aid.</li><li>New heals: <strong>poultices</strong> (from 90), <strong>tourniquets</strong> (from 120) and improved anti-venoms.</li><li><strong>First Aid Kit</strong> at 20: raises the Stamina of players at camp.</li><li><strong>Toxin Study</strong> at 140: helps with healing potions and anti-venoms, at camp.</li><li><strong>Plague Doctor's Lab</strong> at 300: required for some potions and poultices.</li><li><strong>Legacy points</strong> at 150, 225 and 300.</li><li>The profession has 30 recipes, 17 of them new.</li></ul>
+</section>
+
+<footer class="foot"><p>Sources: <a href="https://kami-labs.fr/guide-secourisme-wow-forever/">Kami Labs, WoW Forever First Aid guide</a> · <a href="https://conquestcapped.com/guides/fr/wow-forever/wow-forever-alchemy/">ConquestCapped, healing potions</a>.</p><p>Steps above 225 weren't playable in the beta: they're marked "to verify". If a recipe vendor belongs to the other faction, use the auction house. Forever-only names are translated from the French client and may differ slightly in game.</p><p>Unofficial fan guide, updated 7 November 2026. World of Warcraft is a trademark of Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "secou", "src": {"Linen Cloth": "farm", "Wool Cloth": "farm", "Silk Cloth": "farm", "Mageweave Cloth": "farm", "Runecloth": "farm", "Empty Vial": "vendor", "Leaded Vial": "vendor", "Mild Spices": "vendor", "Hot Spices": "vendor", "Peacebloom": "ah", "Bruiseweed": "ah"}, "ranks": [{"name": "Apprentice", "from": 1, "to": 75, "req": "From the start · cap 75"}, {"name": "Journeyman", "from": 75, "to": 150, "req": "First Aid trainer, skill 50, level 10 · cap 150"}, {"name": "Expert", "from": 150, "to": 225, "req": "Book from Deneb Walker (Arathi) · cap 225"}, {"name": "Artisan", "from": 225, "to": 300, "req": "Quest \"Triage\", level 35, skill 225 · cap 300"}], "steps": [{"f": 1, "t": 55, "r": "Linen Bandage", "n": 80, "m": {"Linen Cloth": 1}}, {"f": 55, "t": 80, "r": "Minor Healing Potion", "n": 38, "m": {"Empty Vial": 1, "Mild Spices": 1, "Peacebloom": 1}, "note": "New: healing potions now come from First Aid. <strong>Learn Journeyman at 50</strong> (level 10)."}, {"f": 80, "t": 115, "r": "Wool Bandage", "n": 48, "m": {"Wool Cloth": 1}}, {"f": 115, "t": 135, "r": "Heavy Wool Bandage", "n": 23, "m": {"Wool Cloth": 2}}, {"f": 135, "t": 150, "r": "Healing Potion", "n": 19, "m": {"Leaded Vial": 1, "Hot Spices": 1, "Bruiseweed": 1}, "note": "<strong>Buy the book \"Expert First Aid - Under Wraps\"</strong> from Deneb Walker (Arathi Highlands, 27.0, 58.8), or you get stuck at 150."}, {"f": 150, "t": 180, "r": "Silk Bandage", "n": 41, "m": {"Silk Cloth": 1}}, {"f": 180, "t": 210, "r": "Heavy Silk Bandage", "n": 41, "m": {"Silk Cloth": 2}, "note": "Recipe for 23s 15c from Deneb Walker."}, {"f": 210, "t": 240, "r": "Mageweave Bandage", "n": 41, "m": {"Mageweave Cloth": 1}, "note": "Recipe for 52s 63c from Deneb Walker. <strong>At 225, do the \"Triage\" quest</strong> (level 35) to unlock 300."}, {"f": 240, "t": 260, "r": "Heavy Mageweave Bandage", "n": 24, "m": {"Mageweave Cloth": 2}, "p": 1}, {"f": 260, "t": 300, "r": "Runecloth Bandage", "n": 65, "m": {"Runecloth": 1}, "p": 1}], "trainMsg": {"comp": "If you haven't yet, learn Journeyman (level 10): Arnok in Orgrimmar (34.0, 84.4) or Rawrk in Durotar (54.0, 42.0).", "exp": "Before 150: buy the book \"Expert First Aid - Under Wraps\". Horde side, Classic sold it at Balai Lok'Wein (Dustwallow Marsh): to verify in game.", "art": "Get ready for the \"Triage\" quest (level 35, skill 225). Horde side, Classic gave it at Doctor Gregory Victor in Hammerfall (Arathi Highlands): to verify in game."}, "done300": "300 reached. Think about the Plague Doctor's Lab for your camp.", "groupTitles": {"farm": "Cloth (from humanoids)", "vendor": "From vendors", "ah": "Herbs (Herbalism or AH)", "craft": "Intermediates"}, "trainMsgA": {"comp": "If you haven't yet, learn Journeyman (level 10): Shaina Fuller in Stormwind (42.4, 26.8), Nissa Firestone in Ironforge (54.8, 58.4) or Dannelor in Darnassus (51.4, 12.4).", "exp": "Before 150: buy the book \"Expert First Aid - Under Wraps\" from Deneb Walker (Arathi Highlands, Refuge Pointe, 27.0, 58.8).", "art": "Get ready for the \"Triage\" quest (level 35, skill 225): Doctor Gustaf VanHowzen in Theramore (Dustwallow Marsh, 67.6, 48.8)."}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

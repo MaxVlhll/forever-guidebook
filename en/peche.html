@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fishing WoW Forever</title>
+<meta name="description" content="Fishing 1-300 guide for WoW Forever (Alliance and Horde): where to fish tier by tier, helpful gear and trainers.">
+<meta property="og:title" content="Fishing WoW Forever">
+<meta property="og:description" content="Fishing 1-300 guide for WoW Forever (Alliance and Horde): where to fish tier by tier, helpful gear and trainers.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../peche.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #0d1218;
+  --bg-glow: #13233a;
+  --panel: #151c25;
+  --panel-2: #1d2733;
+  --stitch: #47698f;
+  --accent: #6fb6f5;
+  --seg1: #b0d8ff; --seg2: #6fb6f5; --seg3: #3a7cc0; --seg4: #234f80;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Fishing</span>
+  <h1>Fishing 1 → 300</h1>
+  <p class="lede">Where to fish, tier by tier. You need a Fishing Pole. Enter your skill: the page shows your tier and the matching waters.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Where you are</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Current skill</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Remove 5 points">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Add 5 points">+5</button>
+      </div>
+    </div>
+    
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprentice</div><div class="seg s2">Journeyman</div><div class="seg s3">Expert</div><div class="seg s4">Artisan</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:14px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Tiers and zones</h2>
+    <p class="lede" style="margin-top:0">The zones Kami Labs lists are mostly Alliance side: the Horde line gives the nearby equivalent, based on Classic. Move to new waters as soon as you catch too much "nothing".</p>
+    <div class="legend"><span><span class="zone">Zone <small>info</small></span> zone counted by Forever</span><span><span class="zone a">Zone</span> Alliance</span><span><span class="zone h">Zone</span> Horde</span><span>unmarked: contested or neutral</span></div>
+  </div>
+  <div class="tiers" id="tiers"></div>
+</section>
+
+<section aria-labelledby="equip-h" style="display:grid;gap:12px">
+  <h2 id="equip-h">Gear that helps</h2>
+  <p class="lede" style="margin-top:0">Every fishing bonus cuts missed catches, especially at the start of a tier.</p>
+  <div class="cols"><div class="card"><h3>Poles</h3><span class="lv">Permanent bonus</span><p>Strong Fishing Pole, Big Iron Fishing Pole, Arcanite Fishing Pole, Nat Pagle's Extreme Angler FC-5000.</p></div><div class="card"><h3>Lures</h3><span class="lv">10 minutes</span><p>Shiny Bauble, Bright Baubles, Nightcrawlers, Aquadynamic Fish Attractor, Flesh Eating Worm.</p></div><div class="card"><h3>Attire</h3><span class="lv">Permanent bonus</span><p>Weather-Beaten Fishing Hat, Lucky Fishing Hat, Nat Pagle's Extreme Anglin' Boots.</p></div></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Fishing trainers</h2>
+  <p class="lede" style="margin-top:0">Kami Labs doesn't give Fishing ranks. In Classic: Journeyman from a trainer, Expert from a book in Booty Bay, Artisan from Nat Pagle's quest. To verify in Forever.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alliance</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Unlocks</th><th>Requires</th><th>Trainers (coordinates)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Journeyman</span></td><td class="num">up to 150</td><td>skill 50, level 10 (probable)</td><td><strong>Arnold Leland</strong>, Stormwind (45.4, 57.4) · Lee Brown, Elwynn Forest (47.4, 62.2) · Grimnur Stonebrand, Ironforge (48.2, 6.6) · Paxton Ganter, Dun Morogh (35.4, 40.2) · Warg Deepwater, Loch Modan (40.4, 39.4) · Astaia, Darnassus (47.4, 56.4) · Androl Oakhand, Teldrassil (55.8, 93.4)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">up to 225</td><td>Book (Classic)</td><td>Old Man Heming, Booty Bay (Stranglethorn Vale), per Classic · trainers: Matthew Hooper, Redridge Mountains (21.4, 51.0) · Harold Riggs, Wetlands (8.0, 58.4) · Myizz Luckycatch, Stranglethorn Vale (27.4, 77.0)</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">up to 300</td><td>Nat Pagle's quest (Classic)</td><td>Nat Pagle, Dustwallow Marsh, per Classic · Brannock, Feralas (32.2, 41.4) · Krix, Clearwater Shores (79.2, 54.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Unlocks</th><th>Requires</th><th>Trainers (coordinates)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Journeyman</span></td><td class="num">up to 150</td><td>skill 50, level 10 (probable)</td><td><strong>Lumak</strong>, Orgrimmar (69.4, 28.4) · Lau'Tiki, Durotar (53.2, 81.4) · Armand Cromwell, Undercity (80.4, 31.2) · Clyde Kellen, Tirisfal Glades (67.2, 51.0) · Kah Mistrunner, Thunder Bluff (55.8, 47.6) · Uthan Stillwater, Mulgore (44.2, 63.8)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">up to 225</td><td>Book (Classic)</td><td>Old Man Heming, Booty Bay (Stranglethorn Vale), per Classic · neutral trainers: Myizz Luckycatch, Stranglethorn Vale (27.4, 77.0) · Lui'Mala, Desolace (22.6, 72.4)</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">up to 300</td><td>Nat Pagle's quest (Classic)</td><td>Nat Pagle, Dustwallow Marsh, per Classic · Katoom the Angler, The Hinterlands (80.2, 81.4) · Krix, Clearwater Shores (79.2, 54.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Forever specifics</h2>
+  <ul class="plain"><li><strong>Fish Bowl</strong> (anglers' camp item): +8% stats according to Method.</li><li><strong>Legacy points</strong> at 150, 225 and 300.</li><li>Fish feeds <a href="cuisine.html">Cooking</a>: its 225-300 steps use yellowtail and salmon.</li></ul>
+</section>
+
+<footer class="foot"><p>Sources: <a href="https://kami-labs.fr/guide-peche-wow-forever/">Kami Labs, WoW Forever Fishing guide</a> · <a href="https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents">Method, druid guide (camp items)</a>.</p><p>The beta stopped at 225: tiers beyond are marked "post-beta". Forever-only names are translated from the French client and may differ slightly in game.</p><p>Unofficial fan guide, updated 7 November 2026. World of Warcraft is a trademark of Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "peche", "done300": "300 reached. All that's left is chasing Nat Pagle's FC-5000.", "train": {"comp": "Consider the Journeyman rank (level 10): Lumak in Orgrimmar (69.4, 28.4).", "exp": "Before 150: in Classic, Expert came from a book sold by Old Man Heming in Booty Bay (to verify in Forever).", "art": "Before 225: in Classic, Artisan came from Nat Pagle's quest (Dustwallow Marsh) (to verify in Forever)."}, "tiers": [{"f": 1, "t": 75, "res": ["Raw Brilliant Smallfish", "Raw Longjaw Mud Snapper", "Raw Slitherskin Mackerel"], "zones": [["Dun Morogh", "", "a"], ["Elwynn Forest", "", "a"], ["Teldrassil", "", "a"]], "horde": "any water in Durotar, Mulgore or Tirisfal, or the canals of Orgrimmar and Undercity.", "alliance": "any water in Elwynn, Dun Morogh or Teldrassil, or the Stormwind canals."}, {"f": 75, "t": 100, "res": ["Raw Rainbow Fin Albacore", "Oily Blackmouth", "Firefin Snapper"], "zones": [["Wetlands", "", "a"], ["Westfall", "", "a"], ["Darkshore", "", "a"], ["Loch Modan", "", "a"]], "horde": "The Barrens coast and oases, Silverpine Forest, Hillsbrad Foothills.", "note": "Learn Journeyman before 75.", "alliance": "Wetlands, Westfall, Darkshore, Loch Modan."}, {"f": 100, "t": 150, "res": ["Raw Bristle Whisker Catfish", "Raw Rockscale Cod", "Raw Mithril Head Trout"], "zones": [["Stranglethorn Vale", ""], ["Dustwallow Marsh", ""], ["Duskwood", "", "a"]], "horde": "northern Stranglethorn coast, Dustwallow Marsh.", "note": "Get Expert before 150.", "alliance": "Duskwood, Dustwallow Marsh from Theramore."}, {"f": 150, "t": 225, "res": ["Raw Spotted Yellowtail", "Raw Rockscale Cod", "Raw Greater Sagefish"], "zones": [["Swamp of Sorrows", ""], ["Feralas", ""], ["Desolace", ""], ["Alterac Mountains", ""]], "note": "Get Artisan before 225."}, {"f": 225, "t": 250, "res": ["Stonescale Eel", "Raw Redgill", "Raw Nightfin Snapper"], "zones": [["Azshara", ""], ["Western Plaguelands", ""], ["Deadwind Pass", ""]], "note": "Stonescale Eels are used by Alchemy (Stonescale Oil).", "p": 1}, {"f": 250, "t": 300, "res": ["Raw Sunscale Salmon", "Darkclaw Lobster", "Raw Summer Bass"], "zones": [["Eastern Plaguelands", ""], ["Winterspring", ""], ["Azshara", ""]], "p": 1}], "trainA": {"comp": "Consider the Journeyman rank (level 10): Arnold Leland in Stormwind (45.4, 57.4), Grimnur Stonebrand in Ironforge (48.2, 6.6) or Astaia in Darnassus (47.4, 56.4).", "exp": "Before 150: in Classic, Expert came from a book sold by Old Man Heming in Booty Bay (to verify in Forever).", "art": "Before 225: in Classic, Artisan came from Nat Pagle's quest (Dustwallow Marsh) (to verify in Forever)."}};
+</script>
+<script src="../assets/recolte.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

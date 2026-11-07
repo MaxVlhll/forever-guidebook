@@ -5,12 +5,20 @@
 //         out (intermédiaire produit), p (après la bêta), note, alt, once/onceName (outil à fabriquer une fois).
 (function () {
   var C = CONFIG, SRC = C.src, SUB = C.sub || {}, STEPS = C.steps, KEY = C.key;
-  var RANKS = C.ranks || [
+  // Langue de la page (<html lang="en"> pour la version anglaise).
+  var EN = document.documentElement.lang === "en";
+  function L(fr, en) { return EN ? en : fr; }
+  var RANKS = C.ranks || (EN ? [
+    { name: "Apprentice", from: 1, to: 75, req: "From the start · cap 75" },
+    { name: "Journeyman", from: 75, to: 150, req: "From skill 50, level 10 · cap 150" },
+    { name: "Expert", from: 150, to: 225, req: "From skill 125, level 20 · cap 225" },
+    { name: "Artisan", from: 225, to: 300, req: "From skill 200, level 35 · cap 300" }
+  ] : [
     { name: "Apprenti", from: 1, to: 75, req: "Dès le départ · plafond 75" },
     { name: "Compagnon", from: 75, to: 150, req: "Dès 50 en compétence, niveau 10 · plafond 150" },
     { name: "Expert", from: 150, to: 225, req: "Dès 125 en compétence, niveau 20 · plafond 225" },
     { name: "Artisan", from: 225, to: 300, req: "Dès 200 en compétence, niveau 35 · plafond 300" }
-  ];
+  ]);
   // Faction choisie dans la barre de navigation : "a", "h" ou "both" (les deux).
   function fac() { try { return localStorage.getItem("fg-faction") || "both"; } catch (e) { return "both"; } }
   function pick(h, a) {
@@ -23,6 +31,7 @@
   function trainer(k) { return pick(C.train[k], TA[k]); }
   function msg(k) {
     if (C.trainMsg) return pick(C.trainMsg[k], (C.trainMsgA || {})[k]);
+    if (EN) return "If you haven't yet, learn " + { comp: "Journeyman (level 10)", exp: "Expert (level 20)", art: "Artisan (level 35)" }[k] + ": " + trainer(k) + ".";
     var rank = { comp: "Compagnon (niveau 10)", exp: "Expert (niveau 20)", art: "Artisan (niveau 35)" }[k];
     return "Si ce n'est pas fait, apprends le rang " + rank + " : " + trainer(k) + ".";
   }
@@ -52,14 +61,14 @@
       STEPS.filter(function (s) { return s.f >= rk.from && s.f < rk.to; }).forEach(function (s) {
         var done = skill >= s.t, cur = skill >= s.f && skill < s.t;
         var notes = (s.note ? '<p class="note">' + fill(s.note) + "</p>" : "") +
-          (s.once ? '<p class="note">Outil à fabriquer une fois avant cette étape : ' + s.onceName + " (" + fmtMats(s.once) + ").</p>" : "") +
+          (s.once ? '<p class="note">' + L('Outil à fabriquer une fois avant cette étape : ', 'Tool to craft once before this step: ') + s.onceName + " (" + fmtMats(s.once) + ").</p>" : "") +
           (s.alt ? '<p class="alt">' + fill(s.alt) + "</p>" : "");
         html += '<article class="step' + (done ? " done" : "") + (cur ? " current" : "") + '">' +
           '<div class="range">' + s.f + "–" + s.t + "</div>" +
           '<div class="title"><span class="name">' + s.r + '</span><span class="count">× ' + s.n + "</span>" +
-          (cur ? '<span class="here">Tu es ici</span><span class="left">encore ~' + remaining(s, skill, 300) + "</span>" : "") +
-          (s.p ? '<span class="prov">à vérifier</span>' : "") + "</div>" +
-          '<div class="mats">Par fabrication : ' + fmtMats(s.m) + "</div>" +
+          (cur ? '<span class="here">' + L('Tu es ici', 'You are here') + '</span><span class="left">' + L('encore ~', '~') + remaining(s, skill, 300) + L('', ' left') + "</span>" : "") +
+          (s.p ? '<span class="prov">' + L('à vérifier', 'to verify') + '</span>' : "") + "</div>" +
+          '<div class="mats">' + L('Par fabrication : ', 'Per craft: ') + fmtMats(s.m) + "</div>" +
           (notes ? '<div class="notes">' + notes + "</div>" : "") + "</article>";
       });
       html += "</div></div>";
@@ -77,10 +86,10 @@
     var h = "";
     if (skill >= 300) h = '<span class="big">' + C.done300 + "</span>";
     else if (cur) {
-      h = '<span class="tag" style="margin:0">Maintenant</span><span class="big">' + cur.r + " · encore ~" + remaining(cur, skill, 300) + " fabrications jusqu'à " + cur.t + "</span>" +
-        "<span>Par fabrication : " + fmtMats(cur.m) + "</span>" +
-        (cur.once && skill <= cur.f ? "<span>Avant de commencer : fabrique " + cur.onceName + ".</span>" : "") +
-        (next ? '<span style="color:var(--muted)">Ensuite : ' + next.r + " (" + next.f + "–" + next.t + ")</span>" : "");
+      h = '<span class="tag" style="margin:0">' + L('Maintenant', 'Now') + '</span><span class="big">' + cur.r + L(" · encore ~", " · ~") + remaining(cur, skill, 300) + L(" fabrications jusqu'à ", " crafts to ") + cur.t + "</span>" +
+        "<span>" + L("Par fabrication : ", "Per craft: ") + fmtMats(cur.m) + "</span>" +
+        (cur.once && skill <= cur.f ? "<span>" + L("Avant de commencer : fabrique ", "Before you start, craft ") + cur.onceName + ".</span>" : "") +
+        (next ? '<span style="color:var(--muted)">' + L('Ensuite : ', 'Next: ') + next.r + " (" + next.f + "–" + next.t + ")</span>" : "");
     }
     if (train) h += '<span class="train">' + train + "</span>";
     document.getElementById("now").innerHTML = h;
@@ -100,8 +109,8 @@
     Object.keys(need).forEach(function (mat) {
       if (SRC[mat] === "craft") {
         var extra = Math.max(0, need[mat] - (produced[mat] || 0));
-        var sub = !produced[mat] ? (SUB[mat] ? "à fabriquer toi-même" : "à fabriquer à part")
-          : extra > 0 ? ("dont " + extra + " à fabriquer en plus de celles de l'étape dédiée") : "fabriquées en montant, garde-les";
+        var sub = !produced[mat] ? (SUB[mat] ? L("à fabriquer toi-même", "craft them yourself") : L("à fabriquer à part", "craft separately"))
+          : extra > 0 ? L("dont " + extra + " à fabriquer en plus de celles de l'étape dédiée", extra + " more than the dedicated step makes") : L("fabriquées en montant, garde-les", "made while levelling, keep them");
         groups.craft.push({ k: mat, q: need[mat], sub: sub });
         if (extra > 0 && SUB[mat]) Object.keys(SUB[mat]).forEach(function (r) { raw[r] = (raw[r] || 0) + SUB[mat][r] * extra; });
       } else raw[mat] = (raw[mat] || 0) + need[mat];
@@ -121,9 +130,9 @@
       }).join("") + "</ul></div>";
     });
     document.getElementById("shop-sub").textContent = skill >= target
-      ? "Tu as déjà atteint cet objectif : choisis un palier plus haut."
-      : "De " + skill + " à " + target + ", en suivant le parcours ci-dessous. Ajoute 10 à 15 % de marge pour les fabrications malchanceuses.";
-    document.getElementById("shop").innerHTML = out || '<p class="empty">Rien à prévoir pour cet objectif.</p>';
+      ? L("Tu as déjà atteint cet objectif : choisis un palier plus haut.", "You already reached this goal: pick a higher one.")
+      : L("De " + skill + " à " + target + ", en suivant le parcours ci-dessous. Ajoute 10 à 15 % de marge pour les fabrications malchanceuses.", "From " + skill + " to " + target + ", following the path below. Add 10–15% for unlucky crafts.");
+    document.getElementById("shop").innerHTML = out || '<p class="empty">' + L('Rien à prévoir pour cet objectif.', 'Nothing needed for this goal.') + '</p>';
   }
 
   function update() {

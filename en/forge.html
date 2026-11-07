@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blacksmithing WoW Forever</title>
+<meta name="description" content="Blacksmithing 1-300 guide for WoW Forever (Alliance and Horde): recipe-by-recipe path, calculated shopping list, trainers and ore.">
+<meta property="og:title" content="Blacksmithing WoW Forever">
+<meta property="og:description" content="Blacksmithing 1-300 guide for WoW Forever (Alliance and Horde): recipe-by-recipe path, calculated shopping list, trainers and ore.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../forge.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #121214;
+  --bg-glow: #2a1c14;
+  --panel: #1b1a1d;
+  --panel-2: #242328;
+  --stitch: #7a6a5a;
+  --accent: #ff9a4a;
+  --seg1: #ffc999; --seg2: #f0904a; --seg3: #b5582a; --seg4: #7a3418;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Blacksmithing</span>
+  <h1>Blacksmithing 1 → 300</h1>
+  <p class="lede">The full path, recipe by recipe, based on Forever beta data. Enter your skill: the page shows where you are, the next step, and all the ore you still need.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Where you are</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Current skill</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Remove 5 points">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Add 5 points">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Shopping list up to</label>
+      <select id="target">
+        <option value="75">75 (end of Apprentice)</option>
+        <option value="150" selected>150 (end of Journeyman)</option>
+        <option value="225">225 (end of Expert)</option>
+        <option value="300">300 (Artisan)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprentice</div><div class="seg s2">Journeyman</div><div class="seg s3">Expert</div><div class="seg s4">Artisan</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">What you still need</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">The path</h2>
+    <p class="lede" style="margin-top:0">Craft counts are estimates: always keep a margin. Golden rule: as soon as a recipe turns green, move to the next step.</p>
+    <div class="legend" aria-label="Recipe colours">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Orange: +1 every time</span>
+      <span><span class="dot" style="background:var(--sk-yellow)"></span>Yellow: often</span>
+      <span><span class="dot" style="background:var(--sk-green)"></span>Green: rarely</span>
+      <span><span class="dot" style="background:var(--sk-gray)"></span>Grey: never</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Trainers</h2>
+  <p class="lede" style="margin-top:0">Without the right rank, your skill stays stuck at the cap (75, 150, 225). Learn the next rank as soon as you have the required level.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alliance</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Unlocks</th><th>Requires</th><th>Trainers (coordinates)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Journeyman</span></td><td class="num">up to 150</td><td>skill 50, level 10</td><td><strong>Dane Lindgren</strong>, Stormwind (57.0, 15.4) · Groum Stonebeard, Ironforge (51.2, 42.4) · Argus the Blacksmith, Elwynn Forest (41.6, 65.4) · Tognus Flintfire, Dun Morogh (45.2, 52.0) · Delfrum Flintbeard, Darkshore (38.2, 41.0)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">up to 225</td><td>skill 125, level 20</td><td><strong>Therum Deepforge</strong>, Stormwind (56.4, 15.4) · Rotgath Stonebeard, Ironforge (51.2, 42.4) · Clarise Gnarltree, Duskwood (73.8, 48.6)</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">up to 300</td><td>skill 200, level 35</td><td><strong>Bengus Deepforge</strong>, Ironforge (51.4, 42.2)</td></tr><tr><td><span class="pill">High recipes</span></td><td class="num">—</td><td>—</td><td>Brikk Keencraft, Stranglethorn Vale (29.0, 75.4), at Booty Bay</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Unlocks</th><th>Requires</th><th>Trainers (coordinates)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Journeyman</span></td><td class="num">up to 150</td><td>skill 50, level 10</td><td><strong>Ug'thok</strong>, Orgrimmar (80.4, 23.4) · Dwukk, Durotar (52.0, 40.6) · Basil Frye, Undercity (59.2, 29.4) · Thrag Stonehoof, Thunder Bluff (39.0, 57.8) · Guillemette Sorouy, Silverpine Forest (43.2, 41.0) · Gur'dok, Clearwater Shores (60.0, 46.2)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">up to 225</td><td>skill 125, level 20</td><td><strong>Snarl</strong>, Orgrimmar (79.2, 22.4) · James Van Brunt, Undercity (61.2, 29.2) · Karn Stonehoof, Thunder Bluff (38.8, 54.0) · Traugh, The Barrens (51.2, 28.8)</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">up to 300</td><td>skill 200, level 35</td><td><strong>Saru Steelfury</strong>, Orgrimmar (82.2, 23.0)</td></tr><tr><td><span class="pill">High recipes</span></td><td class="num">—</td><td>—</td><td>Brikk Keencraft, Stranglethorn Vale (29.0, 75.4), at Booty Bay</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Green Dye is sold by trade supply vendors. Mining is almost mandatory alongside: levelling eats over 800 Mithril Bars and as many Thorium Bars.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Where to mine each ore</h2>
+  <p class="lede" style="margin-top:0">The zones listed have the most veins, with one line per faction for the early tiers. Full details are on the <a href="minage.html">Mining page</a>.</p>
+  <div class="cols"><div class="card"><h3>Copper</h3><span class="lv">Skill 1 to 65</span><p><span class="fl" data-f="h"><span class="fac h">Horde</span> Durotar, Mulgore, Tirisfal Glades, The Barrens.</span><span class="fl" data-f="a"><span class="fac a">Alliance</span> Elwynn Forest, Dun Morogh, Loch Modan, Darkshore.</span></p></div><div class="card"><h3>Tin, silver, coarse stone</h3><span class="lv">Skill 65 to 125</span><p><span class="fl" data-f="h"><span class="fac h">Horde</span> The Barrens, Silverpine Forest, Thousand Needles, Hillsbrad Foothills.</span><span class="fl" data-f="a"><span class="fac a">Alliance</span> Wetlands, Redridge Mountains, Westfall, Hillsbrad Foothills.</span></p></div><div class="card"><h3>Iron, gold, heavy stone</h3><span class="lv">Skill 125 to 175</span><p>Arathi Highlands, Thousand Needles, Desolace, Stranglethorn Vale.</p></div><div class="card"><h3>Mithril, solid stone</h3><span class="lv">Skill 175 to 230</span><p>Arathi Highlands, Badlands, Stranglethorn Vale, Tanaris, The Hinterlands.</p></div><div class="card"><h3>Truesilver, dark iron</h3><span class="lv">Skill 230 and up</span><p>Burning Steppes, The Hinterlands, Searing Gorge, Tanaris.</p></div><div class="card"><h3>Thorium, dense stone</h3><span class="lv">Skill 245 and up</span><p>Burning Steppes, Silithus, Winterspring, Un'Goro Crater.</p></div></div>
+  <p class="foot">Solid and Dense Grinding Stones aren't in the path: the list counts them as crafted separately (4 stones each, as in Classic, check in game).</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Forever specifics</h2>
+  <ul class="plain"><li><strong>Grindstone</strong> at 20: raises the Strength of players at camp.</li><li><strong>Anvil</strong> at 140: required for some recipes, at camp.</li><li><strong>Master Forge</strong> at 300: required for some recipes.</li><li><strong>Legacy points</strong> at 150, 225 and 300.</li><li><strong>Specialisations</strong>: Armorsmith or Weaponsmith, then Master Hammersmith, Axesmith or Swordsmith. You pick only one, and their recipes aren't in this path.</li><li>Six mail recipes (Invulnerable Mail, Helm of the Great Chief, Stormshroud Gauntlets…) moved to Leatherworking.</li><li>Announced at BlizzCon but not yet confirmed: <strong>Full Repair</strong> (repairs all your gear, on a cooldown) and <strong>belt buckles</strong> that add stats.</li><li>The profession has 431 recipes: 197 new and 181 changed.</li></ul>
+</section>
+
+<footer class="foot"><p>Sources: <a href="https://kami-labs.fr/guide-forge-wow-forever/">Kami Labs, WoW Forever Blacksmithing guide</a> · <a href="https://kami-labs.fr/metiers-wow-forever/">Kami Labs, WoW Forever professions</a>.</p><p>Steps above 225 weren't playable in the beta: they're marked "to verify". If a recipe vendor belongs to the other faction, use the auction house. Forever-only names are translated from the French client and may differ slightly in game.</p><p>Unofficial fan guide, updated 7 November 2026. World of Warcraft is a trademark of Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "forge", "src": {"Rough Stone": "farm", "Coarse Stone": "farm", "Heavy Stone": "farm", "Solid Stone": "farm", "Dense Stone": "farm", "Copper Bar": "farm", "Bronze Bar": "farm", "Silver Bar": "farm", "Iron Bar": "farm", "Gold Bar": "farm", "Mithril Bar": "farm", "Truesilver Bar": "farm", "Thorium Bar": "farm", "Green Dye": "vendor", "Steel Bar": "ah", "Arcanite Bar": "ah", "Azerothium Bar": "ah", "Citrine": "ah", "Star Ruby": "ah", "Aquamarine": "ah", "Black Pearl": "ah", "Shadowgem": "ah", "Thick Leather": "ah", "Rugged Leather": "ah", "Essence of Air": "ah", "Large Fang": "ah", "Sharp Claw": "ah", "Rough Grinding Stone": "craft", "Coarse Grinding Stone": "craft", "Heavy Grinding Stone": "craft", "Solid Grinding Stone": "craft", "Dense Grinding Stone": "craft"}, "sub": {"Rough Grinding Stone": {"Rough Stone": 2}, "Coarse Grinding Stone": {"Coarse Stone": 2}, "Heavy Grinding Stone": {"Heavy Stone": 3}, "Solid Grinding Stone": {"Solid Stone": 4}, "Dense Grinding Stone": {"Dense Stone": 4}}, "steps": [{"f": 1, "t": 35, "r": "Rough Sharpening Stone", "n": 41, "m": {"Rough Stone": 1}}, {"f": 35, "t": 65, "r": "Rough Grinding Stone", "n": 37, "m": {"Rough Stone": 2}, "out": "Rough Grinding Stone", "note": "Keep them: Silver Skeleton Keys (100-115) need 26."}, {"f": 65, "t": 75, "r": "Coarse Sharpening Stone", "n": 16, "m": {"Coarse Stone": 1}, "note": "<strong>Learn Journeyman at 50</strong> (level 10), or you get stuck at 75."}, {"f": 75, "t": 96, "r": "Coarse Grinding Stone", "n": 43, "m": {"Coarse Stone": 2}, "out": "Coarse Grinding Stone", "note": "Keep 16 for Silvered Bronze Gauntlets (144-150)."}, {"f": 96, "t": 100, "r": "Runed Copper Belt", "n": 6, "m": {"Copper Bar": 10}}, {"f": 100, "t": 115, "r": "Silver Skeleton Key", "n": 26, "m": {"Silver Bar": 1, "Rough Grinding Stone": 1}}, {"f": 115, "t": 125, "r": "Rough Bronze Leggings", "n": 10, "m": {"Bronze Bar": 6}}, {"f": 125, "t": 138, "r": "Heavy Sharpening Stone", "n": 27, "m": {"Heavy Stone": 1}, "note": "<strong>Learn Expert at 125</strong> (level 20): {exp}."}, {"f": 138, "t": 144, "r": "Heavy Grinding Stone", "n": 16, "m": {"Heavy Stone": 3}, "out": "Heavy Grinding Stone", "note": "Steps 154-165 and 185-200 use 66 of them: the shopping list works out the extra to make."}, {"f": 144, "t": 150, "r": "Silvered Bronze Gauntlets", "n": 8, "m": {"Bronze Bar": 8, "Silver Bar": 1, "Coarse Grinding Stone": 2}}, {"f": 150, "t": 154, "r": "Iron Buckle", "n": 6, "m": {"Iron Bar": 1}}, {"f": 154, "t": 165, "r": "Golden Skeleton Key", "n": 22, "m": {"Gold Bar": 1, "Heavy Grinding Stone": 1}}, {"f": 165, "t": 182, "r": "Green Iron Bracers", "n": 27, "m": {"Iron Bar": 6, "Green Dye": 1}}, {"f": 182, "t": 185, "r": "Barbaric Iron Helm", "n": 4, "m": {"Iron Bar": 10, "Large Fang": 2, "Sharp Claw": 2}, "note": "Quest recipe."}, {"f": 185, "t": 200, "r": "Golden Scale Bracers", "n": 22, "m": {"Steel Bar": 5, "Heavy Grinding Stone": 2}, "note": "Steel Bar is smelted by miners (iron + coal): AH otherwise."}, {"f": 200, "t": 209, "r": "Solid Sharpening Stone", "n": 19, "m": {"Solid Stone": 1}, "note": "<strong>Learn Artisan at 200</strong> (level 35): {art}."}, {"f": 209, "t": 215, "r": "Truesilver Skeleton Key", "n": 15, "m": {"Truesilver Bar": 1, "Solid Grinding Stone": 1}}, {"f": 215, "t": 225, "r": "Mithril Scale Bracers", "n": 16, "m": {"Mithril Bar": 8, "Citrine": 2}, "note": "Recipe for 53s 33c from Harggan (The Hinterlands, Aerie Peak) for the Alliance. Horde: use the AH."}, {"f": 225, "t": 230, "r": "Ornate Mithril Shoulder", "n": 6, "m": {"Mithril Bar": 12, "Truesilver Bar": 1, "Thick Leather": 6}, "p": 1, "note": "Quest recipe: \"The Art of the Imbue\"."}, {"f": 230, "t": 235, "r": "Heavy Mithril Breastplate", "n": 6, "m": {"Mithril Bar": 16}, "p": 1}, {"f": 235, "t": 247, "r": "Heavy Mithril Boots", "n": 22, "m": {"Mithril Bar": 14, "Thick Leather": 4}, "p": 1}, {"f": 247, "t": 250, "r": "Big Black Mace", "n": 11, "m": {"Mithril Bar": 16, "Black Pearl": 1, "Shadowgem": 4, "Solid Grinding Stone": 1, "Thick Leather": 2}, "p": 1}, {"f": 250, "t": 260, "r": "Dense Sharpening Stone", "n": 16, "m": {"Dense Stone": 1}, "p": 1}, {"f": 260, "t": 265, "r": "Ebon Shiv", "n": 7, "m": {"Mithril Bar": 12, "Truesilver Bar": 6, "Star Ruby": 2, "Solid Grinding Stone": 1, "Thick Leather": 2}, "p": 1, "note": "Recipe for 1g from Magnus Frostwake (Western Plaguelands)."}, {"f": 265, "t": 270, "r": "Imperial Plate Belt", "n": 6, "m": {"Thorium Bar": 22, "Rugged Leather": 6, "Aquamarine": 1}, "p": 1, "note": "Quest recipe: \"Imperial Plate Belt\"."}, {"f": 270, "t": 275, "r": "Imperial Plate Bracer", "n": 6, "m": {"Thorium Bar": 20, "Star Ruby": 1}, "p": 1, "note": "Quest recipe: \"Imperial Plate Bracer\"."}, {"f": 275, "t": 285, "r": "Arcanite Skeleton Key", "n": 29, "m": {"Arcanite Bar": 1, "Dense Grinding Stone": 1}, "p": 1}, {"f": 285, "t": 295, "r": "Daring Misericorde", "n": 11, "m": {"Thorium Bar": 30, "Essence of Air": 4, "Azerothium Bar": 10, "Rugged Leather": 4}, "p": 1, "note": "New Forever recipe, 10g from Pexmit (Mount Hyjal)."}, {"f": 295, "t": 300, "r": "Imperial Plate Boots", "n": 6, "m": {"Thorium Bar": 34, "Star Ruby": 1, "Aquamarine": 1}, "p": 1, "note": "Quest recipe: \"Imperial Plate Boots\"."}], "train": {"comp": "Ug'thok in Orgrimmar (80.4, 23.4) or Dwukk in Durotar (52.0, 40.6)", "exp": "Snarl in Orgrimmar (79.2, 22.4)", "art": "Saru Steelfury in Orgrimmar (82.2, 23.0)"}, "done300": "300 reached. Think about the Master Forge for your camp.", "groupTitles": {"farm": "To mine (and smelt)", "vendor": "From vendors", "ah": "AH or other professions", "craft": "Intermediates"}, "trainA": {"comp": "Dane Lindgren in Stormwind (57.0, 15.4) or Groum Stonebeard in Ironforge (51.2, 42.4)", "exp": "Therum Deepforge in Stormwind (56.4, 15.4) or Rotgath Stonebeard in Ironforge (51.2, 42.4)", "art": "Bengus Deepforge in Ironforge (51.4, 42.2)"}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>
