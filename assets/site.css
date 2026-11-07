@@ -224,3 +224,13 @@ body[data-faction="h"] .zone.a, body[data-faction="a"] .zone.h { opacity: .45; }
 .tname { display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; vertical-align: middle; }
 .ticon { width: 28px; height: 28px; border-radius: 5px; border: 1px solid #000; box-shadow: 0 0 0 1px var(--stitch); flex: none; }
 .ticon + .ticon { margin-left: -4px; }
+
+/* Accueil */
+.hub h2 small { font-family: var(--font-body, inherit); font-size: .8rem; color: var(--muted); font-weight: 400; margin-left: 6px; }
+.hub-sub { font-family: var(--font-body); font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin: 6px 0 -4px; }
+.hub-grid.mini { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.hub-grid.mini .hub-card { padding: 10px 12px; }
+.hub-grid.mini .hub-card strong { font-size: .95rem; }
+.note { color: var(--muted); font-size: .85rem; }
+.hub-grid.three { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 560px) { .hub-grid.three { grid-template-columns: repeat(2, 1fr); } }

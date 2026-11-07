@@ -3,13 +3,13 @@
 // La faction ("a", "h" ou "both") est gardée sous la clé fg-faction ; les moteurs la relisent à l'événement "factionchange".
 (function () {
   var GROUPS = [
+    ["Classes", [["talents.html#chaman", "Chaman"], ["talents.html#chasseur", "Chasseur"], ["talents.html#demoniste", "Démoniste"],
+      ["talents.html#druide", "Druide"], ["talents.html#guerrier", "Guerrier"], ["talents.html#mage", "Mage"],
+      ["talents.html#paladin", "Paladin"], ["talents.html#pretre", "Prêtre"], ["talents.html#voleur", "Voleur"]]],
     ["Fabrication", [["alchimie.html", "Alchimie"], ["couture.html", "Couture"], ["enchantement.html", "Enchantement"],
       ["forge.html", "Forge"], ["ingenierie.html", "Ingénierie"], ["travail-du-cuir.html", "Travail du cuir"]]],
     ["Récolte", [["herboristerie.html", "Herboristerie"], ["minage.html", "Minage"], ["depecage.html", "Dépeçage"]]],
-    ["Secondaires", [["cuisine.html", "Cuisine"], ["secourisme.html", "Secourisme"], ["peche.html", "Pêche"]]],
-    ["Classes", [["talents.html#chaman", "Chaman"], ["talents.html#chasseur", "Chasseur"], ["talents.html#demoniste", "Démoniste"],
-      ["talents.html#druide", "Druide"], ["talents.html#guerrier", "Guerrier"], ["talents.html#mage", "Mage"],
-      ["talents.html#paladin", "Paladin"], ["talents.html#pretre", "Prêtre"], ["talents.html#voleur", "Voleur"]]]
+    ["Secondaires", [["cuisine.html", "Cuisine"], ["secourisme.html", "Secourisme"], ["peche.html", "Pêche"]]]
   ];
   var FACTIONS = [["a", "Alliance"], ["both", "Les deux"], ["h", "Horde"]];
   var KEY = "fg-faction";
