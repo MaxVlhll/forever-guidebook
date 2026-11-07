@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kochkunst WoW Forever</title>
+<meta name="description" content="Kochkunst-Guide 1-300 für WoW Forever (Allianz und Horde): Weg Rezept für Rezept, Einkaufsliste, Lehrer und Lagerfeuer-Sets.">
+<meta property="og:title" content="Kochkunst WoW Forever">
+<meta property="og:description" content="Kochkunst-Guide 1-300 für WoW Forever (Allianz und Horde): Weg Rezept für Rezept, Einkaufsliste, Lehrer und Lagerfeuer-Sets.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../cuisine.html">
+<link rel="alternate" hreflang="en" href="../en/cuisine.html">
+<link rel="alternate" hreflang="es" href="../es/cuisine.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #160f0d;
+  --bg-glow: #2c1712;
+  --panel: #211613;
+  --panel-2: #2c1e1a;
+  --stitch: #8a5444;
+  --accent: #ff8a66;
+  --seg1: #ffb8a3; --seg2: #f2876b; --seg3: #b8503a; --seg4: #7d3224;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Kochkunst</span>
+  <h1>Kochkunst 1 → 300</h1>
+  <p class="lede">Ein Sekundärberuf, zusätzlich zu deinen zwei Hauptberufen. In Forever stellt die Kochkunst auch die Lagerfeuer-Sets her. Gib deine Fertigkeit ein: Die Seite zeigt den nächsten Schritt und das Fleisch, das dir noch fehlt.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Wo du stehst</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Aktuelle Fertigkeit</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="5 Punkte abziehen">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="5 Punkte hinzufügen">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Einkaufsliste bis</label>
+      <select id="target">
+        <option value="75">75 (Ende Lehrling)</option>
+        <option value="150" selected>150 (Ende Geselle)</option>
+        <option value="225">225 (Ende Experte)</option>
+        <option value="300">300 (Fachmann)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Lehrling</div><div class="seg s2">Geselle</div><div class="seg s3">Experte</div><div class="seg s4">Fachmann</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Was dir noch fehlt</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Der Weg</h2>
+    <p class="lede" style="margin-top:0">Die Anzahlen sind Schätzungen: Plane immer etwas Reserve ein. Goldene Regel: Sobald ein Rezept grün wird, geh zum nächsten Schritt.</p>
+    <div class="legend" aria-label="Rezeptfarben">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Orange: immer +1</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Gelb: oft</span> <span><span class="dot" style="background:var(--sk-green)"></span>Grün: selten</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Grau: nie</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Lehrer</h2>
+  <p class="lede" style="margin-top:0">In Forever lernt man Experte und Fachmann ebenfalls bei einem Kochlehrer, ohne Buch oder Quest wie in Classic.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Allianz</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Schaltet frei</th><th>Voraussetzung</th><th>Lehrer (Koordinaten)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Geselle</span></td><td class="num">bis 150</td><td>Fertigkeit 50, Stufe 10</td><td><strong>Stephen Ryback</strong>, Sturmwind (75.4, 37.2) · Tomas, Wald von Elwynn (44.2, 66.0) · Daryl Riknussun, Eisenschmiede (60.0, 36.8) · Gremlock Pilsnor, Dun Morogh (47.6, 52.4) · Koch Ghilm, Dun Morogh (68.4, 54.4) · Alegorn, Darnassus (48.4, 21.0) · Zarrin, Teldrassil (57.0, 61.2)</td></tr><tr><td><span class="pill">Experte</span></td><td class="num">bis 225</td><td>Fertigkeit 125, Stufe 20</td><td>Jeder Kochlehrer einer Hauptstadt. Außerdem: Crystal Boughman, Rotkammgebirge (17.6, 43.6) · Gorg, Clearwater Shores (58.6, 44.6)</td></tr><tr><td><span class="pill">Fachmann</span></td><td class="num">bis 300</td><td>Fertigkeit 200, Stufe 35</td><td>Ein Kochlehrer (Kami Labs sagt nicht, welcher: Versuch es zuerst bei Stephen Ryback in Sturmwind)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Schaltet frei</th><th>Voraussetzung</th><th>Lehrer (Koordinaten)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Geselle</span></td><td class="num">bis 150</td><td>Fertigkeit 50, Stufe 10</td><td><strong>Zamja</strong>, Orgrimmar (57.4, 53.4) · Koch Torka, Durotar (51.2, 42.4) · Eunice Burch, Unterstadt (62.2, 44.4) · William Pickman, Tirisfal (61.8, 51.4) · Aska Mistrunner, Donnerfels (50.8, 52.4) · Pyall Silentstride, Mulgore (45.0, 61.6)</td></tr><tr><td><span class="pill">Experte</span></td><td class="num">bis 225</td><td>Fertigkeit 125, Stufe 20</td><td>Jeder Kochlehrer einer Hauptstadt. Neutral: Duhng, Brachland (55.2, 31.8) · Mudduk, Schlingendorntal (31.4, 28.0) · Gorg, Clearwater Shores (58.6, 44.6)</td></tr><tr><td><span class="pill">Fachmann</span></td><td class="num">bis 300</td><td>Fertigkeit 200, Stufe 35</td><td>Ein Kochlehrer (Kami Labs sagt nicht, welcher: Versuch es zuerst bei Zamja in Orgrimmar)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Milde und scharfe Gewürze bei Händlern für Handwerkswaren und Kochbedarf.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Neu in Forever</h2>
+  <ul class="plain"><li><strong>Einfaches Lagerfeuer-Set</strong> bei 20: Dein Lager fasst 3 Gegenstände.</li><li><strong>Lagerfeuer-Set des Gesellen</strong> bei 90: 5 Gegenstände.</li><li><strong>Lagerfeuer-Set des Spezialisten</strong> bei 200: 10 Gegenstände.</li><li>Neue <strong>Tees und Frappés</strong> (Tee der Gelassenheit bei 25, Königlicher Tee bei 100, Tee des Weisen bei 250…) und ein Festmahl, Macarons Festmahl bei 140.</li><li>Manche Gerichte geben „Satt“ und einen Erfahrungsbonus beim Töten von Gegnern (angekündigt, noch nicht bestätigt). Method nennt +5 % Erfahrung für 15 Minuten.</li><li><strong>Vermächtnispunkte</strong> bei 150, 225 und 300.</li><li>Der Beruf hat 125 Rezepte, davon 44 neue.</li></ul>
+</section>
+
+<footer class="foot"><p>Quellen: <a href="https://kami-labs.fr/guide-cuisine-wow-forever/">Kami Labs, Kochkunst-Guide für WoW Forever</a> · <a href="https://www.method.gg/wow-forever/wow-forever-shaman-leveling-guide-and-talents">Method, Schamanen-Guide (Erfahrungsbonus)</a>.</p><p>Schritte über 225 waren in der Beta nicht spielbar: Sie sind als „zu prüfen“ markiert. Gehört ein Rezepthändler zur anderen Fraktion, nutze das Auktionshaus. Namen von Gegenständen, NPCs und Zonen sind übersetzt und können im Spielclient leicht abweichen.</p><p>Inoffizieller Fan-Guide, aktualisiert am 7. November 2026. World of Warcraft ist eine Marke von Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "cuis", "src": {"Eberfleischbrocken": "farm", "Kojotenfleisch": "farm", "Wühlratte": "farm", "Magere Wolfsflanke": "farm", "Rotwolffleisch": "farm", "Roher gefleckter Gelbschwanz": "farm", "Roher Sonnenschuppenlachs": "farm", "Milde Gewürze": "vendor", "Scharfe Gewürze": "vendor"}, "steps": [{"f": 1, "t": 55, "r": "Gebratenes Eberfleisch", "n": 55, "m": {"Eberfleischbrocken": 1}, "note": "Eber in Durotar und Mulgore (Horde), im Wald von Elwynn und in Dun Morogh (Allianz)."}, {"f": 55, "t": 90, "r": "Kojotensteak", "n": 35, "m": {"Kojotenfleisch": 1}, "note": "<strong>Lerne Geselle bei 50</strong> (Stufe 10), sonst bleibst du bei 75 hängen."}, {"f": 90, "t": 156, "r": "Rattengumbo", "n": 81, "m": {"Wühlratte": 1}, "note": "Questrezept. <strong>Lerne Experte bei 125</strong> (Stufe 20), sonst bleibst du bei 150 hängen."}, {"f": 156, "t": 185, "r": "Mageres Wolfssteak", "n": 36, "m": {"Magere Wolfsflanke": 1, "Milde Gewürze": 1}, "note": "Rezept für 16 S bei Super-Verkäufer 680 (Desolace). Das Fleisch droppen Wölfe in Desolace und im Hügelland."}, {"f": 185, "t": 209, "r": "Herzhaftes Paleskewer-Fleisch", "n": 25, "m": {"Eberfleischbrocken": 2, "Milde Gewürze": 1}, "note": "Neues Forever-Rezept, 20 S bei Martha Wellsworth (Clearwater Shores)."}, {"f": 209, "t": 225, "r": "Scharfe Wolfsrippchen", "n": 17, "m": {"Rotwolffleisch": 1, "Scharfe Gewürze": 1}, "note": "Rezept für 50 S bei Vivianna (Feralas) oder Super-Verkäufer 680 (Desolace). <strong>Lerne Fachmann bei 200</strong> (Stufe 35)."}, {"f": 225, "t": 250, "r": "Gefleckter Gelbschwanz", "n": 25, "m": {"Roher gefleckter Gelbschwanz": 1}, "p": 1, "note": "Rezept für 1 G 60 S bei Gikkix (Tanaris). Angle ihn (siehe <a href=\"peche.html\">Angel-Seite</a>) oder kauf ihn im Auktionshaus."}, {"f": 250, "t": 300, "r": "Pochierter Sonnenschuppenlachs", "n": 51, "m": {"Roher Sonnenschuppenlachs": 1}, "p": 1, "note": "Rezept für 2 G bei Gikkix (Tanaris)."}], "trainMsg": {"comp": "Falls noch nicht geschehen, lerne Geselle (Stufe 10) bei einem Kochlehrer: Zamja in Orgrimmar (57.4, 53.4) oder Koch Torka in Durotar (51.2, 42.4).", "exp": "Falls noch nicht geschehen, lerne Experte (Stufe 20) bei einem Kochlehrer.", "art": "Falls noch nicht geschehen, lerne Fachmann (Stufe 35) bei einem Kochlehrer."}, "done300": "300 erreicht. Steig auf das Lagerfeuer-Set des Spezialisten um, um 10 Lagergegenstände zu tragen.", "groupTitles": {"farm": "Zu jagen oder zu angeln", "vendor": "Von Händlern", "ah": "Auktionshaus", "craft": "Zwischenprodukte"}, "trainMsgA": {"comp": "Falls noch nicht geschehen, lerne Geselle (Stufe 10) bei einem Kochlehrer: Stephen Ryback in Sturmwind (75.4, 37.2), Daryl Riknussun in Eisenschmiede (60.0, 36.8) oder Alegorn in Darnassus (48.4, 21.0).", "exp": "Falls noch nicht geschehen, lerne Experte (Stufe 20) bei einem Kochlehrer.", "art": "Falls noch nicht geschehen, lerne Fachmann (Stufe 35) bei einem Kochlehrer."}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

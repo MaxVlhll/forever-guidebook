@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leveling-Talente WoW Forever</title>
+<meta name="description" content="Leveling-Talente 10 bis 60 für alle 9 Klassen von WoW Forever (Allianz und Horde): empfohlene Spezialisierung, Talentreihenfolge, wichtige Zauber und Rotation.">
+<meta property="og:title" content="Leveling-Talente WoW Forever">
+<meta property="og:description" content="Leveling-Talente 10 bis 60 für alle 9 Klassen von WoW Forever (Allianz und Horde): empfohlene Spezialisierung, Talentreihenfolge, wichtige Zauber und Rotation.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../talents.html">
+<link rel="alternate" hreflang="en" href="../en/talents.html">
+<link rel="alternate" hreflang="es" href="../es/talents.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+body[data-cls="chasseur"] { --accent: #a9d271; }
+body[data-cls="demoniste"] { --accent: #a99af5; }
+body[data-cls="pretre"] { --accent: #ece7dc; }
+body[data-cls="chaman"] { --accent: #4d9bff; }
+body[data-cls="druide"] { --accent: #ff8a2a; }
+body[data-cls="guerrier"] { --accent: #c69b6d; }
+body[data-cls="mage"] { --accent: #3fc7eb; }
+body[data-cls="paladin"] { --accent: #f48cba; }
+body[data-cls="voleur"] { --accent: #fff468; }
+h1 { transition: color .2s; }
+</style>
+</head>
+<body data-cls="chasseur">
+<main class="wrap" id="main">
+  <header>
+    <span class="tag">WoW Forever · Leveling-Talente</span>
+    <h1 id="title">Leveling-Talente</h1>
+    <p class="lede">Leveling-Builds 10 → 60 für alle neun Klassen, Allianz und Horde, nach den neuesten Guides (bis 7. November). Jedes Talent zeigt sein Symbol aus dem Spiel, damit du es schnell in deinem Baum findest. Was in der Beta gespielt wurde, ist als <span class="badge t">getestet</span> markiert, der Rest als <span class="badge p">geplant</span>.</p>
+  </header>
+
+  <div class="alert" role="note">
+    <p><strong>Lies das zuerst.</strong> Die Beta endete bei Stufe 30: Niemand hat die Talente 31 bis 60 bisher gespielt, Blizzard hat am 2. November erneut Talente verschoben und neue Klassenanpassungen für den 10. November angekündigt. Ist ein Talent in deinem Baum noch nicht wählbar, nimm das nächste auf der Liste und komm später darauf zurück.</p>
+    <p>Mit dem Vermächtnisbonus „Talentiert“ kommen deine Punkte bis zu 5 Stufen früher: Folge der Spalte Punkte statt der Spalte Stufe.</p>
+  </div>
+
+  <nav class="tabs" role="tablist" aria-label="Klasse">
+    <button role="tab" id="tab-chaman" aria-selected="false" data-cls="chaman">Schamane</button>
+    <button role="tab" id="tab-chasseur" aria-selected="true" data-cls="chasseur">Jäger</button>
+    <button role="tab" id="tab-demoniste" aria-selected="false" data-cls="demoniste">Hexenmeister</button>
+    <button role="tab" id="tab-druide" aria-selected="false" data-cls="druide">Druide</button>
+    <button role="tab" id="tab-guerrier" aria-selected="false" data-cls="guerrier">Krieger</button>
+    <button role="tab" id="tab-mage" aria-selected="false" data-cls="mage">Magier</button>
+    <button role="tab" id="tab-paladin" aria-selected="false" data-cls="paladin">Paladin</button>
+    <button role="tab" id="tab-pretre" aria-selected="false" data-cls="pretre">Priester</button>
+    <button role="tab" id="tab-voleur" aria-selected="false" data-cls="voleur">Schurke</button>
+  </nav>
+
+  <div id="content" class="talents" style="display:grid;gap:26px" role="tabpanel"></div>
+
+  <footer class="foot" id="foot"></footer>
+</main>
+
+<script>
+(function () {
+  // pts : nombre de points. Les phases "order" calculent niveau et numéro de point (1 point par niveau dès 10).
+  var CLASSES = {
+    chaman: {
+      name: "Schamane",
+      spec: "Verstärkung von 10 bis 40, dann Wiederherstellung als Zweitspezialisierung für Gruppen",
+      verdict: "Verstärkung ist die Spezialisierung, die Method, Icy Veins und Mobalytics empfehlen: Sturmschlag bei 25, eine Zweihandwaffe und Waffe des Windzorns bei 30, und du tötest schnell, ohne zu trinken. Ab 40 kannst du mit der Zweitspezialisierung Verstärkung zum Questen behalten und Wiederherstellung für Dungeons hinzufügen.",
+      timeline: [["10–24", "Donner und Geisterwolf", "#9cc8ff"], ["25–39", "Sturmschlag", "#4d9bff"], ["40–60", "Zweitspezialisierung", "#1f5fb8"]],
+      phases: [
+        { title: "Stufe 10 bis 30", range: "21 Punkte", st: "t", kind: "order", start: 1,
+          note: "Reihenfolge von Mobalytics, bestätigt von Icy Veins. Method setzt Verbesserter Geisterwolf direkt nach Sturmschlag, besser ist es aber vor Geisterwolf auf Stufe 20.",
+          rows: [
+            ["Donnernde Schläge", 5, "Verstärkung", "+ Krit, der Kern deines Nahkampfschadens."],
+            ["Geistige Gewandtheit", 3, "Verstärkung", ""],
+            ["Verbesserter Geisterwolf", 2, "Verstärkung", "Sofortiger Geisterwolf ab 20: +40 % Tempo ohne Zauberzeit."],
+            ["Schamanistischer Fokus", 1, "Verstärkung", "Günstigere Schocks nach einem Krit."],
+            ["Elementarwaffen", 3, "Verstärkung", "Stärkere Waffe des Felsbeißers und Waffe des Windzorns."],
+            ["Wissen der Ahnen", 1, "Verstärkung", "Icy Veins setzt es ausdrücklich auf 24."],
+            ["Sturmschlag", 1, "Verstärkung", "Stufe 25: dein Hauptangriff."],
+            ["Schlaghagel", 4, "Verstärkung", "Angriffstempo nach einem Krit."],
+            ["Verbesserter Sturmschlag", 1, "Verstärkung", "21. Punkt auf Stufe 30."]
+          ] },
+        { title: "Stufe 31 bis 40", range: "10 Punkte", st: "p", kind: "list",
+          note: "Variante von Icy Veins und Mobalytics, noch nicht gespielt. Der 31. Verstärkungspunkt kommt auf Stufe 40, mit der Zweitspezialisierung.",
+          rows: [
+            ["Verbesserter Sturmschlag", "2/2", "Verstärkung", ""],
+            ["Schlaghagel", "5/5", "Verstärkung", ""],
+            ["Geisterwaffen", "1/1", "Verstärkung", "Weniger Bedrohung in Gruppen."],
+            ["Geistige Schnelligkeit", "2/2", "Verstärkung", ""],
+            ["Schlusstalent von Verstärkung", "1/1", "Verstärkung", "Stufe 40. Icy Veins lässt Waffe des Mahlstroms bewusst weg: unter 5 Rängen zu schwach."]
+          ] },
+        { title: "Stufe 41 bis 60", range: "20 Punkte", st: "p", kind: "list",
+          note: "Kein Guide hat diese 20 Punkte bisher veröffentlicht. Für Dungeons Wiederherstellung als zweite Spezialisierung: Kettenheilung und Springflut kommen mit 40.",
+          rows: [
+            ["Rest des Verstärkungsbaums", "pro Baum", "Verstärkung", "Prüfe im Spiel, was die Patches übrig gelassen haben."],
+            ["Wissen der Ahnen", "max", "Verstärkung", "Mehr Mana, also weniger Pausen."]
+          ] }
+      ],
+      keylevels: [["4", "Erdschock, Quest für das Erdtotem"], ["10", "Flammenschock, Totem der Verbrennung, Quest für das Feuertotem"], ["12", "Feuernova (neu)"], ["20", "Geisterwolf, Frostschock, Ruf der Elemente, Quest für das Wassertotem"], ["25", "Sturmschlag (Talent)"], ["26", "Totem des glühenden Magmas, Totem der Manaquelle"], ["30", "Waffe des Windzorns, Reinkarnation, Astraler Rückruf, Quest für das Lufttotem"], ["32", "Kettenblitzschlag, Totem des Windzorns"], ["40", "Schwere Rüstung, Kettenheilung, Wut des Sehers, Zweitspezialisierung"]],
+      rotation: [["1–9", "Waffe des Felsbeißers und Blitzschlagschild. Blitzschlag zum Pullen, Erdschock, sobald bereit, dann Nahkampf."], ["10–24", "Flammenschock, Totem der Verbrennung, Nahkampf, Frost- oder Erdschock, sobald bereit."], ["25–29", "Sturmschlag bei jeder Abklingzeit, dann den 20-%-Bonus innerhalb von 12 Sekunden mit einem Blitzschlag oder Schock verbrauchen. Totem des glühenden Magmas und Feuernova bei Gruppen."], ["30+", "Langsame Zweihandwaffe mit Windzorn. Kettenblitzschlag bei Gruppen ab 32."]],
+      tips: [
+        "Sturmschlag kostet jetzt 8 % des Grundmanas (statt pauschal 125 bis zum 15. Oktober).",
+        "Feuernova (Stufe 12) verursacht Schaden um dein Feuertotem, aber die Bedrohung landet bei dir, nicht beim Totem.",
+        "Zweihandäxte und -streitkolben sind Grundausstattung: kein Talent nötig, um sie zu tragen.",
+        "Felsbeißer stiehlt dem Tank in Gruppen Bedrohung: Wechsle in Dungeons zu Flammenzunge.",
+        "Ruf der Elemente setzt alle Totems auf einmal, hat aber 3 Sekunden Zauberzeit. Totemischer Rückruf sammelt sie ein und erstattet Mana.",
+        "Läuft ein Pull schief: Frostschock und Geisterwolf zur Flucht, oder Totem der Steinklaue zum Spotten, dann Welle der Heilung.",
+        "Völker: Orc, Taure oder Troll auf Hordeseite. Auf Allianzseite ist der Schamane nur als Zwerg spielbar, neu in Forever."
+      ],
+      sources: [["Method, Schamanen-Leveling-Guide (3. Nov.)", "https://www.method.gg/wow-forever/wow-forever-shaman-leveling-guide-and-talents"], ["WoW Forever Tier List, Schamanen-Übersicht (31. Okt.)", "https://wowforevertierlist.com/classes/shaman/leveling"], ["Warcraft Tavern, Schamanen-Leveling-Guide", "https://www.warcrafttavern.com/forever/guides/shaman-leveling/"]]
+    },
+
+    druide: {
+      name: "Druide",
+      spec: "Wilder Kampf (Katze) von 10 bis 60",
+      verdict: "Wilder Kampf ist die schnellste und meistgespielte Leveling-Spezialisierung. Bär von 10 bis 20, danach Katze, und Bärengestalt als Ausweichlösung, wenn ein zweiter Gegner auftaucht. In Forever skalieren Gestaltangriffe mit dem Schaden deiner Waffe: Jede neue Waffe zählt viel.",
+      timeline: [["10–19", "Bär", "#ffc48a"], ["20–39", "Katze", "#ff8a2a"], ["40–60", "Berserker", "#a84f0a"]],
+      phases: [
+        { title: "Stufe 10 bis 30", range: "21 Punkte", st: "t", kind: "order", start: 1,
+          note: "Reihenfolge von WoW4EverNEWS (7. Oktober). Wowforeverguides nimmt Wilde Attacke bei 20 und Raubtierschläge statt Zerfetzende Angriffe: beides funktioniert.",
+          rows: [
+            ["Wildheit", 5, "Wilder Kampf", "Günstigeres Zermalmen, Klaue und Krallenhieb."],
+            ["Wilde Schnelligkeit", 2, "Wilder Kampf", "Katzentempo, jetzt auch in Gebäuden."],
+            ["Wilder Instinkt", 3, "Wilder Kampf", "Bärenbedrohung, stärkeres Prankenhieb."],
+            ["Wilde Wut", 2, "Wilder Kampf", ""],
+            ["Zerfetzende Angriffe", 3, "Wilder Kampf", "Günstigeres Schreddern."],
+            ["Gestaltwandlerkraft", 1, "Wilder Kampf", "Stufe 25: 40 Energie gegen Mana, ersetzt das Powershifting."],
+            ["Urbiss", 1, "Wilder Kampf", ""],
+            ["Geschärfte Klauen", 2, "Wilder Kampf", "+ Krit in Tiergestalt."],
+            ["Blutraserei", 1, "Wilder Kampf", ""],
+            ["Rudelführer", 1, "Wilder Kampf", "21. Punkt: Nah- und Fernkampfkrit für die ganze Gruppe."]
+          ] },
+        { title: "Stufe 31 bis 60", range: "30 Punkte", st: "p", kind: "list",
+          note: "Prognose der WoW Forever Tier List, noch nicht gespielt. Berserker ist das Schlusstalent des Baums auf Stufe 40.",
+          rows: [
+            ["Natürlicher Instinkt", "2/2", "Wilder Kampf", "Früherer Name: Raubtierinstinkte."],
+            ["Zerfleischen und Zerreißen", "4/4", "Wilder Kampf", ""],
+            ["Berserker", "1/1", "Wilder Kampf", "Stufe 40, zusammen mit Terrorbärengestalt."],
+            ["Herz der Wildnis", "5/5", "Wilder Kampf", ""],
+            ["Raubtierschläge", "3/3", "Wilder Kampf", "Falls du der Reihenfolge von WoW4EverNEWS gefolgt bist."],
+            ["Dickes Fell", "3/3", "Wilder Kampf", ""],
+            ["Brutaler Hieb", "2/2", "Wilder Kampf", ""],
+            ["Verbesserte Gestaltwandlerkraft, dann Natürliche Reaktion", "der Rest", "Wilder Kampf", ""]
+          ] }
+      ],
+      keylevels: [["10", "Bärengestalt (Klassenquest), Wucherwurzeln, Teleportieren: Mondlichtung"], ["12", "Wutanfall, Wiederbeleben (außerhalb des Kampfes, neu)"], ["14", "Hieb, Vergiftung heilen"], ["16", "Prankenhieb, Wassergestalt"], ["20", "Katzengestalt (Quest), Klaue, Zerfetzen, Schleichen, Schreddern, Wiedergeburt"], ["24", "Krallenhieb"], ["26", "Spurt"], ["30", "Reisegestalt, Rudelführer"], ["32", "Wilder Biss, Verheeren"], ["36", "Rasende Regeneration, Anspringen"], ["40", "Terrorbärengestalt, Berserker, Reittier, Zweitspezialisierung"]],
+      rotation: [["1–9", "Dornen, Zorn zum Pullen, Mondfeuer, Zorn, bis er stirbt. Zwischen den Pulls heilen."], ["10–19 (Bär)", "Zwei Zorn und ein Mondfeuer beim Annähern, dann Bärengestalt: Wutanfall, Demoralisierendes Gebrüll, Zermalmen. Prankenhieb bei Gruppen."], ["20–31 (Katze)", "Schleichen, Krallenhieb, Klaue (oder Schreddern von hinten) auf 4-5 Punkte, Zerfetzen. Wilder Biss kommt erst mit 32."], ["32+", "Verheeren oder Anspringen zum Eröffnen, Feenfeuer, Krallenhieb, Klaue auf 5 Punkte, Wilder Biss. Gestaltwandlerkraft unter 50 Energie."]],
+      tips: [
+        "Kein Powershifting mehr: Gestaltwechsel kostet 55 % des Grundmanas. Gestaltwandlerkraft (Talent bei 25) ersetzt es.",
+        "In Katzengestalt schlägt der automatische Angriff jede Sekunde, in Bärengestalt alle 2,5 Sekunden, immer mit dem Schaden deiner Waffe.",
+        "Kombopunkte verschwinden beim Zielwechsel nicht mehr.",
+        "Feenfeuer ist in Tiergestalt kostenlos und erzeugt seit dem 15. Oktober in Bärengestalt Bedrohung.",
+        "Niedrigrangige Zauber profitieren seit dem 1. Oktober viel weniger von Zaubermacht: Halte deine Heilungen aktuell.",
+        "Völker: Taure auf Hordeseite, Nachtelf auf Allianzseite und Skyborne in beiden Fraktionen. Method empfiehlt Skyborne für Katze, Taure für Bär und PvP."
+      ],
+      sources: [["Method, Druiden-Leveling-Guide (7. Nov.)", "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents"], ["WoW Forever Tier List, Druiden-Übersicht (31. Okt.)", "https://wowforevertierlist.com/classes/druid/leveling"], ["Warcraft Tavern, Druiden-Leveling-Guide", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]]
+    },
+
+    guerrier: {
+      name: "Krieger",
+      spec: "Schutz solo, Waffen mit Zweihänder in Gruppen",
+      verdict: "Der Krieger bleibt die anspruchsvollste Klasse zum Leveln in Forever (C in der Tier List). Method empfiehlt Schutz (Einhandwaffe und Schild) zum Solo-Leveln und Waffen mit Zweihänder, wenn du in einer Gruppe levelst. Deine Waffe macht fast deinen ganzen Schaden: Verbessere sie, wann immer du kannst.",
+      timeline: [["10–19", "Schildspezialisierung", "#e8cfae"], ["20–39", "Vorhut", "#c69b6d"], ["40–60", "Schildschlag", "#7d5a33"]],
+      phases: [
+        { title: "Schutz, Stufe 10 bis 30 (solo)", range: "21 Punkte", st: "t", kind: "list",
+          note: "Reihenfolge von Method (4. November), ergänzt um die Zwischenstände von Warcraft Tavern bei 20 und 30. Method gibt nicht jeden Rang an.",
+          rows: [
+            ["Schildspezialisierung", "max", "Schutz", "Wut durch Blocken verändert deine ganze Wutökonomie."],
+            ["Verbesserter Donnerknall", "pro Baum", "Schutz", ""],
+            ["Verbesserter Blutrausch", "2", "Schutz", ""],
+            ["Meister der Verteidigung", "max", "Schutz", "Stufe 20."],
+            ["Verbesserte Rache", "pro Baum", "Schutz", ""],
+            ["Vorhut", "1", "Schutz", "Bleib in Verteidigungshaltung: Sturmangriff wird dort nutzbar."],
+            ["Trotz", "max", "Schutz", "Vor 30."],
+            ["Verbessertes Rüstung zerreißen, Bollwerk, Konzentrierte Wut", "der Rest", "Schutz", "Oder Erschütternder Schlag statt Bollwerk."]
+          ] },
+        { title: "Waffen, Stufe 10 bis 30 (Gruppe)", range: "21 Punkte", st: "t", kind: "list",
+          note: "Method beginnt mit Verbessertes Verwunden. Die Tier-List-Übersicht nennt Grausamkeit (Furor) auf Stufe 10: +5 % Krit ist der beste erste Punkt. Zwischenstände von Warcraft Tavern: 11/0/0 bei 20, 21/0/0 bei 30.",
+          rows: [
+            ["Verbessertes Verwunden", "max", "Waffen", "Verwunden skaliert mit Angriffskraft: in Forever stark verbessert."],
+            ["Tiefe Wunden", "max", "Waffen", ""],
+            ["Verbesserter heldenhafter Stoß, Verbesserter Sturmangriff, Verbessertes Überwältigen", "pro Baum", "Waffen", "Verbesserter Sturmangriff gibt beim Eröffnen 6 zusätzliche Wut."],
+            ["Durchbohren", "max", "Waffen", ""],
+            ["Zweihandwaffen-Spezialisierung", "max", "Waffen", ""],
+            ["Weitreichende Stöße", "1", "Waffen", "Stufe 30."],
+            ["Waffenmeister", "pro Baum", "Waffen", "Kein Talent-Reset mehr nötig, um den Waffentyp zu wechseln."]
+          ] },
+        { title: "Stufe 31 bis 60", range: "30 Punkte", st: "p", kind: "list",
+          note: "Kein Guide hat den Rest veröffentlicht. Tödlicher Stoß, Blutdurst und Schildschlag lernt man ab 40 beim Lehrer, mit der Zweitspezialisierung.",
+          rows: [
+            ["Schlusstalent deines Baums", "1/1", "Waffen oder Schutz", "Stufe 40."],
+            ["Ungezügelter Zorn, Wutanfall", "pro Baum", "Furor", "Method nennt sie für die Wut in Waffen."]
+          ] }
+      ],
+      keylevels: [["4", "Sturmangriff, Verwunden"], ["6", "Donnerknall"], ["10", "Quest für Verteidigungshaltung (Rüstung zerreißen, Spott), Blutrausch"], ["12", "Überwältigen"], ["14", "Taktische Meisterschaft (jetzt beim Lehrer), Rache"], ["16", "Schildblock"], ["20", "Siegesrausch (heilt 10 % der Gesundheit), Kniesehne, Spalten, Gegenschlag"], ["24", "Hinrichten"], ["28", "Schildwall (15 Min.)"], ["30", "Berserkerhaltung (Quest), Abfangen, Zuschlagen"], ["36", "Wirbelwind"], ["40", "Tödlicher Stoß, Blutdurst, Schildschlag, Zweitspezialisierung"]],
+      rotation: [["Eröffnung", "Sturmangriff (mit Vorhut sogar in Verteidigungshaltung), Verwunden, Rüstung zerreißen."], ["Währenddessen", "Überwältigen, sobald es aufleuchtet, Donnerknall bei 2+ Gegnern, Rache in Schutz, Heldenhafter Stoß mit überschüssiger Wut."], ["Abschluss", "Hinrichten unter 20 % ab 24. Behalte etwas Wut, wenn der Gegner stirbt, und nutze direkt danach Siegesrausch."]],
+      tips: [
+        "Wut hängt von Tempo und Typ deiner Waffe ab, nicht von ihrem Schaden: etwa 5 pro Dolchtreffer, 14 bis 17 mit einer Zweihandwaffe.",
+        "Krits geben jetzt +100 % Wut (beim Start der Beta gar nichts).",
+        "Wetzsteine aus der Schmiedekunst machen auf niedriger Stufe viel aus: Bergbau + Schmiedekunst ist das Paar, das Method empfiehlt.",
+        "Geh in Dungeons für ihre Waffen (Schwerer Hammer, Axt aus Orgrimmar…). Die Erfahrung von Dungeongegnern wurde am 8. Oktober um 20 % erhöht.",
+        "Blutdurst heilt nicht mehr. Blutsäufer stellt bei deinen nächsten 3 Treffern nach einem Wutanfall-Effekt bis zu 1 % Gesundheit wieder her.",
+        "Die Quest der Wirbelwindaxt (Alteracgebirge) ist solo sehr schwer: Nimm eine Gruppe mit."
+      ],
+      sources: [["Method, Krieger-Leveling-Guide (4. Nov.)", "https://www.method.gg/wow-forever/wow-forever-warrior-leveling-guide-and-talents"], ["WoW Forever Tier List, Krieger-Übersicht (31. Okt.)", "https://wowforevertierlist.com/classes/warrior/leveling"], ["Warcraft Tavern, Krieger-Leveling-Guide", "https://www.warcrafttavern.com/forever/guides/warrior-leveling/"]]
+    },
+
+    mage: {
+      name: "Magier",
+      spec: "Frost von 10 bis 60",
+      verdict: "Frost ist die Spezialisierung, die Method und Mobalytics empfehlen: Du frierst ein, gehst auf Abstand, und Eislanze trifft eingefrorene Ziele hart. Die echte Bremse des Magiers in Forever ist das Mana: Beschwöre vor dem Losziehen immer Essen und Wasser.",
+      timeline: [["10–19", "Frostblitz", "#b8ecf8"], ["20–39", "Eislanze", "#3fc7eb"], ["40–60", "Eisbarriere", "#1d7a96"]],
+      phases: [
+        { title: "Stufe 10 bis 30", range: "21 Punkte", st: "t", kind: "lv",
+          note: "Prioritäten von Method und Mobalytics, von der Tier List kombiniert. Method hat noch kein Build für Stufe 60 festgelegt.",
+          rows: [
+            ["10–14", "Verbesserter Frostblitz", "5/5", "Frost", "Schnellerer Frostblitz."],
+            ["15–19", "Erfrierung", "pro Baum", "Frost", "Oder ein beliebiges Talent, das dich auf 10 Punkte in Frost bringt."],
+            ["20", "Eislanze", "1/1", "Frost", "+200 % Schaden gegen ein eingefrorenes Ziel."],
+            ["21–24", "Elementarpräzision", "max", "Frost", "Method nimmt es ab 20 als Erstes. Verbesserter Blizzard optional."],
+            ["25", "Eisblock", "1/1", "Frost", ""],
+            ["26–29", "Zertrümmern", "max", "Frost", "Oder Eissplitter."],
+            ["30", "Eisige Finger oder Kälteeinbruch", "1/1", "Frost", ""]
+          ] },
+        { title: "Stufe 31 bis 60", range: "30 Punkte", st: "p", kind: "list",
+          note: "Prognose nach dem Talenttext, noch nicht gespielt.",
+          rows: [
+            ["Eisbarriere", "1/1", "Frost", "Schlusstalent auf Stufe 40, zusammen mit Frostfeuerblitz und Zweitspezialisierung."],
+            ["Rest des Frostbaums", "der Rest", "Frost", "Kein Guide hat den Rest veröffentlicht."],
+            ["Arkane Meditation", "falls du Arkan levelst", "Arkan", "Behalte 50 % deiner Regeneration beim Zaubern."]
+          ] }
+      ],
+      keylevels: [["4", "Frostblitz, Wasser herbeizaubern"], ["8", "Verwandlung, Arkane Geschosse"], ["10", "Frostnova"], ["14", "Arkane Explosion"], ["16", "Feuerschlag"], ["20", "Eislanze, Blizzard, Blinzeln, Hervorrufung, Teleports nach Orgrimmar und Unterstadt"], ["24", "Gegenzauber, Froststoß (neu)"], ["25", "Eisblock"], ["26", "Kältekegel"], ["28", "Eislanze Rang 2: sofort trainieren"], ["30", "Eisrüstung, Teleport nach Donnerfels"], ["40", "Frostfeuerblitz, Eisbarriere, Zweitspezialisierung"]],
+      rotation: [["1 Gegner", "Frostblitz auf maximale Reichweite, ein zweiter, während er anrennt. Im Nahkampf: Frostnova, Abstand nehmen, Eislanze auf das eingefrorene Ziel. Mit Frostblitz oder Zauberstab abschließen."], ["2+ Gegner", "Verwandle den zweiten, töte den ersten, dann das Schaf. Blizzard ist nicht mehr für große Pulls gedacht: Seine Verlangsamungen wurden absichtlich gekürzt."], ["Mana", "Magische Rüstung, Fünf-Sekunden-Regel, herbeigezaubertes Essen und Wasser vor jeder Sitzung. Immer den höchsten Rang wirken."]],
+      tips: [
+        "Zauberstäbe skalieren nicht mehr mit Zaubermacht, und du musst vor dem ersten Schuss eine halbe Sekunde stillstehen.",
+        "Zauber, die auf einem Rang weit unter deiner Stufe gewirkt werden, profitieren seit dem 1. Oktober viel weniger von Zaubermacht.",
+        "Der Grundschaden ist auf Stufe 60 niedriger als in Classic, dafür wurde Willenskraft für Zauberwirker stark verbessert.",
+        "Schneiderei + Verzauberkunst ist das Paar, das Method empfiehlt: Stoffteile mit Zaubermacht und Zauberstäbe.",
+        "Die Bibliotheksbücher (10, 20 und 25 Bücher) geben gute Belohnungen."
+      ],
+      sources: [["Method, Magier-Leveling-Guide (3. Nov.)", "https://www.method.gg/wow-forever/wow-forever-mage-leveling-guide-and-talents"], ["WoW Forever Tier List, Magier-Übersicht (31. Okt.)", "https://wowforevertierlist.com/classes/mage/leveling"]]
+    },
+
+    paladin: {
+      name: "Paladin",
+      spec: "Vergeltung von 10 bis 40, dann Schutz oder Heilig als zweite Spezialisierung",
+      verdict: "Auf Allianzseite sind Paladine weiterhin Menschen oder Zwerge. Neu in Forever: Auch die Horde bekommt Paladine, nur Verlassene (Start in Tirisfal). Vergeltung ist die Leveling-Spezialisierung, vor allem weil sie Mana spart. Dein Reittier auf Stufe 40 ist ein kostenloser Zauber, also spar dein Gold für die Zweitspezialisierung.",
+      timeline: [["10–19", "Segnung", "#fbc6e0"], ["20–39", "Siegel des Befehls", "#f48cba"], ["40–60", "Zweitspezialisierung", "#a8467a"]],
+      phases: [
+        { title: "Stufe 10 bis 30", range: "21 Punkte", st: "t", kind: "list",
+          note: "Kein Guide hat eine Reihenfolge Punkt für Punkt veröffentlicht. Zusammenfassung von Method (4. November) und Warcraft Tavern (0/0/26 mit dem Vermächtnisbonus „Talentiert“).",
+          rows: [
+            ["Segnung", "max", "Vergeltung", "Mana sparen, das erste Ziel."],
+            ["Geheiligtes Richturteil", "pro Baum", "Vergeltung", ""],
+            ["Verbessertes Richturteil", "1", "Vergeltung", ""],
+            ["Streben nach Gerechtigkeit", "2/2", "Vergeltung", "+15 % Tempo, auch beritten: so früh wie möglich holen."],
+            ["Überzeugung", "pro Baum", "Vergeltung", ""],
+            ["Siegel des Befehls", "1/1", "Vergeltung", "Stufe 20."],
+            ["Heiliger Schiedsrichter", "1/1", "Vergeltung", "Stufe 25."],
+            ["Rachsucht, Zweihandwaffen-Spezialisierung", "der Rest", "Vergeltung", "Bis zu +6 % Zweihandschaden."],
+            ["Buße", "1/1", "Vergeltung", "Stufe 30: setzt einen Humanoiden 6 Sekunden außer Gefecht, wenn ein Pull schiefgeht."]
+          ] },
+        { title: "Stufe 31 bis 60", range: "30 Punkte", st: "p", kind: "list",
+          note: "Theorycraft von ForeverWisp, noch nicht gespielt: 20/0/31.",
+          rows: [
+            ["Lichtwende", "1/1", "Vergeltung", "31. Punkt auf Stufe 40: Wechsle bei jedem Treffer das Siegel. Versuch das Siegel-Twisten nicht vorher."],
+            ["Rest von Vergeltung", "bis 31", "Vergeltung", ""],
+            ["Göttliche Stärke, Verbesserte Siegel, Heiliger Kanal", "20 Punkte", "Heilig", "Die letzten 20 Punkte."]
+          ] }
+      ],
+      keylevels: [["1", "Siegel der Rechtschaffenheit, Aura der Hingabe"], ["4", "Richturteil, Segen der Macht"], ["6", "Heiliger Stoß (neu, 8 Ränge), Göttlicher Schutz"], ["8", "Hammer der Gerechtigkeit, Läutern"], ["10", "Handauflegung (leert dein ganzes Mana), Segen des Schutzes"], ["12", "Erlösung (Klassenquest)"], ["20", "Weihe und Segen der Könige als Grundzauber, Exorzismus, Lichtblitz"], ["30", "Göttliches Eingreifen, Siegel des Lichts"], ["32–34", "Gottesschild (Guides uneinig)"], ["40", "Schlachtross (Zauber), Hammer der Rechtschaffenen, Zweitspezialisierung"], ["44", "Hammer des Zorns"]],
+      rotation: [["1–19", "Siegel der Rechtschaffenheit, Richturteil beim Annähern, Heiliger Stoß bei jeder Abklingzeit, automatischer Angriff, Richturteil, sobald wieder bereit. Heiliges Licht zwischen den Pulls."], ["20+", "Siegel des Befehls vor dem Pull (Siegel der Rechtschaffenheit mit Einhandwaffe). Weihe bei 2 oder 3 Gegnern: Sie trifft die ersten vier hart."], ["Gefahr", "Buße (30), Hammer der Gerechtigkeit, Gottesschild. Handauflegung als letzter Ausweg."]],
+      tips: [
+        "Richturteil verbraucht dein Siegel nicht mehr.",
+        "Siegel der Rechtschaffenheit skaliert mit Zaubermacht (halb so stark wie zum Start, nach einem Patch vom 15. Oktober).",
+        "Champion des Lichts gibt 10/20/30 % deiner Intelligenz als Zauberschaden: Jag deswegen nicht nach Intelligenz.",
+        "Heiliger Stoß hat 8 Ränge und steigt von 25 % auf 50 % deines Waffenschadens: Geh zurück zu deinem Lehrer.",
+        "<span class=\"fl\" data-f=\"h\"><span class=\"fac h\">Horde</span> Paladinlehrer: Aramis Hammerhand (Todesend), Shari Stilwell (Brill), Hilda die Brecherin (Bandarions Bastion).</span><span class=\"fl\" data-f=\"a\"><span class=\"fac a\">Allianz</span> Paladinlehrer, laut Classic: Bruder Sammuel (Abtei von Nordhain), Bruder Wilhelm (Goldhain), Lord Grayson Shadowbreaker (Kathedrale von Sturmwind), Brandur Ironhammer (Eisenschmiede).</span>",
+        "Method empfiehlt beim Leveln Schmiedekunst für ihre Kettenteile mit Zaubermacht."
+      ],
+      sources: [["Method, Paladin-Leveling-Guide (4. Nov.)", "https://www.method.gg/wow-forever/wow-forever-paladin-leveling-guide-and-talents"], ["WoW Forever Tier List, Paladin-Übersicht (30. Okt.)", "https://wowforevertierlist.com/classes/paladin/leveling"], ["Warcraft Tavern, Paladin-Leveling-Guide", "https://www.warcrafttavern.com/forever/guides/paladin-leveling/"], ["Warcraft Tavern, Volk-Klasse-Kombinationen", "https://www.warcrafttavern.com/forever/guides/race-class-combos/"]]
+    },
+
+    voleur: {
+      name: "Schurke",
+      spec: "Kampf von 10 bis 60 (Meucheln mit Dolchen)",
+      verdict: "Kampf ist die Solo-Leveling-Spezialisierung sowohl für Method als auch für die Tier List (A solo). Meucheln funktioniert auch, wenn du gute Dolche findest. Für Gruppen sind sich die Guides uneinig: Method empfiehlt Täuschung, die Tier List rät davon ab.",
+      timeline: [["10–19", "Finsterer Stoß", "#fff9b8"], ["20–39", "Gifte und Klingenwirbel", "#fff468"], ["40–60", "Adrenalinrausch", "#a39a1a"]],
+      phases: [
+        { title: "Kampf, Stufe 10 bis 30", range: "21 Punkte", st: "t", kind: "order", start: 1,
+          note: "Reihenfolge von Method, übernommen von der Tier List. Bei 30 verschiebt Method die 2 Punkte aus Gnadenlose Angriffe in Beidhändigkeitsspezialisierung und Klingenwirbel.",
+          rows: [
+            ["Gnadenlose Angriffe", 2, "Meucheln", ""],
+            ["Verbesserter finsterer Stoß", 2, "Kampf", "Günstigerer Finsterer Stoß."],
+            ["Verbessertes Ausweiden", 3, "Meucheln", ""],
+            ["Durchbohrende Wunden", 3, "Kampf", "Ohne Dolche: stattdessen Ausdauer 2/2 und Blitzartige Reflexe."],
+            ["Ablenkung", 3, "Kampf", ""],
+            ["Riposte", 1, "Kampf", "Setz sie ein, sobald sie bereit ist."],
+            ["Präzision", 3, "Kampf", "Die Trefferchance gilt auch für Gifte."],
+            ["Makellose Ausführung", 1, "Kampf", ""],
+            ["Beidhändigkeitsspezialisierung", 3, "Kampf", ""]
+          ] },
+        { title: "Meucheln, Stufe 10 bis 30 (Dolche)", range: "21 Punkte", st: "t", kind: "order", start: 1,
+          note: "Variante von Method, um Dolche mit Meucheln und dann Verstümmeln zu spielen.",
+          rows: [
+            ["Gnadenlose Angriffe", 2, "Meucheln", ""],
+            ["Verbesserter finsterer Stoß", 2, "Kampf", ""],
+            ["Bosheit", 3, "Meucheln", "Der Krit gilt auch für Gifte."],
+            ["Verbessertes Zerhäckseln", 3, "Meucheln", ""],
+            ["Rücksichtslosigkeit", 2, "Meucheln", ""],
+            ["Unbarmherzige Stöße", 1, "Meucheln", ""],
+            ["Bosheit", 2, "Meucheln", ""],
+            ["Tödlichkeit", 2, "Meucheln", ""],
+            ["Kaltblütigkeit", 1, "Meucheln", ""],
+            ["Tödlichkeit", 3, "Meucheln", ""]
+          ] },
+        { title: "Stufe 31 bis 60", range: "30 Punkte", st: "p", kind: "list",
+          note: "Vorschlag von Wowforeverguides, noch nicht gespielt.",
+          rows: [
+            ["Beidhändigkeitsspezialisierung", "5/5", "Kampf", ""],
+            ["Klingenwirbel", "1/1", "Kampf", "Um 36 herum."],
+            ["Hacken und Schlitzen", "max", "Kampf", "Funktioniert mit jedem Waffentyp, Einhandäxte eingeschlossen (neu in Forever)."],
+            ["Adrenalinrausch", "1/1", "Kampf", "Stufe 40, mit Zweitspezialisierung."],
+            ["Rest", "20 Punkte", "Kampf oder Meucheln", "Kaltblütigkeit ist ein guter Abstecher in Meucheln."]
+          ] }
+      ],
+      keylevels: [["4", "Meucheln, Taschendiebstahl"], ["6", "Solarplexus"], ["8", "Entrinnen"], ["10", "Beidhändigkeit und Zerhäckseln (sofort trainieren), Kopfnuss, Sprinten"], ["12", "Tritt"], ["14", "Rüstung schwächen, Erdrosseln"], ["16", "Finte (doppelte Bedrohungssenkung)"], ["18", "Hinterhalt"], ["20", "Blutung, Gifte, Verstohlenheit Rang 2"], ["22", "Verschwinden, Ablenken"], ["26", "Fieser Trick"], ["30", "Nierenhieb, Tödliches Gift"], ["34", "Blenden"], ["40", "Sicheres Fallen, Zweitspezialisierung"]],
+      rotation: [["Eröffnung", "Aus der Verstohlenheit: Hinterhalt, Fieser Trick, oder Erdrosseln, wenn der Gegner lange lebt."], ["Währenddessen", "Immer zuerst Zerhäckseln, dann Finsterer Stoß (oder Verstümmeln) für Kombopunkte."], ["Abschluss", "Ausweiden bei einem fast toten Gegner, sonst Blutung. Geht es schief: Entrinnen, Solarplexus und Abstand nehmen, Sprinten, dann Verschwinden als letzter Ausweg."]],
+      tips: [
+        "Energie regeneriert sich durchgehend, nicht mehr in 20er-Schüben alle 2 Sekunden.",
+        "Gifte: weniger Schaden pro Auslösung als in Classic, aber mehr Aufladungen (60 statt 40). Sie sind mit Wetzsteinen kombinierbar.",
+        "Kopfnuss bricht deine eigene Verstohlenheit nicht mehr.",
+        "Ein verfehltes Rüstung schwächen verbraucht deine Kombopunkte nicht mehr.",
+        "Method empfiehlt zuerst Kürschnerei + Bergbau, dann Schmiedekunst für Waffen und Steine und schließlich Lederverarbeitung für dauerhaft.",
+        "Schlossknacken bleibt die Klassenfertigkeit des Schurken."
+      ],
+      sources: [["Method, Schurken-Leveling-Guide (7. Nov.)", "https://www.method.gg/wow-forever/wow-forever-rogue-leveling-guide-and-talents"], ["WoW Forever Tier List, Schurken-Übersicht (31. Okt.)", "https://wowforevertierlist.com/classes/rogue/leveling"]]
+    },
+
+    chasseur: {
+      name: "Jäger",
+      spec: "Tierherrschaft von 10 bis 60",
+      verdict: "Der Jäger ist in Forever die schnellste Klasse zum Leveln, und Tierherrschaft ist die Spezialisierung, die jeder Guide empfiehlt: Dein Begleiter tankt, du schießt. Unterwegs ist kein Talent-Reset nötig.",
+      timeline: [["10–30", "Begleiter und Aspekte", "#cfe6a8"], ["31–40", "Richtung Zorn des Wildtiers", "#a9d271"], ["41–60", "Zweiter Baum", "#6f9a3d"]],
+      phases: [
+        { title: "Stufe 10 bis 30", range: "21 Punkte", st: "t", kind: "list",
+          note: "Die Guides sind sich bei der Priorität einig, aber nicht immer bei den Rängen. Nimm sie in dieser Reihenfolge und fülle jedes Talent, bevor du weitermachst.",
+          rows: [
+            ["Tödliche Aspekte", "5/5", "Tierherrschaft", "Neues Talent: verstärkt deine Aspekte und damit deinen Schaden."],
+            ["Fokussiertes Feuer", "2/2", "Tierherrschaft", "Neues Talent, ersetzt Verbesserte Augen des Wildtiers: mehr Schaden."],
+            ["Entfesselter Zorn", "5/5", "Tierherrschaft", "+ Begleiterschaden."],
+            ["Verbessertes Tier wiederbeleben", "2/2", "Tierherrschaft", "Method behält beide Punkte: weniger Zeitverlust nach dem Tod des Begleiters."],
+            ["Tierische Schnelligkeit", "1/1", "Tierherrschaft", "Dein Begleiter läuft im Freien schneller."],
+            ["Falke beschwören", "1/1", "Tierherrschaft", "Neu: beschwört einen Falken neben deinem Begleiter. Method setzt ihn auf 25, laut Startdaten kommt er später (Stufe 36): Nimm ihn, sobald er wählbar ist."],
+            ["Wildheit", "der Rest", "Tierherrschaft", "Begleiterkrit: Steck die restlichen Punkte hier hinein."],
+            ["Einschüchterung", "1/1", "Tierherrschaft", "Um 30 herum: Notfall-Betäubung, wenn ein Pull schiefgeht."]
+          ] },
+        { title: "Stufe 31 bis 40", range: "10 Punkte", st: "p", kind: "list",
+          note: "Ziel: Zorn des Wildtiers mit deinem 31. Punkt auf Stufe 40. Pfadfinder ist am 2. November in Reihe 3 gerückt und kommt deshalb hier.",
+          rows: [
+            ["Raserei", "5/5", "Tierherrschaft", "Angriffstempo des Begleiters nach einem Krit."],
+            ["Geistbande", "2/2", "Tierherrschaft", "Gesundheitsregeneration für dich und deinen Begleiter: weniger Pausen."],
+            ["Pfadfinder", "2/2", "Tierherrschaft", "+ Tempo mit Aspekt des Geparden."],
+            ["Tierische Disziplin", "1/2", "Tierherrschaft", "Mehr Fokus für den Begleiter. Nimm es früher, wenn dir das Mana ausgeht."],
+            ["Zorn des Wildtiers", "1/1", "Tierherrschaft", "Stufe 40: große Schadensabklingzeit des Begleiters."]
+          ] },
+        { title: "Stufe 41 bis 60", range: "20 Punkte", st: "p", kind: "list",
+          note: "Zwei Wege kursieren, keiner getestet: 31 Tierherrschaft / 20 Treffsicherheit (Mobalytics) oder alles in Tierherrschaft mit etwas Treffsicherheit. Beide beginnen gleich.",
+          rows: [
+            ["Tierische Disziplin", "2/2", "Tierherrschaft", "Fülle es auf."],
+            ["Verbessertes Tier heilen", "2/2", "Tierherrschaft", "Die Heilung deines Begleiters bannt auch."],
+            ["Tödliche Schüsse", "5/5", "Treffsicherheit", "Krit auf deine Schüsse."],
+            ["Effizienz", "5/5", "Treffsicherheit", "Günstigere Schüsse: weniger Pausen."],
+            ["Rest von Treffsicherheit", "~8", "Treffsicherheit", "Hängt vom endgültigen Baum ab: Prüfe im Spiel, was der 2. November übrig gelassen hat."]
+          ] }
+      ],
+      keylevels: [["10", "Erster Begleiter, Aspekt des Falken, erstes Talent"], ["12", "Tier heilen"], ["18", "Mehrfachschuss"], ["20", "Gezielter Schuss, Aspekt des Geparden, Eiskältefalle"], ["26", "Schnellfeuer"], ["28", "Frostfalle"], ["30", "Totstellen, Einschüchterung"], ["40", "Zorn des Wildtiers, Reittier, Zweitspezialisierung"]],
+      rotation: [["10–24", "Schick den Begleiter, lass ihn etwas Bedrohung aufbauen, dann Schlangenbiss und Arkaner Schuss. Mehrfachschuss bei Gruppen ab 18, Gezielter Schuss auf Einzelziele ab 20 (gemeinsame Abklingzeit)."], ["25+", "Füge den Falken hinzu. Schnellfeuer bei großen Gegnern, Eiskältefalle, wenn ein Pull schiefgeht."], ["Immer", "Hör nie mit Automatischer Schuss auf. Seit dem 15. Oktober braucht er eine halbe Sekunde Stillstand, bevor er feuert."]],
+      tips: [
+        "Begleiter: Die Katze macht am meisten Schaden, der Eber steckt besser ein und holt mit Sturmangriff schnell die Aggro. Du kannst nichts über deiner Stufe zähmen.",
+        "Der Jägerschaden wurde zum Start stark erhöht: Gezielter Schuss +110 %, Arkaner Schuss +30 %, Schlangenbiss +20 %, stärkerer Aspekt des Falken.",
+        "Alle Fallen teilen sich jetzt eine Abklingzeit von 30 Sekunden.",
+        "Nutze beim Leveln nicht Einsamer Wolf: Ein Begleiter, der tankt, ist viel mehr wert als seine 20 % Schaden."
+      ],
+      sources: [["Method, Jäger-Leveling-Guide (21. Okt.)", "https://www.method.gg/wow-forever/wow-forever-hunter-leveling-guide-and-talents"], ["WoW Forever Tier List, Jäger-Übersicht (31. Okt.)", "https://wowforevertierlist.com/classes/hunter/leveling"], ["WoW Forever Guides, ursprüngliche Jäger-Reihenfolge (3. Nov.)", "https://wowforeverguides.com/leveling/hunter"], ["Kami Labs, Startnotizen vom 2. November", "https://kami-labs.fr/en/wow-forever/patch-notes-2-novembre-notes-de-lancement/"]]
+    },
+
+    demoniste: {
+      name: "Hexenmeister",
+      spec: "Gebrechen von 10 bis 45, dann ein Hauch Dämonologie",
+      verdict: "Gebrechen bleibt die empfohlene Spezialisierung: Dein Schaden über Zeit tötet, während du dich mit Blutsauger heilst. Grundlage ist hier der am 4. November aktualisierte Guide von Method, der neueste.",
+      timeline: [["10–29", "Sofortige Verderbnis", "#d6cdfb"], ["30–45", "Drain-Tank", "#a99af5"], ["46–60", "Dämonologie und Abschluss", "#6c5bc4"]],
+      phases: [
+        { title: "Vollständige Reihenfolge", range: "51 Punkte", st: "mix", kind: "order", start: 1,
+          note: "Reihenfolge von Method (4. November). Method gibt nicht jeden Rang an: Die mit * markierten sind abgeleitet, damit die Summe genau 51 ergibt. Punkte bis Stufe 30 sind getestet, der Rest ist geplant.",
+          rows: [
+            ["Unterdrückung", 4, "Gebrechen", "Deine Zauber treffen Gegner deiner Stufe immer."],
+            ["Verbesserte Verderbnis", 5, "Gebrechen", "Verderbnis wird sofort: das Herz des Builds."],
+            ["Verbesserter Aderlass", 1, "Gebrechen", "Mehr Mana pro Aderlass."],
+            ["Pandemie", 3, "Gebrechen", "* Stärkere DoT-Krits. Abgeleiteter Rang."],
+            ["Teufelskonzentration", 3, "Gebrechen", "* Deine Entzugszauber werden bei Treffern fast nie unterbrochen."],
+            ["Einbruch der Nacht", 2, "Gebrechen", "Verderbnis und Blutsauger können Schattenblitz sofort machen."],
+            ["Bosheit", 2, "Gebrechen", "Öffnet die nächste Reihe."],
+            ["Seelenentzug", 3, "Gebrechen", "* Stärkerer Blutsauger."],
+            ["Bosheit", 2, "Gebrechen", "Um Schattenbeherrschung zu erreichen."],
+            ["Schattenbeherrschung", 5, "Gebrechen", "+ Schattenschaden."],
+            ["Bosheit", 1, "Gebrechen", "Letzter Punkt."],
+            ["Lebensentzug", 1, "Gebrechen", "Ein DoT, der dich heilt. Kargoz nimmt ihn ab 30."],
+            ["Verbesserter Aderlass", 1, "Gebrechen", "Fülle es auf."],
+            ["Verbesserte Entzugszauber", 3, "Gebrechen", "+20 % auf Blutsauger und Seelendieb."],
+            ["Unheilige Macht", 5, "Dämonologie", "Bei 46: verstärkt den Sukkubus."],
+            ["Dämonische Energien", 2, "Dämonologie", ""],
+            ["Teufelsvitalität", 3, "Dämonologie", ""],
+            ["Verbesserter Fluch der Pein", 2, "Gebrechen", "Zurück zu Gebrechen zum Abschluss."],
+            ["Düstere Reichweite", 2, "Gebrechen", "+ Reichweite deiner Gebrechenzauber (ersetzt seit 15. Oktober Fluchverstärkung)."],
+            ["Unterdrückung", 1, "Gebrechen", "5/5 auf Stufe 60."]
+          ] }
+      ],
+      keylevels: [["10", "Leerwandler (Klassenquest), Seelendieb, Gesundheitsstein"], ["14", "Blutsauger"], ["20", "Sukkubus, Dämonenrüstung, Feuerregen, Ritual der Beschwörung"], ["30", "Teufelsjäger, Höllenfeuer"], ["40", "Reittier, Zweitspezialisierung"]],
+      rotation: [["10–19", "Fluch der Pein, dann Verderbnis, Zauberstab, wenn du stehst, Blutsauger, wenn du wenig Gesundheit hast, Seelendieb zum Abschluss für einen Splitter."], ["20–30", "Genauso, mit dem Sukkubus, um leichte Gegner schneller zu töten."], ["30+ (Drain-Tank)", "Verderbnis und Fluch der Pein, lass dich vom Gegner schlagen, Blutsauger zum Heilen, Aderlass für Mana, dann Blutsauger, um die Gesundheit zurückzuholen."]],
+      tips: [
+        "Dämonen haben etwa 73 % der Gesundheit verloren, die sie aus deiner Ausdauer bekamen: Der Leerwandler tankt schlechter als in der Beta, was noch stärker zum Drain-Tanking drängt.",
+        "Verbesserte Entzugszauber verstärkt Folter nicht mehr, aber Folter selbst bekam zum Start den doppelten Koeffizienten.",
+        "Seelendieb gibt viel weniger Splitter, wenn das Ziel überlebt: Beende Gegner sauber damit.",
+        "Halte einen aktuellen Zauberstab, um Gegner ohne Mana zu beenden. Er braucht eine halbe Sekunde Stillstand, bevor er feuert."
+      ],
+      sources: [["Method, Hexenmeister-Leveling-Guide (4. Nov.)", "https://www.method.gg/wow-forever/wow-forever-warlock-leveling-guide-and-talents"], ["Kargoz, Gebrechen-Guide 1-60 (14. Okt.)", "https://mobalytics.gg/wow-forever/profile/kargoz/classes/1-60-affliction-warlock-leveling-guide-wands-talents-rotation-macros-tips"], ["WoW Forever Tier List, Hexenmeister-Übersicht (31. Okt.)", "https://wowforevertierlist.com/classes/warlock/leveling"], ["Kami Labs, Startnotizen vom 2. November", "https://kami-labs.fr/en/wow-forever/patch-notes-2-novembre-notes-de-lancement/"]]
+    },
+
+    pretre: {
+      name: "Priester",
+      spec: "Disziplin mit Zauberstab von 10 bis 39, dann Schatten ab 40",
+      verdict: "Ja, Priester leveln bis 40 weiterhin mit Zauberstab, aber nicht aus dem Grund, der in der Beta viral ging. Zauberstäbe skalieren nicht mehr mit deiner Zaubermacht: Ihre Stärke kommt von Zauberstabspezialisierung, Willensentzug und Meditation, mit denen du Gegner ohne Trinken aneinanderreihst. Mit 40 wechselst du für die Schattengestalt zu Schatten.",
+      timeline: [["10–29", "Zauberstab", "#f4f1ea"], ["30–39", "Sühne", "#cfc8b8"], ["40–60", "Schatten", "#8d8578"]],
+      phases: [
+        { title: "Stufe 10 bis 29: Zauberstab-Build", range: "20 Punkte", st: "t", kind: "order", start: 1,
+          note: "15 Disziplin / 5 Schatten. Verbessertes Machtwort: Schild ist am 15. Oktober in Reihe 3 gerückt, daher nur ein Punkt bei 29.",
+          rows: [
+            ["Zauberstabspezialisierung", 2, "Disziplin", "+25 % Zauberstabschaden mit nur 2 Punkten."],
+            ["Willensentzug", 5, "Schatten", "Jeder Kill gibt Mana zurück: Das beseitigt die Pausen."],
+            ["Zwillingsdisziplinen", 3, "Disziplin", "Stärkere Sofortzauber (Schattenwort: Schmerz, Schild)."],
+            ["Märtyrertum", 2, "Disziplin", "Keine Unterbrechungen bei Treffern nach einem Krit."],
+            ["Geistige Stärke", 3, "Disziplin", "Mehr Mana."],
+            ["Innerer Fokus", 1, "Disziplin", "Alle 3 Minuten ein kostenloser, kritischerer Zauber."],
+            ["Meditation", 3, "Disziplin", "Du regenerierst Mana sogar beim Zaubern."],
+            ["Verbessertes Machtwort: Schild", 1, "Disziplin", "Stabilerer Schild."]
+          ] },
+        { title: "Stufe 30: Neuverteilung auf Sühne", range: "21 Punkte", st: "t", kind: "set",
+          note: "Geh zu deinem Lehrer und steck diese 21 Punkte direkt in Disziplin. Sühne wird dein sofortiger Schadenszauber.",
+          rows: [
+            ["Macht im Licht", 5, "Disziplin", "Stärkere Göttliche Pein und Sühne auf ein Ziel, das schon Schmerz hat."],
+            ["Heilige Präzision", 2, "Disziplin", ""],
+            ["Geistige Stärke", 3, "Disziplin", ""],
+            ["Verbessertes Machtwort: Schild", 3, "Disziplin", ""],
+            ["Innerer Fokus", 1, "Disziplin", ""],
+            ["Meditation", 3, "Disziplin", ""],
+            ["Verbessertes Inneres Feuer", 3, "Disziplin", ""],
+            ["Sühne", 1, "Disziplin", "Der 21. Punkt."]
+          ] },
+        { title: "Stufe 31 bis 39", range: "9 Punkte", st: "p", kind: "order", start: 22,
+          note: "Summe bei 39: 21 Disziplin / 4 Heilig / 5 Schatten.",
+          rows: [
+            ["Willensentzug", 5, "Schatten", "Du bekommst es zurück."],
+            ["Heilige Spezialisierung", 4, "Heilig", ""]
+          ] },
+        { title: "Stufe 40: Neuverteilung auf Schatten", range: "31 Punkte", st: "p", kind: "set",
+          note: "Reihenfolge von Method. Schattengestalt ist der 31. Punkt: -50 % Manakosten bei Schattenzaubern, +10 % Schattenschaden, doppelte Krits und -15 % erlittener körperlicher Schaden.",
+          rows: [
+            ["Willensentzug", 5, "Schatten", ""], ["Verbessertes Schattenwort: Schmerz", 2, "Schatten", ""], ["Schattenfokus", 5, "Schatten", "Trefferchance für Schattenzauber."],
+            ["Gedankenschinden", 1, "Schatten", ""], ["Verbessertes Gedankenschinden", 2, "Schatten", ""], ["Verbesserter Gedankenschlag", 4, "Schatten", ""],
+            ["Schattengewebe", 3, "Schatten", ""], ["Vampirumarmung", 1, "Schatten", ""], ["Verschlingende Ansteckung", 1, "Schatten", ""],
+            ["Stille", 1, "Schatten", ""], ["Dunkelheit", 5, "Schatten", ""], ["Schattengestalt", 1, "Schatten", "Der 31. Punkt."]
+          ] },
+        { title: "Stufe 41 bis 60", range: "20 Punkte", st: "p", kind: "list",
+          note: "Niemand hat diese bisher getestet platziert. Der meistgenannte Weg: zurück in Disziplin für Zauberstab und Mana.",
+          rows: [
+            ["Zauberstabspezialisierung", "2/2", "Disziplin", ""],
+            ["Zwillingsdisziplinen", "3/3", "Disziplin", ""],
+            ["Geistige Stärke", "3/3", "Disziplin", ""],
+            ["Meditation", "3/3", "Disziplin", ""],
+            ["Innerer Fokus", "1/1", "Disziplin", ""],
+            ["Verbessertes Machtwort: Schild", "3/3", "Disziplin", ""],
+            ["Geistige Beweglichkeit", "der Rest", "Disziplin", "Günstigere Sofortzauber."]
+          ] }
+      ],
+      keylevels: [["4", "Schattenwort: Schmerz"], ["6", "Machtwort: Schild"], ["~5 / 13", "Geringer, dann großer Zauberstab (Verzauberer)"], ["14", "Psychischer Schrei"], ["20", "Verschlingende Seuche und Furchtzauberschutz, jetzt für jeden Priester"], ["30", "Sühne (Talent)"], ["32", "Schattenwort: Tod"], ["40", "Schattengestalt, Reittier, Zweitspezialisierung"]],
+      rotation: [["10–29", "Schild, Gedankenschlag, Schattenwort: Schmerz, dann Zauberstab, bis der Gegner stirbt."], ["30–39", "Schild, Schattenwort: Schmerz, Sühne, dann Zauberstab. Bei Gegnern, die schnell sterben, reicht Schmerz allein, um Macht im Licht auszulösen."], ["40+", "Schattenwort: Tod und Gedankenschlag, sobald bereit, Gedankenschinden als Füller über die volle Kanalisierung."]],
+      tips: [
+        "Zauberstäbe bekommen seit dem 24. September keinen Schaden mehr aus deiner Zaubermacht: Der Trick „Zauberstab + Zaubermacht“ aus der Beta ist weg. Wähle Zauberstäbe nach ihrem angegebenen Schaden.",
+        "Seit dem 15. Oktober brauchen Zauberstäbe vor dem ersten Schuss eine halbe Sekunde Stillstand.",
+        "Schattenwort: Tod kostet jetzt 30 % deiner Gesundheit, wenn das Ziel überlebt: Heb es zum Abschließen auf.",
+        "Priester töten langsamer als Jäger oder Hexenmeister, sterben aber selten und halten kaum zum Essen an. Wenn du keine Neuverteilungen bezahlen willst, kannst du direkt in Schatten leveln."
+      ],
+      sources: [["WoW Forever Tier List, Priester-Übersicht auf Basis von Method (31. Okt.)", "https://wowforevertierlist.com/classes/priest/leveling"], ["Method, Priester-Leveling-Guide (6. Nov.)", "https://www.method.gg/wow-forever/wow-forever-priest-leveling-guide-and-talents"], ["ConquestCapped, Zauberstäbe und Zaubermacht", "https://conquestcapped.com/guides/wow-forever/wow-forever-priest-leveling/"], ["Kami Labs, Beta-Artikel über Zauberstäbe (23. Sept., veraltet)", "https://kami-labs.fr/en/wow-forever/pretre-wow-forever-leveling-baguette/"], ["Kami Labs, Startnotizen vom 2. November", "https://kami-labs.fr/en/wow-forever/patch-notes-2-novembre-notes-de-lancement/"]]
+    }
+  };
+
+  // Icône en jeu de chaque talent (sources : Wowhead Forever et wowsims), images dans assets/icons.
+  var ICONS = {"chaman":{"Donnernde Schläge":"ability_thunderbolt","Geistige Gewandtheit":"spell_nature_bloodlust","Verbesserter Geisterwolf":"spell_nature_spiritwolf","Schamanistischer Fokus":"spell_nature_elementalabsorption","Elementarwaffen":"spell_fire_flametounge","Wissen der Ahnen":"spell_shadow_grimward","Sturmschlag":"ability_shaman_stormstrike","Schlaghagel":"ability_ghoulfrenzy","Verbesserter Sturmschlag":"spell_shaman_improvedstormstrike","Geisterwaffen":"ability_parry","Geistige Schnelligkeit":"spell_nature_mentalquickness"},"druide":{"Wildheit":"ability_hunter_pet_hyena","Wilde Schnelligkeit":"spell_nature_spiritwolf","Wilder Instinkt":"ability_ambush","Wilde Wut":"ability_druid_ravage","Zerfetzende Angriffe":"spell_shadow_vampiricaura","Gestaltwandlerkraft":"spell_druid_displacement","Urbiss":"ability_racial_cannibalize","Geschärfte Klauen":"inv_misc_monsterclaw_04","Blutraserei":"ability_ghoulfrenzy","Rudelführer":"spell_nature_unyeildingstamina","Natürlicher Instinkt":"ability_druid_predatoryinstincts","Zerfleischen und Zerreißen":"ability_druid_primalagression","Berserker":"ability_druid_berserk","Herz der Wildnis":"spell_holy_blessingofagility","Raubtierschläge":"ability_hunter_pet_cat","Dickes Fell":"inv_misc_pelt_bear_03","Brutaler Hieb":"ability_druid_bash","Verbesserte Gestaltwandlerkraft":"ability_hunter_aspectmastery","Natürliche Reaktion":"ability_bullrush"},"guerrier":{"Schildspezialisierung":"inv_shield_06","Verbesserter Donnerknall":"ability_thunderclap","Verbesserter Blutrausch":"ability_racial_bloodrage","Meister der Verteidigung":"ability_warrior_shieldguard","Verbesserte Rache":"ability_warrior_revenge","Vorhut":"ability_warrior_shieldcharge","Trotz":"ability_warrior_innerrage","Verbessertes Rüstung zerreißen":"ability_warrior_sunder","Bollwerk":"inv_shield_04","Konzentrierte Wut":"ability_warrior_focusedrage","Verbessertes Verwunden":"ability_gouge","Tiefe Wunden":"ability_backstab","Verbesserter heldenhafter Stoß":"ability_rogue_ambush","Verbesserter Sturmangriff":"ability_warrior_charge","Verbessertes Überwältigen":"inv_sword_05","Durchbohren":"ability_searingarrow","Zweihandwaffen-Spezialisierung":"inv_axe_09","Weitreichende Stöße":"ability_rogue_slicedice","Waffenmeister":"garrison_weaponupgrade","Ungezügelter Zorn":"spell_nature_stoneclawtotem","Wutanfall":"spell_shadow_unholyfrenzy"},"mage":{"Verbesserter Frostblitz":"spell_frost_frostbolt02","Erfrierung":"spell_frost_frostarmor","Eislanze":"spell_frost_frostblast","Elementarpräzision":"spell_ice_magicdamage","Eisblock":"spell_frost_wizardmark","Zertrümmern":"spell_frost_frostshock","Eisige Finger":"ability_mage_wintersgrasp","Kälteeinbruch":"spell_frost_wizardmark","Eisbarriere":"spell_ice_lament","Arkane Meditation":"spell_shadow_siphonmana"},"paladin":{"Segnung":"spell_frost_windwalkon","Geheiligtes Richturteil":"ability_paladin_judgementblue","Verbessertes Richturteil":"spell_holy_righteousfury","Streben nach Gerechtigkeit":"spell_holy_persuitofjustice","Überzeugung":"spell_holy_retributionaura","Siegel des Befehls":"ability_warrior_innerrage","Heiliger Schiedsrichter":"inv_sword_08","Rachsucht":"ability_racial_avatar","Zweihandwaffen-Spezialisierung":"inv_hammer_04","Buße":"spell_holy_prayerofhealing","Göttliche Stärke":"ability_golemthunderclap","Verbesserte Siegel":"ability_thunderbolt","Heiliger Kanal":"spell_holy_devineaegis"},"voleur":{"Gnadenlose Angriffe":"ability_fiegndead","Verbesserter finsterer Stoß":"spell_shadow_ritualofsacrifice","Verbessertes Ausweiden":"ability_rogue_eviscerate","Durchbohrende Wunden":"ability_backstab","Ablenkung":"ability_parry","Riposte":"ability_warrior_challange","Präzision":"ability_marksmanship","Makellose Ausführung":"inv_sword_35","Beidhändigkeitsspezialisierung":"ability_dualwield","Bosheit":"ability_racial_bloodrage","Verbessertes Zerhäckseln":"ability_rogue_slicedice","Rücksichtslosigkeit":"ability_druid_disembowel","Unbarmherzige Stöße":"ability_warrior_decisivestrike","Tödlichkeit":"ability_criticalstrike","Kaltblütigkeit":"spell_ice_lament","Klingenwirbel":"ability_warrior_punishingblow","Hacken und Schlitzen":"inv_sword_27","Adrenalinrausch":"spell_shadow_shadowworddominate"},"chasseur":{"Tödliche Aspekte":"spell_nature_ravenform","Fokussiertes Feuer":"ability_hunter_silenthunter","Entfesselter Zorn":"ability_bullrush","Verbessertes Tier wiederbeleben":"ability_hunter_beastsoothe","Tierische Schnelligkeit":"ability_hunter_pet_boar","Falke beschwören":"ability_hunter_animalhandler","Wildheit":"inv_misc_monsterclaw_04","Einschüchterung":"ability_devour","Raserei":"inv_misc_monsterclaw_03","Geistbande":"classic_ability_druid_demoralizingroar","Pfadfinder":"ability_mount_jungletiger","Tierische Disziplin":"spell_nature_abolishmagic","Zorn des Wildtiers":"ability_druid_ferociousbite","Verbessertes Tier heilen":"ability_hunter_mendpet","Tödliche Schüsse":"ability_searingarrow","Effizienz":"spell_frost_wizardmark"},"demoniste":{"Unterdrückung":"spell_shadow_unsummonbuilding","Verbesserte Verderbnis":"spell_shadow_abominationexplosion","Verbesserter Aderlass":"spell_shadow_burningspirit","Pandemie":"spell_shadow_unstableaffliction_2","Teufelskonzentration":"spell_shadow_fingerofdeath","Einbruch der Nacht":"spell_shadow_twilight","Bosheit":"spell_shadow_focusedpower","Seelenentzug":"spell_shadow_lifedrain02","Schattenbeherrschung":"spell_shadow_shadetruesight","Lebensentzug":"spell_shadow_requiem","Verbesserte Entzugszauber":"spell_shadow_haunting","Unheilige Macht":"spell_shadow_shadowworddominate","Dämonische Energien":"spell_shadow_felmending","Teufelsvitalität":"spell_holy_magicalsentry","Verbesserter Fluch der Pein":"spell_shadow_curseofsargeras","Düstere Reichweite":"spell_shadow_callofbone"},"pretre":{"Zauberstabspezialisierung":"inv_wand_01","Willensentzug":"spell_shadow_requiem","Zwillingsdisziplinen":"spell_holy_sealofvengeance","Märtyrertum":"spell_nature_tranquility","Geistige Stärke":"spell_nature_enchantarmor","Innerer Fokus":"spell_frost_windwalkon","Meditation":"spell_nature_sleep","Verbessertes Machtwort: Schild":"spell_holy_powerwordshield","Macht im Licht":"spell_holy_searinglight","Heilige Präzision":"spell_holy_divineillumination","Verbessertes Inneres Feuer":"spell_holy_innerfire","Sühne":"spell_holy_penance","Heilige Spezialisierung":"spell_holy_sealofsalvation","Verbessertes Schattenwort: Schmerz":"spell_shadow_shadowwordpain","Schattenfokus":"spell_shadow_burningspirit","Gedankenschinden":"spell_shadow_siphonmana","Verbessertes Gedankenschinden":"spell_shadow_soulleech_2","Verbesserter Gedankenschlag":"spell_shadow_unholyfrenzy","Schattengewebe":"spell_shadow_blackplague","Vampirumarmung":"spell_shadow_unsummonbuilding","Verschlingende Ansteckung":"spell_shadow_devouringplague","Stille":"spell_shadow_impphaseshift","Dunkelheit":"spell_shadow_twilight","Schattengestalt":"spell_shadow_shadowform","Geistige Beweglichkeit":"ability_hibernation"}}, cur = "";
+  function tal(name) {
+    var imgs = name.split(/, then |, | or /).map(function (n) {
+      var ic = (ICONS[cur] || {})[n];
+      return ic ? '<img class="ticon" src="../assets/icons/' + ic + '.jpg" alt="" width="28" height="28" loading="lazy">' : "";
+    }).join("");
+    return '<span class="tname">' + imgs + "<strong>" + esc(name) + "</strong></span>";
+  }
+  function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+  function badge(st) {
+    if (st === "t") return '<span class="badge t">tested</span>';
+    if (st === "p") return '<span class="badge p">projected</span>';
+    return '<span class="badge t">getestet bis 30</span> <span class="badge p">danach geplant</span>';
+  }
+
+  function phaseTable(ph) {
+    var head, body = "";
+    if (ph.kind === "order") {
+      head = "<tr><th>Stufe</th><th>Punkte</th><th>Talent</th><th>Rang</th><th>Baum</th></tr>";
+      var p = ph.start, acc = {};
+      ph.rows.forEach(function (r) {
+        var n = r[1], a = p, b = p + n - 1;
+        acc[r[0]] = (acc[r[0]] || 0) + n;
+        var lv = (a + 9) + (n > 1 ? "–" + (b + 9) : "");
+        var pts = a + (n > 1 ? "–" + b : "");
+        body += '<tr><td class="num">' + lv + '</td><td class="num" style="color:var(--muted);font-weight:400">' + pts + "</td><td>" + tal(r[0]) +
+          (r[3] ? '<span class="why">' + r[3] + "</span>" : "") + '</td><td class="num">' + acc[r[0]] + "</td>" + '<td class="tree">' + r[2] + "</td></tr>";
+        p = b + 1;
+      });
+    } else if (ph.kind === "lv") {
+      head = "<tr><th>Stufe</th><th>Talent</th><th>Rang</th><th>Baum</th></tr>";
+      ph.rows.forEach(function (r) {
+        body += '<tr><td class="num">' + r[0] + "</td><td>" + tal(r[1]) + (r[4] ? '<span class="why">' + r[4] + "</span>" : "") +
+          '</td><td class="num">' + r[2] + '</td><td class="tree">' + r[3] + "</td></tr>";
+      });
+    } else {
+      head = "<tr><th>" + (ph.kind === "set" ? "Talent" : "Priorität") + "</th><th>Rang</th><th>Baum</th></tr>";
+      ph.rows.forEach(function (r, i) {
+        body += "<tr><td>" + (ph.kind === "list" ? '<span style="color:var(--muted)">' + (i + 1) + ".</span> " : "") + "" + tal(r[0]) +
+          (r[3] ? '<span class="why">' + r[3] + "</span>" : "") + '</td><td class="num">' + r[1] + '</td><td class="tree">' + r[2] + "</td></tr>";
+      });
+    }
+    return '<div class="table-wrap"><table><thead>' + head + "</thead><tbody>" + body + "</tbody></table></div>";
+  }
+
+  function render(id) {
+    cur = id;
+    var c = CLASSES[id];
+    document.body.setAttribute("data-cls", id);
+    document.getElementById("title").textContent = "Leveling-Talente · " + c.name;
+    document.querySelectorAll(".tabs button").forEach(function (b) { b.setAttribute("aria-selected", b.dataset.cls === id ? "true" : "false"); });
+    var h = "";
+    h += '<section class="stitched verdict"><span class="tag" style="margin:0">Empfohlene Spezialisierung</span><p class="spec">' + c.spec + "</p><p>" + c.verdict + "</p>" +
+      '<div class="timeline" aria-label="Leveling-Plan">' + c.timeline.map(function (t, i) {
+        return '<div' + (i === c.timeline.length - 1 ? ' class="dk"' : "") + ' style="background:' + t[2] + '">' + t[1] + "<span>" + t[0] + "</span></div>";
+      }).join("") + "</div></section>";
+    c.phases.forEach(function (ph) {
+      h += '<section class="phase"><div class="phase-head"><h2>' + ph.title + '</h2><span>' + badge(ph.st) + ' <span class="range">' + ph.range + "</span></span></div>" +
+        (ph.note ? '<p class="note">' + ph.note + "</p>" : "") + phaseTable(ph) + "</section>";
+    });
+    h += '<div class="cols">' +
+      '<div class="card"><h3>Wichtige Stufen</h3><dl class="kv">' + c.keylevels.map(function (k) { return "<dt>" + k[0] + "</dt><dd>" + k[1] + "</dd>"; }).join("") + "</dl></div>" +
+      '<div class="card"><h3>Leveling-Rotation</h3><dl class="kv">' + c.rotation.map(function (k) { return "<dt>" + k[0] + "</dt><dd>" + k[1] + "</dd>"; }).join("") + "</dl></div>" +
+      "</div>";
+    h += '<section class="stitched" style="display:grid;gap:10px"><h2>Gut zu wissen in Forever</h2><ul class="plain">' + c.tips.map(function (t) { return "<li>" + t + "</li>"; }).join("") + "</ul></section>";
+    document.getElementById("content").innerHTML = h;
+    document.getElementById("foot").innerHTML = "<p>Quellen: " + c.sources.map(function (s) { return '<a href="' + s[1] + '">' + s[0] + "</a>"; }).join(" · ") + "</p>" +
+      "<p>Die Guides sind sich bei einigen Rängen noch uneinig: Im Zweifel hat der Baum im Spiel immer recht. Talent- und Zaubernamen sind übersetzt und können im Spielclient leicht abweichen.</p>" +
+      "<p>Inoffizieller Fan-Guide, aktualisiert am 7. November 2026. World of Warcraft ist eine Marke von Blizzard Entertainment.</p>";
+  }
+
+  function fromHash() { var h = (location.hash || "").slice(1); return CLASSES[h] ? h : "chasseur"; }
+  document.querySelectorAll(".tabs button").forEach(function (b) {
+    b.addEventListener("click", function () { if (location.hash !== "#" + b.dataset.cls) location.hash = b.dataset.cls; else render(b.dataset.cls); });
+  });
+  window.addEventListener("hashchange", function () { render(fromHash()); });
+  render(fromHash());
+})();
+</script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

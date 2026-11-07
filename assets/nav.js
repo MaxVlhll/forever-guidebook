@@ -1,24 +1,31 @@
 // Barre de navigation commune et choix de faction.
 // Pour ajouter un guide, ajoute-le dans GROUPS : il apparaît sur toutes les pages.
 // La faction ("a", "h" ou "both") est gardée sous la clé fg-faction ; les moteurs la relisent à l'événement "factionchange".
-// Langues : français à la racine, anglais dans en/ avec les mêmes noms de fichiers. Les libellés sont "français|anglais".
+// Langues : français à la racine, les autres dans en/, es/, de/ avec les mêmes noms de fichiers.
+// Les libellés sont "français|anglais|espagnol|allemand" (même ordre que LANGS).
 (function () {
-  var EN = document.documentElement.lang === "en";
-  function T(s) { var p = s.split("|"); return EN && p[1] ? p[1] : p[0]; }
+  var LANGS = [["fr", "Français"], ["en", "English"], ["es", "Español"], ["de", "Deutsch"]];
+  var LANG = document.documentElement.lang, LI = Math.max(0, LANGS.map(function (l) { return l[0]; }).indexOf(LANG));
+  function T(s) { var p = s.split("|"); return p[LI] || p[0]; }
   var GROUPS = [
-    ["Classes", [["talents.html#chaman", "Chaman|Shaman"], ["talents.html#chasseur", "Chasseur|Hunter"], ["talents.html#demoniste", "Démoniste|Warlock"],
-      ["talents.html#druide", "Druide|Druid"], ["talents.html#guerrier", "Guerrier|Warrior"], ["talents.html#mage", "Mage"],
-      ["talents.html#paladin", "Paladin"], ["talents.html#pretre", "Prêtre|Priest"], ["talents.html#voleur", "Voleur|Rogue"]]],
-    ["Fabrication|Crafting", [["alchimie.html", "Alchimie|Alchemy"], ["couture.html", "Couture|Tailoring"], ["enchantement.html", "Enchantement|Enchanting"],
-      ["forge.html", "Forge|Blacksmithing"], ["ingenierie.html", "Ingénierie|Engineering"], ["travail-du-cuir.html", "Travail du cuir|Leatherworking"]]],
-    ["Récolte|Gathering", [["herboristerie.html", "Herboristerie|Herbalism"], ["minage.html", "Minage|Mining"], ["depecage.html", "Dépeçage|Skinning"]]],
-    ["Secondaires|Secondary", [["cuisine.html", "Cuisine|Cooking"], ["secourisme.html", "Secourisme|First Aid"], ["peche.html", "Pêche|Fishing"]]]
+    ["Classes|Classes|Clases|Klassen", [["talents.html#chaman", "Chaman|Shaman|Chamán|Schamane"], ["talents.html#chasseur", "Chasseur|Hunter|Cazador|Jäger"],
+      ["talents.html#demoniste", "Démoniste|Warlock|Brujo|Hexenmeister"], ["talents.html#druide", "Druide|Druid|Druida|Druide"],
+      ["talents.html#guerrier", "Guerrier|Warrior|Guerrero|Krieger"], ["talents.html#mage", "Mage|Mage|Mago|Magier"],
+      ["talents.html#paladin", "Paladin|Paladin|Paladín|Paladin"], ["talents.html#pretre", "Prêtre|Priest|Sacerdote|Priester"],
+      ["talents.html#voleur", "Voleur|Rogue|Pícaro|Schurke"]]],
+    ["Fabrication|Crafting|Fabricación|Herstellung", [["alchimie.html", "Alchimie|Alchemy|Alquimia|Alchemie"], ["couture.html", "Couture|Tailoring|Sastrería|Schneiderei"],
+      ["enchantement.html", "Enchantement|Enchanting|Encantamiento|Verzauberkunst"], ["forge.html", "Forge|Blacksmithing|Herrería|Schmiedekunst"],
+      ["ingenierie.html", "Ingénierie|Engineering|Ingeniería|Ingenieurskunst"], ["travail-du-cuir.html", "Travail du cuir|Leatherworking|Peletería|Lederverarbeitung"]]],
+    ["Récolte|Gathering|Recolección|Sammeln", [["herboristerie.html", "Herboristerie|Herbalism|Herboristería|Kräuterkunde"],
+      ["minage.html", "Minage|Mining|Minería|Bergbau"], ["depecage.html", "Dépeçage|Skinning|Desuello|Kürschnerei"]]],
+    ["Secondaires|Secondary|Secundarias|Sekundär", [["cuisine.html", "Cuisine|Cooking|Cocina|Kochkunst"],
+      ["secourisme.html", "Secourisme|First Aid|Primeros auxilios|Erste Hilfe"], ["peche.html", "Pêche|Fishing|Pesca|Angeln"]]]
   ];
-  var FACTIONS = [["a", "Alliance"], ["both", "Les deux|Both"], ["h", "Horde"]];
+  var FACTIONS = [["a", "Alliance|Alliance|Alianza|Allianz"], ["both", "Les deux|Both|Ambas|Beide"], ["h", "Horde|Horde|Horda|Horde"]];
   var KEY = "fg-faction";
   var page = decodeURIComponent(location.pathname.split("/").pop()) || "index.html";
   if (!/^[a-z0-9-]+\.html$/.test(page)) page = "index.html"; // jamais de texte libre de l'URL dans le HTML
-  var other = (EN ? "../" : "en/") + page;
+  function langHref(l) { return (LI ? "../" : "") + (l === "fr" ? "" : l + "/") + page; }
 
   function getFaction() { try { return localStorage.getItem(KEY) || "both"; } catch (e) { return "both"; } }
   function isHere(href) {
@@ -38,11 +45,14 @@
     '<div class="fac-switch" role="group" aria-label="Faction">' + FACTIONS.map(function (f) {
       return '<button type="button" data-v="' + f[0] + '">' + T(f[1]) + "</button>";
     }).join("") + "</div>" +
-    '<a class="lang" id="lang" href="' + other + '" hreflang="' + (EN ? "fr" : "en") + '" lang="' + (EN ? "fr" : "en") + '">' + (EN ? "FR" : "EN") + "</a></div>";
+    '<details class="nav-dd lang-dd"><summary aria-label="Language">' + LANGS[LI][0].toUpperCase() + "</summary><ul>" +
+    LANGS.filter(function (l, i) { return i !== LI; }).map(function (l) {
+      return '<li><a data-l="' + l[0] + '" hreflang="' + l[0] + '" lang="' + l[0] + '" href="' + langHref(l[0]) + '">' + l[1] + "</a></li>";
+    }).join("") + "</ul></details></div>";
   document.body.insertBefore(nav, document.body.firstChild);
-  // Le lien de langue garde la classe affichée sur la page des talents.
-  var $lang = document.getElementById("lang");
-  function syncLang() { $lang.href = other + location.hash; }
+  // Les liens de langue gardent la classe affichée sur la page des talents.
+  var $langs = nav.querySelectorAll(".lang-dd a");
+  function syncLang() { $langs.forEach(function (a) { a.href = langHref(a.dataset.l) + location.hash; }); }
   syncLang();
   window.addEventListener("hashchange", syncLang);
 

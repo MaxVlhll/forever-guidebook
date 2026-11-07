@@ -30,6 +30,6 @@ Les anciennes pages faites dans l'appli de bureau sont dans `_originaux/`. Elles
 
 ## Langues
 
-- Français à la racine, anglais dans `en/`, avec les mêmes noms de fichiers. Le bouton FR/EN de la barre ouvre la même page dans l'autre langue.
-- `assets/nav.js`, `assets/metier.js` et `assets/recolte.js` lisent `<html lang>` et choisissent leurs textes (`L("français", "english")`).
-- Une modification de contenu se fait dans les deux versions. Les noms d'objets et de PNJ anglais sont ceux de Classic. Ceux propres à Forever sont traduits depuis le client français.
+- Français à la racine, anglais dans `en/`, espagnol dans `es/`, allemand dans `de/`, avec les mêmes noms de fichiers. Le menu de langue de la barre ouvre la même page dans une autre langue.
+- `assets/nav.js`, `assets/metier.js` et `assets/recolte.js` lisent `<html lang>` et choisissent leurs textes (`L("fr", "en", "es", "de")`, libellés `"fr|en|es|de"` dans la barre).
+- Une modification de contenu se fait dans toutes les versions. Les pages `es/` et `de/` sont traduites depuis `en/` : les noms d'objets, de PNJ et de zones y sont une traduction au mieux et peuvent différer un peu du client.

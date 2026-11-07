@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Herboristería WoW Forever</title>
+<meta name="description" content="Guía de Herboristería 1-300 para WoW Forever (Alianza y Horda): qué recoger y dónde, tramo a tramo, con los recuentos de nodos de Forever y los instructores.">
+<meta property="og:title" content="Herboristería WoW Forever">
+<meta property="og:description" content="Guía de Herboristería 1-300 para WoW Forever (Alianza y Horda): qué recoger y dónde, tramo a tramo, con los recuentos de nodos de Forever y los instructores.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../herboristerie.html">
+<link rel="alternate" hreflang="en" href="../en/herboristerie.html">
+<link rel="alternate" hreflang="de" href="../de/herboristerie.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #11140d;
+  --bg-glow: #1e2614;
+  --panel: #191e14;
+  --panel-2: #222a1b;
+  --stitch: #66803d;
+  --accent: #b5d84f;
+  --seg1: #d8ec9c; --seg2: #b5d84f; --seg3: #7a9a2c; --seg4: #4f661b;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Herboristería</span>
+  <h1>Herboristería 1 → 300</h1>
+  <p class="lede">Qué hierba recoger y dónde, tramo a tramo, según el censo de nodos de Forever. No necesitas herramienta. Indica tu habilidad: la página muestra tu tramo y la mejor zona.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Dónde estás</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Habilidad actual</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Quitar 5 puntos">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Añadir 5 puntos">+5</button>
+      </div>
+    </div>
+    
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Aprendiz</div><div class="seg s2">Oficial</div><div class="seg s3">Experto</div><div class="seg s4">Artesano</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:14px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Tramos y zonas</h2>
+    <p class="lede" style="margin-top:0">Una hierba da puntos desde su nivel requerido hasta unos 100 puntos más (regla de Classic, por confirmar). Los números son los nodos contados por zona.</p>
+    <div class="legend"><span><span class="zone">Zona <small>info</small></span> zona contada por Forever</span><span><span class="zone a">Zona</span> Alianza</span><span><span class="zone h">Zona</span> Horda</span><span>sin marca: disputada o neutral</span></div>
+  </div>
+  <div class="tiers" id="tiers"></div>
+</section>
+
+<section aria-labelledby="seuil-h" style="display:grid;gap:12px">
+  <h2 id="seuil-h">Umbrales de las hierbas</h2>
+  <p class="lede" style="margin-top:0">Habilidad de Herboristería necesaria para recoger cada hierba.</p>
+  <div class="cols"><div class="card"><h3>1 a 85</h3><span class="lv">Principiante</span><p>Flor de paz 1 · Hojaplata 1 · Raíz de tierra 15 · Marregal 50 · Brezospina 70 · Alga estranguladora 85</p></div><div class="card"><h3>100 a 185</h3><span class="lv">Intermedio</span><p>Hierba cardenal 100 · Acérita salvaje 115 · Musgo de tumba 120 · Sangrerregia 125 · Vidarraíz 150 · Hojamustia 160 · Espina de oro 170 · Mostacho de Khadgar 185</p></div><div class="card"><h3>195 a 300</h3><span class="lv">Avanzado</span><p>Ácaro de invierno 195 · Flor de fuego 205 · Loto cárdeno 210 · Lágrimas de Arthas 220 · Solea 230 · Carolina 235 · Champiñón fantasma 245 · Gromsangre 250 · Sansam dorado 260 · Hojasueño 270 · Salviargenta de montaña 280 · Flor de peste 285 · Setelo de hielo 290 · Loto negro 300</p></div></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Instructores de Herboristería</h2>
+  <p class="lede" style="margin-top:0">Kami Labs da los instructores sin sus rangos. En Forever, las profesiones de fabricación piden habilidad 50 / 125 / 200 y niveles 10 / 20 / 35: es muy probable que aquí sea igual, por verificar en el juego.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alianza</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Desbloquea</th><th>Requisitos</th><th>Instructores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Todos los rangos</span></td><td class="num">hasta 300</td><td>habilidad 50 / 125 / 200 (probable)</td><td><strong>Tannysa</strong>, Ventormenta (44.4, 77.8) · Shylamiir, Ventormenta (15.0, 49.4) · Reyna Stonebranch, Forjaz (55.4, 58.4) · Firodren Mooncaller, Darnassus (48.0, 68.4) · Herborista Pomeroy, Bosque de Elwynn (39.8, 48.4) · Nancy Chantefleur, Bosque de Elwynn (52.2, 43.4) · Emrys Barbe-de-silex, Dun Morogh (28.8, 66.4) · Kali Healtouch, Loch Modan (36.4, 48.4) · Malorne Bladeleaf, Teldrassil (57.4, 60.6) · Eleyna Vespebrise, Teldrassil (59.8, 41.4)</td></tr><tr><td><span class="pill">Fuera de las capitales</span></td><td class="num">—</td><td>—</td><td>Alma Jainrose, Montañas Crestagrana (16.2, 45.6) · Telurinon Moonshadow, Los Humedales (8.0, 55.8) · Cylania Rootstalker, Vallefresno (50.4, 67.0) · Brant Jasperbloom, Marjal Revolcafango (64.0, 47.6) · Flora Silverwind, Vega de Tuercespina (27.6, 77.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Desbloquea</th><th>Requisitos</th><th>Instructores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Todos los rangos</span></td><td class="num">hasta 300</td><td>habilidad 50 / 125 / 200 (probable)</td><td><strong>Jandi</strong>, Orgrimmar (55.4, 39.4) · Mishiki, Durotar (55.4, 75.0) · Zor'la, Durotar (42.6, 67.4) · Martha Alliestar, Entrañas (54.2, 49.4) · Faruza, Claros de Tirisfal (59.8, 52.0) · Florence Belladone, Claros de Tirisfal (32.4, 65.2) · Komin Winterhoof, Cima del Trueno (49.4, 39.2) · Garan Haut-Soleil, Mulgore (44.2, 77.8)</td></tr><tr><td><span class="pill">Neutrales</span></td><td class="num">—</td><td>—</td><td>Aranae Venomblood, Laderas de Trabalomas (61.4, 19.8) · Angrun y Flora Silverwind, Vega de Tuercespina · Ruw, Feralas (76.0, 43.4)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novedades de Forever</h2>
+  <ul class="plain"><li>Anunciado en la BlizzCon, aún sin confirmar: <strong>Don de la naturaleza</strong> (resistencia a todas las escuelas de magia), más probabilidad de lotos raros y más hierbas por nodo.</li><li>Forever tiene 48 tipos de nodos: 2 nuevos (Flor de paz marchita, Hojaplata atrofiada) y 8 modificados.</li><li>El <strong>Loto negro</strong> ya no da puntos de habilidad.</li><li><strong>Puntos de legado</strong> a 150, 225 y 300.</li><li>Combina bien con la <a href="alchimie.html">Alquimia</a>, y los <a href="secourisme.html">Primeros auxilios</a> también necesitan ahora hierbas para las pociones de sanación.</li></ul>
+</section>
+
+<footer class="foot"><p>Fuentes: <a href="https://kami-labs.fr/guide-herboristerie-wow-forever/">Kami Labs, guía de Herboristería de WoW Forever</a> · <a href="https://kami-labs.fr/metiers-wow-forever/">Kami Labs, profesiones de WoW Forever</a>.</p><p>Los consejos por facción vienen de Classic, en el que se basa Forever. La beta se detuvo en 225: los tramos de más arriba están marcados «tras la beta». Los nombres de objetos, PNJ y zonas están traducidos y pueden variar un poco en tu cliente.</p><p>Guía de fans no oficial, actualizada el 7 de noviembre de 2026. World of Warcraft es una marca de Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "herbo", "done300": "300 alcanzado. El Loto negro ya no da puntos: guárdalo para los frascos.", "train": {"comp": "Piensa en el rango Oficial (probablemente nivel 10): Jandi en Orgrimmar (55.4, 39.4).", "exp": "Piensa en el rango Experto (probablemente nivel 20): Jandi en Orgrimmar (55.4, 39.4).", "art": "Piensa en el rango Artesano (probablemente nivel 35): Jandi en Orgrimmar (55.4, 39.4)."}, "tiers": [{"f": 1, "t": 50, "res": ["Flor de paz", "Hojaplata", "Raíz de tierra (desde 15)"], "zones": [["Teldrassil", "≈ 439", "a"], ["Isla de Zephras", "≈ 427"], ["Bosque de Elwynn", "≈ 372", "a"], ["Dun Morogh", "≈ 367", "a"]], "horde": "Durotar, Mulgore, Claros de Tirisfal, Los Baldíos.", "alliance": "Bosque de Elwynn, Dun Morogh, Teldrassil."}, {"f": 50, "t": 70, "res": ["Marregal", "Raíz de tierra", "Flor de paz"], "zones": [["Isla de Zephras", "≈ 461"]], "horde": "Los Baldíos, Bosque de Argénteos, Sierra Espolón.", "alliance": "Páramos de Poniente, Loch Modan, Costa Oscura."}, {"f": 70, "t": 115, "res": ["Brezospina", "Alga estranguladora (bajo el agua)", "Hierba cardenal (desde 100)"], "zones": [["Los Humedales", "≈ 345", "a"], ["Vallefresno", "≈ 295"], ["Páramos de Poniente", "≈ 275", "a"], ["Montañas Crestagrana", "≈ 229", "a"]], "horde": "Los Baldíos, Sierra Espolón, Vallefresno, Laderas de Trabalomas.", "note": "Aprende Oficial antes de 75.", "alliance": "Los Humedales, Páramos de Poniente, Montañas Crestagrana, Loch Modan."}, {"f": 115, "t": 160, "res": ["Acérita salvaje", "Musgo de tumba", "Sangrerregia"], "zones": [["Los Humedales", "≈ 388", "a"], ["Vallefresno", "≈ 330"], ["Sierra Espolón", "≈ 309"], ["Vega de Tuercespina", "≈ 304"]], "horde": "Vallefresno, Sierra Espolón, Laderas de Trabalomas, Las Mil Agujas.", "note": "Aprende Experto antes de 150.", "alliance": "Los Humedales, Laderas de Trabalomas desde Costasur, Vallefresno desde Astranaar."}, {"f": 160, "t": 205, "res": ["Hojamustia", "Vidarraíz", "Espina de oro (desde 170)", "Mostacho de Khadgar (desde 185)"], "zones": [["Vega de Tuercespina", "≈ 469"], ["Marjal Revolcafango", "≈ 310"], ["Pantano de las Penas", "≈ 274"], ["Tierras Altas de Arathi", "≈ 267"]]}, {"f": 205, "t": 230, "res": ["Flor de fuego", "Loto cárdeno", "Ácaro de invierno", "Lágrimas de Arthas (desde 220)"], "zones": [["Vega de Tuercespina", "≈ 305"], ["Feralas", "≈ 264"], ["Marjal Revolcafango", "≈ 182"], ["Montañas de Alterac", "≈ 177"]], "note": "Aprende Artesano antes de 225."}, {"f": 230, "t": 270, "res": ["Solea", "Carolina", "Champiñón fantasma (desde 245)", "Gromsangre (desde 250)", "Sansam dorado (desde 260)"], "zones": [["Feralas", "≈ 178"], ["Pantano de las Penas", "≈ 175"], ["Azshara", "≈ 167"], ["Tierras del Interior", "≈ 162"]], "p": 1}, {"f": 270, "t": 300, "res": ["Hojasueño", "Salviargenta de montaña (desde 280)", "Flor de peste (desde 285)", "Setelo de hielo (desde 290)"], "zones": [["Tierras de la Peste del Este", "≈ 333"], ["Azshara", "≈ 228"], ["Frondavil", "≈ 228"], ["Cráter de Un'Goro", "≈ 182"]], "p": 1, "note": "Setelo de hielo: Cuna del Invierno. Loto negro a 300."}], "trainA": {"comp": "Piensa en el rango Oficial (probablemente nivel 10): Tannysa en Ventormenta (44.4, 77.8), Reyna Stonebranch en Forjaz (55.4, 58.4) o Firodren Mooncaller en Darnassus (48.0, 68.4).", "exp": "Piensa en el rango Experto (probablemente nivel 20): Tannysa en Ventormenta (44.4, 77.8), Reyna Stonebranch en Forjaz (55.4, 58.4) o Firodren Mooncaller en Darnassus (48.0, 68.4).", "art": "Piensa en el rango Artesano (probablemente nivel 35): Tannysa en Ventormenta (44.4, 77.8), Reyna Stonebranch en Forjaz (55.4, 58.4) o Firodren Mooncaller en Darnassus (48.0, 68.4)."}};
+</script>
+<script src="../assets/recolte.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

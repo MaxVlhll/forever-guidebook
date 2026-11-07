@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lederverarbeitung WoW Forever</title>
+<meta name="description" content="Lederverarbeitung-Guide 1-300 für WoW Forever (Allianz und Horde): Weg Rezept für Rezept, berechnete Einkaufsliste, Lehrer und Kürschnergebiete.">
+<meta property="og:title" content="Lederverarbeitung WoW Forever">
+<meta property="og:description" content="Lederverarbeitung-Guide 1-300 für WoW Forever (Allianz und Horde): Weg Rezept für Rezept, berechnete Einkaufsliste, Lehrer und Kürschnergebiete.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../travail-du-cuir.html">
+<link rel="alternate" hreflang="en" href="../en/travail-du-cuir.html">
+<link rel="alternate" hreflang="es" href="../es/travail-du-cuir.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #17110d;
+  --bg-glow: #2a1d14;
+  --panel: #221913;
+  --panel-2: #2c2119;
+  --stitch: #8a6a43;
+  --ink: #f1e6d3;
+  --muted: #b9a68b;
+  --accent: #e6b84f;
+  --seg1: #c9a36b; --seg2: #b8884f; --seg3: #9c6c3a; --seg4: #7a4f28;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Lederverarbeitung</span>
+  <h1>Lederverarbeitung 1 → 300</h1>
+  <p class="lede">Der komplette Weg, Rezept für Rezept, nach den Daten der Forever-Beta. Gib deine Fertigkeit ein: Die Seite zeigt, wo du stehst, den nächsten Schritt und alles, was dir noch fehlt.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Wo du stehst</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Aktuelle Fertigkeit</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="5 Punkte abziehen">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="5 Punkte hinzufügen">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Einkaufsliste bis</label>
+      <select id="target">
+        <option value="75">75 (Ende Lehrling)</option>
+        <option value="150" selected>150 (Ende Geselle)</option>
+        <option value="225">225 (Ende Experte)</option>
+        <option value="300">300 (Fachmann)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Lehrling</div><div class="seg s2">Geselle</div><div class="seg s3">Experte</div><div class="seg s4">Fachmann</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Was dir noch fehlt</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Der Weg</h2>
+    <p class="lede" style="margin-top:0">Die Anzahlen sind Schätzungen: Plane immer etwas Reserve ein. Goldene Regel: Sobald ein Rezept grün wird, geh zum nächsten Schritt.</p>
+    <div class="legend" aria-label="Rezeptfarben">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Orange: immer +1</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Gelb: oft</span> <span><span class="dot" style="background:var(--sk-green)"></span>Grün: selten</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Grau: nie</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Lehrer</h2>
+  <p class="lede" style="margin-top:0">Ohne den passenden Rang bleibt deine Fertigkeit an der Obergrenze hängen (75, 150, 225). Lerne den nächsten Rang, sobald du die nötige Stufe hast.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Allianz</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Schaltet frei</th><th>Voraussetzung</th><th>Lehrer (Koordinaten)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Geselle</span></td><td class="num">bis 150</td><td>Fertigkeit 50, Stufe 10</td><td><strong>Randal Worth</strong>, Sturmwind (67.4, 49.4) · Gretta Finespindle, Eisenschmiede (39.0, 32.4) · Darianna, Darnassus (64.2, 21.6) · Adele Fielder, Wald von Elwynn (46.4, 62.2) · Nadyia Maneweaver, Teldrassil (41.8, 49.4)</td></tr><tr><td><span class="pill">Experte</span></td><td class="num">bis 225</td><td>Fertigkeit 125, Stufe 20</td><td><strong>Simon Tanner</strong>, Sturmwind (67.2, 49.4) · Fimble Finespindle, Eisenschmiede (39.4, 33.0) · Faldron, Darnassus (64.4, 21.4) · Aayndia Floralwind, Eschental (35.8, 52.0)</td></tr><tr><td><span class="pill">Fachmann</span></td><td class="num">bis 300</td><td>Fertigkeit 200, Stufe 35</td><td><strong>Telonis</strong>, Darnassus (64.4, 21.4)</td></tr><tr><td><span class="pill">Hohe Rezepte</span></td><td class="num">—</td><td>—</td><td>Hahrana Ironhide, Feralas (74.4, 43.0), im Camp Mojache (Hordedorf: nutze für ihre Muster das Auktionshaus)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Schaltet frei</th><th>Voraussetzung</th><th>Lehrer (Koordinaten)</th></tr></thead>
+      <tbody>
+        <tr><td><span class="pill">Geselle</span></td><td class="num">bis 150</td><td>Fertigkeit 50, Stufe 10</td><td><strong>Waldor</strong>, Brachland (45.6, 35.6), an der Oase bei den Höhlen des Wehklagens · Kamari, Orgrimmar (63.0, 45.0) · Dan Golthas, Unterstadt (70.4, 58.4) · Shelene Rhobart, Tirisfal (65.4, 60.0) · Chaw Stronghide, Mulgore (45.0, 61.4) · Mak, Donnerfels (42.2, 43.2)</td></tr>
+        <tr><td><span class="pill">Experte</span></td><td class="num">bis 225</td><td>Fertigkeit 125, Stufe 20</td><td><strong>Krulmoo Fullmoon</strong>, Brachland (44.8, 59.4), im Camp Taurajo · Karolek, Orgrimmar (62.8, 44.4) · Arthur Moore, Unterstadt (70.4, 57.4) · Brawn, Schlingendorntal (31.6, 28.8) · Narv Hidecrafter, Desolace (55.2, 56.2) · Tarn, Donnerfels (42.4, 43.0)</td></tr>
+        <tr><td><span class="pill">Fachmann</span></td><td class="num">bis 300</td><td>Fertigkeit 200, Stufe 35</td><td><strong>Una</strong>, Donnerfels (41.4, 42.6)</td></tr>
+        <tr><td><span class="pill">Hohe Rezepte</span></td><td class="num">—</td><td>—</td><td>Hahrana Ironhide, Feralas (74.4, 43.0), im Camp Mojache</td></tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Salz, Faden und Farbstoffe gibt es bei Händlern für Lederverarbeitungsbedarf und Handwerkswaren, in den Hauptstädten und den meisten größeren Lagern.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Wo du welches Leder kürschnerst</h2>
+  <p class="lede" style="margin-top:0">Deine Kürschnerei muss mithalten: Unter Stufe 20 brauchst du etwa (Mobstufe − 10) × 10, darüber etwa Stufe × 5.</p>
+  <div class="cols">
+    <div class="card"><h3>Leichtes Leder und leichter Balg</h3><span class="lv">Wildtiere Stufe 10 bis 22</span><p><span class="fl" data-f="h"><span class="fac h">Horde</span> Brachland (Zhevras, Donnerechsen, Kodos südlich des Wegekreuzes), Steinkrallengebirge.</span><span class="fl" data-f="a"><span class="fac a">Allianz</span> Westfall, Loch Modan, Dunkelküste.</span></p></div>
+    <div class="card"><h3>Mittleres Leder und mittlerer Balg</h3><span class="lv">Wildtiere Stufe 20 bis 30</span><p><span class="fl" data-f="h"><span class="fac h">Horde</span> Steinkrallengebirge, Eschental, Tausend Nadeln, Vorgebirge des Hügellands.</span><span class="fl" data-f="a"><span class="fac a">Allianz</span> Sumpfland, Rotkammgebirge, Dämmerwald, Eschental.</span></p></div>
+    <div class="card"><h3>Schweres Leder und schwerer Balg</h3><span class="lv">Wildtiere Stufe 30 bis 40</span><p>Arathihochland, Desolace, nördliches Schlingendorntal.</p></div>
+    <div class="card"><h3>Dickes Leder</h3><span class="lv">Wildtiere Stufe 35 bis 45</span><p>Südliches Schlingendorntal, Feralas, Ödland, Düstermarschen.</p></div>
+    <div class="card"><h3>Unverwüstliches Leder</h3><span class="lv">Wildtiere ab Stufe 48</span><p>Krater von Un'Goro, Teufelswald, Winterquell, Brennende Steppe.</p></div>
+    <div class="card"><h3>Dicke Skorpidschuppen</h3><span class="lv">Skorpide ab Stufe 50</span><p>Silithus, Verwüstete Lande.</p></div>
+  </div>
+  <p class="foot">Behalte das <strong>Makellose Leder</strong>, das du beim Kürschnern findest: Es ist eine neue Forever-Komponente für viele neue Rezepte.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Neu in Forever</h2>
+  <ul class="plain">
+    <li><strong>Lagerzelt</strong> bei 20: gewährt Erholungserfahrung (bis zu 5 % einer Stufe). Kostet 5 Leichtes Leder.</li>
+    <li><strong>Gerbrahmen</strong> bei 140: stellt im Lager einige Materialien her.</li>
+    <li><strong>Nähmaschine</strong> bei 300: für einige Rezepte nötig.</li>
+    <li><strong>Vermächtnispunkte</strong> bei 150, 225 und 300.</li>
+    <li><strong>Spezialisierungen</strong> ab Fachmann: Drachenschuppen, Elementar oder Stammes. Du wählst nur eine.</li>
+    <li>Der Beruf hat 510 Rezepte, davon 277 neue. Dieser Weg folgt den besten zum Leveln, nicht den besten zum Tragen.</li>
+  </ul>
+</section>
+
+<footer class="foot">
+  <p>Quellen: <a href="https://kami-labs.fr/guide-travail-du-cuir-wow-forever/">Kami Labs, Lederverarbeitung-Guide für WoW Forever</a> für Weg und Lehrer · <a href="https://seemeta.com/fr/wow-forever/professions/leatherworking">Seemeta</a> für die Farbschwellen · <a href="https://expcarry.com/fr/guide-depecage-wow-forever">Expcarry</a> für Makelloses Leder.</p>
+  <p>Schritte über 225 waren in der Beta nicht spielbar: Sie sind als „zu prüfen“ markiert. Gehört ein Rezepthändler zur anderen Fraktion, nutze das Auktionshaus. Namen von Gegenständen, NPCs und Zonen sind übersetzt und können im Spielclient leicht abweichen.</p>
+</footer>
+
+
+</main>
+<script>
+var CONFIG = {
+  key: "tdc",
+  src: {
+    "Leichtes Leder": "farm", "Leichter Balg": "farm", "Mittlerer Balg": "farm", "Mittleres Leder": "farm",
+    "Schwerer Balg": "farm", "Schweres Leder": "farm", "Dickes Leder": "farm", "Unverwüstliches Leder": "farm",
+    "Dicke Skorpidschuppe": "farm",
+    "Salz": "vendor", "Grober Faden": "vendor", "Feiner Faden": "vendor",
+    "Seidenfaden": "vendor", "Runenfaden": "vendor", "Grauer Farbstoff": "vendor",
+    "Grüner Farbstoff": "vendor", "Schwarzer Farbstoff": "vendor", "Orangefarbener Farbstoff": "vendor",
+    "Seelenstaub": "ah", "Elixier des Riesenwuchses": "ah", "Moosachat": "ah",
+    "Schillernde Perle": "ah", "Jade": "ah", "Citrin": "ah", "Magiestoff": "ah",
+    "Wildranke": "ah", "Traumstaub": "ah", "Elixier der Riesen": "ah",
+    "Makellose Schuppe": "ah", "Teufelsbalg": "ah", "Steinschuppenöl": "ah", "Runenstoff": "ah",
+    "Feiner Ledergürtel": "craft", "Geschmeidiger leichter Balg": "craft", "Geschmeidiger mittlerer Balg": "craft",
+    "Geschmeidiger schwerer Balg": "craft", "Geschmeidiger dicker Balg": "craft", "Geschmeidiger unverwüstlicher Balg": "craft",
+    "Schweres Rüstungsset": "craft", "Unverwüstliches Rüstungsset": "craft"
+  },
+  sub: {
+    "Geschmeidiger leichter Balg": { "Leichter Balg": 1, "Salz": 1 },
+    "Geschmeidiger mittlerer Balg": { "Mittlerer Balg": 1, "Salz": 1 },
+    "Geschmeidiger schwerer Balg": { "Schwerer Balg": 1, "Salz": 3 },
+    "Feiner Ledergürtel": { "Leichtes Leder": 6, "Grober Faden": 2 }
+  },
+  steps: [
+    { f: 1, t: 36, r: "Leichtes Rüstungsset", n: 36, m: { "Leichtes Leder": 1 } },
+    { f: 36, t: 62, r: "Geschmeidiger leichter Balg", n: 32, m: { "Leichter Balg": 1, "Salz": 1 }, out: "Geschmeidiger leichter Balg",
+      note: "Bleibt gelb bis 60, dann grün bis 70. Behalte ein paar: Die Feine Ledertunika braucht sie (siehe 100-128)." },
+    { f: 62, t: 85, r: "Geprägte Lederhandschuhe", n: 28, m: { "Leichtes Leder": 3, "Grober Faden": 2 },
+      note: "<strong>Lerne Geselle vor 75</strong>, sonst bleibst du hängen: {comp}." },
+    { f: 85, t: 100, r: "Feiner Ledergürtel", n: 20, m: { "Leichtes Leder": 6, "Grober Faden": 2 }, out: "Feiner Ledergürtel",
+      note: "Behalte 2 Gürtel für den Schritt 128-130." },
+    { f: 100, t: 128, r: "Geschmeidiger mittlerer Balg", n: 42, m: { "Mittlerer Balg": 1, "Salz": 1 }, out: "Geschmeidiger mittlerer Balg",
+      note: "Behalte 20 für die nächsten zwei Schritte.",
+      alt: "Laut einer anderen Datenbank wird dieses Rezept um 105 grau. Ist das im Spiel so, wechsle zur Feinen Ledertunika (gelb bis 105, grün bis 120): 3 Geschmeidiger leichter Balg, 6 Leichtes Leder, 4 Grober Faden." },
+    { f: 128, t: 130, r: "Dunkler Ledergürtel", n: 2, m: { "Feiner Ledergürtel": 1, "Geschmeidiger mittlerer Balg": 1, "Feiner Faden": 2, "Grauer Farbstoff": 1 } },
+    { f: 130, t: 143, r: "Schultern des Hügellandbewohners", n: 18, m: { "Geschmeidiger mittlerer Balg": 1, "Mittleres Leder": 4, "Feiner Faden": 1 },
+      note: "<strong>Lerne Experte bei 125</strong> (Stufe 20): {exp}." },
+    { f: 143, t: 150, r: "Energiegeladenes schweres Rüstungsset", n: 7, m: { "Schweres Rüstungsset": 1, "Seelenstaub": 2, "Elixier des Riesenwuchses": 2 },
+      note: "Neues Forever-Rezept, 20 S bei Nioma (Hinterland). Stell vorher die Schweren Rüstungssets her." },
+    { f: 150, t: 170, r: "Geschmeidiger schwerer Balg", n: 39, m: { "Schwerer Balg": 1, "Salz": 3 }, out: "Geschmeidiger schwerer Balg",
+      note: "Die nächsten Schritte verbrauchen mehr, als du hier herstellst: Die Einkaufsliste berechnet, was du zusätzlich vorbereiten musst." },
+    { f: 170, t: 175, r: "Barbarische Gamaschen", n: 6, m: { "Schweres Leder": 10, "Feiner Faden": 2, "Moosachat": 1 },
+      note: "Rezept für 6 S 50 K bei einem Händler (Hammon Karwn oder Lardan)." },
+    { f: 175, t: 180, r: "Barbarische Schultern", n: 6, m: { "Schweres Leder": 8, "Geschmeidiger schwerer Balg": 1, "Feiner Faden": 2 } },
+    { f: 180, t: 185, r: "Grüne Lederarmschienen", n: 6, m: { "Geschmeidiger schwerer Balg": 2, "Schweres Leder": 6, "Grüner Farbstoff": 1, "Feiner Faden": 1 } },
+    { f: 185, t: 190, r: "Edelsteinbesetzter Ledergürtel", n: 6, m: { "Geschmeidiger schwerer Balg": 4, "Schillernde Perle": 2, "Jade": 2, "Citrin": 1, "Feiner Faden": 1 },
+      note: "Teurer Schritt wegen der Edelsteine: Prüfe die Preise im Auktionshaus, bevor du anfängst." },
+    { f: 190, t: 200, r: "Wächterhandschuhe", n: 16, m: { "Schweres Leder": 4, "Geschmeidiger schwerer Balg": 1, "Seidenfaden": 1 } },
+    { f: 200, t: 205, r: "Dickes Rüstungsset", n: 6, m: { "Dickes Leder": 5, "Seidenfaden": 1 },
+      note: "<strong>Lerne Fachmann bei 200</strong> (Stufe 35): {art}." },
+    { f: 205, t: 217, r: "Stirnband der Nachtlandschaft", n: 22, m: { "Dickes Leder": 5, "Seidenfaden": 2 } },
+    { f: 217, t: 220, r: "Schultern der Nachtlandschaft", n: 7, m: { "Dickes Leder": 8, "Magiestoff": 6, "Seidenfaden": 3 } },
+    { f: 220, t: 225, r: "Wildlederschultern", n: 6, m: { "Dickes Leder": 10, "Wildranke": 1, "Geschmeidiger dicker Balg": 1 },
+      note: "Questrezept." },
+    { f: 225, t: 235, r: "Wildlederhelm", n: 16, m: { "Dickes Leder": 10, "Wildranke": 2, "Geschmeidiger dicker Balg": 1 }, p: 1, note: "Questrezept." },
+    { f: 235, t: 245, r: "Energiegeladenes unverwüstliches Rüstungsset", n: 13, m: { "Unverwüstliches Rüstungsset": 1, "Traumstaub": 2, "Elixier der Riesen": 2, "Makellose Schuppe": 1, "Teufelsbalg": 1 }, p: 1,
+      note: "Neues Rezept, 55 S bei Nioma (Hinterland)." },
+    { f: 245, t: 250, r: "Wildlederstiefel", n: 6, m: { "Dickes Leder": 14, "Wildranke": 4, "Geschmeidiger dicker Balg": 2 }, p: 1, note: "Questrezept." },
+    { f: 250, t: 255, r: "Wildledergamaschen", n: 6, m: { "Dickes Leder": 16, "Wildranke": 2, "Geschmeidiger dicker Balg": 2 }, p: 1, note: "Questrezept." },
+    { f: 255, t: 260, r: "Dicke Skorpidarmschienen", n: 6, m: { "Unverwüstliches Leder": 4, "Dicke Skorpidschuppe": 4, "Runenfaden": 1 }, p: 1,
+      note: "Rezept bei Zannok Hidepiercer (Silithus)." },
+    { f: 260, t: 268, r: "Verruchte Lederstulpen", n: 11, m: { "Unverwüstliches Leder": 8, "Schwarzer Farbstoff": 1, "Runenfaden": 1 }, p: 1,
+      note: "Rezept bei Leonard Porter (Westliche Pestländer)." },
+    { f: 268, t: 276, r: "Verschnörkelte Lederrüstung", n: 8, m: { "Unverwüstliches Leder": 16, "Runenfaden": 1, "Orangefarbener Farbstoff": 3, "Geschmeidiger unverwüstlicher Balg": 2, "Steinschuppenöl": 6 }, p: 1,
+      note: "Neues Rezept, 10 G bei Pexmit (Hyjal)." },
+    { f: 276, t: 290, r: "Geschmeidige Skorpidweste", n: 14, m: { "Unverwüstliches Leder": 20, "Dicke Skorpidschuppe": 10, "Runenfaden": 1 }, p: 1,
+      note: "Neues Rezept, 10 G bei Pexmit (Hyjal)." },
+    { f: 290, t: 295, r: "Runenverziertes Lederstirnband", n: 6, m: { "Unverwüstliches Leder": 14, "Runenstoff": 10, "Runenfaden": 1 }, p: 1,
+      note: "Rezept bei Jase Farlane (Östliche Pestländer)." },
+    { f: 295, t: 300, r: "Dicker Skorpidhelm", n: 6, m: { "Unverwüstliches Leder": 8, "Dicke Skorpidschuppe": 12, "Geschmeidiger unverwüstlicher Balg": 1, "Runenfaden": 1 }, p: 1,
+      note: "Rezept bei Zannok Hidepiercer (Silithus)." }
+  ],
+  train: { comp: "Waldor, an der Oase im Brachland (45.6, 35.6)", exp: "Krulmoo Fullmoon, Camp Taurajo (44.8, 59.4)", art: "Una, Donnerfels (41.4, 42.6)" },
+  trainA: { comp: "Randal Worth in Sturmwind (67.4, 49.4), Gretta Finespindle in Eisenschmiede (39.0, 32.4) oder Darianna in Darnassus (64.2, 21.6)", exp: "Simon Tanner in Sturmwind (67.2, 49.4), Fimble Finespindle in Eisenschmiede (39.4, 33.0) oder Faldron in Darnassus (64.4, 21.4)", art: "Telonis in Darnassus (64.4, 21.4)" },
+  done300: "300 erreicht. Denk an die Nähmaschine für dein Lager.",
+  groupTitles: { farm: "Zu kürschnern", vendor: "Von Händlern", ah: "Auktionshaus oder andere Berufe", craft: "Zwischenprodukte zum Aufheben" }
+};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

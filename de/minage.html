@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bergbau WoW Forever</title>
+<meta name="description" content="Bergbau-Guide 1-300 für WoW Forever (Allianz und Horde): welches Vorkommen du wo abbaust, Stufe für Stufe, Verhüttung und Lehrer.">
+<meta property="og:title" content="Bergbau WoW Forever">
+<meta property="og:description" content="Bergbau-Guide 1-300 für WoW Forever (Allianz und Horde): welches Vorkommen du wo abbaust, Stufe für Stufe, Verhüttung und Lehrer.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../minage.html">
+<link rel="alternate" hreflang="en" href="../en/minage.html">
+<link rel="alternate" hreflang="es" href="../es/minage.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #121212;
+  --bg-glow: #24201c;
+  --panel: #1c1a18;
+  --panel-2: #262320;
+  --stitch: #7a6650;
+  --accent: #e09a66;
+  --seg1: #f0c4a0; --seg2: #d9935f; --seg3: #a05f35; --seg4: #6b3d20;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Bergbau</span>
+  <h1>Bergbau 1 → 300</h1>
+  <p class="lede">Welches Vorkommen du wo abbaust, Stufe für Stufe, nach der Vorkommenszählung von Forever. Du brauchst eine Spitzhacke. Gib deine Fertigkeit ein: Die Seite zeigt deine Stufe und die beste Zone.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Wo du stehst</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Aktuelle Fertigkeit</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="5 Punkte abziehen">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="5 Punkte hinzufügen">+5</button>
+      </div>
+    </div>
+    
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Lehrling</div><div class="seg s2">Geselle</div><div class="seg s3">Experte</div><div class="seg s4">Fachmann</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:14px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Stufen und Zonen</h2>
+    <p class="lede" style="margin-top:0">Classic-Regel, im Spiel zu bestätigen: Ein Erz gibt Punkte von seiner benötigten Stufe bis etwa 100 Punkte darüber. Die Zahlen sind die pro Zone gezählten Vorkommen.</p>
+    <div class="legend"><span><span class="zone">Zone <small>Info</small></span> von Forever gezählte Zone</span><span><span class="zone a">Zone</span> Allianz</span><span><span class="zone h">Zone</span> Horde</span><span>ohne Markierung: umkämpft oder neutral</span></div>
+  </div>
+  <div class="tiers" id="tiers"></div>
+</section>
+
+<section class="stitched" aria-labelledby="smelt-h" style="display:grid;gap:12px">
+  <h2 id="smelt-h">Verhütten unterwegs</h2>
+  <p class="lede" style="margin-top:0">Verhütten gibt ein paar zusätzliche Punkte, laut den Forever-Daten aber keine mehr über 185. Nutze es, um eine Lücke zu füllen, nicht als Hauptweg.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Fertigkeit</th><th>Barren</th><th>Rezept</th></tr></thead>
+    <tbody>
+      <tr><td class="num">25 → 65</td><td><strong>Kupferbarren</strong></td><td>1 Kupfererz</td></tr>
+      <tr><td class="num">65 → 75</td><td><strong>Bronzebarren</strong></td><td>1 Kupferbarren + 1 Zinnbarren</td></tr>
+      <tr><td class="num">75 → 125</td><td><strong>Silberbarren</strong></td><td>1 Silbererz</td></tr>
+      <tr><td class="num">125 → 140</td><td><strong>Eisenbarren</strong></td><td>1 Eisenerz</td></tr>
+      <tr><td class="num">170 → 185</td><td><strong>Goldbarren</strong></td><td>1 Golderz</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Bergbaulehrer</h2>
+  <p class="lede" style="margin-top:0">Kami Labs nennt die Lehrer ohne ihre Ränge. In Forever brauchen Herstellungsberufe Fertigkeit 50 / 125 / 200 und Stufe 10 / 20 / 35: Hier ist es sehr wahrscheinlich gleich, im Spiel prüfen.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Allianz</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Schaltet frei</th><th>Voraussetzung</th><th>Lehrer (Koordinaten)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Alle Ränge</span></td><td class="num">bis 300</td><td>Fertigkeit 50 / 125 / 200 (wahrscheinlich)</td><td><strong>Gelman Stonehand</strong>, Sturmwind (51.0, 17.2) · Geofram Bouldertoe, Eisenschmiede (50.2, 26.0) · Kelsey Fond, Wald von Elwynn (47.2, 32.2) · Yarr Hammerstone, Dun Morogh (50.0, 50.4) · Dank Drizzlecut, Dun Morogh (69.2, 55.4) · Brock Stoneseeker, Loch Modan (37.0, 47.8) · Kurdram Stonehammer, Dunkelküste (38.2, 41.0) · Fanorran Calmechêne, Teldrassil (58.2, 41.4) · Matt Johnson, Dämmerwald (74.0, 49.4)</td></tr><tr><td><span class="pill">Neutral</span></td><td class="num">—</td><td>—</td><td>Pikkle, Tanaris (51.0, 28.0) · Grungle, Clearwater Shores (77.6, 51.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Schaltet frei</th><th>Voraussetzung</th><th>Lehrer (Koordinaten)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Alle Ränge</span></td><td class="num">bis 300</td><td>Fertigkeit 50 / 125 / 200 (wahrscheinlich)</td><td><strong>Makaru</strong>, Orgrimmar (73.0, 26.4) · Krunn, Durotar (51.8, 40.8) · Norzsh, Durotar (40.4, 68.0) · Brom Killian, Unterstadt (55.4, 36.2) · Walter Mason, Tirisfal (32.2, 65.4) · Brek Stonehoof, Donnerfels (34.4, 57.4) · Vartha Rochecrin, Mulgore (44.2, 78.2)</td></tr><tr><td><span class="pill">Neutral</span></td><td class="num">—</td><td>—</td><td>Pikkle, Tanaris (51.0, 28.0) · Grungle, Clearwater Shores (77.6, 51.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Die Spitzhacke gibt es bei Händlern für Handwerkswaren.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Neu in Forever</h2>
+  <ul class="plain"><li>Auf der BlizzCon angekündigt, noch nicht bestätigt: <strong>Aus Metall</strong> (+5 % Gesamtgesundheit), zusätzliches Erz aus Vorkommen und eine Chance auf seltene oder Kampfmaterialien.</li><li><strong>Magnetstein</strong> (Lagergegenstand der Bergleute): Bonus auf Nahkampfangriffskraft, laut Method.</li><li>Forever hat 38 Vorkommenstypen: 2 neue (Erschöpfte Kupferader, Schwere Thoriumader) und 5 geänderte.</li><li><strong>Vermächtnispunkte</strong> bei 150, 225 und 300.</li><li>Passt gut zu <a href="forge.html">Schmiedekunst</a> oder <a href="ingenierie.html">Ingenieurskunst</a>, die Hunderte Barren verschlingen.</li></ul>
+</section>
+
+<footer class="foot"><p>Quellen: <a href="https://kami-labs.fr/guide-minage-wow-forever/">Kami Labs, Bergbau-Guide für WoW Forever</a> · <a href="https://kami-labs.fr/metiers-wow-forever/">Kami Labs, Berufe in WoW Forever</a> · <a href="https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents">Method, Lagergegenstände</a>.</p><p>Die Tipps pro Fraktion stammen aus Classic, auf dem Forever aufbaut. Die Beta endete bei 225: Stufen darüber sind als „nach der Beta“ markiert. Namen von Gegenständen, NPCs und Zonen sind übersetzt und können im Spielclient leicht abweichen.</p><p>Inoffizieller Fan-Guide, aktualisiert am 7. November 2026. World of Warcraft ist eine Marke von Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "minage", "done300": "300 erreicht. Halte Ausschau nach der Schweren Thoriumader, neu in Forever.", "train": {"comp": "Denk an den Rang Geselle (wahrscheinlich Stufe 10): Makaru in Orgrimmar (73.0, 26.4).", "exp": "Denk an den Rang Experte (wahrscheinlich Stufe 20): Makaru in Orgrimmar (73.0, 26.4).", "art": "Denk an den Rang Fachmann (wahrscheinlich Stufe 35): Makaru in Orgrimmar (73.0, 26.4)."}, "tiers": [{"f": 1, "t": 65, "res": ["Kupfererz", "Erschöpfte Kupferader (neu)"], "zones": [["Zephras-Insel", "≈ 230"], ["Dun Morogh", "≈ 220", "a"], ["Wald von Elwynn", "≈ 219", "a"], ["Loch Modan", "≈ 151", "a"]], "horde": "Durotar, Mulgore, Tirisfal, Brachland.", "note": "Verhütte dein Kupfer ab 25: Es gibt Punkte bis 65.", "alliance": "Wald von Elwynn, Dun Morogh, Loch Modan."}, {"f": 65, "t": 75, "res": ["Zinnerz", "Pyrophor", "Kupfer"], "zones": [["Rotkammgebirge", "≈ 271", "a"], ["Zephras-Insel", "≈ 230"]], "horde": "Brachland, Silberwald, Steinkrallengebirge.", "alliance": "Rotkammgebirge, Westfall, Dunkelküste."}, {"f": 75, "t": 125, "res": ["Silbererz", "Geringer Blutstein", "Zinn", "Pyrophor"], "zones": [["Arathihochland", "≈ 208"], ["Tausend Nadeln", "≈ 204"], ["Vorgebirge des Hügellands", "≈ 198"], ["Rotkammgebirge", "≈ 184", "a"]], "horde": "Tausend Nadeln, Vorgebirge des Hügellands, Steinkrallengebirge.", "note": "Lerne Geselle vor 75.", "alliance": "Sumpfland (mit Abstand das beste, eine Höhle mit Zinn und Pyrophor), Rotkammgebirge, Vorgebirge des Hügellands von Süderstade aus."}, {"f": 125, "t": 155, "res": ["Eisenerz", "Silber", "Zinn"], "zones": [["Arathihochland", "≈ 351"], ["Tausend Nadeln", "≈ 314"], ["Desolace", "≈ 236"], ["Schlingendorntal", "≈ 208"]], "note": "Lerne Experte vor 150."}, {"f": 155, "t": 175, "res": ["Golderz", "Indurium", "Eisen"], "zones": [["Arathihochland", "≈ 262"], ["Schlingendorntal", "≈ 214"], ["Ödland", "≈ 196"], ["Tausend Nadeln", "≈ 184"]]}, {"f": 175, "t": 230, "res": ["Mithrilerz", "Gold", "Indurium"], "zones": [["Arathihochland", "≈ 313"], ["Schlingendorntal", "≈ 275"], ["Ödland", "≈ 271"], ["Desolace", "≈ 245"], ["Hinterland", "≈ 198"], ["Tanaris", "≈ 179"]], "note": "Lerne Fachmann vor 225."}, {"f": 230, "t": 245, "res": ["Echtsilbererz", "Dunkeleisen", "Mithril"], "zones": [["Hinterland", "≈ 293"], ["Brennende Steppe", "≈ 274"], ["Tanaris", "≈ 255"], ["Sengende Schlucht", "≈ 227"]], "p": 1}, {"f": 245, "t": 300, "res": ["Thoriumerz", "Schwere Thoriumader (neu)", "Echtsilber"], "zones": [["Brennende Steppe", "≈ 290"], ["Silithus", "≈ 273"], ["Winterquell", "≈ 227"], ["Krater von Un'Goro", "≈ 187"]], "p": 1, "note": "Un'Goro und Silithus, beide neutral, sind am ruhigsten."}], "trainA": {"comp": "Denk an den Rang Geselle (wahrscheinlich Stufe 10): Gelman Stonehand in Sturmwind (51.0, 17.2) oder Geofram Bouldertoe in Eisenschmiede (50.2, 26.0).", "exp": "Denk an den Rang Experte (wahrscheinlich Stufe 20): Gelman Stonehand in Sturmwind (51.0, 17.2) oder Geofram Bouldertoe in Eisenschmiede (50.2, 26.0).", "art": "Denk an den Rang Fachmann (wahrscheinlich Stufe 35): Gelman Stonehand in Sturmwind (51.0, 17.2) oder Geofram Bouldertoe in Eisenschmiede (50.2, 26.0)."}};
+</script>
+<script src="../assets/recolte.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

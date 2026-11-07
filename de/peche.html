@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Angeln WoW Forever</title>
+<meta name="description" content="Angel-Guide 1-300 für WoW Forever (Allianz und Horde): wo du Stufe für Stufe angelst, nützliche Ausrüstung und Lehrer.">
+<meta property="og:title" content="Angeln WoW Forever">
+<meta property="og:description" content="Angel-Guide 1-300 für WoW Forever (Allianz und Horde): wo du Stufe für Stufe angelst, nützliche Ausrüstung und Lehrer.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../peche.html">
+<link rel="alternate" hreflang="en" href="../en/peche.html">
+<link rel="alternate" hreflang="es" href="../es/peche.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #0d1218;
+  --bg-glow: #13233a;
+  --panel: #151c25;
+  --panel-2: #1d2733;
+  --stitch: #47698f;
+  --accent: #6fb6f5;
+  --seg1: #b0d8ff; --seg2: #6fb6f5; --seg3: #3a7cc0; --seg4: #234f80;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Angeln</span>
+  <h1>Angeln 1 → 300</h1>
+  <p class="lede">Wo du angelst, Stufe für Stufe. Du brauchst eine Angelrute. Gib deine Fertigkeit ein: Die Seite zeigt deine Stufe und die passenden Gewässer.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Wo du stehst</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Aktuelle Fertigkeit</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="5 Punkte abziehen">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="5 Punkte hinzufügen">+5</button>
+      </div>
+    </div>
+    
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Lehrling</div><div class="seg s2">Geselle</div><div class="seg s3">Experte</div><div class="seg s4">Fachmann</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:14px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Stufen und Zonen</h2>
+    <p class="lede" style="margin-top:0">Die Zonen bei Kami Labs liegen vor allem auf Allianzseite: Die Hordezeile nennt das nahe Gegenstück, nach Classic. Wechsle das Gewässer, sobald du zu oft „nichts“ fängst.</p>
+    <div class="legend"><span><span class="zone">Zone <small>Info</small></span> von Forever gezählte Zone</span><span><span class="zone a">Zone</span> Allianz</span><span><span class="zone h">Zone</span> Horde</span><span>ohne Markierung: umkämpft oder neutral</span></div>
+  </div>
+  <div class="tiers" id="tiers"></div>
+</section>
+
+<section aria-labelledby="equip-h" style="display:grid;gap:12px">
+  <h2 id="equip-h">Hilfreiche Ausrüstung</h2>
+  <p class="lede" style="margin-top:0">Jeder Angelbonus verringert Fehlfänge, vor allem zu Beginn einer Stufe.</p>
+  <div class="cols"><div class="card"><h3>Angelruten</h3><span class="lv">Dauerhafter Bonus</span><p>Starke Angelrute, Große Eisenangelrute, Arkanitangelrute, Nat Pagles Extremangler FC-5000.</p></div><div class="card"><h3>Köder</h3><span class="lv">10 Minuten</span><p>Glänzender Tand, Heller Tand, Nachtkriecher, Aquadynamischer Fischlocker, Fleischfressender Wurm.</p></div><div class="card"><h3>Kleidung</h3><span class="lv">Dauerhafter Bonus</span><p>Verwitterter Anglerhut, Glücklicher Anglerhut, Nat Pagles Extremangler-Stiefel.</p></div></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Angellehrer</h2>
+  <p class="lede" style="margin-top:0">Kami Labs nennt keine Angelränge. In Classic: Geselle beim Lehrer, Experte über ein Buch in Beutebucht, Fachmann über Nat Pagles Quest. In Forever zu prüfen.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Allianz</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Schaltet frei</th><th>Voraussetzung</th><th>Lehrer (Koordinaten)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Geselle</span></td><td class="num">bis 150</td><td>Fertigkeit 50, Stufe 10 (wahrscheinlich)</td><td><strong>Arnold Leland</strong>, Sturmwind (45.4, 57.4) · Lee Brown, Wald von Elwynn (47.4, 62.2) · Grimnur Stonebrand, Eisenschmiede (48.2, 6.6) · Paxton Ganter, Dun Morogh (35.4, 40.2) · Warg Deepwater, Loch Modan (40.4, 39.4) · Astaia, Darnassus (47.4, 56.4) · Androl Oakhand, Teldrassil (55.8, 93.4)</td></tr><tr><td><span class="pill">Experte</span></td><td class="num">bis 225</td><td>Buch (Classic)</td><td>Der alte Heming, Beutebucht (Schlingendorntal), laut Classic · Lehrer: Matthew Hooper, Rotkammgebirge (21.4, 51.0) · Harold Riggs, Sumpfland (8.0, 58.4) · Myizz Luckycatch, Schlingendorntal (27.4, 77.0)</td></tr><tr><td><span class="pill">Fachmann</span></td><td class="num">bis 300</td><td>Nat Pagles Quest (Classic)</td><td>Nat Pagle, Düstermarschen, laut Classic · Brannock, Feralas (32.2, 41.4) · Krix, Clearwater Shores (79.2, 54.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Schaltet frei</th><th>Voraussetzung</th><th>Lehrer (Koordinaten)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Geselle</span></td><td class="num">bis 150</td><td>Fertigkeit 50, Stufe 10 (wahrscheinlich)</td><td><strong>Lumak</strong>, Orgrimmar (69.4, 28.4) · Lau'Tiki, Durotar (53.2, 81.4) · Armand Cromwell, Unterstadt (80.4, 31.2) · Clyde Kellen, Tirisfal (67.2, 51.0) · Kah Mistrunner, Donnerfels (55.8, 47.6) · Uthan Stillwater, Mulgore (44.2, 63.8)</td></tr><tr><td><span class="pill">Experte</span></td><td class="num">bis 225</td><td>Buch (Classic)</td><td>Der alte Heming, Beutebucht (Schlingendorntal), laut Classic · neutrale Lehrer: Myizz Luckycatch, Schlingendorntal (27.4, 77.0) · Lui'Mala, Desolace (22.6, 72.4)</td></tr><tr><td><span class="pill">Fachmann</span></td><td class="num">bis 300</td><td>Nat Pagles Quest (Classic)</td><td>Nat Pagle, Düstermarschen, laut Classic · Katoom der Angler, Hinterland (80.2, 81.4) · Krix, Clearwater Shores (79.2, 54.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Neu in Forever</h2>
+  <ul class="plain"><li><strong>Fischglas</strong> (Lagergegenstand der Angler): +8 % Werte laut Method.</li><li><strong>Vermächtnispunkte</strong> bei 150, 225 und 300.</li><li>Fisch versorgt die <a href="cuisine.html">Kochkunst</a>: Ihre Schritte 225-300 brauchen Gelbschwanz und Lachs.</li></ul>
+</section>
+
+<footer class="foot"><p>Quellen: <a href="https://kami-labs.fr/guide-peche-wow-forever/">Kami Labs, Angel-Guide für WoW Forever</a> · <a href="https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents">Method, Druiden-Guide (Lagergegenstände)</a>.</p><p>Die Beta endete bei 225: Stufen darüber sind als „nach der Beta“ markiert. Namen von Gegenständen, NPCs und Zonen sind übersetzt und können im Spielclient leicht abweichen.</p><p>Inoffizieller Fan-Guide, aktualisiert am 7. November 2026. World of Warcraft ist eine Marke von Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "peche", "done300": "300 erreicht. Jetzt fehlt nur noch Nat Pagles FC-5000.", "train": {"comp": "Denk an den Rang Geselle (Stufe 10): Lumak in Orgrimmar (69.4, 28.4).", "exp": "Vor 150: In Classic gab es Experte über ein Buch, das der alte Heming in Beutebucht verkaufte (in Forever zu prüfen).", "art": "Vor 225: In Classic gab es Fachmann über Nat Pagles Quest (Düstermarschen) (in Forever zu prüfen)."}, "tiers": [{"f": 1, "t": 75, "res": ["Roher glänzender Kleinfisch", "Roher Langkiefer-Schlammschnapper", "Rohe Glitschhautmakrele"], "zones": [["Dun Morogh", "", "a"], ["Wald von Elwynn", "", "a"], ["Teldrassil", "", "a"]], "horde": "jedes Gewässer in Durotar, Mulgore oder Tirisfal, oder die Kanäle von Orgrimmar und Unterstadt.", "alliance": "jedes Gewässer in Elwynn, Dun Morogh oder Teldrassil, oder die Kanäle von Sturmwind."}, {"f": 75, "t": 100, "res": ["Roher Regenbogenflossenalbacore", "Öliger Schwarzmaulfisch", "Feuerflossenschnapper"], "zones": [["Sumpfland", "", "a"], ["Westfall", "", "a"], ["Dunkelküste", "", "a"], ["Loch Modan", "", "a"]], "horde": "Küste und Oasen des Brachlands, Silberwald, Vorgebirge des Hügellands.", "note": "Lerne Geselle vor 75.", "alliance": "Sumpfland, Westfall, Dunkelküste, Loch Modan."}, {"f": 100, "t": 150, "res": ["Roher Borstenbart-Wels", "Roher Steinschuppenkabeljau", "Rohe Mithrilkopf-Forelle"], "zones": [["Schlingendorntal", ""], ["Düstermarschen", ""], ["Dämmerwald", "", "a"]], "horde": "nördliche Küste des Schlingendorntals, Düstermarschen.", "note": "Hol dir Experte vor 150.", "alliance": "Dämmerwald, Düstermarschen von Theramore aus."}, {"f": 150, "t": 225, "res": ["Roher gefleckter Gelbschwanz", "Roher Steinschuppenkabeljau", "Roher großer Weisenfisch"], "zones": [["Sümpfe des Elends", ""], ["Feralas", ""], ["Desolace", ""], ["Alteracgebirge", ""]], "note": "Hol dir Fachmann vor 225."}, {"f": 225, "t": 250, "res": ["Steinschuppenaal", "Roher Rotkiemer", "Roher Nachtflossenschnapper"], "zones": [["Azshara", ""], ["Westliche Pestländer", ""], ["Gebirgspass der Totenwinde", ""]], "note": "Steinschuppenaale braucht die Alchemie (Steinschuppenöl).", "p": 1}, {"f": 250, "t": 300, "res": ["Roher Sonnenschuppenlachs", "Dunkelklauenhummer", "Roher Sommerbarsch"], "zones": [["Östliche Pestländer", ""], ["Winterquell", ""], ["Azshara", ""]], "p": 1}], "trainA": {"comp": "Denk an den Rang Geselle (Stufe 10): Arnold Leland in Sturmwind (45.4, 57.4), Grimnur Stonebrand in Eisenschmiede (48.2, 6.6) oder Astaia in Darnassus (47.4, 56.4).", "exp": "Vor 150: In Classic gab es Experte über ein Buch, das der alte Heming in Beutebucht verkaufte (in Forever zu prüfen).", "art": "Vor 225: In Classic gab es Fachmann über Nat Pagles Quest (Düstermarschen) (in Forever zu prüfen)."}};
+</script>
+<script src="../assets/recolte.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

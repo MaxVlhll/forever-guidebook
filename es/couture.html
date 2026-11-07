@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sastrería WoW Forever</title>
+<meta name="description" content="Guía de Sastrería 1-300 para WoW Forever (Alianza y Horda): ruta receta a receta, lista de compra calculada, instructores y paños.">
+<meta property="og:title" content="Sastrería WoW Forever">
+<meta property="og:description" content="Guía de Sastrería 1-300 para WoW Forever (Alianza y Horda): ruta receta a receta, lista de compra calculada, instructores y paños.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../couture.html">
+<link rel="alternate" hreflang="en" href="../en/couture.html">
+<link rel="alternate" hreflang="de" href="../de/couture.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #160f12;
+  --bg-glow: #2b1720;
+  --panel: #21171b;
+  --panel-2: #2c1f25;
+  --stitch: #8a4f62;
+  --ink: #f1e9dc;
+  --muted: #b5a995;
+  --accent: #f08aa0;
+  --accent-ink: #15100c;
+  --seg1: #f5c0cb; --seg2: #e58a9e; --seg3: #b3536b; --seg4: #7d3448;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Sastrería</span>
+  <h1>Sastrería 1 → 300</h1>
+  <p class="lede">La ruta completa, receta a receta, según los datos de la beta de Forever. Indica tu habilidad: la página muestra dónde estás, el siguiente paso y todo el paño que aún necesitas, rollos incluidos.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Dónde estás</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Habilidad actual</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Quitar 5 puntos">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Añadir 5 puntos">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Lista de compra hasta</label>
+      <select id="target">
+        <option value="75">75 (fin de Aprendiz)</option>
+        <option value="150" selected>150 (fin de Oficial)</option>
+        <option value="225">225 (fin de Experto)</option>
+        <option value="300">300 (Artesano)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Aprendiz</div><div class="seg s2">Oficial</div><div class="seg s3">Experto</div><div class="seg s4">Artesano</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Lo que aún necesitas</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">La ruta</h2>
+    <p class="lede" style="margin-top:0">Las cantidades son estimaciones: guarda siempre un margen. Regla de oro: en cuanto una receta se vuelve verde, pasa al siguiente paso.</p>
+    <div class="legend" aria-label="Colores de las recetas">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Naranja: +1 siempre</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Amarillo: a menudo</span> <span><span class="dot" style="background:var(--sk-green)"></span>Verde: rara vez</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Gris: nunca</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Instructores</h2>
+  <p class="lede" style="margin-top:0">Sin el rango adecuado, tu habilidad se queda bloqueada en el tope (75, 150, 225). Aprende el siguiente rango en cuanto tengas el nivel necesario.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alianza</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Desbloquea</th><th>Requisitos</th><th>Instructores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Oficial</span></td><td class="num">hasta 150</td><td>habilidad 50, nivel 10</td><td><strong>Lawrence Schneider</strong>, Ventormenta (43.4, 73.8) · Uthrar Threx, Forjaz (43.4, 28.2) · Trianna, Darnassus (63.4, 21.4) · Eldrin, Bosque de Elwynn (79.2, 69.0) · Grondal Moonbreeze, Costa Oscura (38.2, 40.4)</td></tr><tr><td><span class="pill">Experto</span></td><td class="num">hasta 225</td><td>habilidad 125, nivel 20</td><td><strong>Sellandus</strong>, Ventormenta (42.0, 76.2) · Jormund Stonebrow, Forjaz (43.2, 28.4) · Me'lynn, Darnassus (62.4, 22.4) · Grarnik Goodstitch, Vega de Tuercespina (28.6, 76.8)</td></tr><tr><td><span class="pill">Artesano</span></td><td class="num">hasta 300</td><td>habilidad 200, nivel 35</td><td><strong>Georgio Bolero</strong>, Ventormenta (43.2, 73.4). Otra fuente cita a Timothy Worthington en Theramore (Marjal Revolcafango, 66.2, 51.6).</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Desbloquea</th><th>Requisitos</th><th>Instructores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Oficial / Experto</span></td><td class="num">hasta 150 y luego 225</td><td>habilidad 50 y luego 125, niveles 10 y luego 20</td><td><strong>Magar</strong>, Orgrimmar (63.2, 50.6) · Rhiannon Davis, Entrañas (70.2, 30.2) · Tepa, Cima del Trueno (43.8, 44.4) · Mahani, Los Baldíos (44.8, 59.4), en el Campamento Taurajo · Grarnik Goodstitch, Vega de Tuercespina (28.6, 76.8)</td></tr><tr><td><span class="pill">Artesano</span></td><td class="num">hasta 300</td><td>habilidad 200, nivel 35</td><td><strong>Josef Gregorian</strong>, Entrañas (70.4, 30.4). Otra fuente cita a Daryl Stack, en Molino Tarren (Laderas de Trabalomas).</td></tr><tr><td><span class="pill">Otros instructores</span></td><td class="num">—</td><td>—</td><td>Kil'hala, Los Baldíos (52.2, 31.6), en El Cruce · Snang, Orgrimmar (62.4, 49.8) · Vhan, Cima del Trueno (43.4, 43.6) · Victor Ward, Entrañas (70.2, 29.6)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Las fuentes no coinciden en el rango exacto que enseña cada instructor de sastrería: si uno no ofrece el rango que necesitas, prueba con otro de la misma fila. El hilo, los tintes y la lejía se venden en los proveedores de sastrería. Los vendedores de recetas marcados Alianza u Horda solo atienden a su facción: el otro bando usa la casa de subastas.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Dónde conseguir cada paño</h2>
+  <p class="lede" style="margin-top:0">El paño cae de los humanoides. Los rangos de nivel de abajo son los de Classic, en los que se basa Forever.</p>
+  <div class="cols"><div class="card"><h3>Paño de lino</h3><span class="lv">Humanoides nv. 5 a 15</span><p>Zonas de inicio, Los Baldíos (centauros, jabaespines), Bosque de Argénteos.</p></div><div class="card"><h3>Paño de lana</h3><span class="lv">Humanoides nv. 15 a 25</span><p>Sierra Espolón, Vallefresno, Laderas de Trabalomas, Cuevas de los Lamentos.</p></div><div class="card"><h3>Paño de seda</h3><span class="lv">Humanoides nv. 25 a 35</span><p>Las Mil Agujas, Desolace, Tierras Altas de Arathi, Monasterio Escarlata.</p></div><div class="card"><h3>Tejido mágico</h3><span class="lv">Humanoides nv. 35 a 45</span><p>Vega de Tuercespina, Feralas, Tanaris, Tierras del Interior, Zul'Farrak.</p></div><div class="card"><h3>Paño rúnico</h3><span class="lv">Humanoides nv. 48 a 60</span><p>Frondavil (sátiros), Tierras de la Peste del Este y del Oeste, Cuna del Invierno, mazmorras de nivel 55+.</p></div></div>
+  <p class="foot">Guarda todo el paño que consigas al subir: es de lejos el mayor coste de esta profesión.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novedades de Forever</h2>
+  <ul class="plain"><li><strong>Estandarte de facción</strong> a 20: aumenta el Espíritu de los jugadores cercanos.</li><li><strong>Rueca</strong> a 140: fabrica algunos materiales en el campamento.</li><li><strong>Telar</strong> a 300: necesario para algunas recetas.</li><li><strong>Puntos de legado</strong> a 150, 225 y 300.</li><li>Anunciado en la BlizzCon pero aún sin confirmar: más paño de los enemigos y un bordado de capa (poder de ataque, poder con hechizos o Aguante).</li><li>La profesión tiene 406 recetas, 180 de ellas nuevas.</li></ul>
+</section>
+
+<footer class="foot"><p>Fuentes: <a href="https://kami-labs.fr/guide-couture-wow-forever/">Kami Labs, guía de Sastrería de WoW Forever</a> para la ruta, las recetas y los instructores · <a href="https://conquestcapped.com/guides/fr/wow-forever/wow-forever-tailoring/">ConquestCapped</a> para los rangos de los instructores.</p><p>Los pasos por encima de 225 no se podían jugar en la beta: están marcados «por verificar». Los nombres de objetos, PNJ y zonas están traducidos y pueden variar un poco en tu cliente.</p></footer>
+
+
+</main>
+<script>
+var CONFIG = {"key": "cout", "src": {"Paño de lino": "farm", "Paño de lana": "farm", "Paño de seda": "farm", "Tejido mágico": "farm", "Paño rúnico": "farm", "Hilo grueso": "vendor", "Hilo fino": "vendor", "Hilo de seda": "vendor", "Hilo de seda grueso": "vendor", "Hilo rúnico": "vendor", "Tinte amarillo": "vendor", "Tinte azul": "vendor", "Tinte gris": "vendor", "Tinte rojo": "vendor", "Tinte naranja": "vendor", "Tinte negro": "vendor", "Lejía": "vendor", "Seda de sombra": "ah", "Seda de araña de red de hierro": "ah", "Cuero basto": "ah", "Rollo de paño de lino": "craft", "Rollo de paño de lana": "craft", "Rollo de paño de seda": "craft", "Rollo de tejido mágico": "craft", "Rollo de paño rúnico": "craft"}, "sub": {"Rollo de paño de lino": {"Paño de lino": 2}, "Rollo de paño de lana": {"Paño de lana": 3}, "Rollo de paño de seda": {"Paño de seda": 4}, "Rollo de tejido mágico": {"Tejido mágico": 5}, "Rollo de paño rúnico": {"Paño rúnico": 5}}, "steps": [{"f": 1, "t": 26, "r": "Rollo de paño de lino", "n": 25, "m": {"Paño de lino": 2}, "out": "Rollo de paño de lino"}, {"f": 26, "t": 75, "r": "Cinturón de lino", "n": 67, "m": {"Rollo de paño de lino": 1, "Hilo grueso": 1}, "note": "<strong>Aprende Oficial a 50</strong> (nivel 10), o te quedarás bloqueado en 75."}, {"f": 75, "t": 110, "r": "Capa de lana", "n": 70, "m": {"Rollo de paño de lana": 1, "Hilo fino": 1}, "note": "Haz tus propios rollos de lana (3 paños de lana cada uno en Classic, compruébalo en el juego)."}, {"f": 110, "t": 125, "r": "Hombreras de lana de doble costura", "n": 19, "m": {"Rollo de paño de lana": 3, "Hilo fino": 2}, "note": "<strong>Aprende Experto a 125</strong> (nivel 20)."}, {"f": 125, "t": 138, "r": "Rollo de paño de seda", "n": 13, "m": {"Paño de seda": 4}, "out": "Rollo de paño de seda", "note": "Los pasos siguientes necesitan muchos más rollos de seda: sigue haciéndolos después de 138, la lista de compra cuenta el total."}, {"f": 138, "t": 149, "r": "Camisa amarilla brillante", "n": 12, "m": {"Rollo de paño de seda": 1, "Tinte amarillo": 1, "Hilo fino": 1}, "note": "Receta por 8 p de Danielle Zipstitch (Bosque del Ocaso, Villa Oscura) para la Alianza. Horda: usa la casa de subastas."}, {"f": 149, "t": 157, "r": "Caperuza de seda azur", "n": 8, "m": {"Rollo de paño de seda": 2, "Tinte azul": 2, "Hilo fino": 1}}, {"f": 157, "t": 167, "r": "Camisa de seda oscura", "n": 10, "m": {"Rollo de paño de seda": 2, "Tinte gris": 2, "Hilo fino": 1}, "note": "Receta por 11 p de Supervendedor 680 (Desolace) o de Sheri Zipstitch (Bosque del Ocaso)."}, {"f": 167, "t": 170, "r": "Cinta de seda", "n": 3, "m": {"Rollo de paño de seda": 3, "Hilo fino": 2}}, {"f": 170, "t": 175, "r": "Camisa blanca formal", "n": 5, "m": {"Rollo de paño de seda": 3, "Lejía": 2, "Hilo fino": 1}}, {"f": 175, "t": 183, "r": "Rollo de tejido mágico", "n": 9, "m": {"Tejido mágico": 5}, "out": "Rollo de tejido mágico"}, {"f": 183, "t": 187, "r": "Camisa de bucanero roja", "n": 4, "m": {"Rollo de paño de seda": 3, "Tinte rojo": 2, "Hilo de seda": 1}}, {"f": 187, "t": 205, "r": "Jubón de seda carmesí", "n": 18, "m": {"Rollo de paño de seda": 4, "Tinte rojo": 2, "Hilo fino": 2}, "note": "<strong>Aprende Artesano a 200</strong> (nivel 35): {art}."}, {"f": 205, "t": 215, "r": "Leotardos de tejido mágico negros", "n": 10, "m": {"Rollo de tejido mágico": 2, "Hilo de seda": 3}}, {"f": 215, "t": 223, "r": "Camisa de tejido mágico naranja", "n": 8, "m": {"Rollo de tejido mágico": 1, "Tinte naranja": 1, "Hilo de seda grueso": 1}}, {"f": 223, "t": 229, "r": "Leotardos de tejido mágico negros", "n": 7, "m": {"Rollo de tejido mágico": 2, "Hilo de seda": 3}}, {"f": 229, "t": 235, "r": "Guantes de tejido mágico negros", "n": 6, "m": {"Rollo de tejido mágico": 2, "Hilo de seda grueso": 2}, "p": 1}, {"f": 235, "t": 241, "r": "Vestido negro sencillo", "n": 6, "m": {"Rollo de tejido mágico": 3, "Tinte negro": 1, "Hilo de seda grueso": 1, "Lejía": 1}, "p": 1}, {"f": 241, "t": 250, "r": "Cinta de tejido mágico negra", "n": 9, "m": {"Rollo de tejido mágico": 3, "Hilo de seda grueso": 2}, "p": 1}, {"f": 250, "t": 259, "r": "Rollo de paño rúnico", "n": 11, "m": {"Paño rúnico": 5}, "out": "Rollo de paño rúnico", "p": 1}, {"f": 259, "t": 263, "r": "Máscara de tejido de sombra", "n": 4, "m": {"Rollo de tejido mágico": 2, "Seda de sombra": 8, "Hilo de seda grueso": 2}, "p": 1, "note": "Receta de misión."}, {"f": 263, "t": 277, "r": "Cinturón de paño rúnico", "n": 15, "m": {"Rollo de paño rúnico": 3, "Hilo rúnico": 1}, "p": 1}, {"f": 277, "t": 283, "r": "Capa de paño rúnico", "n": 6, "m": {"Rollo de paño rúnico": 4, "Seda de araña de red de hierro": 1, "Hilo rúnico": 1}, "p": 1, "note": "Receta de Darnall (Claro de la Luna)."}, {"f": 283, "t": 292, "r": "Guantes de paño rúnico", "n": 9, "m": {"Rollo de paño rúnico": 4, "Cuero basto": 4, "Hilo rúnico": 1}, "p": 1, "note": "Receta de Qia (Cuna del Invierno)."}, {"f": 292, "t": 300, "r": "Botas de paño rúnico", "n": 8, "m": {"Rollo de paño rúnico": 4, "Seda de araña de red de hierro": 2, "Cuero basto": 4, "Hilo rúnico": 1}, "p": 1, "note": "Receta de Darnall (Claro de la Luna)."}], "train": {"comp": "Magar en Orgrimmar (63.2, 50.6) o Mahani en el Campamento Taurajo (44.8, 59.4)", "exp": "Magar en Orgrimmar (63.2, 50.6) o Rhiannon Davis en Entrañas (70.2, 30.2)", "art": "Josef Gregorian en Entrañas (70.4, 30.4)"}, "done300": "300 alcanzado. Piensa en el Telar para tu campamento.", "groupTitles": {"farm": "Para conseguir (humanoides)", "vendor": "De vendedores", "ah": "Subasta u otras profesiones", "craft": "Rollos"}, "trainA": {"comp": "Lawrence Schneider en Ventormenta (43.4, 73.8), Uthrar Threx en Forjaz (43.4, 28.2) o Trianna en Darnassus (63.4, 21.4)", "exp": "Sellandus en Ventormenta (42.0, 76.2), Jormund Stonebrow en Forjaz (43.2, 28.4) o Me'lynn en Darnassus (62.4, 22.4)", "art": "Georgio Bolero en Ventormenta (43.2, 73.4)"}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

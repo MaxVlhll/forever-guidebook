@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schmiedekunst WoW Forever</title>
+<meta name="description" content="Schmiedekunst-Guide 1-300 für WoW Forever (Allianz und Horde): Weg Rezept für Rezept, berechnete Einkaufsliste, Lehrer und Erze.">
+<meta property="og:title" content="Schmiedekunst WoW Forever">
+<meta property="og:description" content="Schmiedekunst-Guide 1-300 für WoW Forever (Allianz und Horde): Weg Rezept für Rezept, berechnete Einkaufsliste, Lehrer und Erze.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../forge.html">
+<link rel="alternate" hreflang="en" href="../en/forge.html">
+<link rel="alternate" hreflang="es" href="../es/forge.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #121214;
+  --bg-glow: #2a1c14;
+  --panel: #1b1a1d;
+  --panel-2: #242328;
+  --stitch: #7a6a5a;
+  --accent: #ff9a4a;
+  --seg1: #ffc999; --seg2: #f0904a; --seg3: #b5582a; --seg4: #7a3418;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Schmiedekunst</span>
+  <h1>Schmiedekunst 1 → 300</h1>
+  <p class="lede">Der komplette Weg, Rezept für Rezept, nach den Daten der Forever-Beta. Gib deine Fertigkeit ein: Die Seite zeigt, wo du stehst, den nächsten Schritt und alles Erz, das dir noch fehlt.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Wo du stehst</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Aktuelle Fertigkeit</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="5 Punkte abziehen">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="5 Punkte hinzufügen">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Einkaufsliste bis</label>
+      <select id="target">
+        <option value="75">75 (Ende Lehrling)</option>
+        <option value="150" selected>150 (Ende Geselle)</option>
+        <option value="225">225 (Ende Experte)</option>
+        <option value="300">300 (Fachmann)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Lehrling</div><div class="seg s2">Geselle</div><div class="seg s3">Experte</div><div class="seg s4">Fachmann</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Was dir noch fehlt</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Der Weg</h2>
+    <p class="lede" style="margin-top:0">Die Anzahlen sind Schätzungen: Plane immer etwas Reserve ein. Goldene Regel: Sobald ein Rezept grün wird, geh zum nächsten Schritt.</p>
+    <div class="legend" aria-label="Rezeptfarben">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Orange: immer +1</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Gelb: oft</span> <span><span class="dot" style="background:var(--sk-green)"></span>Grün: selten</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Grau: nie</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Lehrer</h2>
+  <p class="lede" style="margin-top:0">Ohne den passenden Rang bleibt deine Fertigkeit an der Obergrenze hängen (75, 150, 225). Lerne den nächsten Rang, sobald du die nötige Stufe hast.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Allianz</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Schaltet frei</th><th>Voraussetzung</th><th>Lehrer (Koordinaten)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Geselle</span></td><td class="num">bis 150</td><td>Fertigkeit 50, Stufe 10</td><td><strong>Dane Lindgren</strong>, Sturmwind (57.0, 15.4) · Groum Stonebeard, Eisenschmiede (51.2, 42.4) · Argus der Schmied, Wald von Elwynn (41.6, 65.4) · Tognus Flintfire, Dun Morogh (45.2, 52.0) · Delfrum Flintbeard, Dunkelküste (38.2, 41.0)</td></tr><tr><td><span class="pill">Experte</span></td><td class="num">bis 225</td><td>Fertigkeit 125, Stufe 20</td><td><strong>Therum Deepforge</strong>, Sturmwind (56.4, 15.4) · Rotgath Stonebeard, Eisenschmiede (51.2, 42.4) · Clarise Gnarltree, Dämmerwald (73.8, 48.6)</td></tr><tr><td><span class="pill">Fachmann</span></td><td class="num">bis 300</td><td>Fertigkeit 200, Stufe 35</td><td><strong>Bengus Deepforge</strong>, Eisenschmiede (51.4, 42.2)</td></tr><tr><td><span class="pill">Hohe Rezepte</span></td><td class="num">—</td><td>—</td><td>Brikk Keencraft, Schlingendorntal (29.0, 75.4), in Beutebucht</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Schaltet frei</th><th>Voraussetzung</th><th>Lehrer (Koordinaten)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Geselle</span></td><td class="num">bis 150</td><td>Fertigkeit 50, Stufe 10</td><td><strong>Ug'thok</strong>, Orgrimmar (80.4, 23.4) · Dwukk, Durotar (52.0, 40.6) · Basil Frye, Unterstadt (59.2, 29.4) · Thrag Stonehoof, Donnerfels (39.0, 57.8) · Guillemette Sorouy, Silberwald (43.2, 41.0) · Gur'dok, Clearwater Shores (60.0, 46.2)</td></tr><tr><td><span class="pill">Experte</span></td><td class="num">bis 225</td><td>Fertigkeit 125, Stufe 20</td><td><strong>Snarl</strong>, Orgrimmar (79.2, 22.4) · James Van Brunt, Unterstadt (61.2, 29.2) · Karn Stonehoof, Donnerfels (38.8, 54.0) · Traugh, Brachland (51.2, 28.8)</td></tr><tr><td><span class="pill">Fachmann</span></td><td class="num">bis 300</td><td>Fertigkeit 200, Stufe 35</td><td><strong>Saru Steelfury</strong>, Orgrimmar (82.2, 23.0)</td></tr><tr><td><span class="pill">Hohe Rezepte</span></td><td class="num">—</td><td>—</td><td>Brikk Keencraft, Schlingendorntal (29.0, 75.4), in Beutebucht</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Grüner Farbstoff gibt es bei Händlern für Handwerkswaren. Bergbau ist daneben fast Pflicht: Das Leveln verschlingt über 800 Mithrilbarren und genauso viele Thoriumbarren.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Wo du welches Erz abbaust</h2>
+  <p class="lede" style="margin-top:0">Die genannten Zonen haben die meisten Vorkommen, mit einer Zeile pro Fraktion für die ersten Stufen. Alle Details stehen auf der <a href="minage.html">Bergbau-Seite</a>.</p>
+  <div class="cols"><div class="card"><h3>Kupfer</h3><span class="lv">Fertigkeit 1 bis 65</span><p><span class="fl" data-f="h"><span class="fac h">Horde</span> Durotar, Mulgore, Tirisfal, Brachland.</span><span class="fl" data-f="a"><span class="fac a">Allianz</span> Wald von Elwynn, Dun Morogh, Loch Modan, Dunkelküste.</span></p></div><div class="card"><h3>Zinn, Silber, grober Stein</h3><span class="lv">Fertigkeit 65 bis 125</span><p><span class="fl" data-f="h"><span class="fac h">Horde</span> Brachland, Silberwald, Tausend Nadeln, Vorgebirge des Hügellands.</span><span class="fl" data-f="a"><span class="fac a">Allianz</span> Sumpfland, Rotkammgebirge, Westfall, Vorgebirge des Hügellands.</span></p></div><div class="card"><h3>Eisen, Gold, schwerer Stein</h3><span class="lv">Fertigkeit 125 bis 175</span><p>Arathihochland, Tausend Nadeln, Desolace, Schlingendorntal.</p></div><div class="card"><h3>Mithril, solider Stein</h3><span class="lv">Fertigkeit 175 bis 230</span><p>Arathihochland, Ödland, Schlingendorntal, Tanaris, Hinterland.</p></div><div class="card"><h3>Echtsilber, Dunkeleisen</h3><span class="lv">Fertigkeit ab 230</span><p>Brennende Steppe, Hinterland, Sengende Schlucht, Tanaris.</p></div><div class="card"><h3>Thorium, verdichteter Stein</h3><span class="lv">Fertigkeit ab 245</span><p>Brennende Steppe, Silithus, Winterquell, Krater von Un'Goro.</p></div></div>
+  <p class="foot">Solide und verdichtete Schleifsteine sind nicht im Weg: Die Liste zählt sie als separat hergestellt (je 4 Steine wie in Classic, im Spiel prüfen).</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Neu in Forever</h2>
+  <ul class="plain"><li><strong>Schleifstein</strong> bei 20: erhöht die Stärke der Spieler im Lager.</li><li><strong>Amboss</strong> bei 140: für einige Rezepte nötig, im Lager.</li><li><strong>Meisterschmiede</strong> bei 300: für einige Rezepte nötig.</li><li><strong>Vermächtnispunkte</strong> bei 150, 225 und 300.</li><li><strong>Spezialisierungen</strong>: Rüstungsschmied oder Waffenschmied, danach Meisterhammerschmied, Axtschmied oder Schwertschmied. Du wählst nur eine, und ihre Rezepte sind nicht in diesem Weg.</li><li>Sechs Kettenrezepte (Unverwundbare Kette, Helm des großen Häuptlings, Sturmschleierstulpen…) sind zur Lederverarbeitung gewandert.</li><li>Auf der BlizzCon angekündigt, aber noch nicht bestätigt: <strong>Komplettreparatur</strong> (repariert deine gesamte Ausrüstung, mit Abklingzeit) und <strong>Gürtelschnallen</strong>, die Werte hinzufügen.</li><li>Der Beruf hat 431 Rezepte: 197 neue und 181 geänderte.</li></ul>
+</section>
+
+<footer class="foot"><p>Quellen: <a href="https://kami-labs.fr/guide-forge-wow-forever/">Kami Labs, Schmiedekunst-Guide für WoW Forever</a> · <a href="https://kami-labs.fr/metiers-wow-forever/">Kami Labs, Berufe in WoW Forever</a>.</p><p>Schritte über 225 waren in der Beta nicht spielbar: Sie sind als „zu prüfen“ markiert. Gehört ein Rezepthändler zur anderen Fraktion, nutze das Auktionshaus. Namen von Gegenständen, NPCs und Zonen sind übersetzt und können im Spielclient leicht abweichen.</p><p>Inoffizieller Fan-Guide, aktualisiert am 7. November 2026. World of Warcraft ist eine Marke von Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "forge", "src": {"Rauer Stein": "farm", "Grober Stein": "farm", "Schwerer Stein": "farm", "Solider Stein": "farm", "Verdichteter Stein": "farm", "Kupferbarren": "farm", "Bronzebarren": "farm", "Silberbarren": "farm", "Eisenbarren": "farm", "Goldbarren": "farm", "Mithrilbarren": "farm", "Echtsilberbarren": "farm", "Thoriumbarren": "farm", "Grüner Farbstoff": "vendor", "Stahlbarren": "ah", "Arkanitbarren": "ah", "Azerothiumbarren": "ah", "Citrin": "ah", "Sternrubin": "ah", "Aquamarin": "ah", "Schwarze Perle": "ah", "Schattenedelstein": "ah", "Dickes Leder": "ah", "Unverwüstliches Leder": "ah", "Essenz der Luft": "ah", "Großer Reißzahn": "ah", "Scharfe Klaue": "ah", "Rauer Schleifstein": "craft", "Grober Schleifstein": "craft", "Schwerer Schleifstein": "craft", "Solider Schleifstein": "craft", "Verdichteter Schleifstein": "craft"}, "sub": {"Rauer Schleifstein": {"Rauer Stein": 2}, "Grober Schleifstein": {"Grober Stein": 2}, "Schwerer Schleifstein": {"Schwerer Stein": 3}, "Solider Schleifstein": {"Solider Stein": 4}, "Verdichteter Schleifstein": {"Verdichteter Stein": 4}}, "steps": [{"f": 1, "t": 35, "r": "Rauer Wetzstein", "n": 41, "m": {"Rauer Stein": 1}}, {"f": 35, "t": 65, "r": "Rauer Schleifstein", "n": 37, "m": {"Rauer Stein": 2}, "out": "Rauer Schleifstein", "note": "Behalte sie: Silberne Dietriche (100-115) brauchen 26."}, {"f": 65, "t": 75, "r": "Grober Wetzstein", "n": 16, "m": {"Grober Stein": 1}, "note": "<strong>Lerne Geselle bei 50</strong> (Stufe 10), sonst bleibst du bei 75 hängen."}, {"f": 75, "t": 96, "r": "Grober Schleifstein", "n": 43, "m": {"Grober Stein": 2}, "out": "Grober Schleifstein", "note": "Behalte 16 für die Versilberten Bronzestulpen (144-150)."}, {"f": 96, "t": 100, "r": "Runenverzierter Kupfergürtel", "n": 6, "m": {"Kupferbarren": 10}}, {"f": 100, "t": 115, "r": "Silberner Dietrich", "n": 26, "m": {"Silberbarren": 1, "Rauer Schleifstein": 1}}, {"f": 115, "t": 125, "r": "Raue Bronzegamaschen", "n": 10, "m": {"Bronzebarren": 6}}, {"f": 125, "t": 138, "r": "Schwerer Wetzstein", "n": 27, "m": {"Schwerer Stein": 1}, "note": "<strong>Lerne Experte bei 125</strong> (Stufe 20): {exp}."}, {"f": 138, "t": 144, "r": "Schwerer Schleifstein", "n": 16, "m": {"Schwerer Stein": 3}, "out": "Schwerer Schleifstein", "note": "Die Schritte 154-165 und 185-200 verbrauchen 66: Die Einkaufsliste berechnet, wie viele du zusätzlich herstellen musst."}, {"f": 144, "t": 150, "r": "Versilberte Bronzestulpen", "n": 8, "m": {"Bronzebarren": 8, "Silberbarren": 1, "Grober Schleifstein": 2}}, {"f": 150, "t": 154, "r": "Eisenschnalle", "n": 6, "m": {"Eisenbarren": 1}}, {"f": 154, "t": 165, "r": "Goldener Dietrich", "n": 22, "m": {"Goldbarren": 1, "Schwerer Schleifstein": 1}}, {"f": 165, "t": 182, "r": "Grüne Eisenarmschienen", "n": 27, "m": {"Eisenbarren": 6, "Grüner Farbstoff": 1}}, {"f": 182, "t": 185, "r": "Barbarischer Eisenhelm", "n": 4, "m": {"Eisenbarren": 10, "Großer Reißzahn": 2, "Scharfe Klaue": 2}, "note": "Questrezept."}, {"f": 185, "t": 200, "r": "Goldschuppenarmschienen", "n": 22, "m": {"Stahlbarren": 5, "Schwerer Schleifstein": 2}, "note": "Stahlbarren schmelzen Bergleute (Eisen + Kohle): sonst Auktionshaus."}, {"f": 200, "t": 209, "r": "Solider Wetzstein", "n": 19, "m": {"Solider Stein": 1}, "note": "<strong>Lerne Fachmann bei 200</strong> (Stufe 35): {art}."}, {"f": 209, "t": 215, "r": "Echtsilberdietrich", "n": 15, "m": {"Echtsilberbarren": 1, "Solider Schleifstein": 1}}, {"f": 215, "t": 225, "r": "Mithrilschuppenarmschienen", "n": 16, "m": {"Mithrilbarren": 8, "Citrin": 2}, "note": "Rezept für 53 S 33 K bei Harggan (Hinterland, Nistgipfel) für die Allianz. Horde: Auktionshaus."}, {"f": 225, "t": 230, "r": "Verschnörkelte Mithrilschulter", "n": 6, "m": {"Mithrilbarren": 12, "Echtsilberbarren": 1, "Dickes Leder": 6}, "p": 1, "note": "Questrezept: „Die Kunst der Durchdringung“."}, {"f": 230, "t": 235, "r": "Schwere Mithrilbrustplatte", "n": 6, "m": {"Mithrilbarren": 16}, "p": 1}, {"f": 235, "t": 247, "r": "Schwere Mithrilstiefel", "n": 22, "m": {"Mithrilbarren": 14, "Dickes Leder": 4}, "p": 1}, {"f": 247, "t": 250, "r": "Großer schwarzer Streitkolben", "n": 11, "m": {"Mithrilbarren": 16, "Schwarze Perle": 1, "Schattenedelstein": 4, "Solider Schleifstein": 1, "Dickes Leder": 2}, "p": 1}, {"f": 250, "t": 260, "r": "Verdichteter Wetzstein", "n": 16, "m": {"Verdichteter Stein": 1}, "p": 1}, {"f": 260, "t": 265, "r": "Ebenholzklinge", "n": 7, "m": {"Mithrilbarren": 12, "Echtsilberbarren": 6, "Sternrubin": 2, "Solider Schleifstein": 1, "Dickes Leder": 2}, "p": 1, "note": "Rezept für 1 G bei Magnus Frostwake (Westliche Pestländer)."}, {"f": 265, "t": 270, "r": "Imperialer Plattengürtel", "n": 6, "m": {"Thoriumbarren": 22, "Unverwüstliches Leder": 6, "Aquamarin": 1}, "p": 1, "note": "Questrezept: „Imperialer Plattengürtel“."}, {"f": 270, "t": 275, "r": "Imperiale Plattenarmschiene", "n": 6, "m": {"Thoriumbarren": 20, "Sternrubin": 1}, "p": 1, "note": "Questrezept: „Imperiale Plattenarmschiene“."}, {"f": 275, "t": 285, "r": "Arkanitdietrich", "n": 29, "m": {"Arkanitbarren": 1, "Verdichteter Schleifstein": 1}, "p": 1}, {"f": 285, "t": 295, "r": "Kühne Misericorde", "n": 11, "m": {"Thoriumbarren": 30, "Essenz der Luft": 4, "Azerothiumbarren": 10, "Unverwüstliches Leder": 4}, "p": 1, "note": "Neues Forever-Rezept, 10 G bei Pexmit (Hyjal)."}, {"f": 295, "t": 300, "r": "Imperiale Plattenstiefel", "n": 6, "m": {"Thoriumbarren": 34, "Sternrubin": 1, "Aquamarin": 1}, "p": 1, "note": "Questrezept: „Imperiale Plattenstiefel“."}], "train": {"comp": "Ug'thok in Orgrimmar (80.4, 23.4) oder Dwukk in Durotar (52.0, 40.6)", "exp": "Snarl in Orgrimmar (79.2, 22.4)", "art": "Saru Steelfury in Orgrimmar (82.2, 23.0)"}, "done300": "300 erreicht. Denk an die Meisterschmiede für dein Lager.", "groupTitles": {"farm": "Abzubauen (und zu verhütten)", "vendor": "Von Händlern", "ah": "Auktionshaus oder andere Berufe", "craft": "Zwischenprodukte"}, "trainA": {"comp": "Dane Lindgren in Sturmwind (57.0, 15.4) oder Groum Stonebeard in Eisenschmiede (51.2, 42.4)", "exp": "Therum Deepforge in Sturmwind (56.4, 15.4) oder Rotgath Stonebeard in Eisenschmiede (51.2, 42.4)", "art": "Bengus Deepforge in Eisenschmiede (51.4, 42.2)"}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

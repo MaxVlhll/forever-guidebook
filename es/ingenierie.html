@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ingeniería WoW Forever</title>
+<meta name="description" content="Guía de Ingeniería 1-300 para WoW Forever (Alianza y Horda): ruta receta a receta, lista de compra calculada e instructores.">
+<meta property="og:title" content="Ingeniería WoW Forever">
+<meta property="og:description" content="Guía de Ingeniería 1-300 para WoW Forever (Alianza y Horda): ruta receta a receta, lista de compra calculada e instructores.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../ingenierie.html">
+<link rel="alternate" hreflang="en" href="../en/ingenierie.html">
+<link rel="alternate" hreflang="de" href="../de/ingenierie.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #0e1416;
+  --bg-glow: #142528;
+  --panel: #162023;
+  --panel-2: #1e2b2f;
+  --stitch: #4c7f86;
+  --accent: #5fd0d6;
+  --seg1: #a8e6ea; --seg2: #64c3ca; --seg3: #2f8a92; --seg4: #1d5c62;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Ingeniería</span>
+  <h1>Ingeniería 1 → 300</h1>
+  <p class="lede">La ruta completa, receta a receta, según los datos de la beta de Forever. Indica tu habilidad: la página muestra dónde estás, el siguiente paso y todas las barras y piedras que aún necesitas.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Dónde estás</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Habilidad actual</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Quitar 5 puntos">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Añadir 5 puntos">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Lista de compra hasta</label>
+      <select id="target">
+        <option value="75">75 (fin de Aprendiz)</option>
+        <option value="150" selected>150 (fin de Oficial)</option>
+        <option value="225">225 (fin de Experto)</option>
+        <option value="300">300 (Artesano)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Aprendiz</div><div class="seg s2">Oficial</div><div class="seg s3">Experto</div><div class="seg s4">Artesano</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Lo que aún necesitas</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">La ruta</h2>
+    <p class="lede" style="margin-top:0">Las cantidades son estimaciones: guarda siempre un margen. Regla de oro: en cuanto una receta se vuelve verde, pasa al siguiente paso.</p>
+    <div class="legend" aria-label="Colores de las recetas">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Naranja: +1 siempre</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Amarillo: a menudo</span> <span><span class="dot" style="background:var(--sk-green)"></span>Verde: rara vez</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Gris: nunca</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Instructores</h2>
+  <p class="lede" style="margin-top:0">Sin el rango adecuado, tu habilidad se queda bloqueada en el tope (75, 150, 225). Aprende el siguiente rango en cuanto tengas el nivel necesario.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alianza</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Desbloquea</th><th>Requisitos</th><th>Instructores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Oficial</span></td><td class="num">hasta 150</td><td>habilidad 50, nivel 10</td><td><strong>Sprite Jumpsprocket</strong>, Ventormenta (54.6, 8.0) · Jemma Quikswitch, Forjaz (67.4, 43.8) · Bronk Guzzlegear, Dun Morogh (50.2, 50.4) · Deek Fizzlebizz, Loch Modan (45.8, 13.4) · Jenna Lemkenilli, Costa Oscura (38.2, 41.0)</td></tr><tr><td><span class="pill">Experto</span></td><td class="num">hasta 225</td><td>habilidad 125, nivel 20</td><td><strong>Lilliam Sparkspindle</strong>, Ventormenta (54.8, 7.8) · Trixie Quikswitch, Forjaz (67.4, 43.2) · Finbus Geargrind, Bosque del Ocaso (77.4, 48.4)</td></tr><tr><td><span class="pill">Artesano</span></td><td class="num">hasta 300</td><td>habilidad 200, nivel 35</td><td><strong>Springspindle Fizzlegear</strong>, Forjaz (68.2, 43.4)</td></tr><tr><td><span class="pill">Recetas altas</span></td><td class="num">—</td><td>—</td><td>Buzzek Bracketswing, Tanaris (52.2, 27.4), en Gadgetzan</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Desbloquea</th><th>Requisitos</th><th>Instructores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Oficial</span></td><td class="num">hasta 150</td><td>habilidad 50, nivel 10</td><td><strong>Thund</strong>, Orgrimmar (75.4, 24.6) · Mukdrak, Durotar (52.2, 40.8) · Graham Van Talen, Entrañas (75.2, 72.4) · Twizwick Sprocketgrind, Mulgore (58.6, 39.4) · Tinkerwiz, Los Baldíos (62.6, 36.2)</td></tr><tr><td><span class="pill">Experto</span></td><td class="num">hasta 225</td><td>habilidad 125, nivel 20</td><td><strong>Nogg</strong>, Orgrimmar (75.4, 24.8) · Franklin Lloyd, Entrañas (75.4, 73.0)</td></tr><tr><td><span class="pill">Artesano</span></td><td class="num">hasta 300</td><td>habilidad 200, nivel 35</td><td><strong>Roxxik</strong>, Orgrimmar (75.4, 24.8)</td></tr><tr><td><span class="pill">Recetas altas</span></td><td class="num">—</td><td>—</td><td>Buzzek Bracketswing, Tanaris (52.2, 27.4), en Gadgetzan</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">El flujo débil se vende en los proveedores de ingeniería. Lleva Minería al lado: casi todas las recetas piden barras o piedra.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novedades de Forever</h2>
+  <ul class="plain"><li><strong>Robot vendedor de piezas</strong> a 20: vende componentes en el campamento.</li><li><strong>Robot reparador</strong> a 140: vende componentes y repara tu equipo.</li><li><strong>Banco de trabajo del anarquista</strong> a 300: necesario para algunas recetas.</li><li><strong>Especialización gnómica o goblin</strong>: una misión te hace elegir una escuela, cada una con sus objetos exclusivos. Sus recetas no están en esta ruta.</li><li><strong>Puntos de legado</strong> a 150, 225 y 300.</li><li>La dinamita basta ahora solo cuesta un polvo explosivo en bruto. La bomba de destello se aprende con una misión.</li><li>La profesión tiene 242 recetas: 78 nuevas y 32 modificadas. Según Kami Labs, la Ingeniería es sobre todo una elección JcJ: ningún objeto de ingeniería aparece en las listas BiS de JcE.</li></ul>
+</section>
+
+<footer class="foot"><p>Fuentes: <a href="https://kami-labs.fr/guide-ingenierie-wow-forever/">Kami Labs, guía de Ingeniería de WoW Forever</a> · <a href="https://overgear.com/guides/wow-forever/engineering-overview/">Overgear, guía de Ingeniería</a>.</p><p>Los pasos por encima de 225 no se podían jugar en la beta: están marcados «por verificar». Si un vendedor de recetas es de la otra facción, usa la casa de subastas. La guía no menciona ninguna herramienta (llave, martillo): si tu cliente pide una, fabrícala antes de ese paso. Los nombres de objetos, PNJ y zonas están traducidos y pueden variar un poco en tu cliente.</p><p>Guía de fans no oficial, actualizada el 7 de noviembre de 2026. World of Warcraft es una marca de Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "inge", "src": {"Piedra en bruto": "farm", "Piedra gruesa": "farm", "Piedra pesada": "farm", "Piedra densa": "farm", "Barra de cobre": "farm", "Barra de bronce": "farm", "Barra de plata": "farm", "Barra de oro": "farm", "Barra de hierro": "farm", "Barra de mitril": "farm", "Barra de torio": "farm", "Flujo débil": "vendor", "Paño de lana": "ah", "Paño de seda": "ah", "Paño rúnico": "ah", "Perla azul": "ah", "Polvo explosivo sólido": "ah", "Cuero grueso": "ah", "Rubí estrella": "ah", "Barra de arcanita": "ah", "Seda de araña de red de hierro": "ah", "Polvo explosivo pesado": "craft", "Núcleo de energía de oro": "craft"}, "sub": {"Polvo explosivo pesado": {"Piedra pesada": 1}, "Núcleo de energía de oro": {"Barra de oro": 1}}, "steps": [{"f": 1, "t": 30, "r": "Polvo explosivo en bruto", "n": 32, "m": {"Piedra en bruto": 1}}, {"f": 30, "t": 54, "r": "Puñado de tornillos de cobre", "n": 28, "m": {"Barra de cobre": 1}}, {"f": 54, "t": 75, "r": "Tubo de cobre", "n": 21, "m": {"Barra de cobre": 2, "Flujo débil": 1}, "note": "<strong>Aprende Oficial a 50</strong> (nivel 10): {comp}."}, {"f": 75, "t": 90, "r": "Polvo explosivo grueso", "n": 16, "m": {"Piedra gruesa": 1}}, {"f": 90, "t": 125, "r": "Contacto de plata", "n": 40, "m": {"Barra de plata": 1}}, {"f": 125, "t": 140, "r": "Polvo explosivo pesado", "n": 26, "m": {"Piedra pesada": 1}, "out": "Polvo explosivo pesado", "note": "<strong>Aprende Experto a 125</strong> (nivel 20): {exp}. Guarda todo el polvo: la Bomba de destello (186-210) necesita 37."}, {"f": 140, "t": 150, "r": "Artilugio de bronce zumbador", "n": 17, "m": {"Barra de bronce": 2, "Paño de lana": 1}}, {"f": 150, "t": 170, "r": "Núcleo de energía de oro", "n": 27, "m": {"Barra de oro": 1}, "out": "Núcleo de energía de oro", "note": "Guarda 20 para el paso siguiente."}, {"f": 170, "t": 186, "r": "Girocronátomo", "n": 20, "m": {"Barra de hierro": 1, "Núcleo de energía de oro": 1}}, {"f": 186, "t": 210, "r": "Bomba de destello", "n": 37, "m": {"Perla azul": 1, "Polvo explosivo pesado": 1, "Paño de seda": 1}, "note": "Receta de misión. <strong>Aprende Artesano a 200</strong> (nivel 35): {art}."}, {"f": 210, "t": 215, "r": "Balas de mitril de alto impacto", "n": 5, "m": {"Barra de mitril": 1, "Polvo explosivo sólido": 1}}, {"f": 215, "t": 241, "r": "Carcasa de mitril", "n": 41, "m": {"Barra de mitril": 3}}, {"f": 241, "t": 245, "r": "Gafas de color rosa", "n": 4, "m": {"Cuero grueso": 6, "Rubí estrella": 2}, "p": 1}, {"f": 245, "t": 250, "r": "Girodisparo de mitril", "n": 5, "m": {"Barra de mitril": 2, "Polvo explosivo sólido": 2}, "p": 1}, {"f": 250, "t": 258, "r": "Polvo explosivo denso", "n": 14, "m": {"Piedra densa": 2}, "p": 1}, {"f": 258, "t": 260, "r": "Girodisparo de mitril", "n": 3, "m": {"Barra de mitril": 2, "Polvo explosivo sólido": 2}, "p": 1}, {"f": 260, "t": 285, "r": "Artilugio de torio", "n": 26, "m": {"Barra de torio": 3, "Paño rúnico": 1}, "p": 1, "note": "Receta por 1 o 26 p de Gearcutter Cogspinner (Forjaz) para la Alianza, de Sovik (Orgrimmar) para la Horda."}, {"f": 285, "t": 300, "r": "Convertidor de arcanita delicado", "n": 15, "m": {"Barra de arcanita": 1, "Seda de araña de red de hierro": 1}, "p": 1, "note": "Receta por 2 o de Xizzer Fizzbolt (Cuna del Invierno)."}], "train": {"comp": "Thund en Orgrimmar (75.4, 24.6) o Mukdrak en Durotar (52.2, 40.8)", "exp": "Nogg en Orgrimmar (75.4, 24.8)", "art": "Roxxik en Orgrimmar (75.4, 24.8)"}, "done300": "300 alcanzado. Piensa en el Banco de trabajo del anarquista para tu campamento y en tu especialización gnómica o goblin.", "groupTitles": {"farm": "Para minar (y fundir)", "vendor": "De vendedores", "ah": "Subasta u otras profesiones", "craft": "Intermedios"}, "trainA": {"comp": "Sprite Jumpsprocket en Ventormenta (54.6, 8.0) o Jemma Quikswitch en Forjaz (67.4, 43.8)", "exp": "Lilliam Sparkspindle en Ventormenta (54.8, 7.8) o Trixie Quikswitch en Forjaz (67.4, 43.2)", "art": "Springspindle Fizzlegear en Forjaz (68.2, 43.4)"}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Talentos de subida WoW Forever</title>
+<meta name="description" content="Talentos de subida del 10 al 60 para las 9 clases de WoW Forever (Alianza y Horda): especialización recomendada, orden de talentos, hechizos clave y rotación.">
+<meta property="og:title" content="Talentos de subida WoW Forever">
+<meta property="og:description" content="Talentos de subida del 10 al 60 para las 9 clases de WoW Forever (Alianza y Horda): especialización recomendada, orden de talentos, hechizos clave y rotación.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../talents.html">
+<link rel="alternate" hreflang="en" href="../en/talents.html">
+<link rel="alternate" hreflang="de" href="../de/talents.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+body[data-cls="chasseur"] { --accent: #a9d271; }
+body[data-cls="demoniste"] { --accent: #a99af5; }
+body[data-cls="pretre"] { --accent: #ece7dc; }
+body[data-cls="chaman"] { --accent: #4d9bff; }
+body[data-cls="druide"] { --accent: #ff8a2a; }
+body[data-cls="guerrier"] { --accent: #c69b6d; }
+body[data-cls="mage"] { --accent: #3fc7eb; }
+body[data-cls="paladin"] { --accent: #f48cba; }
+body[data-cls="voleur"] { --accent: #fff468; }
+h1 { transition: color .2s; }
+</style>
+</head>
+<body data-cls="chasseur">
+<main class="wrap" id="main">
+  <header>
+    <span class="tag">WoW Forever · Talentos de subida</span>
+    <h1 id="title">Talentos de subida</h1>
+    <p class="lede">Builds de subida 10 → 60 para las nueve clases, Alianza y Horda, según las guías más recientes (hasta el 7 de noviembre). Cada talento muestra su icono del juego para encontrarlo rápido en tu árbol. Lo que se jugó en la beta está marcado <span class="badge t">probado</span>, el resto <span class="badge p">previsto</span>.</p>
+  </header>
+
+  <div class="alert" role="note">
+    <p><strong>Lee esto primero.</strong> La beta se detuvo en el nivel 30: nadie ha jugado aún los talentos del 31 al 60, Blizzard volvió a mover talentos el 2 de noviembre y anunció nuevos ajustes de clases para el 10 de noviembre. Si un talento aún no se puede elegir en tu árbol, toma el siguiente de la lista y vuelve a él más tarde.</p>
+    <p>Con el bonus de legado «Talentoso», tus puntos llegan hasta 5 niveles antes: sigue la columna Puntos en lugar de la columna Nivel.</p>
+  </div>
+
+  <nav class="tabs" role="tablist" aria-label="Clase">
+    <button role="tab" id="tab-chaman" aria-selected="false" data-cls="chaman">Chamán</button>
+    <button role="tab" id="tab-chasseur" aria-selected="true" data-cls="chasseur">Cazador</button>
+    <button role="tab" id="tab-demoniste" aria-selected="false" data-cls="demoniste">Brujo</button>
+    <button role="tab" id="tab-druide" aria-selected="false" data-cls="druide">Druida</button>
+    <button role="tab" id="tab-guerrier" aria-selected="false" data-cls="guerrier">Guerrero</button>
+    <button role="tab" id="tab-mage" aria-selected="false" data-cls="mage">Mago</button>
+    <button role="tab" id="tab-paladin" aria-selected="false" data-cls="paladin">Paladín</button>
+    <button role="tab" id="tab-pretre" aria-selected="false" data-cls="pretre">Sacerdote</button>
+    <button role="tab" id="tab-voleur" aria-selected="false" data-cls="voleur">Pícaro</button>
+  </nav>
+
+  <div id="content" class="talents" style="display:grid;gap:26px" role="tabpanel"></div>
+
+  <footer class="foot" id="foot"></footer>
+</main>
+
+<script>
+(function () {
+  // pts : nombre de points. Les phases "order" calculent niveau et numéro de point (1 point par niveau dès 10).
+  var CLASSES = {
+    chaman: {
+      name: "Chamán",
+      spec: "Mejora del 10 al 40, luego doble especialización Restauración para grupos",
+      verdict: "Mejora es la especialización que recomiendan Method, Icy Veins y Mobalytics: Golpe de tormenta a 25, un arma a dos manos y Arma Viento Furioso a 30, y matas rápido sin beber. A 40, la doble especialización te deja mantener Mejora para las misiones y añadir Restauración para las mazmorras.",
+      timeline: [["10–24", "Trueno y Lobo fantasmal", "#9cc8ff"], ["25–39", "Golpe de tormenta", "#4d9bff"], ["40–60", "Doble especialización", "#1f5fb8"]],
+      phases: [
+        { title: "Niveles 10 a 30", range: "21 puntos", st: "t", kind: "order", start: 1,
+          note: "Orden de Mobalytics, confirmado por Icy Veins. Method pone Lobo fantasmal mejorado justo después de Golpe de tormenta, pero es mejor tenerlo antes de Lobo fantasmal al nivel 20.",
+          rows: [
+            ["Golpes atronadores", 5, "Mejora", "+ crítico, la base de tu daño cuerpo a cuerpo."],
+            ["Destreza mental", 3, "Mejora", ""],
+            ["Lobo fantasmal mejorado", 2, "Mejora", "Lobo fantasmal instantáneo desde 20: +40 % de velocidad sin tiempo de lanzamiento."],
+            ["Enfoque chamanístico", 1, "Mejora", "Choques más baratos tras un crítico."],
+            ["Armas elementales", 3, "Mejora", "Muerdepiedras y luego Arma Viento Furioso más fuertes."],
+            ["Conocimiento ancestral", 1, "Mejora", "Icy Veins lo sitúa explícitamente a 24."],
+            ["Golpe de tormenta", 1, "Mejora", "Nivel 25: tu ataque principal."],
+            ["Vendaval", 4, "Mejora", "Velocidad de ataque tras un crítico."],
+            ["Golpe de tormenta mejorado", 1, "Mejora", "21.º punto al nivel 30."]
+          ] },
+        { title: "Niveles 31 a 40", range: "10 puntos", st: "p", kind: "list",
+          note: "Variante de Icy Veins y Mobalytics, aún sin jugar. El 31.º punto de Mejora llega al nivel 40, con la doble especialización.",
+          rows: [
+            ["Golpe de tormenta mejorado", "2/2", "Mejora", ""],
+            ["Vendaval", "5/5", "Mejora", ""],
+            ["Armas espirituales", "1/1", "Mejora", "Menos amenaza en grupo."],
+            ["Rapidez mental", "2/2", "Mejora", ""],
+            ["Talento final de Mejora", "1/1", "Mejora", "Nivel 40. Icy Veins omite Arma vorágine a propósito: demasiado débil con menos de 5 rangos."]
+          ] },
+        { title: "Niveles 41 a 60", range: "20 puntos", st: "p", kind: "list",
+          note: "Ninguna guía ha publicado aún estos 20 puntos. Para mazmorras, Restauración como segunda especialización: Sanación en cadena y Mareas Vivas llegan a 40.",
+          rows: [
+            ["Resto del árbol de Mejora", "por árbol", "Mejora", "Comprueba en el juego lo que dejaron los parches."],
+            ["Conocimiento ancestral", "max", "Mejora", "Más maná, así que menos pausas."]
+          ] }
+      ],
+      keylevels: [["4", "Choque de tierra, misión del tótem de Tierra"], ["10", "Choque de llamas, Tótem abrasador, misión del tótem de Fuego"], ["12", "Nova de Fuego (nueva)"], ["20", "Lobo fantasmal, Choque de Escarcha, Llamada de los elementos, misión del tótem de Agua"], ["25", "Golpe de tormenta (talento)"], ["26", "Tótem de magma, Tótem fuente de maná"], ["30", "Arma Viento Furioso, Reencarnación, Regreso astral, misión del tótem de Aire"], ["32", "Cadena de relámpagos, Tótem Viento Furioso"], ["40", "Malla, Sanación en cadena, Ira del vidente, doble especialización"]],
+      rotation: [["1–9", "Arma Muerdepiedras y Escudo de relámpagos. Descarga de relámpagos para atraer, Choque de tierra cuando esté listo, y luego cuerpo a cuerpo."], ["10–24", "Choque de llamas, Tótem abrasador, cuerpo a cuerpo, Choque de Escarcha o de tierra cuando esté listo."], ["25–29", "Golpe de tormenta en cada reutilización, luego gasta el bonus del 20 % con una Descarga de relámpagos o un choque en 12 segundos. Tótem de magma y Nova de Fuego en grupos de enemigos."], ["30+", "Arma a dos manos lenta con Viento Furioso. Cadena de relámpagos en grupos desde 32."]],
+      tips: [
+        "Golpe de tormenta cuesta ahora el 8 % del maná base (en lugar de 125 fijos hasta el 15 de octubre).",
+        "Nova de Fuego (nivel 12) inflige daño alrededor de tu tótem de fuego, pero la amenaza recae en ti, no en el tótem.",
+        "Las hachas y mazas a dos manos son básicas: no hace falta talento para llevarlas.",
+        "Muerdepiedras roba amenaza al tanque en grupo: cambia a Lengua de fuego en mazmorras.",
+        "Llamada de los elementos pone todos tus tótems a la vez, pero tiene 3 segundos de lanzamiento. Retirada totémica los recoge y devuelve maná.",
+        "Si un pull sale mal: Choque de Escarcha y Lobo fantasmal para huir, o Tótem Garra de piedra para provocar, y luego Ola de sanación.",
+        "Razas: orco, tauren o trol en el lado Horda. En el lado Alianza, el chamán solo es jugable como enano, novedad de Forever."
+      ],
+      sources: [["Method, guía de subida de chamán (3 nov.)", "https://www.method.gg/wow-forever/wow-forever-shaman-leveling-guide-and-talents"], ["WoW Forever Tier List, resumen de chamán (31 oct.)", "https://wowforevertierlist.com/classes/shaman/leveling"], ["Warcraft Tavern, guía de subida de chamán", "https://www.warcrafttavern.com/forever/guides/shaman-leveling/"]]
+    },
+
+    druide: {
+      name: "Druida",
+      spec: "Feral (gato) del 10 al 60",
+      verdict: "Feral es la especialización de subida más rápida y más jugada. Oso del 10 al 20, gato después, y forma de oso como recurso cuando aparece un segundo bicho. En Forever, los ataques en forma escalan con el daño de tu arma: cada arma nueva cuenta mucho.",
+      timeline: [["10–19", "Oso", "#ffc48a"], ["20–39", "Gato", "#ff8a2a"], ["40–60", "Rabiar", "#a84f0a"]],
+      phases: [
+        { title: "Niveles 10 a 30", range: "21 puntos", st: "t", kind: "order", start: 1,
+          note: "Orden de WoW4EverNEWS (7 de octubre). Wowforeverguides toma Carga feral a 20 y Golpes depredadores en lugar de Ataques triturantes: ambos funcionan.",
+          rows: [
+            ["Ferocidad", 5, "Feral", "Magullar, Arañazo y Arañar más baratos."],
+            ["Presteza feral", 2, "Feral", "Velocidad del gato, ahora también en interiores."],
+            ["Instinto feral", 3, "Feral", "Amenaza del oso, Flagelo más fuerte."],
+            ["Furia salvaje", 2, "Feral", ""],
+            ["Ataques triturantes", 3, "Feral", "Triturar más barato."],
+            ["Poder de cambio", 1, "Feral", "Nivel 25: 40 de energía a cambio de maná, sustituye al powershifting."],
+            ["Mordisco primigenio", 1, "Feral", ""],
+            ["Garras afiladas", 2, "Feral", "+ crítico en forma animal."],
+            ["Frenesí de sangre", 1, "Feral", ""],
+            ["Líder de la manada", 1, "Feral", "21.º punto: crítico cuerpo a cuerpo y a distancia para todo el grupo."]
+          ] },
+        { title: "Niveles 31 a 60", range: "30 puntos", st: "p", kind: "list",
+          note: "Proyección de WoW Forever Tier List, aún sin jugar. Rabiar es el talento final del árbol, al nivel 40.",
+          rows: [
+            ["Instinto natural", "2/2", "Feral", "Antiguo nombre: Instintos depredadores."],
+            ["Desgarrar y rasgar", "4/4", "Feral", ""],
+            ["Rabiar", "1/1", "Feral", "Nivel 40, junto con Forma de oso temible."],
+            ["Corazón de lo salvaje", "5/5", "Feral", ""],
+            ["Golpes depredadores", "3/3", "Feral", "Si seguiste el orden de WoW4EverNEWS."],
+            ["Pellejo grueso", "3/3", "Feral", ""],
+            ["Impacto brutal", "2/2", "Feral", ""],
+            ["Poder de cambio mejorado, luego Reacción natural", "el resto", "Feral", ""]
+          ] }
+      ],
+      keylevels: [["10", "Forma de oso (misión de clase), Raíces enredadoras, Teletransporte: Claro de la Luna"], ["12", "Enfurecer, Revivir (fuera de combate, nuevo)"], ["14", "Azote, Curar veneno"], ["16", "Flagelo, Forma acuática"], ["20", "Forma felina (misión), Arañazo, Destripar, Acechar, Triturar, Renacer"], ["24", "Arañar"], ["26", "Carrerilla"], ["30", "Forma de viaje, Líder de la manada"], ["32", "Mordedura feroz, Devastar"], ["36", "Regeneración frenética, Abalanzarse"], ["40", "Forma de oso temible, Rabiar, montura, doble especialización"]],
+      rotation: [["1–9", "Espinas, Cólera para atraer, Fuego lunar, Cólera hasta que muera. Cúrate entre pulls."], ["10–19 (oso)", "Dos Cóleras y un Fuego lunar al acercarse, luego Forma de oso: Enfurecer, Rugido desmoralizador, Magullar. Flagelo en grupos de enemigos."], ["20–31 (gato)", "Acechar, Arañar, Arañazo (o Triturar por la espalda) hasta 4-5 puntos, Destripar. Mordedura feroz solo llega a 32."], ["32+", "Devastar o Abalanzarse para abrir, Fuego feérico, Arañar, Arañazo hasta 5 puntos, Mordedura feroz. Poder de cambio por debajo de 50 de energía."]],
+      tips: [
+        "Se acabó el powershifting: cambiar de forma cuesta el 55 % del maná base. Poder de cambio (talento a 25) lo sustituye.",
+        "En forma felina, el ataque automático golpea cada segundo, en oso cada 2,5 segundos, siempre con el daño de tu arma.",
+        "Los puntos de combo ya no desaparecen al cambiar de objetivo.",
+        "Fuego feérico es gratis en forma animal y genera amenaza en oso desde el 15 de octubre.",
+        "Los hechizos de rango bajo reciben mucho menos poder con hechizos desde el 1 de octubre: mantén tus curaciones al día.",
+        "Razas: tauren en el lado Horda, elfo de la noche en el lado Alianza, y Skyborne en ambas facciones. Method recomienda Skyborne para gato, tauren para oso y JcJ."
+      ],
+      sources: [["Method, guía de subida de druida (7 nov.)", "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents"], ["WoW Forever Tier List, resumen de druida (31 oct.)", "https://wowforevertierlist.com/classes/druid/leveling"], ["Warcraft Tavern, guía de subida de druida", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]]
+    },
+
+    guerrier: {
+      name: "Guerrero",
+      spec: "Protección en solitario, Armas a dos manos en grupo",
+      verdict: "El guerrero sigue siendo la clase más exigente para subir en Forever (C en la tier list). Method recomienda Protección (una mano y escudo) para subir en solitario, y Armas a dos manos si subes en grupo. Tu arma hace casi todo tu daño: mejórala siempre que puedas.",
+      timeline: [["10–19", "Especialización en escudos", "#e8cfae"], ["20–39", "Vanguardia", "#c69b6d"], ["40–60", "Embate con escudo", "#7d5a33"]],
+      phases: [
+        { title: "Protección, niveles 10 a 30 (solo)", range: "21 puntos", st: "t", kind: "list",
+          note: "Orden de Method (4 de noviembre), completado con los hitos de Warcraft Tavern a 20 y 30. Method no da todos los rangos.",
+          rows: [
+            ["Especialización en escudos", "max", "Protección", "La ira por bloquear lo cambia todo en tu economía de ira."],
+            ["Atronar mejorado", "por árbol", "Protección", ""],
+            ["Ira sangrienta mejorada", "2", "Protección", ""],
+            ["Maestro de defensa", "max", "Protección", "Nivel 20."],
+            ["Revancha mejorada", "por árbol", "Protección", ""],
+            ["Vanguardia", "1", "Protección", "Quédate en actitud defensiva: Cargar pasa a poder usarse ahí."],
+            ["Desafío", "max", "Protección", "Antes de 30."],
+            ["Hender armadura mejorado, Bastión, Ira centrada", "el resto", "Protección", "O Golpe conmocionador en lugar de Bastión."]
+          ] },
+        { title: "Armas, niveles 10 a 30 (grupo)", range: "21 puntos", st: "t", kind: "list",
+          note: "Method empieza con Desgarrar mejorado. El resumen de la tier list cita Crueldad (Furia) al nivel 10: +5 % de crítico es el mejor primer punto. Hitos de Warcraft Tavern: 11/0/0 a 20, 21/0/0 a 30.",
+          rows: [
+            ["Desgarrar mejorado", "max", "Armas", "Desgarrar escala con el poder de ataque: muy mejorado en Forever."],
+            ["Heridas profundas", "max", "Armas", ""],
+            ["Golpe heroico mejorado, Cargar mejorado, Abrumar mejorado", "por árbol", "Armas", "Cargar mejorado da 6 de ira extra al abrir."],
+            ["Empalar", "max", "Armas", ""],
+            ["Especialización en armas de dos manos", "max", "Armas", ""],
+            ["Golpes de barrido", "1", "Armas", "Nivel 30."],
+            ["Maestro de armas", "por árbol", "Armas", "Ya no hace falta reiniciar talentos para cambiar de tipo de arma."]
+          ] },
+        { title: "Niveles 31 a 60", range: "30 puntos", st: "p", kind: "list",
+          note: "Ninguna guía ha publicado el resto. Golpe mortal, Sed de sangre y Embate con escudo se aprenden con el instructor a 40, con la doble especialización.",
+          rows: [
+            ["Talento final de tu árbol", "1/1", "Armas o Protección", "Nivel 40."],
+            ["Cólera desenfrenada, Enfurecer", "por árbol", "Furia", "Method los cita para la ira en Armas."]
+          ] }
+      ],
+      keylevels: [["4", "Cargar, Desgarrar"], ["6", "Atronar"], ["10", "Misión de actitud defensiva (Hender armadura, Provocar), Ira sangrienta"], ["12", "Abrumar"], ["14", "Maestría táctica (ahora se entrena), Revancha"], ["16", "Bloquear con escudo"], ["20", "Ataque victorioso (cura el 10 % de la salud), Seccionar, Rajar, Represalias"], ["24", "Ejecutar"], ["28", "Muro de escudo (15 min)"], ["30", "Actitud rabiosa (misión), Interceptar, Zurrar"], ["36", "Torbellino"], ["40", "Golpe mortal, Sed de sangre, Embate con escudo, doble especialización"]],
+      rotation: [["Apertura", "Cargar (con Vanguardia, incluso en actitud defensiva), Desgarrar, Hender armadura."], ["Durante", "Abrumar cuando se ilumine, Atronar con 2+ bichos, Revancha en Protección, Golpe heroico con la ira sobrante."], ["Remate", "Ejecutar por debajo del 20 % desde 24. Guarda algo de ira cuando muera el bicho y usa Ataque victorioso justo después."]],
+      tips: [
+        "La ira depende de la velocidad y el tipo de tu arma, no de su daño: unos 5 por golpe de daga, de 14 a 17 con un arma a dos manos.",
+        "Los críticos dan ahora +100 % de ira (nada en absoluto al abrir la beta).",
+        "Las piedras de afilar de Herrería marcan una gran diferencia a nivel bajo: Minería + Herrería es la pareja que recomienda Method.",
+        "Haz mazmorras por sus armas (Martillo pesado, hacha de Orgrimmar…). La experiencia de los bichos de mazmorra subió un 20 % el 8 de octubre.",
+        "Sed de sangre ya no cura. Bebedor de sangre devuelve hasta el 1 % de la salud en tus 3 golpes siguientes tras un efecto de enfurecer.",
+        "La misión del Hacha de torbellino (Montañas de Alterac) es muy difícil en solitario: ve en grupo."
+      ],
+      sources: [["Method, guía de subida de guerrero (4 nov.)", "https://www.method.gg/wow-forever/wow-forever-warrior-leveling-guide-and-talents"], ["WoW Forever Tier List, resumen de guerrero (31 oct.)", "https://wowforevertierlist.com/classes/warrior/leveling"], ["Warcraft Tavern, guía de subida de guerrero", "https://www.warcrafttavern.com/forever/guides/warrior-leveling/"]]
+    },
+
+    mage: {
+      name: "Mago",
+      spec: "Escarcha del 10 al 60",
+      verdict: "Escarcha es la especialización que recomiendan Method y Mobalytics: congelas, retrocedes, y Lanza de hielo pega fuerte a los objetivos congelados. El verdadero freno del mago en Forever es el maná: conjura siempre comida y agua antes de salir.",
+      timeline: [["10–19", "Descarga de Escarcha", "#b8ecf8"], ["20–39", "Lanza de hielo", "#3fc7eb"], ["40–60", "Barrera de hielo", "#1d7a96"]],
+      phases: [
+        { title: "Niveles 10 a 30", range: "21 puntos", st: "t", kind: "lv",
+          note: "Prioridades de Method y Mobalytics, combinadas por la tier list. Method aún no ha fijado un build de nivel 60.",
+          rows: [
+            ["10–14", "Descarga de Escarcha mejorada", "5/5", "Escarcha", "Descarga de Escarcha más rápida."],
+            ["15–19", "Mordedura de Escarcha", "por árbol", "Escarcha", "O cualquier talento que te lleve a 10 puntos en Escarcha."],
+            ["20", "Lanza de hielo", "1/1", "Escarcha", "+200 % de daño a un objetivo congelado."],
+            ["21–24", "Precisión elemental", "max", "Escarcha", "Method lo toma primero desde 20. Ventisca mejorada opcional."],
+            ["25", "Bloque de hielo", "1/1", "Escarcha", ""],
+            ["26–29", "Hacer añicos", "max", "Escarcha", "O Esquirlas de hielo."],
+            ["30", "Dedos de Escarcha o Ola de frío", "1/1", "Escarcha", ""]
+          ] },
+        { title: "Niveles 31 a 60", range: "30 puntos", st: "p", kind: "list",
+          note: "Proyección a partir del texto del talento, aún sin jugar.",
+          rows: [
+            ["Barrera de hielo", "1/1", "Escarcha", "Talento final al nivel 40, junto con Descarga de Fuego helado y la doble especialización."],
+            ["Resto del árbol de Escarcha", "el resto", "Escarcha", "Ninguna guía ha publicado el resto."],
+            ["Meditación Arcana", "si subes Arcano", "Arcano", "Conserva el 50 % de tu regeneración mientras lanzas."]
+          ] }
+      ],
+      keylevels: [["4", "Descarga de Escarcha, Conjurar agua"], ["8", "Polimorfia, Misiles Arcanos"], ["10", "Nova de Escarcha"], ["14", "Deflagración Arcana"], ["16", "Explosión de Fuego"], ["20", "Lanza de hielo, Ventisca, Traslación, Evocación, teletransportes a Orgrimmar y Entrañas"], ["24", "Contrahechizo, Ráfaga de Escarcha (nuevo)"], ["25", "Bloque de hielo"], ["26", "Cono de frío"], ["28", "Lanza de hielo rango 2: entrénala enseguida"], ["30", "Armadura de hielo, teletransporte a Cima del Trueno"], ["40", "Descarga de Fuego helado, Barrera de hielo, doble especialización"]],
+      rotation: [["1 bicho", "Descarga de Escarcha a máxima distancia, otra mientras se acerca. Cuerpo a cuerpo: Nova de Escarcha, retrocede, Lanza de hielo al objetivo congelado. Remata con Descarga de Escarcha o tu varita."], ["2+ bichos", "Polimorfia al segundo, mata al primero y luego a la oveja. Ventisca ya no está pensada para grandes pulls: sus ralentizaciones se recortaron a propósito."], ["Maná", "Armadura de mago, regla de los cinco segundos, comida y agua conjuradas antes de cada sesión. Lanza siempre tu rango más alto."]],
+      tips: [
+        "Las varitas ya no escalan con el poder con hechizos y debes quedarte quieto medio segundo antes del primer disparo.",
+        "Los hechizos lanzados a un rango muy inferior a tu nivel reciben mucho menos poder con hechizos desde el 1 de octubre.",
+        "El daño base es menor que en Classic a nivel 60, pero el Espíritu se mejoró mucho para los lanzadores.",
+        "Sastrería + Encantamiento es la pareja que recomienda Method: piezas de tela con poder con hechizos y varitas.",
+        "Los libros de la biblioteca (10, 20 y 25 libros) dan buenas recompensas."
+      ],
+      sources: [["Method, guía de subida de mago (3 nov.)", "https://www.method.gg/wow-forever/wow-forever-mage-leveling-guide-and-talents"], ["WoW Forever Tier List, resumen de mago (31 oct.)", "https://wowforevertierlist.com/classes/mage/leveling"]]
+    },
+
+    paladin: {
+      name: "Paladín",
+      spec: "Reprensión del 10 al 40, luego Protección o Sagrado como segunda especialización",
+      verdict: "En el lado Alianza, los paladines siguen siendo humanos o enanos. Novedad de Forever: la Horda también tiene paladines, solo Renegados (empiezan en los Claros de Tirisfal). Reprensión es la especialización de subida, sobre todo porque ahorra maná. Tu montura de nivel 40 es un hechizo gratuito: guarda tu oro para la doble especialización.",
+      timeline: [["10–19", "Bendición", "#fbc6e0"], ["20–39", "Sello de orden", "#f48cba"], ["40–60", "Doble especialización", "#a8467a"]],
+      phases: [
+        { title: "Niveles 10 a 30", range: "21 puntos", st: "t", kind: "list",
+          note: "Ninguna guía ha publicado un orden punto por punto. Resumen de Method (4 de noviembre) y Warcraft Tavern (0/0/26 con el bonus de legado «Talentoso»).",
+          rows: [
+            ["Bendición", "max", "Reprensión", "Ahorro de maná, el primer objetivo."],
+            ["Sentencia santificada", "por árbol", "Reprensión", ""],
+            ["Sentencia mejorada", "1", "Reprensión", ""],
+            ["Búsqueda de justicia", "2/2", "Reprensión", "+15 % de velocidad, incluso montado: tómalo lo antes posible."],
+            ["Convicción", "por árbol", "Reprensión", ""],
+            ["Sello de orden", "1/1", "Reprensión", "Nivel 20."],
+            ["Árbitro sagrado", "1/1", "Reprensión", "Nivel 25."],
+            ["Venganza, Especialización en armas de dos manos", "el resto", "Reprensión", "Hasta +6 % de daño a dos manos."],
+            ["Arrepentimiento", "1/1", "Reprensión", "Nivel 30: incapacita a un humanoide durante 6 segundos cuando un pull sale mal."]
+          ] },
+        { title: "Niveles 31 a 60", range: "30 puntos", st: "p", kind: "list",
+          note: "Teoría de ForeverWisp, aún sin jugar: 20/0/31.",
+          rows: [
+            ["Giro de Luz", "1/1", "Reprensión", "31.º punto al nivel 40: cambia de sello en cada golpe. No intentes alternar sellos antes."],
+            ["Resto de Reprensión", "hasta 31", "Reprensión", ""],
+            ["Fuerza divina, Sellos mejorados, Conducto sagrado", "20 puntos", "Sagrado", "Los últimos 20 puntos."]
+          ] }
+      ],
+      keylevels: [["1", "Sello de rectitud, Aura de devoción"], ["4", "Sentencia, Bendición de poderío"], ["6", "Golpe sagrado (nuevo, 8 rangos), Protección divina"], ["8", "Martillo de justicia, Purificar"], ["10", "Imposición de manos (vacía todo tu maná), Bendición de protección"], ["12", "Redención (misión de clase)"], ["20", "Consagración y Bendición de reyes básicas, Exorcismo, Destello de Luz"], ["30", "Intervención divina, Sello de Luz"], ["32–34", "Escudo divino (las guías no coinciden)"], ["40", "Caballo de guerra (hechizo), Martillo del honrado, doble especialización"], ["44", "Martillo de cólera"]],
+      rotation: [["1–19", "Sello de rectitud, Sentencia al acercarse, Golpe sagrado en cada reutilización, ataque automático, Sentencia cuando vuelva. Luz Sagrada entre pulls."], ["20+", "Sello de orden antes del pull (Sello de rectitud con un arma a una mano). Consagración con 2 o 3 bichos: pega fuerte a los cuatro primeros."], ["Peligro", "Arrepentimiento (30), Martillo de justicia, Escudo divino. Imposición de manos como último recurso."]],
+      tips: [
+        "Sentencia ya no consume tu sello.",
+        "Sello de rectitud escala con el poder con hechizos (la mitad que en el lanzamiento, tras un parche del 15 de octubre).",
+        "Campeón de la Luz da el 10/20/30 % de tu Intelecto como daño de hechizos: no busques Intelecto por eso.",
+        "Golpe sagrado tiene 8 rangos y pasa del 25 % al 50 % del daño de tu arma: vuelve a tu instructor.",
+        "<span class=\"fl\" data-f=\"h\"><span class=\"fac h\">Horda</span> Instructores de paladín: Aramis Hammerhand (Camposanto), Shari Stilwell (Rémol), Hilda la Rompedora (Bastión de Bandarion).</span><span class=\"fl\" data-f=\"a\"><span class=\"fac a\">Alianza</span> Instructores de paladín, según Classic: Hermano Sammuel (Abadía de Villanorte), Hermano Wilhelm (Villadorada), Lord Grayson Shadowbreaker (Catedral de Ventormenta), Brandur Ironhammer (Forjaz).</span>",
+        "Method recomienda Herrería al subir por sus piezas de malla con poder con hechizos."
+      ],
+      sources: [["Method, guía de subida de paladín (4 nov.)", "https://www.method.gg/wow-forever/wow-forever-paladin-leveling-guide-and-talents"], ["WoW Forever Tier List, resumen de paladín (30 oct.)", "https://wowforevertierlist.com/classes/paladin/leveling"], ["Warcraft Tavern, guía de subida de paladín", "https://www.warcrafttavern.com/forever/guides/paladin-leveling/"], ["Warcraft Tavern, combinaciones de raza y clase", "https://www.warcrafttavern.com/forever/guides/race-class-combos/"]]
+    },
+
+    voleur: {
+      name: "Pícaro",
+      spec: "Combate del 10 al 60 (Asesinato con dagas)",
+      verdict: "Combate es la especialización de subida en solitario tanto para Method como para la tier list (A en solitario). Asesinato también funciona si encuentras buenas dagas. Las guías no coinciden para grupos: Method recomienda Sutileza, la tier list lo desaconseja.",
+      timeline: [["10–19", "Golpe siniestro", "#fff9b8"], ["20–39", "Venenos y Aluvión de acero", "#fff468"], ["40–60", "Subidón de adrenalina", "#a39a1a"]],
+      phases: [
+        { title: "Combate, niveles 10 a 30", range: "21 puntos", st: "t", kind: "order", start: 1,
+          note: "Orden de Method, recogido por la tier list. A 30, Method pasa los 2 puntos de Ataques despiadados a Especialización en doble empuñadura y Aluvión de acero.",
+          rows: [
+            ["Ataques despiadados", 2, "Asesinato", ""],
+            ["Golpe siniestro mejorado", 2, "Combate", "Golpe siniestro más barato."],
+            ["Eviscerar mejorado", 3, "Asesinato", ""],
+            ["Heridas punzantes", 3, "Combate", "Sin dagas: Aguante 2/2 y Reflejos relámpago en su lugar."],
+            ["Desviación", 3, "Combate", ""],
+            ["Estocada", 1, "Combate", "Úsala en cuanto esté lista."],
+            ["Precisión", 3, "Combate", "El acierto también se aplica a los venenos."],
+            ["Ejecución impecable", 1, "Combate", ""],
+            ["Especialización en doble empuñadura", 3, "Combate", ""]
+          ] },
+        { title: "Asesinato, niveles 10 a 30 (dagas)", range: "21 puntos", st: "t", kind: "order", start: 1,
+          note: "Variante de Method para jugar con dagas con Puñalada y luego Mutilar.",
+          rows: [
+            ["Ataques despiadados", 2, "Asesinato", ""],
+            ["Golpe siniestro mejorado", 2, "Combate", ""],
+            ["Malicia", 3, "Asesinato", "El crítico también se aplica a los venenos."],
+            ["Hacer picadillo mejorado", 3, "Asesinato", ""],
+            ["Crueldad", 2, "Asesinato", ""],
+            ["Golpes implacables", 1, "Asesinato", ""],
+            ["Malicia", 2, "Asesinato", ""],
+            ["Letalidad", 2, "Asesinato", ""],
+            ["Sangre fría", 1, "Asesinato", ""],
+            ["Letalidad", 3, "Asesinato", ""]
+          ] },
+        { title: "Niveles 31 a 60", range: "30 puntos", st: "p", kind: "list",
+          note: "Sugerencia de Wowforeverguides, aún sin jugar.",
+          rows: [
+            ["Especialización en doble empuñadura", "5/5", "Combate", ""],
+            ["Aluvión de acero", "1/1", "Combate", "Hacia el 36."],
+            ["Tajo y corte", "max", "Combate", "Funciona con todos los tipos de arma, hachas a una mano incluidas (novedad de Forever)."],
+            ["Subidón de adrenalina", "1/1", "Combate", "Nivel 40, con la doble especialización."],
+            ["Resto", "20 puntos", "Combate o Asesinato", "Sangre fría es un buen desvío en Asesinato."]
+          ] }
+      ],
+      keylevels: [["4", "Puñalada, Robar"], ["6", "Gubia"], ["8", "Evasión"], ["10", "Doble empuñadura y Hacer picadillo (entrénalos enseguida), Aporrear, Sprint"], ["12", "Patada"], ["14", "Exponer armadura, Garrote"], ["16", "Amago (reducción de amenaza doblada)"], ["18", "Emboscada"], ["20", "Ruptura, venenos, Sigilo rango 2"], ["22", "Esfumarse, Distraer"], ["26", "Golpe bajo"], ["30", "Golpe en los riñones, Veneno mortal"], ["34", "Ceguera"], ["40", "Caída segura, doble especialización"]],
+      rotation: [["Apertura", "Desde Sigilo: Emboscada, Golpe bajo, o Garrote si el bicho dura mucho."], ["Durante", "Hacer picadillo primero siempre, luego Golpe siniestro (o Mutilar) para los puntos de combo."], ["Remate", "Eviscerar con un bicho casi muerto, Ruptura en otro caso. Si sale mal: Evasión, Gubia y retrocede, Sprint, y Esfumarse como último recurso."]],
+      tips: [
+        "La energía se regenera de forma continua, ya no en bloques de 20 cada 2 segundos.",
+        "Venenos: menos daño por activación que en Classic, pero más cargas (60 en lugar de 40). Se acumulan con las piedras de afilar.",
+        "Aporrear ya no rompe tu propio Sigilo.",
+        "Un Exponer armadura fallido ya no consume tus puntos de combo.",
+        "Method recomienda Desuello + Minería al principio, luego Herrería para armas y piedras, y por último Peletería para quedártela.",
+        "Forzar cerraduras sigue siendo la habilidad de clase del pícaro."
+      ],
+      sources: [["Method, guía de subida de pícaro (7 nov.)", "https://www.method.gg/wow-forever/wow-forever-rogue-leveling-guide-and-talents"], ["WoW Forever Tier List, resumen de pícaro (31 oct.)", "https://wowforevertierlist.com/classes/rogue/leveling"]]
+    },
+
+    chasseur: {
+      name: "Cazador",
+      spec: "Dominio de bestias del 10 al 60",
+      verdict: "El cazador es la clase más rápida de subir en Forever, y Dominio de bestias es la especialización que recomiendan todas las guías: tu mascota tanquea, tú disparas. No hace falta reiniciar talentos por el camino.",
+      timeline: [["10–30", "Mascota y aspectos", "#cfe6a8"], ["31–40", "Hacia Cólera de las bestias", "#a9d271"], ["41–60", "Segundo árbol", "#6f9a3d"]],
+      phases: [
+        { title: "Niveles 10 a 30", range: "21 puntos", st: "t", kind: "list",
+          note: "Las guías coinciden en el orden de prioridad pero no siempre en los rangos. Tómalos en este orden, completando cada talento antes de pasar al siguiente.",
+          rows: [
+            ["Aspectos mortales", "5/5", "Dominio de bestias", "Talento nuevo: mejora tus aspectos, y por tanto tu daño."],
+            ["Fuego concentrado", "2/2", "Dominio de bestias", "Talento nuevo que sustituye a Ojos de la bestia mejorados: más daño."],
+            ["Furia desatada", "5/5", "Dominio de bestias", "+ daño de la mascota."],
+            ["Revivir mascota mejorado", "2/2", "Dominio de bestias", "Method mantiene los dos puntos: menos tiempo perdido tras la muerte de la mascota."],
+            ["Presteza bestial", "1/1", "Dominio de bestias", "Tu mascota corre más rápido al aire libre."],
+            ["Invocar halcón", "1/1", "Dominio de bestias", "Nuevo: invoca un halcón junto a tu mascota. Method lo pone a 25, pero los datos de lanzamiento lo sitúan más tarde (nivel 36): tómalo en cuanto se pueda elegir."],
+            ["Ferocidad", "el resto", "Dominio de bestias", "Crítico de la mascota: pon aquí los puntos restantes."],
+            ["Intimidación", "1/1", "Dominio de bestias", "Hacia el 30: aturdimiento de emergencia cuando un pull sale mal."]
+          ] },
+        { title: "Niveles 31 a 40", range: "10 puntos", st: "p", kind: "list",
+          note: "Objetivo: Cólera de las bestias con tu 31.º punto, al nivel 40. Buscasendas pasó a la fila 3 el 2 de noviembre, por eso entra aquí.",
+          rows: [
+            ["Frenesí", "5/5", "Dominio de bestias", "Velocidad de ataque de la mascota tras un crítico."],
+            ["Vínculo espiritual", "2/2", "Dominio de bestias", "Regeneración de salud para ti y tu mascota: menos pausas."],
+            ["Buscasendas", "2/2", "Dominio de bestias", "+ velocidad con Aspecto del guepardo."],
+            ["Disciplina bestial", "1/2", "Dominio de bestias", "Más enfoque para la mascota. Tómalo antes si te falta maná."],
+            ["Cólera de las bestias", "1/1", "Dominio de bestias", "Nivel 40: gran reutilización de daño de la mascota."]
+          ] },
+        { title: "Niveles 41 a 60", range: "20 puntos", st: "p", kind: "list",
+          note: "Circulan dos caminos, ninguno probado: 31 Dominio de bestias / 20 Puntería (Mobalytics), o todo Dominio de bestias con un poco de Puntería. Ambos empiezan igual.",
+          rows: [
+            ["Disciplina bestial", "2/2", "Dominio de bestias", "Complétalo."],
+            ["Aliviar mascota mejorado", "2/2", "Dominio de bestias", "La cura de tu mascota también disipa."],
+            ["Ataques letales", "5/5", "Puntería", "Crítico en tus disparos."],
+            ["Eficiencia", "5/5", "Puntería", "Disparos más baratos: menos pausas."],
+            ["Resto de Puntería", "~8", "Puntería", "Depende del árbol final: comprueba en el juego lo que dejó el 2 de noviembre."]
+          ] }
+      ],
+      keylevels: [["10", "Primera mascota, Aspecto del halcón, primer talento"], ["12", "Aliviar mascota"], ["18", "Disparo múltiple"], ["20", "Disparo apuntado, Aspecto del guepardo, Trampa congelante"], ["26", "Fuego rápido"], ["28", "Trampa de escarcha"], ["30", "Fingir muerte, Intimidación"], ["40", "Cólera de las bestias, montura, doble especialización"]],
+      rotation: [["10–24", "Envía a la mascota, deja que genere algo de amenaza, luego Picadura de serpiente y Disparo Arcano. Disparo múltiple en grupos desde 18, Disparo apuntado a un solo objetivo desde 20 (comparten reutilización)."], ["25+", "Añade el halcón. Fuego rápido en bichos grandes, Trampa congelante si un pull sale mal."], ["Siempre", "No pares nunca el Disparo automático. Desde el 15 de octubre, necesita medio segundo quieto antes de disparar."]],
+      tips: [
+        "Mascota: el gato hace más daño, el jabalí aguanta mejor los golpes y coge el aggro rápido con Cargar. No puedes domesticar por encima de tu nivel.",
+        "El daño del cazador se mejoró mucho en el lanzamiento: Disparo apuntado +110 %, Disparo Arcano +30 %, Picadura de serpiente +20 %, Aspecto del halcón más fuerte.",
+        "Todas las trampas comparten ahora una reutilización de 30 segundos.",
+        "No uses Lobo solitario al subir: una mascota que tanquea vale mucho más que su 20 % de daño."
+      ],
+      sources: [["Method, guía de subida de cazador (21 oct.)", "https://www.method.gg/wow-forever/wow-forever-hunter-leveling-guide-and-talents"], ["WoW Forever Tier List, resumen de cazador (31 oct.)", "https://wowforevertierlist.com/classes/hunter/leveling"], ["WoW Forever Guides, orden original de cazador (3 nov.)", "https://wowforeverguides.com/leveling/hunter"], ["Kami Labs, notas de lanzamiento del 2 de noviembre", "https://kami-labs.fr/en/wow-forever/patch-notes-2-novembre-notes-de-lancement/"]]
+    },
+
+    demoniste: {
+      name: "Brujo",
+      spec: "Aflicción del 10 al 45, luego un toque de Demonología",
+      verdict: "Aflicción sigue siendo la especialización recomendada: tu daño en el tiempo mata mientras te curas con Drenar vida. La base aquí es la guía de Method actualizada el 4 de noviembre, la más reciente.",
+      timeline: [["10–29", "Corrupción instantánea", "#d6cdfb"], ["30–45", "Drenaje-tanque", "#a99af5"], ["46–60", "Demonología y remate", "#6c5bc4"]],
+      phases: [
+        { title: "Orden completo", range: "51 puntos", st: "mix", kind: "order", start: 1,
+          note: "Orden de Method (4 de noviembre). Method no da todos los rangos: los marcados con * se deducen para que el total sea exactamente 51. Los puntos hasta el nivel 30 están probados, el resto es previsto.",
+          rows: [
+            ["Supresión", 4, "Aflicción", "Tus hechizos siempre impactan a los bichos de tu nivel."],
+            ["Corrupción mejorada", 5, "Aflicción", "Corrupción pasa a ser instantánea: el corazón del build."],
+            ["Transfusión de vida mejorada", 1, "Aflicción", "Más maná por Transfusión de vida."],
+            ["Pandemia", 3, "Aflicción", "* Críticos de DoT más fuertes. Rango deducido."],
+            ["Concentración vil", 3, "Aflicción", "* Tus drenajes casi nunca se interrumpen cuando te golpean."],
+            ["Anochecer", 2, "Aflicción", "Corrupción y Drenar vida pueden hacer instantánea la Descarga de las Sombras."],
+            ["Malevolencia", 2, "Aflicción", "Abre la fila siguiente."],
+            ["Succión de alma", 3, "Aflicción", "* Drenar vida más fuerte."],
+            ["Malevolencia", 2, "Aflicción", "Para llegar a Maestría en Sombras."],
+            ["Maestría en Sombras", 5, "Aflicción", "+ daño de Sombras."],
+            ["Malevolencia", 1, "Aflicción", "Último punto."],
+            ["Succionar vida", 1, "Aflicción", "Un DoT que te cura. Kargoz lo toma desde 30."],
+            ["Transfusión de vida mejorada", 1, "Aflicción", "Complétalo."],
+            ["Drenajes mejorados", 3, "Aflicción", "+20 % a Drenar vida y Drenar alma."],
+            ["Poder profano", 5, "Demonología", "A 46: mejora a la súcubo."],
+            ["Energías demoníacas", 2, "Demonología", ""],
+            ["Vitalidad vil", 3, "Demonología", ""],
+            ["Perdición de agonía mejorada", 2, "Aflicción", "Vuelta a Aflicción para terminar."],
+            ["Alcance sombrío", 2, "Aflicción", "+ alcance de tus hechizos de Aflicción (sustituye a Maledicción desde el 15 de octubre)."],
+            ["Supresión", 1, "Aflicción", "5/5 al nivel 60."]
+          ] }
+      ],
+      keylevels: [["10", "Abisario (misión de clase), Drenar alma, Piedra de salud"], ["14", "Drenar vida"], ["20", "Súcubo, Armadura demoníaca, Lluvia de Fuego, Ritual de invocación"], ["30", "Manáfago, Fuego infernal"], ["40", "Montura, doble especialización"]],
+      rotation: [["10–19", "Perdición de agonía y luego Corrupción, varita cuando no te mueves, Drenar vida si vas bajo, Drenar alma para rematar y conseguir un fragmento."], ["20–30", "Lo mismo, con la súcubo para matar más rápido los bichos fáciles."], ["30+ (drenaje-tanque)", "Corrupción y Perdición de agonía, deja que el bicho te golpee, Drenar vida para curarte, Transfusión de vida para el maná, y luego Drenar vida para recuperar la salud."]],
+      tips: [
+        "Los demonios perdieron cerca del 73 % de la salud que sacaban de tu Aguante: el Abisario tanquea peor que en la beta, lo que empuja aún más al drenaje-tanque.",
+        "Drenajes mejorados ya no mejora Tormento, pero el propio Tormento duplicó su coeficiente en el lanzamiento.",
+        "Drenar alma da muchos menos fragmentos si el objetivo sobrevive: remata bien los bichos con él.",
+        "Lleva una varita al día para rematar bichos sin gastar maná. Necesita medio segundo quieto antes de disparar."
+      ],
+      sources: [["Method, guía de subida de brujo (4 nov.)", "https://www.method.gg/wow-forever/wow-forever-warlock-leveling-guide-and-talents"], ["Kargoz, guía de Aflicción 1-60 (14 oct.)", "https://mobalytics.gg/wow-forever/profile/kargoz/classes/1-60-affliction-warlock-leveling-guide-wands-talents-rotation-macros-tips"], ["WoW Forever Tier List, resumen de brujo (31 oct.)", "https://wowforevertierlist.com/classes/warlock/leveling"], ["Kami Labs, notas de lanzamiento del 2 de noviembre", "https://kami-labs.fr/en/wow-forever/patch-notes-2-novembre-notes-de-lancement/"]]
+    },
+
+    pretre: {
+      name: "Sacerdote",
+      spec: "Disciplina con varita del 10 al 39, luego Sombra a 40",
+      verdict: "Sí, los sacerdotes siguen subiendo con varita hasta 40, pero no por el motivo que se hizo viral en la beta. Las varitas ya no escalan con tu poder con hechizos: su fuerza viene de Especialización en varitas, Golpe de espíritu y Meditación, que te dejan encadenar bichos sin beber. A 40, pasas a Sombra por la Forma de las Sombras.",
+      timeline: [["10–29", "Varita", "#f4f1ea"], ["30–39", "Penitencia", "#cfc8b8"], ["40–60", "Sombra", "#8d8578"]],
+      phases: [
+        { title: "Niveles 10 a 29: build de varita", range: "20 puntos", st: "t", kind: "order", start: 1,
+          note: "15 Disciplina / 5 Sombra. Palabra de poder: escudo mejorada pasó a la fila 3 el 15 de octubre, de ahí un solo punto a 29.",
+          rows: [
+            ["Especialización en varitas", 2, "Disciplina", "+25 % de daño de varita con solo 2 puntos."],
+            ["Golpe de espíritu", 5, "Sombra", "Cada muerte devuelve maná: esto es lo que elimina las pausas."],
+            ["Disciplinas gemelas", 3, "Disciplina", "Hechizos instantáneos más fuertes (Palabra de las Sombras: dolor, Escudo)."],
+            ["Martirio", 2, "Disciplina", "Sin interrupciones al ser golpeado tras un crítico."],
+            ["Fuerza mental", 3, "Disciplina", "Más maná."],
+            ["Enfoque interno", 1, "Disciplina", "Un hechizo gratis y más crítico cada 3 minutos."],
+            ["Meditación", 3, "Disciplina", "Regeneras maná incluso mientras lanzas."],
+            ["Palabra de poder: escudo mejorada", 1, "Disciplina", "Escudo más resistente."]
+          ] },
+        { title: "Nivel 30: reinicio a Penitencia", range: "21 puntos", st: "t", kind: "set",
+          note: "Ve a tu instructor y pon estos 21 puntos directamente en Disciplina. Penitencia pasa a ser tu hechizo de daño instantáneo.",
+          rows: [
+            ["Poder en la Luz", 5, "Disciplina", "Castigo y Penitencia más fuertes sobre un objetivo que ya tiene Dolor."],
+            ["Precisión sagrada", 2, "Disciplina", ""],
+            ["Fuerza mental", 3, "Disciplina", ""],
+            ["Palabra de poder: escudo mejorada", 3, "Disciplina", ""],
+            ["Enfoque interno", 1, "Disciplina", ""],
+            ["Meditación", 3, "Disciplina", ""],
+            ["Fuego interno mejorado", 3, "Disciplina", ""],
+            ["Penitencia", 1, "Disciplina", "El 21.º punto."]
+          ] },
+        { title: "Niveles 31 a 39", range: "9 puntos", st: "p", kind: "order", start: 22,
+          note: "Total a 39: 21 Disciplina / 4 Sagrado / 5 Sombra.",
+          rows: [
+            ["Golpe de espíritu", 5, "Sombra", "Lo recuperas."],
+            ["Especialización sagrada", 4, "Sagrado", ""]
+          ] },
+        { title: "Nivel 40: reinicio a Sombra", range: "31 puntos", st: "p", kind: "set",
+          note: "Orden de Method. Forma de las Sombras es el 31.º punto: -50 % de coste de maná en hechizos de Sombras, +10 % de daño de Sombras, críticos x2 y -15 % de daño físico recibido.",
+          rows: [
+            ["Golpe de espíritu", 5, "Sombra", ""], ["Palabra de las Sombras: dolor mejorada", 2, "Sombra", ""], ["Enfoque de las Sombras", 5, "Sombra", "Acierto de hechizos de Sombras."],
+            ["Tortura mental", 1, "Sombra", ""], ["Tortura mental mejorada", 2, "Sombra", ""], ["Explosión mental mejorada", 4, "Sombra", ""],
+            ["Tejido de las Sombras", 3, "Sombra", ""], ["Abrazo vampírico", 1, "Sombra", ""], ["Contagio devorador", 1, "Sombra", ""],
+            ["Silencio", 1, "Sombra", ""], ["Oscuridad", 5, "Sombra", ""], ["Forma de las Sombras", 1, "Sombra", "El 31.º punto."]
+          ] },
+        { title: "Niveles 41 a 60", range: "20 puntos", st: "p", kind: "list",
+          note: "Nadie los ha colocado aún de forma probada. El camino más citado: volver a Disciplina para varita y maná.",
+          rows: [
+            ["Especialización en varitas", "2/2", "Disciplina", ""],
+            ["Disciplinas gemelas", "3/3", "Disciplina", ""],
+            ["Fuerza mental", "3/3", "Disciplina", ""],
+            ["Meditación", "3/3", "Disciplina", ""],
+            ["Enfoque interno", "1/1", "Disciplina", ""],
+            ["Palabra de poder: escudo mejorada", "3/3", "Disciplina", ""],
+            ["Agilidad mental", "el resto", "Disciplina", "Hechizos instantáneos más baratos."]
+          ] }
+      ],
+      keylevels: [["4", "Palabra de las Sombras: dolor"], ["6", "Palabra de poder: escudo"], ["~5 / 13", "Varita mágica inferior y luego superior (encantador)"], ["14", "Alarido psíquico"], ["20", "Peste devoradora y Custodia contra el miedo, ahora para todos los sacerdotes"], ["30", "Penitencia (talento)"], ["32", "Palabra de las Sombras: muerte"], ["40", "Forma de las Sombras, montura, doble especialización"]],
+      rotation: [["10–29", "Escudo, Explosión mental, Palabra de las Sombras: dolor, y luego varita hasta que muera el bicho."], ["30–39", "Escudo, Palabra de las Sombras: dolor, Penitencia, y luego varita. Con bichos que mueren rápido, basta con Dolor para activar Poder en la Luz."], ["40+", "Palabra de las Sombras: muerte y Explosión mental en cuanto estén listas, Tortura mental de relleno durante toda la canalización."]],
+      tips: [
+        "Las varitas ya no ganan daño de tu poder con hechizos desde el 24 de septiembre: el truco «varita + poder con hechizos» de la beta ya no existe. Elige las varitas por su daño indicado.",
+        "Desde el 15 de octubre, las varitas necesitan medio segundo quieto antes del primer disparo.",
+        "Palabra de las Sombras: muerte cuesta ahora el 30 % de tu salud si el objetivo sobrevive: resérvala para rematar.",
+        "Los sacerdotes matan más lento que los cazadores o los brujos, pero mueren poco y rara vez paran a comer. Si no quieres pagar reinicios, puedes subir directamente en Sombra."
+      ],
+      sources: [["WoW Forever Tier List, resumen de sacerdote basado en Method (31 oct.)", "https://wowforevertierlist.com/classes/priest/leveling"], ["Method, guía de subida de sacerdote (6 nov.)", "https://www.method.gg/wow-forever/wow-forever-priest-leveling-guide-and-talents"], ["ConquestCapped, varitas y poder con hechizos", "https://conquestcapped.com/guides/wow-forever/wow-forever-priest-leveling/"], ["Kami Labs, artículo de la beta sobre las varitas (23 sept., desactualizado)", "https://kami-labs.fr/en/wow-forever/pretre-wow-forever-leveling-baguette/"], ["Kami Labs, notas de lanzamiento del 2 de noviembre", "https://kami-labs.fr/en/wow-forever/patch-notes-2-novembre-notes-de-lancement/"]]
+    }
+  };
+
+  // Icône en jeu de chaque talent (sources : Wowhead Forever et wowsims), images dans assets/icons.
+  var ICONS = {"chaman":{"Golpes atronadores":"ability_thunderbolt","Destreza mental":"spell_nature_bloodlust","Lobo fantasmal mejorado":"spell_nature_spiritwolf","Enfoque chamanístico":"spell_nature_elementalabsorption","Armas elementales":"spell_fire_flametounge","Conocimiento ancestral":"spell_shadow_grimward","Golpe de tormenta":"ability_shaman_stormstrike","Vendaval":"ability_ghoulfrenzy","Golpe de tormenta mejorado":"spell_shaman_improvedstormstrike","Armas espirituales":"ability_parry","Rapidez mental":"spell_nature_mentalquickness"},"druide":{"Ferocidad":"ability_hunter_pet_hyena","Presteza feral":"spell_nature_spiritwolf","Instinto feral":"ability_ambush","Furia salvaje":"ability_druid_ravage","Ataques triturantes":"spell_shadow_vampiricaura","Poder de cambio":"spell_druid_displacement","Mordisco primigenio":"ability_racial_cannibalize","Garras afiladas":"inv_misc_monsterclaw_04","Frenesí de sangre":"ability_ghoulfrenzy","Líder de la manada":"spell_nature_unyeildingstamina","Instinto natural":"ability_druid_predatoryinstincts","Desgarrar y rasgar":"ability_druid_primalagression","Rabiar":"ability_druid_berserk","Corazón de lo salvaje":"spell_holy_blessingofagility","Golpes depredadores":"ability_hunter_pet_cat","Pellejo grueso":"inv_misc_pelt_bear_03","Impacto brutal":"ability_druid_bash","Poder de cambio mejorado":"ability_hunter_aspectmastery","Reacción natural":"ability_bullrush"},"guerrier":{"Especialización en escudos":"inv_shield_06","Atronar mejorado":"ability_thunderclap","Ira sangrienta mejorada":"ability_racial_bloodrage","Maestro de defensa":"ability_warrior_shieldguard","Revancha mejorada":"ability_warrior_revenge","Vanguardia":"ability_warrior_shieldcharge","Desafío":"ability_warrior_innerrage","Hender armadura mejorado":"ability_warrior_sunder","Bastión":"inv_shield_04","Ira centrada":"ability_warrior_focusedrage","Desgarrar mejorado":"ability_gouge","Heridas profundas":"ability_backstab","Golpe heroico mejorado":"ability_rogue_ambush","Cargar mejorado":"ability_warrior_charge","Abrumar mejorado":"inv_sword_05","Empalar":"ability_searingarrow","Especialización en armas de dos manos":"inv_axe_09","Golpes de barrido":"ability_rogue_slicedice","Maestro de armas":"garrison_weaponupgrade","Cólera desenfrenada":"spell_nature_stoneclawtotem","Enfurecer":"spell_shadow_unholyfrenzy"},"mage":{"Descarga de Escarcha mejorada":"spell_frost_frostbolt02","Mordedura de Escarcha":"spell_frost_frostarmor","Lanza de hielo":"spell_frost_frostblast","Precisión elemental":"spell_ice_magicdamage","Bloque de hielo":"spell_frost_wizardmark","Hacer añicos":"spell_frost_frostshock","Dedos de Escarcha":"ability_mage_wintersgrasp","Ola de frío":"spell_frost_wizardmark","Barrera de hielo":"spell_ice_lament","Meditación Arcana":"spell_shadow_siphonmana"},"paladin":{"Bendición":"spell_frost_windwalkon","Sentencia santificada":"ability_paladin_judgementblue","Sentencia mejorada":"spell_holy_righteousfury","Búsqueda de justicia":"spell_holy_persuitofjustice","Convicción":"spell_holy_retributionaura","Sello de orden":"ability_warrior_innerrage","Árbitro sagrado":"inv_sword_08","Venganza":"ability_racial_avatar","Especialización en armas de dos manos":"inv_hammer_04","Arrepentimiento":"spell_holy_prayerofhealing","Fuerza divina":"ability_golemthunderclap","Sellos mejorados":"ability_thunderbolt","Conducto sagrado":"spell_holy_devineaegis"},"voleur":{"Ataques despiadados":"ability_fiegndead","Golpe siniestro mejorado":"spell_shadow_ritualofsacrifice","Eviscerar mejorado":"ability_rogue_eviscerate","Heridas punzantes":"ability_backstab","Desviación":"ability_parry","Estocada":"ability_warrior_challange","Precisión":"ability_marksmanship","Ejecución impecable":"inv_sword_35","Especialización en doble empuñadura":"ability_dualwield","Malicia":"ability_racial_bloodrage","Hacer picadillo mejorado":"ability_rogue_slicedice","Crueldad":"ability_druid_disembowel","Golpes implacables":"ability_warrior_decisivestrike","Letalidad":"ability_criticalstrike","Sangre fría":"spell_ice_lament","Aluvión de acero":"ability_warrior_punishingblow","Tajo y corte":"inv_sword_27","Subidón de adrenalina":"spell_shadow_shadowworddominate"},"chasseur":{"Aspectos mortales":"spell_nature_ravenform","Fuego concentrado":"ability_hunter_silenthunter","Furia desatada":"ability_bullrush","Revivir mascota mejorado":"ability_hunter_beastsoothe","Presteza bestial":"ability_hunter_pet_boar","Invocar halcón":"ability_hunter_animalhandler","Ferocidad":"inv_misc_monsterclaw_04","Intimidación":"ability_devour","Frenesí":"inv_misc_monsterclaw_03","Vínculo espiritual":"classic_ability_druid_demoralizingroar","Buscasendas":"ability_mount_jungletiger","Disciplina bestial":"spell_nature_abolishmagic","Cólera de las bestias":"ability_druid_ferociousbite","Aliviar mascota mejorado":"ability_hunter_mendpet","Ataques letales":"ability_searingarrow","Eficiencia":"spell_frost_wizardmark"},"demoniste":{"Supresión":"spell_shadow_unsummonbuilding","Corrupción mejorada":"spell_shadow_abominationexplosion","Transfusión de vida mejorada":"spell_shadow_burningspirit","Pandemia":"spell_shadow_unstableaffliction_2","Concentración vil":"spell_shadow_fingerofdeath","Anochecer":"spell_shadow_twilight","Malevolencia":"spell_shadow_focusedpower","Succión de alma":"spell_shadow_lifedrain02","Maestría en Sombras":"spell_shadow_shadetruesight","Succionar vida":"spell_shadow_requiem","Drenajes mejorados":"spell_shadow_haunting","Poder profano":"spell_shadow_shadowworddominate","Energías demoníacas":"spell_shadow_felmending","Vitalidad vil":"spell_holy_magicalsentry","Perdición de agonía mejorada":"spell_shadow_curseofsargeras","Alcance sombrío":"spell_shadow_callofbone"},"pretre":{"Especialización en varitas":"inv_wand_01","Golpe de espíritu":"spell_shadow_requiem","Disciplinas gemelas":"spell_holy_sealofvengeance","Martirio":"spell_nature_tranquility","Fuerza mental":"spell_nature_enchantarmor","Enfoque interno":"spell_frost_windwalkon","Meditación":"spell_nature_sleep","Palabra de poder: escudo mejorada":"spell_holy_powerwordshield","Poder en la Luz":"spell_holy_searinglight","Precisión sagrada":"spell_holy_divineillumination","Fuego interno mejorado":"spell_holy_innerfire","Penitencia":"spell_holy_penance","Especialización sagrada":"spell_holy_sealofsalvation","Palabra de las Sombras: dolor mejorada":"spell_shadow_shadowwordpain","Enfoque de las Sombras":"spell_shadow_burningspirit","Tortura mental":"spell_shadow_siphonmana","Tortura mental mejorada":"spell_shadow_soulleech_2","Explosión mental mejorada":"spell_shadow_unholyfrenzy","Tejido de las Sombras":"spell_shadow_blackplague","Abrazo vampírico":"spell_shadow_unsummonbuilding","Contagio devorador":"spell_shadow_devouringplague","Silencio":"spell_shadow_impphaseshift","Oscuridad":"spell_shadow_twilight","Forma de las Sombras":"spell_shadow_shadowform","Agilidad mental":"ability_hibernation"}}, cur = "";
+  function tal(name) {
+    var imgs = name.split(/, then |, | or /).map(function (n) {
+      var ic = (ICONS[cur] || {})[n];
+      return ic ? '<img class="ticon" src="../assets/icons/' + ic + '.jpg" alt="" width="28" height="28" loading="lazy">' : "";
+    }).join("");
+    return '<span class="tname">' + imgs + "<strong>" + esc(name) + "</strong></span>";
+  }
+  function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+  function badge(st) {
+    if (st === "t") return '<span class="badge t">tested</span>';
+    if (st === "p") return '<span class="badge p">projected</span>';
+    return '<span class="badge t">probado hasta 30</span> <span class="badge p">previsto después</span>';
+  }
+
+  function phaseTable(ph) {
+    var head, body = "";
+    if (ph.kind === "order") {
+      head = "<tr><th>Nivel</th><th>Puntos</th><th>Talento</th><th>Rango</th><th>Árbol</th></tr>";
+      var p = ph.start, acc = {};
+      ph.rows.forEach(function (r) {
+        var n = r[1], a = p, b = p + n - 1;
+        acc[r[0]] = (acc[r[0]] || 0) + n;
+        var lv = (a + 9) + (n > 1 ? "–" + (b + 9) : "");
+        var pts = a + (n > 1 ? "–" + b : "");
+        body += '<tr><td class="num">' + lv + '</td><td class="num" style="color:var(--muted);font-weight:400">' + pts + "</td><td>" + tal(r[0]) +
+          (r[3] ? '<span class="why">' + r[3] + "</span>" : "") + '</td><td class="num">' + acc[r[0]] + "</td>" + '<td class="tree">' + r[2] + "</td></tr>";
+        p = b + 1;
+      });
+    } else if (ph.kind === "lv") {
+      head = "<tr><th>Nivel</th><th>Talento</th><th>Rango</th><th>Árbol</th></tr>";
+      ph.rows.forEach(function (r) {
+        body += '<tr><td class="num">' + r[0] + "</td><td>" + tal(r[1]) + (r[4] ? '<span class="why">' + r[4] + "</span>" : "") +
+          '</td><td class="num">' + r[2] + '</td><td class="tree">' + r[3] + "</td></tr>";
+      });
+    } else {
+      head = "<tr><th>" + (ph.kind === "set" ? "Talento" : "Prioridad") + "</th><th>Rango</th><th>Árbol</th></tr>";
+      ph.rows.forEach(function (r, i) {
+        body += "<tr><td>" + (ph.kind === "list" ? '<span style="color:var(--muted)">' + (i + 1) + ".</span> " : "") + "" + tal(r[0]) +
+          (r[3] ? '<span class="why">' + r[3] + "</span>" : "") + '</td><td class="num">' + r[1] + '</td><td class="tree">' + r[2] + "</td></tr>";
+      });
+    }
+    return '<div class="table-wrap"><table><thead>' + head + "</thead><tbody>" + body + "</tbody></table></div>";
+  }
+
+  function render(id) {
+    cur = id;
+    var c = CLASSES[id];
+    document.body.setAttribute("data-cls", id);
+    document.getElementById("title").textContent = "Talentos de subida · " + c.name;
+    document.querySelectorAll(".tabs button").forEach(function (b) { b.setAttribute("aria-selected", b.dataset.cls === id ? "true" : "false"); });
+    var h = "";
+    h += '<section class="stitched verdict"><span class="tag" style="margin:0">Especialización recomendada</span><p class="spec">' + c.spec + "</p><p>" + c.verdict + "</p>" +
+      '<div class="timeline" aria-label="Plan de subida">' + c.timeline.map(function (t, i) {
+        return '<div' + (i === c.timeline.length - 1 ? ' class="dk"' : "") + ' style="background:' + t[2] + '">' + t[1] + "<span>" + t[0] + "</span></div>";
+      }).join("") + "</div></section>";
+    c.phases.forEach(function (ph) {
+      h += '<section class="phase"><div class="phase-head"><h2>' + ph.title + '</h2><span>' + badge(ph.st) + ' <span class="range">' + ph.range + "</span></span></div>" +
+        (ph.note ? '<p class="note">' + ph.note + "</p>" : "") + phaseTable(ph) + "</section>";
+    });
+    h += '<div class="cols">' +
+      '<div class="card"><h3>Niveles clave</h3><dl class="kv">' + c.keylevels.map(function (k) { return "<dt>" + k[0] + "</dt><dd>" + k[1] + "</dd>"; }).join("") + "</dl></div>" +
+      '<div class="card"><h3>Rotación de subida</h3><dl class="kv">' + c.rotation.map(function (k) { return "<dt>" + k[0] + "</dt><dd>" + k[1] + "</dd>"; }).join("") + "</dl></div>" +
+      "</div>";
+    h += '<section class="stitched" style="display:grid;gap:10px"><h2>Bueno saber en Forever</h2><ul class="plain">' + c.tips.map(function (t) { return "<li>" + t + "</li>"; }).join("") + "</ul></section>";
+    document.getElementById("content").innerHTML = h;
+    document.getElementById("foot").innerHTML = "<p>Fuentes: " + c.sources.map(function (s) { return '<a href="' + s[1] + '">' + s[0] + "</a>"; }).join(" · ") + "</p>" +
+      "<p>Las guías aún no coinciden en algunos rangos: ante la duda, el árbol del juego siempre tiene razón. Los nombres de talentos y hechizos están traducidos y pueden variar un poco en tu cliente.</p>" +
+      "<p>Guía de fans no oficial, actualizada el 7 de noviembre de 2026. World of Warcraft es una marca de Blizzard Entertainment.</p>";
+  }
+
+  function fromHash() { var h = (location.hash || "").slice(1); return CLASSES[h] ? h : "chasseur"; }
+  document.querySelectorAll(".tabs button").forEach(function (b) {
+    b.addEventListener("click", function () { if (location.hash !== "#" + b.dataset.cls) location.hash = b.dataset.cls; else render(b.dataset.cls); });
+  });
+  window.addEventListener("hashchange", function () { render(fromHash()); });
+  render(fromHash());
+})();
+</script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

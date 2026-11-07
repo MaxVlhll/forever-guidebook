@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Erste Hilfe WoW Forever</title>
+<meta name="description" content="Erste-Hilfe-Guide 1-300 für WoW Forever (Allianz und Horde): Verbände und Heiltränke, Einkaufsliste, Buch und Quest „Triage“.">
+<meta property="og:title" content="Erste Hilfe WoW Forever">
+<meta property="og:description" content="Erste-Hilfe-Guide 1-300 für WoW Forever (Allianz und Horde): Verbände und Heiltränke, Einkaufsliste, Buch und Quest „Triage“.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../secourisme.html">
+<link rel="alternate" hreflang="en" href="../en/secourisme.html">
+<link rel="alternate" hreflang="es" href="../es/secourisme.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #150f10;
+  --bg-glow: #2a1517;
+  --panel: #201718;
+  --panel-2: #2b1f21;
+  --stitch: #874b50;
+  --accent: #ff7b7b;
+  --seg1: #ffb3b3; --seg2: #f07c7c; --seg3: #b8474b; --seg4: #7f2a2f;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Erste Hilfe</span>
+  <h1>Erste Hilfe 1 → 300</h1>
+  <p class="lede">Ein Sekundärberuf, zusätzlich zu deinen zwei Hauptberufen. In Forever stellt die Erste Hilfe die Heiltränke her. Gib deine Fertigkeit ein: Die Seite zeigt den nächsten Schritt und den Stoff, der dir noch fehlt.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Wo du stehst</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Aktuelle Fertigkeit</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="5 Punkte abziehen">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="5 Punkte hinzufügen">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Einkaufsliste bis</label>
+      <select id="target">
+        <option value="75">75 (Ende Lehrling)</option>
+        <option value="150" selected>150 (Ende Geselle)</option>
+        <option value="225">225 (Ende Experte)</option>
+        <option value="300">300 (Fachmann)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Lehrling</div><div class="seg s2">Geselle</div><div class="seg s3">Experte</div><div class="seg s4">Fachmann</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Was dir noch fehlt</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Der Weg</h2>
+    <p class="lede" style="margin-top:0">Die Anzahlen sind Schätzungen: Plane immer etwas Reserve ein. Goldene Regel: Sobald ein Rezept grün wird, geh zum nächsten Schritt.</p>
+    <div class="legend" aria-label="Rezeptfarben">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Orange: immer +1</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Gelb: oft</span> <span><span class="dot" style="background:var(--sk-green)"></span>Grün: selten</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Grau: nie</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Lehrer und Meilensteine</h2>
+  <p class="lede" style="margin-top:0">Erste Hilfe behält ihre besonderen Meilensteine: ein Buch für Experte, eine Quest für Fachmann.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Allianz</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Schaltet frei</th><th>Voraussetzung</th><th>Lehrer (Koordinaten)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Geselle</span></td><td class="num">bis 150</td><td>Fertigkeit 50, Stufe 10</td><td><strong>Shaina Fuller</strong>, Sturmwind (42.4, 26.8) · Michelle Belle, Wald von Elwynn (43.4, 65.6) · Nissa Firestone, Eisenschmiede (54.8, 58.4) · Thamner Pol, Dun Morogh (47.2, 52.4) · Dannelor, Darnassus (51.4, 12.4) · Byancie, Teldrassil (55.2, 56.8)</td></tr><tr><td><span class="pill">Experte</span></td><td class="num">bis 225</td><td>Buch „Erste Hilfe für Experten - Unter Verbänden“</td><td><strong>Deneb Walker</strong>, Arathihochland (27.0, 58.8), in der Zuflucht, die auch die Rezepte für Schwere Seidenverbände und Magiestoffverbände verkauft</td></tr><tr><td><span class="pill">Fachmann</span></td><td class="num">bis 300</td><td>Quest „Triage“, Stufe 35, Fertigkeit 225</td><td><strong>Doktor Gustaf VanHowzen</strong>, Theramore, Düstermarschen (67.6, 48.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Schaltet frei</th><th>Voraussetzung</th><th>Lehrer (Koordinaten)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Geselle</span></td><td class="num">bis 150</td><td>Fertigkeit 50, Stufe 10</td><td><strong>Arnok</strong>, Orgrimmar (34.0, 84.4) · Rawrk, Durotar (54.0, 42.0) · Mary Edras, Unterstadt (73.4, 55.4) · Krankenschwester Neela, Tirisfal (61.8, 52.8) · Pand Stonebinder, Donnerfels (29.4, 21.4) · Vira Younghoof, Mulgore (46.0, 63.8)</td></tr><tr><td><span class="pill">Experte</span></td><td class="num">bis 225</td><td>Buch „Erste Hilfe für Experten - Unter Verbänden“</td><td><strong>Balai Lok'Wein</strong>, Düstermarschen, laut Classic: im Spiel prüfen. Kami Labs nennt nur Deneb Walker (Arathihochland, 27.0, 58.8), in der Zuflucht, einem Allianzdorf</td></tr><tr><td><span class="pill">Fachmann</span></td><td class="num">bis 300</td><td>Quest „Triage“, Stufe 35, Fertigkeit 225</td><td><strong>Doktor Gregory Victor</strong>, Hammerfall (Arathihochland), laut Classic: im Spiel prüfen</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Phiolen und Gewürze gibt es bei Händlern für Handwerkswaren und Alchemiebedarf.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Neu in Forever</h2>
+  <ul class="plain"><li><strong>Heiltränke</strong> (schwach bis erheblich) sind von der Alchemie zur Ersten Hilfe gewandert.</li><li>Neue Heilmittel: <strong>Umschläge</strong> (ab 90), <strong>Aderpressen</strong> (ab 120) und verbesserte Gegengifte.</li><li><strong>Erste-Hilfe-Kasten</strong> bei 20: erhöht die Ausdauer der Spieler im Lager.</li><li><strong>Giftstudie</strong> bei 140: hilft bei Heiltränken und Gegengiften, im Lager.</li><li><strong>Labor des Pestdoktors</strong> bei 300: für einige Tränke und Umschläge nötig.</li><li><strong>Vermächtnispunkte</strong> bei 150, 225 und 300.</li><li>Der Beruf hat 30 Rezepte, davon 17 neue.</li></ul>
+</section>
+
+<footer class="foot"><p>Quellen: <a href="https://kami-labs.fr/guide-secourisme-wow-forever/">Kami Labs, Erste-Hilfe-Guide für WoW Forever</a> · <a href="https://conquestcapped.com/guides/fr/wow-forever/wow-forever-alchemy/">ConquestCapped, Heiltränke</a>.</p><p>Schritte über 225 waren in der Beta nicht spielbar: Sie sind als „zu prüfen“ markiert. Gehört ein Rezepthändler zur anderen Fraktion, nutze das Auktionshaus. Namen von Gegenständen, NPCs und Zonen sind übersetzt und können im Spielclient leicht abweichen.</p><p>Inoffizieller Fan-Guide, aktualisiert am 7. November 2026. World of Warcraft ist eine Marke von Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "secou", "src": {"Leinenstoff": "farm", "Wollstoff": "farm", "Seidenstoff": "farm", "Magiestoff": "farm", "Runenstoff": "farm", "Leere Phiole": "vendor", "Bleiphiole": "vendor", "Milde Gewürze": "vendor", "Scharfe Gewürze": "vendor", "Friedensblume": "ah", "Beulengras": "ah"}, "ranks": [{"name": "Lehrling", "from": 1, "to": 75, "req": "Von Anfang an · Obergrenze 75"}, {"name": "Geselle", "from": 75, "to": 150, "req": "Erste-Hilfe-Lehrer, Fertigkeit 50, Stufe 10 · Obergrenze 150"}, {"name": "Experte", "from": 150, "to": 225, "req": "Buch von Deneb Walker (Arathi) · Obergrenze 225"}, {"name": "Fachmann", "from": 225, "to": 300, "req": "Quest „Triage“, Stufe 35, Fertigkeit 225 · Obergrenze 300"}], "steps": [{"f": 1, "t": 55, "r": "Leinenverband", "n": 80, "m": {"Leinenstoff": 1}}, {"f": 55, "t": 80, "r": "Schwacher Heiltrank", "n": 38, "m": {"Leere Phiole": 1, "Milde Gewürze": 1, "Friedensblume": 1}, "note": "Neu: Heiltränke kommen jetzt aus der Ersten Hilfe. <strong>Lerne Geselle bei 50</strong> (Stufe 10)."}, {"f": 80, "t": 115, "r": "Wollverband", "n": 48, "m": {"Wollstoff": 1}}, {"f": 115, "t": 135, "r": "Schwerer Wollverband", "n": 23, "m": {"Wollstoff": 2}}, {"f": 135, "t": 150, "r": "Heiltrank", "n": 19, "m": {"Bleiphiole": 1, "Scharfe Gewürze": 1, "Beulengras": 1}, "note": "<strong>Kauf das Buch „Erste Hilfe für Experten - Unter Verbänden“</strong> bei Deneb Walker (Arathihochland, 27.0, 58.8), sonst bleibst du bei 150 hängen."}, {"f": 150, "t": 180, "r": "Seidenverband", "n": 41, "m": {"Seidenstoff": 1}}, {"f": 180, "t": 210, "r": "Schwerer Seidenverband", "n": 41, "m": {"Seidenstoff": 2}, "note": "Rezept für 23 S 15 K bei Deneb Walker."}, {"f": 210, "t": 240, "r": "Magiestoffverband", "n": 41, "m": {"Magiestoff": 1}, "note": "Rezept für 52 S 63 K bei Deneb Walker. <strong>Mach bei 225 die Quest „Triage“</strong> (Stufe 35), um 300 freizuschalten."}, {"f": 240, "t": 260, "r": "Schwerer Magiestoffverband", "n": 24, "m": {"Magiestoff": 2}, "p": 1}, {"f": 260, "t": 300, "r": "Runenstoffverband", "n": 65, "m": {"Runenstoff": 1}, "p": 1}], "trainMsg": {"comp": "Falls noch nicht geschehen, lerne Geselle (Stufe 10): Arnok in Orgrimmar (34.0, 84.4) oder Rawrk in Durotar (54.0, 42.0).", "exp": "Vor 150: Kauf das Buch „Erste Hilfe für Experten - Unter Verbänden“. Auf Hordeseite verkaufte es in Classic Balai Lok'Wein (Düstermarschen): im Spiel prüfen.", "art": "Bereite dich auf die Quest „Triage“ vor (Stufe 35, Fertigkeit 225). Auf Hordeseite gab es sie in Classic bei Doktor Gregory Victor in Hammerfall (Arathihochland): im Spiel prüfen."}, "done300": "300 erreicht. Denk an das Labor des Pestdoktors für dein Lager.", "groupTitles": {"farm": "Stoff (von Humanoiden)", "vendor": "Von Händlern", "ah": "Kräuter (Kräuterkunde oder Auktionshaus)", "craft": "Zwischenprodukte"}, "trainMsgA": {"comp": "Falls noch nicht geschehen, lerne Geselle (Stufe 10): Shaina Fuller in Sturmwind (42.4, 26.8), Nissa Firestone in Eisenschmiede (54.8, 58.4) oder Dannelor in Darnassus (51.4, 12.4).", "exp": "Vor 150: Kauf das Buch „Erste Hilfe für Experten - Unter Verbänden“ bei Deneb Walker (Arathihochland, Zuflucht, 27.0, 58.8).", "art": "Bereite dich auf die Quest „Triage“ vor (Stufe 35, Fertigkeit 225): Doktor Gustaf VanHowzen in Theramore (Düstermarschen, 67.6, 48.8)."}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

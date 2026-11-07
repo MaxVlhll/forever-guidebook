@@ -66,8 +66,9 @@ a { color: var(--accent); }
 .fac-switch button[aria-pressed="true"] { color: #fff; font-weight: 700; background: #5a4a38; }
 .fac-switch button[data-v="a"][aria-pressed="true"] { background: var(--fac-a); }
 .fac-switch button[data-v="h"][aria-pressed="true"] { background: var(--fac-h); }
-.lang { font-size: .82rem; font-weight: 700; color: var(--muted); text-decoration: none; border: 1px solid var(--stitch); border-radius: 99px; padding: 5px 10px; }
-.lang:hover { color: var(--ink); border-color: var(--accent); }
+.lang-dd summary { font-size: .82rem; font-weight: 700; border-color: var(--stitch); border-radius: 99px; padding: 5px 10px; }
+.lang-dd ul { left: auto; right: 0; min-width: 150px; }
+.lang-dd summary::after { display: none; }
 @media (max-width: 720px) {
   .nav-groups { order: 3; flex-basis: 100%; display: grid; grid-template-columns: repeat(4, 1fr); }
   .nav-dd { position: static; }
@@ -76,7 +77,7 @@ a { color: var(--accent); }
   .fac-switch { margin-left: auto; }
   .sitenav-in { column-gap: 8px; }
   .fac-switch button { padding: 5px 7px; font-size: .76rem; }
-  .lang { padding: 5px 8px; font-size: .76rem; }
+  .lang-dd summary { padding: 5px 8px; font-size: .76rem; }
 }
 
 .stitched { background: var(--panel); border-radius: 10px; padding: 18px; position: relative; box-shadow: 0 1px 0 #ffffff08 inset, 0 6px 20px #0006; }

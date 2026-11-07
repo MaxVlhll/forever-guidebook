@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ingenieurskunst WoW Forever</title>
+<meta name="description" content="Ingenieurskunst-Guide 1-300 für WoW Forever (Allianz und Horde): Weg Rezept für Rezept, berechnete Einkaufsliste und Lehrer.">
+<meta property="og:title" content="Ingenieurskunst WoW Forever">
+<meta property="og:description" content="Ingenieurskunst-Guide 1-300 für WoW Forever (Allianz und Horde): Weg Rezept für Rezept, berechnete Einkaufsliste und Lehrer.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../ingenierie.html">
+<link rel="alternate" hreflang="en" href="../en/ingenierie.html">
+<link rel="alternate" hreflang="es" href="../es/ingenierie.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #0e1416;
+  --bg-glow: #142528;
+  --panel: #162023;
+  --panel-2: #1e2b2f;
+  --stitch: #4c7f86;
+  --accent: #5fd0d6;
+  --seg1: #a8e6ea; --seg2: #64c3ca; --seg3: #2f8a92; --seg4: #1d5c62;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Ingenieurskunst</span>
+  <h1>Ingenieurskunst 1 → 300</h1>
+  <p class="lede">Der komplette Weg, Rezept für Rezept, nach den Daten der Forever-Beta. Gib deine Fertigkeit ein: Die Seite zeigt, wo du stehst, den nächsten Schritt und alle Barren und Steine, die dir noch fehlen.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Wo du stehst</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Aktuelle Fertigkeit</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="5 Punkte abziehen">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="5 Punkte hinzufügen">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Einkaufsliste bis</label>
+      <select id="target">
+        <option value="75">75 (Ende Lehrling)</option>
+        <option value="150" selected>150 (Ende Geselle)</option>
+        <option value="225">225 (Ende Experte)</option>
+        <option value="300">300 (Fachmann)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Lehrling</div><div class="seg s2">Geselle</div><div class="seg s3">Experte</div><div class="seg s4">Fachmann</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Was dir noch fehlt</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Der Weg</h2>
+    <p class="lede" style="margin-top:0">Die Anzahlen sind Schätzungen: Plane immer etwas Reserve ein. Goldene Regel: Sobald ein Rezept grün wird, geh zum nächsten Schritt.</p>
+    <div class="legend" aria-label="Rezeptfarben">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Orange: immer +1</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Gelb: oft</span> <span><span class="dot" style="background:var(--sk-green)"></span>Grün: selten</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Grau: nie</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Lehrer</h2>
+  <p class="lede" style="margin-top:0">Ohne den passenden Rang bleibt deine Fertigkeit an der Obergrenze hängen (75, 150, 225). Lerne den nächsten Rang, sobald du die nötige Stufe hast.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Allianz</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Schaltet frei</th><th>Voraussetzung</th><th>Lehrer (Koordinaten)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Geselle</span></td><td class="num">bis 150</td><td>Fertigkeit 50, Stufe 10</td><td><strong>Sprite Jumpsprocket</strong>, Sturmwind (54.6, 8.0) · Jemma Quikswitch, Eisenschmiede (67.4, 43.8) · Bronk Guzzlegear, Dun Morogh (50.2, 50.4) · Deek Fizzlebizz, Loch Modan (45.8, 13.4) · Jenna Lemkenilli, Dunkelküste (38.2, 41.0)</td></tr><tr><td><span class="pill">Experte</span></td><td class="num">bis 225</td><td>Fertigkeit 125, Stufe 20</td><td><strong>Lilliam Sparkspindle</strong>, Sturmwind (54.8, 7.8) · Trixie Quikswitch, Eisenschmiede (67.4, 43.2) · Finbus Geargrind, Dämmerwald (77.4, 48.4)</td></tr><tr><td><span class="pill">Fachmann</span></td><td class="num">bis 300</td><td>Fertigkeit 200, Stufe 35</td><td><strong>Springspindle Fizzlegear</strong>, Eisenschmiede (68.2, 43.4)</td></tr><tr><td><span class="pill">Hohe Rezepte</span></td><td class="num">—</td><td>—</td><td>Buzzek Bracketswing, Tanaris (52.2, 27.4), in Gadgetzan</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Schaltet frei</th><th>Voraussetzung</th><th>Lehrer (Koordinaten)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Geselle</span></td><td class="num">bis 150</td><td>Fertigkeit 50, Stufe 10</td><td><strong>Thund</strong>, Orgrimmar (75.4, 24.6) · Mukdrak, Durotar (52.2, 40.8) · Graham Van Talen, Unterstadt (75.2, 72.4) · Twizwick Sprocketgrind, Mulgore (58.6, 39.4) · Tinkerwiz, Brachland (62.6, 36.2)</td></tr><tr><td><span class="pill">Experte</span></td><td class="num">bis 225</td><td>Fertigkeit 125, Stufe 20</td><td><strong>Nogg</strong>, Orgrimmar (75.4, 24.8) · Franklin Lloyd, Unterstadt (75.4, 73.0)</td></tr><tr><td><span class="pill">Fachmann</span></td><td class="num">bis 300</td><td>Fertigkeit 200, Stufe 35</td><td><strong>Roxxik</strong>, Orgrimmar (75.4, 24.8)</td></tr><tr><td><span class="pill">Hohe Rezepte</span></td><td class="num">—</td><td>—</td><td>Buzzek Bracketswing, Tanaris (52.2, 27.4), in Gadgetzan</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Schwaches Flussmittel gibt es bei Händlern für Ingenieursbedarf. Nimm Bergbau dazu: Fast jedes Rezept braucht Barren oder Stein.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Neu in Forever</h2>
+  <ul class="plain"><li><strong>Ersatzteilverkaufsbot</strong> bei 20: verkauft im Lager Komponenten.</li><li><strong>Reparaturbot</strong> bei 140: verkauft Komponenten und repariert deine Ausrüstung.</li><li><strong>Werkbank des Anarchisten</strong> bei 300: für einige Rezepte nötig.</li><li><strong>Gnomen- oder Goblinspezialisierung</strong>: Eine Quest lässt dich eine Schule wählen, jede mit eigenen exklusiven Gegenständen. Ihre Rezepte sind nicht in diesem Weg.</li><li><strong>Vermächtnispunkte</strong> bei 150, 225 und 300.</li><li>Rohes Dynamit kostet jetzt nur noch ein Raues Sprengpulver. Die Blitzbombe lernt man über eine Quest.</li><li>Der Beruf hat 242 Rezepte: 78 neue und 32 geänderte. Laut Kami Labs ist Ingenieurskunst vor allem eine PvP-Wahl: Kein Ingenieursgegenstand taucht in PvE-BiS-Listen auf.</li></ul>
+</section>
+
+<footer class="foot"><p>Quellen: <a href="https://kami-labs.fr/guide-ingenierie-wow-forever/">Kami Labs, Ingenieurskunst-Guide für WoW Forever</a> · <a href="https://overgear.com/guides/wow-forever/engineering-overview/">Overgear, Ingenieurskunst-Guide</a>.</p><p>Schritte über 225 waren in der Beta nicht spielbar: Sie sind als „zu prüfen“ markiert. Gehört ein Rezepthändler zur anderen Fraktion, nutze das Auktionshaus. Der Guide nennt kein Werkzeug (Schraubenschlüssel, Hammer): Verlangt dein Client eines, stell es vor diesem Schritt her. Namen von Gegenständen, NPCs und Zonen sind übersetzt und können im Spielclient leicht abweichen.</p><p>Inoffizieller Fan-Guide, aktualisiert am 7. November 2026. World of Warcraft ist eine Marke von Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "inge", "src": {"Rauer Stein": "farm", "Grober Stein": "farm", "Schwerer Stein": "farm", "Verdichteter Stein": "farm", "Kupferbarren": "farm", "Bronzebarren": "farm", "Silberbarren": "farm", "Goldbarren": "farm", "Eisenbarren": "farm", "Mithrilbarren": "farm", "Thoriumbarren": "farm", "Schwaches Flussmittel": "vendor", "Wollstoff": "ah", "Seidenstoff": "ah", "Runenstoff": "ah", "Blaue Perle": "ah", "Solides Sprengpulver": "ah", "Dickes Leder": "ah", "Sternrubin": "ah", "Arkanitbarren": "ah", "Eisenweberspinnenseide": "ah", "Schweres Sprengpulver": "craft", "Goldener Energiekern": "craft"}, "sub": {"Schweres Sprengpulver": {"Schwerer Stein": 1}, "Goldener Energiekern": {"Goldbarren": 1}}, "steps": [{"f": 1, "t": 30, "r": "Raues Sprengpulver", "n": 32, "m": {"Rauer Stein": 1}}, {"f": 30, "t": 54, "r": "Eine Handvoll Kupferbolzen", "n": 28, "m": {"Kupferbarren": 1}}, {"f": 54, "t": 75, "r": "Kupferrohr", "n": 21, "m": {"Kupferbarren": 2, "Schwaches Flussmittel": 1}, "note": "<strong>Lerne Geselle bei 50</strong> (Stufe 10): {comp}."}, {"f": 75, "t": 90, "r": "Grobes Sprengpulver", "n": 16, "m": {"Grober Stein": 1}}, {"f": 90, "t": 125, "r": "Silberkontakt", "n": 40, "m": {"Silberbarren": 1}}, {"f": 125, "t": 140, "r": "Schweres Sprengpulver", "n": 26, "m": {"Schwerer Stein": 1}, "out": "Schweres Sprengpulver", "note": "<strong>Lerne Experte bei 125</strong> (Stufe 20): {exp}. Behalte das ganze Pulver: Die Blitzbombe (186-210) braucht 37."}, {"f": 140, "t": 150, "r": "Surrendes Bronzegerät", "n": 17, "m": {"Bronzebarren": 2, "Wollstoff": 1}}, {"f": 150, "t": 170, "r": "Goldener Energiekern", "n": 27, "m": {"Goldbarren": 1}, "out": "Goldener Energiekern", "note": "Behalte 20 für den nächsten Schritt."}, {"f": 170, "t": 186, "r": "Gyrochronatom", "n": 20, "m": {"Eisenbarren": 1, "Goldener Energiekern": 1}}, {"f": 186, "t": 210, "r": "Blitzbombe", "n": 37, "m": {"Blaue Perle": 1, "Schweres Sprengpulver": 1, "Seidenstoff": 1}, "note": "Questrezept. <strong>Lerne Fachmann bei 200</strong> (Stufe 35): {art}."}, {"f": 210, "t": 215, "r": "Mithrilkugeln mit hoher Durchschlagskraft", "n": 5, "m": {"Mithrilbarren": 1, "Solides Sprengpulver": 1}}, {"f": 215, "t": 241, "r": "Mithrilgehäuse", "n": 41, "m": {"Mithrilbarren": 3}}, {"f": 241, "t": 245, "r": "Rosarote Brille", "n": 4, "m": {"Dickes Leder": 6, "Sternrubin": 2}, "p": 1}, {"f": 245, "t": 250, "r": "Mithrilgyroschuss", "n": 5, "m": {"Mithrilbarren": 2, "Solides Sprengpulver": 2}, "p": 1}, {"f": 250, "t": 258, "r": "Verdichtetes Sprengpulver", "n": 14, "m": {"Verdichteter Stein": 2}, "p": 1}, {"f": 258, "t": 260, "r": "Mithrilgyroschuss", "n": 3, "m": {"Mithrilbarren": 2, "Solides Sprengpulver": 2}, "p": 1}, {"f": 260, "t": 285, "r": "Thoriumapparat", "n": 26, "m": {"Thoriumbarren": 3, "Runenstoff": 1}, "p": 1, "note": "Rezept für 1 G 26 S bei Gearcutter Cogspinner (Eisenschmiede) für die Allianz, bei Sovik (Orgrimmar) für die Horde."}, {"f": 285, "t": 300, "r": "Empfindlicher Arkanitumwandler", "n": 15, "m": {"Arkanitbarren": 1, "Eisenweberspinnenseide": 1}, "p": 1, "note": "Rezept für 2 G bei Xizzer Fizzbolt (Winterquell)."}], "train": {"comp": "Thund in Orgrimmar (75.4, 24.6) oder Mukdrak in Durotar (52.2, 40.8)", "exp": "Nogg in Orgrimmar (75.4, 24.8)", "art": "Roxxik in Orgrimmar (75.4, 24.8)"}, "done300": "300 erreicht. Denk an die Werkbank des Anarchisten für dein Lager und an deine Gnomen- oder Goblinspezialisierung.", "groupTitles": {"farm": "Abzubauen (und zu verhütten)", "vendor": "Von Händlern", "ah": "Auktionshaus oder andere Berufe", "craft": "Zwischenprodukte"}, "trainA": {"comp": "Sprite Jumpsprocket in Sturmwind (54.6, 8.0) oder Jemma Quikswitch in Eisenschmiede (67.4, 43.8)", "exp": "Lilliam Sparkspindle in Sturmwind (54.8, 7.8) oder Trixie Quikswitch in Eisenschmiede (67.4, 43.2)", "art": "Springspindle Fizzlegear in Eisenschmiede (68.2, 43.4)"}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

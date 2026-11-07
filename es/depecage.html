@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desuello WoW Forever</title>
+<meta name="description" content="Guía de Desuello 1-300 para WoW Forever (Alianza y Horda): dónde desollar, tramo a tramo, según el nivel de las bestias, con los instructores.">
+<meta property="og:title" content="Desuello WoW Forever">
+<meta property="og:description" content="Guía de Desuello 1-300 para WoW Forever (Alianza y Horda): dónde desollar, tramo a tramo, según el nivel de las bestias, con los instructores.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../depecage.html">
+<link rel="alternate" hreflang="en" href="../en/depecage.html">
+<link rel="alternate" hreflang="de" href="../de/depecage.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #15110f;
+  --bg-glow: #271d17;
+  --panel: #1f1915;
+  --panel-2: #29211c;
+  --stitch: #7d6249;
+  --accent: #d8aa7e;
+  --seg1: #e8d0b8; --seg2: #c9a27e; --seg3: #8f6a4a; --seg4: #5e432d;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Desuello</span>
+  <h1>Desuello 1 → 300</h1>
+  <p class="lede">Dónde desollar, tramo a tramo, según el nivel de las bestias. Necesitas un cuchillo de desollar. Indica tu habilidad: la página muestra tu tramo y las zonas adecuadas.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Dónde estás</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Habilidad actual</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Quitar 5 puntos">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Añadir 5 puntos">+5</button>
+      </div>
+    </div>
+    
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Aprendiz</div><div class="seg s2">Oficial</div><div class="seg s3">Experto</div><div class="seg s4">Artesano</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:14px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Tramos y zonas</h2>
+    <p class="lede" style="margin-top:0">Lo que cuenta es el nivel de las bestias: por debajo del nivel 20 necesitas aprox. (nivel del bicho − 10) × 10 de habilidad; por encima, aprox. nivel × 5. Los niveles indicados son los de la zona.</p>
+    <div class="legend"><span><span class="zone">Zona <small>info</small></span> zona contada por Forever</span><span><span class="zone a">Zona</span> Alianza</span><span><span class="zone h">Zona</span> Horda</span><span>sin marca: disputada o neutral</span></div>
+  </div>
+  <div class="tiers" id="tiers"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Instructores de Desuello</h2>
+  <p class="lede" style="margin-top:0">Kami Labs da los instructores sin sus rangos. En Forever, las profesiones de fabricación piden habilidad 50 / 125 / 200 y niveles 10 / 20 / 35: es muy probable que aquí sea igual, por verificar en el juego.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alianza</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Desbloquea</th><th>Requisitos</th><th>Instructores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Todos los rangos</span></td><td class="num">hasta 300</td><td>habilidad 50 / 125 / 200 (probable)</td><td><strong>Maris Granger</strong>, Ventormenta (67.4, 49.0) · Balthus Stoneflayer, Forjaz (39.4, 32.4) · Eladriel, Darnassus (64.2, 21.8) · Helene Peltskinner, Bosque de Elwynn (46.2, 62.2) · Riley Tannepeau, Bosque de Elwynn (47.0, 39.4) · Brighid Ecorchorage, Dun Morogh (29.0, 67.4) · Radnaal Maneweaver, Teldrassil (42.0, 50.0) · Terunne Sculpte-Ours, Teldrassil (59.4, 38.6)</td></tr><tr><td><span class="pill">Fuera de las capitales</span></td><td class="num">—</td><td>—</td><td>Wilma Ranthal, Montañas Crestagrana (83.6, 71.0) · Jayla, Vallefresno (50.0, 67.2)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Desbloquea</th><th>Requisitos</th><th>Instructores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Todos los rangos</span></td><td class="num">hasta 300</td><td>habilidad 50 / 125 / 200 (probable)</td><td><strong>Thuwd</strong>, Orgrimmar (63.2, 45.2) · Kagil, Durotar (40.8, 67.8) · Killian Hagey, Entrañas (70.2, 58.4) · Rand Rhobart, Claros de Tirisfal (65.4, 60.0) · Margaret Tisserand, Claros de Tirisfal (32.4, 65.6) · Mooranta, Cima del Trueno (44.4, 42.4) · Yonn Deepcut, Mulgore (45.0, 61.4) · Nawka Chantsauvage, Mulgore (44.4, 76.8)</td></tr><tr><td><span class="pill">Neutrales</span></td><td class="num">—</td><td>—</td><td>Dranh, Los Baldíos (45.0, 59.0) · Malux, Desolace (23.2, 69.8) · Kulleg Stonehorn, Feralas (74.4, 43.0)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">El cuchillo de desollar se vende en los proveedores de mercancías.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novedades de Forever</h2>
+  <ul class="plain"><li>Anunciado en la BlizzCon, aún sin confirmar: <strong>Bestias salvajes</strong> (+5 % de daño contra bestias y crías) y más probabilidad de pieles raras.</li><li><strong>Cuero impecable</strong>: nuevo componente de Forever, guárdalo para la <a href="travail-du-cuir.html">Peletería</a>.</li><li><strong>Silla de campamento</strong> (objeto de campamento de los desolladores): +2 % de crítico según Method.</li><li><strong>Puntos de legado</strong> a 150, 225 y 300.</li><li>El combo ideal para subir con clases de cuero y malla: Desuello + Peletería.</li></ul>
+</section>
+
+<footer class="foot"><p>Fuentes: <a href="https://kami-labs.fr/guide-depecage-wow-forever/">Kami Labs, guía de Desuello de WoW Forever</a> · <a href="https://kami-labs.fr/metiers-wow-forever/">Kami Labs, profesiones de WoW Forever</a> · <a href="https://www.method.gg/wow-forever/wow-forever-warrior-leveling-guide-and-talents">Method, guía de guerrero (objetos de campamento)</a>.</p><p>La beta se detuvo en 225: los tramos de más arriba están marcados «tras la beta». Los nombres de objetos, PNJ y zonas están traducidos y pueden variar un poco en tu cliente.</p><p>Guía de fans no oficial, actualizada el 7 de noviembre de 2026. World of Warcraft es una marca de Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "depec", "done300": "300 alcanzado. Guarda el Cuero impecable: muchas recetas nuevas de Forever lo piden.", "train": {"comp": "Piensa en el rango Oficial (probablemente nivel 10): Thuwd en Orgrimmar (63.2, 45.2).", "exp": "Piensa en el rango Experto (probablemente nivel 20): Thuwd en Orgrimmar (63.2, 45.2).", "art": "Piensa en el rango Artesano (probablemente nivel 35): Thuwd en Orgrimmar (63.2, 45.2)."}, "tiers": [{"f": 1, "t": 25, "res": ["Cuero ligero", "Pellejo ligero"], "zones": [["Durotar", "nv. 1-10", "h"], ["Mulgore", "nv. 1-10", "h"], ["Claros de Tirisfal", "nv. 1-12", "h"], ["Isla de Zephras", "nv. 1-12"]], "alliance": "Bosque de Elwynn, Dun Morogh, Teldrassil.", "horde": "Durotar, Mulgore, Claros de Tirisfal."}, {"f": 25, "t": 75, "res": ["Cuero ligero", "Pellejo ligero"], "zones": [["Los Baldíos", "nv. 10-33", "h"], ["Bosque de Argénteos", "nv. 10-20", "h"], ["Loch Modan", "nv. 10-18", "a"], ["Costa Oscura", "nv. 11-19", "a"]], "note": "Lado Horda: zhevras, lagartos del trueno y kodos alrededor de El Cruce.", "alliance": "Páramos de Poniente, Loch Modan, Costa Oscura.", "horde": "Los Baldíos, Bosque de Argénteos."}, {"f": 75, "t": 125, "res": ["Cuero medio", "Pellejo medio"], "zones": [["Sierra Espolón", "nv. 15-25"], ["Las Mil Agujas", "nv. 6-35"], ["Vallefresno", "nv. 19-30"], ["Laderas de Trabalomas", "nv. 20-31"]], "note": "Aprende Oficial antes de 75.", "alliance": "Loch Modan (jabalíes, osos, crocoliscos) y luego Los Humedales.", "horde": "Sierra Espolón, Las Mil Agujas, Laderas de Trabalomas desde Molino Tarren."}, {"f": 125, "t": 175, "res": ["Cuero pesado", "Pellejo pesado"], "zones": [["Laderas de Trabalomas", "nv. 20-31"], ["Montañas de Alterac", "nv. 27-39"], ["Desolace", "nv. 30-39"], ["Tierras Altas de Arathi", "nv. 30-40"]], "note": "Aprende Experto antes de 150.", "alliance": "Los Humedales (raptores de Whelgar), Laderas de Trabalomas, Tierras Altas de Arathi."}, {"f": 175, "t": 225, "res": ["Cuero grueso", "Pellejo grueso"], "zones": [["Vega de Tuercespina", "nv. 30-50"], ["Pantano de las Penas", "nv. 36-43"], ["Tierras Inhóspitas", "nv. 36-45"], ["Clearwater Shores", "nv. 36-44"], ["Tanaris", "nv. 40-50"]], "note": "Aprende Artesano antes de 225."}, {"f": 225, "t": 250, "res": ["Cuero grueso", "Cuero basto"], "zones": [["Feralas", "nv. 41-60"], ["Azshara", "nv. 42-55"], ["Tierras del Interior", "nv. 41-56"], ["La Garganta de Fuego", "nv. 43-56"]], "p": 1}, {"f": 250, "t": 275, "res": ["Cuero basto", "Escama de escórpido gruesa"], "zones": [["Cráter de Un'Goro", "nv. 48-55"], ["Tierras de la Peste del Oeste", "nv. 46-57"], ["Las Tierras Devastadas", "nv. 46-63"], ["Las Estepas Ardientes", "nv. 50-59"]], "p": 1}, {"f": 275, "t": 300, "res": ["Cuero basto", "Pellejo basto"], "zones": [["Cuna del Invierno", "nv. 55-60"], ["Silithus", "nv. 55-59"], ["Tierras de la Peste del Este", "nv. 54-59"], ["Paso de la Muerte", "nv. 50-60"]], "p": 1}], "trainA": {"comp": "Piensa en el rango Oficial (probablemente nivel 10): Maris Granger en Ventormenta (67.4, 49.0), Balthus Stoneflayer en Forjaz (39.4, 32.4) o Eladriel en Darnassus (64.2, 21.8).", "exp": "Piensa en el rango Experto (probablemente nivel 20): Maris Granger en Ventormenta (67.4, 49.0), Balthus Stoneflayer en Forjaz (39.4, 32.4) o Eladriel en Darnassus (64.2, 21.8).", "art": "Piensa en el rango Artesano (probablemente nivel 35): Maris Granger en Ventormenta (67.4, 49.0), Balthus Stoneflayer en Forjaz (39.4, 32.4) o Eladriel en Darnassus (64.2, 21.8)."}};
+</script>
+<script src="../assets/recolte.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

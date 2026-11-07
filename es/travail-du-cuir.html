@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peletería WoW Forever</title>
+<meta name="description" content="Guía de Peletería 1-300 para WoW Forever (Alianza y Horda): ruta receta a receta, lista de compra calculada, instructores y zonas de desuello.">
+<meta property="og:title" content="Peletería WoW Forever">
+<meta property="og:description" content="Guía de Peletería 1-300 para WoW Forever (Alianza y Horda): ruta receta a receta, lista de compra calculada, instructores y zonas de desuello.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../travail-du-cuir.html">
+<link rel="alternate" hreflang="en" href="../en/travail-du-cuir.html">
+<link rel="alternate" hreflang="de" href="../de/travail-du-cuir.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #17110d;
+  --bg-glow: #2a1d14;
+  --panel: #221913;
+  --panel-2: #2c2119;
+  --stitch: #8a6a43;
+  --ink: #f1e6d3;
+  --muted: #b9a68b;
+  --accent: #e6b84f;
+  --seg1: #c9a36b; --seg2: #b8884f; --seg3: #9c6c3a; --seg4: #7a4f28;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Peletería</span>
+  <h1>Peletería 1 → 300</h1>
+  <p class="lede">La ruta completa, receta a receta, según los datos de la beta de Forever. Indica tu habilidad: la página muestra dónde estás, el siguiente paso y todo lo que aún necesitas.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Dónde estás</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Habilidad actual</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Quitar 5 puntos">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Añadir 5 puntos">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Lista de compra hasta</label>
+      <select id="target">
+        <option value="75">75 (fin de Aprendiz)</option>
+        <option value="150" selected>150 (fin de Oficial)</option>
+        <option value="225">225 (fin de Experto)</option>
+        <option value="300">300 (Artesano)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Aprendiz</div><div class="seg s2">Oficial</div><div class="seg s3">Experto</div><div class="seg s4">Artesano</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Lo que aún necesitas</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">La ruta</h2>
+    <p class="lede" style="margin-top:0">Las cantidades son estimaciones: guarda siempre un margen. Regla de oro: en cuanto una receta se vuelve verde, pasa al siguiente paso.</p>
+    <div class="legend" aria-label="Colores de las recetas">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Naranja: +1 siempre</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Amarillo: a menudo</span> <span><span class="dot" style="background:var(--sk-green)"></span>Verde: rara vez</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Gris: nunca</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Instructores</h2>
+  <p class="lede" style="margin-top:0">Sin el rango adecuado, tu habilidad se queda bloqueada en el tope (75, 150, 225). Aprende el siguiente rango en cuanto tengas el nivel necesario.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alianza</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Desbloquea</th><th>Requisitos</th><th>Instructores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Oficial</span></td><td class="num">hasta 150</td><td>habilidad 50, nivel 10</td><td><strong>Randal Worth</strong>, Ventormenta (67.4, 49.4) · Gretta Finespindle, Forjaz (39.0, 32.4) · Darianna, Darnassus (64.2, 21.6) · Adele Fielder, Bosque de Elwynn (46.4, 62.2) · Nadyia Maneweaver, Teldrassil (41.8, 49.4)</td></tr><tr><td><span class="pill">Experto</span></td><td class="num">hasta 225</td><td>habilidad 125, nivel 20</td><td><strong>Simon Tanner</strong>, Ventormenta (67.2, 49.4) · Fimble Finespindle, Forjaz (39.4, 33.0) · Faldron, Darnassus (64.4, 21.4) · Aayndia Floralwind, Vallefresno (35.8, 52.0)</td></tr><tr><td><span class="pill">Artesano</span></td><td class="num">hasta 300</td><td>habilidad 200, nivel 35</td><td><strong>Telonis</strong>, Darnassus (64.4, 21.4)</td></tr><tr><td><span class="pill">Recetas altas</span></td><td class="num">—</td><td>—</td><td>Hahrana Ironhide, Feralas (74.4, 43.0), en el Campamento Mojache (poblado de la Horda: usa la casa de subastas para sus patrones)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Desbloquea</th><th>Requisitos</th><th>Instructores (coordenadas)</th></tr></thead>
+      <tbody>
+        <tr><td><span class="pill">Oficial</span></td><td class="num">hasta 150</td><td>habilidad 50, nivel 10</td><td><strong>Waldor</strong>, Los Baldíos (45.6, 35.6), en el oasis junto a las Cuevas de los Lamentos · Kamari, Orgrimmar (63.0, 45.0) · Dan Golthas, Entrañas (70.4, 58.4) · Shelene Rhobart, Claros de Tirisfal (65.4, 60.0) · Chaw Stronghide, Mulgore (45.0, 61.4) · Mak, Cima del Trueno (42.2, 43.2)</td></tr>
+        <tr><td><span class="pill">Experto</span></td><td class="num">hasta 225</td><td>habilidad 125, nivel 20</td><td><strong>Krulmoo Fullmoon</strong>, Los Baldíos (44.8, 59.4), en el Campamento Taurajo · Karolek, Orgrimmar (62.8, 44.4) · Arthur Moore, Entrañas (70.4, 57.4) · Brawn, Vega de Tuercespina (31.6, 28.8) · Narv Hidecrafter, Desolace (55.2, 56.2) · Tarn, Cima del Trueno (42.4, 43.0)</td></tr>
+        <tr><td><span class="pill">Artesano</span></td><td class="num">hasta 300</td><td>habilidad 200, nivel 35</td><td><strong>Una</strong>, Cima del Trueno (41.4, 42.6)</td></tr>
+        <tr><td><span class="pill">Recetas altas</span></td><td class="num">—</td><td>—</td><td>Hahrana Ironhide, Feralas (74.4, 43.0), en el Campamento Mojache</td></tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">La sal, el hilo y los tintes se venden en los proveedores de peletería y de mercancías, en las capitales y en la mayoría de los campamentos grandes.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Dónde desollar cada cuero</h2>
+  <p class="lede" style="margin-top:0">Tu Desuello tiene que seguir el ritmo: por debajo del nivel 20 necesitas aprox. (nivel del bicho − 10) × 10; por encima, aprox. nivel × 5.</p>
+  <div class="cols">
+    <div class="card"><h3>Cuero y pellejo ligeros</h3><span class="lv">Bestias nv. 10 a 22</span><p><span class="fl" data-f="h"><span class="fac h">Horda</span> Los Baldíos (zhevras, lagartos del trueno, kodos al sur de El Cruce), Sierra Espolón.</span><span class="fl" data-f="a"><span class="fac a">Alianza</span> Páramos de Poniente, Loch Modan, Costa Oscura.</span></p></div>
+    <div class="card"><h3>Cuero y pellejo medios</h3><span class="lv">Bestias nv. 20 a 30</span><p><span class="fl" data-f="h"><span class="fac h">Horda</span> Sierra Espolón, Vallefresno, Las Mil Agujas, Laderas de Trabalomas.</span><span class="fl" data-f="a"><span class="fac a">Alianza</span> Los Humedales, Montañas Crestagrana, Bosque del Ocaso, Vallefresno.</span></p></div>
+    <div class="card"><h3>Cuero y pellejo pesados</h3><span class="lv">Bestias nv. 30 a 40</span><p>Tierras Altas de Arathi, Desolace, norte de la Vega de Tuercespina.</p></div>
+    <div class="card"><h3>Cuero grueso</h3><span class="lv">Bestias nv. 35 a 45</span><p>Sur de la Vega de Tuercespina, Feralas, Tierras Inhóspitas, Marjal Revolcafango.</p></div>
+    <div class="card"><h3>Cuero basto</h3><span class="lv">Bestias nv. 48 o más</span><p>Cráter de Un'Goro, Frondavil, Cuna del Invierno, Las Estepas Ardientes.</p></div>
+    <div class="card"><h3>Escamas de escórpido gruesas</h3><span class="lv">Escórpidos nv. 50 o más</span><p>Silithus, Las Tierras Devastadas.</p></div>
+  </div>
+  <p class="foot">Guarda el <strong>Cuero impecable</strong> que encuentres al desollar: es un componente nuevo de Forever que usan muchas recetas nuevas.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novedades de Forever</h2>
+  <ul class="plain">
+    <li><strong>Tienda de campaña</strong> a 20: da experiencia de descanso (hasta un 5 % de un nivel). Cuesta 5 cueros ligeros.</li>
+    <li><strong>Bastidor de curtido</strong> a 140: fabrica algunos materiales en el campamento.</li>
+    <li><strong>Máquina de coser</strong> a 300: necesaria para algunas recetas.</li>
+    <li><strong>Puntos de legado</strong> a 150, 225 y 300.</li>
+    <li><strong>Especializaciones</strong> en Artesano: Escamas de dragón, Elemental o Tribal. Solo eliges una.</li>
+    <li>La profesión tiene 510 recetas, 277 de ellas nuevas. Esta ruta sigue las mejores para subir, no las mejores para llevar.</li>
+  </ul>
+</section>
+
+<footer class="foot">
+  <p>Fuentes: <a href="https://kami-labs.fr/guide-travail-du-cuir-wow-forever/">Kami Labs, guía de Peletería de WoW Forever</a> para la ruta y los instructores · <a href="https://seemeta.com/fr/wow-forever/professions/leatherworking">Seemeta</a> para los umbrales de color · <a href="https://expcarry.com/fr/guide-depecage-wow-forever">Expcarry</a> para el Cuero impecable.</p>
+  <p>Los pasos por encima de 225 no se podían jugar en la beta: están marcados «por verificar». Si un vendedor de recetas es de la otra facción, usa la casa de subastas. Los nombres de objetos, PNJ y zonas están traducidos y pueden variar un poco en tu cliente.</p>
+</footer>
+
+
+</main>
+<script>
+var CONFIG = {
+  key: "tdc",
+  src: {
+    "Cuero ligero": "farm", "Pellejo ligero": "farm", "Pellejo medio": "farm", "Cuero medio": "farm",
+    "Pellejo pesado": "farm", "Cuero pesado": "farm", "Cuero grueso": "farm", "Cuero basto": "farm",
+    "Escama de escórpido gruesa": "farm",
+    "Sal": "vendor", "Hilo grueso": "vendor", "Hilo fino": "vendor",
+    "Hilo de seda": "vendor", "Hilo rúnico": "vendor", "Tinte gris": "vendor",
+    "Tinte verde": "vendor", "Tinte negro": "vendor", "Tinte naranja": "vendor",
+    "Polvo de alma": "ah", "Elixir de crecimiento gigante": "ah", "Ágata musgosa": "ah",
+    "Perla iridiscente": "ah", "Jade": "ah", "Citrino": "ah", "Tejido mágico": "ah",
+    "Vid salvaje": "ah", "Polvo onírico": "ah", "Elixir de los gigantes": "ah",
+    "Escama impecable": "ah", "Pellejo vil": "ah", "Aceite de escamapiedra": "ah", "Paño rúnico": "ah",
+    "Cinturón de cuero fino": "craft", "Pellejo ligero curado": "craft", "Pellejo medio curado": "craft",
+    "Pellejo pesado curado": "craft", "Pellejo grueso curado": "craft", "Pellejo basto curado": "craft",
+    "Kit de armadura pesado": "craft", "Kit de armadura basto": "craft"
+  },
+  sub: {
+    "Pellejo ligero curado": { "Pellejo ligero": 1, "Sal": 1 },
+    "Pellejo medio curado": { "Pellejo medio": 1, "Sal": 1 },
+    "Pellejo pesado curado": { "Pellejo pesado": 1, "Sal": 3 },
+    "Cinturón de cuero fino": { "Cuero ligero": 6, "Hilo grueso": 2 }
+  },
+  steps: [
+    { f: 1, t: 36, r: "Kit de armadura ligero", n: 36, m: { "Cuero ligero": 1 } },
+    { f: 36, t: 62, r: "Pellejo ligero curado", n: 32, m: { "Pellejo ligero": 1, "Sal": 1 }, out: "Pellejo ligero curado",
+      note: "Sigue amarilla hasta 60 y luego verde hasta 70. Guarda unos cuantos: la Túnica de cuero fino los necesita (ver 100-128)." },
+    { f: 62, t: 85, r: "Guantes de cuero repujado", n: 28, m: { "Cuero ligero": 3, "Hilo grueso": 2 },
+      note: "<strong>Aprende Oficial antes de 75</strong>, o te quedarás bloqueado: {comp}." },
+    { f: 85, t: 100, r: "Cinturón de cuero fino", n: 20, m: { "Cuero ligero": 6, "Hilo grueso": 2 }, out: "Cinturón de cuero fino",
+      note: "Guarda 2 cinturones para el paso 128-130." },
+    { f: 100, t: 128, r: "Pellejo medio curado", n: 42, m: { "Pellejo medio": 1, "Sal": 1 }, out: "Pellejo medio curado",
+      note: "Guarda 20 para los dos pasos siguientes.",
+      alt: "Según otra base de datos, esta receta se vuelve gris hacia 105. Si es así en el juego, pasa a la Túnica de cuero fino (amarilla hasta 105, verde hasta 120): 3 pellejos ligeros curados, 6 cueros ligeros, 4 hilos gruesos." },
+    { f: 128, t: 130, r: "Cinturón de cuero oscuro", n: 2, m: { "Cinturón de cuero fino": 1, "Pellejo medio curado": 1, "Hilo fino": 2, "Tinte gris": 1 } },
+    { f: 130, t: 143, r: "Hombreras de montañés", n: 18, m: { "Pellejo medio curado": 1, "Cuero medio": 4, "Hilo fino": 1 },
+      note: "<strong>Aprende Experto a 125</strong> (nivel 20): {exp}." },
+    { f: 143, t: 150, r: "Kit de armadura pesado energizado", n: 7, m: { "Kit de armadura pesado": 1, "Polvo de alma": 2, "Elixir de crecimiento gigante": 2 },
+      note: "Nueva receta de Forever, 20 p de Nioma (Tierras del Interior). Fabrica antes los Kits de armadura pesados." },
+    { f: 150, t: 170, r: "Pellejo pesado curado", n: 39, m: { "Pellejo pesado": 1, "Sal": 3 }, out: "Pellejo pesado curado",
+      note: "Los pasos siguientes usan más de lo que haces aquí: la lista de compra calcula lo que hay que preparar de más." },
+    { f: 170, t: 175, r: "Leotardos bárbaros", n: 6, m: { "Cuero pesado": 10, "Hilo fino": 2, "Ágata musgosa": 1 },
+      note: "Receta por 6 p 50 c de un vendedor (Hammon Karwn o Lardan)." },
+    { f: 175, t: 180, r: "Hombreras bárbaras", n: 6, m: { "Cuero pesado": 8, "Pellejo pesado curado": 1, "Hilo fino": 2 } },
+    { f: 180, t: 185, r: "Brazales de cuero verdes", n: 6, m: { "Pellejo pesado curado": 2, "Cuero pesado": 6, "Tinte verde": 1, "Hilo fino": 1 } },
+    { f: 185, t: 190, r: "Cinturón de cuero con gemas", n: 6, m: { "Pellejo pesado curado": 4, "Perla iridiscente": 2, "Jade": 2, "Citrino": 1, "Hilo fino": 1 },
+      note: "Paso caro en gemas: mira los precios de la casa de subastas antes de empezar." },
+    { f: 190, t: 200, r: "Guantes de guardián", n: 16, m: { "Cuero pesado": 4, "Pellejo pesado curado": 1, "Hilo de seda": 1 } },
+    { f: 200, t: 205, r: "Kit de armadura grueso", n: 6, m: { "Cuero grueso": 5, "Hilo de seda": 1 },
+      note: "<strong>Aprende Artesano a 200</strong> (nivel 35): {art}." },
+    { f: 205, t: 217, r: "Cinta de paisaje nocturno", n: 22, m: { "Cuero grueso": 5, "Hilo de seda": 2 } },
+    { f: 217, t: 220, r: "Hombreras de paisaje nocturno", n: 7, m: { "Cuero grueso": 8, "Tejido mágico": 6, "Hilo de seda": 3 } },
+    { f: 220, t: 225, r: "Hombreras de cuero salvaje", n: 6, m: { "Cuero grueso": 10, "Vid salvaje": 1, "Pellejo grueso curado": 1 },
+      note: "Receta de misión." },
+    { f: 225, t: 235, r: "Yelmo de cuero salvaje", n: 16, m: { "Cuero grueso": 10, "Vid salvaje": 2, "Pellejo grueso curado": 1 }, p: 1, note: "Receta de misión." },
+    { f: 235, t: 245, r: "Kit de armadura basto energizado", n: 13, m: { "Kit de armadura basto": 1, "Polvo onírico": 2, "Elixir de los gigantes": 2, "Escama impecable": 1, "Pellejo vil": 1 }, p: 1,
+      note: "Nueva receta, 55 p de Nioma (Tierras del Interior)." },
+    { f: 245, t: 250, r: "Botas de cuero salvaje", n: 6, m: { "Cuero grueso": 14, "Vid salvaje": 4, "Pellejo grueso curado": 2 }, p: 1, note: "Receta de misión." },
+    { f: 250, t: 255, r: "Leotardos de cuero salvaje", n: 6, m: { "Cuero grueso": 16, "Vid salvaje": 2, "Pellejo grueso curado": 2 }, p: 1, note: "Receta de misión." },
+    { f: 255, t: 260, r: "Brazales de escórpido gruesos", n: 6, m: { "Cuero basto": 4, "Escama de escórpido gruesa": 4, "Hilo rúnico": 1 }, p: 1,
+      note: "Receta de Zannok Hidepiercer (Silithus)." },
+    { f: 260, t: 268, r: "Guanteletes de cuero malvados", n: 11, m: { "Cuero basto": 8, "Tinte negro": 1, "Hilo rúnico": 1 }, p: 1,
+      note: "Receta de Leonard Porter (Tierras de la Peste del Oeste)." },
+    { f: 268, t: 276, r: "Armadura de cuero adornada", n: 8, m: { "Cuero basto": 16, "Hilo rúnico": 1, "Tinte naranja": 3, "Pellejo basto curado": 2, "Aceite de escamapiedra": 6 }, p: 1,
+      note: "Nueva receta, 10 o de Pexmit (Monte Hyjal)." },
+    { f: 276, t: 290, r: "Jubón de escórpido flexible", n: 14, m: { "Cuero basto": 20, "Escama de escórpido gruesa": 10, "Hilo rúnico": 1 }, p: 1,
+      note: "Nueva receta, 10 o de Pexmit (Monte Hyjal)." },
+    { f: 290, t: 295, r: "Cinta de cuero rúnico", n: 6, m: { "Cuero basto": 14, "Paño rúnico": 10, "Hilo rúnico": 1 }, p: 1,
+      note: "Receta de Jase Farlane (Tierras de la Peste del Este)." },
+    { f: 295, t: 300, r: "Yelmo de escórpido grueso", n: 6, m: { "Cuero basto": 8, "Escama de escórpido gruesa": 12, "Pellejo basto curado": 1, "Hilo rúnico": 1 }, p: 1,
+      note: "Receta de Zannok Hidepiercer (Silithus)." }
+  ],
+  train: { comp: "Waldor, en el oasis de Los Baldíos (45.6, 35.6)", exp: "Krulmoo Fullmoon, Campamento Taurajo (44.8, 59.4)", art: "Una, Cima del Trueno (41.4, 42.6)" },
+  trainA: { comp: "Randal Worth en Ventormenta (67.4, 49.4), Gretta Finespindle en Forjaz (39.0, 32.4) o Darianna en Darnassus (64.2, 21.6)", exp: "Simon Tanner en Ventormenta (67.2, 49.4), Fimble Finespindle en Forjaz (39.4, 33.0) o Faldron en Darnassus (64.4, 21.4)", art: "Telonis en Darnassus (64.4, 21.4)" },
+  done300: "300 alcanzado. Piensa en la Máquina de coser para tu campamento.",
+  groupTitles: { farm: "Para desollar", vendor: "De vendedores", ah: "Subasta u otras profesiones", craft: "Intermedios que guardar" }
+};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

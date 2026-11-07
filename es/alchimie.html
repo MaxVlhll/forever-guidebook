@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alquimia WoW Forever</title>
+<meta name="description" content="Guía de Alquimia 1-300 para WoW Forever (Alianza y Horda): ruta receta a receta, lista de compra calculada, instructores y hierbas.">
+<meta property="og:title" content="Alquimia WoW Forever">
+<meta property="og:description" content="Guía de Alquimia 1-300 para WoW Forever (Alianza y Horda): ruta receta a receta, lista de compra calculada, instructores y hierbas.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../alchimie.html">
+<link rel="alternate" hreflang="en" href="../en/alchimie.html">
+<link rel="alternate" hreflang="de" href="../de/alchimie.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #0f1513;
+  --bg-glow: #17261f;
+  --panel: #17201c;
+  --panel-2: #1f2b26;
+  --stitch: #4f7d68;
+  --ink: #f1e9dc;
+  --muted: #b5a995;
+  --accent: #6fd1a4;
+  --accent-ink: #15100c;
+  --seg1: #9fd9bd; --seg2: #6fbf98; --seg3: #3f8f6c; --seg4: #29624a;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Alquimia</span>
+  <h1>Alquimia 1 → 300</h1>
+  <p class="lede">La ruta completa, receta a receta, según los datos de la beta de Forever. Indica tu habilidad: la página muestra dónde estás, el siguiente paso y todas las hierbas y viales que aún necesitas.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Dónde estás</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Habilidad actual</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Quitar 5 puntos">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Añadir 5 puntos">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Lista de compra hasta</label>
+      <select id="target">
+        <option value="75">75 (fin de Aprendiz)</option>
+        <option value="150" selected>150 (fin de Oficial)</option>
+        <option value="225">225 (fin de Experto)</option>
+        <option value="300">300 (Artesano)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Aprendiz</div><div class="seg s2">Oficial</div><div class="seg s3">Experto</div><div class="seg s4">Artesano</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Lo que aún necesitas</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">La ruta</h2>
+    <p class="lede" style="margin-top:0">Las cantidades son estimaciones: guarda siempre un margen. Regla de oro: en cuanto una receta se vuelve verde, pasa al siguiente paso.</p>
+    <div class="legend" aria-label="Colores de las recetas">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Naranja: +1 siempre</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Amarillo: a menudo</span> <span><span class="dot" style="background:var(--sk-green)"></span>Verde: rara vez</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Gris: nunca</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Instructores</h2>
+  <p class="lede" style="margin-top:0">Sin el rango adecuado, tu habilidad se queda bloqueada en el tope (75, 150, 225). Aprende el siguiente rango en cuanto tengas el nivel necesario.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alianza</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Desbloquea</th><th>Requisitos</th><th>Instructores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Oficial</span></td><td class="num">hasta 150</td><td>habilidad 50, nivel 10</td><td><strong>Tel'Athir</strong>, Ventormenta (45.8, 78.2) · Vosur Brakthel, Forjaz (66.4, 55.2) · Milla Fairancora, Darnassus (55.2, 21.4) · Alquimista Mallory, Bosque de Elwynn (39.8, 48.4) · Cyndra Kindwhisper, Teldrassil (57.6, 60.6) · Ghak Healtouch, Loch Modan (37.0, 49.2)</td></tr><tr><td><span class="pill">Experto</span></td><td class="num">hasta 225</td><td>habilidad 125, nivel 20</td><td><strong>Lilyssia Nightbreeze</strong>, Ventormenta (46.4, 79.4) · Tally Berryfizz, Forjaz (66.4, 55.2) · Sylvanna Forestmoon, Darnassus (55.6, 23.4) · Kylanna, Vallefresno (50.8, 67.0) · Alquimista Narett, Marjal Revolcafango (64.0, 47.6)</td></tr><tr><td><span class="pill">Artesano</span></td><td class="num">hasta 300</td><td>habilidad 200, nivel 35</td><td><strong>Ainethil</strong>, Darnassus (55.0, 23.4)</td></tr><tr><td><span class="pill">Recetas altas</span></td><td class="num">—</td><td>—</td><td>Maestro micólogo Shurome, Frondavil (51.4, 82.0)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Desbloquea</th><th>Requisitos</th><th>Instructores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Oficial</span></td><td class="num">hasta 150</td><td>habilidad 50, nivel 10</td><td><strong>Whuut</strong>, Orgrimmar (55.8, 33.2) · Miao'zan, Durotar (55.4, 74.0) · Doctor Martin Felben, Entrañas (45.8, 73.2) · Carolai Anise, Claros de Tirisfal (59.4, 52.2) · Kray, Cima del Trueno (46.8, 33.4)</td></tr><tr><td><span class="pill">Experto</span></td><td class="num">hasta 225</td><td>habilidad 125, nivel 20</td><td><strong>Yelmak</strong>, Orgrimmar (56.4, 33.2) · Doctor Marsh, Entrañas (51.2, 75.0) · Bena Winterhoof, Cima del Trueno (46.8, 33.4) · Serge Hinott, Laderas de Trabalomas (61.4, 19.2) · Jaxin Chong, Vega de Tuercespina (28.0, 78.0)</td></tr><tr><td><span class="pill">Artesano</span></td><td class="num">hasta 300</td><td>habilidad 200, nivel 35</td><td><strong>Doctor Herbert Halsey</strong>, Entrañas (47.4, 73.0)</td></tr><tr><td><span class="pill">Recetas altas</span></td><td class="num">—</td><td>—</td><td>Maestro micólogo Shurome, Frondavil (51.4, 82.0)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Los viales se venden en los proveedores de suministros de alquimia y de mercancías. Los vendedores de recetas marcados Alianza u Horda solo atienden a su facción: el otro bando usa la casa de subastas.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Dónde recoger cada hierba</h2>
+  <p class="lede" style="margin-top:0">Son las zonas de Classic, en las que se basa Forever. El cardo nevado no se recoge solo: cae como extra del marregal y la brezospina.</p>
+  <div class="cols"><div class="card"><h3>Flor de paz, Hojaplata</h3><span class="lv">Habilidad 1 a 70</span><p><span class="fl" data-f="h"><span class="fac h">Horda</span> Durotar, Mulgore, Claros de Tirisfal, Los Baldíos.</span><span class="fl" data-f="a"><span class="fac a">Alianza</span> Bosque de Elwynn, Dun Morogh, Teldrassil, Páramos de Poniente.</span></p></div><div class="card"><h3>Marregal, Brezospina, Cardo nevado</h3><span class="lv">Habilidad 50 a 100</span><p><span class="fl" data-f="h"><span class="fac h">Horda</span> Los Baldíos, Bosque de Argénteos, Sierra Espolón, Vallefresno.</span><span class="fl" data-f="a"><span class="fac a">Alianza</span> Páramos de Poniente, Loch Modan, Costa Oscura, Montañas Crestagrana.</span></p></div><div class="card"><h3>Hierba cardenal, Alga estranguladora</h3><span class="lv">Habilidad 85 a 115</span><p><span class="fl" data-f="h"><span class="fac h">Horda</span> Sierra Espolón, Vallefresno, Laderas de Trabalomas.</span><span class="fl" data-f="a"><span class="fac a">Alianza</span> Los Humedales, Montañas Crestagrana, Vallefresno.</span><span class="fl">El alga estranguladora crece bajo el agua a lo largo de las costas.</span></p></div><div class="card"><h3>Espina de oro</h3><span class="lv">Habilidad 170 o más</span><p>Tierras Altas de Arathi, Vega de Tuercespina, Feralas, Pantano de las Penas.</p></div><div class="card"><h3>Gromsangre, Solea, Hojasueño</h3><span class="lv">Habilidad 220 a 270</span><p>Frondavil, Cráter de Un'Goro, Tierras de la Peste, Silithus.</p></div><div class="card"><h3>Setelo de hielo, Champiñón fantasma</h3><span class="lv">Habilidad 245 a 290</span><p>Cuna del Invierno para el setelo de hielo; cuevas y pantanos (Tierras del Interior, Pantano de las Penas) para el champiñón fantasma.</p></div></div>
+  <p class="foot">Las bolsas de llamas pequeñas, el aceite de fuego, las garras afiladas y el mineral de mitril suelen venir de la casa de subastas: mira los precios antes de empezar un paso.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novedades de Forever</h2>
+  <ul class="plain"><li><strong>Las pociones de sanación dejan la Alquimia</strong>: ahora las hacen los Primeros auxilios.</li><li><strong>Pozo de maná</strong> a 20: devuelve maná a los jugadores sentados cerca (no se acumula con Bendición de sabiduría).</li><li><strong>Fermentador</strong> a 140: fabrica algunos componentes en el campamento.</li><li><strong>Laboratorio de alquimia</strong> a 300: necesario para algunas recetas.</li><li><strong>Puntos de legado</strong> a 150, 225 y 300.</li><li>Anunciado en la BlizzCon pero aún sin confirmar: los elixires y frascos que bebe el alquimista durarían el doble y serían un 25 % más potentes.</li><li>La profesión tiene 179 recetas, 72 de ellas nuevas. Esta ruta sigue las mejores para subir, no las mejores para vender.</li></ul>
+</section>
+
+<footer class="foot"><p>Fuentes: <a href="https://kami-labs.fr/guide-alchimie-wow-forever/">Kami Labs, guía de Alquimia de WoW Forever</a> para la ruta, las recetas y los instructores · <a href="https://conquestcapped.com/guides/fr/wow-forever/wow-forever-alchemy/">ConquestCapped</a> para el cambio de las pociones de sanación.</p><p>Los pasos por encima de 225 no se podían jugar en la beta: están marcados «por verificar». Los nombres de objetos, PNJ y zonas están traducidos y pueden variar un poco en tu cliente.</p></footer>
+
+
+</main>
+<script>
+var CONFIG = {"key": "alch", "src": {"Hojaplata": "farm", "Flor de paz": "farm", "Brezospina": "farm", "Hierba cardenal": "farm", "Cardo nevado": "farm", "Marregal": "farm", "Alga estranguladora": "farm", "Espina de oro": "farm", "Gromsangre": "farm", "Champiñón fantasma": "farm", "Solea": "farm", "Hojasueño": "farm", "Setelo de hielo": "farm", "Vial vacío": "vendor", "Vial con plomo": "vendor", "Vial de cristal": "vendor", "Garra afilada": "ah", "Bolsa de llamas pequeña": "ah", "Aceite de fuego": "ah", "Mineral de mitril": "ah", "Anguila escamapiedra": "ah", "Aceite de escamapiedra": "craft"}, "sub": {"Aceite de escamapiedra": {"Anguila escamapiedra": 1, "Vial con plomo": 1}}, "steps": [{"f": 1, "t": 71, "r": "Elixir de defensa menor", "n": 74, "m": {"Hojaplata": 1, "Flor de paz": 1, "Vial vacío": 1}, "note": "<strong>Aprende Oficial a 50</strong> (nivel 10), o te quedarás bloqueado en 75."}, {"f": 71, "t": 100, "r": "Poción de ira", "n": 30, "m": {"Garra afilada": 1, "Brezospina": 1, "Vial vacío": 1}, "note": "Receta por 1 p del Especulador Defias (Páramos de Poniente) o de Xandar Goodbeard (Loch Modan)."}, {"f": 100, "t": 120, "r": "Poción de protección Sagrada", "n": 20, "m": {"Hierba cardenal": 1, "Cardo nevado": 1, "Vial vacío": 1}, "note": "Receta por 8 p de Kzixx (Bosque del Ocaso), un goblin neutral."}, {"f": 120, "t": 165, "r": "Poción de maná inferior", "n": 52, "m": {"Marregal": 1, "Alga estranguladora": 1, "Vial vacío": 1}, "note": "<strong>Aprende Experto a 125</strong> (nivel 20): {exp}."}, {"f": 165, "t": 219, "r": "Poción de protección contra el Fuego", "n": 55, "m": {"Bolsa de llamas pequeña": 1, "Aceite de fuego": 1, "Vial con plomo": 1}, "note": "Receta por 15 p de Nandar Branson (Laderas de Trabalomas, Costasur) para la Alianza. Horda: usa la casa de subastas."}, {"f": 219, "t": 250, "r": "Poción de escudo de piedra inferior", "n": 38, "m": {"Mineral de mitril": 1, "Espina de oro": 1, "Vial con plomo": 1}, "note": "Receta de misión («Piedra líquida»). <strong>Aprende Artesano a 200</strong> (nivel 35): {art}."}, {"f": 250, "t": 258, "r": "Aceite de escamapiedra", "n": 14, "m": {"Anguila escamapiedra": 1, "Vial con plomo": 1}, "out": "Aceite de escamapiedra", "p": 1, "note": "Guarda todo el aceite: el Elixir de defensa superior necesita 2 por fabricación."}, {"f": 258, "t": 267, "r": "Elixir matademonios", "n": 9, "m": {"Gromsangre": 1, "Champiñón fantasma": 1, "Vial de cristal": 1}, "p": 1, "note": "Receta por 1 o de Nina Lightbrew (Las Tierras Devastadas)."}, {"f": 267, "t": 295, "r": "Elixir de defensa superior", "n": 32, "m": {"Aceite de escamapiedra": 2, "Solea": 1, "Vial de cristal": 1}, "p": 1, "note": "Receta por 1 o 30 p de Soolie Berryfizz (Forjaz) para la Alianza, de Kor'geld (Orgrimmar) para la Horda."}, {"f": 295, "t": 300, "r": "Poción de maná superior", "n": 5, "m": {"Hojasueño": 3, "Setelo de hielo": 2, "Vial de cristal": 1}, "p": 1, "note": "Receta por 3 o de Magnus Frostwake (Tierras de la Peste del Oeste)."}], "train": {"comp": "Whuut en Orgrimmar (55.8, 33.2) o Miao'zan en Durotar (55.4, 74.0)", "exp": "Yelmak en Orgrimmar (56.4, 33.2)", "art": "Doctor Herbert Halsey en Entrañas (47.4, 73.0)"}, "done300": "300 alcanzado. Piensa en el Laboratorio de alquimia para tu campamento.", "groupTitles": {"farm": "Para recoger (Herboristería)", "vendor": "De vendedores", "ah": "Subasta u otras profesiones", "craft": "Intermedios"}, "trainA": {"comp": "Tel'Athir en Ventormenta (45.8, 78.2), Vosur Brakthel en Forjaz (66.4, 55.2) o Milla Fairancora en Darnassus (55.2, 21.4)", "exp": "Lilyssia Nightbreeze en Ventormenta (46.4, 79.4), Tally Berryfizz en Forjaz (66.4, 55.2) o Sylvanna Forestmoon en Darnassus (55.6, 23.4)", "art": "Ainethil en Darnassus (55.0, 23.4)"}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

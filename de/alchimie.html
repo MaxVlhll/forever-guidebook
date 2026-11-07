@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alchemie WoW Forever</title>
+<meta name="description" content="Alchemie-Guide 1-300 für WoW Forever (Allianz und Horde): Weg Rezept für Rezept, berechnete Einkaufsliste, Lehrer und Kräuter.">
+<meta property="og:title" content="Alchemie WoW Forever">
+<meta property="og:description" content="Alchemie-Guide 1-300 für WoW Forever (Allianz und Horde): Weg Rezept für Rezept, berechnete Einkaufsliste, Lehrer und Kräuter.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../alchimie.html">
+<link rel="alternate" hreflang="en" href="../en/alchimie.html">
+<link rel="alternate" hreflang="es" href="../es/alchimie.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #0f1513;
+  --bg-glow: #17261f;
+  --panel: #17201c;
+  --panel-2: #1f2b26;
+  --stitch: #4f7d68;
+  --ink: #f1e9dc;
+  --muted: #b5a995;
+  --accent: #6fd1a4;
+  --accent-ink: #15100c;
+  --seg1: #9fd9bd; --seg2: #6fbf98; --seg3: #3f8f6c; --seg4: #29624a;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Alchemie</span>
+  <h1>Alchemie 1 → 300</h1>
+  <p class="lede">Der komplette Weg, Rezept für Rezept, nach den Daten der Forever-Beta. Gib deine Fertigkeit ein: Die Seite zeigt, wo du stehst, den nächsten Schritt und alle Kräuter und Phiolen, die dir noch fehlen.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Wo du stehst</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Aktuelle Fertigkeit</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="5 Punkte abziehen">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="5 Punkte hinzufügen">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Einkaufsliste bis</label>
+      <select id="target">
+        <option value="75">75 (Ende Lehrling)</option>
+        <option value="150" selected>150 (Ende Geselle)</option>
+        <option value="225">225 (Ende Experte)</option>
+        <option value="300">300 (Fachmann)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Lehrling</div><div class="seg s2">Geselle</div><div class="seg s3">Experte</div><div class="seg s4">Fachmann</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Was dir noch fehlt</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Der Weg</h2>
+    <p class="lede" style="margin-top:0">Die Anzahlen sind Schätzungen: Plane immer etwas Reserve ein. Goldene Regel: Sobald ein Rezept grün wird, geh zum nächsten Schritt.</p>
+    <div class="legend" aria-label="Rezeptfarben">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Orange: immer +1</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Gelb: oft</span> <span><span class="dot" style="background:var(--sk-green)"></span>Grün: selten</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Grau: nie</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Lehrer</h2>
+  <p class="lede" style="margin-top:0">Ohne den passenden Rang bleibt deine Fertigkeit an der Obergrenze hängen (75, 150, 225). Lerne den nächsten Rang, sobald du die nötige Stufe hast.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Allianz</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Schaltet frei</th><th>Voraussetzung</th><th>Lehrer (Koordinaten)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Geselle</span></td><td class="num">bis 150</td><td>Fertigkeit 50, Stufe 10</td><td><strong>Tel'Athir</strong>, Sturmwind (45.8, 78.2) · Vosur Brakthel, Eisenschmiede (66.4, 55.2) · Milla Fairancora, Darnassus (55.2, 21.4) · Alchimistin Mallory, Wald von Elwynn (39.8, 48.4) · Cyndra Kindwhisper, Teldrassil (57.6, 60.6) · Ghak Healtouch, Loch Modan (37.0, 49.2)</td></tr><tr><td><span class="pill">Experte</span></td><td class="num">bis 225</td><td>Fertigkeit 125, Stufe 20</td><td><strong>Lilyssia Nightbreeze</strong>, Sturmwind (46.4, 79.4) · Tally Berryfizz, Eisenschmiede (66.4, 55.2) · Sylvanna Forestmoon, Darnassus (55.6, 23.4) · Kylanna, Eschental (50.8, 67.0) · Alchimist Narett, Düstermarschen (64.0, 47.6)</td></tr><tr><td><span class="pill">Fachmann</span></td><td class="num">bis 300</td><td>Fertigkeit 200, Stufe 35</td><td><strong>Ainethil</strong>, Darnassus (55.0, 23.4)</td></tr><tr><td><span class="pill">Hohe Rezepte</span></td><td class="num">—</td><td>—</td><td>Meistermykologe Shurome, Teufelswald (51.4, 82.0)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Schaltet frei</th><th>Voraussetzung</th><th>Lehrer (Koordinaten)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Geselle</span></td><td class="num">bis 150</td><td>Fertigkeit 50, Stufe 10</td><td><strong>Whuut</strong>, Orgrimmar (55.8, 33.2) · Miao'zan, Durotar (55.4, 74.0) · Doktor Martin Felben, Unterstadt (45.8, 73.2) · Carolai Anise, Tirisfal (59.4, 52.2) · Kray, Donnerfels (46.8, 33.4)</td></tr><tr><td><span class="pill">Experte</span></td><td class="num">bis 225</td><td>Fertigkeit 125, Stufe 20</td><td><strong>Yelmak</strong>, Orgrimmar (56.4, 33.2) · Doktor Marsh, Unterstadt (51.2, 75.0) · Bena Winterhoof, Donnerfels (46.8, 33.4) · Serge Hinott, Vorgebirge des Hügellands (61.4, 19.2) · Jaxin Chong, Schlingendorntal (28.0, 78.0)</td></tr><tr><td><span class="pill">Fachmann</span></td><td class="num">bis 300</td><td>Fertigkeit 200, Stufe 35</td><td><strong>Doktor Herbert Halsey</strong>, Unterstadt (47.4, 73.0)</td></tr><tr><td><span class="pill">Hohe Rezepte</span></td><td class="num">—</td><td>—</td><td>Meistermykologe Shurome, Teufelswald (51.4, 82.0)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Phiolen gibt es bei Händlern für Alchemiebedarf und Handwerkswaren. Als Allianz oder Horde markierte Rezepthändler bedienen nur ihre Fraktion: Die andere Seite nutzt das Auktionshaus.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Wo du welches Kraut findest</h2>
+  <p class="lede" style="margin-top:0">Das sind die Classic-Zonen, auf denen Forever aufbaut. Flitzdistel kann man nicht einzeln sammeln: Sie fällt als Bonus bei Maguskönigskraut und Wilddornrose.</p>
+  <div class="cols"><div class="card"><h3>Friedensblume, Silberblatt</h3><span class="lv">Fertigkeit 1 bis 70</span><p><span class="fl" data-f="h"><span class="fac h">Horde</span> Durotar, Mulgore, Tirisfal, Brachland.</span><span class="fl" data-f="a"><span class="fac a">Allianz</span> Wald von Elwynn, Dun Morogh, Teldrassil, Westfall.</span></p></div><div class="card"><h3>Maguskönigskraut, Wilddornrose, Flitzdistel</h3><span class="lv">Fertigkeit 50 bis 100</span><p><span class="fl" data-f="h"><span class="fac h">Horde</span> Brachland, Silberwald, Steinkrallengebirge, Eschental.</span><span class="fl" data-f="a"><span class="fac a">Allianz</span> Westfall, Loch Modan, Dunkelküste, Rotkammgebirge.</span></p></div><div class="card"><h3>Beulengras, Würgetang</h3><span class="lv">Fertigkeit 85 bis 115</span><p><span class="fl" data-f="h"><span class="fac h">Horde</span> Steinkrallengebirge, Eschental, Vorgebirge des Hügellands.</span><span class="fl" data-f="a"><span class="fac a">Allianz</span> Sumpfland, Rotkammgebirge, Eschental.</span><span class="fl">Würgetang wächst unter Wasser entlang der Küsten.</span></p></div><div class="card"><h3>Golddorn</h3><span class="lv">Fertigkeit ab 170</span><p>Arathihochland, Schlingendorntal, Feralas, Sümpfe des Elends.</p></div><div class="card"><h3>Gromsblut, Sonnengras, Traumblatt</h3><span class="lv">Fertigkeit 220 bis 270</span><p>Teufelswald, Krater von Un'Goro, Pestländer, Silithus.</p></div><div class="card"><h3>Eiskappe, Geisterpilz</h3><span class="lv">Fertigkeit 245 bis 290</span><p>Winterquell für Eiskappe; Höhlen und Sümpfe (Hinterland, Sümpfe des Elends) für Geisterpilz.</p></div></div>
+  <p class="foot">Kleine Flammensäcke, Feueröl, scharfe Klauen und Mithrilerz kommen meist aus dem Auktionshaus: Prüfe die Preise, bevor du einen Schritt beginnst.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Neu in Forever</h2>
+  <ul class="plain"><li><strong>Heiltränke gehören nicht mehr zur Alchemie</strong>: Jetzt stellt Erste Hilfe sie her.</li><li><strong>Manabrunnen</strong> bei 20: stellt sitzenden Spielern in der Nähe Mana wieder her (nicht stapelbar mit Segen der Weisheit).</li><li><strong>Gärbottich</strong> bei 140: stellt im Lager einige Komponenten her.</li><li><strong>Alchemielabor</strong> bei 300: für einige Rezepte nötig.</li><li><strong>Vermächtnispunkte</strong> bei 150, 225 und 300.</li><li>Auf der BlizzCon angekündigt, aber noch nicht bestätigt: Elixiere und Fläschchen, die der Alchemist selbst trinkt, sollen doppelt so lange halten und 25 % stärker sein.</li><li>Der Beruf hat 179 Rezepte, davon 72 neue. Dieser Weg folgt den besten zum Leveln, nicht den besten zum Verkaufen.</li></ul>
+</section>
+
+<footer class="foot"><p>Quellen: <a href="https://kami-labs.fr/guide-alchimie-wow-forever/">Kami Labs, Alchemie-Guide für WoW Forever</a> für Weg, Rezepte und Lehrer · <a href="https://conquestcapped.com/guides/fr/wow-forever/wow-forever-alchemy/">ConquestCapped</a> für den Wechsel der Heiltränke.</p><p>Schritte über 225 waren in der Beta nicht spielbar: Sie sind als „zu prüfen“ markiert. Namen von Gegenständen, NPCs und Zonen sind übersetzt und können im Spielclient leicht abweichen.</p></footer>
+
+
+</main>
+<script>
+var CONFIG = {"key": "alch", "src": {"Silberblatt": "farm", "Friedensblume": "farm", "Wilddornrose": "farm", "Beulengras": "farm", "Flitzdistel": "farm", "Maguskönigskraut": "farm", "Würgetang": "farm", "Golddorn": "farm", "Gromsblut": "farm", "Geisterpilz": "farm", "Sonnengras": "farm", "Traumblatt": "farm", "Eiskappe": "farm", "Leere Phiole": "vendor", "Bleiphiole": "vendor", "Kristallphiole": "vendor", "Scharfe Klaue": "ah", "Kleiner Flammensack": "ah", "Feueröl": "ah", "Mithrilerz": "ah", "Steinschuppenaal": "ah", "Steinschuppenöl": "craft"}, "sub": {"Steinschuppenöl": {"Steinschuppenaal": 1, "Bleiphiole": 1}}, "steps": [{"f": 1, "t": 71, "r": "Elixier der schwachen Verteidigung", "n": 74, "m": {"Silberblatt": 1, "Friedensblume": 1, "Leere Phiole": 1}, "note": "<strong>Lerne Geselle bei 50</strong> (Stufe 10), sonst bleibst du bei 75 hängen."}, {"f": 71, "t": 100, "r": "Wuttrank", "n": 30, "m": {"Scharfe Klaue": 1, "Wilddornrose": 1, "Leere Phiole": 1}, "note": "Rezept für 1 S beim Defias-Profiteur (Westfall) oder bei Xandar Goodbeard (Loch Modan)."}, {"f": 100, "t": 120, "r": "Trank des heiligen Schutzes", "n": 20, "m": {"Beulengras": 1, "Flitzdistel": 1, "Leere Phiole": 1}, "note": "Rezept für 8 S bei Kzixx (Dämmerwald), einem neutralen Goblin."}, {"f": 120, "t": 165, "r": "Geringer Manatrank", "n": 52, "m": {"Maguskönigskraut": 1, "Würgetang": 1, "Leere Phiole": 1}, "note": "<strong>Lerne Experte bei 125</strong> (Stufe 20): {exp}."}, {"f": 165, "t": 219, "r": "Feuerschutztrank", "n": 55, "m": {"Kleiner Flammensack": 1, "Feueröl": 1, "Bleiphiole": 1}, "note": "Rezept für 15 S bei Nandar Branson (Vorgebirge des Hügellands, Süderstade) für die Allianz. Horde: Auktionshaus."}, {"f": 219, "t": 250, "r": "Geringer Steinschildtrank", "n": 38, "m": {"Mithrilerz": 1, "Golddorn": 1, "Bleiphiole": 1}, "note": "Questrezept („Flüssiger Stein“). <strong>Lerne Fachmann bei 200</strong> (Stufe 35): {art}."}, {"f": 250, "t": 258, "r": "Steinschuppenöl", "n": 14, "m": {"Steinschuppenaal": 1, "Bleiphiole": 1}, "out": "Steinschuppenöl", "p": 1, "note": "Behalte jedes Öl: Das Elixier der überragenden Verteidigung braucht 2 pro Herstellung."}, {"f": 258, "t": 267, "r": "Elixier des Dämonentötens", "n": 9, "m": {"Gromsblut": 1, "Geisterpilz": 1, "Kristallphiole": 1}, "p": 1, "note": "Rezept für 1 G bei Nina Lightbrew (Verwüstete Lande)."}, {"f": 267, "t": 295, "r": "Elixier der überragenden Verteidigung", "n": 32, "m": {"Steinschuppenöl": 2, "Sonnengras": 1, "Kristallphiole": 1}, "p": 1, "note": "Rezept für 1 G 30 S bei Soolie Berryfizz (Eisenschmiede) für die Allianz, bei Kor'geld (Orgrimmar) für die Horde."}, {"f": 295, "t": 300, "r": "Erheblicher Manatrank", "n": 5, "m": {"Traumblatt": 3, "Eiskappe": 2, "Kristallphiole": 1}, "p": 1, "note": "Rezept für 3 G bei Magnus Frostwake (Westliche Pestländer)."}], "train": {"comp": "Whuut in Orgrimmar (55.8, 33.2) oder Miao'zan in Durotar (55.4, 74.0)", "exp": "Yelmak in Orgrimmar (56.4, 33.2)", "art": "Doktor Herbert Halsey in Unterstadt (47.4, 73.0)"}, "done300": "300 erreicht. Denk an das Alchemielabor für dein Lager.", "groupTitles": {"farm": "Zu sammeln (Kräuterkunde)", "vendor": "Von Händlern", "ah": "Auktionshaus oder andere Berufe", "craft": "Zwischenprodukte"}, "trainA": {"comp": "Tel'Athir in Sturmwind (45.8, 78.2), Vosur Brakthel in Eisenschmiede (66.4, 55.2) oder Milla Fairancora in Darnassus (55.2, 21.4)", "exp": "Lilyssia Nightbreeze in Sturmwind (46.4, 79.4), Tally Berryfizz in Eisenschmiede (66.4, 55.2) oder Sylvanna Forestmoon in Darnassus (55.6, 23.4)", "art": "Ainethil in Darnassus (55.0, 23.4)"}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

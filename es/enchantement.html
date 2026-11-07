@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Encantamiento WoW Forever</title>
+<meta name="description" content="Guía de Encantamiento 1-300 para WoW Forever (Alianza y Horda): ruta receta a receta, lista de compra calculada, instructores y qué desencantar.">
+<meta property="og:title" content="Encantamiento WoW Forever">
+<meta property="og:description" content="Guía de Encantamiento 1-300 para WoW Forever (Alianza y Horda): ruta receta a receta, lista de compra calculada, instructores y qué desencantar.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../enchantement.html">
+<link rel="alternate" hreflang="en" href="../en/enchantement.html">
+<link rel="alternate" hreflang="de" href="../de/enchantement.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #120f18;
+  --bg-glow: #211a30;
+  --panel: #1b1724;
+  --panel-2: #241f31;
+  --stitch: #6a5a96;
+  --ink: #f1e9dc;
+  --muted: #b5a995;
+  --accent: #b99bff;
+  --accent-ink: #15100c;
+  --seg1: #d2c2ff; --seg2: #a88cf0; --seg3: #6f55b8; --seg4: #4a3884;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Encantamiento</span>
+  <h1>Encantamiento 1 → 300</h1>
+  <p class="lede">La ruta completa, receta a receta, según los datos de la beta de Forever. Indica tu habilidad: la página muestra dónde estás, el siguiente paso, las varitas que fabricar y todo lo que aún tienes que desencantar.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Dónde estás</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Habilidad actual</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Quitar 5 puntos">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Añadir 5 puntos">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Lista de compra hasta</label>
+      <select id="target">
+        <option value="75">75 (fin de Aprendiz)</option>
+        <option value="150" selected>150 (fin de Oficial)</option>
+        <option value="225">225 (fin de Experto)</option>
+        <option value="300">300 (Artesano)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Aprendiz</div><div class="seg s2">Oficial</div><div class="seg s3">Experto</div><div class="seg s4">Artesano</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Lo que aún necesitas</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">La ruta</h2>
+    <p class="lede" style="margin-top:0">Las cantidades son estimaciones: guarda siempre un margen. Regla de oro: en cuanto una receta se vuelve verde, pasa al siguiente paso.</p>
+    <div class="legend" aria-label="Colores de las recetas">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Naranja: +1 siempre</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Amarillo: a menudo</span> <span><span class="dot" style="background:var(--sk-green)"></span>Verde: rara vez</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Gris: nunca</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Instructores</h2>
+  <p class="lede" style="margin-top:0">Sin el rango adecuado, tu habilidad se queda bloqueada en el tope (75, 150, 225). Aprende el siguiente rango en cuanto tengas el nivel necesario.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alianza</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Desbloquea</th><th>Requisitos</th><th>Instructores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Oficial</span></td><td class="num">hasta 150</td><td>habilidad 50, nivel 10</td><td><strong>Betty Quin</strong>, Ventormenta (43.2, 63.8) · Thonys Pillarstone, Forjaz (59.0, 45.2) · Lalina Summermoon, Darnassus (58.4, 13.2) · Alanna Raveneye, Teldrassil (36.8, 34.2)</td></tr><tr><td><span class="pill">Experto</span></td><td class="num">hasta 225</td><td>habilidad 125, nivel 20</td><td><strong>Lucan Cordell</strong>, Ventormenta (43.0, 64.4) · Gimble Thistlefuzz, Forjaz (59.0, 45.2) · Taladan, Darnassus (58.4, 13.2) · Xylinnia Starshine, Feralas (31.4, 44.2)</td></tr><tr><td><span class="pill">Artesano</span></td><td class="num">hasta 300</td><td>habilidad 200, nivel 35</td><td><strong>Kitta Firewind</strong>, en lo alto de la Torre de Azora, Bosque de Elwynn (64.8, 70.4)</td></tr><tr><td><span class="pill">Recetas altas</span></td><td class="num">—</td><td>—</td><td>Annora, dentro de Uldaman: cueva al noroeste de la Cámara del Mapa, solo aparece cuando la sala está limpia</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Desbloquea</th><th>Requisitos</th><th>Instructores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Oficial</span></td><td class="num">hasta 150</td><td>habilidad 50, nivel 10</td><td><strong>Jhag</strong>, Orgrimmar (53.4, 38.2) · Pa'zula, Durotar (56.4, 73.6) · Malcomb Wynn, Entrañas (62.2, 60.4) · Vance Undergloom, Claros de Tirisfal (61.6, 51.4) · Mot Dawnstrider, Cima del Trueno (43.8, 37.8)</td></tr><tr><td><span class="pill">Experto</span></td><td class="num">hasta 225</td><td>habilidad 125, nivel 20</td><td><strong>Godan</strong>, Orgrimmar (53.8, 38.4) · Lavinia Crowe, Entrañas (62.2, 61.6) · Teg Dawnstrider, Cima del Trueno (44.8, 37.4)</td></tr><tr><td><span class="pill">Artesano</span></td><td class="num">hasta 300</td><td>habilidad 200, nivel 35</td><td><strong>Hgarth</strong>, Sierra Espolón (49.2, 57.2), en el Refugio Roca del Sol</td></tr><tr><td><span class="pill">Recetas altas</span></td><td class="num">—</td><td>—</td><td>Annora, dentro de Uldaman: cueva al noroeste de la Cámara del Mapa, solo aparece cuando la sala está limpia</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">La madera simple se vende en los proveedores de encantamiento. Las varillas de metal vienen de los herreros o de la casa de subastas. Los vendedores de recetas marcados Alianza u Horda solo atienden a su facción: el otro bando usa la casa de subastas.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Qué desencantar para cada material</h2>
+  <p class="lede" style="margin-top:0">Estos rangos son los de Classic (nivel del objeto verde que desencantas), en los que se basa Forever. Los objetos azules dan fragmentos.</p>
+  <div class="cols"><div class="card"><h3>Esencia mágica, Polvo extraño</h3><span class="lv">Objetos verdes nv. 5 a 20</span><p>Todo lo que consigas en las zonas de inicio, Los Baldíos y Sierra Espolón.</p></div><div class="card"><h3>Esencia astral, Polvo de alma</h3><span class="lv">Objetos verdes nv. 21 a 35</span><p>Vallefresno, Las Mil Agujas, Laderas de Trabalomas, Desolace.</p></div><div class="card"><h3>Esencia mística, Polvo de visión</h3><span class="lv">Objetos verdes nv. 31 a 45</span><p>Tierras Altas de Arathi, Vega de Tuercespina, Tierras Inhóspitas, Feralas.</p></div><div class="card"><h3>Esencia abisal</h3><span class="lv">Objetos verdes nv. 41 a 50</span><p>Tanaris, Tierras del Interior, Feralas, La Garganta de Fuego.</p></div><div class="card"><h3>Fragmento radiante grande</h3><span class="lv">Objetos verdes nv. 46 a 50</span><p>Un'Goro, Frondavil, Las Estepas Ardientes y las mazmorras de nivel 45-50.</p></div></div>
+  <p class="foot">Consejo: cuando los precios están bajos, comprar objetos verdes en la casa de subastas para desencantarlos suele salir más barato que comprar las esencias.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novedades de Forever</h2>
+  <ul class="plain"><li><strong>Laúd encantado</strong> a 20: aumenta la armadura, las estadísticas y las resistencias de los jugadores cercanos.</li><li><strong>Recuperador arcano</strong> a 140: mejora lo que obtienes al desencantar.</li><li><strong>Forja arcana</strong> a 300: necesaria para algunas recetas.</li><li><strong>Puntos de legado</strong> a 150, 225 y 300.</li><li>La Autoridad de Comercio de Azeroth vende nuevas fórmulas, entre ellas objetos de mano izquierda (tótems, tratados, orbes).</li><li>Anunciado en la BlizzCon pero aún sin confirmar: los encantadores podrían encantar sus propios anillos.</li><li>La profesión tiene 219 recetas, 63 de ellas nuevas.</li></ul>
+</section>
+
+<footer class="foot"><p>Fuentes: <a href="https://kami-labs.fr/guide-enchantement-wow-forever/">Kami Labs, guía de Encantamiento de WoW Forever</a> para la ruta y los instructores · <a href="https://wow.gg/fr/guides/wow-forever-new-recipes-enchanting">wow.gg</a> para las nuevas fórmulas.</p><p>Los pasos por encima de 225 no se podían jugar en la beta: están marcados «por verificar». Los materiales de las varillas se deducen de los totales de la guía: comprueba la receta en el instructor antes de comprar. Los nombres de objetos, PNJ y zonas están traducidos y pueden variar un poco en tu cliente.</p></footer>
+
+
+</main>
+<script>
+var CONFIG = {"key": "ench", "src": {"Esencia mágica inferior": "farm", "Esencia astral inferior": "farm", "Esencia astral superior": "farm", "Esencia mística inferior": "farm", "Esencia mística superior": "farm", "Polvo extraño": "farm", "Polvo de alma": "farm", "Polvo de visión": "farm", "Esencia abisal superior": "farm", "Fragmento radiante grande": "farm", "Madera simple": "vendor", "Varilla de cobre": "ah", "Varilla de plata": "ah", "Varilla de oro": "ah", "Varilla de veraplata": "ah", "Gránulo mágico": "ah", "Perla iridiscente": "ah", "Perla negra": "ah", "Gema de sombra": "ah", "Vid salvaje": "ah"}, "sub": {}, "steps": [{"f": 1, "t": 10, "r": "Varilla rúnica de cobre", "n": 15, "m": {"Varilla de cobre": 1, "Gránulo mágico": 1}, "note": "Solo se necesita una varilla como herramienta después: las demás sirven solo para subir habilidad."}, {"f": 10, "t": 40, "r": "Varita mágica inferior", "n": 30, "m": {"Madera simple": 1, "Esencia mágica inferior": 1}, "note": "Aprendes Desencantar a 20: desencanta cada objeto verde que consigas."}, {"f": 40, "t": 110, "r": "Encantar pechera: absorción menor", "n": 77, "m": {"Esencia mágica inferior": 1}, "note": "Herramienta: Varilla rúnica de cobre. <strong>Aprende Oficial a 50</strong> (nivel 10), o te quedarás bloqueado en 75."}, {"f": 110, "t": 150, "r": "Encantar capa: agilidad menor", "n": 44, "m": {"Esencia astral inferior": 1}, "onceName": "una Varilla rúnica de plata", "once": {"Varilla de plata": 1, "Perla iridiscente": 1, "Polvo extraño": 3}, "note": "Receta por 8 p de Dalria (Vallefresno, lado Alianza): si no, casa de subastas. <strong>Aprende Experto a 125</strong> (nivel 20): {exp}."}, {"f": 150, "t": 185, "r": "Encantar brazales: intelecto inferior", "n": 36, "m": {"Esencia astral superior": 1}}, {"f": 185, "t": 210, "r": "Encantar pechera: intelecto superior", "n": 25, "m": {"Esencia mística inferior": 1}, "onceName": "una Varilla rúnica de oro", "once": {"Varilla de oro": 1, "Perla negra": 1, "Esencia mística superior": 1}, "note": "<strong>Aprende Artesano a 200</strong> (nivel 35): {art}."}, {"f": 210, "t": 238, "r": "Encantar guantes: agilidad", "n": 29, "m": {"Polvo de visión": 1}, "onceName": "una Varilla rúnica de veraplata", "once": {"Varilla de veraplata": 1, "Gema de sombra": 1, "Polvo de alma": 1}}, {"f": 238, "t": 279, "r": "Encantar botas: agilidad", "n": 53, "m": {"Esencia abisal superior": 1}, "p": 1}, {"f": 279, "t": 300, "r": "Encantar guantes: celeridad menor", "n": 44, "m": {"Fragmento radiante grande": 1, "Vid salvaje": 1}, "p": 1}], "train": {"comp": "Jhag en Orgrimmar (53.4, 38.2) o Pa'zula en Durotar (56.4, 73.6)", "exp": "Godan en Orgrimmar (53.8, 38.4)", "art": "Hgarth en Sierra Espolón (49.2, 57.2)"}, "done300": "300 alcanzado. Piensa en la Forja arcana para tu campamento.", "groupTitles": {"farm": "Para desencantar", "vendor": "De vendedores", "ah": "Subasta u otras profesiones", "craft": "Intermedios"}, "trainA": {"comp": "Betty Quin en Ventormenta (43.2, 63.8), Thonys Pillarstone en Forjaz (59.0, 45.2) o Lalina Summermoon en Darnassus (58.4, 13.2)", "exp": "Lucan Cordell en Ventormenta (43.0, 64.4), Gimble Thistlefuzz en Forjaz (59.0, 45.2) o Taladan en Darnassus (58.4, 13.2)", "art": "Kitta Firewind, Torre de Azora en el Bosque de Elwynn (64.8, 70.4)"}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

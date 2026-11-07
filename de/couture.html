@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schneiderei WoW Forever</title>
+<meta name="description" content="Schneiderei-Guide 1-300 für WoW Forever (Allianz und Horde): Weg Rezept für Rezept, berechnete Einkaufsliste, Lehrer und Stoffe.">
+<meta property="og:title" content="Schneiderei WoW Forever">
+<meta property="og:description" content="Schneiderei-Guide 1-300 für WoW Forever (Allianz und Horde): Weg Rezept für Rezept, berechnete Einkaufsliste, Lehrer und Stoffe.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../couture.html">
+<link rel="alternate" hreflang="en" href="../en/couture.html">
+<link rel="alternate" hreflang="es" href="../es/couture.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #160f12;
+  --bg-glow: #2b1720;
+  --panel: #21171b;
+  --panel-2: #2c1f25;
+  --stitch: #8a4f62;
+  --ink: #f1e9dc;
+  --muted: #b5a995;
+  --accent: #f08aa0;
+  --accent-ink: #15100c;
+  --seg1: #f5c0cb; --seg2: #e58a9e; --seg3: #b3536b; --seg4: #7d3448;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Schneiderei</span>
+  <h1>Schneiderei 1 → 300</h1>
+  <p class="lede">Der komplette Weg, Rezept für Rezept, nach den Daten der Forever-Beta. Gib deine Fertigkeit ein: Die Seite zeigt, wo du stehst, den nächsten Schritt und allen Stoff, der dir noch fehlt, Ballen inklusive.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Wo du stehst</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Aktuelle Fertigkeit</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="5 Punkte abziehen">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="5 Punkte hinzufügen">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Einkaufsliste bis</label>
+      <select id="target">
+        <option value="75">75 (Ende Lehrling)</option>
+        <option value="150" selected>150 (Ende Geselle)</option>
+        <option value="225">225 (Ende Experte)</option>
+        <option value="300">300 (Fachmann)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Lehrling</div><div class="seg s2">Geselle</div><div class="seg s3">Experte</div><div class="seg s4">Fachmann</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Was dir noch fehlt</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Der Weg</h2>
+    <p class="lede" style="margin-top:0">Die Anzahlen sind Schätzungen: Plane immer etwas Reserve ein. Goldene Regel: Sobald ein Rezept grün wird, geh zum nächsten Schritt.</p>
+    <div class="legend" aria-label="Rezeptfarben">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Orange: immer +1</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Gelb: oft</span> <span><span class="dot" style="background:var(--sk-green)"></span>Grün: selten</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Grau: nie</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Lehrer</h2>
+  <p class="lede" style="margin-top:0">Ohne den passenden Rang bleibt deine Fertigkeit an der Obergrenze hängen (75, 150, 225). Lerne den nächsten Rang, sobald du die nötige Stufe hast.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Allianz</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Schaltet frei</th><th>Voraussetzung</th><th>Lehrer (Koordinaten)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Geselle</span></td><td class="num">bis 150</td><td>Fertigkeit 50, Stufe 10</td><td><strong>Lawrence Schneider</strong>, Sturmwind (43.4, 73.8) · Uthrar Threx, Eisenschmiede (43.4, 28.2) · Trianna, Darnassus (63.4, 21.4) · Eldrin, Wald von Elwynn (79.2, 69.0) · Grondal Moonbreeze, Dunkelküste (38.2, 40.4)</td></tr><tr><td><span class="pill">Experte</span></td><td class="num">bis 225</td><td>Fertigkeit 125, Stufe 20</td><td><strong>Sellandus</strong>, Sturmwind (42.0, 76.2) · Jormund Stonebrow, Eisenschmiede (43.2, 28.4) · Me'lynn, Darnassus (62.4, 22.4) · Grarnik Goodstitch, Schlingendorntal (28.6, 76.8)</td></tr><tr><td><span class="pill">Fachmann</span></td><td class="num">bis 300</td><td>Fertigkeit 200, Stufe 35</td><td><strong>Georgio Bolero</strong>, Sturmwind (43.2, 73.4). Eine andere Quelle nennt Timothy Worthington in Theramore (Düstermarschen, 66.2, 51.6).</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Schaltet frei</th><th>Voraussetzung</th><th>Lehrer (Koordinaten)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Geselle / Experte</span></td><td class="num">bis 150, dann 225</td><td>Fertigkeit 50, dann 125, Stufe 10, dann 20</td><td><strong>Magar</strong>, Orgrimmar (63.2, 50.6) · Rhiannon Davis, Unterstadt (70.2, 30.2) · Tepa, Donnerfels (43.8, 44.4) · Mahani, Brachland (44.8, 59.4), im Camp Taurajo · Grarnik Goodstitch, Schlingendorntal (28.6, 76.8)</td></tr><tr><td><span class="pill">Fachmann</span></td><td class="num">bis 300</td><td>Fertigkeit 200, Stufe 35</td><td><strong>Josef Gregorian</strong>, Unterstadt (70.4, 30.4). Eine andere Quelle nennt Daryl Stack in Tarrens Mühle (Vorgebirge des Hügellands).</td></tr><tr><td><span class="pill">Weitere Lehrer</span></td><td class="num">—</td><td>—</td><td>Kil'hala, Brachland (52.2, 31.6), am Wegekreuz · Snang, Orgrimmar (62.4, 49.8) · Vhan, Donnerfels (43.4, 43.6) · Victor Ward, Unterstadt (70.2, 29.6)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Die Quellen sind sich nicht einig, welchen Rang jeder Schneiderlehrer genau lehrt: Wenn einer den nötigen Rang nicht anbietet, versuch einen anderen aus derselben Zeile. Faden, Farbstoffe und Bleichmittel gibt es bei Händlern für Schneiderbedarf. Als Allianz oder Horde markierte Rezepthändler bedienen nur ihre Fraktion: Die andere Seite nutzt das Auktionshaus.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Wo du welchen Stoff bekommst</h2>
+  <p class="lede" style="margin-top:0">Stoff droppen Humanoide. Die Stufenbereiche unten sind die aus Classic, auf denen Forever aufbaut.</p>
+  <div class="cols"><div class="card"><h3>Leinenstoff</h3><span class="lv">Humanoide Stufe 5 bis 15</span><p>Startgebiete, Brachland (Zentauren, Stacheleber), Silberwald.</p></div><div class="card"><h3>Wollstoff</h3><span class="lv">Humanoide Stufe 15 bis 25</span><p>Steinkrallengebirge, Eschental, Vorgebirge des Hügellands, Höhlen des Wehklagens.</p></div><div class="card"><h3>Seidenstoff</h3><span class="lv">Humanoide Stufe 25 bis 35</span><p>Tausend Nadeln, Desolace, Arathihochland, Scharlachrotes Kloster.</p></div><div class="card"><h3>Magiestoff</h3><span class="lv">Humanoide Stufe 35 bis 45</span><p>Schlingendorntal, Feralas, Tanaris, Hinterland, Zul'Farrak.</p></div><div class="card"><h3>Runenstoff</h3><span class="lv">Humanoide Stufe 48 bis 60</span><p>Teufelswald (Satyrn), Östliche und Westliche Pestländer, Winterquell, Dungeons ab Stufe 55.</p></div></div>
+  <p class="foot">Behalte allen Stoff, den du beim Leveln erbeutest: Er ist mit Abstand der größte Kostenpunkt dieses Berufs.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Neu in Forever</h2>
+  <ul class="plain"><li><strong>Fraktionsbanner</strong> bei 20: erhöht die Willenskraft von Spielern in der Nähe.</li><li><strong>Spinnrad</strong> bei 140: stellt im Lager einige Materialien her.</li><li><strong>Webstuhl</strong> bei 300: für einige Rezepte nötig.</li><li><strong>Vermächtnispunkte</strong> bei 150, 225 und 300.</li><li>Auf der BlizzCon angekündigt, aber noch nicht bestätigt: mehr Stoff von Gegnern und eine Umhangstickerei (Angriffskraft, Zaubermacht oder Ausdauer).</li><li>Der Beruf hat 406 Rezepte, davon 180 neue.</li></ul>
+</section>
+
+<footer class="foot"><p>Quellen: <a href="https://kami-labs.fr/guide-couture-wow-forever/">Kami Labs, Schneiderei-Guide für WoW Forever</a> für Weg, Rezepte und Lehrer · <a href="https://conquestcapped.com/guides/fr/wow-forever/wow-forever-tailoring/">ConquestCapped</a> für die Ränge der Lehrer.</p><p>Schritte über 225 waren in der Beta nicht spielbar: Sie sind als „zu prüfen“ markiert. Namen von Gegenständen, NPCs und Zonen sind übersetzt und können im Spielclient leicht abweichen.</p></footer>
+
+
+</main>
+<script>
+var CONFIG = {"key": "cout", "src": {"Leinenstoff": "farm", "Wollstoff": "farm", "Seidenstoff": "farm", "Magiestoff": "farm", "Runenstoff": "farm", "Grober Faden": "vendor", "Feiner Faden": "vendor", "Seidenfaden": "vendor", "Schwerer Seidenfaden": "vendor", "Runenfaden": "vendor", "Gelber Farbstoff": "vendor", "Blauer Farbstoff": "vendor", "Grauer Farbstoff": "vendor", "Roter Farbstoff": "vendor", "Orangefarbener Farbstoff": "vendor", "Schwarzer Farbstoff": "vendor", "Bleichmittel": "vendor", "Schattenseide": "ah", "Eisenweberspinnenseide": "ah", "Unverwüstliches Leder": "ah", "Leinenstoffballen": "craft", "Wollstoffballen": "craft", "Seidenstoffballen": "craft", "Magiestoffballen": "craft", "Runenstoffballen": "craft"}, "sub": {"Leinenstoffballen": {"Leinenstoff": 2}, "Wollstoffballen": {"Wollstoff": 3}, "Seidenstoffballen": {"Seidenstoff": 4}, "Magiestoffballen": {"Magiestoff": 5}, "Runenstoffballen": {"Runenstoff": 5}}, "steps": [{"f": 1, "t": 26, "r": "Leinenstoffballen", "n": 25, "m": {"Leinenstoff": 2}, "out": "Leinenstoffballen"}, {"f": 26, "t": 75, "r": "Leinengürtel", "n": 67, "m": {"Leinenstoffballen": 1, "Grober Faden": 1}, "note": "<strong>Lerne Geselle bei 50</strong> (Stufe 10), sonst bleibst du bei 75 hängen."}, {"f": 75, "t": 110, "r": "Wollumhang", "n": 70, "m": {"Wollstoffballen": 1, "Feiner Faden": 1}, "note": "Stell deine Wollballen selbst her (in Classic je 3 Wollstoff, im Spiel prüfen)."}, {"f": 110, "t": 125, "r": "Doppelt genähte Wollschultern", "n": 19, "m": {"Wollstoffballen": 3, "Feiner Faden": 2}, "note": "<strong>Lerne Experte bei 125</strong> (Stufe 20)."}, {"f": 125, "t": 138, "r": "Seidenstoffballen", "n": 13, "m": {"Seidenstoff": 4}, "out": "Seidenstoffballen", "note": "Die nächsten Schritte brauchen viel mehr Seidenballen: Stell nach 138 weiter welche her, die Einkaufsliste zählt die Gesamtmenge."}, {"f": 138, "t": 149, "r": "Hellgelbes Hemd", "n": 12, "m": {"Seidenstoffballen": 1, "Gelber Farbstoff": 1, "Feiner Faden": 1}, "note": "Rezept für 8 S bei Danielle Zipstitch (Dämmerwald, Dunkelhain) für die Allianz. Horde: Auktionshaus."}, {"f": 149, "t": 157, "r": "Azurblaue Seidenkapuze", "n": 8, "m": {"Seidenstoffballen": 2, "Blauer Farbstoff": 2, "Feiner Faden": 1}}, {"f": 157, "t": 167, "r": "Dunkles Seidenhemd", "n": 10, "m": {"Seidenstoffballen": 2, "Grauer Farbstoff": 2, "Feiner Faden": 1}, "note": "Rezept für 11 S bei Super-Verkäufer 680 (Desolace) oder Sheri Zipstitch (Dämmerwald)."}, {"f": 167, "t": 170, "r": "Seidenstirnband", "n": 3, "m": {"Seidenstoffballen": 3, "Feiner Faden": 2}}, {"f": 170, "t": 175, "r": "Weißes Hemd für formelle Anlässe", "n": 5, "m": {"Seidenstoffballen": 3, "Bleichmittel": 2, "Feiner Faden": 1}}, {"f": 175, "t": 183, "r": "Magiestoffballen", "n": 9, "m": {"Magiestoff": 5}, "out": "Magiestoffballen"}, {"f": 183, "t": 187, "r": "Rotes Hemd des Freibeuters", "n": 4, "m": {"Seidenstoffballen": 3, "Roter Farbstoff": 2, "Seidenfaden": 1}}, {"f": 187, "t": 205, "r": "Purpurrote Seidenweste", "n": 18, "m": {"Seidenstoffballen": 4, "Roter Farbstoff": 2, "Feiner Faden": 2}, "note": "<strong>Lerne Fachmann bei 200</strong> (Stufe 35): {art}."}, {"f": 205, "t": 215, "r": "Schwarze Magiestoffgamaschen", "n": 10, "m": {"Magiestoffballen": 2, "Seidenfaden": 3}}, {"f": 215, "t": 223, "r": "Orangefarbenes Magiestoffhemd", "n": 8, "m": {"Magiestoffballen": 1, "Orangefarbener Farbstoff": 1, "Schwerer Seidenfaden": 1}}, {"f": 223, "t": 229, "r": "Schwarze Magiestoffgamaschen", "n": 7, "m": {"Magiestoffballen": 2, "Seidenfaden": 3}}, {"f": 229, "t": 235, "r": "Schwarze Magiestoffhandschuhe", "n": 6, "m": {"Magiestoffballen": 2, "Schwerer Seidenfaden": 2}, "p": 1}, {"f": 235, "t": 241, "r": "Schlichtes schwarzes Kleid", "n": 6, "m": {"Magiestoffballen": 3, "Schwarzer Farbstoff": 1, "Schwerer Seidenfaden": 1, "Bleichmittel": 1}, "p": 1}, {"f": 241, "t": 250, "r": "Schwarzes Magiestoffstirnband", "n": 9, "m": {"Magiestoffballen": 3, "Schwerer Seidenfaden": 2}, "p": 1}, {"f": 250, "t": 259, "r": "Runenstoffballen", "n": 11, "m": {"Runenstoff": 5}, "out": "Runenstoffballen", "p": 1}, {"f": 259, "t": 263, "r": "Schattengewirkte Maske", "n": 4, "m": {"Magiestoffballen": 2, "Schattenseide": 8, "Schwerer Seidenfaden": 2}, "p": 1, "note": "Questrezept."}, {"f": 263, "t": 277, "r": "Runenstoffgürtel", "n": 15, "m": {"Runenstoffballen": 3, "Runenfaden": 1}, "p": 1}, {"f": 277, "t": 283, "r": "Runenstoffumhang", "n": 6, "m": {"Runenstoffballen": 4, "Eisenweberspinnenseide": 1, "Runenfaden": 1}, "p": 1, "note": "Rezept bei Darnall (Mondlichtung)."}, {"f": 283, "t": 292, "r": "Runenstoffhandschuhe", "n": 9, "m": {"Runenstoffballen": 4, "Unverwüstliches Leder": 4, "Runenfaden": 1}, "p": 1, "note": "Rezept bei Qia (Winterquell)."}, {"f": 292, "t": 300, "r": "Runenstoffstiefel", "n": 8, "m": {"Runenstoffballen": 4, "Eisenweberspinnenseide": 2, "Unverwüstliches Leder": 4, "Runenfaden": 1}, "p": 1, "note": "Rezept bei Darnall (Mondlichtung)."}], "train": {"comp": "Magar in Orgrimmar (63.2, 50.6) oder Mahani im Camp Taurajo (44.8, 59.4)", "exp": "Magar in Orgrimmar (63.2, 50.6) oder Rhiannon Davis in Unterstadt (70.2, 30.2)", "art": "Josef Gregorian in Unterstadt (70.4, 30.4)"}, "done300": "300 erreicht. Denk an den Webstuhl für dein Lager.", "groupTitles": {"farm": "Zu erbeuten (Humanoide)", "vendor": "Von Händlern", "ah": "Auktionshaus oder andere Berufe", "craft": "Ballen"}, "trainA": {"comp": "Lawrence Schneider in Sturmwind (43.4, 73.8), Uthrar Threx in Eisenschmiede (43.4, 28.2) oder Trianna in Darnassus (63.4, 21.4)", "exp": "Sellandus in Sturmwind (42.0, 76.2), Jormund Stonebrow in Eisenschmiede (43.2, 28.4) oder Me'lynn in Darnassus (62.4, 22.4)", "art": "Georgio Bolero in Sturmwind (43.2, 73.4)"}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

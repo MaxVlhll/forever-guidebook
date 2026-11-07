@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kräuterkunde WoW Forever</title>
+<meta name="description" content="Kräuterkunde-Guide 1-300 für WoW Forever (Allianz und Horde): was du wo sammelst, Stufe für Stufe, mit den Vorkommenszählungen von Forever und den Lehrern.">
+<meta property="og:title" content="Kräuterkunde WoW Forever">
+<meta property="og:description" content="Kräuterkunde-Guide 1-300 für WoW Forever (Allianz und Horde): was du wo sammelst, Stufe für Stufe, mit den Vorkommenszählungen von Forever und den Lehrern.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../herboristerie.html">
+<link rel="alternate" hreflang="en" href="../en/herboristerie.html">
+<link rel="alternate" hreflang="es" href="../es/herboristerie.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #11140d;
+  --bg-glow: #1e2614;
+  --panel: #191e14;
+  --panel-2: #222a1b;
+  --stitch: #66803d;
+  --accent: #b5d84f;
+  --seg1: #d8ec9c; --seg2: #b5d84f; --seg3: #7a9a2c; --seg4: #4f661b;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Kräuterkunde</span>
+  <h1>Kräuterkunde 1 → 300</h1>
+  <p class="lede">Welches Kraut du wo sammelst, Stufe für Stufe, nach der Vorkommenszählung von Forever. Kein Werkzeug nötig. Gib deine Fertigkeit ein: Die Seite zeigt deine Stufe und die beste Zone.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Wo du stehst</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Aktuelle Fertigkeit</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="5 Punkte abziehen">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="5 Punkte hinzufügen">+5</button>
+      </div>
+    </div>
+    
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Lehrling</div><div class="seg s2">Geselle</div><div class="seg s3">Experte</div><div class="seg s4">Fachmann</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:14px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Stufen und Zonen</h2>
+    <p class="lede" style="margin-top:0">Ein Kraut gibt Punkte von seiner benötigten Stufe bis etwa 100 Punkte darüber (Classic-Regel, zu bestätigen). Die Zahlen sind die pro Zone gezählten Vorkommen.</p>
+    <div class="legend"><span><span class="zone">Zone <small>Info</small></span> von Forever gezählte Zone</span><span><span class="zone a">Zone</span> Allianz</span><span><span class="zone h">Zone</span> Horde</span><span>ohne Markierung: umkämpft oder neutral</span></div>
+  </div>
+  <div class="tiers" id="tiers"></div>
+</section>
+
+<section aria-labelledby="seuil-h" style="display:grid;gap:12px">
+  <h2 id="seuil-h">Kräuterschwellen</h2>
+  <p class="lede" style="margin-top:0">Benötigte Kräuterkunde-Fertigkeit für jedes Kraut.</p>
+  <div class="cols"><div class="card"><h3>1 bis 85</h3><span class="lv">Anfänger</span><p>Friedensblume 1 · Silberblatt 1 · Erdwurzel 15 · Maguskönigskraut 50 · Wilddornrose 70 · Würgetang 85</p></div><div class="card"><h3>100 bis 185</h3><span class="lv">Fortgeschritten</span><p>Beulengras 100 · Wildstahlblume 115 · Grabmoos 120 · Königsblut 125 · Lebenswurz 150 · Blassblatt 160 · Golddorn 170 · Khadgars Schnurrbart 185</p></div><div class="card"><h3>195 bis 300</h3><span class="lv">Experte</span><p>Winterbiss 195 · Feuerblüte 205 · Lila Lotus 210 · Arthas' Tränen 220 · Sonnengras 230 · Blindkraut 235 · Geisterpilz 245 · Gromsblut 250 · Goldener Sansam 260 · Traumblatt 270 · Bergsilbersalbei 280 · Pestblüte 285 · Eiskappe 290 · Schwarzer Lotus 300</p></div></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Kräuterkunde-Lehrer</h2>
+  <p class="lede" style="margin-top:0">Kami Labs nennt die Lehrer ohne ihre Ränge. In Forever brauchen Herstellungsberufe Fertigkeit 50 / 125 / 200 und Stufe 10 / 20 / 35: Hier ist es sehr wahrscheinlich gleich, im Spiel prüfen.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Allianz</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Schaltet frei</th><th>Voraussetzung</th><th>Lehrer (Koordinaten)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Alle Ränge</span></td><td class="num">bis 300</td><td>Fertigkeit 50 / 125 / 200 (wahrscheinlich)</td><td><strong>Tannysa</strong>, Sturmwind (44.4, 77.8) · Shylamiir, Sturmwind (15.0, 49.4) · Reyna Stonebranch, Eisenschmiede (55.4, 58.4) · Firodren Mooncaller, Darnassus (48.0, 68.4) · Kräuterkundige Pomeroy, Wald von Elwynn (39.8, 48.4) · Nancy Chantefleur, Wald von Elwynn (52.2, 43.4) · Emrys Barbe-de-silex, Dun Morogh (28.8, 66.4) · Kali Healtouch, Loch Modan (36.4, 48.4) · Malorne Bladeleaf, Teldrassil (57.4, 60.6) · Eleyna Vespebrise, Teldrassil (59.8, 41.4)</td></tr><tr><td><span class="pill">Außerhalb der Hauptstädte</span></td><td class="num">—</td><td>—</td><td>Alma Jainrose, Rotkammgebirge (16.2, 45.6) · Telurinon Moonshadow, Sumpfland (8.0, 55.8) · Cylania Rootstalker, Eschental (50.4, 67.0) · Brant Jasperbloom, Düstermarschen (64.0, 47.6) · Flora Silverwind, Schlingendorntal (27.6, 77.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Schaltet frei</th><th>Voraussetzung</th><th>Lehrer (Koordinaten)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Alle Ränge</span></td><td class="num">bis 300</td><td>Fertigkeit 50 / 125 / 200 (wahrscheinlich)</td><td><strong>Jandi</strong>, Orgrimmar (55.4, 39.4) · Mishiki, Durotar (55.4, 75.0) · Zor'la, Durotar (42.6, 67.4) · Martha Alliestar, Unterstadt (54.2, 49.4) · Faruza, Tirisfal (59.8, 52.0) · Florence Belladone, Tirisfal (32.4, 65.2) · Komin Winterhoof, Donnerfels (49.4, 39.2) · Garan Haut-Soleil, Mulgore (44.2, 77.8)</td></tr><tr><td><span class="pill">Neutral</span></td><td class="num">—</td><td>—</td><td>Aranae Venomblood, Vorgebirge des Hügellands (61.4, 19.8) · Angrun und Flora Silverwind, Schlingendorntal · Ruw, Feralas (76.0, 43.4)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Neu in Forever</h2>
+  <ul class="plain"><li>Auf der BlizzCon angekündigt, noch nicht bestätigt: <strong>Gabe der Natur</strong> (Widerstand gegen alle Magieschulen), bessere Chancen auf seltene Lotusblüten und mehr Kräuter pro Vorkommen.</li><li>Forever hat 48 Vorkommenstypen: 2 neue (Verwelkte Friedensblume, Verkümmertes Silberblatt) und 8 geänderte.</li><li><strong>Schwarzer Lotus</strong> gibt keine Fertigkeitspunkte mehr.</li><li><strong>Vermächtnispunkte</strong> bei 150, 225 und 300.</li><li>Passt gut zu <a href="alchimie.html">Alchemie</a>, und <a href="secourisme.html">Erste Hilfe</a> braucht jetzt ebenfalls Kräuter für Heiltränke.</li></ul>
+</section>
+
+<footer class="foot"><p>Quellen: <a href="https://kami-labs.fr/guide-herboristerie-wow-forever/">Kami Labs, Kräuterkunde-Guide für WoW Forever</a> · <a href="https://kami-labs.fr/metiers-wow-forever/">Kami Labs, Berufe in WoW Forever</a>.</p><p>Die Tipps pro Fraktion stammen aus Classic, auf dem Forever aufbaut. Die Beta endete bei 225: Stufen darüber sind als „nach der Beta“ markiert. Namen von Gegenständen, NPCs und Zonen sind übersetzt und können im Spielclient leicht abweichen.</p><p>Inoffizieller Fan-Guide, aktualisiert am 7. November 2026. World of Warcraft ist eine Marke von Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "herbo", "done300": "300 erreicht. Schwarzer Lotus gibt keine Punkte mehr: Heb ihn für Fläschchen auf.", "train": {"comp": "Denk an den Rang Geselle (wahrscheinlich Stufe 10): Jandi in Orgrimmar (55.4, 39.4).", "exp": "Denk an den Rang Experte (wahrscheinlich Stufe 20): Jandi in Orgrimmar (55.4, 39.4).", "art": "Denk an den Rang Fachmann (wahrscheinlich Stufe 35): Jandi in Orgrimmar (55.4, 39.4)."}, "tiers": [{"f": 1, "t": 50, "res": ["Friedensblume", "Silberblatt", "Erdwurzel (ab 15)"], "zones": [["Teldrassil", "≈ 439", "a"], ["Zephras-Insel", "≈ 427"], ["Wald von Elwynn", "≈ 372", "a"], ["Dun Morogh", "≈ 367", "a"]], "horde": "Durotar, Mulgore, Tirisfal, Brachland.", "alliance": "Wald von Elwynn, Dun Morogh, Teldrassil."}, {"f": 50, "t": 70, "res": ["Maguskönigskraut", "Erdwurzel", "Friedensblume"], "zones": [["Zephras-Insel", "≈ 461"]], "horde": "Brachland, Silberwald, Steinkrallengebirge.", "alliance": "Westfall, Loch Modan, Dunkelküste."}, {"f": 70, "t": 115, "res": ["Wilddornrose", "Würgetang (unter Wasser)", "Beulengras (ab 100)"], "zones": [["Sumpfland", "≈ 345", "a"], ["Eschental", "≈ 295"], ["Westfall", "≈ 275", "a"], ["Rotkammgebirge", "≈ 229", "a"]], "horde": "Brachland, Steinkrallengebirge, Eschental, Vorgebirge des Hügellands.", "note": "Lerne Geselle vor 75.", "alliance": "Sumpfland, Westfall, Rotkammgebirge, Loch Modan."}, {"f": 115, "t": 160, "res": ["Wildstahlblume", "Grabmoos", "Königsblut"], "zones": [["Sumpfland", "≈ 388", "a"], ["Eschental", "≈ 330"], ["Steinkrallengebirge", "≈ 309"], ["Schlingendorntal", "≈ 304"]], "horde": "Eschental, Steinkrallengebirge, Vorgebirge des Hügellands, Tausend Nadeln.", "note": "Lerne Experte vor 150.", "alliance": "Sumpfland, Vorgebirge des Hügellands von Süderstade aus, Eschental von Astranaar aus."}, {"f": 160, "t": 205, "res": ["Blassblatt", "Lebenswurz", "Golddorn (ab 170)", "Khadgars Schnurrbart (ab 185)"], "zones": [["Schlingendorntal", "≈ 469"], ["Düstermarschen", "≈ 310"], ["Sümpfe des Elends", "≈ 274"], ["Arathihochland", "≈ 267"]]}, {"f": 205, "t": 230, "res": ["Feuerblüte", "Lila Lotus", "Winterbiss", "Arthas' Tränen (ab 220)"], "zones": [["Schlingendorntal", "≈ 305"], ["Feralas", "≈ 264"], ["Düstermarschen", "≈ 182"], ["Alteracgebirge", "≈ 177"]], "note": "Lerne Fachmann vor 225."}, {"f": 230, "t": 270, "res": ["Sonnengras", "Blindkraut", "Geisterpilz (ab 245)", "Gromsblut (ab 250)", "Goldener Sansam (ab 260)"], "zones": [["Feralas", "≈ 178"], ["Sümpfe des Elends", "≈ 175"], ["Azshara", "≈ 167"], ["Hinterland", "≈ 162"]], "p": 1}, {"f": 270, "t": 300, "res": ["Traumblatt", "Bergsilbersalbei (ab 280)", "Pestblüte (ab 285)", "Eiskappe (ab 290)"], "zones": [["Östliche Pestländer", "≈ 333"], ["Azshara", "≈ 228"], ["Teufelswald", "≈ 228"], ["Krater von Un'Goro", "≈ 182"]], "p": 1, "note": "Eiskappe: Winterquell. Schwarzer Lotus bei 300."}], "trainA": {"comp": "Denk an den Rang Geselle (wahrscheinlich Stufe 10): Tannysa in Sturmwind (44.4, 77.8), Reyna Stonebranch in Eisenschmiede (55.4, 58.4) oder Firodren Mooncaller in Darnassus (48.0, 68.4).", "exp": "Denk an den Rang Experte (wahrscheinlich Stufe 20): Tannysa in Sturmwind (44.4, 77.8), Reyna Stonebranch in Eisenschmiede (55.4, 58.4) oder Firodren Mooncaller in Darnassus (48.0, 68.4).", "art": "Denk an den Rang Fachmann (wahrscheinlich Stufe 35): Tannysa in Sturmwind (44.4, 77.8), Reyna Stonebranch in Eisenschmiede (55.4, 58.4) oder Firodren Mooncaller in Darnassus (48.0, 68.4)."}};
+</script>
+<script src="../assets/recolte.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

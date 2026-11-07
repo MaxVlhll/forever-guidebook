@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Primeros auxilios WoW Forever</title>
+<meta name="description" content="Guía de Primeros auxilios 1-300 para WoW Forever (Alianza y Horda): vendas y pociones de sanación, lista de compra, libro y misión «Triaje».">
+<meta property="og:title" content="Primeros auxilios WoW Forever">
+<meta property="og:description" content="Guía de Primeros auxilios 1-300 para WoW Forever (Alianza y Horda): vendas y pociones de sanación, lista de compra, libro y misión «Triaje».">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../secourisme.html">
+<link rel="alternate" hreflang="en" href="../en/secourisme.html">
+<link rel="alternate" hreflang="de" href="../de/secourisme.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #150f10;
+  --bg-glow: #2a1517;
+  --panel: #201718;
+  --panel-2: #2b1f21;
+  --stitch: #874b50;
+  --accent: #ff7b7b;
+  --seg1: #ffb3b3; --seg2: #f07c7c; --seg3: #b8474b; --seg4: #7f2a2f;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Primeros auxilios</span>
+  <h1>Primeros auxilios 1 → 300</h1>
+  <p class="lede">Una profesión secundaria, además de tus dos principales. En Forever, son los Primeros auxilios los que fabrican las pociones de sanación. Indica tu habilidad: la página muestra el siguiente paso y el paño que aún necesitas.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Dónde estás</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Habilidad actual</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Quitar 5 puntos">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Añadir 5 puntos">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Lista de compra hasta</label>
+      <select id="target">
+        <option value="75">75 (fin de Aprendiz)</option>
+        <option value="150" selected>150 (fin de Oficial)</option>
+        <option value="225">225 (fin de Experto)</option>
+        <option value="300">300 (Artesano)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Aprendiz</div><div class="seg s2">Oficial</div><div class="seg s3">Experto</div><div class="seg s4">Artesano</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Lo que aún necesitas</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">La ruta</h2>
+    <p class="lede" style="margin-top:0">Las cantidades son estimaciones: guarda siempre un margen. Regla de oro: en cuanto una receta se vuelve verde, pasa al siguiente paso.</p>
+    <div class="legend" aria-label="Colores de las recetas">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Naranja: +1 siempre</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Amarillo: a menudo</span> <span><span class="dot" style="background:var(--sk-green)"></span>Verde: rara vez</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Gris: nunca</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Instructores y etapas</h2>
+  <p class="lede" style="margin-top:0">Los Primeros auxilios conservan sus etapas especiales: un libro para Experto, una misión para Artesano.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alianza</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Desbloquea</th><th>Requisitos</th><th>Instructores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Oficial</span></td><td class="num">hasta 150</td><td>habilidad 50, nivel 10</td><td><strong>Shaina Fuller</strong>, Ventormenta (42.4, 26.8) · Michelle Belle, Bosque de Elwynn (43.4, 65.6) · Nissa Firestone, Forjaz (54.8, 58.4) · Thamner Pol, Dun Morogh (47.2, 52.4) · Dannelor, Darnassus (51.4, 12.4) · Byancie, Teldrassil (55.2, 56.8)</td></tr><tr><td><span class="pill">Experto</span></td><td class="num">hasta 225</td><td>Libro «Primeros auxilios de experto: Bajo vendas»</td><td><strong>Deneb Walker</strong>, Tierras Altas de Arathi (27.0, 58.8), en el Refugio de la Zaga, que también vende las recetas de venda de seda gruesa y de tejido mágico</td></tr><tr><td><span class="pill">Artesano</span></td><td class="num">hasta 300</td><td>Misión «Triaje», nivel 35, habilidad 225</td><td><strong>Doctor Gustaf VanHowzen</strong>, Theramore, Marjal Revolcafango (67.6, 48.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Desbloquea</th><th>Requisitos</th><th>Instructores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Oficial</span></td><td class="num">hasta 150</td><td>habilidad 50, nivel 10</td><td><strong>Arnok</strong>, Orgrimmar (34.0, 84.4) · Rawrk, Durotar (54.0, 42.0) · Mary Edras, Entrañas (73.4, 55.4) · Enfermera Neela, Claros de Tirisfal (61.8, 52.8) · Pand Stonebinder, Cima del Trueno (29.4, 21.4) · Vira Younghoof, Mulgore (46.0, 63.8)</td></tr><tr><td><span class="pill">Experto</span></td><td class="num">hasta 225</td><td>Libro «Primeros auxilios de experto: Bajo vendas»</td><td><strong>Balai Lok'Wein</strong>, Marjal Revolcafango, según Classic: por verificar en el juego. Kami Labs solo cita a Deneb Walker (Tierras Altas de Arathi, 27.0, 58.8), en el Refugio de la Zaga, un poblado de la Alianza</td></tr><tr><td><span class="pill">Artesano</span></td><td class="num">hasta 300</td><td>Misión «Triaje», nivel 35, habilidad 225</td><td><strong>Doctor Gregory Victor</strong>, Sentencia (Tierras Altas de Arathi), según Classic: por verificar en el juego</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Los viales y las especias se venden en los proveedores de mercancías y de alquimia.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novedades de Forever</h2>
+  <ul class="plain"><li>Las <strong>pociones de sanación</strong> (de menor a superior) pasaron de la Alquimia a los Primeros auxilios.</li><li>Nuevas curas: <strong>cataplasmas</strong> (desde 90), <strong>torniquetes</strong> (desde 120) y antídotos mejorados.</li><li><strong>Botiquín de primeros auxilios</strong> a 20: aumenta el Aguante de los jugadores del campamento.</li><li><strong>Estudio de toxinas</strong> a 140: ayuda con las pociones de sanación y los antídotos, en el campamento.</li><li><strong>Laboratorio del médico de la peste</strong> a 300: necesario para algunas pociones y cataplasmas.</li><li><strong>Puntos de legado</strong> a 150, 225 y 300.</li><li>La profesión tiene 30 recetas, 17 de ellas nuevas.</li></ul>
+</section>
+
+<footer class="foot"><p>Fuentes: <a href="https://kami-labs.fr/guide-secourisme-wow-forever/">Kami Labs, guía de Primeros auxilios de WoW Forever</a> · <a href="https://conquestcapped.com/guides/fr/wow-forever/wow-forever-alchemy/">ConquestCapped, pociones de sanación</a>.</p><p>Los pasos por encima de 225 no se podían jugar en la beta: están marcados «por verificar». Si un vendedor de recetas es de la otra facción, usa la casa de subastas. Los nombres de objetos, PNJ y zonas están traducidos y pueden variar un poco en tu cliente.</p><p>Guía de fans no oficial, actualizada el 7 de noviembre de 2026. World of Warcraft es una marca de Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "secou", "src": {"Paño de lino": "farm", "Paño de lana": "farm", "Paño de seda": "farm", "Tejido mágico": "farm", "Paño rúnico": "farm", "Vial vacío": "vendor", "Vial con plomo": "vendor", "Especias suaves": "vendor", "Especias picantes": "vendor", "Flor de paz": "ah", "Hierba cardenal": "ah"}, "ranks": [{"name": "Aprendiz", "from": 1, "to": 75, "req": "Desde el principio · tope 75"}, {"name": "Oficial", "from": 75, "to": 150, "req": "Instructor de primeros auxilios, habilidad 50, nivel 10 · tope 150"}, {"name": "Experto", "from": 150, "to": 225, "req": "Libro de Deneb Walker (Arathi) · tope 225"}, {"name": "Artesano", "from": 225, "to": 300, "req": "Misión «Triaje», nivel 35, habilidad 225 · tope 300"}], "steps": [{"f": 1, "t": 55, "r": "Venda de lino", "n": 80, "m": {"Paño de lino": 1}}, {"f": 55, "t": 80, "r": "Poción de sanación menor", "n": 38, "m": {"Vial vacío": 1, "Especias suaves": 1, "Flor de paz": 1}, "note": "Novedad: las pociones de sanación vienen ahora de los Primeros auxilios. <strong>Aprende Oficial a 50</strong> (nivel 10)."}, {"f": 80, "t": 115, "r": "Venda de lana", "n": 48, "m": {"Paño de lana": 1}}, {"f": 115, "t": 135, "r": "Venda de lana gruesa", "n": 23, "m": {"Paño de lana": 2}}, {"f": 135, "t": 150, "r": "Poción de sanación", "n": 19, "m": {"Vial con plomo": 1, "Especias picantes": 1, "Hierba cardenal": 1}, "note": "<strong>Compra el libro «Primeros auxilios de experto: Bajo vendas»</strong> a Deneb Walker (Tierras Altas de Arathi, 27.0, 58.8), o te quedarás bloqueado en 150."}, {"f": 150, "t": 180, "r": "Venda de seda", "n": 41, "m": {"Paño de seda": 1}}, {"f": 180, "t": 210, "r": "Venda de seda gruesa", "n": 41, "m": {"Paño de seda": 2}, "note": "Receta por 23 p 15 c de Deneb Walker."}, {"f": 210, "t": 240, "r": "Venda de tejido mágico", "n": 41, "m": {"Tejido mágico": 1}, "note": "Receta por 52 p 63 c de Deneb Walker. <strong>A 225, haz la misión «Triaje»</strong> (nivel 35) para desbloquear 300."}, {"f": 240, "t": 260, "r": "Venda de tejido mágico gruesa", "n": 24, "m": {"Tejido mágico": 2}, "p": 1}, {"f": 260, "t": 300, "r": "Venda de paño rúnico", "n": 65, "m": {"Paño rúnico": 1}, "p": 1}], "trainMsg": {"comp": "Si aún no lo has hecho, aprende Oficial (nivel 10): Arnok en Orgrimmar (34.0, 84.4) o Rawrk en Durotar (54.0, 42.0).", "exp": "Antes de 150: compra el libro «Primeros auxilios de experto: Bajo vendas». En el lado Horda, en Classic lo vendía Balai Lok'Wein (Marjal Revolcafango): por verificar en el juego.", "art": "Prepárate para la misión «Triaje» (nivel 35, habilidad 225). En el lado Horda, en Classic la daba el Doctor Gregory Victor en Sentencia (Tierras Altas de Arathi): por verificar en el juego."}, "done300": "300 alcanzado. Piensa en el Laboratorio del médico de la peste para tu campamento.", "groupTitles": {"farm": "Paño (de humanoides)", "vendor": "De vendedores", "ah": "Hierbas (Herboristería o subasta)", "craft": "Intermedios"}, "trainMsgA": {"comp": "Si aún no lo has hecho, aprende Oficial (nivel 10): Shaina Fuller en Ventormenta (42.4, 26.8), Nissa Firestone en Forjaz (54.8, 58.4) o Dannelor en Darnassus (51.4, 12.4).", "exp": "Antes de 150: compra el libro «Primeros auxilios de experto: Bajo vendas» a Deneb Walker (Tierras Altas de Arathi, Refugio de la Zaga, 27.0, 58.8).", "art": "Prepárate para la misión «Triaje» (nivel 35, habilidad 225): Doctor Gustaf VanHowzen en Theramore (Marjal Revolcafango, 67.6, 48.8)."}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>
