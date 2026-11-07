@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Secourisme WoW Forever</title>
+<meta name="description" content="Guide Secourisme 1 à 300 pour WoW Forever (Alliance et Horde) : bandages et potions de soins, liste de courses calculée, livre et quête Triage.">
+<meta property="og:title" content="Secourisme WoW Forever">
+<meta property="og:description" content="Guide Secourisme 1 à 300 pour WoW Forever (Alliance et Horde) : bandages et potions de soins, liste de courses calculée, livre et quête Triage.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+:root {
+  --bg: #150f10;
+  --bg-glow: #2a1517;
+  --panel: #201718;
+  --panel-2: #2b1f21;
+  --stitch: #874b50;
+  --accent: #ff7b7b;
+  --seg1: #ffb3b3; --seg2: #f07c7c; --seg3: #b8474b; --seg4: #7f2a2f;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Secourisme</span>
+  <h1>Secourisme 1 → 300</h1>
+  <p class="lede">Un métier secondaire, en plus de tes deux métiers principaux. Dans Forever, c'est lui qui fabrique les potions de soins. Indique ta compétence : la page te montre la prochaine étape et les étoffes qu'il te reste à réunir.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Où tu en es</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Compétence actuelle</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Retirer 5 points">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Ajouter 5 points">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Liste de courses jusqu'à</label>
+      <select id="target">
+        <option value="75">75 (fin Apprenti)</option>
+        <option value="150" selected>150 (fin Compagnon)</option>
+        <option value="225">225 (fin Expert)</option>
+        <option value="300">300 (Artisan)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprenti</div><div class="seg s2">Compagnon</div><div class="seg s3">Expert</div><div class="seg s4">Artisan</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Ce qu'il te reste à réunir</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Le parcours</h2>
+    <p class="lede" style="margin-top:0">Le nombre de fabrications est une estimation : prévois toujours un peu de marge. La règle d'or : dès qu'une recette passe au vert, passe à l'étape suivante.</p>
+    <div class="legend" aria-label="Couleurs des recettes">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Orange : +1 à chaque fois</span>
+      <span><span class="dot" style="background:var(--sk-yellow)"></span>Jaune : souvent</span>
+      <span><span class="dot" style="background:var(--sk-green)"></span>Vert : rarement</span>
+      <span><span class="dot" style="background:var(--sk-gray)"></span>Gris : plus rien</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Maîtres et étapes</h2>
+  <p class="lede" style="margin-top:0">Le Secourisme garde ses étapes particulières : un livre pour Expert, une quête pour Artisan.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alliance</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Débloque</th><th>Conditions</th><th>Maîtres (coordonnées)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Compagnon</span></td><td class="num">jusqu'à 150</td><td>50 en compétence, niveau 10</td><td><strong>Shaina Fuller</strong>, Hurlevent (42,4 ; 26,8) · Michelle Belle, Forêt d'Elwynn (43,4 ; 65,6) · Nissa Firestone, Forgefer (54,8 ; 58,4) · Thamner Pol, Dun Morogh (47,2 ; 52,4) · Dannelor, Darnassus (51,4 ; 12,4) · Byancie, Teldrassil (55,2 ; 56,8)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">jusqu'à 225</td><td>Livre « Expert en premiers soins - Sous les pansements »</td><td><strong>Deneb Walker</strong>, Hautes-terres d'Arathi (27,0 ; 58,8), au Refuge de l'Ornière, qui vend aussi les recettes de bandages épais en soie et en tisse-mage</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">jusqu'à 300</td><td>Quête « Triage », niveau 35, 225 en compétence</td><td><strong>Docteur Gustaf VanHowzen</strong>, Theramore, Marécage d'Âprefange (67,6 ; 48,8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Débloque</th><th>Conditions</th><th>Maîtres (coordonnées)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Compagnon</span></td><td class="num">jusqu'à 150</td><td>50 en compétence, niveau 10</td><td><strong>Arnok</strong>, Orgrimmar (34,0 ; 84,4) · Rawrk, Durotar (54,0 ; 42,0) · Mary Edras, Fossoyeuse (73,4 ; 55,4) · Infirmière Neela, Clairières de Tirisfal (61,8 ; 52,8) · Pand Stonebinder, Pitons-du-Tonnerre (29,4 ; 21,4) · Vira Younghoof, Mulgore (46,0 ; 63,8)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">jusqu'à 225</td><td>Livre « Expert en premiers soins - Sous les pansements »</td><td><strong>Balai Lok'Wein</strong>, Marécage d'Âprefange, d'après Classic : à vérifier en jeu. Kami Labs ne cite que Deneb Walker (Hautes-terres d'Arathi, 27,0 ; 58,8), au Refuge de l'Ornière, un village de l'Alliance</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">jusqu'à 300</td><td>Quête « Triage », niveau 35, 225 en compétence</td><td><strong>Docteur Gregory Victor</strong>, Trépas-d'Orgrim (Hautes-terres d'Arathi), d'après Classic : à vérifier en jeu</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Fioles et épices s'achètent chez les vendeurs de marchandises et de fournitures d'alchimie.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Spécial Forever</h2>
+  <ul class="plain"><li><strong>Les potions de soins</strong> (mineure à majeure) ont quitté l'Alchimie pour le Secourisme.</li><li>Nouveaux soins : <strong>cataplasmes</strong> (dès 90), <strong>garrots</strong> (dès 120) et anti-venins améliorés.</li><li><strong>Trousse de premiers soins</strong> à 20 : augmente l'Endurance des joueurs au camp.</li><li><strong>Étude des toxines</strong> à 140 : aide pour les potions de soins et les anti-venins, au camp.</li><li><strong>Laboratoire de médecin de peste</strong> à 300 : obligatoire pour certaines potions et cataplasmes.</li><li><strong>Points d'héritage</strong> à 150, 225 et 300.</li><li>Le métier compte 30 recettes, dont 17 nouvelles.</li></ul>
+</section>
+
+<footer class="foot"><p>Sources : <a href="https://kami-labs.fr/guide-secourisme-wow-forever/">Kami Labs, guide Secourisme WoW Forever</a> · <a href="https://conquestcapped.com/guides/fr/wow-forever/wow-forever-alchemy/">ConquestCapped, potions de soins</a>.</p><p>Les étapes au-delà de 225 n'étaient pas jouables en bêta : elles sont marquées « à vérifier ». Si un vendeur de recette appartient à l'autre faction, passe par l'hôtel des ventes.</p><p>Guide de fan non officiel, mis à jour le 7 novembre 2026. World of Warcraft est une marque de Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "secou", "src": {"Etoffe de lin": "farm", "Etoffe de laine": "farm", "Etoffe de soie": "farm", "Etoffe de tisse-mage": "farm", "Etoffe runique": "farm", "Fiole vide": "vendor", "Fiole plombée": "vendor", "Epices douces": "vendor", "Epices fortes": "vendor", "Pacifique": "ah", "Doulourante": "ah"}, "ranks": [{"name": "Apprenti", "from": 1, "to": 75, "req": "Dès le départ · plafond 75"}, {"name": "Compagnon", "from": 75, "to": 150, "req": "Maître secouriste, 50 en compétence, niveau 10 · plafond 150"}, {"name": "Expert", "from": 150, "to": 225, "req": "Livre chez Deneb Walker (Arathi) · plafond 225"}, {"name": "Artisan", "from": 225, "to": 300, "req": "Quête « Triage », niveau 35, 225 en compétence · plafond 300"}], "steps": [{"f": 1, "t": 55, "r": "Bandage en lin", "n": 80, "m": {"Etoffe de lin": 1}}, {"f": 55, "t": 80, "r": "Potion de soins mineure", "n": 38, "m": {"Fiole vide": 1, "Epices douces": 1, "Pacifique": 1}, "note": "Nouveau : les potions de soins viennent maintenant du Secourisme. <strong>Apprends Compagnon dès 50</strong> (niveau 10)."}, {"f": 80, "t": 115, "r": "Bandage en laine", "n": 48, "m": {"Etoffe de laine": 1}}, {"f": 115, "t": 135, "r": "Bandage épais en laine", "n": 23, "m": {"Etoffe de laine": 2}}, {"f": 135, "t": 150, "r": "Potion de soins", "n": 19, "m": {"Fiole plombée": 1, "Epices fortes": 1, "Doulourante": 1}, "note": "<strong>Achète le livre « Expert en premiers soins - Sous les pansements »</strong> chez Deneb Walker (Hautes-terres d'Arathi, 27,0 ; 58,8), sinon tu bloques à 150."}, {"f": 150, "t": 180, "r": "Bandage en soie", "n": 41, "m": {"Etoffe de soie": 1}}, {"f": 180, "t": 210, "r": "Bandage épais en soie", "n": 41, "m": {"Etoffe de soie": 2}, "note": "Recette à 23 pa 15 chez Deneb Walker."}, {"f": 210, "t": 240, "r": "Bandage en tisse-mage", "n": 41, "m": {"Etoffe de tisse-mage": 1}, "note": "Recette à 52 pa 63 chez Deneb Walker. <strong>À 225, fais la quête « Triage »</strong> (niveau 35) pour débloquer 300."}, {"f": 240, "t": 260, "r": "Bandage épais en tisse-mage", "n": 24, "m": {"Etoffe de tisse-mage": 2}, "p": 1}, {"f": 260, "t": 300, "r": "Bandage en étoffe runique", "n": 65, "m": {"Etoffe runique": 1}, "p": 1}], "trainMsg": {"comp": "Si ce n'est pas fait, apprends le rang Compagnon (niveau 10) : Arnok à Orgrimmar (34,0 ; 84,4) ou Rawrk à Durotar (54,0 ; 42,0).", "exp": "Avant 150 : achète le livre « Expert en premiers soins - Sous les pansements ». Côté Horde, Classic le vendait chez Balai Lok'Wein (Marécage d'Âprefange) : à vérifier en jeu.", "art": "Prépare la quête « Triage » (niveau 35, compétence 225). Côté Horde, Classic la donnait chez Docteur Gregory Victor à Trépas-d'Orgrim (Hautes-terres d'Arathi) : à vérifier en jeu."}, "done300": "300 atteint. Pense au Laboratoire de médecin de peste pour ton camp.", "groupTitles": {"farm": "Étoffes (sur les humanoïdes)", "vendor": "Chez le vendeur", "ah": "Herbes (herboristerie ou HV)", "craft": "Intermédiaires"}, "trainMsgA": {"comp": "Si ce n'est pas fait, apprends le rang Compagnon (niveau 10) : Shaina Fuller à Hurlevent (42,4 ; 26,8), Nissa Firestone à Forgefer (54,8 ; 58,4) ou Dannelor à Darnassus (51,4 ; 12,4).", "exp": "Avant 150 : achète le livre « Expert en premiers soins - Sous les pansements » chez Deneb Walker (Hautes-terres d'Arathi, Refuge de l'Ornière, 27,0 ; 58,8).", "art": "Prépare la quête « Triage » (niveau 35, compétence 225) : Docteur Gustaf VanHowzen à Theramore (Marécage d'Âprefange, 67,6 ; 48,8)."}};
+</script>
+<script src="assets/metier.js"></script>
+<script src="assets/nav.js"></script>
+</body>
+</html>

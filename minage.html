@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minage WoW Forever</title>
+<meta name="description" content="Guide Minage 1 à 300 pour WoW Forever (Alliance et Horde) : filons par palier, zones les plus riches, fonte et maîtres.">
+<meta property="og:title" content="Minage WoW Forever">
+<meta property="og:description" content="Guide Minage 1 à 300 pour WoW Forever (Alliance et Horde) : filons par palier, zones les plus riches, fonte et maîtres.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+:root {
+  --bg: #121212;
+  --bg-glow: #24201c;
+  --panel: #1c1a18;
+  --panel-2: #262320;
+  --stitch: #7a6650;
+  --accent: #e09a66;
+  --seg1: #f0c4a0; --seg2: #d9935f; --seg3: #a05f35; --seg4: #6b3d20;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Minage</span>
+  <h1>Minage 1 → 300</h1>
+  <p class="lede">Quel filon miner et où, palier par palier, d'après le recensement des nœuds de Forever. Il te faut une Pioche de mineur. Indique ta compétence : la page te montre ton palier et la meilleure zone.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Où tu en es</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Compétence actuelle</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Retirer 5 points">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Ajouter 5 points">+5</button>
+      </div>
+    </div>
+    
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprenti</div><div class="seg s2">Compagnon</div><div class="seg s3">Expert</div><div class="seg s4">Artisan</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:14px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Paliers et zones</h2>
+    <p class="lede" style="margin-top:0">Règle de Classic, à confirmer en jeu : un minerai fait monter ta compétence de son niveau requis jusqu'à environ 100 points au-dessus. Les nombres sont les nœuds recensés par zone.</p>
+    <div class="legend"><span><span class="zone">Zone <small>info</small></span> zone recensée par Forever</span><span><span class="zone a">Zone</span> Alliance</span><span><span class="zone h">Zone</span> Horde</span><span>sans marque : contestée ou neutre</span></div>
+  </div>
+  <div class="tiers" id="tiers"></div>
+</section>
+
+<section class="stitched" aria-labelledby="smelt-h" style="display:grid;gap:12px">
+  <h2 id="smelt-h">Fondre en chemin</h2>
+  <p class="lede" style="margin-top:0">La fonte donne quelques points en plus, mais dans les données de Forever elle ne fait plus monter au-delà de 185. Utilise-la pour combler un creux, pas comme parcours principal.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Compétence</th><th>Barre</th><th>Recette</th></tr></thead>
+    <tbody>
+      <tr><td class="num">25 → 65</td><td><strong>Barre de cuivre</strong></td><td>1 Minerai de cuivre</td></tr>
+      <tr><td class="num">65 → 75</td><td><strong>Barre de bronze</strong></td><td>1 Barre de cuivre + 1 Barre d'étain</td></tr>
+      <tr><td class="num">75 → 125</td><td><strong>Barre d'argent</strong></td><td>1 Minerai d'argent</td></tr>
+      <tr><td class="num">125 → 140</td><td><strong>Barre de fer</strong></td><td>1 Minerai de fer</td></tr>
+      <tr><td class="num">170 → 185</td><td><strong>Barre d'or</strong></td><td>1 Minerai d'or</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Maîtres mineurs</h2>
+  <p class="lede" style="margin-top:0">Kami Labs liste les maîtres sans préciser les rangs. Dans Forever, les métiers de fabrication demandent 50 / 125 / 200 en compétence et les niveaux 10 / 20 / 35 : c'est très probablement pareil ici, à vérifier en jeu.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alliance</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Débloque</th><th>Conditions</th><th>Maîtres (coordonnées)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Tous rangs</span></td><td class="num">jusqu'à 300</td><td>50 / 125 / 200 en compétence (probable)</td><td><strong>Gelman Stonehand</strong>, Hurlevent (51,0 ; 17,2) · Geofram Bouldertoe, Forgefer (50,2 ; 26,0) · Kelsey Fond, Forêt d'Elwynn (47,2 ; 32,2) · Yarr Hammerstone, Dun Morogh (50,0 ; 50,4) · Dank Drizzlecut, Dun Morogh (69,2 ; 55,4) · Brock Stoneseeker, Loch Modan (37,0 ; 47,8) · Kurdram Stonehammer, Sombrivage (38,2 ; 41,0) · Fanorran Calmechêne, Teldrassil (58,2 ; 41,4) · Matt Johnson, Bois de la Pénombre (74,0 ; 49,4)</td></tr><tr><td><span class="pill">Neutres</span></td><td class="num">—</td><td>—</td><td>Pikkle, Tanaris (51,0 ; 28,0) · Grungle, Rives Claires (77,6 ; 51,8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Débloque</th><th>Conditions</th><th>Maîtres (coordonnées)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Tous rangs</span></td><td class="num">jusqu'à 300</td><td>50 / 125 / 200 en compétence (probable)</td><td><strong>Makaru</strong>, Orgrimmar (73,0 ; 26,4) · Krunn, Durotar (51,8 ; 40,8) · Norzsh, Durotar (40,4 ; 68,0) · Brom Killian, Fossoyeuse (55,4 ; 36,2) · Walter Mason, Clairières de Tirisfal (32,2 ; 65,4) · Brek Stonehoof, Pitons-du-Tonnerre (34,4 ; 57,4) · Vartha Rochecrin, Mulgore (44,2 ; 78,2)</td></tr><tr><td><span class="pill">Neutres</span></td><td class="num">—</td><td>—</td><td>Pikkle, Tanaris (51,0 ; 28,0) · Grungle, Rives Claires (77,6 ; 51,8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">La Pioche de mineur s'achète chez les vendeurs de fournitures de métier.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Spécial Forever</h2>
+  <ul class="plain"><li>Bonus annoncé à la BlizzCon, pas encore confirmé : <strong>Fait de métal</strong> (+5 % de vie totale), minerai supplémentaire sur les filons et chance de matériaux rares ou de combat.</li><li><strong>Pierre d'aimant</strong> (objet de camp des mineurs) : bonus de puissance d'attaque en mêlée, d'après Method.</li><li>Forever compte 38 types de nœuds, dont 2 nouveaux (Filon de cuivre appauvri, Filon de thorium lourd) et 5 modifiés.</li><li><strong>Points d'héritage</strong> à 150, 225 et 300.</li><li>Ça se marie avec la <a href="forge.html">Forge</a> ou l'<a href="ingenierie.html">Ingénierie</a>, qui consomment des centaines de barres.</li></ul>
+</section>
+
+<footer class="foot"><p>Sources : <a href="https://kami-labs.fr/guide-minage-wow-forever/">Kami Labs, guide Minage WoW Forever</a> · <a href="https://kami-labs.fr/metiers-wow-forever/">Kami Labs, métiers WoW Forever</a> · <a href="https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents">Method, objets de camp</a>.</p><p>Les conseils propres à chaque faction viennent de Classic, sur lequel Forever s'appuie. La bêta s'arrêtait à 225 : les paliers au-delà sont marqués « après la bêta ».</p><p>Guide de fan non officiel, mis à jour le 7 novembre 2026. World of Warcraft est une marque de Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "minage", "done300": "300 atteint. Garde un œil sur le Filon de thorium lourd, nouveau dans Forever.", "train": {"comp": "Pense au rang Compagnon (niveau 10 probable) : Makaru à Orgrimmar (73,0 ; 26,4).", "exp": "Pense au rang Expert (niveau 20 probable) : Makaru à Orgrimmar (73,0 ; 26,4).", "art": "Pense au rang Artisan (niveau 35 probable) : Makaru à Orgrimmar (73,0 ; 26,4)."}, "tiers": [{"f": 1, "t": 65, "res": ["Minerai de cuivre", "Filon de cuivre appauvri (nouveau)"], "zones": [["Île de Zéphras", "≈ 230"], ["Dun Morogh", "≈ 220", "a"], ["Forêt d'Elwynn", "≈ 219", "a"], ["Loch Modan", "≈ 151", "a"]], "horde": "Durotar, Mulgore, Clairières de Tirisfal, Les Tarides.", "note": "Fonds ton cuivre dès 25 : ça fait monter jusqu'à 65.", "alliance": "Forêt d'Elwynn, Dun Morogh, Loch Modan."}, {"f": 65, "t": 75, "res": ["Minerai d'étain", "Incendicite", "Cuivre"], "zones": [["Les Carmines", "≈ 271", "a"], ["Île de Zéphras", "≈ 230"]], "horde": "Les Tarides, Forêt des Pins-Argentés, Les Serres-Rocheuses.", "alliance": "Les Carmines, Marche de l'Ouest, Sombrivage."}, {"f": 75, "t": 125, "res": ["Minerai d'argent", "Pierre de sang inférieure", "Étain", "Incendicite"], "zones": [["Hautes-terres d'Arathi", "≈ 208"], ["Mille pointes", "≈ 204"], ["Contreforts de Hautebrande", "≈ 198"], ["Les Carmines", "≈ 184", "a"]], "horde": "Mille pointes, Contreforts de Hautebrande, Les Serres-Rocheuses.", "note": "Apprends Compagnon avant 75.", "alliance": "Les Paluns (de loin la meilleure, grotte avec étain et incendicite), Les Carmines, Contreforts de Hautebrande depuis Austrivage."}, {"f": 125, "t": 155, "res": ["Minerai de fer", "Argent", "Étain"], "zones": [["Hautes-terres d'Arathi", "≈ 351"], ["Mille pointes", "≈ 314"], ["Désolace", "≈ 236"], ["Vallée de Strangleronce", "≈ 208"]], "note": "Apprends Expert avant 150."}, {"f": 155, "t": 175, "res": ["Minerai d'or", "Indurium", "Fer"], "zones": [["Hautes-terres d'Arathi", "≈ 262"], ["Vallée de Strangleronce", "≈ 214"], ["Terres ingrates", "≈ 196"], ["Mille pointes", "≈ 184"]]}, {"f": 175, "t": 230, "res": ["Minerai de mithril", "Or", "Indurium"], "zones": [["Hautes-terres d'Arathi", "≈ 313"], ["Vallée de Strangleronce", "≈ 275"], ["Terres ingrates", "≈ 271"], ["Désolace", "≈ 245"], ["Les Hinterlands", "≈ 198"], ["Tanaris", "≈ 179"]], "note": "Apprends Artisan avant 225."}, {"f": 230, "t": 245, "res": ["Minerai de vrai-argent", "Sombrefer", "Mithril"], "zones": [["Les Hinterlands", "≈ 293"], ["Steppes ardentes", "≈ 274"], ["Tanaris", "≈ 255"], ["Gorge des Vents brûlants", "≈ 227"]], "p": 1}, {"f": 245, "t": 300, "res": ["Minerai de thorium", "Filon de thorium lourd (nouveau)", "Vrai-argent"], "zones": [["Steppes ardentes", "≈ 290"], ["Silithus", "≈ 273"], ["Berceau-de-l'Hiver", "≈ 227"], ["Cratère d'Un'Goro", "≈ 187"]], "p": 1, "note": "Un'Goro et Silithus, zones neutres, sont les plus calmes."}], "trainA": {"comp": "Pense au rang Compagnon (niveau 10 probable) : Gelman Stonehand à Hurlevent (51,0 ; 17,2) ou Geofram Bouldertoe à Forgefer (50,2 ; 26,0).", "exp": "Pense au rang Expert (niveau 20 probable) : Gelman Stonehand à Hurlevent (51,0 ; 17,2) ou Geofram Bouldertoe à Forgefer (50,2 ; 26,0).", "art": "Pense au rang Artisan (niveau 35 probable) : Gelman Stonehand à Hurlevent (51,0 ; 17,2) ou Geofram Bouldertoe à Forgefer (50,2 ; 26,0)."}};
+</script>
+<script src="assets/recolte.js"></script>
+<script src="assets/nav.js"></script>
+</body>
+</html>

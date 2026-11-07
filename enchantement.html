@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enchantement WoW Forever</title>
+<meta name="description" content="Guide Enchantement 1 à 300 pour WoW Forever (Alliance et Horde) : parcours, bâtonnets, liste de courses calculée et maîtres.">
+<meta property="og:title" content="Enchantement WoW Forever">
+<meta property="og:description" content="Guide Enchantement 1 à 300 pour WoW Forever (Alliance et Horde) : parcours, bâtonnets, liste de courses calculée et maîtres.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+:root {
+  --bg: #120f18;
+  --bg-glow: #211a30;
+  --panel: #1b1724;
+  --panel-2: #241f31;
+  --stitch: #6a5a96;
+  --ink: #f1e9dc;
+  --muted: #b5a995;
+  --accent: #b99bff;
+  --accent-ink: #15100c;
+  --seg1: #d2c2ff; --seg2: #a88cf0; --seg3: #6f55b8; --seg4: #4a3884;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Enchantement</span>
+  <h1>Enchantement 1 → 300</h1>
+  <p class="lede">Le parcours complet, recette par recette, d'après les données de la bêta de Forever. Indique ta compétence : la page te montre où tu en es, la prochaine étape, les bâtonnets à fabriquer et tout ce qu'il te reste à désenchanter.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Où tu en es</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Compétence actuelle</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Retirer 5 points">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Ajouter 5 points">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Liste de courses jusqu'à</label>
+      <select id="target">
+        <option value="75">75 (fin Apprenti)</option>
+        <option value="150" selected>150 (fin Compagnon)</option>
+        <option value="225">225 (fin Expert)</option>
+        <option value="300">300 (Artisan)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprenti</div><div class="seg s2">Compagnon</div><div class="seg s3">Expert</div><div class="seg s4">Artisan</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Ce qu'il te reste à réunir</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Le parcours</h2>
+    <p class="lede" style="margin-top:0">Le nombre de fabrications est une estimation : prévois toujours un peu de marge. La règle d'or : dès qu'une recette passe au vert, passe à l'étape suivante.</p>
+    <div class="legend" aria-label="Couleurs des recettes">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Orange : +1 à chaque fois</span>
+      <span><span class="dot" style="background:var(--sk-yellow)"></span>Jaune : souvent</span>
+      <span><span class="dot" style="background:var(--sk-green)"></span>Vert : rarement</span>
+      <span><span class="dot" style="background:var(--sk-gray)"></span>Gris : plus rien</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Maîtres</h2>
+  <p class="lede" style="margin-top:0">Sans le bon rang, ta compétence reste bloquée au plafond (75, 150, 225). Apprends le rang suivant dès que tu as le niveau requis.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alliance</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Débloque</th><th>Conditions</th><th>Maîtres (coordonnées)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Compagnon</span></td><td class="num">jusqu'à 150</td><td>50 en compétence, niveau 10</td><td><strong>Betty Quin</strong>, Hurlevent (43,2 ; 63,8) · Thonys Pillarstone, Forgefer (59,0 ; 45,2) · Lalina Summermoon, Darnassus (58,4 ; 13,2) · Alanna Raveneye, Teldrassil (36,8 ; 34,2)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">jusqu'à 225</td><td>125 en compétence, niveau 20</td><td><strong>Lucan Cordell</strong>, Hurlevent (43,0 ; 64,4) · Gimble Thistlefuzz, Forgefer (59,0 ; 45,2) · Taladan, Darnassus (58,4 ; 13,2) · Xylinnia Starshine, Féralas (31,4 ; 44,2)</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">jusqu'à 300</td><td>200 en compétence, niveau 35</td><td><strong>Kitta Firewind</strong>, en haut de la tour d'Azora, Forêt d'Elwynn (64,8 ; 70,4)</td></tr><tr><td><span class="pill">Recettes hautes</span></td><td class="num">—</td><td>—</td><td>Annora, dans Uldaman : grotte au nord-ouest de la Salle des cartes, elle n'apparaît qu'une fois la salle nettoyée</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Débloque</th><th>Conditions</th><th>Maîtres (coordonnées)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Compagnon</span></td><td class="num">jusqu'à 150</td><td>50 en compétence, niveau 10</td><td><strong>Jhag</strong>, Orgrimmar (53,4 ; 38,2) · Pa'zula, Durotar (56,4 ; 73,6) · Malcomb Wynn, Fossoyeuse (62,2 ; 60,4) · Vance Undergloom, Clairières de Tirisfal (61,6 ; 51,4) · Mot Dawnstrider, Pitons-du-Tonnerre (43,8 ; 37,8)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">jusqu'à 225</td><td>125 en compétence, niveau 20</td><td><strong>Godan</strong>, Orgrimmar (53,8 ; 38,4) · Lavinia Crowe, Fossoyeuse (62,2 ; 61,6) · Teg Dawnstrider, Pitons-du-Tonnerre (44,8 ; 37,4)</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">jusqu'à 300</td><td>200 en compétence, niveau 35</td><td><strong>Hgarth</strong>, Les Serres-Rocheuses (49,2 ; 57,2), au Repaire du Soleil</td></tr><tr><td><span class="pill">Recettes hautes</span></td><td class="num">—</td><td>—</td><td>Annora, dans Uldaman : grotte au nord-ouest de la Salle des cartes, elle n'apparaît qu'une fois la salle nettoyée</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Le Bois simple s'achète chez les vendeurs de fournitures d'enchantement. Les bâtonnets en métal viennent des forgerons ou de l'HV. Les vendeurs de recettes marqués Alliance ou Horde ne servent que leur faction : l'autre passe par l'hôtel des ventes.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Que désenchanter pour chaque matériau</h2>
+  <p class="lede" style="margin-top:0">Les tranches ci-dessous sont celles de Classic (niveau de l'objet vert désenchanté), sur lesquelles Forever s'appuie. Les objets bleus donnent des éclats à la place.</p>
+  <div class="cols"><div class="card"><h3>Essence de magie, Poussière étrange</h3><span class="lv">Objets verts niv. 5 à 20</span><p>Tout ce que tu ramasses en zone de départ, aux Tarides et aux Serres-Rocheuses.</p></div><div class="card"><h3>Essence astrale, Poussière d'âme</h3><span class="lv">Objets verts niv. 21 à 35</span><p>Orneval, Mille pointes, Contreforts de Hautebrande, Désolace.</p></div><div class="card"><h3>Essence mystique, Poussière de vision</h3><span class="lv">Objets verts niv. 31 à 45</span><p>Hautes-terres d'Arathi, Strangleronce, Terres ingrates, Féralas.</p></div><div class="card"><h3>Essence du néant</h3><span class="lv">Objets verts niv. 41 à 50</span><p>Tanaris, Hinterlands, Féralas, Gorge des Vents brûlants.</p></div><div class="card"><h3>Gros éclat irradiant</h3><span class="lv">Objets verts niv. 46 à 50</span><p>Un'Goro, Gangrebois, Steppes ardentes, et les donjons niv. 45-50.</p></div></div>
+  <p class="foot">Astuce : si les prix sont bas, acheter des objets verts à l'HV pour les désenchanter revient souvent moins cher que d'acheter les essences.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Spécial Forever</h2>
+  <ul class="plain"><li><strong>Luth enchanté</strong> à 20 : augmente l'armure, les caractéristiques et les résistances des joueurs proches.</li><li><strong>Récupérateur arcanique</strong> à 140 : améliore ce que tu obtiens en désenchantant.</li><li><strong>Forge arcanique</strong> à 300 : obligatoire pour certaines recettes.</li><li><strong>Points d'héritage</strong> à 150, 225 et 300.</li><li>De nouvelles formules sont vendues par l'Autorité commerciale d'Azeroth, dont des objets de main gauche (totems, librams, orbes).</li><li>Bonus annoncé à la BlizzCon mais pas encore confirmé : l'enchanteur pourrait enchanter ses propres anneaux.</li><li>Le métier compte 219 recettes, dont 63 nouvelles.</li></ul>
+</section>
+
+<footer class="foot"><p>Sources : <a href="https://kami-labs.fr/guide-enchantement-wow-forever/">Kami Labs, guide Enchantement WoW Forever</a> pour le parcours et les maîtres · <a href="https://wow.gg/fr/guides/wow-forever-new-recipes-enchanting">wow.gg</a> pour les nouvelles formules.</p><p>Les étapes au-delà de 225 n'étaient pas jouables en bêta : elles sont marquées « à vérifier ». Les matières des bâtonnets sont déduites des totaux du guide : vérifie la recette chez le maître avant de les acheter.</p></footer>
+
+
+</main>
+<script>
+var CONFIG = {"key": "ench", "src": {"Essence de magie inférieure": "farm", "Essence astrale inférieure": "farm", "Essence astrale supérieure": "farm", "Essence mystique inférieure": "farm", "Essence mystique supérieure": "farm", "Poussière étrange": "farm", "Poussière d'âme": "farm", "Poussière de vision": "farm", "Essence du néant supérieure": "farm", "Gros éclat irradiant": "farm", "Bois simple": "vendor", "Bâtonnet en cuivre": "ah", "Bâtonnet en argent": "ah", "Bâtonnet doré": "ah", "Bâtonnet en vrai-argent": "ah", "Granule de magie": "ah", "Perle iridescente": "ah", "Perle noire": "ah", "Œil ténébreux": "ah", "Sauvageonne": "ah"}, "sub": {}, "steps": [{"f": 1, "t": 10, "r": "Bâtonnet runique en cuivre", "n": 15, "m": {"Bâtonnet en cuivre": 1, "Granule de magie": 1}, "note": "Un seul bâtonnet sert d'outil pour la suite : les autres servent juste à monter."}, {"f": 10, "t": 40, "r": "Baguette magique inférieure", "n": 30, "m": {"Bois simple": 1, "Essence de magie inférieure": 1}, "note": "Tu apprends Désenchanter à 20 : désenchante tous les objets verts que tu ramasses."}, {"f": 40, "t": 110, "r": "Ench. de plastron (Absorption mineure)", "n": 77, "m": {"Essence de magie inférieure": 1}, "note": "Outil : Bâtonnet runique en cuivre. <strong>Apprends Compagnon dès 50</strong> (niveau 10), sinon tu bloques à 75."}, {"f": 110, "t": 150, "r": "Ench. de cape (Agilité mineure)", "n": 44, "m": {"Essence astrale inférieure": 1}, "onceName": "un Bâtonnet runique en argent", "once": {"Bâtonnet en argent": 1, "Perle iridescente": 1, "Poussière étrange": 3}, "note": "Recette à 8 pa chez Dalria (Orneval, côté Alliance) : HV sinon. <strong>Apprends Expert dès 125</strong> (niveau 20) : {exp}."}, {"f": 150, "t": 185, "r": "Ench. de bracelets (Intelligence inférieure)", "n": 36, "m": {"Essence astrale supérieure": 1}}, {"f": 185, "t": 210, "r": "Ench. de plastron (Intelligence supérieure)", "n": 25, "m": {"Essence mystique inférieure": 1}, "onceName": "un Bâtonnet runique en or", "once": {"Bâtonnet doré": 1, "Perle noire": 1, "Essence mystique supérieure": 1}, "note": "<strong>Apprends Artisan dès 200</strong> (niveau 35) : {art}."}, {"f": 210, "t": 238, "r": "Ench. de gants (Agilité)", "n": 29, "m": {"Poussière de vision": 1}, "onceName": "un Bâtonnet runique en vrai-argent", "once": {"Bâtonnet en vrai-argent": 1, "Œil ténébreux": 1, "Poussière d'âme": 1}}, {"f": 238, "t": 279, "r": "Ench. de bottes (Agilité)", "n": 53, "m": {"Essence du néant supérieure": 1}, "p": 1}, {"f": 279, "t": 300, "r": "Ench. de gants (Hâte mineure)", "n": 44, "m": {"Gros éclat irradiant": 1, "Sauvageonne": 1}, "p": 1}], "train": {"comp": "Jhag à Orgrimmar (53,4 ; 38,2) ou Pa'zula à Durotar (56,4 ; 73,6)", "exp": "Godan à Orgrimmar (53,8 ; 38,4)", "art": "Hgarth aux Serres-Rocheuses (49,2 ; 57,2)"}, "done300": "300 atteint. Pense à la Forge arcanique pour ton camp.", "groupTitles": {"farm": "À désenchanter", "vendor": "Chez le vendeur", "ah": "HV ou autres métiers", "craft": "Intermédiaires"}, "trainA": {"comp": "Betty Quin à Hurlevent (43,2 ; 63,8), Thonys Pillarstone à Forgefer (59,0 ; 45,2) ou Lalina Summermoon à Darnassus (58,4 ; 13,2)", "exp": "Lucan Cordell à Hurlevent (43,0 ; 64,4), Gimble Thistlefuzz à Forgefer (59,0 ; 45,2) ou Taladan à Darnassus (58,4 ; 13,2)", "art": "Kitta Firewind, tour d'Azora en forêt d'Elwynn (64,8 ; 70,4)"}};
+</script>
+<script src="assets/metier.js"></script>
+<script src="assets/nav.js"></script>
+</body>
+</html>

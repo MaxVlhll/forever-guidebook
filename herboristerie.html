@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Herboristerie WoW Forever</title>
+<meta name="description" content="Guide Herboristerie 1 à 300 pour WoW Forever (Alliance et Horde) : plantes par palier, zones les plus riches et maîtres.">
+<meta property="og:title" content="Herboristerie WoW Forever">
+<meta property="og:description" content="Guide Herboristerie 1 à 300 pour WoW Forever (Alliance et Horde) : plantes par palier, zones les plus riches et maîtres.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+:root {
+  --bg: #11140d;
+  --bg-glow: #1e2614;
+  --panel: #191e14;
+  --panel-2: #222a1b;
+  --stitch: #66803d;
+  --accent: #b5d84f;
+  --seg1: #d8ec9c; --seg2: #b5d84f; --seg3: #7a9a2c; --seg4: #4f661b;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Herboristerie</span>
+  <h1>Herboristerie 1 → 300</h1>
+  <p class="lede">Quelle plante cueillir et où, palier par palier, d'après le recensement des nœuds de Forever. Aucun outil nécessaire. Indique ta compétence : la page te montre ton palier et la meilleure zone.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Où tu en es</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Compétence actuelle</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Retirer 5 points">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Ajouter 5 points">+5</button>
+      </div>
+    </div>
+    
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprenti</div><div class="seg s2">Compagnon</div><div class="seg s3">Expert</div><div class="seg s4">Artisan</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:14px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Paliers et zones</h2>
+    <p class="lede" style="margin-top:0">Une plante fait monter ta compétence de son niveau requis jusqu'à environ 100 points au-dessus (règle de Classic, à confirmer). Les nombres sont les nœuds recensés par zone.</p>
+    <div class="legend"><span><span class="zone">Zone <small>info</small></span> zone recensée par Forever</span><span><span class="zone a">Zone</span> Alliance</span><span><span class="zone h">Zone</span> Horde</span><span>sans marque : contestée ou neutre</span></div>
+  </div>
+  <div class="tiers" id="tiers"></div>
+</section>
+
+<section aria-labelledby="seuil-h" style="display:grid;gap:12px">
+  <h2 id="seuil-h">Seuils des plantes</h2>
+  <p class="lede" style="margin-top:0">Niveau d'herboristerie requis pour cueillir chaque plante.</p>
+  <div class="cols"><div class="card"><h3>1 à 85</h3><span class="lv">Débutant</span><p>Pacifique 1 · Feuillargent 1 · Terrestrine 15 · Mage royal 50 · Églantine 70 · Étouffante 85</p></div><div class="card"><h3>100 à 185</h3><span class="lv">Intermédiaire</span><p>Doulourante 100 · Aciérite sauvage 115 · Tombeline 120 · Sang-royal 125 · Vietérule 150 · Pâlerette 160 · Dorépine 170 · Moustache de Khadgar 185</p></div><div class="card"><h3>195 à 300</h3><span class="lv">Avancé</span><p>Hivernale 195 · Fleur de feu 205 · Lotus pourpre 210 · Larmes d'Arthas 220 · Soleillette 230 · Aveuglette 235 · Champignon fantôme 245 · Gromsang 250 · Sansam doré 260 · Feuillerêve 270 · Sauge-argent 280 · Fleur de peste 285 · Calot de glace 290 · Lotus noir 300</p></div></div>
+  
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Maîtres herboristes</h2>
+  <p class="lede" style="margin-top:0">Kami Labs liste les maîtres sans préciser les rangs. Dans Forever, les métiers de fabrication demandent 50 / 125 / 200 en compétence et les niveaux 10 / 20 / 35 : c'est très probablement pareil ici, à vérifier en jeu.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alliance</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Débloque</th><th>Conditions</th><th>Maîtres (coordonnées)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Tous rangs</span></td><td class="num">jusqu'à 300</td><td>50 / 125 / 200 en compétence (probable)</td><td><strong>Tannysa</strong>, Hurlevent (44,4 ; 77,8) · Shylamiir, Hurlevent (15,0 ; 49,4) · Reyna Stonebranch, Forgefer (55,4 ; 58,4) · Firodren Mooncaller, Darnassus (48,0 ; 68,4) · Herboriste Pomeroy, Forêt d'Elwynn (39,8 ; 48,4) · Nancy Chantefleur, Forêt d'Elwynn (52,2 ; 43,4) · Emrys Barbe-de-silex, Dun Morogh (28,8 ; 66,4) · Kali Healtouch, Loch Modan (36,4 ; 48,4) · Malorne Bladeleaf, Teldrassil (57,4 ; 60,6) · Eleyna Vespebrise, Teldrassil (59,8 ; 41,4)</td></tr><tr><td><span class="pill">Hors capitale</span></td><td class="num">—</td><td>—</td><td>Alma Jainrose, Les Carmines (16,2 ; 45,6) · Telurinon Moonshadow, Les Paluns (8,0 ; 55,8) · Cylania Rootstalker, Orneval (50,4 ; 67,0) · Brant Jasperbloom, Marécage d'Âprefange (64,0 ; 47,6) · Flora Silverwind, Vallée de Strangleronce (27,6 ; 77,8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Débloque</th><th>Conditions</th><th>Maîtres (coordonnées)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Tous rangs</span></td><td class="num">jusqu'à 300</td><td>50 / 125 / 200 en compétence (probable)</td><td><strong>Jandi</strong>, Orgrimmar (55,4 ; 39,4) · Mishiki, Durotar (55,4 ; 75,0) · Zor'la, Durotar (42,6 ; 67,4) · Martha Alliestar, Fossoyeuse (54,2 ; 49,4) · Faruza, Clairières de Tirisfal (59,8 ; 52,0) · Florence Belladone, Clairières de Tirisfal (32,4 ; 65,2) · Komin Winterhoof, Pitons-du-Tonnerre (49,4 ; 39,2) · Garan Haut-Soleil, Mulgore (44,2 ; 77,8)</td></tr><tr><td><span class="pill">Neutres</span></td><td class="num">—</td><td>—</td><td>Aranae Venomblood, Contreforts de Hautebrande (61,4 ; 19,8) · Angrun et Flora Silverwind, Vallée de Strangleronce · Ruw, Féralas (76,0 ; 43,4)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Spécial Forever</h2>
+  <ul class="plain"><li>Bonus annoncé à la BlizzCon, pas encore confirmé : <strong>Don naturel</strong> (résistance à toutes les écoles de magie), plus de chances de trouver des lotus rares et plus d'herbes par nœud.</li><li>Forever compte 48 types de nœuds, dont 2 nouveaux (Pacifique fanée, Feuillargent rabougri) et 8 modifiés.</li><li>Le <strong>Lotus noir</strong> ne fait plus monter ta compétence.</li><li><strong>Points d'héritage</strong> à 150, 225 et 300.</li><li>Ça se marie avec l'<a href="alchimie.html">Alchimie</a>, et le <a href="secourisme.html">Secourisme</a> demande maintenant aussi des herbes pour les potions de soins.</li></ul>
+</section>
+
+<footer class="foot"><p>Sources : <a href="https://kami-labs.fr/guide-herboristerie-wow-forever/">Kami Labs, guide Herboristerie WoW Forever</a> · <a href="https://kami-labs.fr/metiers-wow-forever/">Kami Labs, métiers WoW Forever</a>.</p><p>Les conseils propres à chaque faction viennent de Classic, sur lequel Forever s'appuie. La bêta s'arrêtait à 225 : les paliers au-delà sont marqués « après la bêta ».</p><p>Guide de fan non officiel, mis à jour le 7 novembre 2026. World of Warcraft est une marque de Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "herbo", "done300": "300 atteint. Le Lotus noir ne fait plus monter : garde-le pour les flacons.", "train": {"comp": "Pense au rang Compagnon (niveau 10 probable) : Jandi à Orgrimmar (55,4 ; 39,4).", "exp": "Pense au rang Expert (niveau 20 probable) : Jandi à Orgrimmar (55,4 ; 39,4).", "art": "Pense au rang Artisan (niveau 35 probable) : Jandi à Orgrimmar (55,4 ; 39,4)."}, "tiers": [{"f": 1, "t": 50, "res": ["Pacifique", "Feuillargent", "Terrestrine (dès 15)"], "zones": [["Teldrassil", "≈ 439", "a"], ["Île de Zéphras", "≈ 427"], ["Forêt d'Elwynn", "≈ 372", "a"], ["Dun Morogh", "≈ 367", "a"]], "horde": "Durotar, Mulgore, Clairières de Tirisfal, Les Tarides.", "alliance": "Forêt d'Elwynn, Dun Morogh, Teldrassil."}, {"f": 50, "t": 70, "res": ["Mage royal", "Terrestrine", "Pacifique"], "zones": [["Île de Zéphras", "≈ 461"]], "horde": "Les Tarides, Forêt des Pins-Argentés, Les Serres-Rocheuses.", "alliance": "Marche de l'Ouest, Loch Modan, Sombrivage."}, {"f": 70, "t": 115, "res": ["Églantine", "Étouffante (sous l'eau)", "Doulourante (dès 100)"], "zones": [["Les Paluns", "≈ 345", "a"], ["Orneval", "≈ 295"], ["Marche de l'Ouest", "≈ 275", "a"], ["Les Carmines", "≈ 229", "a"]], "horde": "Les Tarides, Les Serres-Rocheuses, Orneval, Contreforts de Hautebrande.", "note": "Apprends Compagnon avant 75.", "alliance": "Les Paluns, Marche de l'Ouest, Les Carmines, Loch Modan."}, {"f": 115, "t": 160, "res": ["Aciérite sauvage", "Tombeline", "Sang-royal"], "zones": [["Les Paluns", "≈ 388", "a"], ["Orneval", "≈ 330"], ["Les Serres-Rocheuses", "≈ 309"], ["Vallée de Strangleronce", "≈ 304"]], "horde": "Orneval, Les Serres-Rocheuses, Contreforts de Hautebrande, Mille pointes.", "note": "Apprends Expert avant 150.", "alliance": "Les Paluns, Contreforts de Hautebrande depuis Austrivage, Orneval depuis Astranaar."}, {"f": 160, "t": 205, "res": ["Pâlerette", "Vietérule", "Dorépine (dès 170)", "Moustache de Khadgar (dès 185)"], "zones": [["Vallée de Strangleronce", "≈ 469"], ["Marécage d'Âprefange", "≈ 310"], ["Marais des Chagrins", "≈ 274"], ["Hautes-terres d'Arathi", "≈ 267"]]}, {"f": 205, "t": 230, "res": ["Fleur de feu", "Lotus pourpre", "Hivernale", "Larmes d'Arthas (dès 220)"], "zones": [["Vallée de Strangleronce", "≈ 305"], ["Féralas", "≈ 264"], ["Marécage d'Âprefange", "≈ 182"], ["Montagnes d'Alterac", "≈ 177"]], "note": "Apprends Artisan avant 225."}, {"f": 230, "t": 270, "res": ["Soleillette", "Aveuglette", "Champignon fantôme (dès 245)", "Gromsang (dès 250)", "Sansam doré (dès 260)"], "zones": [["Féralas", "≈ 178"], ["Marais des Chagrins", "≈ 175"], ["Azshara", "≈ 167"], ["Les Hinterlands", "≈ 162"]], "p": 1}, {"f": 270, "t": 300, "res": ["Feuillerêve", "Sauge-argent des montagnes (dès 280)", "Fleur de peste (dès 285)", "Calot de glace (dès 290)"], "zones": [["Maleterres de l'Est", "≈ 333"], ["Azshara", "≈ 228"], ["Gangrebois", "≈ 228"], ["Cratère d'Un'Goro", "≈ 182"]], "p": 1, "note": "Calot de glace : Berceau-de-l'Hiver. Lotus noir à 300."}], "trainA": {"comp": "Pense au rang Compagnon (niveau 10 probable) : Tannysa à Hurlevent (44,4 ; 77,8), Reyna Stonebranch à Forgefer (55,4 ; 58,4) ou Firodren Mooncaller à Darnassus (48,0 ; 68,4).", "exp": "Pense au rang Expert (niveau 20 probable) : Tannysa à Hurlevent (44,4 ; 77,8), Reyna Stonebranch à Forgefer (55,4 ; 58,4) ou Firodren Mooncaller à Darnassus (48,0 ; 68,4).", "art": "Pense au rang Artisan (niveau 35 probable) : Tannysa à Hurlevent (44,4 ; 77,8), Reyna Stonebranch à Forgefer (55,4 ; 58,4) ou Firodren Mooncaller à Darnassus (48,0 ; 68,4)."}};
+</script>
+<script src="assets/recolte.js"></script>
+<script src="assets/nav.js"></script>
+</body>
+</html>

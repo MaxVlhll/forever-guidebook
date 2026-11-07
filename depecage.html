@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dépeçage WoW Forever</title>
+<meta name="description" content="Guide Dépeçage 1 à 300 pour WoW Forever (Alliance et Horde) : zones par palier selon le niveau des bêtes, et maîtres.">
+<meta property="og:title" content="Dépeçage WoW Forever">
+<meta property="og:description" content="Guide Dépeçage 1 à 300 pour WoW Forever (Alliance et Horde) : zones par palier selon le niveau des bêtes, et maîtres.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+:root {
+  --bg: #15110f;
+  --bg-glow: #271d17;
+  --panel: #1f1915;
+  --panel-2: #29211c;
+  --stitch: #7d6249;
+  --accent: #d8aa7e;
+  --seg1: #e8d0b8; --seg2: #c9a27e; --seg3: #8f6a4a; --seg4: #5e432d;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Dépeçage</span>
+  <h1>Dépeçage 1 → 300</h1>
+  <p class="lede">Où dépecer, palier par palier, selon le niveau des bêtes. Il te faut un Couteau à dépecer. Indique ta compétence : la page te montre ton palier et les zones qui vont avec.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Où tu en es</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Compétence actuelle</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Retirer 5 points">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Ajouter 5 points">+5</button>
+      </div>
+    </div>
+    
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprenti</div><div class="seg s2">Compagnon</div><div class="seg s3">Expert</div><div class="seg s4">Artisan</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:14px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Paliers et zones</h2>
+    <p class="lede" style="margin-top:0">Ce qui compte, c'est le niveau des bêtes : en dessous du niveau 20, il faut environ (niveau du mob − 10) × 10 en compétence ; au-dessus, environ niveau × 5. Les niveaux affichés sont ceux des zones.</p>
+    <div class="legend"><span><span class="zone">Zone <small>info</small></span> zone recensée par Forever</span><span><span class="zone a">Zone</span> Alliance</span><span><span class="zone h">Zone</span> Horde</span><span>sans marque : contestée ou neutre</span></div>
+  </div>
+  <div class="tiers" id="tiers"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Maîtres dépeceurs</h2>
+  <p class="lede" style="margin-top:0">Kami Labs liste les maîtres sans préciser les rangs. Dans Forever, les métiers de fabrication demandent 50 / 125 / 200 en compétence et les niveaux 10 / 20 / 35 : c'est très probablement pareil ici, à vérifier en jeu.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alliance</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Débloque</th><th>Conditions</th><th>Maîtres (coordonnées)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Tous rangs</span></td><td class="num">jusqu'à 300</td><td>50 / 125 / 200 en compétence (probable)</td><td><strong>Maris Granger</strong>, Hurlevent (67,4 ; 49,0) · Ecorchepierre Balthus, Forgefer (39,4 ; 32,4) · Eladriel, Darnassus (64,2 ; 21,8) · Helene Peltskinner, Forêt d'Elwynn (46,2 ; 62,2) · Riley Tannepeau, Forêt d'Elwynn (47,0 ; 39,4) · Brighid Ecorchorage, Dun Morogh (29,0 ; 67,4) · Radnaal Maneweaver, Teldrassil (42,0 ; 50,0) · Terunne Sculpte-Ours, Teldrassil (59,4 ; 38,6)</td></tr><tr><td><span class="pill">Hors capitale</span></td><td class="num">—</td><td>—</td><td>Wilma Ranthal, Les Carmines (83,6 ; 71,0) · Jayla, Orneval (50,0 ; 67,2)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Débloque</th><th>Conditions</th><th>Maîtres (coordonnées)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Tous rangs</span></td><td class="num">jusqu'à 300</td><td>50 / 125 / 200 en compétence (probable)</td><td><strong>Thuwd</strong>, Orgrimmar (63,2 ; 45,2) · Kagil, Durotar (40,8 ; 67,8) · Killian Hagey, Fossoyeuse (70,2 ; 58,4) · Rand Rhobart, Clairières de Tirisfal (65,4 ; 60,0) · Margaret Tisserand, Clairières de Tirisfal (32,4 ; 65,6) · Mooranta, Pitons-du-Tonnerre (44,4 ; 42,4) · Yonn Deepcut, Mulgore (45,0 ; 61,4) · Nawka Chantsauvage, Mulgore (44,4 ; 76,8)</td></tr><tr><td><span class="pill">Neutres</span></td><td class="num">—</td><td>—</td><td>Dranh, Les Tarides (45,0 ; 59,0) · Malux, Désolace (23,2 ; 69,8) · Kulleg Stonehorn, Féralas (74,4 ; 43,0)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Le Couteau à dépecer s'achète chez les vendeurs de fournitures de métier.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Spécial Forever</h2>
+  <ul class="plain"><li>Bonus annoncé à la BlizzCon, pas encore confirmé : <strong>Bêtes sauvages</strong> (+5 % de dégâts contre les bêtes et les dragonnets) et plus de chances d'obtenir des peaux rares.</li><li><strong>Cuir immaculé</strong> : nouveau composant de Forever, à garder pour le <a href="travail-du-cuir.html">Travail du cuir</a>.</li><li><strong>Chaise de camp</strong> (objet de camp des dépeceurs) : +2 % de critique d'après Method.</li><li><strong>Points d'héritage</strong> à 150, 225 et 300.</li><li>Le combo idéal en montée pour les classes en cuir ou en mailles : Dépeçage + Travail du cuir.</li></ul>
+</section>
+
+<footer class="foot"><p>Sources : <a href="https://kami-labs.fr/guide-depecage-wow-forever/">Kami Labs, guide Dépeçage WoW Forever</a> · <a href="https://kami-labs.fr/metiers-wow-forever/">Kami Labs, métiers WoW Forever</a> · <a href="https://www.method.gg/wow-forever/wow-forever-warrior-leveling-guide-and-talents">Method, guide guerrier (objets de camp)</a>.</p><p>La bêta s'arrêtait à 225 : les paliers au-delà sont marqués « après la bêta ».</p><p>Guide de fan non officiel, mis à jour le 7 novembre 2026. World of Warcraft est une marque de Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "depec", "done300": "300 atteint. Garde le Cuir immaculé : beaucoup de nouvelles recettes de Forever en demandent.", "train": {"comp": "Pense au rang Compagnon (niveau 10 probable) : Thuwd à Orgrimmar (63,2 ; 45,2).", "exp": "Pense au rang Expert (niveau 20 probable) : Thuwd à Orgrimmar (63,2 ; 45,2).", "art": "Pense au rang Artisan (niveau 35 probable) : Thuwd à Orgrimmar (63,2 ; 45,2)."}, "tiers": [{"f": 1, "t": 25, "res": ["Cuir léger", "Peau légère"], "zones": [["Durotar", "niv. 1-10", "h"], ["Mulgore", "niv. 1-10", "h"], ["Clairières de Tirisfal", "niv. 1-12", "h"], ["Île de Zéphras", "niv. 1-12"]], "alliance": "Forêt d'Elwynn, Dun Morogh, Teldrassil.", "horde": "Durotar, Mulgore, Clairières de Tirisfal."}, {"f": 25, "t": 75, "res": ["Cuir léger", "Peau légère"], "zones": [["Les Tarides", "niv. 10-33", "h"], ["Forêt des Pins-Argentés", "niv. 10-20", "h"], ["Loch Modan", "niv. 10-18", "a"], ["Sombrivage", "niv. 11-19", "a"]], "note": "Côté Horde : zhévras, lézards-tonnerre et kodos autour de la Croisée.", "alliance": "Marche de l'Ouest, Loch Modan, Sombrivage.", "horde": "Les Tarides, Forêt des Pins-Argentés."}, {"f": 75, "t": 125, "res": ["Cuir moyen", "Peau moyenne"], "zones": [["Les Serres-Rocheuses", "niv. 15-25"], ["Mille pointes", "niv. 6-35"], ["Orneval", "niv. 19-30"], ["Contreforts de Hautebrande", "niv. 20-31"]], "note": "Apprends Compagnon avant 75.", "alliance": "Loch Modan (sangliers, ours, crocilisques) puis Les Paluns.", "horde": "Les Serres-Rocheuses, Mille pointes, Contreforts de Hautebrande depuis le Moulin de Tarren."}, {"f": 125, "t": 175, "res": ["Cuir lourd", "Peau lourde"], "zones": [["Contreforts de Hautebrande", "niv. 20-31"], ["Montagnes d'Alterac", "niv. 27-39"], ["Désolace", "niv. 30-39"], ["Hautes-terres d'Arathi", "niv. 30-40"]], "note": "Apprends Expert avant 150.", "alliance": "Les Paluns (raptors de Whelgar), Contreforts de Hautebrande, Hautes-terres d'Arathi."}, {"f": 175, "t": 225, "res": ["Cuir épais", "Peau épaisse"], "zones": [["Vallée de Strangleronce", "niv. 30-50"], ["Marais des Chagrins", "niv. 36-43"], ["Terres ingrates", "niv. 36-45"], ["Rives Claires", "niv. 36-44"], ["Tanaris", "niv. 40-50"]], "note": "Apprends Artisan avant 225."}, {"f": 225, "t": 250, "res": ["Cuir épais", "Cuir robuste"], "zones": [["Féralas", "niv. 41-60"], ["Azshara", "niv. 42-55"], ["Les Hinterlands", "niv. 41-56"], ["Gorge des Vents brûlants", "niv. 43-56"]], "p": 1}, {"f": 250, "t": 275, "res": ["Cuir robuste", "Écaille de scorpide épaisse"], "zones": [["Cratère d'Un'Goro", "niv. 48-55"], ["Maleterres de l'Ouest", "niv. 46-57"], ["Terres foudroyées", "niv. 46-63"], ["Steppes ardentes", "niv. 50-59"]], "p": 1}, {"f": 275, "t": 300, "res": ["Cuir robuste", "Peau robuste"], "zones": [["Berceau-de-l'Hiver", "niv. 55-60"], ["Silithus", "niv. 55-59"], ["Maleterres de l'Est", "niv. 54-59"], ["Défilé de Deuillevent", "niv. 50-60"]], "p": 1}], "trainA": {"comp": "Pense au rang Compagnon (niveau 10 probable) : Maris Granger à Hurlevent (67,4 ; 49,0), Ecorchepierre Balthus à Forgefer (39,4 ; 32,4) ou Eladriel à Darnassus (64,2 ; 21,8).", "exp": "Pense au rang Expert (niveau 20 probable) : Maris Granger à Hurlevent (67,4 ; 49,0), Ecorchepierre Balthus à Forgefer (39,4 ; 32,4) ou Eladriel à Darnassus (64,2 ; 21,8).", "art": "Pense au rang Artisan (niveau 35 probable) : Maris Granger à Hurlevent (67,4 ; 49,0), Ecorchepierre Balthus à Forgefer (39,4 ; 32,4) ou Eladriel à Darnassus (64,2 ; 21,8)."}};
+</script>
+<script src="assets/recolte.js"></script>
+<script src="assets/nav.js"></script>
+</body>
+</html>

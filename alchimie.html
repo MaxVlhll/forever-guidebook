@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alchimie WoW Forever</title>
+<meta name="description" content="Guide Alchimie 1 à 300 pour WoW Forever (Alliance et Horde) : parcours recette par recette, liste de courses calculée, maîtres et plantes.">
+<meta property="og:title" content="Alchimie WoW Forever">
+<meta property="og:description" content="Guide Alchimie 1 à 300 pour WoW Forever (Alliance et Horde) : parcours recette par recette, liste de courses calculée, maîtres et plantes.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+:root {
+  --bg: #0f1513;
+  --bg-glow: #17261f;
+  --panel: #17201c;
+  --panel-2: #1f2b26;
+  --stitch: #4f7d68;
+  --ink: #f1e9dc;
+  --muted: #b5a995;
+  --accent: #6fd1a4;
+  --accent-ink: #15100c;
+  --seg1: #9fd9bd; --seg2: #6fbf98; --seg3: #3f8f6c; --seg4: #29624a;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Alchimie</span>
+  <h1>Alchimie 1 → 300</h1>
+  <p class="lede">Le parcours complet, recette par recette, d'après les données de la bêta de Forever. Indique ta compétence : la page te montre où tu en es, la prochaine étape et toutes les plantes et fioles qu'il te reste à réunir.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Où tu en es</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Compétence actuelle</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Retirer 5 points">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Ajouter 5 points">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Liste de courses jusqu'à</label>
+      <select id="target">
+        <option value="75">75 (fin Apprenti)</option>
+        <option value="150" selected>150 (fin Compagnon)</option>
+        <option value="225">225 (fin Expert)</option>
+        <option value="300">300 (Artisan)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprenti</div><div class="seg s2">Compagnon</div><div class="seg s3">Expert</div><div class="seg s4">Artisan</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Ce qu'il te reste à réunir</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Le parcours</h2>
+    <p class="lede" style="margin-top:0">Le nombre de fabrications est une estimation : prévois toujours un peu de marge. La règle d'or : dès qu'une recette passe au vert, passe à l'étape suivante.</p>
+    <div class="legend" aria-label="Couleurs des recettes">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Orange : +1 à chaque fois</span>
+      <span><span class="dot" style="background:var(--sk-yellow)"></span>Jaune : souvent</span>
+      <span><span class="dot" style="background:var(--sk-green)"></span>Vert : rarement</span>
+      <span><span class="dot" style="background:var(--sk-gray)"></span>Gris : plus rien</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Maîtres</h2>
+  <p class="lede" style="margin-top:0">Sans le bon rang, ta compétence reste bloquée au plafond (75, 150, 225). Apprends le rang suivant dès que tu as le niveau requis.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alliance</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Débloque</th><th>Conditions</th><th>Maîtres (coordonnées)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Compagnon</span></td><td class="num">jusqu'à 150</td><td>50 en compétence, niveau 10</td><td><strong>Tel'Athir</strong>, Hurlevent (45,8 ; 78,2) · Vosur Brakthel, Forgefer (66,4 ; 55,2) · Milla Fairancora, Darnassus (55,2 ; 21,4) · Alchimiste Mallory, Forêt d'Elwynn (39,8 ; 48,4) · Cyndra Kindwhisper, Teldrassil (57,6 ; 60,6) · Ghak Healtouch, Loch Modan (37,0 ; 49,2)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">jusqu'à 225</td><td>125 en compétence, niveau 20</td><td><strong>Lilyssia Nightbreeze</strong>, Hurlevent (46,4 ; 79,4) · Tally Berryfizz, Forgefer (66,4 ; 55,2) · Sylvanna Forestmoon, Darnassus (55,6 ; 23,4) · Kylanna, Orneval (50,8 ; 67,0) · Alchimiste Narett, Marécage d'Âprefange (64,0 ; 47,6)</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">jusqu'à 300</td><td>200 en compétence, niveau 35</td><td><strong>Ainethil</strong>, Darnassus (55,0 ; 23,4)</td></tr><tr><td><span class="pill">Recettes hautes</span></td><td class="num">—</td><td>—</td><td>Maître mycologue Shurome, Gangrebois (51,4 ; 82,0)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Débloque</th><th>Conditions</th><th>Maîtres (coordonnées)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Compagnon</span></td><td class="num">jusqu'à 150</td><td>50 en compétence, niveau 10</td><td><strong>Whuut</strong>, Orgrimmar (55,8 ; 33,2) · Miao'zan, Durotar (55,4 ; 74,0) · Docteur Martin Felben, Fossoyeuse (45,8 ; 73,2) · Carolai Anise, Clairières de Tirisfal (59,4 ; 52,2) · Kray, Pitons-du-Tonnerre (46,8 ; 33,4)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">jusqu'à 225</td><td>125 en compétence, niveau 20</td><td><strong>Yelmak</strong>, Orgrimmar (56,4 ; 33,2) · Docteur Marsh, Fossoyeuse (51,2 ; 75,0) · Bena Winterhoof, Pitons-du-Tonnerre (46,8 ; 33,4) · Serge Hinott, Contreforts de Hautebrande (61,4 ; 19,2) · Jaxin Chong, Strangleronce (28,0 ; 78,0)</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">jusqu'à 300</td><td>200 en compétence, niveau 35</td><td><strong>Docteur Herbert Halsey</strong>, Fossoyeuse (47,4 ; 73,0)</td></tr><tr><td><span class="pill">Recettes hautes</span></td><td class="num">—</td><td>—</td><td>Maître mycologue Shurome, Gangrebois (51,4 ; 82,0)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Les fioles s'achètent chez les vendeurs de fournitures d'alchimie et de marchandises. Les vendeurs de recettes marqués Alliance ou Horde ne servent que leur faction : l'autre passe par l'hôtel des ventes.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Où cueillir chaque plante</h2>
+  <p class="lede" style="margin-top:0">Les zones ci-dessous sont celles de Classic, sur lesquelles Forever s'appuie. Le Chardonnier ne se cueille pas seul : il tombe en bonus sur le Mage royal et l'Églantine.</p>
+  <div class="cols"><div class="card"><h3>Pacifique, Feuillargent</h3><span class="lv">Compétence 1 à 70</span><p><span class="fl" data-f="h"><span class="fac h">Horde</span> Durotar, Mulgore, Clairières de Tirisfal, Les Tarides.</span><span class="fl" data-f="a"><span class="fac a">Alliance</span> Forêt d'Elwynn, Dun Morogh, Teldrassil, Marche de l'Ouest.</span></p></div><div class="card"><h3>Mage royal, Églantine, Chardonnier</h3><span class="lv">Compétence 50 à 100</span><p><span class="fl" data-f="h"><span class="fac h">Horde</span> Les Tarides, Forêt des Pins-Argentés, Les Serres-Rocheuses, Orneval.</span><span class="fl" data-f="a"><span class="fac a">Alliance</span> Marche de l'Ouest, Loch Modan, Sombrivage, Les Carmines.</span></p></div><div class="card"><h3>Doulourante, Étouffante</h3><span class="lv">Compétence 85 à 115</span><p><span class="fl" data-f="h"><span class="fac h">Horde</span> Les Serres-Rocheuses, Orneval, Contreforts de Hautebrande.</span><span class="fl" data-f="a"><span class="fac a">Alliance</span> Les Paluns, Les Carmines, Orneval.</span><span class="fl">L'Étouffante pousse sous l'eau, le long des côtes.</span></p></div><div class="card"><h3>Dorépine</h3><span class="lv">Compétence 170 et plus</span><p>Hautes-terres d'Arathi, Strangleronce, Féralas, Marais des Chagrins.</p></div><div class="card"><h3>Gromsang, Soleillette, Feuillerêve</h3><span class="lv">Compétence 220 à 270</span><p>Gangrebois, Cratère d'Un'Goro, Maleterres, Silithus.</p></div><div class="card"><h3>Calot de glace, Champignon fantôme</h3><span class="lv">Compétence 245 à 290</span><p>Berceau-de-l'Hiver pour le Calot de glace ; grottes et marais (Hinterlands, Marais des Chagrins) pour le Champignon.</p></div></div>
+  <p class="foot">Sacs de flammes, huile de feu, griffes aiguisées et minerai de mithril se trouvent surtout à l'HV : regarde les prix avant de te lancer dans une étape.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Spécial Forever</h2>
+  <ul class="plain"><li><strong>Les potions de soins ont quitté l'alchimie</strong> : elles sont maintenant fabriquées par le Secourisme.</li><li><strong>Puits de mana</strong> à 20 : rend du mana aux joueurs assis à proximité (ne se cumule pas avec Bénédiction de sagesse).</li><li><strong>Fermenteur</strong> à 140 : fabrique certains composants au camp.</li><li><strong>Laboratoire d'alchimie</strong> à 300 : obligatoire pour certaines recettes.</li><li><strong>Points d'héritage</strong> à 150, 225 et 300.</li><li>Bonus annoncé à la BlizzCon mais pas encore confirmé : les élixirs et flacons que l'alchimiste boit lui-même dureraient deux fois plus longtemps et seraient 25 % plus puissants.</li><li>Le métier compte 179 recettes, dont 72 nouvelles. Ce parcours suit les plus rentables pour monter, pas les plus utiles à vendre.</li></ul>
+</section>
+
+<footer class="foot"><p>Sources : <a href="https://kami-labs.fr/guide-alchimie-wow-forever/">Kami Labs, guide Alchimie WoW Forever</a> pour le parcours, les recettes et les maîtres · <a href="https://conquestcapped.com/guides/fr/wow-forever/wow-forever-alchemy/">ConquestCapped</a> pour le déplacement des potions de soins.</p><p>Les étapes au-delà de 225 n'étaient pas jouables en bêta : elles sont marquées « à vérifier ».</p></footer>
+
+
+</main>
+<script>
+var CONFIG = {"key": "alch", "src": {"Feuillargent": "farm", "Pacifique": "farm", "Églantine": "farm", "Doulourante": "farm", "Chardonnier": "farm", "Mage royal": "farm", "Étouffante": "farm", "Dorépine": "farm", "Gromsang": "farm", "Champignon fantôme": "farm", "Soleillette": "farm", "Feuillerêve": "farm", "Calot de glace": "farm", "Fiole vide": "vendor", "Fiole plombée": "vendor", "Fiole de cristal": "vendor", "Griffe aiguisée": "ah", "Petit sac de flammes": "ah", "Huile de feu": "ah", "Minerai de mithril": "ah", "Anguille pierre-écaille": "ah", "Huile de pierre-écaille": "craft"}, "sub": {"Huile de pierre-écaille": {"Anguille pierre-écaille": 1, "Fiole plombée": 1}}, "steps": [{"f": 1, "t": 71, "r": "Élixir de défense mineure", "n": 74, "m": {"Feuillargent": 1, "Pacifique": 1, "Fiole vide": 1}, "note": "<strong>Apprends Compagnon dès 50</strong> (niveau 10), sinon tu bloques à 75."}, {"f": 71, "t": 100, "r": "Potion de Rage", "n": 30, "m": {"Griffe aiguisée": 1, "Églantine": 1, "Fiole vide": 1}, "note": "Recette à 1 pa chez le Profiteur défias (Marche de l'Ouest) ou Xandar Goodbeard (Loch Modan)."}, {"f": 100, "t": 120, "r": "Potion de protection contre le Sacré", "n": 20, "m": {"Doulourante": 1, "Chardonnier": 1, "Fiole vide": 1}, "note": "Recette à 8 pa chez Kzixx (Bois de la Pénombre), un gobelin neutre."}, {"f": 120, "t": 165, "r": "Potion de mana inférieure", "n": 52, "m": {"Mage royal": 1, "Étouffante": 1, "Fiole vide": 1}, "note": "<strong>Apprends Expert dès 125</strong> (niveau 20) : {exp}."}, {"f": 165, "t": 219, "r": "Potion de protection contre le Feu", "n": 55, "m": {"Petit sac de flammes": 1, "Huile de feu": 1, "Fiole plombée": 1}, "note": "Recette à 15 pa chez Nandar Branson (Contreforts de Hautebrande, Austrivage) pour l'Alliance. Horde : passe par l'HV."}, {"f": 219, "t": 250, "r": "Potion de Bouclier de pierre inférieure", "n": 38, "m": {"Minerai de mithril": 1, "Dorépine": 1, "Fiole plombée": 1}, "note": "Recette de quête (« Pierre liquide »). <strong>Apprends Artisan dès 200</strong> (niveau 35) : {art}."}, {"f": 250, "t": 258, "r": "Huile de pierre-écaille", "n": 14, "m": {"Anguille pierre-écaille": 1, "Fiole plombée": 1}, "out": "Huile de pierre-écaille", "p": 1, "note": "Garde toutes les huiles : l'Élixir de défense excellente en demande 2 par fabrication."}, {"f": 258, "t": 267, "r": "Élixir de Tueur de démons", "n": 9, "m": {"Gromsang": 1, "Champignon fantôme": 1, "Fiole de cristal": 1}, "p": 1, "note": "Recette à 1 po chez Nina Lightbrew (Terres foudroyées)."}, {"f": 267, "t": 295, "r": "Élixir de défense excellente", "n": 32, "m": {"Huile de pierre-écaille": 2, "Soleillette": 1, "Fiole de cristal": 1}, "p": 1, "note": "Recette à 1 po 30 pa chez Soolie Berryfizz (Forgefer) pour l'Alliance, chez Kor'geld (Orgrimmar) pour la Horde."}, {"f": 295, "t": 300, "r": "Potion de mana majeure", "n": 5, "m": {"Feuillerêve": 3, "Calot de glace": 2, "Fiole de cristal": 1}, "p": 1, "note": "Recette à 3 po chez Magnus Frostwake (Maleterres de l'Ouest)."}], "train": {"comp": "Whuut à Orgrimmar (55,8 ; 33,2) ou Miao'zan à Durotar (55,4 ; 74,0)", "exp": "Yelmak à Orgrimmar (56,4 ; 33,2)", "art": "Docteur Herbert Halsey à la Fossoyeuse (47,4 ; 73,0)"}, "done300": "300 atteint. Pense au Laboratoire d'alchimie pour ton camp.", "groupTitles": {"farm": "À cueillir (herboristerie)", "vendor": "Chez le vendeur", "ah": "HV ou autres métiers", "craft": "Intermédiaires"}, "trainA": {"comp": "Tel'Athir à Hurlevent (45,8 ; 78,2), Vosur Brakthel à Forgefer (66,4 ; 55,2) ou Milla Fairancora à Darnassus (55,2 ; 21,4)", "exp": "Lilyssia Nightbreeze à Hurlevent (46,4 ; 79,4), Tally Berryfizz à Forgefer (66,4 ; 55,2) ou Sylvanna Forestmoon à Darnassus (55,6 ; 23,4)", "art": "Ainethil à Darnassus (55,0 ; 23,4)"}};
+</script>
+<script src="assets/metier.js"></script>
+<script src="assets/nav.js"></script>
+</body>
+</html>

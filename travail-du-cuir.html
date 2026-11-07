@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Travail du cuir WoW Forever</title>
+<meta name="description" content="Guide Travail du cuir 1 à 300 pour WoW Forever (Alliance et Horde) : parcours, liste de courses calculée, maîtres et zones de dépeçage.">
+<meta property="og:title" content="Travail du cuir WoW Forever">
+<meta property="og:description" content="Guide Travail du cuir 1 à 300 pour WoW Forever (Alliance et Horde) : parcours, liste de courses calculée, maîtres et zones de dépeçage.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+:root {
+  --bg: #17110d;
+  --bg-glow: #2a1d14;
+  --panel: #221913;
+  --panel-2: #2c2119;
+  --stitch: #8a6a43;
+  --ink: #f1e6d3;
+  --muted: #b9a68b;
+  --accent: #e6b84f;
+  --seg1: #c9a36b; --seg2: #b8884f; --seg3: #9c6c3a; --seg4: #7a4f28;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Travail du cuir</span>
+  <h1>Travail du cuir 1 → 300</h1>
+  <p class="lede">Le parcours complet, recette par recette, d'après les données de la bêta de Forever. Indique ta compétence : la page te montre où tu en es, la prochaine étape et tout ce qu'il te reste à réunir.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Où tu en es</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Compétence actuelle</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Retirer 5 points">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Ajouter 5 points">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Liste de courses jusqu'à</label>
+      <select id="target">
+        <option value="75">75 (fin Apprenti)</option>
+        <option value="150" selected>150 (fin Compagnon)</option>
+        <option value="225">225 (fin Expert)</option>
+        <option value="300">300 (Artisan)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprenti</div><div class="seg s2">Compagnon</div><div class="seg s3">Expert</div><div class="seg s4">Artisan</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Ce qu'il te reste à réunir</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Le parcours</h2>
+    <p class="lede" style="margin-top:0">Le nombre de fabrications est une estimation : prévois toujours un peu de marge. La règle d'or : dès qu'une recette passe au vert, passe à l'étape suivante.</p>
+    <div class="legend" aria-label="Couleurs des recettes">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Orange : +1 à chaque fois</span>
+      <span><span class="dot" style="background:var(--sk-yellow)"></span>Jaune : souvent</span>
+      <span><span class="dot" style="background:var(--sk-green)"></span>Vert : rarement</span>
+      <span><span class="dot" style="background:var(--sk-gray)"></span>Gris : plus rien</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Maîtres</h2>
+  <p class="lede" style="margin-top:0">Sans le bon rang, ta compétence reste bloquée au plafond (75, 150, 225). Apprends le rang suivant dès que tu as le niveau requis.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alliance</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Débloque</th><th>Conditions</th><th>Maîtres (coordonnées)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Compagnon</span></td><td class="num">jusqu'à 150</td><td>50 en compétence, niveau 10</td><td><strong>Randal Worth</strong>, Hurlevent (67,4 ; 49,4) · Gretta Finespindle, Forgefer (39,0 ; 32,4) · Darianna, Darnassus (64,2 ; 21,6) · Adele Fielder, Forêt d'Elwynn (46,4 ; 62,2) · Nadyia Maneweaver, Teldrassil (41,8 ; 49,4)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">jusqu'à 225</td><td>125 en compétence, niveau 20</td><td><strong>Simon Tanner</strong>, Hurlevent (67,2 ; 49,4) · Fimble Finespindle, Forgefer (39,4 ; 33,0) · Faldron, Darnassus (64,4 ; 21,4) · Aayndia Floralwind, Orneval (35,8 ; 52,0)</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">jusqu'à 300</td><td>200 en compétence, niveau 35</td><td><strong>Telonis</strong>, Darnassus (64,4 ; 21,4)</td></tr><tr><td><span class="pill">Recettes hautes</span></td><td class="num">—</td><td>—</td><td>Hahrana Ironhide, Féralas (74,4 ; 43,0), au Camp Mojache (village Horde : passe par l'HV pour ses patrons)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Débloque</th><th>Conditions</th><th>Maîtres (coordonnées)</th></tr></thead>
+      <tbody>
+        <tr><td><span class="pill">Compagnon</span></td><td class="num">jusqu'à 150</td><td>50 en compétence, niveau 10</td><td><strong>Waldor</strong>, Les Tarides (45,6 ; 35,6), à l'oasis près des Cavernes des Lamentations · Kamari, Orgrimmar (63,0 ; 45,0) · Dan Golthas, Fossoyeuse (70,4 ; 58,4) · Shelene Rhobart, Clairières de Tirisfal (65,4 ; 60,0) · Chaw Stronghide, Mulgore (45,0 ; 61,4) · Mak, Pitons-du-Tonnerre (42,2 ; 43,2)</td></tr>
+        <tr><td><span class="pill">Expert</span></td><td class="num">jusqu'à 225</td><td>125 en compétence, niveau 20</td><td><strong>Krulmoo Fullmoon</strong>, Les Tarides (44,8 ; 59,4), au Camp Taurajo · Karolek, Orgrimmar (62,8 ; 44,4) · Arthur Moore, Fossoyeuse (70,4 ; 57,4) · Brawn, Strangleronce (31,6 ; 28,8) · Narv Hidecrafter, Désolace (55,2 ; 56,2) · Tarn, Pitons-du-Tonnerre (42,4 ; 43,0)</td></tr>
+        <tr><td><span class="pill">Artisan</span></td><td class="num">jusqu'à 300</td><td>200 en compétence, niveau 35</td><td><strong>Una</strong>, Pitons-du-Tonnerre (41,4 ; 42,6)</td></tr>
+        <tr><td><span class="pill">Recettes hautes</span></td><td class="num">—</td><td>—</td><td>Hahrana Ironhide, Féralas (74,4 ; 43,0), au Camp Mojache</td></tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Le sel, les bobines de fil et les teintures s'achètent chez les vendeurs de fournitures du travail du cuir et de marchandises, présents dans les capitales et la plupart des grands camps.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Où dépecer chaque cuir</h2>
+  <p class="lede" style="margin-top:0">Ton dépeçage doit suivre : en dessous du niveau 20, il faut environ (niveau du mob − 10) × 10 ; au-dessus, environ niveau × 5.</p>
+  <div class="cols">
+    <div class="card"><h3>Cuir et peau légers</h3><span class="lv">Bêtes niv. 10 à 22</span><p><span class="fl" data-f="h"><span class="fac h">Horde</span> Les Tarides (zhévras, lézards-tonnerre, kodos au sud de la Croisée), Les Serres-Rocheuses.</span><span class="fl" data-f="a"><span class="fac a">Alliance</span> Marche de l'Ouest, Loch Modan, Sombrivage.</span></p></div>
+    <div class="card"><h3>Cuir et peau moyens</h3><span class="lv">Bêtes niv. 20 à 30</span><p><span class="fl" data-f="h"><span class="fac h">Horde</span> Les Serres-Rocheuses, Orneval, Mille pointes, Contreforts de Hautebrande.</span><span class="fl" data-f="a"><span class="fac a">Alliance</span> Les Paluns, Les Carmines, Bois de la Pénombre, Orneval.</span></p></div>
+    <div class="card"><h3>Cuir et peau lourds</h3><span class="lv">Bêtes niv. 30 à 40</span><p>Hautes-terres d'Arathi, Désolace, nord de Strangleronce.</p></div>
+    <div class="card"><h3>Cuir épais</h3><span class="lv">Bêtes niv. 35 à 45</span><p>Sud de Strangleronce, Féralas, Terres ingrates, Marécage d'Âprefange.</p></div>
+    <div class="card"><h3>Cuir robuste</h3><span class="lv">Bêtes niv. 48 et plus</span><p>Cratère d'Un'Goro, Gangrebois, Berceau-de-l'Hiver, Steppes ardentes.</p></div>
+    <div class="card"><h3>Écailles de scorpide épaisses</h3><span class="lv">Scorpides niv. 50 et plus</span><p>Silithus, Terres foudroyées.</p></div>
+  </div>
+  <p class="foot">Garde le <strong>Cuir immaculé</strong> que tu trouves en dépeçant : c'est un nouveau composant de Forever utilisé par beaucoup de nouvelles recettes.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Spécial Forever</h2>
+  <ul class="plain">
+    <li><strong>Tente du camp</strong> à 20 : donne de l'expérience reposée (jusqu'à 5 % d'un niveau). Elle coûte 5 cuirs légers.</li>
+    <li><strong>Râtelier de tannage</strong> à 140 : permet de fabriquer certains matériaux au camp.</li>
+    <li><strong>Machine à coudre</strong> à 300 : obligatoire pour certaines recettes.</li>
+    <li><strong>Points d'héritage</strong> à 150, 225 et 300.</li>
+    <li><strong>Spécialisations</strong> au rang Artisan : Écailles de dragon, Élémentaire ou Tribal. Tu n'en choisis qu'une.</li>
+    <li>Le métier compte 510 recettes, dont 277 nouvelles. Ce parcours suit les plus rentables pour monter, pas les plus utiles à porter.</li>
+  </ul>
+</section>
+
+<footer class="foot">
+  <p>Sources : <a href="https://kami-labs.fr/guide-travail-du-cuir-wow-forever/">Kami Labs, guide Travail du cuir WoW Forever</a> pour le parcours et les maîtres · <a href="https://seemeta.com/fr/wow-forever/professions/leatherworking">Seemeta</a> pour les seuils de couleur · <a href="https://expcarry.com/fr/guide-depecage-wow-forever">Expcarry</a> pour le Cuir immaculé.</p>
+  <p>Les étapes au-delà de 225 n'étaient pas jouables en bêta : elles sont marquées « à vérifier ». Si un vendeur de recette appartient à l'autre faction, passe par l'hôtel des ventes.</p>
+</footer>
+
+
+</main>
+<script>
+var CONFIG = {
+  key: "tdc",
+  src: {
+    "Cuir léger": "farm", "Peau légère": "farm", "Peau moyenne": "farm", "Cuir moyen": "farm",
+    "Peau lourde": "farm", "Cuir lourd": "farm", "Cuir épais": "farm", "Cuir robuste": "farm",
+    "Écaille de scorpide épaisse": "farm",
+    "Sel": "vendor", "Bobine de fil grossier": "vendor", "Bobine de fil raffiné": "vendor",
+    "Bobine de soie": "vendor", "Fil runique": "vendor", "Teinture grise": "vendor",
+    "Teinture verte": "vendor", "Teinture noire": "vendor", "Teinture orange": "vendor",
+    "Poussière d'âme": "ah", "Élixir de taille de géant": "ah", "Agate mousse": "ah",
+    "Perle iridescente": "ah", "Jade": "ah", "Citrine": "ah", "Étoffe de tisse-mage": "ah",
+    "Sauvageonne": "ah", "Poussière de rêve": "ah", "Élixir des géants": "ah",
+    "Écaille immaculée": "ah", "Gangrepeau": "ah", "Huile de pierre-écaille": "ah", "Étoffe runique": "ah",
+    "Ceinture élégante en cuir": "craft", "Peau légère traitée": "craft", "Peau moyenne traitée": "craft",
+    "Peau lourde traitée": "craft", "Peau épaisse traitée": "craft", "Peau robuste traitée": "craft",
+    "Renfort d'armure lourd": "craft", "Renfort d'armure robuste": "craft"
+  },
+  sub: {
+    "Peau légère traitée": { "Peau légère": 1, "Sel": 1 },
+    "Peau moyenne traitée": { "Peau moyenne": 1, "Sel": 1 },
+    "Peau lourde traitée": { "Peau lourde": 1, "Sel": 3 },
+    "Ceinture élégante en cuir": { "Cuir léger": 6, "Bobine de fil grossier": 2 }
+  },
+  steps: [
+    { f: 1, t: 36, r: "Renfort d'armure léger", n: 36, m: { "Cuir léger": 1 } },
+    { f: 36, t: 62, r: "Peau légère traitée", n: 32, m: { "Peau légère": 1, "Sel": 1 }, out: "Peau légère traitée",
+      note: "Reste jaune jusqu'à 60, puis vert jusqu'à 70. Garde-en quelques-unes : la Tunique élégante en cuir en demande (voir 100-128)." },
+    { f: 62, t: 85, r: "Gants en cuir estampé", n: 28, m: { "Cuir léger": 3, "Bobine de fil grossier": 2 },
+      note: "<strong>Apprends Compagnon avant 75</strong>, sinon tu restes bloqué : {comp}." },
+    { f: 85, t: 100, r: "Ceinture élégante en cuir", n: 20, m: { "Cuir léger": 6, "Bobine de fil grossier": 2 }, out: "Ceinture élégante en cuir",
+      note: "Garde 2 ceintures pour l'étape 128-130." },
+    { f: 100, t: 128, r: "Peau moyenne traitée", n: 42, m: { "Peau moyenne": 1, "Sel": 1 }, out: "Peau moyenne traitée",
+      note: "Garde-en 20 pour les deux étapes suivantes.",
+      alt: "D'après une autre base de données, cette recette passerait au gris vers 105. Si c'est le cas en jeu, bascule sur la Tunique élégante en cuir (jaune jusqu'à 105, verte jusqu'à 120) : 3 Peaux légères traitées, 6 Cuirs légers, 4 Bobines de fil grossier." },
+    { f: 128, t: 130, r: "Ceinture noire en cuir", n: 2, m: { "Ceinture élégante en cuir": 1, "Peau moyenne traitée": 1, "Bobine de fil raffiné": 2, "Teinture grise": 1 } },
+    { f: 130, t: 143, r: "Épaulières d'homme des collines", n: 18, m: { "Peau moyenne traitée": 1, "Cuir moyen": 4, "Bobine de fil raffiné": 1 },
+      note: "<strong>Apprends Expert dès 125</strong> (niveau 20) : {exp}." },
+    { f: 143, t: 150, r: "Renfort d'armure lourd énergique", n: 7, m: { "Renfort d'armure lourd": 1, "Poussière d'âme": 2, "Élixir de taille de géant": 2 },
+      note: "Nouvelle recette de Forever, 20 pa chez Nioma (Les Hinterlands). Il faut fabriquer les Renforts d'armure lourds avant." },
+    { f: 150, t: 170, r: "Peau lourde traitée", n: 39, m: { "Peau lourde": 1, "Sel": 3 }, out: "Peau lourde traitée",
+      note: "Les étapes suivantes en consomment plus que tu n'en fabriques ici : la liste de courses calcule le surplus à préparer." },
+    { f: 170, t: 175, r: "Jambières barbares", n: 6, m: { "Cuir lourd": 10, "Bobine de fil raffiné": 2, "Agate mousse": 1 },
+      note: "Recette à 6 pa 50 chez un vendeur (Hammon Karwn ou Lardan)." },
+    { f: 175, t: 180, r: "Épaulières barbares", n: 6, m: { "Cuir lourd": 8, "Peau lourde traitée": 1, "Bobine de fil raffiné": 2 } },
+    { f: 180, t: 185, r: "Brassards verts en cuir", n: 6, m: { "Peau lourde traitée": 2, "Cuir lourd": 6, "Teinture verte": 1, "Bobine de fil raffiné": 1 } },
+    { f: 185, t: 190, r: "Ceinture en cuir clouté de gemmes", n: 6, m: { "Peau lourde traitée": 4, "Perle iridescente": 2, "Jade": 2, "Citrine": 1, "Bobine de fil raffiné": 1 },
+      note: "Étape coûteuse en gemmes : regarde les prix à l'HV avant de te lancer." },
+    { f: 190, t: 200, r: "Gants de gardien", n: 16, m: { "Cuir lourd": 4, "Peau lourde traitée": 1, "Bobine de soie": 1 } },
+    { f: 200, t: 205, r: "Renfort d'armure épais", n: 6, m: { "Cuir épais": 5, "Bobine de soie": 1 },
+      note: "<strong>Apprends Artisan dès 200</strong> (niveau 35) : {art}." },
+    { f: 205, t: 217, r: "Bandeau de la nuit", n: 22, m: { "Cuir épais": 5, "Bobine de soie": 2 } },
+    { f: 217, t: 220, r: "Épaulières de la nuit", n: 7, m: { "Cuir épais": 8, "Étoffe de tisse-mage": 6, "Bobine de soie": 3 } },
+    { f: 220, t: 225, r: "Épaulières en cuir sauvage", n: 6, m: { "Cuir épais": 10, "Sauvageonne": 1, "Peau épaisse traitée": 1 },
+      note: "Recette de quête." },
+    { f: 225, t: 235, r: "Casque en cuir sauvage", n: 16, m: { "Cuir épais": 10, "Sauvageonne": 2, "Peau épaisse traitée": 1 }, p: 1, note: "Recette de quête." },
+    { f: 235, t: 245, r: "Renfort d'armure robuste énergique", n: 13, m: { "Renfort d'armure robuste": 1, "Poussière de rêve": 2, "Élixir des géants": 2, "Écaille immaculée": 1, "Gangrepeau": 1 }, p: 1,
+      note: "Nouvelle recette, 55 pa chez Nioma (Les Hinterlands)." },
+    { f: 245, t: 250, r: "Bottes en cuir sauvage", n: 6, m: { "Cuir épais": 14, "Sauvageonne": 4, "Peau épaisse traitée": 2 }, p: 1, note: "Recette de quête." },
+    { f: 250, t: 255, r: "Jambières en cuir sauvage", n: 6, m: { "Cuir épais": 16, "Sauvageonne": 2, "Peau épaisse traitée": 2 }, p: 1, note: "Recette de quête." },
+    { f: 255, t: 260, r: "Brassards en écailles de scorpide épaisses", n: 6, m: { "Cuir robuste": 4, "Écaille de scorpide épaisse": 4, "Fil runique": 1 }, p: 1,
+      note: "Recette chez Zannok Hidepiercer (Silithus)." },
+    { f: 260, t: 268, r: "Gantelets corrompus en cuir", n: 11, m: { "Cuir robuste": 8, "Teinture noire": 1, "Fil runique": 1 }, p: 1,
+      note: "Recette chez Leonard Porter (Maleterres de l'Ouest)." },
+    { f: 268, t: 276, r: "Armure ouvragée en cuir", n: 8, m: { "Cuir robuste": 16, "Fil runique": 1, "Teinture orange": 3, "Peau robuste traitée": 2, "Huile de pierre-écaille": 6 }, p: 1,
+      note: "Nouvelle recette, 10 po chez Pexmit (Mont Hyjal)." },
+    { f: 276, t: 290, r: "Gilet en écailles de scorpide souples", n: 14, m: { "Cuir robuste": 20, "Écaille de scorpide épaisse": 10, "Fil runique": 1 }, p: 1,
+      note: "Nouvelle recette, 10 po chez Pexmit (Mont Hyjal)." },
+    { f: 290, t: 295, r: "Bandeau runique en cuir", n: 6, m: { "Cuir robuste": 14, "Étoffe runique": 10, "Fil runique": 1 }, p: 1,
+      note: "Recette chez Jase Farlane (Maleterres de l'Est)." },
+    { f: 295, t: 300, r: "Casque en écailles de scorpide épaisses", n: 6, m: { "Cuir robuste": 8, "Écaille de scorpide épaisse": 12, "Peau robuste traitée": 1, "Fil runique": 1 }, p: 1,
+      note: "Recette chez Zannok Hidepiercer (Silithus)." }
+  ],
+  train: { comp: "Waldor, à l'oasis des Tarides (45,6 ; 35,6)", exp: "Krulmoo Fullmoon, Camp Taurajo (44,8 ; 59,4)", art: "Una, Pitons-du-Tonnerre (41,4 ; 42,6)" },
+  trainA: { comp: "Randal Worth à Hurlevent (67,4 ; 49,4), Gretta Finespindle à Forgefer (39,0 ; 32,4) ou Darianna à Darnassus (64,2 ; 21,6)", exp: "Simon Tanner à Hurlevent (67,2 ; 49,4), Fimble Finespindle à Forgefer (39,4 ; 33,0) ou Faldron à Darnassus (64,4 ; 21,4)", art: "Telonis à Darnassus (64,4 ; 21,4)" },
+  done300: "300 atteint. Pense à la Machine à coudre pour ton camp.",
+  groupTitles: { farm: "À dépecer", vendor: "Chez le vendeur", ah: "HV ou autres métiers", craft: "Intermédiaires à garder" }
+};
+</script>
+<script src="assets/metier.js"></script>
+<script src="assets/nav.js"></script>
+</body>
+</html>

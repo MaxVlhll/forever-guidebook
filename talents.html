@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Talents de leveling WoW Forever</title>
+<meta name="description" content="Talents de leveling 10 à 60 pour les 9 classes de WoW Forever (Alliance et Horde) : spé recommandée, ordre des talents, sorts clés et rotation.">
+<meta property="og:title" content="Talents de leveling WoW Forever">
+<meta property="og:description" content="Talents de leveling 10 à 60 pour les 9 classes de WoW Forever (Alliance et Horde) : spé recommandée, ordre des talents, sorts clés et rotation.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+body[data-cls="chasseur"] { --accent: #a9d271; }
+body[data-cls="demoniste"] { --accent: #a99af5; }
+body[data-cls="pretre"] { --accent: #ece7dc; }
+body[data-cls="chaman"] { --accent: #4d9bff; }
+body[data-cls="druide"] { --accent: #ff8a2a; }
+body[data-cls="guerrier"] { --accent: #c69b6d; }
+body[data-cls="mage"] { --accent: #3fc7eb; }
+body[data-cls="paladin"] { --accent: #f48cba; }
+body[data-cls="voleur"] { --accent: #fff468; }
+h1 { transition: color .2s; }
+</style>
+</head>
+<body data-cls="chasseur">
+<main class="wrap" id="main">
+  <header>
+    <span class="tag">WoW Forever · Talents de leveling</span>
+    <h1 id="title">Talents de leveling</h1>
+    <p class="lede">Les builds de montée 10 → 60 pour les neuf classes, Alliance et Horde, d'après les guides les plus récents (jusqu'au 7 novembre). Chaque talent a son icône du jeu pour le retrouver vite dans ton arbre. Ce qui a été joué en bêta est marqué <span class="badge t">testé</span>, le reste <span class="badge p">projeté</span>.</p>
+  </header>
+
+  <div class="alert" role="note">
+    <p><strong>À lire avant tout.</strong> La bêta s'arrêtait au niveau 30 : personne n'a encore joué les talents de 31 à 60, Blizzard a encore déplacé des talents le 2 novembre et annonce de nouveaux réglages de classes pour le 10 novembre. Si un talent n'est pas encore cliquable dans ton arbre, prends le suivant de la liste et reviens-y plus tard.</p>
+    <p>Les noms de talents sont ceux des guides anglais : ton client français les affiche traduits, mais ils sont au même endroit dans l'arbre. Avec le bonus d'héritage « Talented », tes points arrivent jusqu'à 5 niveaux plus tôt : suis alors la colonne des points plutôt que celle des niveaux.</p>
+  </div>
+
+  <nav class="tabs" role="tablist" aria-label="Classe">
+    <button role="tab" id="tab-chaman" aria-selected="false" data-cls="chaman">Chaman</button>
+    <button role="tab" id="tab-chasseur" aria-selected="true" data-cls="chasseur">Chasseur</button>
+    <button role="tab" id="tab-demoniste" aria-selected="false" data-cls="demoniste">Démoniste</button>
+    <button role="tab" id="tab-druide" aria-selected="false" data-cls="druide">Druide</button>
+    <button role="tab" id="tab-guerrier" aria-selected="false" data-cls="guerrier">Guerrier</button>
+    <button role="tab" id="tab-mage" aria-selected="false" data-cls="mage">Mage</button>
+    <button role="tab" id="tab-paladin" aria-selected="false" data-cls="paladin">Paladin</button>
+    <button role="tab" id="tab-pretre" aria-selected="false" data-cls="pretre">Prêtre</button>
+    <button role="tab" id="tab-voleur" aria-selected="false" data-cls="voleur">Voleur</button>
+  </nav>
+
+  <div id="content" class="talents" style="display:grid;gap:26px" role="tabpanel"></div>
+
+  <footer class="foot" id="foot"></footer>
+</main>
+
+<script>
+(function () {
+  // pts : nombre de points. Les phases "order" calculent niveau et numéro de point (1 point par niveau dès 10).
+  var CLASSES = {
+    chaman: {
+      name: "Chaman",
+      spec: "Amélioration de 10 à 40, puis double spé Restauration pour les groupes",
+      verdict: "Amélioration est la spé que Method, Icy Veins et Mobalytics recommandent : Frappe-tempête à 25, une arme à deux mains et Arme Furie-des-vents à 30, et tu tues vite sans boire. À 40, la double spécialisation te permet de garder Amélioration pour les quêtes et d'ajouter Restauration pour les donjons.",
+      timeline: [["10–24", "Tonnerre et loup fantôme", "#9cc8ff"], ["25–39", "Frappe-tempête", "#4d9bff"], ["40–60", "Double spé", "#1f5fb8"]],
+      phases: [
+        { title: "Niveaux 10 à 30", range: "21 points", st: "t", kind: "order", start: 1,
+          note: "Ordre de Mobalytics, confirmé par Icy Veins. Method place Improved Ghost Wolf juste après Stormstrike, mais il vaut mieux l'avoir avant le Loup fantôme du niveau 20.",
+          rows: [
+            ["Thundering Strikes", 5, "Amélioration", "+ critique, le cœur des dégâts en mêlée."],
+            ["Mental Dexterity", 3, "Amélioration", ""],
+            ["Improved Ghost Wolf", 2, "Amélioration", "Loup fantôme instantané dès 20 : +40 % de vitesse sans temps d'incantation."],
+            ["Shamanistic Focus", 1, "Amélioration", "Horions moins chers après un critique."],
+            ["Elemental Weapons", 3, "Amélioration", "Arme Croque-roc puis Furie-des-vents plus fortes."],
+            ["Ancestral Knowledge", 1, "Amélioration", "Icy Veins le place explicitement à 24."],
+            ["Stormstrike", 1, "Amélioration", "Niveau 25 : ton attaque principale."],
+            ["Flurry", 4, "Amélioration", "Vitesse d'attaque après un critique."],
+            ["Improved Stormstrike", 1, "Amélioration", "21e point au niveau 30."]
+          ] },
+        { title: "Niveaux 31 à 40", range: "10 points", st: "p", kind: "list",
+          note: "Variante Icy Veins et Mobalytics, pas encore jouée. Le 31e point d'Amélioration arrive au niveau 40, avec la double spécialisation.",
+          rows: [
+            ["Improved Stormstrike", "2/2", "Amélioration", ""],
+            ["Flurry", "5/5", "Amélioration", ""],
+            ["Spirit Weapons", "1/1", "Amélioration", "Moins de menace en groupe."],
+            ["Mental Quickness", "2/2", "Amélioration", ""],
+            ["Talent final d'Amélioration", "1/1", "Amélioration", "Niveau 40. Icy Veins saute volontairement Maelstrom Weapon : trop faible en dessous de 5 rangs."]
+          ] },
+        { title: "Niveaux 41 à 60", range: "20 points", st: "p", kind: "list",
+          note: "Aucun guide n'a encore publié ces 20 points. Pour les donjons, Restauration en deuxième spé : Salve de guérison et Remous arrivent à 40.",
+          rows: [
+            ["Reste de l'arbre Amélioration", "selon l'arbre", "Amélioration", "Vérifie en jeu ce que les correctifs ont laissé."],
+            ["Ancestral Knowledge", "max", "Amélioration", "Plus de mana, donc moins de pauses."]
+          ] }
+      ],
+      keylevels: [["4", "Horion de terre, quête du totem de terre"], ["10", "Horion de flammes, Totem incendiaire, quête du totem de feu"], ["12", "Nova de feu (nouveau)"], ["20", "Loup fantôme, Horion de givre, Appel des éléments, quête du totem d'eau"], ["25", "Frappe-tempête (talent)"], ["26", "Totem de magma, Totem fontaine de mana"], ["30", "Arme Furie-des-vents, Réincarnation, Rappel astral, quête du totem d'air"], ["32", "Chaîne d'éclairs, Totem Furie-des-vents"], ["40", "Mailles, Salve de guérison, Rage du Clairvoyant, double spécialisation"]],
+      rotation: [["1–9", "Arme Croque-roc et Bouclier de foudre. Éclair pour attirer, Horion de terre dès qu'il part, puis mêlée."], ["10–24", "Horion de flammes, Totem incendiaire, mêlée, Horion de givre ou de terre quand c'est prêt."], ["25–29", "Frappe-tempête à chaque recharge, puis dépense le bonus de 20 % avec un Éclair ou un Horion dans les 12 secondes. Totem de magma et Nova de feu sur les packs."], ["30+", "Arme à deux mains lente avec Furie-des-vents. Chaîne d'éclairs sur les packs dès 32."]],
+      tips: [
+        "Frappe-tempête coûte maintenant 8 % du mana de base (au lieu de 125 fixes jusqu'au 15 octobre).",
+        "Nova de feu (niveau 12) fait des dégâts autour de ton totem de feu, mais la menace est sur toi, pas sur le totem.",
+        "Les haches et masses à deux mains sont de base : pas besoin de talent pour en porter.",
+        "Croque-roc vole la menace du tank en groupe : passe sur Langue de feu en donjon.",
+        "Appel des éléments pose tous tes totems d'un coup, mais demande 3 secondes d'incantation. Rappel totémique les récupère et rend le mana.",
+        "Si un pull dérape : Horion de givre et Loup fantôme pour fuir, ou Totem de griffes de pierre pour une provocation, puis Vague de soins.",
+        "Races : orc, tauren ou troll côté Horde. Côté Alliance, le chaman n'est jouable qu'en nain, une nouveauté de Forever."
+      ],
+      sources: [["Method, guide leveling chaman (3 nov.)", "https://www.method.gg/wow-forever/wow-forever-shaman-leveling-guide-and-talents"], ["WoW Forever Tier List, synthèse chaman (31 oct.)", "https://wowforevertierlist.com/classes/shaman/leveling"], ["Warcraft Tavern, guide leveling chaman", "https://www.warcrafttavern.com/forever/guides/shaman-leveling/"]]
+    },
+
+    druide: {
+      name: "Druide",
+      spec: "Farouche (félin) de 10 à 60",
+      verdict: "Farouche est la spé la plus rapide et la plus jouée en montée. Ours de 10 à 20, félin ensuite, et forme d'ours de secours quand un deuxième mob arrive. Dans Forever, les attaques des formes dépendent des dégâts de ton arme : chaque nouvelle arme compte beaucoup.",
+      timeline: [["10–19", "Ours", "#ffc48a"], ["20–39", "Félin", "#ff8a2a"], ["40–60", "Berserk", "#a84f0a"]],
+      phases: [
+        { title: "Niveaux 10 à 30", range: "21 points", st: "t", kind: "order", start: 1,
+          note: "Ordre de WoW4EverNEWS (7 octobre). Wowforeverguides prend Feral Charge à 20 et Predatory Strikes à la place de Shredding Attacks : les deux marchent.",
+          rows: [
+            ["Ferocity", 5, "Farouche", "Mutilation, Griffe et Griffure moins chères."],
+            ["Feral Swiftness", 2, "Farouche", "Vitesse en félin, maintenant aussi en intérieur."],
+            ["Feral Instinct", 3, "Farouche", "Menace en ours, Balayage plus fort."],
+            ["Savage Fury", 2, "Farouche", ""],
+            ["Shredding Attacks", 3, "Farouche", "Lambeau moins cher."],
+            ["Shifting Power", 1, "Farouche", "Niveau 25 : 40 points d'énergie contre du mana, à la place du powershift."],
+            ["Primal Bite", 1, "Farouche", ""],
+            ["Sharpened Claws", 2, "Farouche", "+ critique en forme animale."],
+            ["Blood Frenzy", 1, "Farouche", ""],
+            ["Leader of the Pack", 1, "Farouche", "21e point : critique de mêlée et à distance pour tout le groupe."]
+          ] },
+        { title: "Niveaux 31 à 60", range: "30 points", st: "p", kind: "list",
+          note: "Projection de WoW Forever Tier List, pas encore jouée. Berserk est le talent final d'arbre au niveau 40.",
+          rows: [
+            ["Natural Instinct", "2/2", "Farouche", "Ancien nom : Predatory Instincts."],
+            ["Rend and Tear", "4/4", "Farouche", ""],
+            ["Berserk", "1/1", "Farouche", "Niveau 40, avec Forme d'ours redoutable."],
+            ["Heart of the Wild", "5/5", "Farouche", ""],
+            ["Predatory Strikes", "3/3", "Farouche", "Si tu as suivi l'ordre WoW4EverNEWS."],
+            ["Thick Hide", "3/3", "Farouche", ""],
+            ["Brutal Impact", "2/2", "Farouche", ""],
+            ["Improved Shifting Power, puis Natural Reaction", "le reste", "Farouche", ""]
+          ] }
+      ],
+      keylevels: [["10", "Forme d'ours (quête de classe), Emprise de la nature, Téléportation : Reflet-de-Lune"], ["12", "Enrager, Ressusciter (hors combat, nouveau)"], ["14", "Sonner, Guérison du poison"], ["16", "Balayage, Forme aquatique"], ["20", "Forme de félin (quête), Griffe, Déchirure, Rôder, Lambeau, Renaissance"], ["24", "Griffure"], ["26", "Célérité"], ["30", "Forme de voyage, Leader of the Pack"], ["32", "Morsure féroce, Ravager"], ["36", "Régénération frénétique, Bondir"], ["40", "Forme d'ours redoutable, Berserk, monture, double spécialisation"]],
+      rotation: [["1–9", "Épines, Colère pour attirer, Éclat lunaire, Colère jusqu'à la fin. Soins entre deux pulls."], ["10–19 (ours)", "Deux Colère et un Éclat lunaire en approche, puis forme d'ours : Enrager, Rugissement démoralisant, Mutiler. Balayage sur les packs."], ["20–31 (félin)", "Rôder, Griffure, Griffe (ou Lambeau de dos) jusqu'à 4-5 points, Déchirure. Morsure féroce n'arrive qu'à 32."], ["32+", "Ravager ou Bondir en ouverture, Lucioles, Griffure, Griffe jusqu'à 5 points, Morsure féroce. Shifting Power sous 50 d'énergie."]],
+      tips: [
+        "Plus de powershift : changer de forme coûte 55 % du mana de base. Shifting Power (talent à 25) le remplace.",
+        "En félin, l'attaque automatique frappe toutes les secondes, en ours toutes les 2,5 secondes, toujours avec les dégâts de ton arme.",
+        "Les points de combo ne disparaissent plus quand tu changes de cible.",
+        "Lucioles ne coûte rien en forme animale et génère de la menace en ours depuis le 15 octobre.",
+        "Les sorts de rang bas profitent beaucoup moins de la puissance des sorts depuis le 1er octobre : garde tes soins à jour.",
+        "Races : tauren côté Horde, elfe de la nuit côté Alliance, et Skyborne dans les deux factions. Method conseille Skyborne pour le félin, tauren pour l'ours et le JcJ."
+      ],
+      sources: [["Method, guide leveling druide (7 nov.)", "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents"], ["WoW Forever Tier List, synthèse druide (31 oct.)", "https://wowforevertierlist.com/classes/druid/leveling"], ["Warcraft Tavern, guide leveling druide", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]]
+    },
+
+    guerrier: {
+      name: "Guerrier",
+      spec: "Protection en solo, Armes à deux mains en groupe",
+      verdict: "Le guerrier reste la classe la plus exigeante à monter dans Forever (C dans la tier list). Method conseille Protection (une main et bouclier) pour monter seul, et Armes à deux mains si tu montes en groupe. Ton arme fait presque tous tes dégâts : change-la dès que possible.",
+      timeline: [["10–19", "Spécialisation bouclier", "#e8cfae"], ["20–39", "Avant-garde", "#c69b6d"], ["40–60", "Heurt de bouclier", "#7d5a33"]],
+      phases: [
+        { title: "Protection, niveaux 10 à 30 (solo)", range: "21 points", st: "t", kind: "list",
+          note: "Ordre de Method (4 novembre), complété par les étapes de Warcraft Tavern à 20 et 30. Method ne donne pas tous les rangs.",
+          rows: [
+            ["Shield Specialization", "max", "Protection", "La rage gagnée en bloquant change tout pour l'économie de rage."],
+            ["Improved Thunder Clap", "selon l'arbre", "Protection", ""],
+            ["Improved Bloodrage", "2", "Protection", ""],
+            ["Master of Defense", "max", "Protection", "Niveau 20."],
+            ["Improved Revenge", "selon l'arbre", "Protection", ""],
+            ["Vanguard", "1", "Protection", "Reste en Posture défensive : Charge y devient utilisable."],
+            ["Defiance", "max", "Protection", "Avant 30."],
+            ["Improved Sunder Armor, Bastion, Focused Rage", "le reste", "Protection", "Ou Concussion Blow à la place de Bastion."]
+          ] },
+        { title: "Armes, niveaux 10 à 30 (groupe)", range: "21 points", st: "t", kind: "list",
+          note: "Method commence par Improved Rend. La synthèse de la tier list cite Cruelty (Fureur) au niveau 10 : +5 % de critique est le meilleur premier point. Étapes Warcraft Tavern : 11/0/0 à 20, 21/0/0 à 30.",
+          rows: [
+            ["Improved Rend", "max", "Armes", "Pourfendre profite de la puissance d'attaque : très relevé dans Forever."],
+            ["Deep Wounds", "max", "Armes", ""],
+            ["Improved Heroic Strike, Improved Charge, Improved Overpower", "selon l'arbre", "Armes", "Improved Charge donne 6 de rage en plus à l'ouverture."],
+            ["Impale", "max", "Armes", ""],
+            ["Two-Handed Weapon Specialization", "max", "Armes", ""],
+            ["Sweeping Strikes", "1", "Armes", "Niveau 30."],
+            ["Weaponmaster", "selon l'arbre", "Armes", "Plus besoin de réinitialiser pour changer de type d'arme."]
+          ] },
+        { title: "Niveaux 31 à 60", range: "30 points", st: "p", kind: "list",
+          note: "Aucun guide n'a publié la suite. Frappe mortelle, Sanguinaire et Heurt de bouclier s'apprennent chez le maître à 40, avec la double spécialisation.",
+          rows: [
+            ["Talent final de ton arbre", "1/1", "Armes ou Protection", "Niveau 40."],
+            ["Unbridled Wrath, Enrage", "selon l'arbre", "Fureur", "Method les cite pour la rage en Armes."]
+          ] }
+      ],
+      keylevels: [["4", "Charge, Pourfendre"], ["6", "Coup de tonnerre"], ["10", "Quête de la Posture défensive (Fracasser armure, Provocation), Rage sanguinaire"], ["12", "Fulgurance"], ["14", "Maîtrise tactique (s'apprend maintenant), Vengeance"], ["16", "Maîtrise du blocage"], ["20", "Ivresse de la victoire (rend 10 % de vie), Heurtoir, Enchaînement, Représailles"], ["24", "Exécution"], ["28", "Mur protecteur (15 min)"], ["30", "Posture berserker (quête), Interception, Volée de coups"], ["36", "Tourbillon"], ["40", "Frappe mortelle, Sanguinaire, Heurt de bouclier, double spécialisation"]],
+      rotation: [["Ouverture", "Charge (avec Vanguard, même en Posture défensive), Pourfendre, Fracasser armure."], ["Pendant", "Fulgurance dès qu'elle s'allume, Coup de tonnerre sur 2 mobs ou plus, Vengeance en Protection, Frappe héroïque avec la rage en trop."], ["Fin", "Exécution sous 20 % dès 24. Garde de la rage quand le mob meurt, puis Ivresse de la victoire juste après."]],
+      tips: [
+        "La rage dépend de la vitesse et du type de ton arme, pas de ses dégâts : environ 5 par coup de dague, 14 à 17 avec une arme à deux mains.",
+        "Les critiques donnent maintenant +100 % de rage (rien du tout à l'ouverture de la bêta).",
+        "Les pierres à aiguiser de forge font une grosse différence à bas niveau : Minage + Forge est le duo conseillé par Method.",
+        "Fais les donjons pour leurs armes (Marteau-de-lourdeur, Hache d'Orgrimmar…). L'expérience des mobs de donjon a été relevée de 20 % le 8 octobre.",
+        "Sanguinaire ne soigne plus. Gore Drinker rend jusqu'à 1 % de vie sur tes 3 prochains coups après un effet d'enrager.",
+        "La quête de la Hache tourbillonnante (Montagnes d'Alterac) est très dure en solo : prévois un groupe."
+      ],
+      sources: [["Method, guide leveling guerrier (4 nov.)", "https://www.method.gg/wow-forever/wow-forever-warrior-leveling-guide-and-talents"], ["WoW Forever Tier List, synthèse guerrier (31 oct.)", "https://wowforevertierlist.com/classes/warrior/leveling"], ["Warcraft Tavern, guide leveling guerrier", "https://www.warcrafttavern.com/forever/guides/warrior-leveling/"]]
+    },
+
+    mage: {
+      name: "Mage",
+      spec: "Givre de 10 à 60",
+      verdict: "Givre est la spé recommandée par Method et Mobalytics : tu gèles, tu recules, et Lance de glace fait de gros dégâts sur les cibles gelées. Le vrai frein du mage dans Forever, c'est le mana : prépare toujours ta nourriture et ton eau avant de partir.",
+      timeline: [["10–19", "Éclair de givre", "#b8ecf8"], ["20–39", "Lance de glace", "#3fc7eb"], ["40–60", "Barrière de glace", "#1d7a96"]],
+      phases: [
+        { title: "Niveaux 10 à 30", range: "21 points", st: "t", kind: "lv",
+          note: "Priorités de Method et Mobalytics, regroupées par la tier list. Method n'a pas encore figé de build 60.",
+          rows: [
+            ["10–14", "Improved Frostbolt", "5/5", "Givre", "Éclair de givre plus rapide."],
+            ["15–19", "Frostbite", "selon l'arbre", "Givre", "Ou tout talent qui t'amène à 10 points en Givre."],
+            ["20", "Ice Lance", "1/1", "Givre", "+200 % de dégâts sur une cible gelée."],
+            ["21–24", "Elemental Precision", "max", "Givre", "Method le met devant dès 20. Improved Blizzard en option."],
+            ["25", "Ice Block", "1/1", "Givre", ""],
+            ["26–29", "Shatter", "max", "Givre", "Ou Ice Shards."],
+            ["30", "Fingers of Frost ou Cold Snap", "1/1", "Givre", ""]
+          ] },
+        { title: "Niveaux 31 à 60", range: "30 points", st: "p", kind: "list",
+          note: "Projection d'après le texte des talents, pas encore jouée.",
+          rows: [
+            ["Ice Barrier", "1/1", "Givre", "Talent final au niveau 40, avec Éclair de givrefeu et la double spécialisation."],
+            ["Reste de l'arbre Givre", "le reste", "Givre", "Aucun guide n'a publié la suite."],
+            ["Arcane Meditation", "si tu montes en Arcanes", "Arcanes", "Garde 50 % de ta régénération en incantant."]
+          ] }
+      ],
+      keylevels: [["4", "Éclair de givre, Invocation d'eau"], ["8", "Métamorphose, Projectiles des arcanes"], ["10", "Nova de givre"], ["14", "Explosion des arcanes"], ["16", "Choc de flammes"], ["20", "Lance de glace, Blizzard, Transfert, Évocation, téléportations Orgrimmar et Fossoyeuse"], ["24", "Contresort, Explosion de givre (nouveau)"], ["25", "Bloc de glace"], ["26", "Cône de froid"], ["28", "Lance de glace rang 2 : à prendre tout de suite"], ["30", "Armure de glace, téléportation Pitons-du-Tonnerre"], ["40", "Éclair de givrefeu, Barrière de glace, double spécialisation"]],
+      rotation: [["1 mob", "Éclair de givre à portée maximale, un deuxième pendant qu'il arrive. Au contact : Nova de givre, recule, Lance de glace sur la cible gelée. Finis à l'Éclair de givre ou à la baguette."], ["2 mobs ou plus", "Métamorphose sur le second, tue le premier, puis le mouton. Blizzard n'est plus fait pour les gros pulls : ses ralentissements ont été réduits exprès."], ["Mana", "Armure du mage, règle des cinq secondes, nourriture et eau invoquées avant chaque session. Lance toujours ton rang le plus haut."]],
+      tips: [
+        "Les baguettes ne profitent plus de la puissance des sorts, et il faut rester immobile une demi-seconde avant le premier tir.",
+        "Les sorts lancés à un rang bien inférieur à ton niveau profitent beaucoup moins de la puissance des sorts depuis le 1er octobre.",
+        "Dégâts de base plus bas que dans Classic au niveau 60, mais l'Esprit a été fortement relevé pour les lanceurs de sorts.",
+        "Couture + Enchantement est le duo conseillé par Method : pièces en tissu avec puissance des sorts et baguettes.",
+        "Les livres de la bibliothèque (10, 20 et 25 livres) donnent de bonnes récompenses."
+      ],
+      sources: [["Method, guide leveling mage (3 nov.)", "https://www.method.gg/wow-forever/wow-forever-mage-leveling-guide-and-talents"], ["WoW Forever Tier List, synthèse mage (31 oct.)", "https://wowforevertierlist.com/classes/mage/leveling"]]
+    },
+
+    paladin: {
+      name: "Paladin",
+      spec: "Vindicte de 10 à 40, puis Protection ou Sacré en deuxième spé",
+      verdict: "Côté Alliance, le paladin reste humain ou nain. Nouveauté de Forever : la Horde a aussi des paladins, uniquement chez les Réprouvés (départ dans les Clairières de Tirisfal). Vindicte est la spé de montée, surtout parce qu'elle économise le mana. Ta monture du niveau 40 est un sort gratuit, donc garde l'or pour la double spécialisation.",
+      timeline: [["10–19", "Bénédiction", "#fbc6e0"], ["20–39", "Sceau d'autorité", "#f48cba"], ["40–60", "Double spé", "#a8467a"]],
+      phases: [
+        { title: "Niveaux 10 à 30", range: "21 points", st: "t", kind: "list",
+          note: "Aucun guide n'a publié d'ordre point par point. Synthèse de Method (4 novembre) et Warcraft Tavern (0/0/26 avec le bonus d'héritage Talented).",
+          rows: [
+            ["Benediction", "max", "Vindicte", "Économie de mana, le premier objectif."],
+            ["Sanctified Judgement", "selon l'arbre", "Vindicte", ""],
+            ["Improved Judgement", "1", "Vindicte", ""],
+            ["Pursuit of Justice", "2/2", "Vindicte", "+15 % de vitesse, même à cheval : à avoir le plus tôt possible."],
+            ["Conviction", "selon l'arbre", "Vindicte", ""],
+            ["Seal of Command", "1/1", "Vindicte", "Niveau 20."],
+            ["Sacred Arbiter", "1/1", "Vindicte", "Niveau 25."],
+            ["Vengeance, Two-Handed Weapon Specialization", "le reste", "Vindicte", "Jusqu'à +6 % de dégâts à deux mains."],
+            ["Repentance", "1/1", "Vindicte", "Niveau 30 : neutralise un humanoïde 6 secondes quand un pull dérape."]
+          ] },
+        { title: "Niveaux 31 à 60", range: "30 points", st: "p", kind: "list",
+          note: "Théorie de ForeverWisp, pas encore jouée : 20/0/31.",
+          rows: [
+            ["Twist of Light", "1/1", "Vindicte", "31e point au niveau 40 : change de sceau à chaque coup. Ne cherche pas à « twister » avant."],
+            ["Reste de Vindicte", "jusqu'à 31", "Vindicte", ""],
+            ["Divine Strength, Improved Seals, Holy Conduit", "20 points", "Sacré", "Les 20 derniers points."]
+          ] }
+      ],
+      keylevels: [["1", "Sceau de piété, Aura de dévotion"], ["4", "Jugement, Bénédiction de puissance"], ["6", "Frappe sacrée (nouveau, 8 rangs), Protection divine"], ["8", "Marteau de la justice, Purification"], ["10", "Imposition des mains (vide tout ton mana), Bénédiction de protection"], ["12", "Rédemption (quête de classe)"], ["20", "Consécration et Bénédiction des rois de base, Exorcisme, Éclair lumineux"], ["30", "Intervention divine, Sceau de lumière"], ["32–34", "Bouclier divin (les guides hésitent)"], ["40", "Destrier (sort), Marteau du vertueux, double spécialisation"], ["44", "Marteau de courroux"]],
+      rotation: [["1–19", "Sceau de piété, Jugement en approche, Frappe sacrée à chaque recharge, attaque automatique, Jugement dès qu'il revient. Lumière sacrée entre les pulls."], ["20+", "Sceau d'autorité avant le pull (Sceau de piété avec une arme à une main). Consécration sous 2 ou 3 mobs : elle frappe fort sur les quatre premiers."], ["Danger", "Repentir (30), Marteau de la justice, Bouclier divin. Imposition des mains en dernier recours."]],
+      tips: [
+        "Le Jugement ne consomme plus ton sceau.",
+        "Sceau de piété profite de la puissance des sorts (moitié moins qu'au début, après un correctif le 15 octobre).",
+        "Champion of the Light donne 10/20/30 % de ton Intelligence en dégâts des sorts : ne cours pas après l'Intelligence pour lui.",
+        "Frappe sacrée a 8 rangs et passe de 25 % à 50 % des dégâts de ton arme : retourne voir ton maître.",
+        "<span class=\"fl\" data-f=\"h\"><span class=\"fac h\">Horde</span> Maîtres paladins : Aramis Hammerhand (Deathknell), Shari Stilwell (Brill), Hilda the Breaker (Bastion de Bandarion).</span><span class=\"fl\" data-f=\"a\"><span class=\"fac a\">Alliance</span> Maîtres paladins, d'après Classic : Frère Sammuel (abbaye de Comté-du-Nord), Frère Wilhelm (Comté-de-l'Or), Lord Grayson Shadowbreaker (cathédrale de Hurlevent), Brandur Ironhammer (Forgefer).</span>",
+        "Method conseille la Forge en montée pour ses pièces de mailles avec puissance des sorts."
+      ],
+      sources: [["Method, guide leveling paladin (4 nov.)", "https://www.method.gg/wow-forever/wow-forever-paladin-leveling-guide-and-talents"], ["WoW Forever Tier List, synthèse paladin (30 oct.)", "https://wowforevertierlist.com/classes/paladin/leveling"], ["Warcraft Tavern, guide leveling paladin", "https://www.warcrafttavern.com/forever/guides/paladin-leveling/"], ["Warcraft Tavern, combinaisons race/classe", "https://www.warcrafttavern.com/forever/guides/race-class-combos/"]]
+    },
+
+    voleur: {
+      name: "Voleur",
+      spec: "Combat de 10 à 60 (Assassinat avec des dagues)",
+      verdict: "Combat est la spé de montée en solo pour Method comme pour la tier list (A en solo). Assassinat marche aussi si tu trouves de bonnes dagues. Les guides divergent pour le groupe : Method conseille Finesse, la tier list la déconseille.",
+      timeline: [["10–19", "Attaque pernicieuse", "#fff9b8"], ["20–39", "Poisons et Déluge de lames", "#fff468"], ["40–60", "Poussée d'adrénaline", "#a39a1a"]],
+      phases: [
+        { title: "Combat, niveaux 10 à 30", range: "21 points", st: "t", kind: "order", start: 1,
+          note: "Ordre de Method repris par la tier list. À 30, Method déplace les 2 points de Remorseless Attacks vers Dual Wield Specialization et Blade Flurry.",
+          rows: [
+            ["Remorseless Attacks", 2, "Assassinat", ""],
+            ["Improved Sinister Strike", 2, "Combat", "Attaque pernicieuse moins chère."],
+            ["Improved Eviscerate", 3, "Assassinat", ""],
+            ["Puncturing Wounds", 3, "Combat", "Sans dagues : Endurance 2/2 et Lightning Reflexes à la place."],
+            ["Deflection", 3, "Combat", ""],
+            ["Riposte", 1, "Combat", "À utiliser dès qu'elle est prête."],
+            ["Precision", 3, "Combat", "Le toucher s'applique aussi aux poisons."],
+            ["Flawless Execution", 1, "Combat", ""],
+            ["Dual Wield Specialization", 3, "Combat", ""]
+          ] },
+        { title: "Assassinat, niveaux 10 à 30 (dagues)", range: "21 points", st: "t", kind: "order", start: 1,
+          note: "Variante de Method pour jouer aux dagues avec Attaque sournoise puis Mutilation.",
+          rows: [
+            ["Remorseless Attacks", 2, "Assassinat", ""],
+            ["Improved Sinister Strike", 2, "Combat", ""],
+            ["Malice", 3, "Assassinat", "Le critique s'applique aussi aux poisons."],
+            ["Improved Slice and Dice", 3, "Assassinat", ""],
+            ["Ruthlessness", 2, "Assassinat", ""],
+            ["Relentless Strikes", 1, "Assassinat", ""],
+            ["Malice", 2, "Assassinat", ""],
+            ["Lethality", 2, "Assassinat", ""],
+            ["Cold Blood", 1, "Assassinat", ""],
+            ["Lethality", 3, "Assassinat", ""]
+          ] },
+        { title: "Niveaux 31 à 60", range: "30 points", st: "p", kind: "list",
+          note: "Piste de Wowforeverguides, pas encore jouée.",
+          rows: [
+            ["Dual Wield Specialization", "5/5", "Combat", ""],
+            ["Blade Flurry", "1/1", "Combat", "Vers 36."],
+            ["Hack and Slash", "max", "Combat", "Marche avec tous les types d'arme, haches à une main comprises (nouvelles dans Forever)."],
+            ["Adrenaline Rush", "1/1", "Combat", "Niveau 40, avec la double spécialisation."],
+            ["Reste", "20 points", "Combat ou Assassinat", "Cold Blood est un bon détour en Assassinat."]
+          ] }
+      ],
+      keylevels: [["4", "Attaque sournoise, Vol à la tire"], ["6", "Suriner"], ["8", "Évasion"], ["10", "Ambidextrie et Débiter (à prendre tout de suite), Assommer, Sprint"], ["12", "Coup de pied"], ["14", "Exposer l'armure, Garrot"], ["16", "Feinte (menace réduite doublée)"], ["18", "Embuscade"], ["20", "Rupture, poisons, Camouflage rang 2"], ["22", "Disparition, Distraction"], ["26", "Coup bas"], ["30", "Aiguillon perfide, Poison mortel"], ["34", "Cécité"], ["40", "Chute amortie, double spécialisation"]],
+      rotation: [["Ouverture", "Depuis le Camouflage : Embuscade, Coup bas ou Garrot si le mob vit longtemps."], ["Pendant", "Débiter en premier à chaque fois, puis Attaque pernicieuse (ou Mutilation) pour les points de combo."], ["Fin", "Éviscération sur un mob presque mort, Rupture sinon. Si ça dérape : Évasion, Suriner et recule, Sprint, puis Disparition en dernier recours."]],
+      tips: [
+        "L'énergie se régénère en continu, plus par paquets de 20 toutes les 2 secondes.",
+        "Poisons : moins de dégâts par application que dans Classic, mais plus de charges (60 au lieu de 40). Ils se cumulent avec les pierres à aiguiser.",
+        "Assommer ne casse plus ton propre Camouflage.",
+        "Un Exposer l'armure raté ne consomme plus tes points de combo.",
+        "Method conseille Dépeçage + Minage au départ, puis Forge pour les armes et les pierres, et enfin Travail du cuir à garder jusqu'au bout.",
+        "Crochetage reste la compétence de classe du voleur."
+      ],
+      sources: [["Method, guide leveling voleur (7 nov.)", "https://www.method.gg/wow-forever/wow-forever-rogue-leveling-guide-and-talents"], ["WoW Forever Tier List, synthèse voleur (31 oct.)", "https://wowforevertierlist.com/classes/rogue/leveling"]]
+    },
+
+    chasseur: {
+      name: "Chasseur",
+      spec: "Maîtrise des bêtes (Beast Mastery) de 10 à 60",
+      verdict: "Le chasseur est la classe la plus rapide à monter dans Forever, et Maîtrise des bêtes est la spé que tous les guides recommandent : ton familier tanke, tu tires. Pas besoin de réinitialiser en route.",
+      timeline: [["10–30", "Familier et aspects", "#cfe6a8"], ["31–40", "Vers Bestial Wrath", "#a9d271"], ["41–60", "Second arbre", "#6f9a3d"]],
+      phases: [
+        { title: "Niveaux 10 à 30", range: "21 points", st: "t", kind: "list",
+          note: "Les guides donnent l'ordre de priorité mais pas tous le même nombre de rangs. Prends dans cet ordre, en remplissant chaque talent avant de passer au suivant.",
+          rows: [
+            ["Deadly Aspects", "5/5", "Bêtes", "Nouveau talent : renforce tes aspects, donc tes dégâts."],
+            ["Focused Fire", "2/2", "Bêtes", "Nouveau talent qui remplace Improved Eyes of the Beast : plus de dégâts."],
+            ["Unleashed Fury", "5/5", "Bêtes", "+ dégâts de ton familier."],
+            ["Improved Revive Pet", "2/2", "Bêtes", "Method garde les 2 points : moins de temps perdu après une mort du familier."],
+            ["Bestial Swiftness", "1/1", "Bêtes", "Ton familier court plus vite dehors."],
+            ["Summon Hawk", "1/1", "Bêtes", "Nouveau : invoque un faucon en plus de ton familier. Method le place à 25, mais les données de lancement l'annoncent plus tard (niveau 36) : prends-le dès qu'il est cliquable."],
+            ["Ferocity", "le reste", "Bêtes", "Critique du familier : mets-y les points restants."],
+            ["Intimidation", "1/1", "Bêtes", "Vers 30 : étourdissement de secours quand un pull tourne mal."]
+          ] },
+        { title: "Niveaux 31 à 40", range: "10 points", st: "p", kind: "list",
+          note: "Objectif : Bestial Wrath avec ton 31e point, au niveau 40. Pathfinding est passé en rangée 3 le 2 novembre, il arrive donc ici.",
+          rows: [
+            ["Frenzy", "5/5", "Bêtes", "Vitesse d'attaque du familier après un critique."],
+            ["Spirit Bond", "2/2", "Bêtes", "Régénération de vie pour toi et ton familier : moins de pauses."],
+            ["Pathfinding", "2/2", "Bêtes", "+ vitesse avec Aspect du guépard."],
+            ["Bestial Discipline", "1/2", "Bêtes", "Plus de focalisation pour le familier. À prendre plus tôt si tu manques de mana."],
+            ["Bestial Wrath", "1/1", "Bêtes", "Niveau 40 : gros temps de recharge de dégâts du familier."]
+          ] },
+        { title: "Niveaux 41 à 60", range: "20 points", st: "p", kind: "list",
+          note: "Deux pistes circulent, aucune testée : 31 Bêtes / 20 Précision (Mobalytics), ou tout en Bêtes avec une petite touche de Précision. Les deux commencent pareil.",
+          rows: [
+            ["Bestial Discipline", "2/2", "Bêtes", "Finis-le."],
+            ["Improved Mend Pet", "2/2", "Bêtes", "Ton soin de familier dissipe aussi."],
+            ["Lethal Attacks", "5/5", "Précision", "Critique de tes tirs."],
+            ["Efficiency", "5/5", "Précision", "Tes tirs coûtent moins de mana : moins de pauses."],
+            ["Reste de Précision", "~8", "Précision", "Selon l'arbre final : vérifie en jeu ce que le 2 novembre a laissé."]
+          ] }
+      ],
+      keylevels: [["10", "Premier familier, Aspect du faucon, premier talent"], ["12", "Guérison du familier"], ["18", "Flèches multiples"], ["20", "Visée, Aspect du guépard, Piège givrant"], ["26", "Tir rapide"], ["28", "Piège de givre"], ["30", "Feindre la mort, Intimidation"], ["40", "Bestial Wrath, monture, double spécialisation"]],
+      rotation: [["10–24", "Envoie le familier, laisse-le frapper un peu, puis Morsure de serpent et Tir des arcanes. Flèches multiples sur les packs dès 18, Visée en mono-cible dès 20 (ils partagent leur recharge)."], ["25+", "Ajoute le faucon. Tir rapide sur les gros mobs, Piège givrant si un pull dérape."], ["Tout le temps", "Ne coupe jamais le Tir automatique. Depuis le 15 octobre, il demande une demi-seconde à l'arrêt avant de partir."]],
+      tips: [
+        "Familier : le félin fait le plus de dégâts, le sanglier encaisse mieux et prend l'aggro vite avec Charge. Tu ne peux pas apprivoiser au-dessus de ton niveau.",
+        "Les dégâts du chasseur ont été fortement relevés au lancement : Visée +110 %, Tir des arcanes +30 %, Morsure de serpent +20 %, Aspect du faucon plus fort.",
+        "Tous les pièges partagent maintenant une recharge commune de 30 secondes.",
+        "N'utilise pas Lone Wolf en leveling : ton familier qui tanke vaut bien plus que ses 20 % de dégâts."
+      ],
+      sources: [["Method, guide leveling chasseur (21 oct.)", "https://www.method.gg/wow-forever/wow-forever-hunter-leveling-guide-and-talents"], ["WoW Forever Tier List, synthèse chasseur (31 oct.)", "https://wowforevertierlist.com/classes/hunter/leveling"], ["WoW Forever Guides, ordre historique chasseur (3 nov.)", "https://wowforeverguides.com/leveling/hunter"], ["Kami Labs, notes de lancement du 2 novembre", "https://kami-labs.fr/en/wow-forever/patch-notes-2-novembre-notes-de-lancement/"]]
+    },
+
+    demoniste: {
+      name: "Démoniste",
+      spec: "Affliction de 10 à 45, puis une touche de Démonologie",
+      verdict: "Affliction reste la spé recommandée : tes sorts de dégâts sur la durée tuent pendant que tu te soignes avec Drain de vie. C'est le guide Method mis à jour le 4 novembre, le plus récent, qui sert de base ici.",
+      timeline: [["10–29", "Corruption instantanée", "#d6cdfb"], ["30–45", "Drain-tank", "#a99af5"], ["46–60", "Démonologie puis finitions", "#6c5bc4"]],
+      phases: [
+        { title: "Ordre complet", range: "51 points", st: "mix", kind: "order", start: 1,
+          note: "Ordre de Method (4 novembre). Method ne donne pas tous les rangs : ceux marqués * sont déduits pour que le total tombe juste à 51. Les points jusqu'au niveau 30 sont testés, la suite est projetée.",
+          rows: [
+            ["Suppression", 4, "Affliction", "Tes sorts touchent à coup sûr les mobs de ton niveau."],
+            ["Improved Corruption", 5, "Affliction", "Corruption devient instantanée : le cœur du build."],
+            ["Improved Life Tap", 1, "Affliction", "Plus de mana par Connexion."],
+            ["Pandemic", 3, "Affliction", "* Critiques de tes sorts sur la durée plus forts. Rang déduit."],
+            ["Fel Concentration", 3, "Affliction", "* Tes drains ne sont presque plus interrompus quand on te frappe."],
+            ["Nightfall", 2, "Affliction", "Corruption et Drain de vie peuvent rendre Trait de l'ombre instantané."],
+            ["Malevolence", 2, "Affliction", "Ouvre la rangée suivante."],
+            ["Soul Siphon", 3, "Affliction", "* Drain de vie plus fort."],
+            ["Malevolence", 2, "Affliction", "Pour atteindre Shadow Mastery."],
+            ["Shadow Mastery", 5, "Affliction", "+ dégâts d'ombre."],
+            ["Malevolence", 1, "Affliction", "Dernier point."],
+            ["Siphon Life", 1, "Affliction", "Un sort sur la durée qui te soigne. Kargoz le prend dès 30."],
+            ["Improved Life Tap", 1, "Affliction", "Finis-le."],
+            ["Improved Drains", 3, "Affliction", "+20 % sur Drain de vie et Drain d'âme."],
+            ["Unholy Power", 5, "Démonologie", "À 46 : renforce la succube."],
+            ["Demonic Energies", 2, "Démonologie", ""],
+            ["Fel Vitality", 3, "Démonologie", ""],
+            ["Improved Bane of Agony", 2, "Affliction", "De retour en Affliction pour finir."],
+            ["Grim Reach", 2, "Affliction", "+ portée de tes sorts d'Affliction (remplace Malediction depuis le 15 octobre)."],
+            ["Suppression", 1, "Affliction", "5/5 au niveau 60."]
+          ] }
+      ],
+      keylevels: [["10", "Marcheur du Vide (quête de classe), Drain d'âme, Pierre de soins"], ["14", "Drain de vie"], ["20", "Succube, Armure démoniaque, Pluie de feu, Rituel d'invocation"], ["30", "Chasseur corrompu, Flammes infernales"], ["40", "Monture, double spécialisation"]],
+      rotation: [["10–19", "Fléau d'agonie puis Corruption, baguette quand tu ne bouges pas, Drain de vie si tu es bas, Drain d'âme pour finir et récupérer un fragment."], ["20–30", "Pareil, avec la succube pour tuer plus vite les mobs faciles."], ["30+ (drain-tank)", "Corruption et Fléau d'agonie, laisse le mob te taper, Drain de vie pour te soigner, Connexion pour le mana, puis Drain de vie pour récupérer la vie perdue."]],
+      tips: [
+        "Les démons ont perdu environ 73 % de la vie qu'ils tiraient de ton Endurance : le Marcheur du Vide tanke moins bien qu'en bêta, ce qui pousse encore plus vers le drain-tank.",
+        "Improved Drains ne renforce plus Wrack, mais Wrack lui-même a vu son coefficient doubler au lancement.",
+        "Drain d'âme donne beaucoup moins de fragments si la cible survit : finis bien les mobs avec.",
+        "Garde une baguette à jour pour finir les mobs sans dépenser de mana. Elle demande une demi-seconde à l'arrêt avant de tirer."
+      ],
+      sources: [["Method, guide leveling démoniste (4 nov.)", "https://www.method.gg/wow-forever/wow-forever-warlock-leveling-guide-and-talents"], ["Kargoz, guide Affliction 1-60 (14 oct.)", "https://mobalytics.gg/wow-forever/profile/kargoz/classes/1-60-affliction-warlock-leveling-guide-wands-talents-rotation-macros-tips"], ["WoW Forever Tier List, synthèse démoniste (31 oct.)", "https://wowforevertierlist.com/classes/warlock/leveling"], ["Kami Labs, notes de lancement du 2 novembre", "https://kami-labs.fr/en/wow-forever/patch-notes-2-novembre-notes-de-lancement/"]]
+    },
+
+    pretre: {
+      name: "Prêtre",
+      spec: "Discipline baguette de 10 à 39, puis Ombre à 40",
+      verdict: "Oui, le prêtre se monte toujours à la baguette jusqu'à 40, mais pas pour la raison qui a fait le buzz en bêta. La baguette ne profite plus de ta puissance des sorts : sa force vient de Wand Specialization, de Spirit Tap et de Méditation, qui te font enchaîner les mobs sans boire. À 40, tu passes Ombre pour Forme d'ombre.",
+      timeline: [["10–29", "Baguette", "#f4f1ea"], ["30–39", "Pénitence", "#cfc8b8"], ["40–60", "Ombre", "#8d8578"]],
+      phases: [
+        { title: "Niveaux 10 à 29 : build baguette", range: "20 points", st: "t", kind: "order", start: 1,
+          note: "15 Discipline / 5 Ombre. Improved Power Word: Shield est passé en rangée 3 le 15 octobre, d'où un seul point à 29.",
+          rows: [
+            ["Wand Specialization", 2, "Discipline", "+25 % de dégâts de baguette en 2 points seulement."],
+            ["Spirit Tap", 5, "Ombre", "Chaque mob tué te rend du mana : c'est ce qui supprime les pauses."],
+            ["Twin Disciplines", 3, "Discipline", "Tes sorts instantanés (Mot de l'ombre : Douleur, Bouclier) plus forts."],
+            ["Martyrdom", 2, "Discipline", "Tu n'es plus interrompu quand on te frappe après un critique."],
+            ["Mental Strength", 3, "Discipline", "Plus de mana."],
+            ["Inner Focus", 1, "Discipline", "Un sort gratuit et plus critique toutes les 3 minutes."],
+            ["Meditation", 3, "Discipline", "Tu régénères du mana même en lançant des sorts."],
+            ["Improved Power Word: Shield", 1, "Discipline", "Bouclier plus solide."]
+          ] },
+        { title: "Niveau 30 : réinitialisation Pénitence", range: "21 points", st: "t", kind: "set",
+          note: "Va voir ton maître et place directement ces 21 points en Discipline. Pénitence devient ton sort de dégâts instantané.",
+          rows: [
+            ["Power in Light", 5, "Discipline", "Châtiment et Pénitence plus forts sur une cible déjà sous Douleur."],
+            ["Holy Precision", 2, "Discipline", ""],
+            ["Mental Strength", 3, "Discipline", ""],
+            ["Improved Power Word: Shield", 3, "Discipline", ""],
+            ["Inner Focus", 1, "Discipline", ""],
+            ["Meditation", 3, "Discipline", ""],
+            ["Improved Inner Fire", 3, "Discipline", ""],
+            ["Penance", 1, "Discipline", "Le 21e point."]
+          ] },
+        { title: "Niveaux 31 à 39", range: "9 points", st: "p", kind: "order", start: 22,
+          note: "Total à 39 : 21 Discipline / 4 Sacré / 5 Ombre.",
+          rows: [
+            ["Spirit Tap", 5, "Ombre", "Tu le récupères."],
+            ["Holy Specialization", 4, "Sacré", ""]
+          ] },
+        { title: "Niveau 40 : réinitialisation Ombre", range: "31 points", st: "p", kind: "set",
+          note: "Ordre de Method. Forme d'ombre est le 31e point : -50 % de coût de mana sur tes sorts d'ombre, +10 % de dégâts d'ombre, critiques à x2 et -15 % de dégâts physiques subis.",
+          rows: [
+            ["Spirit Tap", 5, "Ombre", ""], ["Improved Shadow Word: Pain", 2, "Ombre", ""], ["Shadow Focus", 5, "Ombre", "Toucher des sorts d'ombre."],
+            ["Mind Flay", 1, "Ombre", ""], ["Improved Mind Flay", 2, "Ombre", ""], ["Improved Mind Blast", 4, "Ombre", ""],
+            ["Shadow Weaving", 3, "Ombre", ""], ["Vampiric Embrace", 1, "Ombre", ""], ["Devouring Contagion", 1, "Ombre", ""],
+            ["Silence", 1, "Ombre", ""], ["Darkness", 5, "Ombre", ""], ["Shadowform", 1, "Ombre", "Le 31e point."]
+          ] },
+        { title: "Niveaux 41 à 60", range: "20 points", st: "p", kind: "list",
+          note: "Personne ne les a encore placés de façon testée. La piste la plus citée : remonter en Discipline pour retrouver baguette et mana.",
+          rows: [
+            ["Wand Specialization", "2/2", "Discipline", ""],
+            ["Twin Disciplines", "3/3", "Discipline", ""],
+            ["Mental Strength", "3/3", "Discipline", ""],
+            ["Meditation", "3/3", "Discipline", ""],
+            ["Inner Focus", "1/1", "Discipline", ""],
+            ["Improved Power Word: Shield", "3/3", "Discipline", ""],
+            ["Mental Agility", "le reste", "Discipline", "Sorts instantanés moins chers."]
+          ] }
+      ],
+      keylevels: [["4", "Mot de l'ombre : Douleur"], ["6", "Mot de pouvoir : Bouclier"], ["~5 / 13", "Baguette magique inférieure puis supérieure (enchanteur)"], ["14", "Cri psychique"], ["20", "Peste dévorante et Gardien de peur, désormais pour tous les prêtres"], ["30", "Pénitence (talent)"], ["32", "Mot de l'ombre : Mort"], ["40", "Forme d'ombre, monture, double spécialisation"]],
+      rotation: [["10–29", "Bouclier, Attaque mentale, Mot de l'ombre : Douleur, puis baguette jusqu'à la mort du mob."], ["30–39", "Bouclier, Mot de l'ombre : Douleur, Pénitence, puis baguette. Sur les mobs qui meurent vite, Douleur suffit à déclencher Power in Light."], ["40+", "Mot de l'ombre : Mort et Attaque mentale dès qu'ils sont prêts, Fouet mental en remplissage jusqu'au bout du canal."]],
+      tips: [
+        "La baguette ne gagne plus de dégâts grâce à ta puissance des sorts depuis le 24 septembre : l'astuce « baguette + puissance des sorts » vue en bêta ne marche plus. Prends tes baguettes pour leurs dégâts affichés.",
+        "Depuis le 15 octobre, la baguette demande une demi-seconde à l'arrêt avant le premier tir.",
+        "Mot de l'ombre : Mort te coûte maintenant 30 % de ta vie si la cible survit : garde-le pour achever.",
+        "Le prêtre tue moins vite qu'un chasseur ou un démoniste, mais meurt rarement et s'arrête peu pour manger. Si tu ne veux pas payer de réinitialisations, tu peux aussi monter directement en Ombre."
+      ],
+      sources: [["WoW Forever Tier List, synthèse prêtre d'après Method (31 oct.)", "https://wowforevertierlist.com/classes/priest/leveling"], ["Method, guide leveling prêtre (6 nov.)", "https://www.method.gg/wow-forever/wow-forever-priest-leveling-guide-and-talents"], ["ConquestCapped, baguettes et puissance des sorts", "https://conquestcapped.com/guides/wow-forever/wow-forever-priest-leveling/"], ["Kami Labs, l'article de bêta sur la baguette (23 sept., dépassé)", "https://kami-labs.fr/en/wow-forever/pretre-wow-forever-leveling-baguette/"], ["Kami Labs, notes de lancement du 2 novembre", "https://kami-labs.fr/en/wow-forever/patch-notes-2-novembre-notes-de-lancement/"]]
+    }
+  };
+
+  // Icône en jeu de chaque talent (sources : Wowhead Forever et wowsims), images dans assets/icons.
+  var ICONS = {"chaman":{"Thundering Strikes":"ability_thunderbolt","Mental Dexterity":"spell_nature_bloodlust","Improved Ghost Wolf":"spell_nature_spiritwolf","Shamanistic Focus":"spell_nature_elementalabsorption","Elemental Weapons":"spell_fire_flametounge","Ancestral Knowledge":"spell_shadow_grimward","Stormstrike":"ability_shaman_stormstrike","Flurry":"ability_ghoulfrenzy","Improved Stormstrike":"spell_shaman_improvedstormstrike","Spirit Weapons":"ability_parry","Mental Quickness":"spell_nature_mentalquickness"},"druide":{"Ferocity":"ability_hunter_pet_hyena","Feral Swiftness":"spell_nature_spiritwolf","Feral Instinct":"ability_ambush","Savage Fury":"ability_druid_ravage","Shredding Attacks":"spell_shadow_vampiricaura","Shifting Power":"spell_druid_displacement","Primal Bite":"ability_racial_cannibalize","Sharpened Claws":"inv_misc_monsterclaw_04","Blood Frenzy":"ability_ghoulfrenzy","Leader of the Pack":"spell_nature_unyeildingstamina","Natural Instinct":"ability_druid_predatoryinstincts","Rend and Tear":"ability_druid_primalagression","Berserk":"ability_druid_berserk","Heart of the Wild":"spell_holy_blessingofagility","Predatory Strikes":"ability_hunter_pet_cat","Thick Hide":"inv_misc_pelt_bear_03","Brutal Impact":"ability_druid_bash","Improved Shifting Power":"ability_hunter_aspectmastery","Natural Reaction":"ability_bullrush"},"guerrier":{"Shield Specialization":"inv_shield_06","Improved Thunder Clap":"ability_thunderclap","Improved Bloodrage":"ability_racial_bloodrage","Master of Defense":"ability_warrior_shieldguard","Improved Revenge":"ability_warrior_revenge","Vanguard":"ability_warrior_shieldcharge","Defiance":"ability_warrior_innerrage","Improved Sunder Armor":"ability_warrior_sunder","Bastion":"inv_shield_04","Focused Rage":"ability_warrior_focusedrage","Improved Rend":"ability_gouge","Deep Wounds":"ability_backstab","Improved Heroic Strike":"ability_rogue_ambush","Improved Charge":"ability_warrior_charge","Improved Overpower":"inv_sword_05","Impale":"ability_searingarrow","Two-Handed Weapon Specialization":"inv_axe_09","Sweeping Strikes":"ability_rogue_slicedice","Weaponmaster":"garrison_weaponupgrade","Unbridled Wrath":"spell_nature_stoneclawtotem","Enrage":"spell_shadow_unholyfrenzy"},"mage":{"Improved Frostbolt":"spell_frost_frostbolt02","Frostbite":"spell_frost_frostarmor","Ice Lance":"spell_frost_frostblast","Elemental Precision":"spell_ice_magicdamage","Ice Block":"spell_frost_wizardmark","Shatter":"spell_frost_frostshock","Fingers of Frost":"ability_mage_wintersgrasp","Cold Snap":"spell_frost_wizardmark","Ice Barrier":"spell_ice_lament","Arcane Meditation":"spell_shadow_siphonmana"},"paladin":{"Benediction":"spell_frost_windwalkon","Sanctified Judgement":"ability_paladin_judgementblue","Improved Judgement":"spell_holy_righteousfury","Pursuit of Justice":"spell_holy_persuitofjustice","Conviction":"spell_holy_retributionaura","Seal of Command":"ability_warrior_innerrage","Sacred Arbiter":"inv_sword_08","Vengeance":"ability_racial_avatar","Two-Handed Weapon Specialization":"inv_hammer_04","Repentance":"spell_holy_prayerofhealing","Divine Strength":"ability_golemthunderclap","Improved Seals":"ability_thunderbolt","Holy Conduit":"spell_holy_devineaegis"},"voleur":{"Remorseless Attacks":"ability_fiegndead","Improved Sinister Strike":"spell_shadow_ritualofsacrifice","Improved Eviscerate":"ability_rogue_eviscerate","Puncturing Wounds":"ability_backstab","Deflection":"ability_parry","Riposte":"ability_warrior_challange","Precision":"ability_marksmanship","Flawless Execution":"inv_sword_35","Dual Wield Specialization":"ability_dualwield","Malice":"ability_racial_bloodrage","Improved Slice and Dice":"ability_rogue_slicedice","Ruthlessness":"ability_druid_disembowel","Relentless Strikes":"ability_warrior_decisivestrike","Lethality":"ability_criticalstrike","Cold Blood":"spell_ice_lament","Blade Flurry":"ability_warrior_punishingblow","Hack and Slash":"inv_sword_27","Adrenaline Rush":"spell_shadow_shadowworddominate"},"chasseur":{"Deadly Aspects":"spell_nature_ravenform","Focused Fire":"ability_hunter_silenthunter","Unleashed Fury":"ability_bullrush","Improved Revive Pet":"ability_hunter_beastsoothe","Bestial Swiftness":"ability_hunter_pet_boar","Summon Hawk":"ability_hunter_animalhandler","Ferocity":"inv_misc_monsterclaw_04","Intimidation":"ability_devour","Frenzy":"inv_misc_monsterclaw_03","Spirit Bond":"classic_ability_druid_demoralizingroar","Pathfinding":"ability_mount_jungletiger","Bestial Discipline":"spell_nature_abolishmagic","Bestial Wrath":"ability_druid_ferociousbite","Improved Mend Pet":"ability_hunter_mendpet","Lethal Attacks":"ability_searingarrow","Efficiency":"spell_frost_wizardmark"},"demoniste":{"Suppression":"spell_shadow_unsummonbuilding","Improved Corruption":"spell_shadow_abominationexplosion","Improved Life Tap":"spell_shadow_burningspirit","Pandemic":"spell_shadow_unstableaffliction_2","Fel Concentration":"spell_shadow_fingerofdeath","Nightfall":"spell_shadow_twilight","Malevolence":"spell_shadow_focusedpower","Soul Siphon":"spell_shadow_lifedrain02","Shadow Mastery":"spell_shadow_shadetruesight","Siphon Life":"spell_shadow_requiem","Improved Drains":"spell_shadow_haunting","Unholy Power":"spell_shadow_shadowworddominate","Demonic Energies":"spell_shadow_felmending","Fel Vitality":"spell_holy_magicalsentry","Improved Bane of Agony":"spell_shadow_curseofsargeras","Grim Reach":"spell_shadow_callofbone"},"pretre":{"Wand Specialization":"inv_wand_01","Spirit Tap":"spell_shadow_requiem","Twin Disciplines":"spell_holy_sealofvengeance","Martyrdom":"spell_nature_tranquility","Mental Strength":"spell_nature_enchantarmor","Inner Focus":"spell_frost_windwalkon","Meditation":"spell_nature_sleep","Improved Power Word: Shield":"spell_holy_powerwordshield","Power in Light":"spell_holy_searinglight","Holy Precision":"spell_holy_divineillumination","Improved Inner Fire":"spell_holy_innerfire","Penance":"spell_holy_penance","Holy Specialization":"spell_holy_sealofsalvation","Improved Shadow Word: Pain":"spell_shadow_shadowwordpain","Shadow Focus":"spell_shadow_burningspirit","Mind Flay":"spell_shadow_siphonmana","Improved Mind Flay":"spell_shadow_soulleech_2","Improved Mind Blast":"spell_shadow_unholyfrenzy","Shadow Weaving":"spell_shadow_blackplague","Vampiric Embrace":"spell_shadow_unsummonbuilding","Devouring Contagion":"spell_shadow_devouringplague","Silence":"spell_shadow_impphaseshift","Darkness":"spell_shadow_twilight","Shadowform":"spell_shadow_shadowform","Mental Agility":"ability_hibernation"}}, cur = "";
+  function tal(name) {
+    var imgs = name.split(/, puis |, | ou /).map(function (n) {
+      var ic = (ICONS[cur] || {})[n];
+      return ic ? '<img class="ticon" src="assets/icons/' + ic + '.jpg" alt="" width="28" height="28" loading="lazy">' : "";
+    }).join("");
+    return '<span class="tname">' + imgs + "<strong>" + esc(name) + "</strong></span>";
+  }
+  function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+  function badge(st) {
+    if (st === "t") return '<span class="badge t">testé</span>';
+    if (st === "p") return '<span class="badge p">projeté</span>';
+    return '<span class="badge t">testé jusqu\'à 30</span> <span class="badge p">projeté après</span>';
+  }
+
+  function phaseTable(ph) {
+    var head, body = "";
+    if (ph.kind === "order") {
+      head = "<tr><th>Niveau</th><th>Points</th><th>Talent</th><th>Rang</th><th>Arbre</th></tr>";
+      var p = ph.start, acc = {};
+      ph.rows.forEach(function (r) {
+        var n = r[1], a = p, b = p + n - 1;
+        acc[r[0]] = (acc[r[0]] || 0) + n;
+        var lv = (a + 9) + (n > 1 ? "–" + (b + 9) : "");
+        var pts = a + (n > 1 ? "–" + b : "");
+        body += '<tr><td class="num">' + lv + '</td><td class="num" style="color:var(--muted);font-weight:400">' + pts + "</td><td>" + tal(r[0]) +
+          (r[3] ? '<span class="why">' + r[3] + "</span>" : "") + '</td><td class="num">' + acc[r[0]] + "</td>" + '<td class="tree">' + r[2] + "</td></tr>";
+        p = b + 1;
+      });
+    } else if (ph.kind === "lv") {
+      head = "<tr><th>Niveau</th><th>Talent</th><th>Rang</th><th>Arbre</th></tr>";
+      ph.rows.forEach(function (r) {
+        body += '<tr><td class="num">' + r[0] + "</td><td>" + tal(r[1]) + (r[4] ? '<span class="why">' + r[4] + "</span>" : "") +
+          '</td><td class="num">' + r[2] + '</td><td class="tree">' + r[3] + "</td></tr>";
+      });
+    } else {
+      head = "<tr><th>" + (ph.kind === "set" ? "Talent" : "Priorité") + "</th><th>Rang</th><th>Arbre</th></tr>";
+      ph.rows.forEach(function (r, i) {
+        body += "<tr><td>" + (ph.kind === "list" ? '<span style="color:var(--muted)">' + (i + 1) + ".</span> " : "") + "" + tal(r[0]) +
+          (r[3] ? '<span class="why">' + r[3] + "</span>" : "") + '</td><td class="num">' + r[1] + '</td><td class="tree">' + r[2] + "</td></tr>";
+      });
+    }
+    return '<div class="table-wrap"><table><thead>' + head + "</thead><tbody>" + body + "</tbody></table></div>";
+  }
+
+  function render(id) {
+    cur = id;
+    var c = CLASSES[id];
+    document.body.setAttribute("data-cls", id);
+    document.getElementById("title").textContent = "Talents de leveling · " + c.name;
+    document.querySelectorAll(".tabs button").forEach(function (b) { b.setAttribute("aria-selected", b.dataset.cls === id ? "true" : "false"); });
+    var h = "";
+    h += '<section class="stitched verdict"><span class="tag" style="margin:0">Spé recommandée</span><p class="spec">' + c.spec + "</p><p>" + c.verdict + "</p>" +
+      '<div class="timeline" aria-label="Plan de montée">' + c.timeline.map(function (t, i) {
+        return '<div' + (i === c.timeline.length - 1 ? ' class="dk"' : "") + ' style="background:' + t[2] + '">' + t[1] + "<span>" + t[0] + "</span></div>";
+      }).join("") + "</div></section>";
+    c.phases.forEach(function (ph) {
+      h += '<section class="phase"><div class="phase-head"><h2>' + ph.title + '</h2><span>' + badge(ph.st) + ' <span class="range">' + ph.range + "</span></span></div>" +
+        (ph.note ? '<p class="note">' + ph.note + "</p>" : "") + phaseTable(ph) + "</section>";
+    });
+    h += '<div class="cols">' +
+      '<div class="card"><h3>Niveaux clés</h3><dl class="kv">' + c.keylevels.map(function (k) { return "<dt>" + k[0] + "</dt><dd>" + k[1] + "</dd>"; }).join("") + "</dl></div>" +
+      '<div class="card"><h3>Rotation en montée</h3><dl class="kv">' + c.rotation.map(function (k) { return "<dt>" + k[0] + "</dt><dd>" + k[1] + "</dd>"; }).join("") + "</dl></div>" +
+      "</div>";
+    h += '<section class="stitched" style="display:grid;gap:10px"><h2>À savoir dans Forever</h2><ul class="plain">' + c.tips.map(function (t) { return "<li>" + t + "</li>"; }).join("") + "</ul></section>";
+    document.getElementById("content").innerHTML = h;
+    document.getElementById("foot").innerHTML = "<p>Sources : " + c.sources.map(function (s) { return '<a href="' + s[1] + '">' + s[0] + "</a>"; }).join(" · ") + "</p>" +
+      "<p>Les guides se contredisent encore sur certains rangs : en cas de doute, l'arbre en jeu a toujours raison.</p>" +
+      "<p>Guide de fan non officiel, mis à jour le 7 novembre 2026. World of Warcraft est une marque de Blizzard Entertainment.</p>";
+  }
+
+  function fromHash() { var h = (location.hash || "").slice(1); return CLASSES[h] ? h : "chasseur"; }
+  document.querySelectorAll(".tabs button").forEach(function (b) {
+    b.addEventListener("click", function () { if (location.hash !== "#" + b.dataset.cls) location.hash = b.dataset.cls; else render(b.dataset.cls); });
+  });
+  window.addEventListener("hashchange", function () { render(fromHash()); });
+  render(fromHash());
+})();
+</script>
+<script src="assets/nav.js"></script>
+</body>
+</html>

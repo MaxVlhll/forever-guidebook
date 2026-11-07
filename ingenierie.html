@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ingénierie WoW Forever</title>
+<meta name="description" content="Guide Ingénierie 1 à 300 pour WoW Forever (Alliance et Horde) : parcours recette par recette, liste de courses calculée, maîtres et spécialisations.">
+<meta property="og:title" content="Ingénierie WoW Forever">
+<meta property="og:description" content="Guide Ingénierie 1 à 300 pour WoW Forever (Alliance et Horde) : parcours recette par recette, liste de courses calculée, maîtres et spécialisations.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+:root {
+  --bg: #0e1416;
+  --bg-glow: #142528;
+  --panel: #162023;
+  --panel-2: #1e2b2f;
+  --stitch: #4c7f86;
+  --accent: #5fd0d6;
+  --seg1: #a8e6ea; --seg2: #64c3ca; --seg3: #2f8a92; --seg4: #1d5c62;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Ingénierie</span>
+  <h1>Ingénierie 1 → 300</h1>
+  <p class="lede">Le parcours complet, recette par recette, d'après les données de la bêta de Forever. Indique ta compétence : la page te montre où tu en es, la prochaine étape et toutes les barres et pierres qu'il te reste à réunir.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Où tu en es</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Compétence actuelle</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Retirer 5 points">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Ajouter 5 points">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Liste de courses jusqu'à</label>
+      <select id="target">
+        <option value="75">75 (fin Apprenti)</option>
+        <option value="150" selected>150 (fin Compagnon)</option>
+        <option value="225">225 (fin Expert)</option>
+        <option value="300">300 (Artisan)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprenti</div><div class="seg s2">Compagnon</div><div class="seg s3">Expert</div><div class="seg s4">Artisan</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Ce qu'il te reste à réunir</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Le parcours</h2>
+    <p class="lede" style="margin-top:0">Le nombre de fabrications est une estimation : prévois toujours un peu de marge. La règle d'or : dès qu'une recette passe au vert, passe à l'étape suivante.</p>
+    <div class="legend" aria-label="Couleurs des recettes">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Orange : +1 à chaque fois</span>
+      <span><span class="dot" style="background:var(--sk-yellow)"></span>Jaune : souvent</span>
+      <span><span class="dot" style="background:var(--sk-green)"></span>Vert : rarement</span>
+      <span><span class="dot" style="background:var(--sk-gray)"></span>Gris : plus rien</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Maîtres</h2>
+  <p class="lede" style="margin-top:0">Sans le bon rang, ta compétence reste bloquée au plafond (75, 150, 225). Apprends le rang suivant dès que tu as le niveau requis.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alliance</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Débloque</th><th>Conditions</th><th>Maîtres (coordonnées)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Compagnon</span></td><td class="num">jusqu'à 150</td><td>50 en compétence, niveau 10</td><td><strong>Sprite Jumpsprocket</strong>, Hurlevent (54,6 ; 8,0) · Jemma Quikswitch, Forgefer (67,4 ; 43,8) · Bronk Guzzlegear, Dun Morogh (50,2 ; 50,4) · Deek Fizzlebizz, Loch Modan (45,8 ; 13,4) · Jenna Lemkenilli, Sombrivage (38,2 ; 41,0)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">jusqu'à 225</td><td>125 en compétence, niveau 20</td><td><strong>Lilliam Sparkspindle</strong>, Hurlevent (54,8 ; 7,8) · Trixie Quikswitch, Forgefer (67,4 ; 43,2) · Finbus Geargrind, Bois de la Pénombre (77,4 ; 48,4)</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">jusqu'à 300</td><td>200 en compétence, niveau 35</td><td><strong>Springspindle Fizzlegear</strong>, Forgefer (68,2 ; 43,4)</td></tr><tr><td><span class="pill">Recettes hautes</span></td><td class="num">—</td><td>—</td><td>Buzzek Bracketswing, Tanaris (52,2 ; 27,4), à Gadgetzan</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Débloque</th><th>Conditions</th><th>Maîtres (coordonnées)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Compagnon</span></td><td class="num">jusqu'à 150</td><td>50 en compétence, niveau 10</td><td><strong>Thund</strong>, Orgrimmar (75,4 ; 24,6) · Mukdrak, Durotar (52,2 ; 40,8) · Graham Van Talen, Fossoyeuse (75,2 ; 72,4) · Twizwick Sprocketgrind, Mulgore (58,6 ; 39,4) · Tinkerwiz, Les Tarides (62,6 ; 36,2)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">jusqu'à 225</td><td>125 en compétence, niveau 20</td><td><strong>Nogg</strong>, Orgrimmar (75,4 ; 24,8) · Franklin Lloyd, Fossoyeuse (75,4 ; 73,0)</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">jusqu'à 300</td><td>200 en compétence, niveau 35</td><td><strong>Roxxik</strong>, Orgrimmar (75,4 ; 24,8)</td></tr><tr><td><span class="pill">Recettes hautes</span></td><td class="num">—</td><td>—</td><td>Buzzek Bracketswing, Tanaris (52,2 ; 27,4), à Gadgetzan</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Le Catalyseur léger s'achète chez les vendeurs de fournitures d'ingénierie. Prends le minage à côté : presque toutes les recettes demandent des barres ou de la pierre.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Spécial Forever</h2>
+  <ul class="plain"><li><strong>Robot vendeur de composants</strong> à 20 : vend des composants au camp.</li><li><strong>Robot réparateur</strong> à 140 : vend des composants et répare ton équipement.</li><li><strong>Établi d'anarchiste</strong> à 300 : obligatoire pour certaines recettes.</li><li><strong>Spécialisation gnome ou gobeline</strong> : une quête te fait choisir une école, chacune avec ses objets exclusifs. Leurs recettes ne sont pas dans ce parcours.</li><li><strong>Points d'héritage</strong> à 150, 225 et 300.</li><li>La Dynamite basique ne coûte plus qu'une Poudre d'explosion basique. La Bombe éclairante s'apprend par quête.</li><li>Le métier compte 242 recettes, dont 78 nouvelles et 32 modifiées. Selon Kami Labs, l'ingénierie sert surtout en JcJ : aucune pièce d'ingénierie ne figure dans les listes BiS JcE.</li></ul>
+</section>
+
+<footer class="foot"><p>Sources : <a href="https://kami-labs.fr/guide-ingenierie-wow-forever/">Kami Labs, guide Ingénierie WoW Forever</a> · <a href="https://overgear.com/guides/wow-forever/engineering-overview/">Overgear, guide Ingénierie</a>.</p><p>Les étapes au-delà de 225 n'étaient pas jouables en bêta : elles sont marquées « à vérifier ». Si un vendeur de recette appartient à l'autre faction, passe par l'hôtel des ventes. Le guide ne mentionne aucun outil (clé plate, marteau) : si ton client en demande un, fabrique-le avant l'étape concernée.</p><p>Guide de fan non officiel, mis à jour le 7 novembre 2026. World of Warcraft est une marque de Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "inge", "src": {"Pierre brute": "farm", "Pierre grossière": "farm", "Pierre lourde": "farm", "Pierre dense": "farm", "Barre de cuivre": "farm", "Barre de bronze": "farm", "Barre d'argent": "farm", "Barre d'or": "farm", "Barre de fer": "farm", "Barre de mithril": "farm", "Barre de thorium": "farm", "Catalyseur léger": "vendor", "Etoffe de laine": "ah", "Etoffe de soie": "ah", "Etoffe runique": "ah", "Perle bleue": "ah", "Poudre noire solide": "ah", "Cuir épais": "ah", "Rubis étoilé": "ah", "Barre d'arcanite": "ah", "Soie d'araignée toilacier": "ah", "Poudre d'explosion majeure": "craft", "Batterie en or": "craft"}, "sub": {"Poudre d'explosion majeure": {"Pierre lourde": 1}, "Batterie en or": {"Barre d'or": 1}}, "steps": [{"f": 1, "t": 30, "r": "Poudre d'explosion basique", "n": 32, "m": {"Pierre brute": 1}}, {"f": 30, "t": 54, "r": "Poignée de boulons en cuivre", "n": 28, "m": {"Barre de cuivre": 1}}, {"f": 54, "t": 75, "r": "Tube en cuivre", "n": 21, "m": {"Barre de cuivre": 2, "Catalyseur léger": 1}, "note": "<strong>Apprends Compagnon dès 50</strong> (niveau 10) : {comp}."}, {"f": 75, "t": 90, "r": "Poudre d'explosion grossière", "n": 16, "m": {"Pierre grossière": 1}}, {"f": 90, "t": 125, "r": "Contact en argent", "n": 40, "m": {"Barre d'argent": 1}}, {"f": 125, "t": 140, "r": "Poudre d'explosion majeure", "n": 26, "m": {"Pierre lourde": 1}, "out": "Poudre d'explosion majeure", "note": "<strong>Apprends Expert dès 125</strong> (niveau 20) : {exp}. Garde toute la poudre : la Bombe éclairante (186-210) en demande 37."}, {"f": 140, "t": 150, "r": "Bidule bourdonnant en bronze", "n": 17, "m": {"Barre de bronze": 2, "Etoffe de laine": 1}}, {"f": 150, "t": 170, "r": "Batterie en or", "n": 27, "m": {"Barre d'or": 1}, "out": "Batterie en or", "note": "Garde-en 20 pour l'étape suivante."}, {"f": 170, "t": 186, "r": "Gyrochronatome", "n": 20, "m": {"Barre de fer": 1, "Batterie en or": 1}}, {"f": 186, "t": 210, "r": "Bombe éclairante", "n": 37, "m": {"Perle bleue": 1, "Poudre d'explosion majeure": 1, "Etoffe de soie": 1}, "note": "Recette de quête : « La recette de la bombe éclairante ». <strong>Apprends Artisan dès 200</strong> (niveau 35) : {art}."}, {"f": 210, "t": 215, "r": "Balles perçantes en mithril", "n": 5, "m": {"Barre de mithril": 1, "Poudre noire solide": 1}}, {"f": 215, "t": 241, "r": "Caisse en mithril", "n": 41, "m": {"Barre de mithril": 3}}, {"f": 241, "t": 245, "r": "Lunettes roses", "n": 4, "m": {"Cuir épais": 6, "Rubis étoilé": 2}, "p": 1}, {"f": 245, "t": 250, "r": "Balle gyroscopique en mithril", "n": 5, "m": {"Barre de mithril": 2, "Poudre noire solide": 2}, "p": 1}, {"f": 250, "t": 258, "r": "Poudre d'explosion dense", "n": 14, "m": {"Pierre dense": 2}, "p": 1}, {"f": 258, "t": 260, "r": "Balle gyroscopique en mithril", "n": 3, "m": {"Barre de mithril": 2, "Poudre noire solide": 2}, "p": 1}, {"f": 260, "t": 285, "r": "Rouage en thorium", "n": 26, "m": {"Barre de thorium": 3, "Etoffe runique": 1}, "p": 1, "note": "Recette à 1 po 26 pa chez Gearcutter Cogspinner (Forgefer) pour l'Alliance, chez Sovik (Orgrimmar) pour la Horde."}, {"f": 285, "t": 300, "r": "Convertisseur d'arcanite délicat", "n": 15, "m": {"Barre d'arcanite": 1, "Soie d'araignée toilacier": 1}, "p": 1, "note": "Recette à 2 po chez Xizzer Fizzbolt (Berceau-de-l'Hiver)."}], "train": {"comp": "Thund à Orgrimmar (75,4 ; 24,6) ou Mukdrak à Durotar (52,2 ; 40,8)", "exp": "Nogg à Orgrimmar (75,4 ; 24,8)", "art": "Roxxik à Orgrimmar (75,4 ; 24,8)"}, "done300": "300 atteint. Pense à l'Établi d'anarchiste pour ton camp, et à ta spécialisation gnome ou gobeline.", "groupTitles": {"farm": "À miner (et fondre)", "vendor": "Chez le vendeur", "ah": "HV ou autres métiers", "craft": "Intermédiaires"}, "trainA": {"comp": "Sprite Jumpsprocket à Hurlevent (54,6 ; 8,0) ou Jemma Quikswitch à Forgefer (67,4 ; 43,8)", "exp": "Lilliam Sparkspindle à Hurlevent (54,8 ; 7,8) ou Trixie Quikswitch à Forgefer (67,4 ; 43,2)", "art": "Springspindle Fizzlegear à Forgefer (68,2 ; 43,4)"}};
+</script>
+<script src="assets/metier.js"></script>
+<script src="assets/nav.js"></script>
+</body>
+</html>

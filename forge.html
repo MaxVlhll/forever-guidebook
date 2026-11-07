@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forge WoW Forever</title>
+<meta name="description" content="Guide Forge 1 à 300 pour WoW Forever (Alliance et Horde) : parcours recette par recette, liste de courses calculée, maîtres et objets de camp.">
+<meta property="og:title" content="Forge WoW Forever">
+<meta property="og:description" content="Guide Forge 1 à 300 pour WoW Forever (Alliance et Horde) : parcours recette par recette, liste de courses calculée, maîtres et objets de camp.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+:root {
+  --bg: #121214;
+  --bg-glow: #2a1c14;
+  --panel: #1b1a1d;
+  --panel-2: #242328;
+  --stitch: #7a6a5a;
+  --accent: #ff9a4a;
+  --seg1: #ffc999; --seg2: #f0904a; --seg3: #b5582a; --seg4: #7a3418;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Forge</span>
+  <h1>Forge 1 → 300</h1>
+  <p class="lede">Le parcours complet, recette par recette, d'après les données de la bêta de Forever. Indique ta compétence : la page te montre où tu en es, la prochaine étape et tout le minerai qu'il te reste à réunir.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Où tu en es</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Compétence actuelle</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Retirer 5 points">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Ajouter 5 points">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Liste de courses jusqu'à</label>
+      <select id="target">
+        <option value="75">75 (fin Apprenti)</option>
+        <option value="150" selected>150 (fin Compagnon)</option>
+        <option value="225">225 (fin Expert)</option>
+        <option value="300">300 (Artisan)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprenti</div><div class="seg s2">Compagnon</div><div class="seg s3">Expert</div><div class="seg s4">Artisan</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Ce qu'il te reste à réunir</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Le parcours</h2>
+    <p class="lede" style="margin-top:0">Le nombre de fabrications est une estimation : prévois toujours un peu de marge. La règle d'or : dès qu'une recette passe au vert, passe à l'étape suivante.</p>
+    <div class="legend" aria-label="Couleurs des recettes">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Orange : +1 à chaque fois</span>
+      <span><span class="dot" style="background:var(--sk-yellow)"></span>Jaune : souvent</span>
+      <span><span class="dot" style="background:var(--sk-green)"></span>Vert : rarement</span>
+      <span><span class="dot" style="background:var(--sk-gray)"></span>Gris : plus rien</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Maîtres</h2>
+  <p class="lede" style="margin-top:0">Sans le bon rang, ta compétence reste bloquée au plafond (75, 150, 225). Apprends le rang suivant dès que tu as le niveau requis.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alliance</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Débloque</th><th>Conditions</th><th>Maîtres (coordonnées)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Compagnon</span></td><td class="num">jusqu'à 150</td><td>50 en compétence, niveau 10</td><td><strong>Dane Lindgren</strong>, Hurlevent (57,0 ; 15,4) · Groum Stonebeard, Forgefer (51,2 ; 42,4) · Argus le forgeron, Forêt d'Elwynn (41,6 ; 65,4) · Tognus Flintfire, Dun Morogh (45,2 ; 52,0) · Delfrum Flintbeard, Sombrivage (38,2 ; 41,0)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">jusqu'à 225</td><td>125 en compétence, niveau 20</td><td><strong>Therum Deepforge</strong>, Hurlevent (56,4 ; 15,4) · Rotgath Stonebeard, Forgefer (51,2 ; 42,4) · Clarise Gnarltree, Bois de la Pénombre (73,8 ; 48,6)</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">jusqu'à 300</td><td>200 en compétence, niveau 35</td><td><strong>Bengus Deepforge</strong>, Forgefer (51,4 ; 42,2)</td></tr><tr><td><span class="pill">Recettes hautes</span></td><td class="num">—</td><td>—</td><td>Brikk Keencraft, Vallée de Strangleronce (29,0 ; 75,4), à Baie-du-Butin</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Débloque</th><th>Conditions</th><th>Maîtres (coordonnées)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Compagnon</span></td><td class="num">jusqu'à 150</td><td>50 en compétence, niveau 10</td><td><strong>Ug'thok</strong>, Orgrimmar (80,4 ; 23,4) · Dwukk, Durotar (52,0 ; 40,6) · Basil Frye, Fossoyeuse (59,2 ; 29,4) · Thrag Stonehoof, Pitons-du-Tonnerre (39,0 ; 57,8) · Guillemette Sorouy, Forêt des Pins-Argentés (43,2 ; 41,0) · Gur'dok, Rives Claires (60,0 ; 46,2)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">jusqu'à 225</td><td>125 en compétence, niveau 20</td><td><strong>Snarl</strong>, Orgrimmar (79,2 ; 22,4) · James Van Brunt, Fossoyeuse (61,2 ; 29,2) · Karn Stonehoof, Pitons-du-Tonnerre (38,8 ; 54,0) · Traugh, Les Tarides (51,2 ; 28,8)</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">jusqu'à 300</td><td>200 en compétence, niveau 35</td><td><strong>Saru Steelfury</strong>, Orgrimmar (82,2 ; 23,0)</td></tr><tr><td><span class="pill">Recettes hautes</span></td><td class="num">—</td><td>—</td><td>Brikk Keencraft, Vallée de Strangleronce (29,0 ; 75,4), à Baie-du-Butin</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">La Teinture verte s'achète chez les vendeurs de fournitures de métier. Le minage est presque obligatoire à côté : la montée consomme plus de 800 barres de mithril et autant de thorium.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Où miner chaque minerai</h2>
+  <p class="lede" style="margin-top:0">Les zones citées comptent le plus de filons, avec une ligne par faction pour les premiers paliers. Le détail complet est sur la <a href="minage.html">page Minage</a>.</p>
+  <div class="cols"><div class="card"><h3>Cuivre</h3><span class="lv">Compétence 1 à 65</span><p><span class="fl" data-f="h"><span class="fac h">Horde</span> Durotar, Mulgore, Clairières de Tirisfal, Les Tarides.</span><span class="fl" data-f="a"><span class="fac a">Alliance</span> Forêt d'Elwynn, Dun Morogh, Loch Modan, Sombrivage.</span></p></div><div class="card"><h3>Étain, argent, pierre grossière</h3><span class="lv">Compétence 65 à 125</span><p><span class="fl" data-f="h"><span class="fac h">Horde</span> Les Tarides, Forêt des Pins-Argentés, Mille pointes, Contreforts de Hautebrande.</span><span class="fl" data-f="a"><span class="fac a">Alliance</span> Les Paluns, Les Carmines, Marche de l'Ouest, Contreforts de Hautebrande.</span></p></div><div class="card"><h3>Fer, or, pierre lourde</h3><span class="lv">Compétence 125 à 175</span><p>Hautes-terres d'Arathi, Mille pointes, Désolace, Vallée de Strangleronce.</p></div><div class="card"><h3>Mithril, pierre solide</h3><span class="lv">Compétence 175 à 230</span><p>Hautes-terres d'Arathi, Terres ingrates, Strangleronce, Tanaris, Les Hinterlands.</p></div><div class="card"><h3>Vrai-argent, sombrefer</h3><span class="lv">Compétence 230 et plus</span><p>Steppes ardentes, Les Hinterlands, Gorge des Vents brûlants, Tanaris.</p></div><div class="card"><h3>Thorium, pierre dense</h3><span class="lv">Compétence 245 et plus</span><p>Steppes ardentes, Silithus, Berceau-de-l'Hiver, Cratère d'Un'Goro.</p></div></div>
+  <p class="foot">Les silex à aiguiser solides et denses ne sont pas dans le parcours : la liste les compte à fabriquer à part (4 pierres chacun, comme dans Classic, à vérifier en jeu).</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Spécial Forever</h2>
+  <ul class="plain"><li><strong>Meule à aiguiser</strong> à 20 : augmente la Force des joueurs présents au camp.</li><li><strong>Enclume</strong> à 140 : obligatoire pour certaines recettes, au camp.</li><li><strong>Forge magistrale</strong> à 300 : obligatoire pour certaines recettes.</li><li><strong>Points d'héritage</strong> à 150, 225 et 300.</li><li><strong>Spécialisations</strong> : Armurier ou Fabricant d'armes, puis Maître fabricant de marteaux, de haches ou d'épées. Tu n'en choisis qu'une, leurs recettes ne sont pas dans ce parcours.</li><li>Six recettes de mailles (Cotte de mailles invulnérable, Heaume du grand chef, Gantelets tempêtes…) sont passées au Travail du cuir.</li><li>Bonus annoncé à la BlizzCon mais pas encore confirmé : <strong>Réparation complète</strong> (répare tout ton équipement, avec un temps de recharge) et des <strong>boucles de ceinture</strong> qui ajoutent des caractéristiques.</li><li>Le métier compte 431 recettes, dont 197 nouvelles et 181 modifiées.</li></ul>
+</section>
+
+<footer class="foot"><p>Sources : <a href="https://kami-labs.fr/guide-forge-wow-forever/">Kami Labs, guide Forge WoW Forever</a> · <a href="https://kami-labs.fr/metiers-wow-forever/">Kami Labs, métiers WoW Forever</a>.</p><p>Les étapes au-delà de 225 n'étaient pas jouables en bêta : elles sont marquées « à vérifier ». Si un vendeur de recette appartient à l'autre faction, passe par l'hôtel des ventes.</p><p>Guide de fan non officiel, mis à jour le 7 novembre 2026. World of Warcraft est une marque de Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "forge", "src": {"Pierre brute": "farm", "Pierre grossière": "farm", "Pierre lourde": "farm", "Pierre solide": "farm", "Pierre dense": "farm", "Barre de cuivre": "farm", "Barre de bronze": "farm", "Barre d'argent": "farm", "Barre de fer": "farm", "Barre d'or": "farm", "Barre de mithril": "farm", "Barre de vrai-argent": "farm", "Barre de thorium": "farm", "Teinture verte": "vendor", "Barre d'acier": "ah", "Barre d'arcanite": "ah", "Barre d'azerothium": "ah", "Citrine": "ah", "Rubis étoilé": "ah", "Aigue-marine": "ah", "Perle noire": "ah", "Oeil ténébreux": "ah", "Cuir épais": "ah", "Cuir robuste": "ah", "Essence d'air": "ah", "Grand croc": "ah", "Griffe aiguisée": "ah", "Silex à aiguiser brut": "craft", "Silex à aiguiser grossier": "craft", "Silex à aiguiser lourd": "craft", "Silex à aiguiser solide": "craft", "Silex à aiguiser dense": "craft"}, "sub": {"Silex à aiguiser brut": {"Pierre brute": 2}, "Silex à aiguiser grossier": {"Pierre grossière": 2}, "Silex à aiguiser lourd": {"Pierre lourde": 3}, "Silex à aiguiser solide": {"Pierre solide": 4}, "Silex à aiguiser dense": {"Pierre dense": 4}}, "steps": [{"f": 1, "t": 35, "r": "Pierre à aiguiser brute", "n": 41, "m": {"Pierre brute": 1}}, {"f": 35, "t": 65, "r": "Silex à aiguiser brut", "n": 37, "m": {"Pierre brute": 2}, "out": "Silex à aiguiser brut", "note": "Garde-les : les Passe-partout en argent (100-115) en demandent 26."}, {"f": 65, "t": 75, "r": "Pierre à aiguiser grossière", "n": 16, "m": {"Pierre grossière": 1}, "note": "<strong>Apprends Compagnon dès 50</strong> (niveau 10), sinon tu bloques à 75."}, {"f": 75, "t": 96, "r": "Silex à aiguiser grossier", "n": 43, "m": {"Pierre grossière": 2}, "out": "Silex à aiguiser grossier", "note": "Garde-en 16 pour les Gantelets en bronze argenté (144-150)."}, {"f": 96, "t": 100, "r": "Ceinture runique en cuivre", "n": 6, "m": {"Barre de cuivre": 10}}, {"f": 100, "t": 115, "r": "Passe-partout en argent", "n": 26, "m": {"Barre d'argent": 1, "Silex à aiguiser brut": 1}}, {"f": 115, "t": 125, "r": "Jambières grossières en bronze", "n": 10, "m": {"Barre de bronze": 6}}, {"f": 125, "t": 138, "r": "Pierre à aiguiser lourde", "n": 27, "m": {"Pierre lourde": 1}, "note": "<strong>Apprends Expert dès 125</strong> (niveau 20) : {exp}."}, {"f": 138, "t": 144, "r": "Silex à aiguiser lourd", "n": 16, "m": {"Pierre lourde": 3}, "out": "Silex à aiguiser lourd", "note": "Les étapes 154-165 et 185-200 en consomment 66 : la liste de courses calcule le surplus à préparer."}, {"f": 144, "t": 150, "r": "Gantelets en bronze argenté", "n": 8, "m": {"Barre de bronze": 8, "Barre d'argent": 1, "Silex à aiguiser grossier": 2}}, {"f": 150, "t": 154, "r": "Boucle en fer", "n": 6, "m": {"Barre de fer": 1}}, {"f": 154, "t": 165, "r": "Passe-partout en or", "n": 22, "m": {"Barre d'or": 1, "Silex à aiguiser lourd": 1}}, {"f": 165, "t": 182, "r": "Brassards en fer émeraude", "n": 27, "m": {"Barre de fer": 6, "Teinture verte": 1}}, {"f": 182, "t": 185, "r": "Casque barbare en fer", "n": 4, "m": {"Barre de fer": 10, "Grand croc": 2, "Griffe aiguisée": 2}, "note": "Recette de quête : « Les cornes de Frénésie »."}, {"f": 185, "t": 200, "r": "Brassards en écailles dorées", "n": 22, "m": {"Barre d'acier": 5, "Silex à aiguiser lourd": 2}, "note": "La Barre d'acier se fond par un mineur (fer + charbon) : HV sinon."}, {"f": 200, "t": 209, "r": "Pierre à aiguiser solide", "n": 19, "m": {"Pierre solide": 1}, "note": "<strong>Apprends Artisan dès 200</strong> (niveau 35) : {art}."}, {"f": 209, "t": 215, "r": "Passe-partout en vrai-argent", "n": 15, "m": {"Barre de vrai-argent": 1, "Silex à aiguiser solide": 1}}, {"f": 215, "t": 225, "r": "Brassards en écailles de mithril", "n": 16, "m": {"Barre de mithril": 8, "Citrine": 2}, "note": "Recette à 53 pa 33 chez Harggan (Les Hinterlands, Nid-de-l'Aigle) pour l'Alliance. Horde : passe par l'HV."}, {"f": 225, "t": 230, "r": "Épaulières ornées en mithril", "n": 6, "m": {"Barre de mithril": 12, "Barre de vrai-argent": 1, "Cuir épais": 6}, "p": 1, "note": "Recette de quête : « L'art de l'imprégnation »."}, {"f": 230, "t": 235, "r": "Cuirasse lourde en mithril", "n": 6, "m": {"Barre de mithril": 16}, "p": 1}, {"f": 235, "t": 247, "r": "Bottes lourdes en mithril", "n": 22, "m": {"Barre de mithril": 14, "Cuir épais": 4}, "p": 1}, {"f": 247, "t": 250, "r": "Grande masse noire", "n": 11, "m": {"Barre de mithril": 16, "Perle noire": 1, "Oeil ténébreux": 4, "Silex à aiguiser solide": 1, "Cuir épais": 2}, "p": 1}, {"f": 250, "t": 260, "r": "Pierre à aiguiser dense", "n": 16, "m": {"Pierre dense": 1}, "p": 1}, {"f": 260, "t": 265, "r": "Kriss d'ébène", "n": 7, "m": {"Barre de mithril": 12, "Barre de vrai-argent": 6, "Rubis étoilé": 2, "Silex à aiguiser solide": 1, "Cuir épais": 2}, "p": 1, "note": "Recette à 1 po chez Magnus Frostwake (Maleterres de l'Ouest)."}, {"f": 265, "t": 270, "r": "Ceinture impériale en plaques", "n": 6, "m": {"Barre de thorium": 22, "Cuir robuste": 6, "Aigue-marine": 1}, "p": 1, "note": "Recette de quête : « La ceinture impériale en plaques »."}, {"f": 270, "t": 275, "r": "Brassards impériaux en plaques", "n": 6, "m": {"Barre de thorium": 20, "Rubis étoilé": 1}, "p": 1, "note": "Recette de quête : « Les bracelets impériaux en plaques »."}, {"f": 275, "t": 285, "r": "Passe-partout en arcanite", "n": 29, "m": {"Barre d'arcanite": 1, "Silex à aiguiser dense": 1}, "p": 1}, {"f": 285, "t": 295, "r": "Miséricorde audacieuse", "n": 11, "m": {"Barre de thorium": 30, "Essence d'air": 4, "Barre d'azerothium": 10, "Cuir robuste": 4}, "p": 1, "note": "Nouvelle recette de Forever, 10 po chez Pexmit (Mont Hyjal)."}, {"f": 295, "t": 300, "r": "Bottes impériales en plaques", "n": 6, "m": {"Barre de thorium": 34, "Rubis étoilé": 1, "Aigue-marine": 1}, "p": 1, "note": "Recette de quête : « Les bottes impériales en plaques »."}], "train": {"comp": "Ug'thok à Orgrimmar (80,4 ; 23,4) ou Dwukk à Durotar (52,0 ; 40,6)", "exp": "Snarl à Orgrimmar (79,2 ; 22,4)", "art": "Saru Steelfury à Orgrimmar (82,2 ; 23,0)"}, "done300": "300 atteint. Pense à la Forge magistrale pour ton camp.", "groupTitles": {"farm": "À miner (et fondre)", "vendor": "Chez le vendeur", "ah": "HV ou autres métiers", "craft": "Intermédiaires"}, "trainA": {"comp": "Dane Lindgren à Hurlevent (57,0 ; 15,4) ou Groum Stonebeard à Forgefer (51,2 ; 42,4)", "exp": "Therum Deepforge à Hurlevent (56,4 ; 15,4) ou Rotgath Stonebeard à Forgefer (51,2 ; 42,4)", "art": "Bengus Deepforge à Forgefer (51,4 ; 42,2)"}};
+</script>
+<script src="assets/metier.js"></script>
+<script src="assets/nav.js"></script>
+</body>
+</html>

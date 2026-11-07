@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cuisine WoW Forever</title>
+<meta name="description" content="Guide Cuisine 1 à 300 pour WoW Forever (Alliance et Horde) : parcours, liste de courses calculée, maîtres et kits de feu de camp.">
+<meta property="og:title" content="Cuisine WoW Forever">
+<meta property="og:description" content="Guide Cuisine 1 à 300 pour WoW Forever (Alliance et Horde) : parcours, liste de courses calculée, maîtres et kits de feu de camp.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+:root {
+  --bg: #160f0d;
+  --bg-glow: #2c1712;
+  --panel: #211613;
+  --panel-2: #2c1e1a;
+  --stitch: #8a5444;
+  --accent: #ff8a66;
+  --seg1: #ffb8a3; --seg2: #f2876b; --seg3: #b8503a; --seg4: #7d3224;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Cuisine</span>
+  <h1>Cuisine 1 → 300</h1>
+  <p class="lede">Un métier secondaire, en plus de tes deux métiers principaux. Dans Forever, la cuisine fabrique aussi les kits de feu de camp. Indique ta compétence : la page te montre la prochaine étape et la viande qu'il te reste à réunir.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Où tu en es</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Compétence actuelle</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Retirer 5 points">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Ajouter 5 points">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Liste de courses jusqu'à</label>
+      <select id="target">
+        <option value="75">75 (fin Apprenti)</option>
+        <option value="150" selected>150 (fin Compagnon)</option>
+        <option value="225">225 (fin Expert)</option>
+        <option value="300">300 (Artisan)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprenti</div><div class="seg s2">Compagnon</div><div class="seg s3">Expert</div><div class="seg s4">Artisan</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Ce qu'il te reste à réunir</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Le parcours</h2>
+    <p class="lede" style="margin-top:0">Le nombre de fabrications est une estimation : prévois toujours un peu de marge. La règle d'or : dès qu'une recette passe au vert, passe à l'étape suivante.</p>
+    <div class="legend" aria-label="Couleurs des recettes">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Orange : +1 à chaque fois</span>
+      <span><span class="dot" style="background:var(--sk-yellow)"></span>Jaune : souvent</span>
+      <span><span class="dot" style="background:var(--sk-green)"></span>Vert : rarement</span>
+      <span><span class="dot" style="background:var(--sk-gray)"></span>Gris : plus rien</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Maîtres</h2>
+  <p class="lede" style="margin-top:0">Dans Forever, les rangs Expert et Artisan s'apprennent aussi chez un maître cuisinier, sans livre ni quête comme dans Classic.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alliance</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Débloque</th><th>Conditions</th><th>Maîtres (coordonnées)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Compagnon</span></td><td class="num">jusqu'à 150</td><td>50 en compétence, niveau 10</td><td><strong>Stephen Ryback</strong>, Hurlevent (75,4 ; 37,2) · Tomas, Forêt d'Elwynn (44,2 ; 66,0) · Daryl Riknussun, Forgefer (60,0 ; 36,8) · Gremlock Pilsnor, Dun Morogh (47,6 ; 52,4) · Cuisinier Ghilm, Dun Morogh (68,4 ; 54,4) · Alegorn, Darnassus (48,4 ; 21,0) · Zarrin, Teldrassil (57,0 ; 61,2)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">jusqu'à 225</td><td>125 en compétence, niveau 20</td><td>Maître cuisinier de capitale. Aussi : Crystal Boughman, Les Carmines (17,6 ; 43,6) · Gorg, Rives Claires (58,6 ; 44,6)</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">jusqu'à 300</td><td>200 en compétence, niveau 35</td><td>Maître cuisinier (Kami Labs ne précise pas lequel : essaie d'abord Stephen Ryback à Hurlevent)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horde</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rang</th><th>Débloque</th><th>Conditions</th><th>Maîtres (coordonnées)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Compagnon</span></td><td class="num">jusqu'à 150</td><td>50 en compétence, niveau 10</td><td><strong>Zamja</strong>, Orgrimmar (57,4 ; 53,4) · Cuisinier Torka, Durotar (51,2 ; 42,4) · Eunice Burch, Fossoyeuse (62,2 ; 44,4) · William Pickman, Clairières de Tirisfal (61,8 ; 51,4) · Aska Mistrunner, Pitons-du-Tonnerre (50,8 ; 52,4) · Pyall Silentstride, Mulgore (45,0 ; 61,6)</td></tr><tr><td><span class="pill">Expert</span></td><td class="num">jusqu'à 225</td><td>125 en compétence, niveau 20</td><td>Maître cuisinier de capitale. Neutres : Duhng, Les Tarides (55,2 ; 31,8) · Mudduk, Strangleronce (31,4 ; 28,0) · Gorg, Rives Claires (58,6 ; 44,6)</td></tr><tr><td><span class="pill">Artisan</span></td><td class="num">jusqu'à 300</td><td>200 en compétence, niveau 35</td><td>Maître cuisinier (Kami Labs ne précise pas lequel : essaie d'abord Zamja à Orgrimmar)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Épices douces et fortes chez les vendeurs de marchandises et de fournitures de cuisine.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Spécial Forever</h2>
+  <ul class="plain"><li><strong>Kit de feu de camp basique</strong> à 20 : ton camp peut accueillir 3 objets.</li><li><strong>Kit de feu de camp de compagnon</strong> à 90 : 5 objets.</li><li><strong>Kit de feu de camp de spécialiste</strong> à 200 : 10 objets.</li><li>Nouveaux <strong>thés et frappés</strong> (Thé de sérénité à 25, Thé royal à 100, Thé des sages à 250…) et un festin, le Festin de Macaron à 140.</li><li>Certains plats donnent « Bien nourri » et un bonus d'expérience sur les mobs tués (annoncé, pas encore confirmé). Method cite +5 % d'expérience pendant 15 minutes.</li><li><strong>Points d'héritage</strong> à 150, 225 et 300.</li><li>Le métier compte 125 recettes, dont 44 nouvelles.</li></ul>
+</section>
+
+<footer class="foot"><p>Sources : <a href="https://kami-labs.fr/guide-cuisine-wow-forever/">Kami Labs, guide Cuisine WoW Forever</a> · <a href="https://www.method.gg/wow-forever/wow-forever-shaman-leveling-guide-and-talents">Method, guide chaman (bonus d'expérience)</a>.</p><p>Les étapes au-delà de 225 n'étaient pas jouables en bêta : elles sont marquées « à vérifier ». Si un vendeur de recette appartient à l'autre faction, passe par l'hôtel des ventes.</p><p>Guide de fan non officiel, mis à jour le 7 novembre 2026. World of Warcraft est une marque de Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "cuis", "src": {"Morceau de viande de sanglier": "farm", "Viande de coyote": "farm", "Rat fouisseur": "farm", "Steak de loup": "farm", "Viande de loup rouge": "farm", "Jaune-queue tacheté cru": "farm", "Saumon solécaille cru": "farm", "Epices douces": "vendor", "Epices fortes": "vendor"}, "steps": [{"f": 1, "t": 55, "r": "Viande de sanglier rôtie", "n": 55, "m": {"Morceau de viande de sanglier": 1}, "note": "Sangliers de Durotar et de Mulgore (Horde), de la Forêt d'Elwynn et de Dun Morogh (Alliance)."}, {"f": 55, "t": 90, "r": "Steak de coyote", "n": 35, "m": {"Viande de coyote": 1}, "note": "<strong>Apprends Compagnon dès 50</strong> (niveau 10), sinon tu bloques à 75."}, {"f": 90, "t": 156, "r": "Brouet de rat", "n": 81, "m": {"Rat fouisseur": 1}, "note": "Recette de quête. <strong>Apprends Expert dès 125</strong> (niveau 20), sinon tu bloques à 150."}, {"f": 156, "t": 185, "r": "Steak de loup", "n": 36, "m": {"Steak de loup": 1, "Epices douces": 1}, "note": "Recette à 16 pa chez Super-Seller 680 (Désolace). Kami Labs donne le même nom au plat et à la viande crue : c'est la viande de loup de Désolace et de Hautebrande.", "alt": "Nom de l'ingrédient à vérifier en jeu."}, {"f": 185, "t": 209, "r": "Bonne vieille viande de brochepâle", "n": 25, "m": {"Morceau de viande de sanglier": 2, "Epices douces": 1}, "note": "Nouvelle recette de Forever, 20 pa chez Martha Wellsworth (Rives Claires)."}, {"f": 209, "t": 225, "r": "Côtes de loup épicées", "n": 17, "m": {"Viande de loup rouge": 1, "Epices fortes": 1}, "note": "Recette à 50 pa chez Vivianna (Féralas) ou Super-Seller 680 (Désolace). <strong>Apprends Artisan dès 200</strong> (niveau 35)."}, {"f": 225, "t": 250, "r": "Jaune-queue tacheté", "n": 25, "m": {"Jaune-queue tacheté cru": 1}, "p": 1, "note": "Recette à 1 po 60 pa chez Gikkix (Tanaris). Poisson à pêcher (voir la <a href=\"peche.html\">page Pêche</a>) ou HV."}, {"f": 250, "t": 300, "r": "Saumon solécaille poché", "n": 51, "m": {"Saumon solécaille cru": 1}, "p": 1, "note": "Recette à 2 po chez Gikkix (Tanaris)."}], "trainMsg": {"comp": "Si ce n'est pas fait, apprends le rang Compagnon (niveau 10) chez un maître cuisinier : Zamja à Orgrimmar (57,4 ; 53,4) ou Cuisinier Torka à Durotar (51,2 ; 42,4).", "exp": "Si ce n'est pas fait, apprends le rang Expert (niveau 20) chez un maître cuisinier.", "art": "Si ce n'est pas fait, apprends le rang Artisan (niveau 35) chez un maître cuisinier."}, "done300": "300 atteint. Monte ton Kit de feu de camp de spécialiste pour accueillir 10 objets de camp.", "groupTitles": {"farm": "À chasser ou pêcher", "vendor": "Chez le vendeur", "ah": "HV", "craft": "Intermédiaires"}, "trainMsgA": {"comp": "Si ce n'est pas fait, apprends le rang Compagnon (niveau 10) chez un maître cuisinier : Stephen Ryback à Hurlevent (75,4 ; 37,2), Daryl Riknussun à Forgefer (60,0 ; 36,8) ou Alegorn à Darnassus (48,4 ; 21,0).", "exp": "Si ce n'est pas fait, apprends le rang Expert (niveau 20) chez un maître cuisinier.", "art": "Si ce n'est pas fait, apprends le rang Artisan (niveau 35) chez un maître cuisinier."}};
+</script>
+<script src="assets/metier.js"></script>
+<script src="assets/nav.js"></script>
+</body>
+</html>
