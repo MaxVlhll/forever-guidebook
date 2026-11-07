@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ingegneria WoW Forever</title>
+<meta name="description" content="Guida di Ingegneria 1-300 per WoW Forever (Alleanza e Orda): percorso ricetta per ricetta, lista della spesa calcolata e istruttori.">
+<meta property="og:title" content="Ingegneria WoW Forever">
+<meta property="og:description" content="Guida di Ingegneria 1-300 per WoW Forever (Alleanza e Orda): percorso ricetta per ricetta, lista della spesa calcolata e istruttori.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../ingenierie.html">
+<link rel="alternate" hreflang="en" href="../en/ingenierie.html">
+<link rel="alternate" hreflang="es" href="../es/ingenierie.html">
+<link rel="alternate" hreflang="de" href="../de/ingenierie.html">
+<link rel="alternate" hreflang="pt" href="../pt/ingenierie.html">
+<link rel="alternate" hreflang="ru" href="../ru/ingenierie.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #0e1416;
+  --bg-glow: #142528;
+  --panel: #162023;
+  --panel-2: #1e2b2f;
+  --stitch: #4c7f86;
+  --accent: #5fd0d6;
+  --seg1: #a8e6ea; --seg2: #64c3ca; --seg3: #2f8a92; --seg4: #1d5c62;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Ingegneria</span>
+  <h1>Ingegneria 1 → 300</h1>
+  <p class="lede">Il percorso completo, ricetta per ricetta, secondo i dati della beta di Forever. Inserisci la tua abilità: la pagina mostra dove sei, il passo successivo e tutte le barre e pietre che ti mancano.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Dove sei</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Abilità attuale</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Togli 5 punti">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Aggiungi 5 punti">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Lista della spesa fino a</label>
+      <select id="target">
+        <option value="75">75 (fine di Apprendista)</option>
+        <option value="150" selected>150 (fine di Garzone)</option>
+        <option value="225">225 (fine di Esperto)</option>
+        <option value="300">300 (Artigiano)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprendista</div><div class="seg s2">Garzone</div><div class="seg s3">Esperto</div><div class="seg s4">Artigiano</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Cosa ti manca ancora</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Il percorso</h2>
+    <p class="lede" style="margin-top:0">Le quantità sono stime: tieni sempre un margine. Regola d'oro: appena una ricetta diventa verde, passa al passo successivo.</p>
+    <div class="legend" aria-label="Colori delle ricette">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Arancione: +1 sempre</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Giallo: spesso</span> <span><span class="dot" style="background:var(--sk-green)"></span>Verde: raramente</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Grigio: mai</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Istruttori</h2>
+  <p class="lede" style="margin-top:0">Senza il rango giusto, la tua abilità resta bloccata al massimo (75, 150, 225). Impara il rango successivo appena hai il livello richiesto.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alleanza</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Sblocca</th><th>Requisiti</th><th>Istruttori (coordinate)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Garzone</span></td><td class="num">fino a 150</td><td>abilità 50, livello 10</td><td><strong>Sprite Jumpsprocket</strong>, Roccavento (54.6, 8.0) · Jemma Quikswitch, Forgiardente (67.4, 43.8) · Bronk Guzzlegear, Dun Morogh (50.2, 50.4) · Deek Fizzlebizz, Loch Modan (45.8, 13.4) · Jenna Lemkenilli, Rivafosca (38.2, 41.0)</td></tr><tr><td><span class="pill">Esperto</span></td><td class="num">fino a 225</td><td>abilità 125, livello 20</td><td><strong>Lilliam Sparkspindle</strong>, Roccavento (54.8, 7.8) · Trixie Quikswitch, Forgiardente (67.4, 43.2) · Finbus Geargrind, Boscotetro (77.4, 48.4)</td></tr><tr><td><span class="pill">Artigiano</span></td><td class="num">fino a 300</td><td>abilità 200, livello 35</td><td><strong>Springspindle Fizzlegear</strong>, Forgiardente (68.2, 43.4)</td></tr><tr><td><span class="pill">Ricette alte</span></td><td class="num">—</td><td>—</td><td>Buzzek Bracketswing, Tanaris (52.2, 27.4), a Gadgetzan</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Orda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Sblocca</th><th>Requisiti</th><th>Istruttori (coordinate)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Garzone</span></td><td class="num">fino a 150</td><td>abilità 50, livello 10</td><td><strong>Thund</strong>, Orgrimmar (75.4, 24.6) · Mukdrak, Durotar (52.2, 40.8) · Graham Van Talen, Sepulcride (75.2, 72.4) · Twizwick Sprocketgrind, Mulgore (58.6, 39.4) · Tinkerwiz, Savane (62.6, 36.2)</td></tr><tr><td><span class="pill">Esperto</span></td><td class="num">fino a 225</td><td>abilità 125, livello 20</td><td><strong>Nogg</strong>, Orgrimmar (75.4, 24.8) · Franklin Lloyd, Sepulcride (75.4, 73.0)</td></tr><tr><td><span class="pill">Artigiano</span></td><td class="num">fino a 300</td><td>abilità 200, livello 35</td><td><strong>Roxxik</strong>, Orgrimmar (75.4, 24.8)</td></tr><tr><td><span class="pill">Ricette alte</span></td><td class="num">—</td><td>—</td><td>Buzzek Bracketswing, Tanaris (52.2, 27.4), a Gadgetzan</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Il Flusso Debole si compra dai fornitori di ingegneria. Prendi l'Estrazione accanto: quasi ogni ricetta richiede barre o pietra.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novità di Forever</h2>
+  <ul class="plain"><li><strong>Robot Venditore di Pezzi</strong> a 20: vende componenti al campo.</li><li><strong>Robot Riparatore</strong> a 140: vende componenti e ripara l'equipaggiamento.</li><li><strong>Banco dell'Anarchico</strong> a 300: richiesto per alcune ricette.</li><li><strong>Specializzazione gnomesca o goblin</strong>: una missione ti fa scegliere una scuola, ognuna con oggetti esclusivi. Le loro ricette non sono in questo percorso.</li><li><strong>Punti eredità</strong> a 150, 225 e 300.</li><li>La Dinamite Ruvida costa ora una sola Polvere Esplosiva Ruvida. La Bomba Accecante si impara con una missione.</li><li>La professione ha 242 ricette: 78 nuove e 32 modificate. Secondo Kami Labs, l'Ingegneria è soprattutto una scelta PvP: nessun oggetto di ingegneria compare nelle liste BiS PvE.</li></ul>
+</section>
+
+<footer class="foot"><p>Fonti: <a href="https://kami-labs.fr/guide-ingenierie-wow-forever/">Kami Labs, guida all'Ingegneria di WoW Forever</a> · <a href="https://overgear.com/guides/wow-forever/engineering-overview/">Overgear, guida all'Ingegneria</a>.</p><p>I passi oltre 225 non erano giocabili in beta: sono segnati «da verificare». Se un venditore di ricette è dell'altra fazione, usa la casa d'aste. La guida non cita alcuno strumento (chiave, martello): se il tuo client ne chiede uno, crealo prima di quel passo. I nomi di oggetti, PNG e zone sono tradotti e possono differire un po' nel tuo client.</p><p>Guida di fan non ufficiale, aggiornata il 7 novembre 2026. World of Warcraft è un marchio di Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "inge", "src": {"Pietra Ruvida": "farm", "Pietra Grezza": "farm", "Pietra Pesante": "farm", "Pietra Densa": "farm", "Barra di Rame": "farm", "Barra di Bronzo": "farm", "Barra d'Argento": "farm", "Barra d'Oro": "farm", "Barra di Ferro": "farm", "Barra di Mithril": "farm", "Barra di Torio": "farm", "Flusso Debole": "vendor", "Stoffa di Lana": "ah", "Stoffa di Seta": "ah", "Stoffa Runica": "ah", "Perla Blu": "ah", "Polvere Esplosiva Solida": "ah", "Cuoio Spesso": "ah", "Rubino Stellato": "ah", "Barra d'Arcanite": "ah", "Seta di Ragno Telaferrea": "ah", "Polvere Esplosiva Pesante": "craft", "Nucleo d'Energia d'Oro": "craft"}, "sub": {"Polvere Esplosiva Pesante": {"Pietra Pesante": 1}, "Nucleo d'Energia d'Oro": {"Barra d'Oro": 1}}, "steps": [{"f": 1, "t": 30, "r": "Polvere Esplosiva Ruvida", "n": 32, "m": {"Pietra Ruvida": 1}}, {"f": 30, "t": 54, "r": "Manciata di Bulloni di Rame", "n": 28, "m": {"Barra di Rame": 1}}, {"f": 54, "t": 75, "r": "Tubo di Rame", "n": 21, "m": {"Barra di Rame": 2, "Flusso Debole": 1}, "note": "<strong>Impara Garzone a 50</strong> (livello 10): {comp}."}, {"f": 75, "t": 90, "r": "Polvere Esplosiva Grezza", "n": 16, "m": {"Pietra Grezza": 1}}, {"f": 90, "t": 125, "r": "Contatto d'Argento", "n": 40, "m": {"Barra d'Argento": 1}}, {"f": 125, "t": 140, "r": "Polvere Esplosiva Pesante", "n": 26, "m": {"Pietra Pesante": 1}, "out": "Polvere Esplosiva Pesante", "note": "<strong>Impara Esperto a 125</strong> (livello 20): {exp}. Tieni tutta la polvere: la Bomba Accecante (186-210) ne richiede 37."}, {"f": 140, "t": 150, "r": "Aggeggio di Bronzo Ronzante", "n": 17, "m": {"Barra di Bronzo": 2, "Stoffa di Lana": 1}}, {"f": 150, "t": 170, "r": "Nucleo d'Energia d'Oro", "n": 27, "m": {"Barra d'Oro": 1}, "out": "Nucleo d'Energia d'Oro", "note": "Tienine 20 per il passo successivo."}, {"f": 170, "t": 186, "r": "Girocronatomo", "n": 20, "m": {"Barra di Ferro": 1, "Nucleo d'Energia d'Oro": 1}}, {"f": 186, "t": 210, "r": "Bomba Accecante", "n": 37, "m": {"Perla Blu": 1, "Polvere Esplosiva Pesante": 1, "Stoffa di Seta": 1}, "note": "Ricetta da missione. <strong>Impara Artigiano a 200</strong> (livello 35): {art}."}, {"f": 210, "t": 215, "r": "Proiettili di Mithril ad Alto Impatto", "n": 5, "m": {"Barra di Mithril": 1, "Polvere Esplosiva Solida": 1}}, {"f": 215, "t": 241, "r": "Involucro di Mithril", "n": 41, "m": {"Barra di Mithril": 3}}, {"f": 241, "t": 245, "r": "Occhiali Rosa", "n": 4, "m": {"Cuoio Spesso": 6, "Rubino Stellato": 2}, "p": 1}, {"f": 245, "t": 250, "r": "Girocolpo di Mithril", "n": 5, "m": {"Barra di Mithril": 2, "Polvere Esplosiva Solida": 2}, "p": 1}, {"f": 250, "t": 258, "r": "Polvere Esplosiva Densa", "n": 14, "m": {"Pietra Densa": 2}, "p": 1}, {"f": 258, "t": 260, "r": "Girocolpo di Mithril", "n": 3, "m": {"Barra di Mithril": 2, "Polvere Esplosiva Solida": 2}, "p": 1}, {"f": 260, "t": 285, "r": "Congegno di Torio", "n": 26, "m": {"Barra di Torio": 3, "Stoffa Runica": 1}, "p": 1, "note": "Ricetta per 1o 26a da Gearcutter Cogspinner (Forgiardente) per l'Alleanza, da Sovik (Orgrimmar) per l'Orda."}, {"f": 285, "t": 300, "r": "Convertitore d'Arcanite Delicato", "n": 15, "m": {"Barra d'Arcanite": 1, "Seta di Ragno Telaferrea": 1}, "p": 1, "note": "Ricetta per 2o da Xizzer Fizzbolt (Fontefredda)."}], "train": {"comp": "Thund a Orgrimmar (75.4, 24.6) o Mukdrak a Durotar (52.2, 40.8)", "exp": "Nogg a Orgrimmar (75.4, 24.8)", "art": "Roxxik a Orgrimmar (75.4, 24.8)"}, "done300": "300 raggiunto. Pensa al Banco dell'Anarchico per il tuo campo e alla tua specializzazione gnomesca o goblin.", "groupTitles": {"farm": "Da estrarre (e fondere)", "vendor": "Dai venditori", "ah": "Casa d'aste o altre professioni", "craft": "Intermedi"}, "trainA": {"comp": "Sprite Jumpsprocket a Roccavento (54.6, 8.0) o Jemma Quikswitch a Forgiardente (67.4, 43.8)", "exp": "Lilliam Sparkspindle a Roccavento (54.8, 7.8) o Trixie Quikswitch a Forgiardente (67.4, 43.2)", "art": "Springspindle Fizzlegear a Forgiardente (68.2, 43.4)"}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

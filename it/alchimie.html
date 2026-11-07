@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alchimia WoW Forever</title>
+<meta name="description" content="Guida di Alchimia 1-300 per WoW Forever (Alleanza e Orda): percorso ricetta per ricetta, lista della spesa calcolata, istruttori ed erbe.">
+<meta property="og:title" content="Alchimia WoW Forever">
+<meta property="og:description" content="Guida di Alchimia 1-300 per WoW Forever (Alleanza e Orda): percorso ricetta per ricetta, lista della spesa calcolata, istruttori ed erbe.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../alchimie.html">
+<link rel="alternate" hreflang="en" href="../en/alchimie.html">
+<link rel="alternate" hreflang="es" href="../es/alchimie.html">
+<link rel="alternate" hreflang="de" href="../de/alchimie.html">
+<link rel="alternate" hreflang="pt" href="../pt/alchimie.html">
+<link rel="alternate" hreflang="ru" href="../ru/alchimie.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #0f1513;
+  --bg-glow: #17261f;
+  --panel: #17201c;
+  --panel-2: #1f2b26;
+  --stitch: #4f7d68;
+  --ink: #f1e9dc;
+  --muted: #b5a995;
+  --accent: #6fd1a4;
+  --accent-ink: #15100c;
+  --seg1: #9fd9bd; --seg2: #6fbf98; --seg3: #3f8f6c; --seg4: #29624a;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Alchimia</span>
+  <h1>Alchimia 1 → 300</h1>
+  <p class="lede">Il percorso completo, ricetta per ricetta, secondo i dati della beta di Forever. Inserisci la tua abilità: la pagina mostra dove sei, il passo successivo e tutte le erbe e le fiale che ti mancano.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Dove sei</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Abilità attuale</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Togli 5 punti">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Aggiungi 5 punti">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Lista della spesa fino a</label>
+      <select id="target">
+        <option value="75">75 (fine di Apprendista)</option>
+        <option value="150" selected>150 (fine di Garzone)</option>
+        <option value="225">225 (fine di Esperto)</option>
+        <option value="300">300 (Artigiano)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprendista</div><div class="seg s2">Garzone</div><div class="seg s3">Esperto</div><div class="seg s4">Artigiano</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Cosa ti manca ancora</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Il percorso</h2>
+    <p class="lede" style="margin-top:0">Le quantità sono stime: tieni sempre un margine. Regola d'oro: appena una ricetta diventa verde, passa al passo successivo.</p>
+    <div class="legend" aria-label="Colori delle ricette">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Arancione: +1 sempre</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Giallo: spesso</span> <span><span class="dot" style="background:var(--sk-green)"></span>Verde: raramente</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Grigio: mai</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Istruttori</h2>
+  <p class="lede" style="margin-top:0">Senza il rango giusto, la tua abilità resta bloccata al massimo (75, 150, 225). Impara il rango successivo appena hai il livello richiesto.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alleanza</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Sblocca</th><th>Requisiti</th><th>Istruttori (coordinate)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Garzone</span></td><td class="num">fino a 150</td><td>abilità 50, livello 10</td><td><strong>Tel'Athir</strong>, Roccavento (45.8, 78.2) · Vosur Brakthel, Forgiardente (66.4, 55.2) · Milla Fairancora, Darnassus (55.2, 21.4) · Alchimista Mallory, Foresta di Elwynn (39.8, 48.4) · Cyndra Kindwhisper, Teldrassil (57.6, 60.6) · Ghak Healtouch, Loch Modan (37.0, 49.2)</td></tr><tr><td><span class="pill">Esperto</span></td><td class="num">fino a 225</td><td>abilità 125, livello 20</td><td><strong>Lilyssia Nightbreeze</strong>, Roccavento (46.4, 79.4) · Tally Berryfizz, Forgiardente (66.4, 55.2) · Sylvanna Forestmoon, Darnassus (55.6, 23.4) · Kylanna, Valtetra (50.8, 67.0) · Alchimista Narett, Palude di Acquamorta (64.0, 47.6)</td></tr><tr><td><span class="pill">Artigiano</span></td><td class="num">fino a 300</td><td>abilità 200, livello 35</td><td><strong>Ainethil</strong>, Darnassus (55.0, 23.4)</td></tr><tr><td><span class="pill">Ricette alte</span></td><td class="num">—</td><td>—</td><td>Maestro micologo Shurome, Vilbosco (51.4, 82.0)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Orda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Sblocca</th><th>Requisiti</th><th>Istruttori (coordinate)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Garzone</span></td><td class="num">fino a 150</td><td>abilità 50, livello 10</td><td><strong>Whuut</strong>, Orgrimmar (55.8, 33.2) · Miao'zan, Durotar (55.4, 74.0) · Dottor Martin Felben, Sepulcride (45.8, 73.2) · Carolai Anise, Radure di Tirisfal (59.4, 52.2) · Kray, Picco del Tuono (46.8, 33.4)</td></tr><tr><td><span class="pill">Esperto</span></td><td class="num">fino a 225</td><td>abilità 125, livello 20</td><td><strong>Yelmak</strong>, Orgrimmar (56.4, 33.2) · Dottor Marsh, Sepulcride (51.2, 75.0) · Bena Winterhoof, Picco del Tuono (46.8, 33.4) · Serge Hinott, Alture di Colletorto (61.4, 19.2) · Jaxin Chong, Valle di Rovotorto (28.0, 78.0)</td></tr><tr><td><span class="pill">Artigiano</span></td><td class="num">fino a 300</td><td>abilità 200, livello 35</td><td><strong>Dottor Herbert Halsey</strong>, Sepulcride (47.4, 73.0)</td></tr><tr><td><span class="pill">Ricette alte</span></td><td class="num">—</td><td>—</td><td>Maestro micologo Shurome, Vilbosco (51.4, 82.0)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Le fiale si comprano dai fornitori di alchimia e di merci. I venditori di ricette segnati Alleanza o Orda servono solo la loro fazione: l'altra parte usa la casa d'aste.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Dove raccogliere ogni erba</h2>
+  <p class="lede" style="margin-top:0">Sono le zone di Classic, su cui si basa Forever. Il Cardo Lesto non si raccoglie da solo: cade come bonus da Magoreale e Spinarovo.</p>
+  <div class="cols"><div class="card"><h3>Pacefiore, Fogliargento</h3><span class="lv">Abilità da 1 a 70</span><p><span class="fl" data-f="h"><span class="fac h">Orda</span> Durotar, Mulgore, Radure di Tirisfal, Savane.</span><span class="fl" data-f="a"><span class="fac a">Alleanza</span> Foresta di Elwynn, Dun Morogh, Teldrassil, Marche Occidentali.</span></p></div><div class="card"><h3>Magoreale, Spinarovo, Cardo Lesto</h3><span class="lv">Abilità da 50 a 100</span><p><span class="fl" data-f="h"><span class="fac h">Orda</span> Savane, Selva Pinargento, Vette di Artiglio di Pietra, Valtetra.</span><span class="fl" data-f="a"><span class="fac a">Alleanza</span> Marche Occidentali, Loch Modan, Rivafosca, Montagne Crestarossa.</span></p></div><div class="card"><h3>Erba Livida, Alga Strangolatrice</h3><span class="lv">Abilità da 85 a 115</span><p><span class="fl" data-f="h"><span class="fac h">Orda</span> Vette di Artiglio di Pietra, Valtetra, Alture di Colletorto.</span><span class="fl" data-f="a"><span class="fac a">Alleanza</span> Paludi Grigie, Montagne Crestarossa, Valtetra.</span><span class="fl">L'Alga Strangolatrice cresce sott'acqua lungo le coste.</span></p></div><div class="card"><h3>Spinadoro</h3><span class="lv">Abilità da 170 in su</span><p>Altipiani di Arathi, Valle di Rovotorto, Feralas, Palude del Dolore.</p></div><div class="card"><h3>Sangue di Grom, Erbasole, Fogliasogno</h3><span class="lv">Abilità da 220 a 270</span><p>Vilbosco, Cratere di Un'Goro, Terre Infette, Silitus.</p></div><div class="card"><h3>Capogelo, Fungo Fantasma</h3><span class="lv">Abilità da 245 a 290</span><p>Fontefredda per il Capogelo; grotte e paludi (Entroterre, Palude del Dolore) per il Fungo Fantasma.</p></div></div>
+  <p class="foot">Sacche di Fiamma Piccole, Olio di Fuoco, Artigli Affilati e Minerale di Mithril arrivano quasi sempre dalla casa d'aste: controlla i prezzi prima di iniziare un passo.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novità di Forever</h2>
+  <ul class="plain"><li><strong>Le pozioni curative hanno lasciato l'Alchimia</strong>: ora le crea il Primo soccorso.</li><li><strong>Pozzo di Mana</strong> a 20: ridà mana ai giocatori seduti vicini (non si somma con Benedizione della Saggezza).</li><li><strong>Fermentatore</strong> a 140: crea alcuni componenti al campo.</li><li><strong>Laboratorio Alchemico</strong> a 300: richiesto per alcune ricette.</li><li><strong>Punti eredità</strong> a 150, 225 e 300.</li><li>Annunciato alla BlizzCon ma non ancora confermato: elisir e tonici bevuti dall'alchimista durerebbero il doppio e sarebbero più forti del 25%.</li><li>La professione ha 179 ricette, 72 nuove. Questo percorso segue le migliori per salire, non le migliori da vendere.</li></ul>
+</section>
+
+<footer class="foot"><p>Fonti: <a href="https://kami-labs.fr/guide-alchimie-wow-forever/">Kami Labs, guida all'Alchimia di WoW Forever</a> per percorso, ricette e istruttori · <a href="https://conquestcapped.com/guides/fr/wow-forever/wow-forever-alchemy/">ConquestCapped</a> per lo spostamento delle pozioni curative.</p><p>I passi oltre 225 non erano giocabili in beta: sono segnati «da verificare». I nomi di oggetti, PNG e zone sono tradotti e possono differire un po' nel tuo client.</p></footer>
+
+
+</main>
+<script>
+var CONFIG = {"key": "alch", "src": {"Fogliargento": "farm", "Pacefiore": "farm", "Spinarovo": "farm", "Erba Livida": "farm", "Cardo Lesto": "farm", "Magoreale": "farm", "Alga Strangolatrice": "farm", "Spinadoro": "farm", "Sangue di Grom": "farm", "Fungo Fantasma": "farm", "Erbasole": "farm", "Fogliasogno": "farm", "Capogelo": "farm", "Fiala Vuota": "vendor", "Fiala di Piombo": "vendor", "Fiala di Cristallo": "vendor", "Artiglio Affilato": "ah", "Sacca di Fiamma Piccola": "ah", "Olio di Fuoco": "ah", "Minerale di Mithril": "ah", "Anguilla Scagliapietra": "ah", "Olio di Scagliapietra": "craft"}, "sub": {"Olio di Scagliapietra": {"Anguilla Scagliapietra": 1, "Fiala di Piombo": 1}}, "steps": [{"f": 1, "t": 71, "r": "Elisir di Difesa Minore", "n": 74, "m": {"Fogliargento": 1, "Pacefiore": 1, "Fiala Vuota": 1}, "note": "<strong>Impara Garzone a 50</strong> (livello 10), o resti bloccato a 75."}, {"f": 71, "t": 100, "r": "Pozione dell'Ira", "n": 30, "m": {"Artiglio Affilato": 1, "Spinarovo": 1, "Fiala Vuota": 1}, "note": "Ricetta per 1a dallo Speculatore dei Defias (Marche Occidentali) o da Xandar Goodbeard (Loch Modan)."}, {"f": 100, "t": 120, "r": "Pozione di Protezione Sacra", "n": 20, "m": {"Erba Livida": 1, "Cardo Lesto": 1, "Fiala Vuota": 1}, "note": "Ricetta per 8a da Kzixx (Boscotetro), un goblin neutrale."}, {"f": 120, "t": 165, "r": "Pozione di Mana Inferiore", "n": 52, "m": {"Magoreale": 1, "Alga Strangolatrice": 1, "Fiala Vuota": 1}, "note": "<strong>Impara Esperto a 125</strong> (livello 20): {exp}."}, {"f": 165, "t": 219, "r": "Pozione di Protezione dal Fuoco", "n": 55, "m": {"Sacca di Fiamma Piccola": 1, "Olio di Fuoco": 1, "Fiala di Piombo": 1}, "note": "Ricetta per 15a da Nandar Branson (Alture di Colletorto, Riva del Sud) per l'Alleanza. Orda: casa d'aste."}, {"f": 219, "t": 250, "r": "Pozione Scudo di Pietra Inferiore", "n": 38, "m": {"Minerale di Mithril": 1, "Spinadoro": 1, "Fiala di Piombo": 1}, "note": "Ricetta da missione («Pietra Liquida»). <strong>Impara Artigiano a 200</strong> (livello 35): {art}."}, {"f": 250, "t": 258, "r": "Olio di Scagliapietra", "n": 14, "m": {"Anguilla Scagliapietra": 1, "Fiala di Piombo": 1}, "out": "Olio di Scagliapietra", "p": 1, "note": "Tieni tutto l'olio: l'Elisir di Difesa Superiore ne richiede 2 per creazione."}, {"f": 258, "t": 267, "r": "Elisir Ammazzademoni", "n": 9, "m": {"Sangue di Grom": 1, "Fungo Fantasma": 1, "Fiala di Cristallo": 1}, "p": 1, "note": "Ricetta per 1o da Nina Lightbrew (Terre Devastate)."}, {"f": 267, "t": 295, "r": "Elisir di Difesa Superiore", "n": 32, "m": {"Olio di Scagliapietra": 2, "Erbasole": 1, "Fiala di Cristallo": 1}, "p": 1, "note": "Ricetta per 1o 30a da Soolie Berryfizz (Forgiardente) per l'Alleanza, da Kor'geld (Orgrimmar) per l'Orda."}, {"f": 295, "t": 300, "r": "Pozione di Mana Maggiore", "n": 5, "m": {"Fogliasogno": 3, "Capogelo": 2, "Fiala di Cristallo": 1}, "p": 1, "note": "Ricetta per 3o da Magnus Frostwake (Terre Infette Occidentali)."}], "train": {"comp": "Whuut a Orgrimmar (55.8, 33.2) o Miao'zan a Durotar (55.4, 74.0)", "exp": "Yelmak a Orgrimmar (56.4, 33.2)", "art": "Dottor Herbert Halsey a Sepulcride (47.4, 73.0)"}, "done300": "300 raggiunto. Pensa al Laboratorio Alchemico per il tuo campo.", "groupTitles": {"farm": "Da raccogliere (Erbalismo)", "vendor": "Dai venditori", "ah": "Casa d'aste o altre professioni", "craft": "Intermedi"}, "trainA": {"comp": "Tel'Athir a Roccavento (45.8, 78.2), Vosur Brakthel a Forgiardente (66.4, 55.2) o Milla Fairancora a Darnassus (55.2, 21.4)", "exp": "Lilyssia Nightbreeze a Roccavento (46.4, 79.4), Tally Berryfizz a Forgiardente (66.4, 55.2) o Sylvanna Forestmoon a Darnassus (55.6, 23.4)", "art": "Ainethil a Darnassus (55.0, 23.4)"}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

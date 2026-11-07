@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Травничество WoW Forever</title>
+<meta name="description" content="Гайд по травничеству 1-300 для WoW Forever (Альянс и Орда): что и где собирать, этап за этапом, с подсчётом точек Forever и наставниками.">
+<meta property="og:title" content="Травничество WoW Forever">
+<meta property="og:description" content="Гайд по травничеству 1-300 для WoW Forever (Альянс и Орда): что и где собирать, этап за этапом, с подсчётом точек Forever и наставниками.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../herboristerie.html">
+<link rel="alternate" hreflang="en" href="../en/herboristerie.html">
+<link rel="alternate" hreflang="es" href="../es/herboristerie.html">
+<link rel="alternate" hreflang="de" href="../de/herboristerie.html">
+<link rel="alternate" hreflang="it" href="../it/herboristerie.html">
+<link rel="alternate" hreflang="pt" href="../pt/herboristerie.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #11140d;
+  --bg-glow: #1e2614;
+  --panel: #191e14;
+  --panel-2: #222a1b;
+  --stitch: #66803d;
+  --accent: #b5d84f;
+  --seg1: #d8ec9c; --seg2: #b5d84f; --seg3: #7a9a2c; --seg4: #4f661b;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Травничество</span>
+  <h1>Травничество 1 → 300</h1>
+  <p class="lede">Какую траву и где собирать, этап за этапом, по переписи точек Forever. Инструмент не нужен. Введите свой навык: страница покажет ваш этап и лучшую зону.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Где вы сейчас</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Текущий навык</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Убрать 5 очков">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Добавить 5 очков">+5</button>
+      </div>
+    </div>
+    
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Ученик</div><div class="seg s2">Подмастерье</div><div class="seg s3">Умелец</div><div class="seg s4">Искусник</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:14px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Этапы и зоны</h2>
+    <p class="lede" style="margin-top:0">Трава даёт очки от требуемого уровня примерно до +100 очков (правило Classic, требует подтверждения). Числа — это точки, подсчитанные в каждой зоне.</p>
+    <div class="legend"><span><span class="zone">Зона <small>инфо</small></span> зона из подсчёта Forever</span><span><span class="zone a">Зона</span> Альянс</span><span><span class="zone h">Зона</span> Орда</span><span>без отметки: спорная или нейтральная</span></div>
+  </div>
+  <div class="tiers" id="tiers"></div>
+</section>
+
+<section aria-labelledby="seuil-h" style="display:grid;gap:12px">
+  <h2 id="seuil-h">Пороги трав</h2>
+  <p class="lede" style="margin-top:0">Навык травничества, нужный для сбора каждой травы.</p>
+  <div class="cols"><div class="card"><h3>от 1 до 85</h3><span class="lv">Начало</span><p>Мироцвет 1 · Сребролист 1 · Земляной корень 15 · Магороза 50 · Остротерн 70 · Удавник 85</p></div><div class="card"><h3>от 100 до 185</h3><span class="lv">Середина</span><p>Синячник 100 · Дикий сталецвет 115 · Могильный мох 120 · Королевская кровь 125 · Корень жизни 150 · Бледнолист 160 · Златошип 170 · Кадгаров ус 185</p></div><div class="card"><h3>от 195 до 300</h3><span class="lv">Высокий уровень</span><p>Зимний укус 195 · Огнецвет 205 · Пурпурный лотос 210 · Слезы Артаса 220 · Солнечник 230 · Слепырник 235 · Призрачная поганка 245 · Кровь Грома 250 · Золотой сансам 260 · Снолист 270 · Горный серебролист 280 · Чумоцвет 285 · Льдяной зев 290 · Черный лотос 300</p></div></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Наставники травничества</h2>
+  <p class="lede" style="margin-top:0">Kami Labs приводит наставников без рангов. В Forever производственные профессии требуют навык 50 / 125 / 200 и уровни 10 / 20 / 35: здесь, скорее всего, так же, проверьте в игре.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Альянс</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Ранг</th><th>Открывает</th><th>Требования</th><th>Наставники (координаты)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Все ранги</span></td><td class="num">до 300</td><td>навык 50 / 125 / 200 (вероятно)</td><td><strong>Tannysa</strong>, Штормград (44.4, 77.8) · Shylamiir, Штормград (15.0, 49.4) · Reyna Stonebranch, Стальгорн (55.4, 58.4) · Firodren Mooncaller, Дарнас (48.0, 68.4) · Травница Pomeroy, Элвиннский лес (39.8, 48.4) · Nancy Chantefleur, Элвиннский лес (52.2, 43.4) · Emrys Barbe-de-silex, Дун Морог (28.8, 66.4) · Kali Healtouch, Лок Модан (36.4, 48.4) · Malorne Bladeleaf, Тельдрассил (57.4, 60.6) · Eleyna Vespebrise, Тельдрассил (59.8, 41.4)</td></tr><tr><td><span class="pill">Вне столиц</span></td><td class="num">—</td><td>—</td><td>Alma Jainrose, Красногорье (16.2, 45.6) · Telurinon Moonshadow, Болотина (8.0, 55.8) · Cylania Rootstalker, Ясеневый лес (50.4, 67.0) · Brant Jasperbloom, Пылевые топи (64.0, 47.6) · Flora Silverwind, Тернистая долина (27.6, 77.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Орда</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Ранг</th><th>Открывает</th><th>Требования</th><th>Наставники (координаты)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Все ранги</span></td><td class="num">до 300</td><td>навык 50 / 125 / 200 (вероятно)</td><td><strong>Jandi</strong>, Оргриммар (55.4, 39.4) · Mishiki, Дуротар (55.4, 75.0) · Zor'la, Дуротар (42.6, 67.4) · Martha Alliestar, Подгород (54.2, 49.4) · Faruza, Тирисфальские леса (59.8, 52.0) · Florence Belladone, Тирисфальские леса (32.4, 65.2) · Komin Winterhoof, Громовой Утес (49.4, 39.2) · Garan Haut-Soleil, Мулгор (44.2, 77.8)</td></tr><tr><td><span class="pill">Нейтральные</span></td><td class="num">—</td><td>—</td><td>Aranae Venomblood, Предгорья Хилсбрада (61.4, 19.8) · Angrun и Flora Silverwind, Тернистая долина · Ruw, Фералас (76.0, 43.4)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Особенности Forever</h2>
+  <ul class="plain"><li>Объявлено на BlizzCon, ещё не подтверждено: <strong>Дар природы</strong> (сопротивление всем школам магии), больше шансов на редкие лотосы и больше трав с точки.</li><li>В Forever 48 типов точек: 2 новых (Увядший мироцвет, Чахлый сребролист) и 8 изменённых.</li><li><strong>Черный лотос</strong> больше не даёт очков навыка.</li><li><strong>Очки наследия</strong> на 150, 225 и 300.</li><li>Хорошо сочетается с <a href="alchimie.html">алхимией</a>, а <a href="secourisme.html">первой помощи</a> теперь тоже нужны травы для лечебных зелий.</li></ul>
+</section>
+
+<footer class="foot"><p>Источники: <a href="https://kami-labs.fr/guide-herboristerie-wow-forever/">Kami Labs, гайд по травничеству WoW Forever</a> · <a href="https://kami-labs.fr/metiers-wow-forever/">Kami Labs, профессии WoW Forever</a>.</p><p>Советы для фракций взяты из Classic, на котором основан Forever. Бета закончилась на 225: этапы выше помечены «после беты». Названия предметов, НИП и зон переведены и могут немного отличаться в вашем клиенте.</p><p>Неофициальный фанатский гайд, обновлён 7 ноября 2026 г. World of Warcraft — торговая марка Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "herbo", "done300": "Достигнуто 300. Черный лотос больше не даёт очков: сохраните его для настоев.", "train": {"comp": "Подумайте о ранге Подмастерье (вероятно, уровень 10): Jandi в Оргриммаре (55.4, 39.4).", "exp": "Подумайте о ранге Умелец (вероятно, уровень 20): Jandi в Оргриммаре (55.4, 39.4).", "art": "Подумайте о ранге Искусник (вероятно, уровень 35): Jandi в Оргриммаре (55.4, 39.4)."}, "tiers": [{"f": 1, "t": 50, "res": ["Мироцвет", "Сребролист", "Земляной корень (с 15)"], "zones": [["Тельдрассил", "≈ 439", "a"], ["Остров Зефры", "≈ 427"], ["Элвиннский лес", "≈ 372", "a"], ["Дун Морог", "≈ 367", "a"]], "horde": "Дуротар, Мулгор, Тирисфальские леса, Степи.", "alliance": "Элвиннский лес, Дун Морог, Тельдрассил."}, {"f": 50, "t": 70, "res": ["Магороза", "Земляной корень", "Мироцвет"], "zones": [["Остров Зефры", "≈ 461"]], "horde": "Степи, Серебряный бор, Когтистые горы.", "alliance": "Западный Край, Лок Модан, Темные берега."}, {"f": 70, "t": 115, "res": ["Остротерн", "Удавник (под водой)", "Синячник (с 100)"], "zones": [["Болотина", "≈ 345", "a"], ["Ясеневый лес", "≈ 295"], ["Западный Край", "≈ 275", "a"], ["Красногорье", "≈ 229", "a"]], "horde": "Степи, Когтистые горы, Ясеневый лес, Предгорья Хилсбрада.", "note": "Изучите Подмастерье до 75.", "alliance": "Болотина, Западный Край, Красногорье, Лок Модан."}, {"f": 115, "t": 160, "res": ["Дикий сталецвет", "Могильный мох", "Королевская кровь"], "zones": [["Болотина", "≈ 388", "a"], ["Ясеневый лес", "≈ 330"], ["Когтистые горы", "≈ 309"], ["Тернистая долина", "≈ 304"]], "horde": "Ясеневый лес, Когтистые горы, Предгорья Хилсбрада, Тысяча Игл.", "note": "Изучите Умельца до 150.", "alliance": "Болотина, Предгорья Хилсбрада от Южнобережья, Ясеневый лес от Астранаара."}, {"f": 160, "t": 205, "res": ["Бледнолист", "Корень жизни", "Златошип (с 170)", "Кадгаров ус (с 185)"], "zones": [["Тернистая долина", "≈ 469"], ["Пылевые топи", "≈ 310"], ["Болото Печали", "≈ 274"], ["Нагорье Арати", "≈ 267"]]}, {"f": 205, "t": 230, "res": ["Огнецвет", "Пурпурный лотос", "Зимний укус", "Слезы Артаса (с 220)"], "zones": [["Тернистая долина", "≈ 305"], ["Фералас", "≈ 264"], ["Пылевые топи", "≈ 182"], ["Альтеракские горы", "≈ 177"]], "note": "Изучите Искусника до 225."}, {"f": 230, "t": 270, "res": ["Солнечник", "Слепырник", "Призрачная поганка (с 245)", "Кровь Грома (с 250)", "Золотой сансам (с 260)"], "zones": [["Фералас", "≈ 178"], ["Болото Печали", "≈ 175"], ["Азшара", "≈ 167"], ["Внутренние земли", "≈ 162"]], "p": 1}, {"f": 270, "t": 300, "res": ["Снолист", "Горный серебролист (с 280)", "Чумоцвет (с 285)", "Льдяной зев (с 290)"], "zones": [["Восточные Чумные земли", "≈ 333"], ["Азшара", "≈ 228"], ["Оскверненный лес", "≈ 228"], ["Кратер Ун'Горо", "≈ 182"]], "p": 1, "note": "Льдяной зев: Зимние Ключи. Черный лотос на 300."}], "trainA": {"comp": "Подумайте о ранге Подмастерье (вероятно, уровень 10): Tannysa в Штормграде (44.4, 77.8), Reyna Stonebranch в Стальгорне (55.4, 58.4) или Firodren Mooncaller в Дарнасе (48.0, 68.4).", "exp": "Подумайте о ранге Умелец (вероятно, уровень 20): Tannysa в Штормграде (44.4, 77.8), Reyna Stonebranch в Стальгорне (55.4, 58.4) или Firodren Mooncaller в Дарнасе (48.0, 68.4).", "art": "Подумайте о ранге Искусник (вероятно, уровень 35): Tannysa в Штормграде (44.4, 77.8), Reyna Stonebranch в Стальгорне (55.4, 58.4) или Firodren Mooncaller в Дарнасе (48.0, 68.4)."}};
+</script>
+<script src="../assets/recolte.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

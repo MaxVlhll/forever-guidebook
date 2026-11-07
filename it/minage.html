@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estrazione WoW Forever</title>
+<meta name="description" content="Guida di Estrazione 1-300 per WoW Forever (Alleanza e Orda): quale filone estrarre e dove, fascia per fascia, fusione e istruttori.">
+<meta property="og:title" content="Estrazione WoW Forever">
+<meta property="og:description" content="Guida di Estrazione 1-300 per WoW Forever (Alleanza e Orda): quale filone estrarre e dove, fascia per fascia, fusione e istruttori.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../minage.html">
+<link rel="alternate" hreflang="en" href="../en/minage.html">
+<link rel="alternate" hreflang="es" href="../es/minage.html">
+<link rel="alternate" hreflang="de" href="../de/minage.html">
+<link rel="alternate" hreflang="pt" href="../pt/minage.html">
+<link rel="alternate" hreflang="ru" href="../ru/minage.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #121212;
+  --bg-glow: #24201c;
+  --panel: #1c1a18;
+  --panel-2: #262320;
+  --stitch: #7a6650;
+  --accent: #e09a66;
+  --seg1: #f0c4a0; --seg2: #d9935f; --seg3: #a05f35; --seg4: #6b3d20;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Estrazione</span>
+  <h1>Estrazione 1 → 300</h1>
+  <p class="lede">Quale filone estrarre e dove, fascia per fascia, secondo il censimento dei nodi di Forever. Ti serve un Piccone da Minatore. Inserisci la tua abilità: la pagina mostra la tua fascia e la zona migliore.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Dove sei</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Abilità attuale</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Togli 5 punti">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Aggiungi 5 punti">+5</button>
+      </div>
+    </div>
+    
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprendista</div><div class="seg s2">Garzone</div><div class="seg s3">Esperto</div><div class="seg s4">Artigiano</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:14px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Fasce e zone</h2>
+    <p class="lede" style="margin-top:0">Regola di Classic, da confermare in gioco: un minerale dà punti dal suo livello richiesto fino a circa 100 punti sopra. I numeri sono i nodi contati per zona.</p>
+    <div class="legend"><span><span class="zone">Zona <small>info</small></span> zona contata da Forever</span><span><span class="zone a">Zona</span> Alleanza</span><span><span class="zone h">Zona</span> Orda</span><span>senza segno: contesa o neutrale</span></div>
+  </div>
+  <div class="tiers" id="tiers"></div>
+</section>
+
+<section class="stitched" aria-labelledby="smelt-h" style="display:grid;gap:12px">
+  <h2 id="smelt-h">Fondere strada facendo</h2>
+  <p class="lede" style="margin-top:0">Fondere dà qualche punto in più, ma secondo i dati di Forever non ne dà più oltre 185. Usalo per colmare un buco, non come percorso principale.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Abilità</th><th>Barra</th><th>Ricetta</th></tr></thead>
+    <tbody>
+      <tr><td class="num">25 → 65</td><td><strong>Barra di Rame</strong></td><td>1 Minerale di Rame</td></tr>
+      <tr><td class="num">65 → 75</td><td><strong>Barra di Bronzo</strong></td><td>1 Barra di Rame + 1 Barra di Stagno</td></tr>
+      <tr><td class="num">75 → 125</td><td><strong>Barra d'Argento</strong></td><td>1 Minerale d'Argento</td></tr>
+      <tr><td class="num">125 → 140</td><td><strong>Barra di Ferro</strong></td><td>1 Minerale di Ferro</td></tr>
+      <tr><td class="num">170 → 185</td><td><strong>Barra d'Oro</strong></td><td>1 Minerale d'Oro</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Istruttori di Estrazione</h2>
+  <p class="lede" style="margin-top:0">Kami Labs elenca gli istruttori senza i ranghi. In Forever le professioni di creazione richiedono abilità 50 / 125 / 200 e livelli 10 / 20 / 35: qui è molto probabilmente uguale, da verificare in gioco.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alleanza</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Sblocca</th><th>Requisiti</th><th>Istruttori (coordinate)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Tutti i ranghi</span></td><td class="num">fino a 300</td><td>abilità 50 / 125 / 200 (probabile)</td><td><strong>Gelman Stonehand</strong>, Roccavento (51.0, 17.2) · Geofram Bouldertoe, Forgiardente (50.2, 26.0) · Kelsey Fond, Foresta di Elwynn (47.2, 32.2) · Yarr Hammerstone, Dun Morogh (50.0, 50.4) · Dank Drizzlecut, Dun Morogh (69.2, 55.4) · Brock Stoneseeker, Loch Modan (37.0, 47.8) · Kurdram Stonehammer, Rivafosca (38.2, 41.0) · Fanorran Calmechêne, Teldrassil (58.2, 41.4) · Matt Johnson, Boscotetro (74.0, 49.4)</td></tr><tr><td><span class="pill">Neutrali</span></td><td class="num">—</td><td>—</td><td>Pikkle, Tanaris (51.0, 28.0) · Grungle, Clearwater Shores (77.6, 51.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Orda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Sblocca</th><th>Requisiti</th><th>Istruttori (coordinate)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Tutti i ranghi</span></td><td class="num">fino a 300</td><td>abilità 50 / 125 / 200 (probabile)</td><td><strong>Makaru</strong>, Orgrimmar (73.0, 26.4) · Krunn, Durotar (51.8, 40.8) · Norzsh, Durotar (40.4, 68.0) · Brom Killian, Sepulcride (55.4, 36.2) · Walter Mason, Radure di Tirisfal (32.2, 65.4) · Brek Stonehoof, Picco del Tuono (34.4, 57.4) · Vartha Rochecrin, Mulgore (44.2, 78.2)</td></tr><tr><td><span class="pill">Neutrali</span></td><td class="num">—</td><td>—</td><td>Pikkle, Tanaris (51.0, 28.0) · Grungle, Clearwater Shores (77.6, 51.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Il Piccone da Minatore si compra dai fornitori di merci.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novità di Forever</h2>
+  <ul class="plain"><li>Annunciato alla BlizzCon, non ancora confermato: <strong>Fatto di Metallo</strong> (+5% di salute totale), minerale extra dai filoni e probabilità di materiali rari o da combattimento.</li><li><strong>Calamita</strong> (oggetto da campo dei minatori): bonus di potenza d'attacco in mischia, secondo Method.</li><li>Forever ha 38 tipi di nodi: 2 nuovi (Filone di Rame Esaurito, Filone di Torio Pesante) e 5 modificati.</li><li><strong>Punti eredità</strong> a 150, 225 e 300.</li><li>Si abbina bene alla <a href="forge.html">Forgiatura</a> o all'<a href="ingenierie.html">Ingegneria</a>, che consumano centinaia di barre.</li></ul>
+</section>
+
+<footer class="foot"><p>Fonti: <a href="https://kami-labs.fr/guide-minage-wow-forever/">Kami Labs, guida all'Estrazione di WoW Forever</a> · <a href="https://kami-labs.fr/metiers-wow-forever/">Kami Labs, professioni di WoW Forever</a> · <a href="https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents">Method, oggetti da campo</a>.</p><p>I consigli per fazione vengono da Classic, su cui si basa Forever. La beta si è fermata a 225: le fasce successive sono segnate «dopo la beta». I nomi di oggetti, PNG e zone sono tradotti e possono differire un po' nel tuo client.</p><p>Guida di fan non ufficiale, aggiornata il 7 novembre 2026. World of Warcraft è un marchio di Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "minage", "done300": "300 raggiunto. Tieni d'occhio il Filone di Torio Pesante, nuovo in Forever.", "train": {"comp": "Pensa al rango Garzone (probabilmente livello 10): Makaru a Orgrimmar (73.0, 26.4).", "exp": "Pensa al rango Esperto (probabilmente livello 20): Makaru a Orgrimmar (73.0, 26.4).", "art": "Pensa al rango Artigiano (probabilmente livello 35): Makaru a Orgrimmar (73.0, 26.4)."}, "tiers": [{"f": 1, "t": 65, "res": ["Minerale di Rame", "Filone di Rame Esaurito (nuovo)"], "zones": [["Isola di Zephras", "≈ 230"], ["Dun Morogh", "≈ 220", "a"], ["Foresta di Elwynn", "≈ 219", "a"], ["Loch Modan", "≈ 151", "a"]], "horde": "Durotar, Mulgore, Radure di Tirisfal, Savane.", "note": "Fondi il rame da 25: dà punti fino a 65.", "alliance": "Foresta di Elwynn, Dun Morogh, Loch Modan."}, {"f": 65, "t": 75, "res": ["Minerale di Stagno", "Incendicite", "Rame"], "zones": [["Montagne Crestarossa", "≈ 271", "a"], ["Isola di Zephras", "≈ 230"]], "horde": "Savane, Selva Pinargento, Vette di Artiglio di Pietra.", "alliance": "Montagne Crestarossa, Marche Occidentali, Rivafosca."}, {"f": 75, "t": 125, "res": ["Minerale d'Argento", "Pietrasangue Inferiore", "Stagno", "Incendicite"], "zones": [["Altipiani di Arathi", "≈ 208"], ["Millepicchi", "≈ 204"], ["Alture di Colletorto", "≈ 198"], ["Montagne Crestarossa", "≈ 184", "a"]], "horde": "Millepicchi, Alture di Colletorto, Vette di Artiglio di Pietra.", "note": "Impara Garzone prima di 75.", "alliance": "Paludi Grigie (di gran lunga la migliore, una grotta con stagno e incendicite), Montagne Crestarossa, Alture di Colletorto da Riva del Sud."}, {"f": 125, "t": 155, "res": ["Minerale di Ferro", "Argento", "Stagno"], "zones": [["Altipiani di Arathi", "≈ 351"], ["Millepicchi", "≈ 314"], ["Desolanda", "≈ 236"], ["Valle di Rovotorto", "≈ 208"]], "note": "Impara Esperto prima di 150."}, {"f": 155, "t": 175, "res": ["Minerale d'Oro", "Indurio", "Ferro"], "zones": [["Altipiani di Arathi", "≈ 262"], ["Valle di Rovotorto", "≈ 214"], ["Maleterre", "≈ 196"], ["Millepicchi", "≈ 184"]]}, {"f": 175, "t": 230, "res": ["Minerale di Mithril", "Oro", "Indurio"], "zones": [["Altipiani di Arathi", "≈ 313"], ["Valle di Rovotorto", "≈ 275"], ["Maleterre", "≈ 271"], ["Desolanda", "≈ 245"], ["Entroterre", "≈ 198"], ["Tanaris", "≈ 179"]], "note": "Impara Artigiano prima di 225."}, {"f": 230, "t": 245, "res": ["Minerale di Verargento", "Ferroscuro", "Mithril"], "zones": [["Entroterre", "≈ 293"], ["Steppe Ardenti", "≈ 274"], ["Tanaris", "≈ 255"], ["Gola Rovente", "≈ 227"]], "p": 1}, {"f": 245, "t": 300, "res": ["Minerale di Torio", "Filone di Torio Pesante (nuovo)", "Verargento"], "zones": [["Steppe Ardenti", "≈ 290"], ["Silitus", "≈ 273"], ["Fontefredda", "≈ 227"], ["Cratere di Un'Goro", "≈ 187"]], "p": 1, "note": "Un'Goro e Silitus, entrambe neutrali, sono le più tranquille."}], "trainA": {"comp": "Pensa al rango Garzone (probabilmente livello 10): Gelman Stonehand a Roccavento (51.0, 17.2) o Geofram Bouldertoe a Forgiardente (50.2, 26.0).", "exp": "Pensa al rango Esperto (probabilmente livello 20): Gelman Stonehand a Roccavento (51.0, 17.2) o Geofram Bouldertoe a Forgiardente (50.2, 26.0).", "art": "Pensa al rango Artigiano (probabilmente livello 35): Gelman Stonehand a Roccavento (51.0, 17.2) o Geofram Bouldertoe a Forgiardente (50.2, 26.0)."}};
+</script>
+<script src="../assets/recolte.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

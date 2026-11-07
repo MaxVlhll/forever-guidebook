@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Primeiros Socorros WoW Forever</title>
+<meta name="description" content="Guia de Primeiros Socorros 1-300 para WoW Forever (Aliança e Horda): ataduras e poções de cura, lista de compras, livro e missão «Triagem».">
+<meta property="og:title" content="Primeiros Socorros WoW Forever">
+<meta property="og:description" content="Guia de Primeiros Socorros 1-300 para WoW Forever (Aliança e Horda): ataduras e poções de cura, lista de compras, livro e missão «Triagem».">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../secourisme.html">
+<link rel="alternate" hreflang="en" href="../en/secourisme.html">
+<link rel="alternate" hreflang="es" href="../es/secourisme.html">
+<link rel="alternate" hreflang="de" href="../de/secourisme.html">
+<link rel="alternate" hreflang="it" href="../it/secourisme.html">
+<link rel="alternate" hreflang="ru" href="../ru/secourisme.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #150f10;
+  --bg-glow: #2a1517;
+  --panel: #201718;
+  --panel-2: #2b1f21;
+  --stitch: #874b50;
+  --accent: #ff7b7b;
+  --seg1: #ffb3b3; --seg2: #f07c7c; --seg3: #b8474b; --seg4: #7f2a2f;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Primeiros Socorros</span>
+  <h1>Primeiros Socorros 1 → 300</h1>
+  <p class="lede">Uma profissão secundária, além das suas duas principais. Em Forever, são os Primeiros Socorros que fazem as poções de cura. Informe sua perícia: a página mostra a próxima etapa e o tecido que ainda falta.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Onde você está</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Perícia atual</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Tirar 5 pontos">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Adicionar 5 pontos">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Lista de compras até</label>
+      <select id="target">
+        <option value="75">75 (fim de Aprendiz)</option>
+        <option value="150" selected>150 (fim de Artífice)</option>
+        <option value="225">225 (fim de Especialista)</option>
+        <option value="300">300 (Artesão)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Aprendiz</div><div class="seg s2">Artífice</div><div class="seg s3">Especialista</div><div class="seg s4">Artesão</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">O que ainda falta</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">O caminho</h2>
+    <p class="lede" style="margin-top:0">As quantidades são estimativas: guarde sempre uma margem. Regra de ouro: assim que uma receita ficar verde, passe para a próxima etapa.</p>
+    <div class="legend" aria-label="Cores das receitas">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Laranja: +1 sempre</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Amarelo: muitas vezes</span> <span><span class="dot" style="background:var(--sk-green)"></span>Verde: raramente</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Cinza: nunca</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Instrutores e marcos</h2>
+  <p class="lede" style="margin-top:0">Os Primeiros Socorros mantêm seus marcos especiais: um livro para Especialista, uma missão para Artesão.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Aliança</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Grau</th><th>Libera</th><th>Requisitos</th><th>Instrutores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Artífice</span></td><td class="num">até 150</td><td>perícia 50, nível 10</td><td><strong>Shaina Fuller</strong>, Ventobravo (42.4, 26.8) · Michelle Belle, Floresta de Elwynn (43.4, 65.6) · Nissa Firestone, Altaforja (54.8, 58.4) · Thamner Pol, Dun Morogh (47.2, 52.4) · Dannelor, Darnassus (51.4, 12.4) · Byancie, Teldrassil (55.2, 56.8)</td></tr><tr><td><span class="pill">Especialista</span></td><td class="num">até 225</td><td>Livro «Primeiros Socorros de Especialista - Sob Ataduras»</td><td><strong>Deneb Walker</strong>, Planalto Arathi (27.0, 58.8), no Ponto de Refúgio, que também vende as receitas de Atadura de Seda Pesada e de Tecido Mágico</td></tr><tr><td><span class="pill">Artesão</span></td><td class="num">até 300</td><td>Missão «Triagem», nível 35, perícia 225</td><td><strong>Doutor Gustaf VanHowzen</strong>, Theramore, Pântano Vadeoso (67.6, 48.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Grau</th><th>Libera</th><th>Requisitos</th><th>Instrutores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Artífice</span></td><td class="num">até 150</td><td>perícia 50, nível 10</td><td><strong>Arnok</strong>, Orgrimmar (34.0, 84.4) · Rawrk, Durotar (54.0, 42.0) · Mary Edras, Cidade Baixa (73.4, 55.4) · Enfermeira Neela, Clareiras de Tirisfal (61.8, 52.8) · Pand Stonebinder, Penhasco do Trovão (29.4, 21.4) · Vira Younghoof, Mulgore (46.0, 63.8)</td></tr><tr><td><span class="pill">Especialista</span></td><td class="num">até 225</td><td>Livro «Primeiros Socorros de Especialista - Sob Ataduras»</td><td><strong>Balai Lok'Wein</strong>, Pântano Vadeoso, segundo o Classic: a verificar no jogo. A Kami Labs só cita Deneb Walker (Planalto Arathi, 27.0, 58.8), no Ponto de Refúgio, uma vila da Aliança</td></tr><tr><td><span class="pill">Artesão</span></td><td class="num">até 300</td><td>Missão «Triagem», nível 35, perícia 225</td><td><strong>Doutor Gregory Victor</strong>, Martelo Caído (Planalto Arathi), segundo o Classic: a verificar no jogo</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Frascos e temperos são vendidos por fornecedores de mercadorias e de alquimia.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novidades de Forever</h2>
+  <ul class="plain"><li>As <strong>poções de cura</strong> (de menor a maior) passaram da Alquimia para os Primeiros Socorros.</li><li>Novas curas: <strong>cataplasmas</strong> (a partir de 90), <strong>torniquetes</strong> (a partir de 120) e antídotos melhorados.</li><li><strong>Kit de Primeiros Socorros</strong> aos 20: aumenta o Vigor dos jogadores no acampamento.</li><li><strong>Estudo de Toxinas</strong> aos 140: ajuda com poções de cura e antídotos, no acampamento.</li><li><strong>Laboratório do Médico da Peste</strong> aos 300: necessário para algumas poções e cataplasmas.</li><li><strong>Pontos de legado</strong> aos 150, 225 e 300.</li><li>A profissão tem 30 receitas, 17 delas novas.</li></ul>
+</section>
+
+<footer class="foot"><p>Fontes: <a href="https://kami-labs.fr/guide-secourisme-wow-forever/">Kami Labs, guia de Primeiros Socorros de WoW Forever</a> · <a href="https://conquestcapped.com/guides/fr/wow-forever/wow-forever-alchemy/">ConquestCapped, poções de cura</a>.</p><p>As etapas acima de 225 não eram jogáveis na beta: estão marcadas «a verificar». Se um vendedor de receitas for da outra facção, use a casa de leilões. Os nomes de itens, PNJs e zonas foram traduzidos e podem diferir um pouco no seu cliente.</p><p>Guia de fãs não oficial, atualizado em 7 de novembro de 2026. World of Warcraft é uma marca da Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "secou", "src": {"Tecido de Linho": "farm", "Tecido de Lã": "farm", "Tecido de Seda": "farm", "Tecido Mágico": "farm", "Tecido Rúnico": "farm", "Frasco Vazio": "vendor", "Frasco com Chumbo": "vendor", "Temperos Suaves": "vendor", "Temperos Picantes": "vendor", "Flor-da-paz": "ah", "Erva-moura": "ah"}, "ranks": [{"name": "Aprendiz", "from": 1, "to": 75, "req": "Desde o início · limite 75"}, {"name": "Artífice", "from": 75, "to": 150, "req": "Instrutor de primeiros socorros, perícia 50, nível 10 · limite 150"}, {"name": "Especialista", "from": 150, "to": 225, "req": "Livro com Deneb Walker (Arathi) · limite 225"}, {"name": "Artesão", "from": 225, "to": 300, "req": "Missão «Triagem», nível 35, perícia 225 · limite 300"}], "steps": [{"f": 1, "t": 55, "r": "Atadura de Linho", "n": 80, "m": {"Tecido de Linho": 1}}, {"f": 55, "t": 80, "r": "Poção de Cura Menor", "n": 38, "m": {"Frasco Vazio": 1, "Temperos Suaves": 1, "Flor-da-paz": 1}, "note": "Novo: as poções de cura agora vêm dos Primeiros Socorros. <strong>Aprenda Artífice aos 50</strong> (nível 10)."}, {"f": 80, "t": 115, "r": "Atadura de Lã", "n": 48, "m": {"Tecido de Lã": 1}}, {"f": 115, "t": 135, "r": "Atadura de Lã Pesada", "n": 23, "m": {"Tecido de Lã": 2}}, {"f": 135, "t": 150, "r": "Poção de Cura", "n": 19, "m": {"Frasco com Chumbo": 1, "Temperos Picantes": 1, "Erva-moura": 1}, "note": "<strong>Compre o livro «Primeiros Socorros de Especialista - Sob Ataduras»</strong> com Deneb Walker (Planalto Arathi, 27.0, 58.8), ou ficará travado em 150."}, {"f": 150, "t": 180, "r": "Atadura de Seda", "n": 41, "m": {"Tecido de Seda": 1}}, {"f": 180, "t": 210, "r": "Atadura de Seda Pesada", "n": 41, "m": {"Tecido de Seda": 2}, "note": "Receita por 23p 15c com Deneb Walker."}, {"f": 210, "t": 240, "r": "Atadura de Tecido Mágico", "n": 41, "m": {"Tecido Mágico": 1}, "note": "Receita por 52p 63c com Deneb Walker. <strong>Aos 225, faça a missão «Triagem»</strong> (nível 35) para liberar 300."}, {"f": 240, "t": 260, "r": "Atadura de Tecido Mágico Pesada", "n": 24, "m": {"Tecido Mágico": 2}, "p": 1}, {"f": 260, "t": 300, "r": "Atadura de Tecido Rúnico", "n": 65, "m": {"Tecido Rúnico": 1}, "p": 1}], "trainMsg": {"comp": "Se ainda não fez, aprenda Artífice (nível 10): Arnok em Orgrimmar (34.0, 84.4) ou Rawrk em Durotar (54.0, 42.0).", "exp": "Antes de 150: compre o livro «Primeiros Socorros de Especialista - Sob Ataduras». Do lado da Horda, no Classic quem vendia era Balai Lok'Wein (Pântano Vadeoso): a verificar no jogo.", "art": "Prepare-se para a missão «Triagem» (nível 35, perícia 225). Do lado da Horda, no Classic quem dava era o Doutor Gregory Victor em Martelo Caído (Planalto Arathi): a verificar no jogo."}, "done300": "300 alcançado. Pense no Laboratório do Médico da Peste para o seu acampamento.", "groupTitles": {"farm": "Tecido (de humanoides)", "vendor": "De vendedores", "ah": "Ervas (Herborismo ou leilão)", "craft": "Intermediários"}, "trainMsgA": {"comp": "Se ainda não fez, aprenda Artífice (nível 10): Shaina Fuller em Ventobravo (42.4, 26.8), Nissa Firestone em Altaforja (54.8, 58.4) ou Dannelor em Darnassus (51.4, 12.4).", "exp": "Antes de 150: compre o livro «Primeiros Socorros de Especialista - Sob Ataduras» com Deneb Walker (Planalto Arathi, Ponto de Refúgio, 27.0, 58.8).", "art": "Prepare-se para a missão «Triagem» (nível 35, perícia 225): Doutor Gustaf VanHowzen em Theramore (Pântano Vadeoso, 67.6, 48.8)."}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

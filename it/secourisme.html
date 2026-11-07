@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Primo soccorso WoW Forever</title>
+<meta name="description" content="Guida di Primo soccorso 1-300 per WoW Forever (Alleanza e Orda): bende e pozioni curative, lista della spesa, libro e missione «Triage».">
+<meta property="og:title" content="Primo soccorso WoW Forever">
+<meta property="og:description" content="Guida di Primo soccorso 1-300 per WoW Forever (Alleanza e Orda): bende e pozioni curative, lista della spesa, libro e missione «Triage».">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../secourisme.html">
+<link rel="alternate" hreflang="en" href="../en/secourisme.html">
+<link rel="alternate" hreflang="es" href="../es/secourisme.html">
+<link rel="alternate" hreflang="de" href="../de/secourisme.html">
+<link rel="alternate" hreflang="pt" href="../pt/secourisme.html">
+<link rel="alternate" hreflang="ru" href="../ru/secourisme.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #150f10;
+  --bg-glow: #2a1517;
+  --panel: #201718;
+  --panel-2: #2b1f21;
+  --stitch: #874b50;
+  --accent: #ff7b7b;
+  --seg1: #ffb3b3; --seg2: #f07c7c; --seg3: #b8474b; --seg4: #7f2a2f;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Primo soccorso</span>
+  <h1>Primo soccorso 1 → 300</h1>
+  <p class="lede">Una professione secondaria, in più delle tue due principali. In Forever è il Primo soccorso a creare le pozioni curative. Inserisci la tua abilità: la pagina mostra il passo successivo e la stoffa che ti manca.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Dove sei</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Abilità attuale</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Togli 5 punti">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Aggiungi 5 punti">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Lista della spesa fino a</label>
+      <select id="target">
+        <option value="75">75 (fine di Apprendista)</option>
+        <option value="150" selected>150 (fine di Garzone)</option>
+        <option value="225">225 (fine di Esperto)</option>
+        <option value="300">300 (Artigiano)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprendista</div><div class="seg s2">Garzone</div><div class="seg s3">Esperto</div><div class="seg s4">Artigiano</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Cosa ti manca ancora</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Il percorso</h2>
+    <p class="lede" style="margin-top:0">Le quantità sono stime: tieni sempre un margine. Regola d'oro: appena una ricetta diventa verde, passa al passo successivo.</p>
+    <div class="legend" aria-label="Colori delle ricette">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Arancione: +1 sempre</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Giallo: spesso</span> <span><span class="dot" style="background:var(--sk-green)"></span>Verde: raramente</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Grigio: mai</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Istruttori e tappe</h2>
+  <p class="lede" style="margin-top:0">Il Primo soccorso mantiene le sue tappe speciali: un libro per Esperto, una missione per Artigiano.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alleanza</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Sblocca</th><th>Requisiti</th><th>Istruttori (coordinate)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Garzone</span></td><td class="num">fino a 150</td><td>abilità 50, livello 10</td><td><strong>Shaina Fuller</strong>, Roccavento (42.4, 26.8) · Michelle Belle, Foresta di Elwynn (43.4, 65.6) · Nissa Firestone, Forgiardente (54.8, 58.4) · Thamner Pol, Dun Morogh (47.2, 52.4) · Dannelor, Darnassus (51.4, 12.4) · Byancie, Teldrassil (55.2, 56.8)</td></tr><tr><td><span class="pill">Esperto</span></td><td class="num">fino a 225</td><td>Libro «Primo Soccorso Esperto - Sotto le Bende»</td><td><strong>Deneb Walker</strong>, Altipiani di Arathi (27.0, 58.8), a Punta Rifugio, che vende anche le ricette delle Bende di Seta Pesanti e di Stoffa Magica</td></tr><tr><td><span class="pill">Artigiano</span></td><td class="num">fino a 300</td><td>Missione «Triage», livello 35, abilità 225</td><td><strong>Dottor Gustaf VanHowzen</strong>, Theramore, Palude di Acquamorta (67.6, 48.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Orda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Sblocca</th><th>Requisiti</th><th>Istruttori (coordinate)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Garzone</span></td><td class="num">fino a 150</td><td>abilità 50, livello 10</td><td><strong>Arnok</strong>, Orgrimmar (34.0, 84.4) · Rawrk, Durotar (54.0, 42.0) · Mary Edras, Sepulcride (73.4, 55.4) · Infermiera Neela, Radure di Tirisfal (61.8, 52.8) · Pand Stonebinder, Picco del Tuono (29.4, 21.4) · Vira Younghoof, Mulgore (46.0, 63.8)</td></tr><tr><td><span class="pill">Esperto</span></td><td class="num">fino a 225</td><td>Libro «Primo Soccorso Esperto - Sotto le Bende»</td><td><strong>Balai Lok'Wein</strong>, Palude di Acquamorta, secondo Classic: da verificare in gioco. Kami Labs cita solo Deneb Walker (Altipiani di Arathi, 27.0, 58.8), a Punta Rifugio, un villaggio dell'Alleanza</td></tr><tr><td><span class="pill">Artigiano</span></td><td class="num">fino a 300</td><td>Missione «Triage», livello 35, abilità 225</td><td><strong>Dottor Gregory Victor</strong>, Hammerfall (Altipiani di Arathi), secondo Classic: da verificare in gioco</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Fiale e spezie si comprano dai fornitori di merci e di alchimia.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novità di Forever</h2>
+  <ul class="plain"><li>Le <strong>pozioni curative</strong> (da minori a maggiori) sono passate dall'Alchimia al Primo soccorso.</li><li>Nuove cure: <strong>impiastri</strong> (da 90), <strong>lacci emostatici</strong> (da 120) e antiveleni migliorati.</li><li><strong>Kit di Primo Soccorso</strong> a 20: aumenta la Tempra dei giocatori al campo.</li><li><strong>Studio delle Tossine</strong> a 140: aiuta con pozioni curative e antiveleni, al campo.</li><li><strong>Laboratorio del Medico della Peste</strong> a 300: richiesto per alcune pozioni e impiastri.</li><li><strong>Punti eredità</strong> a 150, 225 e 300.</li><li>La professione ha 30 ricette, 17 nuove.</li></ul>
+</section>
+
+<footer class="foot"><p>Fonti: <a href="https://kami-labs.fr/guide-secourisme-wow-forever/">Kami Labs, guida al Primo soccorso di WoW Forever</a> · <a href="https://conquestcapped.com/guides/fr/wow-forever/wow-forever-alchemy/">ConquestCapped, pozioni curative</a>.</p><p>I passi oltre 225 non erano giocabili in beta: sono segnati «da verificare». Se un venditore di ricette è dell'altra fazione, usa la casa d'aste. I nomi di oggetti, PNG e zone sono tradotti e possono differire un po' nel tuo client.</p><p>Guida di fan non ufficiale, aggiornata il 7 novembre 2026. World of Warcraft è un marchio di Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "secou", "src": {"Stoffa di Lino": "farm", "Stoffa di Lana": "farm", "Stoffa di Seta": "farm", "Stoffa Magica": "farm", "Stoffa Runica": "farm", "Fiala Vuota": "vendor", "Fiala di Piombo": "vendor", "Spezie Delicate": "vendor", "Spezie Piccanti": "vendor", "Pacefiore": "ah", "Erba Livida": "ah"}, "ranks": [{"name": "Apprendista", "from": 1, "to": 75, "req": "Dall'inizio · massimo 75"}, {"name": "Garzone", "from": 75, "to": 150, "req": "Istruttore di primo soccorso, abilità 50, livello 10 · massimo 150"}, {"name": "Esperto", "from": 150, "to": 225, "req": "Libro da Deneb Walker (Arathi) · massimo 225"}, {"name": "Artigiano", "from": 225, "to": 300, "req": "Missione «Triage», livello 35, abilità 225 · massimo 300"}], "steps": [{"f": 1, "t": 55, "r": "Benda di Lino", "n": 80, "m": {"Stoffa di Lino": 1}}, {"f": 55, "t": 80, "r": "Pozione Curativa Minore", "n": 38, "m": {"Fiala Vuota": 1, "Spezie Delicate": 1, "Pacefiore": 1}, "note": "Novità: le pozioni curative ora vengono dal Primo soccorso. <strong>Impara Garzone a 50</strong> (livello 10)."}, {"f": 80, "t": 115, "r": "Benda di Lana", "n": 48, "m": {"Stoffa di Lana": 1}}, {"f": 115, "t": 135, "r": "Benda di Lana Pesante", "n": 23, "m": {"Stoffa di Lana": 2}}, {"f": 135, "t": 150, "r": "Pozione Curativa", "n": 19, "m": {"Fiala di Piombo": 1, "Spezie Piccanti": 1, "Erba Livida": 1}, "note": "<strong>Compra il libro «Primo Soccorso Esperto - Sotto le Bende»</strong> da Deneb Walker (Altipiani di Arathi, 27.0, 58.8), o resti bloccato a 150."}, {"f": 150, "t": 180, "r": "Benda di Seta", "n": 41, "m": {"Stoffa di Seta": 1}}, {"f": 180, "t": 210, "r": "Benda di Seta Pesante", "n": 41, "m": {"Stoffa di Seta": 2}, "note": "Ricetta per 23a 15r da Deneb Walker."}, {"f": 210, "t": 240, "r": "Benda di Stoffa Magica", "n": 41, "m": {"Stoffa Magica": 1}, "note": "Ricetta per 52a 63r da Deneb Walker. <strong>A 225, fai la missione «Triage»</strong> (livello 35) per sbloccare 300."}, {"f": 240, "t": 260, "r": "Benda di Stoffa Magica Pesante", "n": 24, "m": {"Stoffa Magica": 2}, "p": 1}, {"f": 260, "t": 300, "r": "Benda di Stoffa Runica", "n": 65, "m": {"Stoffa Runica": 1}, "p": 1}], "trainMsg": {"comp": "Se non l'hai ancora fatto, impara Garzone (livello 10): Arnok a Orgrimmar (34.0, 84.4) o Rawrk a Durotar (54.0, 42.0).", "exp": "Prima di 150: compra il libro «Primo Soccorso Esperto - Sotto le Bende». Lato Orda, in Classic lo vendeva Balai Lok'Wein (Palude di Acquamorta): da verificare in gioco.", "art": "Preparati alla missione «Triage» (livello 35, abilità 225). Lato Orda, in Classic la dava il Dottor Gregory Victor a Hammerfall (Altipiani di Arathi): da verificare in gioco."}, "done300": "300 raggiunto. Pensa al Laboratorio del Medico della Peste per il tuo campo.", "groupTitles": {"farm": "Stoffa (dagli umanoidi)", "vendor": "Dai venditori", "ah": "Erbe (Erbalismo o asta)", "craft": "Intermedi"}, "trainMsgA": {"comp": "Se non l'hai ancora fatto, impara Garzone (livello 10): Shaina Fuller a Roccavento (42.4, 26.8), Nissa Firestone a Forgiardente (54.8, 58.4) o Dannelor a Darnassus (51.4, 12.4).", "exp": "Prima di 150: compra il libro «Primo Soccorso Esperto - Sotto le Bende» da Deneb Walker (Altipiani di Arathi, Punta Rifugio, 27.0, 58.8).", "art": "Preparati alla missione «Triage» (livello 35, abilità 225): Dottor Gustaf VanHowzen a Theramore (Palude di Acquamorta, 67.6, 48.8)."}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

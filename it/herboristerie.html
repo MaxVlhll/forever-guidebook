@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Erbalismo WoW Forever</title>
+<meta name="description" content="Guida di Erbalismo 1-300 per WoW Forever (Alleanza e Orda): cosa raccogliere e dove, fascia per fascia, con i conteggi dei nodi di Forever e gli istruttori.">
+<meta property="og:title" content="Erbalismo WoW Forever">
+<meta property="og:description" content="Guida di Erbalismo 1-300 per WoW Forever (Alleanza e Orda): cosa raccogliere e dove, fascia per fascia, con i conteggi dei nodi di Forever e gli istruttori.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../herboristerie.html">
+<link rel="alternate" hreflang="en" href="../en/herboristerie.html">
+<link rel="alternate" hreflang="es" href="../es/herboristerie.html">
+<link rel="alternate" hreflang="de" href="../de/herboristerie.html">
+<link rel="alternate" hreflang="pt" href="../pt/herboristerie.html">
+<link rel="alternate" hreflang="ru" href="../ru/herboristerie.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #11140d;
+  --bg-glow: #1e2614;
+  --panel: #191e14;
+  --panel-2: #222a1b;
+  --stitch: #66803d;
+  --accent: #b5d84f;
+  --seg1: #d8ec9c; --seg2: #b5d84f; --seg3: #7a9a2c; --seg4: #4f661b;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Erbalismo</span>
+  <h1>Erbalismo 1 → 300</h1>
+  <p class="lede">Quale erba raccogliere e dove, fascia per fascia, secondo il censimento dei nodi di Forever. Nessuno strumento richiesto. Inserisci la tua abilità: la pagina mostra la tua fascia e la zona migliore.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Dove sei</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Abilità attuale</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Togli 5 punti">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Aggiungi 5 punti">+5</button>
+      </div>
+    </div>
+    
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprendista</div><div class="seg s2">Garzone</div><div class="seg s3">Esperto</div><div class="seg s4">Artigiano</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:14px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Fasce e zone</h2>
+    <p class="lede" style="margin-top:0">Un'erba dà punti dal suo livello richiesto fino a circa 100 punti sopra (regola di Classic, da confermare). I numeri sono i nodi contati per zona.</p>
+    <div class="legend"><span><span class="zone">Zona <small>info</small></span> zona contata da Forever</span><span><span class="zone a">Zona</span> Alleanza</span><span><span class="zone h">Zona</span> Orda</span><span>senza segno: contesa o neutrale</span></div>
+  </div>
+  <div class="tiers" id="tiers"></div>
+</section>
+
+<section aria-labelledby="seuil-h" style="display:grid;gap:12px">
+  <h2 id="seuil-h">Soglie delle erbe</h2>
+  <p class="lede" style="margin-top:0">Abilità di Erbalismo richiesta per raccogliere ogni erba.</p>
+  <div class="cols"><div class="card"><h3>da 1 a 85</h3><span class="lv">Principiante</span><p>Pacefiore 1 · Fogliargento 1 · Radice di Terra 15 · Magoreale 50 · Spinarovo 70 · Alga Strangolatrice 85</p></div><div class="card"><h3>da 100 a 185</h3><span class="lv">Intermedio</span><p>Erba Livida 100 · Fioracciaio Selvatico 115 · Muschio Tombale 120 · Sangue di Re 125 · Radice della Vita 150 · Fogliasbiadita 160 · Spinadoro 170 · Baffo di Khadgar 185</p></div><div class="card"><h3>da 195 a 300</h3><span class="lv">Avanzato</span><p>Morso d'Inverno 195 · Fiordifuoco 205 · Loto Viola 210 · Lacrime di Arthas 220 · Erbasole 230 · Erbacieca 235 · Fungo Fantasma 245 · Sangue di Grom 250 · Sansam Dorato 260 · Fogliasogno 270 · Salviargento Montana 280 · Fiorpeste 285 · Capogelo 290 · Loto Nero 300</p></div></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Istruttori di Erbalismo</h2>
+  <p class="lede" style="margin-top:0">Kami Labs elenca gli istruttori senza i ranghi. In Forever le professioni di creazione richiedono abilità 50 / 125 / 200 e livelli 10 / 20 / 35: qui è molto probabilmente uguale, da verificare in gioco.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alleanza</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Sblocca</th><th>Requisiti</th><th>Istruttori (coordinate)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Tutti i ranghi</span></td><td class="num">fino a 300</td><td>abilità 50 / 125 / 200 (probabile)</td><td><strong>Tannysa</strong>, Roccavento (44.4, 77.8) · Shylamiir, Roccavento (15.0, 49.4) · Reyna Stonebranch, Forgiardente (55.4, 58.4) · Firodren Mooncaller, Darnassus (48.0, 68.4) · Erborista Pomeroy, Foresta di Elwynn (39.8, 48.4) · Nancy Chantefleur, Foresta di Elwynn (52.2, 43.4) · Emrys Barbe-de-silex, Dun Morogh (28.8, 66.4) · Kali Healtouch, Loch Modan (36.4, 48.4) · Malorne Bladeleaf, Teldrassil (57.4, 60.6) · Eleyna Vespebrise, Teldrassil (59.8, 41.4)</td></tr><tr><td><span class="pill">Fuori dalle capitali</span></td><td class="num">—</td><td>—</td><td>Alma Jainrose, Montagne Crestarossa (16.2, 45.6) · Telurinon Moonshadow, Paludi Grigie (8.0, 55.8) · Cylania Rootstalker, Valtetra (50.4, 67.0) · Brant Jasperbloom, Palude di Acquamorta (64.0, 47.6) · Flora Silverwind, Valle di Rovotorto (27.6, 77.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Orda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Sblocca</th><th>Requisiti</th><th>Istruttori (coordinate)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Tutti i ranghi</span></td><td class="num">fino a 300</td><td>abilità 50 / 125 / 200 (probabile)</td><td><strong>Jandi</strong>, Orgrimmar (55.4, 39.4) · Mishiki, Durotar (55.4, 75.0) · Zor'la, Durotar (42.6, 67.4) · Martha Alliestar, Sepulcride (54.2, 49.4) · Faruza, Radure di Tirisfal (59.8, 52.0) · Florence Belladone, Radure di Tirisfal (32.4, 65.2) · Komin Winterhoof, Picco del Tuono (49.4, 39.2) · Garan Haut-Soleil, Mulgore (44.2, 77.8)</td></tr><tr><td><span class="pill">Neutrali</span></td><td class="num">—</td><td>—</td><td>Aranae Venomblood, Alture di Colletorto (61.4, 19.8) · Angrun e Flora Silverwind, Valle di Rovotorto · Ruw, Feralas (76.0, 43.4)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novità di Forever</h2>
+  <ul class="plain"><li>Annunciato alla BlizzCon, non ancora confermato: <strong>Dono della Natura</strong> (resistenza a tutte le scuole di magia), più probabilità di loti rari e più erbe per nodo.</li><li>Forever ha 48 tipi di nodi: 2 nuovi (Pacefiore Appassito, Fogliargento Rachitico) e 8 modificati.</li><li>Il <strong>Loto Nero</strong> non dà più punti abilità.</li><li><strong>Punti eredità</strong> a 150, 225 e 300.</li><li>Si abbina bene all'<a href="alchimie.html">Alchimia</a>, e ora anche il <a href="secourisme.html">Primo soccorso</a> richiede erbe per le pozioni curative.</li></ul>
+</section>
+
+<footer class="foot"><p>Fonti: <a href="https://kami-labs.fr/guide-herboristerie-wow-forever/">Kami Labs, guida all'Erbalismo di WoW Forever</a> · <a href="https://kami-labs.fr/metiers-wow-forever/">Kami Labs, professioni di WoW Forever</a>.</p><p>I consigli per fazione vengono da Classic, su cui si basa Forever. La beta si è fermata a 225: le fasce successive sono segnate «dopo la beta». I nomi di oggetti, PNG e zone sono tradotti e possono differire un po' nel tuo client.</p><p>Guida di fan non ufficiale, aggiornata il 7 novembre 2026. World of Warcraft è un marchio di Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "herbo", "done300": "300 raggiunto. Il Loto Nero non dà più punti: tienilo per i tonici.", "train": {"comp": "Pensa al rango Garzone (probabilmente livello 10): Jandi a Orgrimmar (55.4, 39.4).", "exp": "Pensa al rango Esperto (probabilmente livello 20): Jandi a Orgrimmar (55.4, 39.4).", "art": "Pensa al rango Artigiano (probabilmente livello 35): Jandi a Orgrimmar (55.4, 39.4)."}, "tiers": [{"f": 1, "t": 50, "res": ["Pacefiore", "Fogliargento", "Radice di Terra (da 15)"], "zones": [["Teldrassil", "≈ 439", "a"], ["Isola di Zephras", "≈ 427"], ["Foresta di Elwynn", "≈ 372", "a"], ["Dun Morogh", "≈ 367", "a"]], "horde": "Durotar, Mulgore, Radure di Tirisfal, Savane.", "alliance": "Foresta di Elwynn, Dun Morogh, Teldrassil."}, {"f": 50, "t": 70, "res": ["Magoreale", "Radice di Terra", "Pacefiore"], "zones": [["Isola di Zephras", "≈ 461"]], "horde": "Savane, Selva Pinargento, Vette di Artiglio di Pietra.", "alliance": "Marche Occidentali, Loch Modan, Rivafosca."}, {"f": 70, "t": 115, "res": ["Spinarovo", "Alga Strangolatrice (sott'acqua)", "Erba Livida (da 100)"], "zones": [["Paludi Grigie", "≈ 345", "a"], ["Valtetra", "≈ 295"], ["Marche Occidentali", "≈ 275", "a"], ["Montagne Crestarossa", "≈ 229", "a"]], "horde": "Savane, Vette di Artiglio di Pietra, Valtetra, Alture di Colletorto.", "note": "Impara Garzone prima di 75.", "alliance": "Paludi Grigie, Marche Occidentali, Montagne Crestarossa, Loch Modan."}, {"f": 115, "t": 160, "res": ["Fioracciaio Selvatico", "Muschio Tombale", "Sangue di Re"], "zones": [["Paludi Grigie", "≈ 388", "a"], ["Valtetra", "≈ 330"], ["Vette di Artiglio di Pietra", "≈ 309"], ["Valle di Rovotorto", "≈ 304"]], "horde": "Valtetra, Vette di Artiglio di Pietra, Alture di Colletorto, Millepicchi.", "note": "Impara Esperto prima di 150.", "alliance": "Paludi Grigie, Alture di Colletorto da Riva del Sud, Valtetra da Astranaar."}, {"f": 160, "t": 205, "res": ["Fogliasbiadita", "Radice della Vita", "Spinadoro (da 170)", "Baffo di Khadgar (da 185)"], "zones": [["Valle di Rovotorto", "≈ 469"], ["Palude di Acquamorta", "≈ 310"], ["Palude del Dolore", "≈ 274"], ["Altipiani di Arathi", "≈ 267"]]}, {"f": 205, "t": 230, "res": ["Fiordifuoco", "Loto Viola", "Morso d'Inverno", "Lacrime di Arthas (da 220)"], "zones": [["Valle di Rovotorto", "≈ 305"], ["Feralas", "≈ 264"], ["Palude di Acquamorta", "≈ 182"], ["Montagne di Alterac", "≈ 177"]], "note": "Impara Artigiano prima di 225."}, {"f": 230, "t": 270, "res": ["Erbasole", "Erbacieca", "Fungo Fantasma (da 245)", "Sangue di Grom (da 250)", "Sansam Dorato (da 260)"], "zones": [["Feralas", "≈ 178"], ["Palude del Dolore", "≈ 175"], ["Azshara", "≈ 167"], ["Entroterre", "≈ 162"]], "p": 1}, {"f": 270, "t": 300, "res": ["Fogliasogno", "Salviargento Montana (da 280)", "Fiorpeste (da 285)", "Capogelo (da 290)"], "zones": [["Terre Infette Orientali", "≈ 333"], ["Azshara", "≈ 228"], ["Vilbosco", "≈ 228"], ["Cratere di Un'Goro", "≈ 182"]], "p": 1, "note": "Capogelo: Fontefredda. Loto Nero a 300."}], "trainA": {"comp": "Pensa al rango Garzone (probabilmente livello 10): Tannysa a Roccavento (44.4, 77.8), Reyna Stonebranch a Forgiardente (55.4, 58.4) o Firodren Mooncaller a Darnassus (48.0, 68.4).", "exp": "Pensa al rango Esperto (probabilmente livello 20): Tannysa a Roccavento (44.4, 77.8), Reyna Stonebranch a Forgiardente (55.4, 58.4) o Firodren Mooncaller a Darnassus (48.0, 68.4).", "art": "Pensa al rango Artigiano (probabilmente livello 35): Tannysa a Roccavento (44.4, 77.8), Reyna Stonebranch a Forgiardente (55.4, 58.4) o Firodren Mooncaller a Darnassus (48.0, 68.4)."}};
+</script>
+<script src="../assets/recolte.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

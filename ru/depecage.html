@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Снятие шкур WoW Forever</title>
+<meta name="description" content="Гайд по снятию шкур 1-300 для WoW Forever (Альянс и Орда): где снимать шкуры, этап за этапом, по уровню зверей, с наставниками.">
+<meta property="og:title" content="Снятие шкур WoW Forever">
+<meta property="og:description" content="Гайд по снятию шкур 1-300 для WoW Forever (Альянс и Орда): где снимать шкуры, этап за этапом, по уровню зверей, с наставниками.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../depecage.html">
+<link rel="alternate" hreflang="en" href="../en/depecage.html">
+<link rel="alternate" hreflang="es" href="../es/depecage.html">
+<link rel="alternate" hreflang="de" href="../de/depecage.html">
+<link rel="alternate" hreflang="it" href="../it/depecage.html">
+<link rel="alternate" hreflang="pt" href="../pt/depecage.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #15110f;
+  --bg-glow: #271d17;
+  --panel: #1f1915;
+  --panel-2: #29211c;
+  --stitch: #7d6249;
+  --accent: #d8aa7e;
+  --seg1: #e8d0b8; --seg2: #c9a27e; --seg3: #8f6a4a; --seg4: #5e432d;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Снятие шкур</span>
+  <h1>Снятие шкур 1 → 300</h1>
+  <p class="lede">Где снимать шкуры, этап за этапом, по уровню зверей. Нужен нож для снятия шкур. Введите свой навык: страница покажет ваш этап и подходящие зоны.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Где вы сейчас</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Текущий навык</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Убрать 5 очков">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Добавить 5 очков">+5</button>
+      </div>
+    </div>
+    
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Ученик</div><div class="seg s2">Подмастерье</div><div class="seg s3">Умелец</div><div class="seg s4">Искусник</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:14px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Этапы и зоны</h2>
+    <p class="lede" style="margin-top:0">Важен уровень зверей: до 20-го уровня нужно примерно (уровень моба − 10) × 10 навыка, выше — примерно уровень × 5. Указаны уровни зон.</p>
+    <div class="legend"><span><span class="zone">Зона <small>инфо</small></span> зона из подсчёта Forever</span><span><span class="zone a">Зона</span> Альянс</span><span><span class="zone h">Зона</span> Орда</span><span>без отметки: спорная или нейтральная</span></div>
+  </div>
+  <div class="tiers" id="tiers"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Наставники снятия шкур</h2>
+  <p class="lede" style="margin-top:0">Kami Labs приводит наставников без рангов. В Forever производственные профессии требуют навык 50 / 125 / 200 и уровни 10 / 20 / 35: здесь, скорее всего, так же, проверьте в игре.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Альянс</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Ранг</th><th>Открывает</th><th>Требования</th><th>Наставники (координаты)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Все ранги</span></td><td class="num">до 300</td><td>навык 50 / 125 / 200 (вероятно)</td><td><strong>Maris Granger</strong>, Штормград (67.4, 49.0) · Balthus Stoneflayer, Стальгорн (39.4, 32.4) · Eladriel, Дарнас (64.2, 21.8) · Helene Peltskinner, Элвиннский лес (46.2, 62.2) · Riley Tannepeau, Элвиннский лес (47.0, 39.4) · Brighid Ecorchorage, Дун Морог (29.0, 67.4) · Radnaal Maneweaver, Тельдрассил (42.0, 50.0) · Terunne Sculpte-Ours, Тельдрассил (59.4, 38.6)</td></tr><tr><td><span class="pill">Вне столиц</span></td><td class="num">—</td><td>—</td><td>Wilma Ranthal, Красногорье (83.6, 71.0) · Jayla, Ясеневый лес (50.0, 67.2)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Орда</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Ранг</th><th>Открывает</th><th>Требования</th><th>Наставники (координаты)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Все ранги</span></td><td class="num">до 300</td><td>навык 50 / 125 / 200 (вероятно)</td><td><strong>Thuwd</strong>, Оргриммар (63.2, 45.2) · Kagil, Дуротар (40.8, 67.8) · Killian Hagey, Подгород (70.2, 58.4) · Rand Rhobart, Тирисфальские леса (65.4, 60.0) · Margaret Tisserand, Тирисфальские леса (32.4, 65.6) · Mooranta, Громовой Утес (44.4, 42.4) · Yonn Deepcut, Мулгор (45.0, 61.4) · Nawka Chantsauvage, Мулгор (44.4, 76.8)</td></tr><tr><td><span class="pill">Нейтральные</span></td><td class="num">—</td><td>—</td><td>Dranh, Степи (45.0, 59.0) · Malux, Пустоши (23.2, 69.8) · Kulleg Stonehorn, Фералас (74.4, 43.0)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Нож для снятия шкур продают торговцы ремесленными товарами.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Особенности Forever</h2>
+  <ul class="plain"><li>Объявлено на BlizzCon, ещё не подтверждено: <strong>Дикие звери</strong> (+5% урона по зверям и детёнышам) и больше шансов на редкие шкуры.</li><li><strong>Безупречная кожа</strong>: новый компонент Forever, сохраняйте для <a href="travail-du-cuir.html">кожевничества</a>.</li><li><strong>Походный стул</strong> (предмет лагеря скорняков): +2% к критическому удару, по данным Method.</li><li><strong>Очки наследия</strong> на 150, 225 и 300.</li><li>Идеальная пара для прокачки классов в коже и кольчуге: снятие шкур + кожевничество.</li></ul>
+</section>
+
+<footer class="foot"><p>Источники: <a href="https://kami-labs.fr/guide-depecage-wow-forever/">Kami Labs, гайд по снятию шкур WoW Forever</a> · <a href="https://kami-labs.fr/metiers-wow-forever/">Kami Labs, профессии WoW Forever</a> · <a href="https://www.method.gg/wow-forever/wow-forever-warrior-leveling-guide-and-talents">Method, гайд по воину (предметы лагеря)</a>.</p><p>Бета закончилась на 225: этапы выше помечены «после беты». Названия предметов, НИП и зон переведены и могут немного отличаться в вашем клиенте.</p><p>Неофициальный фанатский гайд, обновлён 7 ноября 2026 г. World of Warcraft — торговая марка Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "depec", "done300": "Достигнуто 300. Сохраняйте безупречную кожу: она нужна многим новым рецептам Forever.", "train": {"comp": "Подумайте о ранге Подмастерье (вероятно, уровень 10): Thuwd в Оргриммаре (63.2, 45.2).", "exp": "Подумайте о ранге Умелец (вероятно, уровень 20): Thuwd в Оргриммаре (63.2, 45.2).", "art": "Подумайте о ранге Искусник (вероятно, уровень 35): Thuwd в Оргриммаре (63.2, 45.2)."}, "tiers": [{"f": 1, "t": 25, "res": ["Легкая кожа", "Легкая шкура"], "zones": [["Дуротар", "ур. 1–10", "h"], ["Мулгор", "ур. 1–10", "h"], ["Тирисфальские леса", "ур. 1–12", "h"], ["Остров Зефры", "ур. 1–12"]], "alliance": "Элвиннский лес, Дун Морог, Тельдрассил.", "horde": "Дуротар, Мулгор, Тирисфальские леса."}, {"f": 25, "t": 75, "res": ["Легкая кожа", "Легкая шкура"], "zones": [["Степи", "ур. 10–33", "h"], ["Серебряный бор", "ур. 10–20", "h"], ["Лок Модан", "ур. 10–18", "a"], ["Темные берега", "ур. 11–19", "a"]], "note": "Сторона Орды: жевры, громоящеры и кодо вокруг Перекрестка.", "alliance": "Западный Край, Лок Модан, Темные берега.", "horde": "Степи, Серебряный бор."}, {"f": 75, "t": 125, "res": ["Средняя кожа", "Средняя шкура"], "zones": [["Когтистые горы", "ур. 15–25"], ["Тысяча Игл", "ур. 6–35"], ["Ясеневый лес", "ур. 19–30"], ["Предгорья Хилсбрада", "ур. 20–31"]], "note": "Изучите Подмастерье до 75.", "alliance": "Лок Модан (кабаны, медведи, кроколиски), затем Болотина.", "horde": "Когтистые горы, Тысяча Игл, Предгорья Хилсбрада от Мельницы Таррена."}, {"f": 125, "t": 175, "res": ["Тяжелая кожа", "Тяжелая шкура"], "zones": [["Предгорья Хилсбрада", "ур. 20–31"], ["Альтеракские горы", "ур. 27–39"], ["Пустоши", "ур. 30–39"], ["Нагорье Арати", "ур. 30–40"]], "note": "Изучите Умельца до 150.", "alliance": "Болотина (ящеры Велгара), Предгорья Хилсбрада, Нагорье Арати."}, {"f": 175, "t": 225, "res": ["Толстая кожа", "Толстая шкура"], "zones": [["Тернистая долина", "ур. 30–50"], ["Болото Печали", "ур. 36–43"], ["Бесплодные земли", "ур. 36–45"], ["Clearwater Shores", "ур. 36–44"], ["Танарис", "ур. 40–50"]], "note": "Изучите Искусника до 225."}, {"f": 225, "t": 250, "res": ["Толстая кожа", "Грубая кожа"], "zones": [["Фералас", "ур. 41–60"], ["Азшара", "ур. 42–55"], ["Внутренние земли", "ур. 41–56"], ["Тлеющее ущелье", "ур. 43–56"]], "p": 1}, {"f": 250, "t": 275, "res": ["Грубая кожа", "Толстая чешуйка скорпида"], "zones": [["Кратер Ун'Горо", "ур. 48–55"], ["Западные Чумные земли", "ур. 46–57"], ["Выжженные земли", "ур. 46–63"], ["Пылающие степи", "ур. 50–59"]], "p": 1}, {"f": 275, "t": 300, "res": ["Грубая кожа", "Грубая шкура"], "zones": [["Зимние Ключи", "ур. 55–60"], ["Силитус", "ур. 55–59"], ["Восточные Чумные земли", "ур. 54–59"], ["Перевал Мертвого Ветра", "ур. 50–60"]], "p": 1}], "trainA": {"comp": "Подумайте о ранге Подмастерье (вероятно, уровень 10): Maris Granger в Штормграде (67.4, 49.0), Balthus Stoneflayer в Стальгорне (39.4, 32.4) или Eladriel в Дарнасе (64.2, 21.8).", "exp": "Подумайте о ранге Умелец (вероятно, уровень 20): Maris Granger в Штормграде (67.4, 49.0), Balthus Stoneflayer в Стальгорне (39.4, 32.4) или Eladriel в Дарнасе (64.2, 21.8).", "art": "Подумайте о ранге Искусник (вероятно, уровень 35): Maris Granger в Штормграде (67.4, 49.0), Balthus Stoneflayer в Стальгорне (39.4, 32.4) или Eladriel в Дарнасе (64.2, 21.8)."}};
+</script>
+<script src="../assets/recolte.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

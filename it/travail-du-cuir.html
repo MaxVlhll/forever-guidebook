@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conciatura WoW Forever</title>
+<meta name="description" content="Guida di Conciatura 1-300 per WoW Forever (Alleanza e Orda): percorso ricetta per ricetta, lista della spesa calcolata, istruttori e zone di scuoiatura.">
+<meta property="og:title" content="Conciatura WoW Forever">
+<meta property="og:description" content="Guida di Conciatura 1-300 per WoW Forever (Alleanza e Orda): percorso ricetta per ricetta, lista della spesa calcolata, istruttori e zone di scuoiatura.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../travail-du-cuir.html">
+<link rel="alternate" hreflang="en" href="../en/travail-du-cuir.html">
+<link rel="alternate" hreflang="es" href="../es/travail-du-cuir.html">
+<link rel="alternate" hreflang="de" href="../de/travail-du-cuir.html">
+<link rel="alternate" hreflang="pt" href="../pt/travail-du-cuir.html">
+<link rel="alternate" hreflang="ru" href="../ru/travail-du-cuir.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #17110d;
+  --bg-glow: #2a1d14;
+  --panel: #221913;
+  --panel-2: #2c2119;
+  --stitch: #8a6a43;
+  --ink: #f1e6d3;
+  --muted: #b9a68b;
+  --accent: #e6b84f;
+  --seg1: #c9a36b; --seg2: #b8884f; --seg3: #9c6c3a; --seg4: #7a4f28;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Conciatura</span>
+  <h1>Conciatura 1 → 300</h1>
+  <p class="lede">Il percorso completo, ricetta per ricetta, secondo i dati della beta di Forever. Inserisci la tua abilità: la pagina mostra dove sei, il passo successivo e tutto ciò che ti manca.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Dove sei</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Abilità attuale</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Togli 5 punti">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Aggiungi 5 punti">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Lista della spesa fino a</label>
+      <select id="target">
+        <option value="75">75 (fine di Apprendista)</option>
+        <option value="150" selected>150 (fine di Garzone)</option>
+        <option value="225">225 (fine di Esperto)</option>
+        <option value="300">300 (Artigiano)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprendista</div><div class="seg s2">Garzone</div><div class="seg s3">Esperto</div><div class="seg s4">Artigiano</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Cosa ti manca ancora</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Il percorso</h2>
+    <p class="lede" style="margin-top:0">Le quantità sono stime: tieni sempre un margine. Regola d'oro: appena una ricetta diventa verde, passa al passo successivo.</p>
+    <div class="legend" aria-label="Colori delle ricette">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Arancione: +1 sempre</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Giallo: spesso</span> <span><span class="dot" style="background:var(--sk-green)"></span>Verde: raramente</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Grigio: mai</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Istruttori</h2>
+  <p class="lede" style="margin-top:0">Senza il rango giusto, la tua abilità resta bloccata al massimo (75, 150, 225). Impara il rango successivo appena hai il livello richiesto.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alleanza</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Sblocca</th><th>Requisiti</th><th>Istruttori (coordinate)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Garzone</span></td><td class="num">fino a 150</td><td>abilità 50, livello 10</td><td><strong>Randal Worth</strong>, Roccavento (67.4, 49.4) · Gretta Finespindle, Forgiardente (39.0, 32.4) · Darianna, Darnassus (64.2, 21.6) · Adele Fielder, Foresta di Elwynn (46.4, 62.2) · Nadyia Maneweaver, Teldrassil (41.8, 49.4)</td></tr><tr><td><span class="pill">Esperto</span></td><td class="num">fino a 225</td><td>abilità 125, livello 20</td><td><strong>Simon Tanner</strong>, Roccavento (67.2, 49.4) · Fimble Finespindle, Forgiardente (39.4, 33.0) · Faldron, Darnassus (64.4, 21.4) · Aayndia Floralwind, Valtetra (35.8, 52.0)</td></tr><tr><td><span class="pill">Artigiano</span></td><td class="num">fino a 300</td><td>abilità 200, livello 35</td><td><strong>Telonis</strong>, Darnassus (64.4, 21.4)</td></tr><tr><td><span class="pill">Ricette alte</span></td><td class="num">—</td><td>—</td><td>Hahrana Ironhide, Feralas (74.4, 43.0), al Campo Mojache (villaggio dell'Orda: usa la casa d'aste per i suoi schemi)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Orda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Sblocca</th><th>Requisiti</th><th>Istruttori (coordinate)</th></tr></thead>
+      <tbody>
+        <tr><td><span class="pill">Garzone</span></td><td class="num">fino a 150</td><td>abilità 50, livello 10</td><td><strong>Waldor</strong>, Savane (45.6, 35.6), all'oasi vicino alle Caverne dei Lamenti · Kamari, Orgrimmar (63.0, 45.0) · Dan Golthas, Sepulcride (70.4, 58.4) · Shelene Rhobart, Radure di Tirisfal (65.4, 60.0) · Chaw Stronghide, Mulgore (45.0, 61.4) · Mak, Picco del Tuono (42.2, 43.2)</td></tr>
+        <tr><td><span class="pill">Esperto</span></td><td class="num">fino a 225</td><td>abilità 125, livello 20</td><td><strong>Krulmoo Fullmoon</strong>, Savane (44.8, 59.4), al Campo Taurajo · Karolek, Orgrimmar (62.8, 44.4) · Arthur Moore, Sepulcride (70.4, 57.4) · Brawn, Valle di Rovotorto (31.6, 28.8) · Narv Hidecrafter, Desolanda (55.2, 56.2) · Tarn, Picco del Tuono (42.4, 43.0)</td></tr>
+        <tr><td><span class="pill">Artigiano</span></td><td class="num">fino a 300</td><td>abilità 200, livello 35</td><td><strong>Una</strong>, Picco del Tuono (41.4, 42.6)</td></tr>
+        <tr><td><span class="pill">Ricette alte</span></td><td class="num">—</td><td>—</td><td>Hahrana Ironhide, Feralas (74.4, 43.0), al Campo Mojache</td></tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Sale, filo e tinture si comprano dai fornitori di conciatura e di merci, nelle capitali e nella maggior parte dei grandi accampamenti.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Dove scuoiare ogni cuoio</h2>
+  <p class="lede" style="margin-top:0">La tua Scuoiatura deve stare al passo: sotto il livello 20 ti serve circa (livello del mostro − 10) × 10; sopra, circa livello × 5.</p>
+  <div class="cols">
+    <div class="card"><h3>Cuoio e pelle leggeri</h3><span class="lv">Bestie liv. 10-22</span><p><span class="fl" data-f="h"><span class="fac h">Orda</span> Savane (zhevra, lucertole del tuono, kodo a sud del Crocevia), Vette di Artiglio di Pietra.</span><span class="fl" data-f="a"><span class="fac a">Alleanza</span> Marche Occidentali, Loch Modan, Rivafosca.</span></p></div>
+    <div class="card"><h3>Cuoio e pelle medi</h3><span class="lv">Bestie liv. 20-30</span><p><span class="fl" data-f="h"><span class="fac h">Orda</span> Vette di Artiglio di Pietra, Valtetra, Millepicchi, Alture di Colletorto.</span><span class="fl" data-f="a"><span class="fac a">Alleanza</span> Paludi Grigie, Montagne Crestarossa, Boscotetro, Valtetra.</span></p></div>
+    <div class="card"><h3>Cuoio e pelle pesanti</h3><span class="lv">Bestie liv. 30-40</span><p>Altipiani di Arathi, Desolanda, nord della Valle di Rovotorto.</p></div>
+    <div class="card"><h3>Cuoio Spesso</h3><span class="lv">Bestie liv. 35-45</span><p>Sud della Valle di Rovotorto, Feralas, Maleterre, Palude di Acquamorta.</p></div>
+    <div class="card"><h3>Cuoio Robusto</h3><span class="lv">Bestie liv. 48 e oltre</span><p>Cratere di Un'Goro, Vilbosco, Fontefredda, Steppe Ardenti.</p></div>
+    <div class="card"><h3>Scaglie di Scorpide Spesse</h3><span class="lv">Scorpidi liv. 50 e oltre</span><p>Silitus, Terre Devastate.</p></div>
+  </div>
+  <p class="foot">Tieni il <strong>Cuoio Immacolato</strong> che trovi scuoiando: è un nuovo componente di Forever usato da molte ricette nuove.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novità di Forever</h2>
+  <ul class="plain">
+    <li><strong>Tenda da Campo</strong> a 20: dà esperienza da riposo (fino al 5% di un livello). Costa 5 Cuoio Leggero.</li>
+    <li><strong>Telaio per Conciare</strong> a 140: crea alcuni materiali al campo.</li>
+    <li><strong>Macchina da Cucire</strong> a 300: richiesta per alcune ricette.</li>
+    <li><strong>Punti eredità</strong> a 150, 225 e 300.</li>
+    <li><strong>Specializzazioni</strong> ad Artigiano: Scaglie di Drago, Elementale o Tribale. Ne scegli una sola.</li>
+    <li>La professione ha 510 ricette, 277 nuove. Questo percorso segue le migliori per salire, non le migliori da indossare.</li>
+  </ul>
+</section>
+
+<footer class="foot">
+  <p>Fonti: <a href="https://kami-labs.fr/guide-travail-du-cuir-wow-forever/">Kami Labs, guida alla Conciatura di WoW Forever</a> per percorso e istruttori · <a href="https://seemeta.com/fr/wow-forever/professions/leatherworking">Seemeta</a> per le soglie di colore · <a href="https://expcarry.com/fr/guide-depecage-wow-forever">Expcarry</a> per il Cuoio Immacolato.</p>
+  <p>I passi oltre 225 non erano giocabili in beta: sono segnati «da verificare». Se un venditore di ricette è dell'altra fazione, usa la casa d'aste. I nomi di oggetti, PNG e zone sono tradotti e possono differire un po' nel tuo client.</p>
+</footer>
+
+
+</main>
+<script>
+var CONFIG = {
+  key: "tdc",
+  src: {
+    "Cuoio Leggero": "farm", "Pelle Leggera": "farm", "Pelle Media": "farm", "Cuoio Medio": "farm",
+    "Pelle Pesante": "farm", "Cuoio Pesante": "farm", "Cuoio Spesso": "farm", "Cuoio Robusto": "farm",
+    "Scaglia di Scorpide Spessa": "farm",
+    "Sale": "vendor", "Filo Grezzo": "vendor", "Filo Fine": "vendor",
+    "Filo di Seta": "vendor", "Filo Runico": "vendor", "Tintura Grigia": "vendor",
+    "Tintura Verde": "vendor", "Tintura Nera": "vendor", "Tintura Arancione": "vendor",
+    "Polvere d'Anima": "ah", "Elisir di Crescita Gigante": "ah", "Agata Muschiata": "ah",
+    "Perla Iridescente": "ah", "Giada": "ah", "Citrino": "ah", "Stoffa Magica": "ah",
+    "Vite Selvatica": "ah", "Polvere del Sogno": "ah", "Elisir dei Giganti": "ah",
+    "Scaglia Immacolata": "ah", "Pelle Vile": "ah", "Olio di Scagliapietra": "ah", "Stoffa Runica": "ah",
+    "Cintura di Cuoio Fine": "craft", "Pelle Leggera Conciata": "craft", "Pelle Media Conciata": "craft",
+    "Pelle Pesante Conciata": "craft", "Pelle Spessa Conciata": "craft", "Pelle Robusta Conciata": "craft",
+    "Kit d'Armatura Pesante": "craft", "Kit d'Armatura Robusto": "craft"
+  },
+  sub: {
+    "Pelle Leggera Conciata": { "Pelle Leggera": 1, "Sale": 1 },
+    "Pelle Media Conciata": { "Pelle Media": 1, "Sale": 1 },
+    "Pelle Pesante Conciata": { "Pelle Pesante": 1, "Sale": 3 },
+    "Cintura di Cuoio Fine": { "Cuoio Leggero": 6, "Filo Grezzo": 2 }
+  },
+  steps: [
+    { f: 1, t: 36, r: "Kit d'Armatura Leggero", n: 36, m: { "Cuoio Leggero": 1 } },
+    { f: 36, t: 62, r: "Pelle Leggera Conciata", n: 32, m: { "Pelle Leggera": 1, "Sale": 1 }, out: "Pelle Leggera Conciata",
+      note: "Resta gialla fino a 60, poi verde fino a 70. Tienine qualcuno: la Tunica di Cuoio Fine li richiede (vedi 100-128)." },
+    { f: 62, t: 85, r: "Guanti di Cuoio in Rilievo", n: 28, m: { "Cuoio Leggero": 3, "Filo Grezzo": 2 },
+      note: "<strong>Impara Garzone prima di 75</strong>, o resti bloccato: {comp}." },
+    { f: 85, t: 100, r: "Cintura di Cuoio Fine", n: 20, m: { "Cuoio Leggero": 6, "Filo Grezzo": 2 }, out: "Cintura di Cuoio Fine",
+      note: "Tieni 2 cinture per il passo 128-130." },
+    { f: 100, t: 128, r: "Pelle Media Conciata", n: 42, m: { "Pelle Media": 1, "Sale": 1 }, out: "Pelle Media Conciata",
+      note: "Tienine 20 per i due passi successivi.",
+      alt: "Secondo un altro database, questa ricetta diventa grigia verso 105. Se in gioco è così, passa alla Tunica di Cuoio Fine (gialla fino a 105, verde fino a 120): 3 Pelle Leggera Conciata, 6 Cuoio Leggero, 4 Filo Grezzo." },
+    { f: 128, t: 130, r: "Cintura di Cuoio Scuro", n: 2, m: { "Cintura di Cuoio Fine": 1, "Pelle Media Conciata": 1, "Filo Fine": 2, "Tintura Grigia": 1 } },
+    { f: 130, t: 143, r: "Spalline del Montanaro", n: 18, m: { "Pelle Media Conciata": 1, "Cuoio Medio": 4, "Filo Fine": 1 },
+      note: "<strong>Impara Esperto a 125</strong> (livello 20): {exp}." },
+    { f: 143, t: 150, r: "Kit d'Armatura Pesante Energizzato", n: 7, m: { "Kit d'Armatura Pesante": 1, "Polvere d'Anima": 2, "Elisir di Crescita Gigante": 2 },
+      note: "Nuova ricetta di Forever, 20a da Nioma (Entroterre). Crea prima i Kit d'Armatura Pesanti." },
+    { f: 150, t: 170, r: "Pelle Pesante Conciata", n: 39, m: { "Pelle Pesante": 1, "Sale": 3 }, out: "Pelle Pesante Conciata",
+      note: "I passi successivi ne usano più di quanti ne crei qui: la lista calcola cosa preparare in più." },
+    { f: 170, t: 175, r: "Gambali Barbarici", n: 6, m: { "Cuoio Pesante": 10, "Filo Fine": 2, "Agata Muschiata": 1 },
+      note: "Ricetta per 6a 50r da un venditore (Hammon Karwn o Lardan)." },
+    { f: 175, t: 180, r: "Spalline Barbariche", n: 6, m: { "Cuoio Pesante": 8, "Pelle Pesante Conciata": 1, "Filo Fine": 2 } },
+    { f: 180, t: 185, r: "Bracciali di Cuoio Verde", n: 6, m: { "Pelle Pesante Conciata": 2, "Cuoio Pesante": 6, "Tintura Verde": 1, "Filo Fine": 1 } },
+    { f: 185, t: 190, r: "Cintura di Cuoio Ingemmata", n: 6, m: { "Pelle Pesante Conciata": 4, "Perla Iridescente": 2, "Giada": 2, "Citrino": 1, "Filo Fine": 1 },
+      note: "Passo costoso in gemme: controlla i prezzi d'asta prima di iniziare." },
+    { f: 190, t: 200, r: "Guanti del Guardiano", n: 16, m: { "Cuoio Pesante": 4, "Pelle Pesante Conciata": 1, "Filo di Seta": 1 } },
+    { f: 200, t: 205, r: "Kit d'Armatura Spesso", n: 6, m: { "Cuoio Spesso": 5, "Filo di Seta": 1 },
+      note: "<strong>Impara Artigiano a 200</strong> (livello 35): {art}." },
+    { f: 205, t: 217, r: "Fascia Notturna", n: 22, m: { "Cuoio Spesso": 5, "Filo di Seta": 2 } },
+    { f: 217, t: 220, r: "Spalline Notturne", n: 7, m: { "Cuoio Spesso": 8, "Stoffa Magica": 6, "Filo di Seta": 3 } },
+    { f: 220, t: 225, r: "Spalline di Cuoio Selvaggio", n: 6, m: { "Cuoio Spesso": 10, "Vite Selvatica": 1, "Pelle Spessa Conciata": 1 },
+      note: "Ricetta da missione." },
+    { f: 225, t: 235, r: "Elmo di Cuoio Selvaggio", n: 16, m: { "Cuoio Spesso": 10, "Vite Selvatica": 2, "Pelle Spessa Conciata": 1 }, p: 1, note: "Ricetta da missione." },
+    { f: 235, t: 245, r: "Kit d'Armatura Robusto Energizzato", n: 13, m: { "Kit d'Armatura Robusto": 1, "Polvere del Sogno": 2, "Elisir dei Giganti": 2, "Scaglia Immacolata": 1, "Pelle Vile": 1 }, p: 1,
+      note: "Nuova ricetta, 55a da Nioma (Entroterre)." },
+    { f: 245, t: 250, r: "Stivali di Cuoio Selvaggio", n: 6, m: { "Cuoio Spesso": 14, "Vite Selvatica": 4, "Pelle Spessa Conciata": 2 }, p: 1, note: "Ricetta da missione." },
+    { f: 250, t: 255, r: "Gambali di Cuoio Selvaggio", n: 6, m: { "Cuoio Spesso": 16, "Vite Selvatica": 2, "Pelle Spessa Conciata": 2 }, p: 1, note: "Ricetta da missione." },
+    { f: 255, t: 260, r: "Bracciali di Scorpide Spessi", n: 6, m: { "Cuoio Robusto": 4, "Scaglia di Scorpide Spessa": 4, "Filo Runico": 1 }, p: 1,
+      note: "Ricetta da Zannok Hidepiercer (Silitus)." },
+    { f: 260, t: 268, r: "Guanti di Cuoio Malvagi", n: 11, m: { "Cuoio Robusto": 8, "Tintura Nera": 1, "Filo Runico": 1 }, p: 1,
+      note: "Ricetta da Leonard Porter (Terre Infette Occidentali)." },
+    { f: 268, t: 276, r: "Armatura di Cuoio Decorata", n: 8, m: { "Cuoio Robusto": 16, "Filo Runico": 1, "Tintura Arancione": 3, "Pelle Robusta Conciata": 2, "Olio di Scagliapietra": 6 }, p: 1,
+      note: "Nuova ricetta, 10o da Pexmit (Monte Hyjal)." },
+    { f: 276, t: 290, r: "Corpetto di Scorpide Flessibile", n: 14, m: { "Cuoio Robusto": 20, "Scaglia di Scorpide Spessa": 10, "Filo Runico": 1 }, p: 1,
+      note: "Nuova ricetta, 10o da Pexmit (Monte Hyjal)." },
+    { f: 290, t: 295, r: "Fascia di Cuoio Runico", n: 6, m: { "Cuoio Robusto": 14, "Stoffa Runica": 10, "Filo Runico": 1 }, p: 1,
+      note: "Ricetta da Jase Farlane (Terre Infette Orientali)." },
+    { f: 295, t: 300, r: "Elmo di Scorpide Spesso", n: 6, m: { "Cuoio Robusto": 8, "Scaglia di Scorpide Spessa": 12, "Pelle Robusta Conciata": 1, "Filo Runico": 1 }, p: 1,
+      note: "Ricetta da Zannok Hidepiercer (Silitus)." }
+  ],
+  train: { comp: "Waldor, all'oasi delle Savane (45.6, 35.6)", exp: "Krulmoo Fullmoon, Campo Taurajo (44.8, 59.4)", art: "Una, Picco del Tuono (41.4, 42.6)" },
+  trainA: { comp: "Randal Worth a Roccavento (67.4, 49.4), Gretta Finespindle a Forgiardente (39.0, 32.4) o Darianna a Darnassus (64.2, 21.6)", exp: "Simon Tanner a Roccavento (67.2, 49.4), Fimble Finespindle a Forgiardente (39.4, 33.0) o Faldron a Darnassus (64.4, 21.4)", art: "Telonis a Darnassus (64.4, 21.4)" },
+  done300: "300 raggiunto. Pensa alla Macchina da Cucire per il tuo campo.",
+  groupTitles: { farm: "Da scuoiare", vendor: "Dai venditori", ah: "Casa d'aste o altre professioni", craft: "Intermedi da tenere" }
+};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

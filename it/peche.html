@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pesca WoW Forever</title>
+<meta name="description" content="Guida di Pesca 1-300 per WoW Forever (Alleanza e Orda): dove pescare fascia per fascia, equipaggiamento utile e istruttori.">
+<meta property="og:title" content="Pesca WoW Forever">
+<meta property="og:description" content="Guida di Pesca 1-300 per WoW Forever (Alleanza e Orda): dove pescare fascia per fascia, equipaggiamento utile e istruttori.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../peche.html">
+<link rel="alternate" hreflang="en" href="../en/peche.html">
+<link rel="alternate" hreflang="es" href="../es/peche.html">
+<link rel="alternate" hreflang="de" href="../de/peche.html">
+<link rel="alternate" hreflang="pt" href="../pt/peche.html">
+<link rel="alternate" hreflang="ru" href="../ru/peche.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #0d1218;
+  --bg-glow: #13233a;
+  --panel: #151c25;
+  --panel-2: #1d2733;
+  --stitch: #47698f;
+  --accent: #6fb6f5;
+  --seg1: #b0d8ff; --seg2: #6fb6f5; --seg3: #3a7cc0; --seg4: #234f80;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Pesca</span>
+  <h1>Pesca 1 → 300</h1>
+  <p class="lede">Dove pescare, fascia per fascia. Ti serve una Canna da Pesca. Inserisci la tua abilità: la pagina mostra la tua fascia e le acque adatte.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Dove sei</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Abilità attuale</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Togli 5 punti">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Aggiungi 5 punti">+5</button>
+      </div>
+    </div>
+    
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprendista</div><div class="seg s2">Garzone</div><div class="seg s3">Esperto</div><div class="seg s4">Artigiano</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:14px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Fasce e zone</h2>
+    <p class="lede" style="margin-top:0">Le zone citate da Kami Labs sono soprattutto lato Alleanza: la riga Orda dà l'equivalente vicino, secondo Classic. Cambia acque appena peschi troppo «niente».</p>
+    <div class="legend"><span><span class="zone">Zona <small>info</small></span> zona contata da Forever</span><span><span class="zone a">Zona</span> Alleanza</span><span><span class="zone h">Zona</span> Orda</span><span>senza segno: contesa o neutrale</span></div>
+  </div>
+  <div class="tiers" id="tiers"></div>
+</section>
+
+<section aria-labelledby="equip-h" style="display:grid;gap:12px">
+  <h2 id="equip-h">Equipaggiamento utile</h2>
+  <p class="lede" style="margin-top:0">Ogni bonus di pesca riduce le catture mancate, soprattutto all'inizio di una fascia.</p>
+  <div class="cols"><div class="card"><h3>Canne</h3><span class="lv">Bonus permanente</span><p>Canna da Pesca Robusta, Grande Canna da Pesca di Ferro, Canna da Pesca d'Arcanite, Pescatore Estremo FC-5000 di Nat Pagle.</p></div><div class="card"><h3>Esche</h3><span class="lv">10 minuti</span><p>Pendaglio Luccicante, Pendagli Brillanti, Lombrichi Notturni, Attira-pesci Acquadinamico, Verme Carnivoro.</p></div><div class="card"><h3>Abbigliamento</h3><span class="lv">Bonus permanente</span><p>Cappello da Pesca Logoro, Cappello da Pesca Fortunato, Stivali da Pescatore Estremo di Nat Pagle.</p></div></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Istruttori di pesca</h2>
+  <p class="lede" style="margin-top:0">Kami Labs non indica i ranghi della Pesca. In Classic: Garzone da un istruttore, Esperto con un libro a Baia del Bottino, Artigiano con la missione di Nat Pagle. Da verificare in Forever.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alleanza</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Sblocca</th><th>Requisiti</th><th>Istruttori (coordinate)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Garzone</span></td><td class="num">fino a 150</td><td>abilità 50, livello 10 (probabile)</td><td><strong>Arnold Leland</strong>, Roccavento (45.4, 57.4) · Lee Brown, Foresta di Elwynn (47.4, 62.2) · Grimnur Stonebrand, Forgiardente (48.2, 6.6) · Paxton Ganter, Dun Morogh (35.4, 40.2) · Warg Deepwater, Loch Modan (40.4, 39.4) · Astaia, Darnassus (47.4, 56.4) · Androl Oakhand, Teldrassil (55.8, 93.4)</td></tr><tr><td><span class="pill">Esperto</span></td><td class="num">fino a 225</td><td>Libro (Classic)</td><td>Vecchio Heming, Baia del Bottino (Valle di Rovotorto), secondo Classic · istruttori: Matthew Hooper, Montagne Crestarossa (21.4, 51.0) · Harold Riggs, Paludi Grigie (8.0, 58.4) · Myizz Luckycatch, Valle di Rovotorto (27.4, 77.0)</td></tr><tr><td><span class="pill">Artigiano</span></td><td class="num">fino a 300</td><td>Missione di Nat Pagle (Classic)</td><td>Nat Pagle, Palude di Acquamorta, secondo Classic · Brannock, Feralas (32.2, 41.4) · Krix, Clearwater Shores (79.2, 54.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Orda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Sblocca</th><th>Requisiti</th><th>Istruttori (coordinate)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Garzone</span></td><td class="num">fino a 150</td><td>abilità 50, livello 10 (probabile)</td><td><strong>Lumak</strong>, Orgrimmar (69.4, 28.4) · Lau'Tiki, Durotar (53.2, 81.4) · Armand Cromwell, Sepulcride (80.4, 31.2) · Clyde Kellen, Radure di Tirisfal (67.2, 51.0) · Kah Mistrunner, Picco del Tuono (55.8, 47.6) · Uthan Stillwater, Mulgore (44.2, 63.8)</td></tr><tr><td><span class="pill">Esperto</span></td><td class="num">fino a 225</td><td>Libro (Classic)</td><td>Vecchio Heming, Baia del Bottino (Valle di Rovotorto), secondo Classic · istruttori neutrali: Myizz Luckycatch, Valle di Rovotorto (27.4, 77.0) · Lui'Mala, Desolanda (22.6, 72.4)</td></tr><tr><td><span class="pill">Artigiano</span></td><td class="num">fino a 300</td><td>Missione di Nat Pagle (Classic)</td><td>Nat Pagle, Palude di Acquamorta, secondo Classic · Katoom il Pescatore, Entroterre (80.2, 81.4) · Krix, Clearwater Shores (79.2, 54.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novità di Forever</h2>
+  <ul class="plain"><li><strong>Boccia dei Pesci</strong> (oggetto da campo dei pescatori): +8% alle statistiche secondo Method.</li><li><strong>Punti eredità</strong> a 150, 225 e 300.</li><li>Il pesce alimenta la <a href="cuisine.html">Cucina</a>: i suoi passi 225-300 usano codagialla e salmone.</li></ul>
+</section>
+
+<footer class="foot"><p>Fonti: <a href="https://kami-labs.fr/guide-peche-wow-forever/">Kami Labs, guida alla Pesca di WoW Forever</a> · <a href="https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents">Method, guida al druido (oggetti da campo)</a>.</p><p>La beta si è fermata a 225: le fasce successive sono segnate «dopo la beta». I nomi di oggetti, PNG e zone sono tradotti e possono differire un po' nel tuo client.</p><p>Guida di fan non ufficiale, aggiornata il 7 novembre 2026. World of Warcraft è un marchio di Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "peche", "done300": "300 raggiunto. Ti resta solo da inseguire l'FC-5000 di Nat Pagle.", "train": {"comp": "Pensa al rango Garzone (livello 10): Lumak a Orgrimmar (69.4, 28.4).", "exp": "Prima di 150: in Classic, Esperto veniva da un libro venduto dal Vecchio Heming a Baia del Bottino (da verificare in Forever).", "art": "Prima di 225: in Classic, Artigiano veniva dalla missione di Nat Pagle (Palude di Acquamorta) (da verificare in Forever)."}, "tiers": [{"f": 1, "t": 75, "res": ["Pesciolino Brillante Crudo", "Pagro di Fango Mascellalunga Crudo", "Sgombro Pellescivolosa Crudo"], "zones": [["Dun Morogh", "", "a"], ["Foresta di Elwynn", "", "a"], ["Teldrassil", "", "a"]], "horde": "qualsiasi acqua di Durotar, Mulgore o Tirisfal, o i canali di Orgrimmar e Sepulcride.", "alliance": "qualsiasi acqua di Elwynn, Dun Morogh o Teldrassil, o i canali di Roccavento."}, {"f": 75, "t": 100, "res": ["Alalunga Pinnarcobaleno Cruda", "Boccanera Oleosa", "Pagro Pinnafuoco"], "zones": [["Paludi Grigie", "", "a"], ["Marche Occidentali", "", "a"], ["Rivafosca", "", "a"], ["Loch Modan", "", "a"]], "horde": "Costa e oasi delle Savane, Selva Pinargento, Alture di Colletorto.", "note": "Impara Garzone prima di 75.", "alliance": "Paludi Grigie, Marche Occidentali, Rivafosca, Loch Modan."}, {"f": 100, "t": 150, "res": ["Pesce Gatto Baffispinosi Crudo", "Merluzzo Scagliaroccia Crudo", "Trota Testa di Mithril Cruda"], "zones": [["Valle di Rovotorto", ""], ["Palude di Acquamorta", ""], ["Boscotetro", "", "a"]], "horde": "costa nord della Valle di Rovotorto, Palude di Acquamorta.", "note": "Ottieni Esperto prima di 150.", "alliance": "Boscotetro, Palude di Acquamorta da Theramore."}, {"f": 150, "t": 225, "res": ["Codagialla Maculata Cruda", "Merluzzo Scagliaroccia Crudo", "Pesce Salvia Maggiore Crudo"], "zones": [["Palude del Dolore", ""], ["Feralas", ""], ["Desolanda", ""], ["Montagne di Alterac", ""]], "note": "Ottieni Artigiano prima di 225."}, {"f": 225, "t": 250, "res": ["Anguilla Scagliapietra", "Branchiarossa Cruda", "Pagro Pinnanotte Crudo"], "zones": [["Azshara", ""], ["Terre Infette Occidentali", ""], ["Passo Ventomorto", ""]], "note": "L'Alchimia usa le Anguille Scagliapietra (Olio di Scagliapietra).", "p": 1}, {"f": 250, "t": 300, "res": ["Salmone Scagliasole Crudo", "Aragosta Artiglioscuro", "Persico Estivo Crudo"], "zones": [["Terre Infette Orientali", ""], ["Fontefredda", ""], ["Azshara", ""]], "p": 1}], "trainA": {"comp": "Pensa al rango Garzone (livello 10): Arnold Leland a Roccavento (45.4, 57.4), Grimnur Stonebrand a Forgiardente (48.2, 6.6) o Astaia a Darnassus (47.4, 56.4).", "exp": "Prima di 150: in Classic, Esperto veniva da un libro venduto dal Vecchio Heming a Baia del Bottino (da verificare in Forever).", "art": "Prima di 225: in Classic, Artigiano veniva dalla missione di Nat Pagle (Palude di Acquamorta) (da verificare in Forever)."}};
+</script>
+<script src="../assets/recolte.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

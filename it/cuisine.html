@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cucina WoW Forever</title>
+<meta name="description" content="Guida di Cucina 1-300 per WoW Forever (Alleanza e Orda): percorso ricetta per ricetta, lista della spesa, istruttori e kit da falò.">
+<meta property="og:title" content="Cucina WoW Forever">
+<meta property="og:description" content="Guida di Cucina 1-300 per WoW Forever (Alleanza e Orda): percorso ricetta per ricetta, lista della spesa, istruttori e kit da falò.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../cuisine.html">
+<link rel="alternate" hreflang="en" href="../en/cuisine.html">
+<link rel="alternate" hreflang="es" href="../es/cuisine.html">
+<link rel="alternate" hreflang="de" href="../de/cuisine.html">
+<link rel="alternate" hreflang="pt" href="../pt/cuisine.html">
+<link rel="alternate" hreflang="ru" href="../ru/cuisine.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #160f0d;
+  --bg-glow: #2c1712;
+  --panel: #211613;
+  --panel-2: #2c1e1a;
+  --stitch: #8a5444;
+  --accent: #ff8a66;
+  --seg1: #ffb8a3; --seg2: #f2876b; --seg3: #b8503a; --seg4: #7d3224;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Cucina</span>
+  <h1>Cucina 1 → 300</h1>
+  <p class="lede">Una professione secondaria, in più delle tue due principali. In Forever la Cucina crea anche i kit da falò. Inserisci la tua abilità: la pagina mostra il passo successivo e la carne che ti manca.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Dove sei</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Abilità attuale</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Togli 5 punti">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Aggiungi 5 punti">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Lista della spesa fino a</label>
+      <select id="target">
+        <option value="75">75 (fine di Apprendista)</option>
+        <option value="150" selected>150 (fine di Garzone)</option>
+        <option value="225">225 (fine di Esperto)</option>
+        <option value="300">300 (Artigiano)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprendista</div><div class="seg s2">Garzone</div><div class="seg s3">Esperto</div><div class="seg s4">Artigiano</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Cosa ti manca ancora</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Il percorso</h2>
+    <p class="lede" style="margin-top:0">Le quantità sono stime: tieni sempre un margine. Regola d'oro: appena una ricetta diventa verde, passa al passo successivo.</p>
+    <div class="legend" aria-label="Colori delle ricette">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Arancione: +1 sempre</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Giallo: spesso</span> <span><span class="dot" style="background:var(--sk-green)"></span>Verde: raramente</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Grigio: mai</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Istruttori</h2>
+  <p class="lede" style="margin-top:0">In Forever, Esperto e Artigiano si imparano anch'essi da un istruttore di cucina, senza libro né missione come in Classic.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alleanza</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Sblocca</th><th>Requisiti</th><th>Istruttori (coordinate)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Garzone</span></td><td class="num">fino a 150</td><td>abilità 50, livello 10</td><td><strong>Stephen Ryback</strong>, Roccavento (75.4, 37.2) · Tomas, Foresta di Elwynn (44.2, 66.0) · Daryl Riknussun, Forgiardente (60.0, 36.8) · Gremlock Pilsnor, Dun Morogh (47.6, 52.4) · Cuoco Ghilm, Dun Morogh (68.4, 54.4) · Alegorn, Darnassus (48.4, 21.0) · Zarrin, Teldrassil (57.0, 61.2)</td></tr><tr><td><span class="pill">Esperto</span></td><td class="num">fino a 225</td><td>abilità 125, livello 20</td><td>Qualsiasi istruttore di cucina di una capitale. Inoltre: Crystal Boughman, Montagne Crestarossa (17.6, 43.6) · Gorg, Clearwater Shores (58.6, 44.6)</td></tr><tr><td><span class="pill">Artigiano</span></td><td class="num">fino a 300</td><td>abilità 200, livello 35</td><td>Un istruttore di cucina (Kami Labs non dice quale: prova prima Stephen Ryback a Roccavento)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Orda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Sblocca</th><th>Requisiti</th><th>Istruttori (coordinate)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Garzone</span></td><td class="num">fino a 150</td><td>abilità 50, livello 10</td><td><strong>Zamja</strong>, Orgrimmar (57.4, 53.4) · Cuoco Torka, Durotar (51.2, 42.4) · Eunice Burch, Sepulcride (62.2, 44.4) · William Pickman, Radure di Tirisfal (61.8, 51.4) · Aska Mistrunner, Picco del Tuono (50.8, 52.4) · Pyall Silentstride, Mulgore (45.0, 61.6)</td></tr><tr><td><span class="pill">Esperto</span></td><td class="num">fino a 225</td><td>abilità 125, livello 20</td><td>Qualsiasi istruttore di cucina di una capitale. Neutrali: Duhng, Savane (55.2, 31.8) · Mudduk, Valle di Rovotorto (31.4, 28.0) · Gorg, Clearwater Shores (58.6, 44.6)</td></tr><tr><td><span class="pill">Artigiano</span></td><td class="num">fino a 300</td><td>abilità 200, livello 35</td><td>Un istruttore di cucina (Kami Labs non dice quale: prova prima Zamja a Orgrimmar)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Spezie Delicate e Piccanti dai fornitori di merci e di cucina.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novità di Forever</h2>
+  <ul class="plain"><li><strong>Kit da Falò Base</strong> a 20: il tuo campo può contenere 3 oggetti.</li><li><strong>Kit da Falò del Garzone</strong> a 90: 5 oggetti.</li><li><strong>Kit da Falò dello Specialista</strong> a 200: 10 oggetti.</li><li>Nuovi <strong>tè e frappè</strong> (Tè della Serenità a 25, Tè Reale a 100, Tè del Saggio a 250…) e un banchetto, il Banchetto di Macaron a 140.</li><li>Alcuni piatti danno «Ben Nutrito» e un bonus d'esperienza uccidendo mostri (annunciato, non ancora confermato). Method parla di +5% d'esperienza per 15 minuti.</li><li><strong>Punti eredità</strong> a 150, 225 e 300.</li><li>La professione ha 125 ricette, 44 nuove.</li></ul>
+</section>
+
+<footer class="foot"><p>Fonti: <a href="https://kami-labs.fr/guide-cuisine-wow-forever/">Kami Labs, guida alla Cucina di WoW Forever</a> · <a href="https://www.method.gg/wow-forever/wow-forever-shaman-leveling-guide-and-talents">Method, guida allo sciamano (bonus d'esperienza)</a>.</p><p>I passi oltre 225 non erano giocabili in beta: sono segnati «da verificare». Se un venditore di ricette è dell'altra fazione, usa la casa d'aste. I nomi di oggetti, PNG e zone sono tradotti e possono differire un po' nel tuo client.</p><p>Guida di fan non ufficiale, aggiornata il 7 novembre 2026. World of Warcraft è un marchio di Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "cuis", "src": {"Pezzo di Carne di Cinghiale": "farm", "Carne di Coyote": "farm", "Ratto Scavatore": "farm", "Fianco di Lupo Magro": "farm", "Carne di Lupo Rosso": "farm", "Codagialla Maculata Cruda": "farm", "Salmone Scagliasole Crudo": "farm", "Spezie Delicate": "vendor", "Spezie Piccanti": "vendor"}, "steps": [{"f": 1, "t": 55, "r": "Carne di Cinghiale Arrosto", "n": 55, "m": {"Pezzo di Carne di Cinghiale": 1}, "note": "Cinghiali a Durotar e Mulgore (Orda), Foresta di Elwynn e Dun Morogh (Alleanza)."}, {"f": 55, "t": 90, "r": "Bistecca di Coyote", "n": 35, "m": {"Carne di Coyote": 1}, "note": "<strong>Impara Garzone a 50</strong> (livello 10), o resti bloccato a 75."}, {"f": 90, "t": 156, "r": "Gumbo di Ratto", "n": 81, "m": {"Ratto Scavatore": 1}, "note": "Ricetta da missione. <strong>Impara Esperto a 125</strong> (livello 20), o resti bloccato a 150."}, {"f": 156, "t": 185, "r": "Bistecca di Lupo Magro", "n": 36, "m": {"Fianco di Lupo Magro": 1, "Spezie Delicate": 1}, "note": "Ricetta per 16a da Supervenditore 680 (Desolanda). La carne cade dai lupi di Desolanda e di Colletorto."}, {"f": 185, "t": 209, "r": "Carne di Paleskewer Sostanziosa", "n": 25, "m": {"Pezzo di Carne di Cinghiale": 2, "Spezie Delicate": 1}, "note": "Nuova ricetta di Forever, 20a da Martha Wellsworth (Clearwater Shores)."}, {"f": 209, "t": 225, "r": "Costine di Lupo Piccanti", "n": 17, "m": {"Carne di Lupo Rosso": 1, "Spezie Piccanti": 1}, "note": "Ricetta per 50a da Vivianna (Feralas) o Supervenditore 680 (Desolanda). <strong>Impara Artigiano a 200</strong> (livello 35)."}, {"f": 225, "t": 250, "r": "Codagialla Maculata", "n": 25, "m": {"Codagialla Maculata Cruda": 1}, "p": 1, "note": "Ricetta per 1o 60a da Gikkix (Tanaris). Pescala (vedi la <a href=\"peche.html\">pagina della Pesca</a>) o comprala in asta."}, {"f": 250, "t": 300, "r": "Salmone Scagliasole in Camicia", "n": 51, "m": {"Salmone Scagliasole Crudo": 1}, "p": 1, "note": "Ricetta per 2o da Gikkix (Tanaris)."}], "trainMsg": {"comp": "Se non l'hai ancora fatto, impara Garzone (livello 10) da un istruttore di cucina: Zamja a Orgrimmar (57.4, 53.4) o Cuoco Torka a Durotar (51.2, 42.4).", "exp": "Se non l'hai ancora fatto, impara Esperto (livello 20) da un istruttore di cucina.", "art": "Se non l'hai ancora fatto, impara Artigiano (livello 35) da un istruttore di cucina."}, "done300": "300 raggiunto. Passa al Kit da Falò dello Specialista per avere 10 oggetti da campo.", "groupTitles": {"farm": "Da cacciare o pescare", "vendor": "Dai venditori", "ah": "Casa d'aste", "craft": "Intermedi"}, "trainMsgA": {"comp": "Se non l'hai ancora fatto, impara Garzone (livello 10) da un istruttore di cucina: Stephen Ryback a Roccavento (75.4, 37.2), Daryl Riknussun a Forgiardente (60.0, 36.8) o Alegorn a Darnassus (48.4, 21.0).", "exp": "Se non l'hai ancora fatto, impara Esperto (livello 20) da un istruttore di cucina.", "art": "Se non l'hai ancora fatto, impara Artigiano (livello 35) da un istruttore di cucina."}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

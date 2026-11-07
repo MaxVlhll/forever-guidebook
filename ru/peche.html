@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Рыбная ловля WoW Forever</title>
+<meta name="description" content="Гайд по рыбной ловле 1-300 для WoW Forever (Альянс и Орда): где ловить этап за этапом, полезное снаряжение и наставники.">
+<meta property="og:title" content="Рыбная ловля WoW Forever">
+<meta property="og:description" content="Гайд по рыбной ловле 1-300 для WoW Forever (Альянс и Орда): где ловить этап за этапом, полезное снаряжение и наставники.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../peche.html">
+<link rel="alternate" hreflang="en" href="../en/peche.html">
+<link rel="alternate" hreflang="es" href="../es/peche.html">
+<link rel="alternate" hreflang="de" href="../de/peche.html">
+<link rel="alternate" hreflang="it" href="../it/peche.html">
+<link rel="alternate" hreflang="pt" href="../pt/peche.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #0d1218;
+  --bg-glow: #13233a;
+  --panel: #151c25;
+  --panel-2: #1d2733;
+  --stitch: #47698f;
+  --accent: #6fb6f5;
+  --seg1: #b0d8ff; --seg2: #6fb6f5; --seg3: #3a7cc0; --seg4: #234f80;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Рыбная ловля</span>
+  <h1>Рыбная ловля 1 → 300</h1>
+  <p class="lede">Где ловить рыбу, этап за этапом. Нужна удочка. Введите свой навык: страница покажет ваш этап и подходящие водоёмы.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Где вы сейчас</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Текущий навык</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Убрать 5 очков">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Добавить 5 очков">+5</button>
+      </div>
+    </div>
+    
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Ученик</div><div class="seg s2">Подмастерье</div><div class="seg s3">Умелец</div><div class="seg s4">Искусник</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:14px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Этапы и зоны</h2>
+    <p class="lede" style="margin-top:0">Зоны, которые называет Kami Labs, в основном на стороне Альянса: строка Орды даёт ближайший аналог по данным Classic. Меняйте водоём, как только ловите слишком много «ничего».</p>
+    <div class="legend"><span><span class="zone">Зона <small>инфо</small></span> зона из подсчёта Forever</span><span><span class="zone a">Зона</span> Альянс</span><span><span class="zone h">Зона</span> Орда</span><span>без отметки: спорная или нейтральная</span></div>
+  </div>
+  <div class="tiers" id="tiers"></div>
+</section>
+
+<section aria-labelledby="equip-h" style="display:grid;gap:12px">
+  <h2 id="equip-h">Полезное снаряжение</h2>
+  <p class="lede" style="margin-top:0">Каждый бонус к рыбной ловле уменьшает пустые забросы, особенно в начале этапа.</p>
+  <div class="cols"><div class="card"><h3>Удочки</h3><span class="lv">Постоянный бонус</span><p>Прочная удочка, Большая железная удочка, Арканитовая удочка, Удочка Ната Пэйгла FC-5000.</p></div><div class="card"><h3>Приманки</h3><span class="lv">10 минут</span><p>Блестящая безделушка, Яркие безделушки, Ночные выползки, Аквадинамическая приманка, Плотоядный червь.</p></div><div class="card"><h3>Одежда</h3><span class="lv">Постоянный бонус</span><p>Потрёпанная рыбацкая шляпа, Счастливая рыбацкая шляпа, Сапоги рыболова Ната Пэйгла.</p></div></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Наставники рыбной ловли</h2>
+  <p class="lede" style="margin-top:0">Kami Labs не указывает ранги рыбной ловли. В Classic: Подмастерье у наставника, Умелец по книге в Пиратской Бухте, Искусник по заданию Ната Пэйгла. Проверьте в Forever.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Альянс</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Ранг</th><th>Открывает</th><th>Требования</th><th>Наставники (координаты)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Подмастерье</span></td><td class="num">до 150</td><td>навык 50, уровень 10 (вероятно)</td><td><strong>Arnold Leland</strong>, Штормград (45.4, 57.4) · Lee Brown, Элвиннский лес (47.4, 62.2) · Grimnur Stonebrand, Стальгорн (48.2, 6.6) · Paxton Ganter, Дун Морог (35.4, 40.2) · Warg Deepwater, Лок Модан (40.4, 39.4) · Astaia, Дарнас (47.4, 56.4) · Androl Oakhand, Тельдрассил (55.8, 93.4)</td></tr><tr><td><span class="pill">Умелец</span></td><td class="num">до 225</td><td>Книга (Classic)</td><td>Старик Хеминг, Пиратская Бухта (Тернистая долина), по данным Classic · наставники: Matthew Hooper, Красногорье (21.4, 51.0) · Harold Riggs, Болотина (8.0, 58.4) · Myizz Luckycatch, Тернистая долина (27.4, 77.0)</td></tr><tr><td><span class="pill">Искусник</span></td><td class="num">до 300</td><td>Задание Ната Пэйгла (Classic)</td><td>Нат Пэйгл, Пылевые топи, по данным Classic · Brannock, Фералас (32.2, 41.4) · Krix, Clearwater Shores (79.2, 54.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Орда</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Ранг</th><th>Открывает</th><th>Требования</th><th>Наставники (координаты)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Подмастерье</span></td><td class="num">до 150</td><td>навык 50, уровень 10 (вероятно)</td><td><strong>Lumak</strong>, Оргриммар (69.4, 28.4) · Lau'Tiki, Дуротар (53.2, 81.4) · Armand Cromwell, Подгород (80.4, 31.2) · Clyde Kellen, Тирисфальские леса (67.2, 51.0) · Kah Mistrunner, Громовой Утес (55.8, 47.6) · Uthan Stillwater, Мулгор (44.2, 63.8)</td></tr><tr><td><span class="pill">Умелец</span></td><td class="num">до 225</td><td>Книга (Classic)</td><td>Старик Хеминг, Пиратская Бухта (Тернистая долина), по данным Classic · нейтральные наставники: Myizz Luckycatch, Тернистая долина (27.4, 77.0) · Lui'Mala, Пустоши (22.6, 72.4)</td></tr><tr><td><span class="pill">Искусник</span></td><td class="num">до 300</td><td>Задание Ната Пэйгла (Classic)</td><td>Нат Пэйгл, Пылевые топи, по данным Classic · Катум-рыболов, Внутренние земли (80.2, 81.4) · Krix, Clearwater Shores (79.2, 54.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Особенности Forever</h2>
+  <ul class="plain"><li><strong>Аквариум</strong> (предмет лагеря рыболовов): +8% к характеристикам, по данным Method.</li><li><strong>Очки наследия</strong> на 150, 225 и 300.</li><li>Рыба кормит <a href="cuisine.html">кулинарию</a>: её шаги 225-300 используют желтохвоста и лосося.</li></ul>
+</section>
+
+<footer class="foot"><p>Источники: <a href="https://kami-labs.fr/guide-peche-wow-forever/">Kami Labs, гайд по рыбной ловле WoW Forever</a> · <a href="https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents">Method, гайд по друиду (предметы лагеря)</a>.</p><p>Бета закончилась на 225: этапы выше помечены «после беты». Названия предметов, НИП и зон переведены и могут немного отличаться в вашем клиенте.</p><p>Неофициальный фанатский гайд, обновлён 7 ноября 2026 г. World of Warcraft — торговая марка Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "peche", "done300": "Достигнуто 300. Осталось только охотиться за FC-5000 Ната Пэйгла.", "train": {"comp": "Подумайте о ранге Подмастерье (уровень 10): Lumak в Оргриммаре (69.4, 28.4).", "exp": "До 150: в Classic ранг Умелец давала книга, которую продавал Старик Хеминг в Пиратской Бухте (проверьте в Forever).", "art": "До 225: в Classic ранг Искусник давало задание Ната Пэйгла (Пылевые топи) (проверьте в Forever)."}, "tiers": [{"f": 1, "t": 75, "res": ["Сырая блестящая рыбка", "Сырой длиннорылый илистый луциан", "Сырая скользкая скумбрия"], "zones": [["Дун Морог", "", "a"], ["Элвиннский лес", "", "a"], ["Тельдрассил", "", "a"]], "horde": "любая вода в Дуротаре, Мулгоре или Тирисфале, или каналы Оргриммара и Подгорода.", "alliance": "любая вода в Элвинне, Дун Мороге или Тельдрассиле, или каналы Штормграда."}, {"f": 75, "t": 100, "res": ["Сырой радужный тунец", "Маслянистый черноротик", "Огнеперый луциан"], "zones": [["Болотина", "", "a"], ["Западный Край", "", "a"], ["Темные берега", "", "a"], ["Лок Модан", "", "a"]], "horde": "Побережье и оазисы Степей, Серебряный бор, Предгорья Хилсбрада.", "note": "Изучите Подмастерье до 75.", "alliance": "Болотина, Западный Край, Темные берега, Лок Модан."}, {"f": 100, "t": 150, "res": ["Сырой щетинистый сом", "Сырая каменная треска", "Сырая мифрилоголовая форель"], "zones": [["Тернистая долина", ""], ["Пылевые топи", ""], ["Сумеречный лес", "", "a"]], "horde": "северное побережье Тернистой долины, Пылевые топи.", "note": "Получите Умельца до 150.", "alliance": "Сумеречный лес, Пылевые топи от Терамора."}, {"f": 150, "t": 225, "res": ["Сырой пятнистый желтохвост", "Сырая каменная треска", "Сырой большой шалфокун"], "zones": [["Болото Печали", ""], ["Фералас", ""], ["Пустоши", ""], ["Альтеракские горы", ""]], "note": "Получите Искусника до 225."}, {"f": 225, "t": 250, "res": ["Каменночешуйчатый угорь", "Сырой красножаберник", "Сырой ночной луциан"], "zones": [["Азшара", ""], ["Западные Чумные земли", ""], ["Перевал Мертвого Ветра", ""]], "note": "Каменночешуйчатых угрей использует алхимия (каменночешуйчатое масло).", "p": 1}, {"f": 250, "t": 300, "res": ["Сырой солнечный лосось", "Темноклешневый омар", "Сырой летний окунь"], "zones": [["Восточные Чумные земли", ""], ["Зимние Ключи", ""], ["Азшара", ""]], "p": 1}], "trainA": {"comp": "Подумайте о ранге Подмастерье (уровень 10): Arnold Leland в Штормграде (45.4, 57.4), Grimnur Stonebrand в Стальгорне (48.2, 6.6) или Astaia в Дарнасе (47.4, 56.4).", "exp": "До 150: в Classic ранг Умелец давала книга, которую продавал Старик Хеминг в Пиратской Бухте (проверьте в Forever).", "art": "До 225: в Classic ранг Искусник давало задание Ната Пэйгла (Пылевые топи) (проверьте в Forever)."}};
+</script>
+<script src="../assets/recolte.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

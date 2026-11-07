@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Наложение чар WoW Forever</title>
+<meta name="description" content="Гайд по наложению чар 1-300 для WoW Forever (Альянс и Орда): путь рецепт за рецептом, расчёт покупок, наставники и что распылять.">
+<meta property="og:title" content="Наложение чар WoW Forever">
+<meta property="og:description" content="Гайд по наложению чар 1-300 для WoW Forever (Альянс и Орда): путь рецепт за рецептом, расчёт покупок, наставники и что распылять.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../enchantement.html">
+<link rel="alternate" hreflang="en" href="../en/enchantement.html">
+<link rel="alternate" hreflang="es" href="../es/enchantement.html">
+<link rel="alternate" hreflang="de" href="../de/enchantement.html">
+<link rel="alternate" hreflang="it" href="../it/enchantement.html">
+<link rel="alternate" hreflang="pt" href="../pt/enchantement.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #120f18;
+  --bg-glow: #211a30;
+  --panel: #1b1724;
+  --panel-2: #241f31;
+  --stitch: #6a5a96;
+  --ink: #f1e9dc;
+  --muted: #b5a995;
+  --accent: #b99bff;
+  --accent-ink: #15100c;
+  --seg1: #d2c2ff; --seg2: #a88cf0; --seg3: #6f55b8; --seg4: #4a3884;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Наложение чар</span>
+  <h1>Наложение чар 1 → 300</h1>
+  <p class="lede">Полный путь, рецепт за рецептом, по данным беты Forever. Введите свой навык: страница покажет, где вы, следующий шаг, жезлы для создания и всё, что ещё нужно распылить.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Где вы сейчас</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Текущий навык</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Убрать 5 очков">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Добавить 5 очков">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Список покупок до</label>
+      <select id="target">
+        <option value="75">75 (конец Ученика)</option>
+        <option value="150" selected>150 (конец Подмастерья)</option>
+        <option value="225">225 (конец Умельца)</option>
+        <option value="300">300 (Искусник)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Ученик</div><div class="seg s2">Подмастерье</div><div class="seg s3">Умелец</div><div class="seg s4">Искусник</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Чего ещё не хватает</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Путь</h2>
+    <p class="lede" style="margin-top:0">Количество созданий — оценка: всегда держите запас. Золотое правило: как только рецепт стал зелёным, переходите к следующему шагу.</p>
+    <div class="legend" aria-label="Цвета рецептов">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Оранжевый: +1 всегда</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Жёлтый: часто</span> <span><span class="dot" style="background:var(--sk-green)"></span>Зелёный: редко</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Серый: никогда</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Наставники</h2>
+  <p class="lede" style="margin-top:0">Без нужного ранга навык застревает на пределе (75, 150, 225). Изучайте следующий ранг, как только достигнете нужного уровня.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Альянс</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Ранг</th><th>Открывает</th><th>Требования</th><th>Наставники (координаты)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Подмастерье</span></td><td class="num">до 150</td><td>навык 50, уровень 10</td><td><strong>Betty Quin</strong>, Штормград (43.2, 63.8) · Thonys Pillarstone, Стальгорн (59.0, 45.2) · Lalina Summermoon, Дарнас (58.4, 13.2) · Alanna Raveneye, Тельдрассил (36.8, 34.2)</td></tr><tr><td><span class="pill">Умелец</span></td><td class="num">до 225</td><td>навык 125, уровень 20</td><td><strong>Lucan Cordell</strong>, Штормград (43.0, 64.4) · Gimble Thistlefuzz, Стальгорн (59.0, 45.2) · Taladan, Дарнас (58.4, 13.2) · Xylinnia Starshine, Фералас (31.4, 44.2)</td></tr><tr><td><span class="pill">Искусник</span></td><td class="num">до 300</td><td>навык 200, уровень 35</td><td><strong>Kitta Firewind</strong>, на вершине Башни Азоры, Элвиннский лес (64.8, 70.4)</td></tr><tr><td><span class="pill">Высокие рецепты</span></td><td class="num">—</td><td>—</td><td>Annora, внутри Ульдамана: пещера к северо-западу от Зала карт, появляется только после зачистки зала</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Орда</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Ранг</th><th>Открывает</th><th>Требования</th><th>Наставники (координаты)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Подмастерье</span></td><td class="num">до 150</td><td>навык 50, уровень 10</td><td><strong>Jhag</strong>, Оргриммар (53.4, 38.2) · Pa'zula, Дуротар (56.4, 73.6) · Malcomb Wynn, Подгород (62.2, 60.4) · Vance Undergloom, Тирисфальские леса (61.6, 51.4) · Mot Dawnstrider, Громовой Утес (43.8, 37.8)</td></tr><tr><td><span class="pill">Умелец</span></td><td class="num">до 225</td><td>навык 125, уровень 20</td><td><strong>Godan</strong>, Оргриммар (53.8, 38.4) · Lavinia Crowe, Подгород (62.2, 61.6) · Teg Dawnstrider, Громовой Утес (44.8, 37.4)</td></tr><tr><td><span class="pill">Искусник</span></td><td class="num">до 300</td><td>навык 200, уровень 35</td><td><strong>Hgarth</strong>, Когтистые горы (49.2, 57.2), в Приюте на Солнечном Камне</td></tr><tr><td><span class="pill">Высокие рецепты</span></td><td class="num">—</td><td>—</td><td>Annora, внутри Ульдамана: пещера к северо-западу от Зала карт, появляется только после зачистки зала</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Простую древесину продают торговцы товарами для зачарования. Металлические жезлы делают кузнецы или берут на аукционе. Продавцы рецептов с пометкой Альянс или Орда обслуживают только свою фракцию: другая сторона пользуется аукционом.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Что распылять для каждого материала</h2>
+  <p class="lede" style="margin-top:0">Эти диапазоны из Classic (уровень зелёного предмета, который вы распыляете), на котором основан Forever. Синие предметы дают осколки.</p>
+  <div class="cols"><div class="card"><h3>Магическая сущность, Странная пыль</h3><span class="lv">Зелёные предметы ур. 5–20</span><p>Всё, что вы собираете в стартовых зонах, Степях и Когтистых горах.</p></div><div class="card"><h3>Астральная сущность, Пыль души</h3><span class="lv">Зелёные предметы ур. 21–35</span><p>Ясеневый лес, Тысяча Игл, Предгорья Хилсбрада, Пустоши.</p></div><div class="card"><h3>Мистическая сущность, Пыль видений</h3><span class="lv">Зелёные предметы ур. 31–45</span><p>Нагорье Арати, Тернистая долина, Бесплодные земли, Фералас.</p></div><div class="card"><h3>Сущность пустоты</h3><span class="lv">Зелёные предметы ур. 41–50</span><p>Танарис, Внутренние земли, Фералас, Тлеющее ущелье.</p></div><div class="card"><h3>Большой сверкающий осколок</h3><span class="lv">Зелёные предметы ур. 46–50</span><p>Ун'Горо, Оскверненный лес, Пылающие степи и подземелья 45–50 уровня.</p></div></div>
+  <p class="foot">Совет: когда цены низкие, покупать зелёные предметы на аукционе для распыления часто дешевле, чем покупать сущности.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Особенности Forever</h2>
+  <ul class="plain"><li><strong>Зачарованная лютня</strong> на 20: повышает броню, характеристики и сопротивления игроков рядом.</li><li><strong>Тайный утилизатор</strong> на 140: улучшает добычу при распылении.</li><li><strong>Тайная кузня</strong> на 300: нужна для некоторых рецептов.</li><li><strong>Очки наследия</strong> на 150, 225 и 300.</li><li>Торговое управление Азерота продаёт новые формулы, включая предметы для левой руки (тотемы, манускрипты, сферы).</li><li>Объявлено на BlizzCon, но ещё не подтверждено: зачарователи смогут зачаровывать собственные кольца.</li><li>В профессии 219 рецептов, из них 63 новых.</li></ul>
+</section>
+
+<footer class="foot"><p>Источники: <a href="https://kami-labs.fr/guide-enchantement-wow-forever/">Kami Labs, гайд по наложению чар WoW Forever</a> — путь и наставники · <a href="https://wow.gg/fr/guides/wow-forever-new-recipes-enchanting">wow.gg</a> — новые формулы.</p><p>Шаги выше 225 в бете были недоступны: они помечены «проверить». Материалы жезлов выведены из итогов гайда: проверьте рецепт у наставника перед покупкой. Названия предметов, НИП и зон переведены и могут немного отличаться в вашем клиенте.</p></footer>
+
+
+</main>
+<script>
+var CONFIG = {"key": "ench", "src": {"Малая магическая сущность": "farm", "Малая астральная сущность": "farm", "Великая астральная сущность": "farm", "Малая мистическая сущность": "farm", "Великая мистическая сущность": "farm", "Странная пыль": "farm", "Пыль души": "farm", "Пыль видений": "farm", "Великая сущность пустоты": "farm", "Большой сверкающий осколок": "farm", "Простая древесина": "vendor", "Медный жезл": "ah", "Серебряный жезл": "ah", "Золотой жезл": "ah", "Жезл из истинного серебра": "ah", "Магическая гранула": "ah", "Радужная жемчужина": "ah", "Черная жемчужина": "ah", "Самоцвет тени": "ah", "Дикая лоза": "ah"}, "sub": {}, "steps": [{"f": 1, "t": 10, "r": "Рунический медный жезл", "n": 15, "m": {"Медный жезл": 1, "Магическая гранула": 1}, "note": "Позже как инструмент нужен только один жезл: остальные — только для прокачки."}, {"f": 10, "t": 40, "r": "Малая волшебная палочка", "n": 30, "m": {"Простая древесина": 1, "Малая магическая сущность": 1}, "note": "Распыление вы изучаете на 20: распыляйте каждый зелёный предмет, который найдёте."}, {"f": 40, "t": 110, "r": "Чары для нагрудника — малое поглощение", "n": 77, "m": {"Малая магическая сущность": 1}, "note": "Инструмент: рунический медный жезл. <strong>Изучите Подмастерье на 50</strong> (уровень 10), иначе застрянете на 75."}, {"f": 110, "t": 150, "r": "Чары для плаща — малая ловкость", "n": 44, "m": {"Малая астральная сущность": 1}, "onceName": "рунический серебряный жезл", "once": {"Серебряный жезл": 1, "Радужная жемчужина": 1, "Странная пыль": 3}, "note": "Рецепт за 8 с у Dalria (Ясеневый лес, сторона Альянса): иначе аукцион. <strong>Изучите Умельца на 125</strong> (уровень 20): {exp}."}, {"f": 150, "t": 185, "r": "Чары для наручей — слабый интеллект", "n": 36, "m": {"Великая астральная сущность": 1}}, {"f": 185, "t": 210, "r": "Чары для нагрудника — большой интеллект", "n": 25, "m": {"Малая мистическая сущность": 1}, "onceName": "рунический золотой жезл", "once": {"Золотой жезл": 1, "Черная жемчужина": 1, "Великая мистическая сущность": 1}, "note": "<strong>Изучите Искусника на 200</strong> (уровень 35): {art}."}, {"f": 210, "t": 238, "r": "Чары для перчаток — ловкость", "n": 29, "m": {"Пыль видений": 1}, "onceName": "рунический жезл из истинного серебра", "once": {"Жезл из истинного серебра": 1, "Самоцвет тени": 1, "Пыль души": 1}}, {"f": 238, "t": 279, "r": "Чары для обуви — ловкость", "n": 53, "m": {"Великая сущность пустоты": 1}, "p": 1}, {"f": 279, "t": 300, "r": "Чары для перчаток — малая скорость", "n": 44, "m": {"Большой сверкающий осколок": 1, "Дикая лоза": 1}, "p": 1}], "train": {"comp": "Jhag в Оргриммаре (53.4, 38.2) или Pa'zula в Дуротаре (56.4, 73.6)", "exp": "Godan в Оргриммаре (53.8, 38.4)", "art": "Hgarth в Когтистых горах (49.2, 57.2)"}, "done300": "Достигнуто 300. Подумайте о тайной кузне для лагеря.", "groupTitles": {"farm": "Распылить", "vendor": "У торговцев", "ah": "Аукцион или другие профессии", "craft": "Промежуточные"}, "trainA": {"comp": "Betty Quin в Штормграде (43.2, 63.8), Thonys Pillarstone в Стальгорне (59.0, 45.2) или Lalina Summermoon в Дарнасе (58.4, 13.2)", "exp": "Lucan Cordell в Штормграде (43.0, 64.4), Gimble Thistlefuzz в Стальгорне (59.0, 45.2) или Taladan в Дарнасе (58.4, 13.2)", "art": "Kitta Firewind, Башня Азоры в Элвиннском лесу (64.8, 70.4)"}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

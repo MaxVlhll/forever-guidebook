@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Инженерное дело WoW Forever</title>
+<meta name="description" content="Гайд по инженерному делу 1-300 для WoW Forever (Альянс и Орда): путь рецепт за рецептом, расчёт покупок и наставники.">
+<meta property="og:title" content="Инженерное дело WoW Forever">
+<meta property="og:description" content="Гайд по инженерному делу 1-300 для WoW Forever (Альянс и Орда): путь рецепт за рецептом, расчёт покупок и наставники.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../ingenierie.html">
+<link rel="alternate" hreflang="en" href="../en/ingenierie.html">
+<link rel="alternate" hreflang="es" href="../es/ingenierie.html">
+<link rel="alternate" hreflang="de" href="../de/ingenierie.html">
+<link rel="alternate" hreflang="it" href="../it/ingenierie.html">
+<link rel="alternate" hreflang="pt" href="../pt/ingenierie.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #0e1416;
+  --bg-glow: #142528;
+  --panel: #162023;
+  --panel-2: #1e2b2f;
+  --stitch: #4c7f86;
+  --accent: #5fd0d6;
+  --seg1: #a8e6ea; --seg2: #64c3ca; --seg3: #2f8a92; --seg4: #1d5c62;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Инженерное дело</span>
+  <h1>Инженерное дело 1 → 300</h1>
+  <p class="lede">Полный путь, рецепт за рецептом, по данным беты Forever. Введите свой навык: страница покажет, где вы, следующий шаг и все слитки и камни, которых ещё не хватает.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Где вы сейчас</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Текущий навык</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Убрать 5 очков">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Добавить 5 очков">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Список покупок до</label>
+      <select id="target">
+        <option value="75">75 (конец Ученика)</option>
+        <option value="150" selected>150 (конец Подмастерья)</option>
+        <option value="225">225 (конец Умельца)</option>
+        <option value="300">300 (Искусник)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Ученик</div><div class="seg s2">Подмастерье</div><div class="seg s3">Умелец</div><div class="seg s4">Искусник</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Чего ещё не хватает</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Путь</h2>
+    <p class="lede" style="margin-top:0">Количество созданий — оценка: всегда держите запас. Золотое правило: как только рецепт стал зелёным, переходите к следующему шагу.</p>
+    <div class="legend" aria-label="Цвета рецептов">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Оранжевый: +1 всегда</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Жёлтый: часто</span> <span><span class="dot" style="background:var(--sk-green)"></span>Зелёный: редко</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Серый: никогда</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Наставники</h2>
+  <p class="lede" style="margin-top:0">Без нужного ранга навык застревает на пределе (75, 150, 225). Изучайте следующий ранг, как только достигнете нужного уровня.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Альянс</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Ранг</th><th>Открывает</th><th>Требования</th><th>Наставники (координаты)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Подмастерье</span></td><td class="num">до 150</td><td>навык 50, уровень 10</td><td><strong>Sprite Jumpsprocket</strong>, Штормград (54.6, 8.0) · Jemma Quikswitch, Стальгорн (67.4, 43.8) · Bronk Guzzlegear, Дун Морог (50.2, 50.4) · Deek Fizzlebizz, Лок Модан (45.8, 13.4) · Jenna Lemkenilli, Темные берега (38.2, 41.0)</td></tr><tr><td><span class="pill">Умелец</span></td><td class="num">до 225</td><td>навык 125, уровень 20</td><td><strong>Lilliam Sparkspindle</strong>, Штормград (54.8, 7.8) · Trixie Quikswitch, Стальгорн (67.4, 43.2) · Finbus Geargrind, Сумеречный лес (77.4, 48.4)</td></tr><tr><td><span class="pill">Искусник</span></td><td class="num">до 300</td><td>навык 200, уровень 35</td><td><strong>Springspindle Fizzlegear</strong>, Стальгорн (68.2, 43.4)</td></tr><tr><td><span class="pill">Высокие рецепты</span></td><td class="num">—</td><td>—</td><td>Buzzek Bracketswing, Танарис (52.2, 27.4), в Прибамбасске</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Орда</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Ранг</th><th>Открывает</th><th>Требования</th><th>Наставники (координаты)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Подмастерье</span></td><td class="num">до 150</td><td>навык 50, уровень 10</td><td><strong>Thund</strong>, Оргриммар (75.4, 24.6) · Mukdrak, Дуротар (52.2, 40.8) · Graham Van Talen, Подгород (75.2, 72.4) · Twizwick Sprocketgrind, Мулгор (58.6, 39.4) · Tinkerwiz, Степи (62.6, 36.2)</td></tr><tr><td><span class="pill">Умелец</span></td><td class="num">до 225</td><td>навык 125, уровень 20</td><td><strong>Nogg</strong>, Оргриммар (75.4, 24.8) · Franklin Lloyd, Подгород (75.4, 73.0)</td></tr><tr><td><span class="pill">Искусник</span></td><td class="num">до 300</td><td>навык 200, уровень 35</td><td><strong>Roxxik</strong>, Оргриммар (75.4, 24.8)</td></tr><tr><td><span class="pill">Высокие рецепты</span></td><td class="num">—</td><td>—</td><td>Buzzek Bracketswing, Танарис (52.2, 27.4), в Прибамбасске</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Слабый флюс продают торговцы инженерными товарами. Возьмите горное дело в пару: почти каждому рецепту нужны слитки или камень.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Особенности Forever</h2>
+  <ul class="plain"><li><strong>Робот-продавец деталей</strong> на 20: продаёт компоненты в лагере.</li><li><strong>Робот-ремонтник</strong> на 140: продаёт компоненты и чинит экипировку.</li><li><strong>Верстак анархиста</strong> на 300: нужен для некоторых рецептов.</li><li><strong>Гномская или гоблинская специализация</strong>: задание заставляет выбрать школу, у каждой свои уникальные предметы. Их рецептов в этом пути нет.</li><li><strong>Очки наследия</strong> на 150, 225 и 300.</li><li>Грубый динамит теперь стоит только один грубый взрывчатый порошок. Ослепляющую бомбу изучают по заданию.</li><li>В профессии 242 рецепта: 78 новых и 32 изменённых. По словам Kami Labs, инженерное дело — в основном выбор для PvP: ни одного инженерного предмета нет в PvE-списках BiS.</li></ul>
+</section>
+
+<footer class="foot"><p>Источники: <a href="https://kami-labs.fr/guide-ingenierie-wow-forever/">Kami Labs, гайд по инженерному делу WoW Forever</a> · <a href="https://overgear.com/guides/wow-forever/engineering-overview/">Overgear, гайд по инженерному делу</a>.</p><p>Шаги выше 225 в бете были недоступны: они помечены «проверить». Если продавец рецепта из другой фракции, используйте аукцион. Гайд не упоминает инструментов (ключ, молоток): если клиент потребует инструмент, сделайте его перед этим шагом. Названия предметов, НИП и зон переведены и могут немного отличаться в вашем клиенте.</p><p>Неофициальный фанатский гайд, обновлён 7 ноября 2026 г. World of Warcraft — торговая марка Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "inge", "src": {"Необработанный камень": "farm", "Крупный камень": "farm", "Тяжелый камень": "farm", "Плотный камень": "farm", "Медный слиток": "farm", "Бронзовый слиток": "farm", "Серебряный слиток": "farm", "Золотой слиток": "farm", "Железный слиток": "farm", "Мифриловый слиток": "farm", "Ториевый слиток": "farm", "Слабый флюс": "vendor", "Шерстяная ткань": "ah", "Шелк": "ah", "Руническая ткань": "ah", "Синяя жемчужина": "ah", "Цельный взрывчатый порошок": "ah", "Толстая кожа": "ah", "Звездчатый рубин": "ah", "Арканитовый слиток": "ah", "Шелк паука-железнопряда": "ah", "Тяжелый взрывчатый порошок": "craft", "Золотой энергетический сердечник": "craft"}, "sub": {"Тяжелый взрывчатый порошок": {"Тяжелый камень": 1}, "Золотой энергетический сердечник": {"Золотой слиток": 1}}, "steps": [{"f": 1, "t": 30, "r": "Грубый взрывчатый порошок", "n": 32, "m": {"Необработанный камень": 1}}, {"f": 30, "t": 54, "r": "Горсть медных болтов", "n": 28, "m": {"Медный слиток": 1}}, {"f": 54, "t": 75, "r": "Медная трубка", "n": 21, "m": {"Медный слиток": 2, "Слабый флюс": 1}, "note": "<strong>Изучите Подмастерье на 50</strong> (уровень 10): {comp}."}, {"f": 75, "t": 90, "r": "Крупный взрывчатый порошок", "n": 16, "m": {"Крупный камень": 1}}, {"f": 90, "t": 125, "r": "Серебряный контакт", "n": 40, "m": {"Серебряный слиток": 1}}, {"f": 125, "t": 140, "r": "Тяжелый взрывчатый порошок", "n": 26, "m": {"Тяжелый камень": 1}, "out": "Тяжелый взрывчатый порошок", "note": "<strong>Изучите Умельца на 125</strong> (уровень 20): {exp}. Сохраняйте весь порошок: ослепляющей бомбе (186-210) нужно 37."}, {"f": 140, "t": 150, "r": "Жужжащая бронзовая шестерёнка", "n": 17, "m": {"Бронзовый слиток": 2, "Шерстяная ткань": 1}}, {"f": 150, "t": 170, "r": "Золотой энергетический сердечник", "n": 27, "m": {"Золотой слиток": 1}, "out": "Золотой энергетический сердечник", "note": "Оставьте 20 для следующего шага."}, {"f": 170, "t": 186, "r": "Гирохронатом", "n": 20, "m": {"Железный слиток": 1, "Золотой энергетический сердечник": 1}}, {"f": 186, "t": 210, "r": "Ослепляющая бомба", "n": 37, "m": {"Синяя жемчужина": 1, "Тяжелый взрывчатый порошок": 1, "Шелк": 1}, "note": "Рецепт за задание. <strong>Изучите Искусника на 200</strong> (уровень 35): {art}."}, {"f": 210, "t": 215, "r": "Мифриловые пули высокой мощности", "n": 5, "m": {"Мифриловый слиток": 1, "Цельный взрывчатый порошок": 1}}, {"f": 215, "t": 241, "r": "Мифриловый корпус", "n": 41, "m": {"Мифриловый слиток": 3}}, {"f": 241, "t": 245, "r": "Розовые очки", "n": 4, "m": {"Толстая кожа": 6, "Звездчатый рубин": 2}, "p": 1}, {"f": 245, "t": 250, "r": "Мифриловый гиро-выстрел", "n": 5, "m": {"Мифриловый слиток": 2, "Цельный взрывчатый порошок": 2}, "p": 1}, {"f": 250, "t": 258, "r": "Плотный взрывчатый порошок", "n": 14, "m": {"Плотный камень": 2}, "p": 1}, {"f": 258, "t": 260, "r": "Мифриловый гиро-выстрел", "n": 3, "m": {"Мифриловый слиток": 2, "Цельный взрывчатый порошок": 2}, "p": 1}, {"f": 260, "t": 285, "r": "Ториевое устройство", "n": 26, "m": {"Ториевый слиток": 3, "Руническая ткань": 1}, "p": 1, "note": "Рецепт за 1 з 26 с у Gearcutter Cogspinner (Стальгорн) для Альянса, у Sovik (Оргриммар) для Орды."}, {"f": 285, "t": 300, "r": "Тонкий арканитовый преобразователь", "n": 15, "m": {"Арканитовый слиток": 1, "Шелк паука-железнопряда": 1}, "p": 1, "note": "Рецепт за 2 з у Xizzer Fizzbolt (Зимние Ключи)."}], "train": {"comp": "Thund в Оргриммаре (75.4, 24.6) или Mukdrak в Дуротаре (52.2, 40.8)", "exp": "Nogg в Оргриммаре (75.4, 24.8)", "art": "Roxxik в Оргриммаре (75.4, 24.8)"}, "done300": "Достигнуто 300. Подумайте о верстаке анархиста для лагеря и о гномской или гоблинской специализации.", "groupTitles": {"farm": "Добыть (и переплавить)", "vendor": "У торговцев", "ah": "Аукцион или другие профессии", "craft": "Промежуточные"}, "trainA": {"comp": "Sprite Jumpsprocket в Штормграде (54.6, 8.0) или Jemma Quikswitch в Стальгорне (67.4, 43.8)", "exp": "Lilliam Sparkspindle в Штормграде (54.8, 7.8) или Trixie Quikswitch в Стальгорне (67.4, 43.2)", "art": "Springspindle Fizzlegear в Стальгорне (68.2, 43.4)"}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

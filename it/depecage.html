@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scuoiatura WoW Forever</title>
+<meta name="description" content="Guida di Scuoiatura 1-300 per WoW Forever (Alleanza e Orda): dove scuoiare, fascia per fascia, secondo il livello delle bestie, con gli istruttori.">
+<meta property="og:title" content="Scuoiatura WoW Forever">
+<meta property="og:description" content="Guida di Scuoiatura 1-300 per WoW Forever (Alleanza e Orda): dove scuoiare, fascia per fascia, secondo il livello delle bestie, con gli istruttori.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../depecage.html">
+<link rel="alternate" hreflang="en" href="../en/depecage.html">
+<link rel="alternate" hreflang="es" href="../es/depecage.html">
+<link rel="alternate" hreflang="de" href="../de/depecage.html">
+<link rel="alternate" hreflang="pt" href="../pt/depecage.html">
+<link rel="alternate" hreflang="ru" href="../ru/depecage.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #15110f;
+  --bg-glow: #271d17;
+  --panel: #1f1915;
+  --panel-2: #29211c;
+  --stitch: #7d6249;
+  --accent: #d8aa7e;
+  --seg1: #e8d0b8; --seg2: #c9a27e; --seg3: #8f6a4a; --seg4: #5e432d;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Scuoiatura</span>
+  <h1>Scuoiatura 1 → 300</h1>
+  <p class="lede">Dove scuoiare, fascia per fascia, secondo il livello delle bestie. Ti serve un Coltello da Scuoiatura. Inserisci la tua abilità: la pagina mostra la tua fascia e le zone adatte.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Dove sei</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Abilità attuale</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Togli 5 punti">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Aggiungi 5 punti">+5</button>
+      </div>
+    </div>
+    
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprendista</div><div class="seg s2">Garzone</div><div class="seg s3">Esperto</div><div class="seg s4">Artigiano</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:14px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Fasce e zone</h2>
+    <p class="lede" style="margin-top:0">Conta il livello delle bestie: sotto il livello 20 ti serve circa (livello del mostro − 10) × 10 di abilità; sopra, circa livello × 5. I livelli indicati sono quelli della zona.</p>
+    <div class="legend"><span><span class="zone">Zona <small>info</small></span> zona contata da Forever</span><span><span class="zone a">Zona</span> Alleanza</span><span><span class="zone h">Zona</span> Orda</span><span>senza segno: contesa o neutrale</span></div>
+  </div>
+  <div class="tiers" id="tiers"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Istruttori di Scuoiatura</h2>
+  <p class="lede" style="margin-top:0">Kami Labs elenca gli istruttori senza i ranghi. In Forever le professioni di creazione richiedono abilità 50 / 125 / 200 e livelli 10 / 20 / 35: qui è molto probabilmente uguale, da verificare in gioco.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alleanza</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Sblocca</th><th>Requisiti</th><th>Istruttori (coordinate)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Tutti i ranghi</span></td><td class="num">fino a 300</td><td>abilità 50 / 125 / 200 (probabile)</td><td><strong>Maris Granger</strong>, Roccavento (67.4, 49.0) · Balthus Stoneflayer, Forgiardente (39.4, 32.4) · Eladriel, Darnassus (64.2, 21.8) · Helene Peltskinner, Foresta di Elwynn (46.2, 62.2) · Riley Tannepeau, Foresta di Elwynn (47.0, 39.4) · Brighid Ecorchorage, Dun Morogh (29.0, 67.4) · Radnaal Maneweaver, Teldrassil (42.0, 50.0) · Terunne Sculpte-Ours, Teldrassil (59.4, 38.6)</td></tr><tr><td><span class="pill">Fuori dalle capitali</span></td><td class="num">—</td><td>—</td><td>Wilma Ranthal, Montagne Crestarossa (83.6, 71.0) · Jayla, Valtetra (50.0, 67.2)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Orda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Sblocca</th><th>Requisiti</th><th>Istruttori (coordinate)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Tutti i ranghi</span></td><td class="num">fino a 300</td><td>abilità 50 / 125 / 200 (probabile)</td><td><strong>Thuwd</strong>, Orgrimmar (63.2, 45.2) · Kagil, Durotar (40.8, 67.8) · Killian Hagey, Sepulcride (70.2, 58.4) · Rand Rhobart, Radure di Tirisfal (65.4, 60.0) · Margaret Tisserand, Radure di Tirisfal (32.4, 65.6) · Mooranta, Picco del Tuono (44.4, 42.4) · Yonn Deepcut, Mulgore (45.0, 61.4) · Nawka Chantsauvage, Mulgore (44.4, 76.8)</td></tr><tr><td><span class="pill">Neutrali</span></td><td class="num">—</td><td>—</td><td>Dranh, Savane (45.0, 59.0) · Malux, Desolanda (23.2, 69.8) · Kulleg Stonehorn, Feralas (74.4, 43.0)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Il Coltello da Scuoiatura si compra dai fornitori di merci.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novità di Forever</h2>
+  <ul class="plain"><li>Annunciato alla BlizzCon, non ancora confermato: <strong>Bestie Selvagge</strong> (+5% di danni contro bestie e cuccioli) e più probabilità di pelli rare.</li><li><strong>Cuoio Immacolato</strong>: nuovo componente di Forever, tienilo per la <a href="travail-du-cuir.html">Conciatura</a>.</li><li><strong>Sedia da Campo</strong> (oggetto da campo degli scuoiatori): +2% di critico secondo Method.</li><li><strong>Punti eredità</strong> a 150, 225 e 300.</li><li>La combinazione ideale per salire con le classi in cuoio e maglia: Scuoiatura + Conciatura.</li></ul>
+</section>
+
+<footer class="foot"><p>Fonti: <a href="https://kami-labs.fr/guide-depecage-wow-forever/">Kami Labs, guida alla Scuoiatura di WoW Forever</a> · <a href="https://kami-labs.fr/metiers-wow-forever/">Kami Labs, professioni di WoW Forever</a> · <a href="https://www.method.gg/wow-forever/wow-forever-warrior-leveling-guide-and-talents">Method, guida al guerriero (oggetti da campo)</a>.</p><p>La beta si è fermata a 225: le fasce successive sono segnate «dopo la beta». I nomi di oggetti, PNG e zone sono tradotti e possono differire un po' nel tuo client.</p><p>Guida di fan non ufficiale, aggiornata il 7 novembre 2026. World of Warcraft è un marchio di Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "depec", "done300": "300 raggiunto. Tieni il Cuoio Immacolato: molte nuove ricette di Forever lo richiedono.", "train": {"comp": "Pensa al rango Garzone (probabilmente livello 10): Thuwd a Orgrimmar (63.2, 45.2).", "exp": "Pensa al rango Esperto (probabilmente livello 20): Thuwd a Orgrimmar (63.2, 45.2).", "art": "Pensa al rango Artigiano (probabilmente livello 35): Thuwd a Orgrimmar (63.2, 45.2)."}, "tiers": [{"f": 1, "t": 25, "res": ["Cuoio Leggero", "Pelle Leggera"], "zones": [["Durotar", "liv. 1-10", "h"], ["Mulgore", "liv. 1-10", "h"], ["Radure di Tirisfal", "liv. 1-12", "h"], ["Isola di Zephras", "liv. 1-12"]], "alliance": "Foresta di Elwynn, Dun Morogh, Teldrassil.", "horde": "Durotar, Mulgore, Radure di Tirisfal."}, {"f": 25, "t": 75, "res": ["Cuoio Leggero", "Pelle Leggera"], "zones": [["Savane", "liv. 10-33", "h"], ["Selva Pinargento", "liv. 10-20", "h"], ["Loch Modan", "liv. 10-18", "a"], ["Rivafosca", "liv. 11-19", "a"]], "note": "Lato Orda: zhevra, lucertole del tuono e kodo intorno al Crocevia.", "alliance": "Marche Occidentali, Loch Modan, Rivafosca.", "horde": "Savane, Selva Pinargento."}, {"f": 75, "t": 125, "res": ["Cuoio Medio", "Pelle Media"], "zones": [["Vette di Artiglio di Pietra", "liv. 15-25"], ["Millepicchi", "liv. 6-35"], ["Valtetra", "liv. 19-30"], ["Alture di Colletorto", "liv. 20-31"]], "note": "Impara Garzone prima di 75.", "alliance": "Loch Modan (cinghiali, orsi, crocolischi) poi Paludi Grigie.", "horde": "Vette di Artiglio di Pietra, Millepicchi, Alture di Colletorto dal Mulino di Tarren."}, {"f": 125, "t": 175, "res": ["Cuoio Pesante", "Pelle Pesante"], "zones": [["Alture di Colletorto", "liv. 20-31"], ["Montagne di Alterac", "liv. 27-39"], ["Desolanda", "liv. 30-39"], ["Altipiani di Arathi", "liv. 30-40"]], "note": "Impara Esperto prima di 150.", "alliance": "Paludi Grigie (raptor di Whelgar), Alture di Colletorto, Altipiani di Arathi."}, {"f": 175, "t": 225, "res": ["Cuoio Spesso", "Pelle Spessa"], "zones": [["Valle di Rovotorto", "liv. 30-50"], ["Palude del Dolore", "liv. 36-43"], ["Maleterre", "liv. 36-45"], ["Clearwater Shores", "liv. 36-44"], ["Tanaris", "liv. 40-50"]], "note": "Impara Artigiano prima di 225."}, {"f": 225, "t": 250, "res": ["Cuoio Spesso", "Cuoio Robusto"], "zones": [["Feralas", "liv. 41-60"], ["Azshara", "liv. 42-55"], ["Entroterre", "liv. 41-56"], ["Gola Rovente", "liv. 43-56"]], "p": 1}, {"f": 250, "t": 275, "res": ["Cuoio Robusto", "Scaglia di Scorpide Spessa"], "zones": [["Cratere di Un'Goro", "liv. 48-55"], ["Terre Infette Occidentali", "liv. 46-57"], ["Terre Devastate", "liv. 46-63"], ["Steppe Ardenti", "liv. 50-59"]], "p": 1}, {"f": 275, "t": 300, "res": ["Cuoio Robusto", "Pelle Robusta"], "zones": [["Fontefredda", "liv. 55-60"], ["Silitus", "liv. 55-59"], ["Terre Infette Orientali", "liv. 54-59"], ["Passo Ventomorto", "liv. 50-60"]], "p": 1}], "trainA": {"comp": "Pensa al rango Garzone (probabilmente livello 10): Maris Granger a Roccavento (67.4, 49.0), Balthus Stoneflayer a Forgiardente (39.4, 32.4) o Eladriel a Darnassus (64.2, 21.8).", "exp": "Pensa al rango Esperto (probabilmente livello 20): Maris Granger a Roccavento (67.4, 49.0), Balthus Stoneflayer a Forgiardente (39.4, 32.4) o Eladriel a Darnassus (64.2, 21.8).", "art": "Pensa al rango Artigiano (probabilmente livello 35): Maris Granger a Roccavento (67.4, 49.0), Balthus Stoneflayer a Forgiardente (39.4, 32.4) o Eladriel a Darnassus (64.2, 21.8)."}};
+</script>
+<script src="../assets/recolte.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

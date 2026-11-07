@@ -2,26 +2,40 @@
 // Pour ajouter un guide, ajoute-le dans GROUPS : il apparaît sur toutes les pages.
 // La faction ("a", "h" ou "both") est gardée sous la clé fg-faction ; les moteurs la relisent à l'événement "factionchange".
 // Langues : français à la racine, les autres dans en/, es/, de/ avec les mêmes noms de fichiers.
-// Les libellés sont "français|anglais|espagnol|allemand" (même ordre que LANGS).
+// Les libellés sont "fr|en|es|de|it|pt|ru" (même ordre que LANGS).
 (function () {
-  var LANGS = [["fr", "Français"], ["en", "English"], ["es", "Español"], ["de", "Deutsch"]];
+  var LANGS = [["fr", "Français"], ["en", "English"], ["es", "Español"], ["de", "Deutsch"], ["it", "Italiano"], ["pt", "Português"], ["ru", "Русский"]];
   var LANG = document.documentElement.lang, LI = Math.max(0, LANGS.map(function (l) { return l[0]; }).indexOf(LANG));
   function T(s) { var p = s.split("|"); return p[LI] || p[0]; }
   var GROUPS = [
-    ["Classes|Classes|Clases|Klassen", [["talents.html#chaman", "Chaman|Shaman|Chamán|Schamane"], ["talents.html#chasseur", "Chasseur|Hunter|Cazador|Jäger"],
-      ["talents.html#demoniste", "Démoniste|Warlock|Brujo|Hexenmeister"], ["talents.html#druide", "Druide|Druid|Druida|Druide"],
-      ["talents.html#guerrier", "Guerrier|Warrior|Guerrero|Krieger"], ["talents.html#mage", "Mage|Mage|Mago|Magier"],
-      ["talents.html#paladin", "Paladin|Paladin|Paladín|Paladin"], ["talents.html#pretre", "Prêtre|Priest|Sacerdote|Priester"],
-      ["talents.html#voleur", "Voleur|Rogue|Pícaro|Schurke"]]],
-    ["Fabrication|Crafting|Fabricación|Herstellung", [["alchimie.html", "Alchimie|Alchemy|Alquimia|Alchemie"], ["couture.html", "Couture|Tailoring|Sastrería|Schneiderei"],
-      ["enchantement.html", "Enchantement|Enchanting|Encantamiento|Verzauberkunst"], ["forge.html", "Forge|Blacksmithing|Herrería|Schmiedekunst"],
-      ["ingenierie.html", "Ingénierie|Engineering|Ingeniería|Ingenieurskunst"], ["travail-du-cuir.html", "Travail du cuir|Leatherworking|Peletería|Lederverarbeitung"]]],
-    ["Récolte|Gathering|Recolección|Sammeln", [["herboristerie.html", "Herboristerie|Herbalism|Herboristería|Kräuterkunde"],
-      ["minage.html", "Minage|Mining|Minería|Bergbau"], ["depecage.html", "Dépeçage|Skinning|Desuello|Kürschnerei"]]],
-    ["Secondaires|Secondary|Secundarias|Sekundär", [["cuisine.html", "Cuisine|Cooking|Cocina|Kochkunst"],
-      ["secourisme.html", "Secourisme|First Aid|Primeros auxilios|Erste Hilfe"], ["peche.html", "Pêche|Fishing|Pesca|Angeln"]]]
+    ["Classes|Classes|Clases|Klassen|Classi|Classes|Классы", [
+      ["talents.html#chaman", "Chaman|Shaman|Chamán|Schamane|Sciamano|Xamã|Шаман"],
+      ["talents.html#chasseur", "Chasseur|Hunter|Cazador|Jäger|Cacciatore|Caçador|Охотник"],
+      ["talents.html#demoniste", "Démoniste|Warlock|Brujo|Hexenmeister|Stregone|Bruxo|Чернокнижник"],
+      ["talents.html#druide", "Druide|Druid|Druida|Druide|Druido|Druida|Друид"],
+      ["talents.html#guerrier", "Guerrier|Warrior|Guerrero|Krieger|Guerriero|Guerreiro|Воин"],
+      ["talents.html#mage", "Mage|Mage|Mago|Magier|Mago|Mago|Маг"],
+      ["talents.html#paladin", "Paladin|Paladin|Paladín|Paladin|Paladino|Paladino|Паладин"],
+      ["talents.html#pretre", "Prêtre|Priest|Sacerdote|Priester|Sacerdote|Sacerdote|Жрец"],
+      ["talents.html#voleur", "Voleur|Rogue|Pícaro|Schurke|Ladro|Ladino|Разбойник"]]],
+    ["Fabrication|Crafting|Fabricación|Herstellung|Creazione|Produção|Производство", [
+      ["alchimie.html", "Alchimie|Alchemy|Alquimia|Alchemie|Alchimia|Alquimia|Алхимия"],
+      ["couture.html", "Couture|Tailoring|Sastrería|Schneiderei|Sartoria|Alfaiataria|Портняжное дело"],
+      ["enchantement.html", "Enchantement|Enchanting|Encantamiento|Verzauberkunst|Incantamento|Encantamento|Наложение чар"],
+      ["forge.html", "Forge|Blacksmithing|Herrería|Schmiedekunst|Forgiatura|Ferraria|Кузнечное дело"],
+      ["ingenierie.html", "Ingénierie|Engineering|Ingeniería|Ingenieurskunst|Ingegneria|Engenharia|Инженерное дело"],
+      ["travail-du-cuir.html", "Travail du cuir|Leatherworking|Peletería|Lederverarbeitung|Conciatura|Couraria|Кожевничество"]]],
+    ["Récolte|Gathering|Recolección|Sammeln|Raccolta|Coleta|Сбор", [
+      ["herboristerie.html", "Herboristerie|Herbalism|Herboristería|Kräuterkunde|Erbalismo|Herborismo|Травничество"],
+      ["minage.html", "Minage|Mining|Minería|Bergbau|Estrazione|Mineração|Горное дело"],
+      ["depecage.html", "Dépeçage|Skinning|Desuello|Kürschnerei|Scuoiatura|Esfolamento|Снятие шкур"]]],
+    ["Secondaires|Secondary|Secundarias|Sekundär|Secondarie|Secundárias|Вторичные", [
+      ["cuisine.html", "Cuisine|Cooking|Cocina|Kochkunst|Cucina|Culinária|Кулинария"],
+      ["secourisme.html", "Secourisme|First Aid|Primeros auxilios|Erste Hilfe|Primo soccorso|Primeiros Socorros|Первая помощь"],
+      ["peche.html", "Pêche|Fishing|Pesca|Angeln|Pesca|Pesca|Рыбная ловля"]]]
   ];
-  var FACTIONS = [["a", "Alliance|Alliance|Alianza|Allianz"], ["both", "Les deux|Both|Ambas|Beide"], ["h", "Horde|Horde|Horda|Horde"]];
+  var FACTIONS = [["a", "Alliance|Alliance|Alianza|Allianz|Alleanza|Aliança|Альянс"], ["both", "Les deux|Both|Ambas|Beide|Entrambe|Ambas|Обе"],
+    ["h", "Horde|Horde|Horda|Horde|Orda|Horda|Орда"]];
   var KEY = "fg-faction";
   var page = decodeURIComponent(location.pathname.split("/").pop()) || "index.html";
   if (!/^[a-z0-9-]+\.html$/.test(page)) page = "index.html"; // jamais de texte libre de l'URL dans le HTML

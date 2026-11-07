@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pesca WoW Forever</title>
+<meta name="description" content="Guia de Pesca 1-300 para WoW Forever (Aliança e Horda): onde pescar faixa por faixa, equipamento útil e instrutores.">
+<meta property="og:title" content="Pesca WoW Forever">
+<meta property="og:description" content="Guia de Pesca 1-300 para WoW Forever (Aliança e Horda): onde pescar faixa por faixa, equipamento útil e instrutores.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../peche.html">
+<link rel="alternate" hreflang="en" href="../en/peche.html">
+<link rel="alternate" hreflang="es" href="../es/peche.html">
+<link rel="alternate" hreflang="de" href="../de/peche.html">
+<link rel="alternate" hreflang="it" href="../it/peche.html">
+<link rel="alternate" hreflang="ru" href="../ru/peche.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #0d1218;
+  --bg-glow: #13233a;
+  --panel: #151c25;
+  --panel-2: #1d2733;
+  --stitch: #47698f;
+  --accent: #6fb6f5;
+  --seg1: #b0d8ff; --seg2: #6fb6f5; --seg3: #3a7cc0; --seg4: #234f80;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Pesca</span>
+  <h1>Pesca 1 → 300</h1>
+  <p class="lede">Onde pescar, faixa por faixa. Você precisa de uma Vara de Pescar. Informe sua perícia: a página mostra sua faixa e as águas adequadas.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Onde você está</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Perícia atual</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Tirar 5 pontos">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Adicionar 5 pontos">+5</button>
+      </div>
+    </div>
+    
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Aprendiz</div><div class="seg s2">Artífice</div><div class="seg s3">Especialista</div><div class="seg s4">Artesão</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:14px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Faixas e zonas</h2>
+    <p class="lede" style="margin-top:0">As zonas citadas pela Kami Labs são sobretudo do lado da Aliança: a linha da Horda dá o equivalente próximo, segundo o Classic. Mude de águas assim que pescar «nada» demais.</p>
+    <div class="legend"><span><span class="zone">Zona <small>info</small></span> zona contada por Forever</span><span><span class="zone a">Zona</span> Aliança</span><span><span class="zone h">Zona</span> Horda</span><span>sem marca: disputada ou neutra</span></div>
+  </div>
+  <div class="tiers" id="tiers"></div>
+</section>
+
+<section aria-labelledby="equip-h" style="display:grid;gap:12px">
+  <h2 id="equip-h">Equipamento útil</h2>
+  <p class="lede" style="margin-top:0">Cada bônus de pesca reduz as pescas perdidas, sobretudo no início de uma faixa.</p>
+  <div class="cols"><div class="card"><h3>Varas</h3><span class="lv">Bônus permanente</span><p>Vara de Pescar Forte, Vara de Pescar de Ferro Grande, Vara de Pescar de Arcanita, Pescador Radical FC-5000 do Nat Pagle.</p></div><div class="card"><h3>Iscas</h3><span class="lv">10 minutos</span><p>Bugiganga Brilhante, Bugigangas Reluzentes, Minhocas Noturnas, Atrator de Peixes Aquadinâmico, Verme Carnívoro.</p></div><div class="card"><h3>Vestuário</h3><span class="lv">Bônus permanente</span><p>Chapéu de Pesca Surrado, Chapéu de Pesca da Sorte, Botas de Pescador Radical do Nat Pagle.</p></div></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Instrutores de pesca</h2>
+  <p class="lede" style="margin-top:0">A Kami Labs não dá os níveis da Pesca. No Classic: Artífice com um instrutor, Especialista com um livro na Angra do Butim, Artesão com a missão do Nat Pagle. A verificar em Forever.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Aliança</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Grau</th><th>Libera</th><th>Requisitos</th><th>Instrutores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Artífice</span></td><td class="num">até 150</td><td>perícia 50, nível 10 (provável)</td><td><strong>Arnold Leland</strong>, Ventobravo (45.4, 57.4) · Lee Brown, Floresta de Elwynn (47.4, 62.2) · Grimnur Stonebrand, Altaforja (48.2, 6.6) · Paxton Ganter, Dun Morogh (35.4, 40.2) · Warg Deepwater, Loch Modan (40.4, 39.4) · Astaia, Darnassus (47.4, 56.4) · Androl Oakhand, Teldrassil (55.8, 93.4)</td></tr><tr><td><span class="pill">Especialista</span></td><td class="num">até 225</td><td>Livro (Classic)</td><td>Velho Heming, Angra do Butim (Selva do Espinhaço), segundo o Classic · instrutores: Matthew Hooper, Montanhas Cristarrubra (21.4, 51.0) · Harold Riggs, Pantanal (8.0, 58.4) · Myizz Luckycatch, Selva do Espinhaço (27.4, 77.0)</td></tr><tr><td><span class="pill">Artesão</span></td><td class="num">até 300</td><td>Missão do Nat Pagle (Classic)</td><td>Nat Pagle, Pântano Vadeoso, segundo o Classic · Brannock, Feralas (32.2, 41.4) · Krix, Clearwater Shores (79.2, 54.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Grau</th><th>Libera</th><th>Requisitos</th><th>Instrutores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Artífice</span></td><td class="num">até 150</td><td>perícia 50, nível 10 (provável)</td><td><strong>Lumak</strong>, Orgrimmar (69.4, 28.4) · Lau'Tiki, Durotar (53.2, 81.4) · Armand Cromwell, Cidade Baixa (80.4, 31.2) · Clyde Kellen, Clareiras de Tirisfal (67.2, 51.0) · Kah Mistrunner, Penhasco do Trovão (55.8, 47.6) · Uthan Stillwater, Mulgore (44.2, 63.8)</td></tr><tr><td><span class="pill">Especialista</span></td><td class="num">até 225</td><td>Livro (Classic)</td><td>Velho Heming, Angra do Butim (Selva do Espinhaço), segundo o Classic · instrutores neutros: Myizz Luckycatch, Selva do Espinhaço (27.4, 77.0) · Lui'Mala, Desolação (22.6, 72.4)</td></tr><tr><td><span class="pill">Artesão</span></td><td class="num">até 300</td><td>Missão do Nat Pagle (Classic)</td><td>Nat Pagle, Pântano Vadeoso, segundo o Classic · Katoom, o Pescador, Terras Agrestes (80.2, 81.4) · Krix, Clearwater Shores (79.2, 54.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novidades de Forever</h2>
+  <ul class="plain"><li><strong>Aquário</strong> (item de acampamento dos pescadores): +8% de atributos segundo a Method.</li><li><strong>Pontos de legado</strong> aos 150, 225 e 300.</li><li>O peixe abastece a <a href="cuisine.html">Culinária</a>: as etapas 225-300 dela usam rabo-amarelo e salmão.</li></ul>
+</section>
+
+<footer class="foot"><p>Fontes: <a href="https://kami-labs.fr/guide-peche-wow-forever/">Kami Labs, guia de Pesca de WoW Forever</a> · <a href="https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents">Method, guia de druida (itens de acampamento)</a>.</p><p>A beta parou em 225: as faixas acima estão marcadas «após a beta». Os nomes de itens, PNJs e zonas foram traduzidos e podem diferir um pouco no seu cliente.</p><p>Guia de fãs não oficial, atualizado em 7 de novembro de 2026. World of Warcraft é uma marca da Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "peche", "done300": "300 alcançado. Só falta caçar a FC-5000 do Nat Pagle.", "train": {"comp": "Pense no nível Artífice (nível 10): Lumak em Orgrimmar (69.4, 28.4).", "exp": "Antes de 150: no Classic, Especialista vinha de um livro vendido pelo Velho Heming na Angra do Butim (a verificar em Forever).", "art": "Antes de 225: no Classic, Artesão vinha da missão do Nat Pagle (Pântano Vadeoso) (a verificar em Forever)."}, "tiers": [{"f": 1, "t": 75, "res": ["Peixinho Brilhante Cru", "Pargo-do-lodo Mandíbula-longa Cru", "Cavala Pele-lisa Crua"], "zones": [["Dun Morogh", "", "a"], ["Floresta de Elwynn", "", "a"], ["Teldrassil", "", "a"]], "horde": "qualquer água de Durotar, Mulgore ou Tirisfal, ou os canais de Orgrimmar e da Cidade Baixa.", "alliance": "qualquer água de Elwynn, Dun Morogh ou Teldrassil, ou os canais de Ventobravo."}, {"f": 75, "t": 100, "res": ["Albacora Barbatana-arco-íris Crua", "Boca-negra Oleosa", "Pargo Barbatana-de-fogo"], "zones": [["Pantanal", "", "a"], ["Cerro Oeste", "", "a"], ["Costa Negra", "", "a"], ["Loch Modan", "", "a"]], "horde": "Costa e oásis dos Sertões, Floresta de Pinhaprata, Contraforte de Eira dos Montes.", "note": "Aprenda Artífice antes de 75.", "alliance": "Pantanal, Cerro Oeste, Costa Negra, Loch Modan."}, {"f": 100, "t": 150, "res": ["Bagre Bigode-de-cerda Cru", "Bacalhau Escamarrocha Cru", "Truta Cabeça-de-mithril Crua"], "zones": [["Selva do Espinhaço", ""], ["Pântano Vadeoso", ""], ["Floresta do Crepúsculo", "", "a"]], "horde": "costa norte da Selva do Espinhaço, Pântano Vadeoso.", "note": "Consiga Especialista antes de 150.", "alliance": "Floresta do Crepúsculo, Pântano Vadeoso a partir de Theramore."}, {"f": 150, "t": 225, "res": ["Rabo-amarelo Pintado Cru", "Bacalhau Escamarrocha Cru", "Peixe-sábio Maior Cru"], "zones": [["Pântano das Mágoas", ""], ["Feralas", ""], ["Desolação", ""], ["Montanhas de Alterac", ""]], "note": "Consiga Artesão antes de 225."}, {"f": 225, "t": 250, "res": ["Enguia Escamapétrea", "Guelra-vermelha Crua", "Pargo Barbatana-noturna Cru"], "zones": [["Azshara", ""], ["Terras Pestilentas Ocidentais", ""], ["Trilha do Vento Morto", ""]], "note": "A Alquimia usa as Enguias Escamapétrea (Óleo de Escamapétrea).", "p": 1}, {"f": 250, "t": 300, "res": ["Salmão Escamassol Cru", "Lagosta Garra-escura", "Robalo-de-verão Cru"], "zones": [["Terras Pestilentas Orientais", ""], ["Hibérnia", ""], ["Azshara", ""]], "p": 1}], "trainA": {"comp": "Pense no nível Artífice (nível 10): Arnold Leland em Ventobravo (45.4, 57.4), Grimnur Stonebrand em Altaforja (48.2, 6.6) ou Astaia em Darnassus (47.4, 56.4).", "exp": "Antes de 150: no Classic, Especialista vinha de um livro vendido pelo Velho Heming na Angra do Butim (a verificar em Forever).", "art": "Antes de 225: no Classic, Artesão vinha da missão do Nat Pagle (Pântano Vadeoso) (a verificar em Forever)."}};
+</script>
+<script src="../assets/recolte.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

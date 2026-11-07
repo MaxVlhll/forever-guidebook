@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mineração WoW Forever</title>
+<meta name="description" content="Guia de Mineração 1-300 para WoW Forever (Aliança e Horda): qual veio minerar e onde, faixa por faixa, fundição e instrutores.">
+<meta property="og:title" content="Mineração WoW Forever">
+<meta property="og:description" content="Guia de Mineração 1-300 para WoW Forever (Aliança e Horda): qual veio minerar e onde, faixa por faixa, fundição e instrutores.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../minage.html">
+<link rel="alternate" hreflang="en" href="../en/minage.html">
+<link rel="alternate" hreflang="es" href="../es/minage.html">
+<link rel="alternate" hreflang="de" href="../de/minage.html">
+<link rel="alternate" hreflang="it" href="../it/minage.html">
+<link rel="alternate" hreflang="ru" href="../ru/minage.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #121212;
+  --bg-glow: #24201c;
+  --panel: #1c1a18;
+  --panel-2: #262320;
+  --stitch: #7a6650;
+  --accent: #e09a66;
+  --seg1: #f0c4a0; --seg2: #d9935f; --seg3: #a05f35; --seg4: #6b3d20;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Mineração</span>
+  <h1>Mineração 1 → 300</h1>
+  <p class="lede">Qual veio minerar e onde, faixa por faixa, com base no censo de nós de Forever. Você precisa de uma Picareta de Mineração. Informe sua perícia: a página mostra sua faixa e a melhor zona.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Onde você está</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Perícia atual</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Tirar 5 pontos">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Adicionar 5 pontos">+5</button>
+      </div>
+    </div>
+    
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Aprendiz</div><div class="seg s2">Artífice</div><div class="seg s3">Especialista</div><div class="seg s4">Artesão</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:14px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Faixas e zonas</h2>
+    <p class="lede" style="margin-top:0">Regra do Classic, a confirmar no jogo: um minério dá pontos do nível exigido até cerca de 100 pontos acima. Os números são os nós contados por zona.</p>
+    <div class="legend"><span><span class="zone">Zona <small>info</small></span> zona contada por Forever</span><span><span class="zone a">Zona</span> Aliança</span><span><span class="zone h">Zona</span> Horda</span><span>sem marca: disputada ou neutra</span></div>
+  </div>
+  <div class="tiers" id="tiers"></div>
+</section>
+
+<section class="stitched" aria-labelledby="smelt-h" style="display:grid;gap:12px">
+  <h2 id="smelt-h">Fundir pelo caminho</h2>
+  <p class="lede" style="margin-top:0">Fundir dá alguns pontos extras, mas nos dados de Forever não dá mais pontos depois de 185. Use para tapar um buraco, não como caminho principal.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Perícia</th><th>Barra</th><th>Receita</th></tr></thead>
+    <tbody>
+      <tr><td class="num">25 → 65</td><td><strong>Barra de Cobre</strong></td><td>1 Minério de Cobre</td></tr>
+      <tr><td class="num">65 → 75</td><td><strong>Barra de Bronze</strong></td><td>1 Barra de Cobre + 1 Barra de Estanho</td></tr>
+      <tr><td class="num">75 → 125</td><td><strong>Barra de Prata</strong></td><td>1 Minério de Prata</td></tr>
+      <tr><td class="num">125 → 140</td><td><strong>Barra de Ferro</strong></td><td>1 Minério de Ferro</td></tr>
+      <tr><td class="num">170 → 185</td><td><strong>Barra de Ouro</strong></td><td>1 Minério de Ouro</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Instrutores de Mineração</h2>
+  <p class="lede" style="margin-top:0">A Kami Labs lista os instrutores sem os níveis. Em Forever, as profissões de produção pedem perícia 50 / 125 / 200 e níveis 10 / 20 / 35: aqui é muito provavelmente igual, a verificar no jogo.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Aliança</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Grau</th><th>Libera</th><th>Requisitos</th><th>Instrutores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Todos os níveis</span></td><td class="num">até 300</td><td>perícia 50 / 125 / 200 (provável)</td><td><strong>Gelman Stonehand</strong>, Ventobravo (51.0, 17.2) · Geofram Bouldertoe, Altaforja (50.2, 26.0) · Kelsey Fond, Floresta de Elwynn (47.2, 32.2) · Yarr Hammerstone, Dun Morogh (50.0, 50.4) · Dank Drizzlecut, Dun Morogh (69.2, 55.4) · Brock Stoneseeker, Loch Modan (37.0, 47.8) · Kurdram Stonehammer, Costa Negra (38.2, 41.0) · Fanorran Calmechêne, Teldrassil (58.2, 41.4) · Matt Johnson, Floresta do Crepúsculo (74.0, 49.4)</td></tr><tr><td><span class="pill">Neutros</span></td><td class="num">—</td><td>—</td><td>Pikkle, Tanaris (51.0, 28.0) · Grungle, Clearwater Shores (77.6, 51.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Grau</th><th>Libera</th><th>Requisitos</th><th>Instrutores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Todos os níveis</span></td><td class="num">até 300</td><td>perícia 50 / 125 / 200 (provável)</td><td><strong>Makaru</strong>, Orgrimmar (73.0, 26.4) · Krunn, Durotar (51.8, 40.8) · Norzsh, Durotar (40.4, 68.0) · Brom Killian, Cidade Baixa (55.4, 36.2) · Walter Mason, Clareiras de Tirisfal (32.2, 65.4) · Brek Stonehoof, Penhasco do Trovão (34.4, 57.4) · Vartha Rochecrin, Mulgore (44.2, 78.2)</td></tr><tr><td><span class="pill">Neutros</span></td><td class="num">—</td><td>—</td><td>Pikkle, Tanaris (51.0, 28.0) · Grungle, Clearwater Shores (77.6, 51.8)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">A Picareta de Mineração é vendida por fornecedores de mercadorias.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novidades de Forever</h2>
+  <ul class="plain"><li>Anunciado na BlizzCon, ainda não confirmado: <strong>Feito de Metal</strong> (+5% de vida total), minério extra dos veios e chance de materiais raros ou de combate.</li><li><strong>Magnetita</strong> (item de acampamento dos mineradores): bônus de poder de ataque corpo a corpo, segundo a Method.</li><li>Forever tem 38 tipos de nós: 2 novos (Veio de Cobre Esgotado, Veio de Tório Pesado) e 5 alterados.</li><li><strong>Pontos de legado</strong> aos 150, 225 e 300.</li><li>Combina bem com <a href="forge.html">Ferraria</a> ou <a href="ingenierie.html">Engenharia</a>, que consomem centenas de barras.</li></ul>
+</section>
+
+<footer class="foot"><p>Fontes: <a href="https://kami-labs.fr/guide-minage-wow-forever/">Kami Labs, guia de Mineração de WoW Forever</a> · <a href="https://kami-labs.fr/metiers-wow-forever/">Kami Labs, profissões de WoW Forever</a> · <a href="https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents">Method, itens de acampamento</a>.</p><p>As dicas por facção vêm do Classic, base de Forever. A beta parou em 225: as faixas acima estão marcadas «após a beta». Os nomes de itens, PNJs e zonas foram traduzidos e podem diferir um pouco no seu cliente.</p><p>Guia de fãs não oficial, atualizado em 7 de novembro de 2026. World of Warcraft é uma marca da Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "minage", "done300": "300 alcançado. Fique de olho no Veio de Tório Pesado, novo em Forever.", "train": {"comp": "Pense no nível Artífice (provavelmente nível 10): Makaru em Orgrimmar (73.0, 26.4).", "exp": "Pense no nível Especialista (provavelmente nível 20): Makaru em Orgrimmar (73.0, 26.4).", "art": "Pense no nível Artesão (provavelmente nível 35): Makaru em Orgrimmar (73.0, 26.4)."}, "tiers": [{"f": 1, "t": 65, "res": ["Minério de Cobre", "Veio de Cobre Esgotado (novo)"], "zones": [["Ilha de Zephras", "≈ 230"], ["Dun Morogh", "≈ 220", "a"], ["Floresta de Elwynn", "≈ 219", "a"], ["Loch Modan", "≈ 151", "a"]], "horde": "Durotar, Mulgore, Clareiras de Tirisfal, Sertões.", "note": "Funda seu cobre a partir de 25: dá pontos até 65.", "alliance": "Floresta de Elwynn, Dun Morogh, Loch Modan."}, {"f": 65, "t": 75, "res": ["Minério de Estanho", "Incendicita", "Cobre"], "zones": [["Montanhas Cristarrubra", "≈ 271", "a"], ["Ilha de Zephras", "≈ 230"]], "horde": "Sertões, Floresta de Pinhaprata, Cordilheira Garra de Pedra.", "alliance": "Montanhas Cristarrubra, Cerro Oeste, Costa Negra."}, {"f": 75, "t": 125, "res": ["Minério de Prata", "Pedra-sangue Inferior", "Estanho", "Incendicita"], "zones": [["Planalto Arathi", "≈ 208"], ["Mil Agulhas", "≈ 204"], ["Contraforte de Eira dos Montes", "≈ 198"], ["Montanhas Cristarrubra", "≈ 184", "a"]], "horde": "Mil Agulhas, Contraforte de Eira dos Montes, Cordilheira Garra de Pedra.", "note": "Aprenda Artífice antes de 75.", "alliance": "Pantanal (de longe o melhor, uma caverna com estanho e incendicita), Montanhas Cristarrubra, Contraforte de Eira dos Montes a partir da Costa Sul."}, {"f": 125, "t": 155, "res": ["Minério de Ferro", "Prata", "Estanho"], "zones": [["Planalto Arathi", "≈ 351"], ["Mil Agulhas", "≈ 314"], ["Desolação", "≈ 236"], ["Selva do Espinhaço", "≈ 208"]], "note": "Aprenda Especialista antes de 150."}, {"f": 155, "t": 175, "res": ["Minério de Ouro", "Indúrio", "Ferro"], "zones": [["Planalto Arathi", "≈ 262"], ["Selva do Espinhaço", "≈ 214"], ["Ermos", "≈ 196"], ["Mil Agulhas", "≈ 184"]]}, {"f": 175, "t": 230, "res": ["Minério de Mithril", "Ouro", "Indúrio"], "zones": [["Planalto Arathi", "≈ 313"], ["Selva do Espinhaço", "≈ 275"], ["Ermos", "≈ 271"], ["Desolação", "≈ 245"], ["Terras Agrestes", "≈ 198"], ["Tanaris", "≈ 179"]], "note": "Aprenda Artesão antes de 225."}, {"f": 230, "t": 245, "res": ["Minério de Veraprata", "Ferro Negro", "Mithril"], "zones": [["Terras Agrestes", "≈ 293"], ["Estepes Ardentes", "≈ 274"], ["Tanaris", "≈ 255"], ["Garganta Abrasadora", "≈ 227"]], "p": 1}, {"f": 245, "t": 300, "res": ["Minério de Tório", "Veio de Tório Pesado (novo)", "Veraprata"], "zones": [["Estepes Ardentes", "≈ 290"], ["Silithus", "≈ 273"], ["Hibérnia", "≈ 227"], ["Cratera Un'Goro", "≈ 187"]], "p": 1, "note": "Un'Goro e Silithus, ambas neutras, são as mais tranquilas."}], "trainA": {"comp": "Pense no nível Artífice (provavelmente nível 10): Gelman Stonehand em Ventobravo (51.0, 17.2) ou Geofram Bouldertoe em Altaforja (50.2, 26.0).", "exp": "Pense no nível Especialista (provavelmente nível 20): Gelman Stonehand em Ventobravo (51.0, 17.2) ou Geofram Bouldertoe em Altaforja (50.2, 26.0).", "art": "Pense no nível Artesão (provavelmente nível 35): Gelman Stonehand em Ventobravo (51.0, 17.2) ou Geofram Bouldertoe em Altaforja (50.2, 26.0)."}};
+</script>
+<script src="../assets/recolte.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

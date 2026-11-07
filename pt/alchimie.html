@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alquimia WoW Forever</title>
+<meta name="description" content="Guia de Alquimia 1-300 para WoW Forever (Aliança e Horda): caminho receita por receita, lista de compras calculada, instrutores e ervas.">
+<meta property="og:title" content="Alquimia WoW Forever">
+<meta property="og:description" content="Guia de Alquimia 1-300 para WoW Forever (Aliança e Horda): caminho receita por receita, lista de compras calculada, instrutores e ervas.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../alchimie.html">
+<link rel="alternate" hreflang="en" href="../en/alchimie.html">
+<link rel="alternate" hreflang="es" href="../es/alchimie.html">
+<link rel="alternate" hreflang="de" href="../de/alchimie.html">
+<link rel="alternate" hreflang="it" href="../it/alchimie.html">
+<link rel="alternate" hreflang="ru" href="../ru/alchimie.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #0f1513;
+  --bg-glow: #17261f;
+  --panel: #17201c;
+  --panel-2: #1f2b26;
+  --stitch: #4f7d68;
+  --ink: #f1e9dc;
+  --muted: #b5a995;
+  --accent: #6fd1a4;
+  --accent-ink: #15100c;
+  --seg1: #9fd9bd; --seg2: #6fbf98; --seg3: #3f8f6c; --seg4: #29624a;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Alquimia</span>
+  <h1>Alquimia 1 → 300</h1>
+  <p class="lede">O caminho completo, receita por receita, com base nos dados da beta de Forever. Informe sua perícia: a página mostra onde você está, a próxima etapa e todas as ervas e frascos que ainda faltam.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Onde você está</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Perícia atual</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Tirar 5 pontos">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Adicionar 5 pontos">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Lista de compras até</label>
+      <select id="target">
+        <option value="75">75 (fim de Aprendiz)</option>
+        <option value="150" selected>150 (fim de Artífice)</option>
+        <option value="225">225 (fim de Especialista)</option>
+        <option value="300">300 (Artesão)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Aprendiz</div><div class="seg s2">Artífice</div><div class="seg s3">Especialista</div><div class="seg s4">Artesão</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">O que ainda falta</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">O caminho</h2>
+    <p class="lede" style="margin-top:0">As quantidades são estimativas: guarde sempre uma margem. Regra de ouro: assim que uma receita ficar verde, passe para a próxima etapa.</p>
+    <div class="legend" aria-label="Cores das receitas">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Laranja: +1 sempre</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Amarelo: muitas vezes</span> <span><span class="dot" style="background:var(--sk-green)"></span>Verde: raramente</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Cinza: nunca</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Instrutores</h2>
+  <p class="lede" style="margin-top:0">Sem o nível de proficiência certo, sua perícia fica travada no limite (75, 150, 225). Aprenda o próximo assim que tiver o nível exigido.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Aliança</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Grau</th><th>Libera</th><th>Requisitos</th><th>Instrutores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Artífice</span></td><td class="num">até 150</td><td>perícia 50, nível 10</td><td><strong>Tel'Athir</strong>, Ventobravo (45.8, 78.2) · Vosur Brakthel, Altaforja (66.4, 55.2) · Milla Fairancora, Darnassus (55.2, 21.4) · Alquimista Mallory, Floresta de Elwynn (39.8, 48.4) · Cyndra Kindwhisper, Teldrassil (57.6, 60.6) · Ghak Healtouch, Loch Modan (37.0, 49.2)</td></tr><tr><td><span class="pill">Especialista</span></td><td class="num">até 225</td><td>perícia 125, nível 20</td><td><strong>Lilyssia Nightbreeze</strong>, Ventobravo (46.4, 79.4) · Tally Berryfizz, Altaforja (66.4, 55.2) · Sylvanna Forestmoon, Darnassus (55.6, 23.4) · Kylanna, Vale Gris (50.8, 67.0) · Alquimista Narett, Pântano Vadeoso (64.0, 47.6)</td></tr><tr><td><span class="pill">Artesão</span></td><td class="num">até 300</td><td>perícia 200, nível 35</td><td><strong>Ainethil</strong>, Darnassus (55.0, 23.4)</td></tr><tr><td><span class="pill">Receitas altas</span></td><td class="num">—</td><td>—</td><td>Mestre Micologista Shurome, Selva Maleva (51.4, 82.0)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Grau</th><th>Libera</th><th>Requisitos</th><th>Instrutores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Artífice</span></td><td class="num">até 150</td><td>perícia 50, nível 10</td><td><strong>Whuut</strong>, Orgrimmar (55.8, 33.2) · Miao'zan, Durotar (55.4, 74.0) · Doutor Martin Felben, Cidade Baixa (45.8, 73.2) · Carolai Anise, Clareiras de Tirisfal (59.4, 52.2) · Kray, Penhasco do Trovão (46.8, 33.4)</td></tr><tr><td><span class="pill">Especialista</span></td><td class="num">até 225</td><td>perícia 125, nível 20</td><td><strong>Yelmak</strong>, Orgrimmar (56.4, 33.2) · Doutor Marsh, Cidade Baixa (51.2, 75.0) · Bena Winterhoof, Penhasco do Trovão (46.8, 33.4) · Serge Hinott, Contraforte de Eira dos Montes (61.4, 19.2) · Jaxin Chong, Selva do Espinhaço (28.0, 78.0)</td></tr><tr><td><span class="pill">Artesão</span></td><td class="num">até 300</td><td>perícia 200, nível 35</td><td><strong>Doutor Herbert Halsey</strong>, Cidade Baixa (47.4, 73.0)</td></tr><tr><td><span class="pill">Receitas altas</span></td><td class="num">—</td><td>—</td><td>Mestre Micologista Shurome, Selva Maleva (51.4, 82.0)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Os frascos são vendidos por fornecedores de alquimia e de mercadorias. Vendedores de receitas marcados Aliança ou Horda só atendem a própria facção: o outro lado usa a casa de leilões.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Onde colher cada erva</h2>
+  <p class="lede" style="margin-top:0">Estas são as zonas do Classic, base de Forever. O Cardo-veloz não é colhido sozinho: cai como bônus de Magirrégia e Espinheiro.</p>
+  <div class="cols"><div class="card"><h3>Flor-da-paz, Folha-de-prata</h3><span class="lv">Perícia 1 a 70</span><p><span class="fl" data-f="h"><span class="fac h">Horda</span> Durotar, Mulgore, Clareiras de Tirisfal, Sertões.</span><span class="fl" data-f="a"><span class="fac a">Aliança</span> Floresta de Elwynn, Dun Morogh, Teldrassil, Cerro Oeste.</span></p></div><div class="card"><h3>Magirrégia, Espinheiro, Cardo-veloz</h3><span class="lv">Perícia 50 a 100</span><p><span class="fl" data-f="h"><span class="fac h">Horda</span> Sertões, Floresta de Pinhaprata, Cordilheira Garra de Pedra, Vale Gris.</span><span class="fl" data-f="a"><span class="fac a">Aliança</span> Cerro Oeste, Loch Modan, Costa Negra, Montanhas Cristarrubra.</span></p></div><div class="card"><h3>Erva-moura, Alga-estranguladora</h3><span class="lv">Perícia 85 a 115</span><p><span class="fl" data-f="h"><span class="fac h">Horda</span> Cordilheira Garra de Pedra, Vale Gris, Contraforte de Eira dos Montes.</span><span class="fl" data-f="a"><span class="fac a">Aliança</span> Pantanal, Montanhas Cristarrubra, Vale Gris.</span><span class="fl">A Alga-estranguladora cresce debaixo d'água ao longo das costas.</span></p></div><div class="card"><h3>Espinho-de-ouro</h3><span class="lv">Perícia 170 ou mais</span><p>Planalto Arathi, Selva do Espinhaço, Feralas, Pântano das Mágoas.</p></div><div class="card"><h3>Sangue-de-grom, Solgrama, Folha-de-sonho</h3><span class="lv">Perícia 220 a 270</span><p>Selva Maleva, Cratera Un'Goro, Terras Pestilentas, Silithus.</p></div><div class="card"><h3>Cálice-de-gelo, Cogumelo-fantasma</h3><span class="lv">Perícia 245 a 290</span><p>Hibérnia para o Cálice-de-gelo; cavernas e pântanos (Terras Agrestes, Pântano das Mágoas) para o Cogumelo-fantasma.</p></div></div>
+  <p class="foot">Pequenas Bolsas de Chamas, Óleo de Fogo, Garras Afiadas e Minério de Mithril vêm quase sempre da casa de leilões: confira os preços antes de começar uma etapa.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novidades de Forever</h2>
+  <ul class="plain"><li><strong>As poções de cura saíram da Alquimia</strong>: agora quem as faz são os Primeiros Socorros.</li><li><strong>Poço de Mana</strong> aos 20: devolve mana aos jogadores sentados por perto (não acumula com Bênção da Sabedoria).</li><li><strong>Fermentador</strong> aos 140: produz alguns componentes no acampamento.</li><li><strong>Laboratório de Alquimia</strong> aos 300: necessário para algumas receitas.</li><li><strong>Pontos de legado</strong> aos 150, 225 e 300.</li><li>Anunciado na BlizzCon, mas ainda não confirmado: elixires e frascos tomados pelo alquimista durariam o dobro e seriam 25% mais fortes.</li><li>A profissão tem 179 receitas, 72 delas novas. Este caminho segue as melhores para subir, não as melhores para vender.</li></ul>
+</section>
+
+<footer class="foot"><p>Fontes: <a href="https://kami-labs.fr/guide-alchimie-wow-forever/">Kami Labs, guia de Alquimia de WoW Forever</a> para caminho, receitas e instrutores · <a href="https://conquestcapped.com/guides/fr/wow-forever/wow-forever-alchemy/">ConquestCapped</a> para a mudança das poções de cura.</p><p>As etapas acima de 225 não eram jogáveis na beta: estão marcadas «a verificar». Os nomes de itens, PNJs e zonas foram traduzidos e podem diferir um pouco no seu cliente.</p></footer>
+
+
+</main>
+<script>
+var CONFIG = {"key": "alch", "src": {"Folha-de-prata": "farm", "Flor-da-paz": "farm", "Espinheiro": "farm", "Erva-moura": "farm", "Cardo-veloz": "farm", "Magirrégia": "farm", "Alga-estranguladora": "farm", "Espinho-de-ouro": "farm", "Sangue-de-grom": "farm", "Cogumelo-fantasma": "farm", "Solgrama": "farm", "Folha-de-sonho": "farm", "Cálice-de-gelo": "farm", "Frasco Vazio": "vendor", "Frasco com Chumbo": "vendor", "Frasco de Cristal": "vendor", "Garra Afiada": "ah", "Pequena Bolsa de Chamas": "ah", "Óleo de Fogo": "ah", "Minério de Mithril": "ah", "Enguia Escamapétrea": "ah", "Óleo de Escamapétrea": "craft"}, "sub": {"Óleo de Escamapétrea": {"Enguia Escamapétrea": 1, "Frasco com Chumbo": 1}}, "steps": [{"f": 1, "t": 71, "r": "Elixir de Defesa Menor", "n": 74, "m": {"Folha-de-prata": 1, "Flor-da-paz": 1, "Frasco Vazio": 1}, "note": "<strong>Aprenda Artífice aos 50</strong> (nível 10), ou ficará travado em 75."}, {"f": 71, "t": 100, "r": "Poção de Raiva", "n": 30, "m": {"Garra Afiada": 1, "Espinheiro": 1, "Frasco Vazio": 1}, "note": "Receita por 1p com o Aproveitador Defias (Cerro Oeste) ou Xandar Goodbeard (Loch Modan)."}, {"f": 100, "t": 120, "r": "Poção de Proteção Sagrada", "n": 20, "m": {"Erva-moura": 1, "Cardo-veloz": 1, "Frasco Vazio": 1}, "note": "Receita por 8p com Kzixx (Floresta do Crepúsculo), um goblin neutro."}, {"f": 120, "t": 165, "r": "Poção de Mana Inferior", "n": 52, "m": {"Magirrégia": 1, "Alga-estranguladora": 1, "Frasco Vazio": 1}, "note": "<strong>Aprenda Especialista aos 125</strong> (nível 20): {exp}."}, {"f": 165, "t": 219, "r": "Poção de Proteção contra Fogo", "n": 55, "m": {"Pequena Bolsa de Chamas": 1, "Óleo de Fogo": 1, "Frasco com Chumbo": 1}, "note": "Receita por 15p com Nandar Branson (Contraforte de Eira dos Montes, Costa Sul) para a Aliança. Horda: casa de leilões."}, {"f": 219, "t": 250, "r": "Poção de Escudo de Pedra Inferior", "n": 38, "m": {"Minério de Mithril": 1, "Espinho-de-ouro": 1, "Frasco com Chumbo": 1}, "note": "Receita de missão («Pedra Líquida»). <strong>Aprenda Artesão aos 200</strong> (nível 35): {art}."}, {"f": 250, "t": 258, "r": "Óleo de Escamapétrea", "n": 14, "m": {"Enguia Escamapétrea": 1, "Frasco com Chumbo": 1}, "out": "Óleo de Escamapétrea", "p": 1, "note": "Guarde todo o óleo: o Elixir de Defesa Superior pede 2 por produção."}, {"f": 258, "t": 267, "r": "Elixir Mata-demônios", "n": 9, "m": {"Sangue-de-grom": 1, "Cogumelo-fantasma": 1, "Frasco de Cristal": 1}, "p": 1, "note": "Receita por 1o com Nina Lightbrew (Barreira do Inferno)."}, {"f": 267, "t": 295, "r": "Elixir de Defesa Superior", "n": 32, "m": {"Óleo de Escamapétrea": 2, "Solgrama": 1, "Frasco de Cristal": 1}, "p": 1, "note": "Receita por 1o 30p com Soolie Berryfizz (Altaforja) para a Aliança, com Kor'geld (Orgrimmar) para a Horda."}, {"f": 295, "t": 300, "r": "Poção de Mana Maior", "n": 5, "m": {"Folha-de-sonho": 3, "Cálice-de-gelo": 2, "Frasco de Cristal": 1}, "p": 1, "note": "Receita por 3o com Magnus Frostwake (Terras Pestilentas Ocidentais)."}], "train": {"comp": "Whuut em Orgrimmar (55.8, 33.2) ou Miao'zan em Durotar (55.4, 74.0)", "exp": "Yelmak em Orgrimmar (56.4, 33.2)", "art": "Doutor Herbert Halsey na Cidade Baixa (47.4, 73.0)"}, "done300": "300 alcançado. Pense no Laboratório de Alquimia para o seu acampamento.", "groupTitles": {"farm": "Para colher (Herborismo)", "vendor": "De vendedores", "ah": "Casa de leilões ou outras profissões", "craft": "Intermediários"}, "trainA": {"comp": "Tel'Athir em Ventobravo (45.8, 78.2), Vosur Brakthel em Altaforja (66.4, 55.2) ou Milla Fairancora em Darnassus (55.2, 21.4)", "exp": "Lilyssia Nightbreeze em Ventobravo (46.4, 79.4), Tally Berryfizz em Altaforja (66.4, 55.2) ou Sylvanna Forestmoon em Darnassus (55.6, 23.4)", "art": "Ainethil em Darnassus (55.0, 23.4)"}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

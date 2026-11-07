@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sartoria WoW Forever</title>
+<meta name="description" content="Guida di Sartoria 1-300 per WoW Forever (Alleanza e Orda): percorso ricetta per ricetta, lista della spesa calcolata, istruttori e stoffe.">
+<meta property="og:title" content="Sartoria WoW Forever">
+<meta property="og:description" content="Guida di Sartoria 1-300 per WoW Forever (Alleanza e Orda): percorso ricetta per ricetta, lista della spesa calcolata, istruttori e stoffe.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../couture.html">
+<link rel="alternate" hreflang="en" href="../en/couture.html">
+<link rel="alternate" hreflang="es" href="../es/couture.html">
+<link rel="alternate" hreflang="de" href="../de/couture.html">
+<link rel="alternate" hreflang="pt" href="../pt/couture.html">
+<link rel="alternate" hreflang="ru" href="../ru/couture.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #160f12;
+  --bg-glow: #2b1720;
+  --panel: #21171b;
+  --panel-2: #2c1f25;
+  --stitch: #8a4f62;
+  --ink: #f1e9dc;
+  --muted: #b5a995;
+  --accent: #f08aa0;
+  --accent-ink: #15100c;
+  --seg1: #f5c0cb; --seg2: #e58a9e; --seg3: #b3536b; --seg4: #7d3448;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Sartoria</span>
+  <h1>Sartoria 1 → 300</h1>
+  <p class="lede">Il percorso completo, ricetta per ricetta, secondo i dati della beta di Forever. Inserisci la tua abilità: la pagina mostra dove sei, il passo successivo e tutta la stoffa che ti manca, rotoli compresi.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Dove sei</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Abilità attuale</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Togli 5 punti">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Aggiungi 5 punti">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Lista della spesa fino a</label>
+      <select id="target">
+        <option value="75">75 (fine di Apprendista)</option>
+        <option value="150" selected>150 (fine di Garzone)</option>
+        <option value="225">225 (fine di Esperto)</option>
+        <option value="300">300 (Artigiano)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprendista</div><div class="seg s2">Garzone</div><div class="seg s3">Esperto</div><div class="seg s4">Artigiano</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Cosa ti manca ancora</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Il percorso</h2>
+    <p class="lede" style="margin-top:0">Le quantità sono stime: tieni sempre un margine. Regola d'oro: appena una ricetta diventa verde, passa al passo successivo.</p>
+    <div class="legend" aria-label="Colori delle ricette">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Arancione: +1 sempre</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Giallo: spesso</span> <span><span class="dot" style="background:var(--sk-green)"></span>Verde: raramente</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Grigio: mai</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Istruttori</h2>
+  <p class="lede" style="margin-top:0">Senza il rango giusto, la tua abilità resta bloccata al massimo (75, 150, 225). Impara il rango successivo appena hai il livello richiesto.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alleanza</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Sblocca</th><th>Requisiti</th><th>Istruttori (coordinate)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Garzone</span></td><td class="num">fino a 150</td><td>abilità 50, livello 10</td><td><strong>Lawrence Schneider</strong>, Roccavento (43.4, 73.8) · Uthrar Threx, Forgiardente (43.4, 28.2) · Trianna, Darnassus (63.4, 21.4) · Eldrin, Foresta di Elwynn (79.2, 69.0) · Grondal Moonbreeze, Rivafosca (38.2, 40.4)</td></tr><tr><td><span class="pill">Esperto</span></td><td class="num">fino a 225</td><td>abilità 125, livello 20</td><td><strong>Sellandus</strong>, Roccavento (42.0, 76.2) · Jormund Stonebrow, Forgiardente (43.2, 28.4) · Me'lynn, Darnassus (62.4, 22.4) · Grarnik Goodstitch, Valle di Rovotorto (28.6, 76.8)</td></tr><tr><td><span class="pill">Artigiano</span></td><td class="num">fino a 300</td><td>abilità 200, livello 35</td><td><strong>Georgio Bolero</strong>, Roccavento (43.2, 73.4). Un'altra fonte cita Timothy Worthington a Theramore (Palude di Acquamorta, 66.2, 51.6).</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Orda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Sblocca</th><th>Requisiti</th><th>Istruttori (coordinate)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Garzone / Esperto</span></td><td class="num">fino a 150 poi 225</td><td>abilità 50 poi 125, livelli 10 poi 20</td><td><strong>Magar</strong>, Orgrimmar (63.2, 50.6) · Rhiannon Davis, Sepulcride (70.2, 30.2) · Tepa, Picco del Tuono (43.8, 44.4) · Mahani, Savane (44.8, 59.4), al Campo Taurajo · Grarnik Goodstitch, Valle di Rovotorto (28.6, 76.8)</td></tr><tr><td><span class="pill">Artigiano</span></td><td class="num">fino a 300</td><td>abilità 200, livello 35</td><td><strong>Josef Gregorian</strong>, Sepulcride (70.4, 30.4). Un'altra fonte cita Daryl Stack, al Mulino di Tarren (Alture di Colletorto).</td></tr><tr><td><span class="pill">Altri istruttori</span></td><td class="num">—</td><td>—</td><td>Kil'hala, Savane (52.2, 31.6), al Crocevia · Snang, Orgrimmar (62.4, 49.8) · Vhan, Picco del Tuono (43.4, 43.6) · Victor Ward, Sepulcride (70.2, 29.6)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Le fonti non concordano sul rango esatto insegnato da ogni istruttore di sartoria: se uno non offre il rango che ti serve, prova un altro della stessa riga. Filo, tinture e candeggina si comprano dai fornitori di sartoria. I venditori di ricette segnati Alleanza o Orda servono solo la loro fazione: l'altra parte usa la casa d'aste.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Dove trovare ogni stoffa</h2>
+  <p class="lede" style="margin-top:0">La stoffa cade dagli umanoidi. Le fasce di livello qui sotto sono quelle di Classic, su cui si basa Forever.</p>
+  <div class="cols"><div class="card"><h3>Stoffa di Lino</h3><span class="lv">Umanoidi liv. 5-15</span><p>Zone iniziali, Savane (centauri, verrospini), Selva Pinargento.</p></div><div class="card"><h3>Stoffa di Lana</h3><span class="lv">Umanoidi liv. 15-25</span><p>Vette di Artiglio di Pietra, Valtetra, Alture di Colletorto, Caverne dei Lamenti.</p></div><div class="card"><h3>Stoffa di Seta</h3><span class="lv">Umanoidi liv. 25-35</span><p>Millepicchi, Desolanda, Altipiani di Arathi, Monastero Scarlatto.</p></div><div class="card"><h3>Stoffa Magica</h3><span class="lv">Umanoidi liv. 35-45</span><p>Valle di Rovotorto, Feralas, Tanaris, Entroterre, Zul'Farrak.</p></div><div class="card"><h3>Stoffa Runica</h3><span class="lv">Umanoidi liv. 48-60</span><p>Vilbosco (satiri), Terre Infette Orientali e Occidentali, Fontefredda, spedizioni di livello 55+.</p></div></div>
+  <p class="foot">Tieni tutta la stoffa che raccogli salendo: è di gran lunga il costo maggiore di questa professione.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novità di Forever</h2>
+  <ul class="plain"><li><strong>Stendardo di Fazione</strong> a 20: aumenta lo Spirito dei giocatori vicini.</li><li><strong>Arcolaio</strong> a 140: crea alcuni materiali al campo.</li><li><strong>Telaio</strong> a 300: richiesto per alcune ricette.</li><li><strong>Punti eredità</strong> a 150, 225 e 300.</li><li>Annunciato alla BlizzCon ma non ancora confermato: più stoffa dai nemici e un ricamo per mantelli (potenza d'attacco, potere magico o Tempra).</li><li>La professione ha 406 ricette, 180 nuove.</li></ul>
+</section>
+
+<footer class="foot"><p>Fonti: <a href="https://kami-labs.fr/guide-couture-wow-forever/">Kami Labs, guida alla Sartoria di WoW Forever</a> per percorso, ricette e istruttori · <a href="https://conquestcapped.com/guides/fr/wow-forever/wow-forever-tailoring/">ConquestCapped</a> per i ranghi degli istruttori.</p><p>I passi oltre 225 non erano giocabili in beta: sono segnati «da verificare». I nomi di oggetti, PNG e zone sono tradotti e possono differire un po' nel tuo client.</p></footer>
+
+
+</main>
+<script>
+var CONFIG = {"key": "cout", "src": {"Stoffa di Lino": "farm", "Stoffa di Lana": "farm", "Stoffa di Seta": "farm", "Stoffa Magica": "farm", "Stoffa Runica": "farm", "Filo Grezzo": "vendor", "Filo Fine": "vendor", "Filo di Seta": "vendor", "Filo di Seta Pesante": "vendor", "Filo Runico": "vendor", "Tintura Gialla": "vendor", "Tintura Blu": "vendor", "Tintura Grigia": "vendor", "Tintura Rossa": "vendor", "Tintura Arancione": "vendor", "Tintura Nera": "vendor", "Candeggina": "vendor", "Seta d'Ombra": "ah", "Seta di Ragno Telaferrea": "ah", "Cuoio Robusto": "ah", "Rotolo di Lino": "craft", "Rotolo di Lana": "craft", "Rotolo di Seta": "craft", "Rotolo di Stoffa Magica": "craft", "Rotolo di Stoffa Runica": "craft"}, "sub": {"Rotolo di Lino": {"Stoffa di Lino": 2}, "Rotolo di Lana": {"Stoffa di Lana": 3}, "Rotolo di Seta": {"Stoffa di Seta": 4}, "Rotolo di Stoffa Magica": {"Stoffa Magica": 5}, "Rotolo di Stoffa Runica": {"Stoffa Runica": 5}}, "steps": [{"f": 1, "t": 26, "r": "Rotolo di Lino", "n": 25, "m": {"Stoffa di Lino": 2}, "out": "Rotolo di Lino"}, {"f": 26, "t": 75, "r": "Cintura di Lino", "n": 67, "m": {"Rotolo di Lino": 1, "Filo Grezzo": 1}, "note": "<strong>Impara Garzone a 50</strong> (livello 10), o resti bloccato a 75."}, {"f": 75, "t": 110, "r": "Mantello di Lana", "n": 70, "m": {"Rotolo di Lana": 1, "Filo Fine": 1}, "note": "Crea da solo i rotoli di lana (3 Stoffe di Lana ciascuno in Classic, verifica in gioco)."}, {"f": 110, "t": 125, "r": "Spalline di Lana a Doppia Cucitura", "n": 19, "m": {"Rotolo di Lana": 3, "Filo Fine": 2}, "note": "<strong>Impara Esperto a 125</strong> (livello 20)."}, {"f": 125, "t": 138, "r": "Rotolo di Seta", "n": 13, "m": {"Stoffa di Seta": 4}, "out": "Rotolo di Seta", "note": "I passi successivi richiedono molti più rotoli di seta: continua a crearli dopo 138, la lista della spesa conta il totale."}, {"f": 138, "t": 149, "r": "Camicia Giallo Brillante", "n": 12, "m": {"Rotolo di Seta": 1, "Tintura Gialla": 1, "Filo Fine": 1}, "note": "Ricetta per 8a da Danielle Zipstitch (Boscotetro, Borgoscuro) per l'Alleanza. Orda: casa d'aste."}, {"f": 149, "t": 157, "r": "Cappuccio di Seta Azzurra", "n": 8, "m": {"Rotolo di Seta": 2, "Tintura Blu": 2, "Filo Fine": 1}}, {"f": 157, "t": 167, "r": "Camicia di Seta Scura", "n": 10, "m": {"Rotolo di Seta": 2, "Tintura Grigia": 2, "Filo Fine": 1}, "note": "Ricetta per 11a da Supervenditore 680 (Desolanda) o Sheri Zipstitch (Boscotetro)."}, {"f": 167, "t": 170, "r": "Fascia di Seta", "n": 3, "m": {"Rotolo di Seta": 3, "Filo Fine": 2}}, {"f": 170, "t": 175, "r": "Camicia Bianca Formale", "n": 5, "m": {"Rotolo di Seta": 3, "Candeggina": 2, "Filo Fine": 1}}, {"f": 175, "t": 183, "r": "Rotolo di Stoffa Magica", "n": 9, "m": {"Stoffa Magica": 5}, "out": "Rotolo di Stoffa Magica"}, {"f": 183, "t": 187, "r": "Camicia Rossa da Spadaccino", "n": 4, "m": {"Rotolo di Seta": 3, "Tintura Rossa": 2, "Filo di Seta": 1}}, {"f": 187, "t": 205, "r": "Corpetto di Seta Cremisi", "n": 18, "m": {"Rotolo di Seta": 4, "Tintura Rossa": 2, "Filo Fine": 2}, "note": "<strong>Impara Artigiano a 200</strong> (livello 35): {art}."}, {"f": 205, "t": 215, "r": "Gambali di Stoffa Magica Neri", "n": 10, "m": {"Rotolo di Stoffa Magica": 2, "Filo di Seta": 3}}, {"f": 215, "t": 223, "r": "Camicia di Stoffa Magica Arancione", "n": 8, "m": {"Rotolo di Stoffa Magica": 1, "Tintura Arancione": 1, "Filo di Seta Pesante": 1}}, {"f": 223, "t": 229, "r": "Gambali di Stoffa Magica Neri", "n": 7, "m": {"Rotolo di Stoffa Magica": 2, "Filo di Seta": 3}}, {"f": 229, "t": 235, "r": "Guanti di Stoffa Magica Neri", "n": 6, "m": {"Rotolo di Stoffa Magica": 2, "Filo di Seta Pesante": 2}, "p": 1}, {"f": 235, "t": 241, "r": "Abito Nero Semplice", "n": 6, "m": {"Rotolo di Stoffa Magica": 3, "Tintura Nera": 1, "Filo di Seta Pesante": 1, "Candeggina": 1}, "p": 1}, {"f": 241, "t": 250, "r": "Fascia di Stoffa Magica Nera", "n": 9, "m": {"Rotolo di Stoffa Magica": 3, "Filo di Seta Pesante": 2}, "p": 1}, {"f": 250, "t": 259, "r": "Rotolo di Stoffa Runica", "n": 11, "m": {"Stoffa Runica": 5}, "out": "Rotolo di Stoffa Runica", "p": 1}, {"f": 259, "t": 263, "r": "Maschera d'Ombratessuta", "n": 4, "m": {"Rotolo di Stoffa Magica": 2, "Seta d'Ombra": 8, "Filo di Seta Pesante": 2}, "p": 1, "note": "Ricetta da missione."}, {"f": 263, "t": 277, "r": "Cintura di Stoffa Runica", "n": 15, "m": {"Rotolo di Stoffa Runica": 3, "Filo Runico": 1}, "p": 1}, {"f": 277, "t": 283, "r": "Mantello di Stoffa Runica", "n": 6, "m": {"Rotolo di Stoffa Runica": 4, "Seta di Ragno Telaferrea": 1, "Filo Runico": 1}, "p": 1, "note": "Ricetta da Darnall (Radura di Lunaquieta)."}, {"f": 283, "t": 292, "r": "Guanti di Stoffa Runica", "n": 9, "m": {"Rotolo di Stoffa Runica": 4, "Cuoio Robusto": 4, "Filo Runico": 1}, "p": 1, "note": "Ricetta da Qia (Fontefredda)."}, {"f": 292, "t": 300, "r": "Stivali di Stoffa Runica", "n": 8, "m": {"Rotolo di Stoffa Runica": 4, "Seta di Ragno Telaferrea": 2, "Cuoio Robusto": 4, "Filo Runico": 1}, "p": 1, "note": "Ricetta da Darnall (Radura di Lunaquieta)."}], "train": {"comp": "Magar a Orgrimmar (63.2, 50.6) o Mahani al Campo Taurajo (44.8, 59.4)", "exp": "Magar a Orgrimmar (63.2, 50.6) o Rhiannon Davis a Sepulcride (70.2, 30.2)", "art": "Josef Gregorian a Sepulcride (70.4, 30.4)"}, "done300": "300 raggiunto. Pensa al Telaio per il tuo campo.", "groupTitles": {"farm": "Da raccogliere (umanoidi)", "vendor": "Dai venditori", "ah": "Casa d'aste o altre professioni", "craft": "Rotoli"}, "trainA": {"comp": "Lawrence Schneider a Roccavento (43.4, 73.8), Uthrar Threx a Forgiardente (43.4, 28.2) o Trianna a Darnassus (63.4, 21.4)", "exp": "Sellandus a Roccavento (42.0, 76.2), Jormund Stonebrow a Forgiardente (43.2, 28.4) o Me'lynn a Darnassus (62.4, 22.4)", "art": "Georgio Bolero a Roccavento (43.2, 73.4)"}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

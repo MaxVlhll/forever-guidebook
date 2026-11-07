@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Алхимия WoW Forever</title>
+<meta name="description" content="Гайд по алхимии 1-300 для WoW Forever (Альянс и Орда): путь рецепт за рецептом, расчёт покупок, наставники и травы.">
+<meta property="og:title" content="Алхимия WoW Forever">
+<meta property="og:description" content="Гайд по алхимии 1-300 для WoW Forever (Альянс и Орда): путь рецепт за рецептом, расчёт покупок, наставники и травы.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../alchimie.html">
+<link rel="alternate" hreflang="en" href="../en/alchimie.html">
+<link rel="alternate" hreflang="es" href="../es/alchimie.html">
+<link rel="alternate" hreflang="de" href="../de/alchimie.html">
+<link rel="alternate" hreflang="it" href="../it/alchimie.html">
+<link rel="alternate" hreflang="pt" href="../pt/alchimie.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #0f1513;
+  --bg-glow: #17261f;
+  --panel: #17201c;
+  --panel-2: #1f2b26;
+  --stitch: #4f7d68;
+  --ink: #f1e9dc;
+  --muted: #b5a995;
+  --accent: #6fd1a4;
+  --accent-ink: #15100c;
+  --seg1: #9fd9bd; --seg2: #6fbf98; --seg3: #3f8f6c; --seg4: #29624a;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Алхимия</span>
+  <h1>Алхимия 1 → 300</h1>
+  <p class="lede">Полный путь, рецепт за рецептом, по данным беты Forever. Введите свой навык: страница покажет, где вы, следующий шаг и все травы и флаконы, которых ещё не хватает.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Где вы сейчас</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Текущий навык</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Убрать 5 очков">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Добавить 5 очков">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Список покупок до</label>
+      <select id="target">
+        <option value="75">75 (конец Ученика)</option>
+        <option value="150" selected>150 (конец Подмастерья)</option>
+        <option value="225">225 (конец Умельца)</option>
+        <option value="300">300 (Искусник)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Ученик</div><div class="seg s2">Подмастерье</div><div class="seg s3">Умелец</div><div class="seg s4">Искусник</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Чего ещё не хватает</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Путь</h2>
+    <p class="lede" style="margin-top:0">Количество созданий — оценка: всегда держите запас. Золотое правило: как только рецепт стал зелёным, переходите к следующему шагу.</p>
+    <div class="legend" aria-label="Цвета рецептов">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Оранжевый: +1 всегда</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Жёлтый: часто</span> <span><span class="dot" style="background:var(--sk-green)"></span>Зелёный: редко</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Серый: никогда</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Наставники</h2>
+  <p class="lede" style="margin-top:0">Без нужного ранга навык застревает на пределе (75, 150, 225). Изучайте следующий ранг, как только достигнете нужного уровня.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Альянс</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Ранг</th><th>Открывает</th><th>Требования</th><th>Наставники (координаты)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Подмастерье</span></td><td class="num">до 150</td><td>навык 50, уровень 10</td><td><strong>Tel'Athir</strong>, Штормград (45.8, 78.2) · Vosur Brakthel, Стальгорн (66.4, 55.2) · Milla Fairancora, Дарнас (55.2, 21.4) · Алхимик Mallory, Элвиннский лес (39.8, 48.4) · Cyndra Kindwhisper, Тельдрассил (57.6, 60.6) · Ghak Healtouch, Лок Модан (37.0, 49.2)</td></tr><tr><td><span class="pill">Умелец</span></td><td class="num">до 225</td><td>навык 125, уровень 20</td><td><strong>Lilyssia Nightbreeze</strong>, Штормград (46.4, 79.4) · Tally Berryfizz, Стальгорн (66.4, 55.2) · Sylvanna Forestmoon, Дарнас (55.6, 23.4) · Kylanna, Ясеневый лес (50.8, 67.0) · Алхимик Narett, Пылевые топи (64.0, 47.6)</td></tr><tr><td><span class="pill">Искусник</span></td><td class="num">до 300</td><td>навык 200, уровень 35</td><td><strong>Ainethil</strong>, Дарнас (55.0, 23.4)</td></tr><tr><td><span class="pill">Высокие рецепты</span></td><td class="num">—</td><td>—</td><td>Мастер-миколог Shurome, Оскверненный лес (51.4, 82.0)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Орда</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Ранг</th><th>Открывает</th><th>Требования</th><th>Наставники (координаты)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Подмастерье</span></td><td class="num">до 150</td><td>навык 50, уровень 10</td><td><strong>Whuut</strong>, Оргриммар (55.8, 33.2) · Miao'zan, Дуротар (55.4, 74.0) · Доктор Martin Felben, Подгород (45.8, 73.2) · Carolai Anise, Тирисфальские леса (59.4, 52.2) · Kray, Громовой Утес (46.8, 33.4)</td></tr><tr><td><span class="pill">Умелец</span></td><td class="num">до 225</td><td>навык 125, уровень 20</td><td><strong>Yelmak</strong>, Оргриммар (56.4, 33.2) · Доктор Marsh, Подгород (51.2, 75.0) · Bena Winterhoof, Громовой Утес (46.8, 33.4) · Serge Hinott, Предгорья Хилсбрада (61.4, 19.2) · Jaxin Chong, Тернистая долина (28.0, 78.0)</td></tr><tr><td><span class="pill">Искусник</span></td><td class="num">до 300</td><td>навык 200, уровень 35</td><td><strong>Доктор Herbert Halsey</strong>, Подгород (47.4, 73.0)</td></tr><tr><td><span class="pill">Высокие рецепты</span></td><td class="num">—</td><td>—</td><td>Мастер-миколог Shurome, Оскверненный лес (51.4, 82.0)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Флаконы продают торговцы алхимическими товарами и ремесленными материалами. Продавцы рецептов с пометкой Альянс или Орда обслуживают только свою фракцию: другая сторона пользуется аукционом.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Где собирать каждую траву</h2>
+  <p class="lede" style="margin-top:0">Это зоны Classic, на которых основан Forever. Скорополох отдельно не собирается: он выпадает бонусом с магорозы и остротерна.</p>
+  <div class="cols"><div class="card"><h3>Мироцвет, Сребролист</h3><span class="lv">Навык от 1 до 70</span><p><span class="fl" data-f="h"><span class="fac h">Орда</span> Дуротар, Мулгор, Тирисфальские леса, Степи.</span><span class="fl" data-f="a"><span class="fac a">Альянс</span> Элвиннский лес, Дун Морог, Тельдрассил, Западный Край.</span></p></div><div class="card"><h3>Магороза, Остротерн, Скорополох</h3><span class="lv">Навык от 50 до 100</span><p><span class="fl" data-f="h"><span class="fac h">Орда</span> Степи, Серебряный бор, Когтистые горы, Ясеневый лес.</span><span class="fl" data-f="a"><span class="fac a">Альянс</span> Западный Край, Лок Модан, Темные берега, Красногорье.</span></p></div><div class="card"><h3>Синячник, Удавник</h3><span class="lv">Навык от 85 до 115</span><p><span class="fl" data-f="h"><span class="fac h">Орда</span> Когтистые горы, Ясеневый лес, Предгорья Хилсбрада.</span><span class="fl" data-f="a"><span class="fac a">Альянс</span> Болотина, Красногорье, Ясеневый лес.</span><span class="fl">Удавник растёт под водой вдоль побережий.</span></p></div><div class="card"><h3>Златошип</h3><span class="lv">Навык от 170</span><p>Нагорье Арати, Тернистая долина, Фералас, Болото Печали.</p></div><div class="card"><h3>Кровь Грома, Солнечник, Снолист</h3><span class="lv">Навык от 220 до 270</span><p>Оскверненный лес, Кратер Ун'Горо, Чумные земли, Силитус.</p></div><div class="card"><h3>Льдяной зев, Призрачная поганка</h3><span class="lv">Навык от 245 до 290</span><p>Зимние Ключи — льдяной зев; пещеры и болота (Внутренние земли, Болото Печали) — призрачная поганка.</p></div></div>
+  <p class="foot">Малые огненные железы, огненное масло, острые когти и мифриловую руду почти всегда берут на аукционе: проверьте цены перед шагом.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Особенности Forever</h2>
+  <ul class="plain"><li><strong>Лечебные зелья ушли из алхимии</strong>: теперь их делает первая помощь.</li><li><strong>Колодец маны</strong> на 20: восстанавливает ману сидящим рядом игрокам (не суммируется с Благословением мудрости).</li><li><strong>Ферментатор</strong> на 140: создаёт некоторые компоненты в лагере.</li><li><strong>Алхимическая лаборатория</strong> на 300: нужна для некоторых рецептов.</li><li><strong>Очки наследия</strong> на 150, 225 и 300.</li><li>Объявлено на BlizzCon, но ещё не подтверждено: эликсиры и настои, выпитые самим алхимиком, будут действовать вдвое дольше и на 25% сильнее.</li><li>В профессии 179 рецептов, из них 72 новых. Этот путь следует лучшим для прокачки, а не лучшим для продажи.</li></ul>
+</section>
+
+<footer class="foot"><p>Источники: <a href="https://kami-labs.fr/guide-alchimie-wow-forever/">Kami Labs, гайд по алхимии WoW Forever</a> — путь, рецепты и наставники · <a href="https://conquestcapped.com/guides/fr/wow-forever/wow-forever-alchemy/">ConquestCapped</a> — перенос лечебных зелий.</p><p>Шаги выше 225 в бете были недоступны: они помечены «проверить». Названия предметов, НИП и зон переведены и могут немного отличаться в вашем клиенте.</p></footer>
+
+
+</main>
+<script>
+var CONFIG = {"key": "alch", "src": {"Сребролист": "farm", "Мироцвет": "farm", "Остротерн": "farm", "Синячник": "farm", "Скорополох": "farm", "Магороза": "farm", "Удавник": "farm", "Златошип": "farm", "Кровь Грома": "farm", "Призрачная поганка": "farm", "Солнечник": "farm", "Снолист": "farm", "Льдяной зев": "farm", "Пустой флакон": "vendor", "Освинцованный флакон": "vendor", "Хрустальный флакон": "vendor", "Острый коготь": "ah", "Малая огненная железа": "ah", "Огненное масло": "ah", "Мифриловая руда": "ah", "Каменночешуйчатый угорь": "ah", "Каменночешуйчатое масло": "craft"}, "sub": {"Каменночешуйчатое масло": {"Каменночешуйчатый угорь": 1, "Освинцованный флакон": 1}}, "steps": [{"f": 1, "t": 71, "r": "Эликсир малой защиты", "n": 74, "m": {"Сребролист": 1, "Мироцвет": 1, "Пустой флакон": 1}, "note": "<strong>Изучите Подмастерье на 50</strong> (уровень 10), иначе застрянете на 75."}, {"f": 71, "t": 100, "r": "Зелье ярости", "n": 30, "m": {"Острый коготь": 1, "Остротерн": 1, "Пустой флакон": 1}, "note": "Рецепт за 1 с у спекулянта Братства справедливости (Западный Край) или у Xandar Goodbeard (Лок Модан)."}, {"f": 100, "t": 120, "r": "Зелье защиты от светлой магии", "n": 20, "m": {"Синячник": 1, "Скорополох": 1, "Пустой флакон": 1}, "note": "Рецепт за 8 с у Kzixx (Сумеречный лес), нейтрального гоблина."}, {"f": 120, "t": 165, "r": "Слабое зелье маны", "n": 52, "m": {"Магороза": 1, "Удавник": 1, "Пустой флакон": 1}, "note": "<strong>Изучите Умельца на 125</strong> (уровень 20): {exp}."}, {"f": 165, "t": 219, "r": "Зелье защиты от огня", "n": 55, "m": {"Малая огненная железа": 1, "Огненное масло": 1, "Освинцованный флакон": 1}, "note": "Рецепт за 15 с у Nandar Branson (Предгорья Хилсбрада, Южнобережье) для Альянса. Орда: аукцион."}, {"f": 219, "t": 250, "r": "Слабое зелье каменного щита", "n": 38, "m": {"Мифриловая руда": 1, "Златошип": 1, "Освинцованный флакон": 1}, "note": "Рецепт за задание («Жидкий камень»). <strong>Изучите Искусника на 200</strong> (уровень 35): {art}."}, {"f": 250, "t": 258, "r": "Каменночешуйчатое масло", "n": 14, "m": {"Каменночешуйчатый угорь": 1, "Освинцованный флакон": 1}, "out": "Каменночешуйчатое масло", "p": 1, "note": "Сохраняйте всё масло: Эликсиру великой защиты нужно 2 на создание."}, {"f": 258, "t": 267, "r": "Эликсир истребления демонов", "n": 9, "m": {"Кровь Грома": 1, "Призрачная поганка": 1, "Хрустальный флакон": 1}, "p": 1, "note": "Рецепт за 1 з у Nina Lightbrew (Выжженные земли)."}, {"f": 267, "t": 295, "r": "Эликсир великой защиты", "n": 32, "m": {"Каменночешуйчатое масло": 2, "Солнечник": 1, "Хрустальный флакон": 1}, "p": 1, "note": "Рецепт за 1 з 30 с у Soolie Berryfizz (Стальгорн) для Альянса, у Kor'geld (Оргриммар) для Орды."}, {"f": 295, "t": 300, "r": "Сильное зелье маны", "n": 5, "m": {"Снолист": 3, "Льдяной зев": 2, "Хрустальный флакон": 1}, "p": 1, "note": "Рецепт за 3 з у Magnus Frostwake (Западные Чумные земли)."}], "train": {"comp": "Whuut в Оргриммаре (55.8, 33.2) или Miao'zan в Дуротаре (55.4, 74.0)", "exp": "Yelmak в Оргриммаре (56.4, 33.2)", "art": "Доктор Herbert Halsey в Подгороде (47.4, 73.0)"}, "done300": "Достигнуто 300. Подумайте об алхимической лаборатории для лагеря.", "groupTitles": {"farm": "Собрать (травничество)", "vendor": "У торговцев", "ah": "Аукцион или другие профессии", "craft": "Промежуточные"}, "trainA": {"comp": "Tel'Athir в Штормграде (45.8, 78.2), Vosur Brakthel в Стальгорне (66.4, 55.2) или Milla Fairancora в Дарнасе (55.2, 21.4)", "exp": "Lilyssia Nightbreeze в Штормграде (46.4, 79.4), Tally Berryfizz в Стальгорне (66.4, 55.2) или Sylvanna Forestmoon в Дарнасе (55.6, 23.4)", "art": "Ainethil в Дарнасе (55.0, 23.4)"}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

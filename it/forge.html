@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forgiatura WoW Forever</title>
+<meta name="description" content="Guida di Forgiatura 1-300 per WoW Forever (Alleanza e Orda): percorso ricetta per ricetta, lista della spesa calcolata, istruttori e minerali.">
+<meta property="og:title" content="Forgiatura WoW Forever">
+<meta property="og:description" content="Guida di Forgiatura 1-300 per WoW Forever (Alleanza e Orda): percorso ricetta per ricetta, lista della spesa calcolata, istruttori e minerali.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../forge.html">
+<link rel="alternate" hreflang="en" href="../en/forge.html">
+<link rel="alternate" hreflang="es" href="../es/forge.html">
+<link rel="alternate" hreflang="de" href="../de/forge.html">
+<link rel="alternate" hreflang="pt" href="../pt/forge.html">
+<link rel="alternate" hreflang="ru" href="../ru/forge.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #121214;
+  --bg-glow: #2a1c14;
+  --panel: #1b1a1d;
+  --panel-2: #242328;
+  --stitch: #7a6a5a;
+  --accent: #ff9a4a;
+  --seg1: #ffc999; --seg2: #f0904a; --seg3: #b5582a; --seg4: #7a3418;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Forgiatura</span>
+  <h1>Forgiatura 1 → 300</h1>
+  <p class="lede">Il percorso completo, ricetta per ricetta, secondo i dati della beta di Forever. Inserisci la tua abilità: la pagina mostra dove sei, il passo successivo e tutto il minerale che ti manca.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Dove sei</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Abilità attuale</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Togli 5 punti">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Aggiungi 5 punti">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Lista della spesa fino a</label>
+      <select id="target">
+        <option value="75">75 (fine di Apprendista)</option>
+        <option value="150" selected>150 (fine di Garzone)</option>
+        <option value="225">225 (fine di Esperto)</option>
+        <option value="300">300 (Artigiano)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Apprendista</div><div class="seg s2">Garzone</div><div class="seg s3">Esperto</div><div class="seg s4">Artigiano</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">Cosa ti manca ancora</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">Il percorso</h2>
+    <p class="lede" style="margin-top:0">Le quantità sono stime: tieni sempre un margine. Regola d'oro: appena una ricetta diventa verde, passa al passo successivo.</p>
+    <div class="legend" aria-label="Colori delle ricette">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Arancione: +1 sempre</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Giallo: spesso</span> <span><span class="dot" style="background:var(--sk-green)"></span>Verde: raramente</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Grigio: mai</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Istruttori</h2>
+  <p class="lede" style="margin-top:0">Senza il rango giusto, la tua abilità resta bloccata al massimo (75, 150, 225). Impara il rango successivo appena hai il livello richiesto.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Alleanza</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Sblocca</th><th>Requisiti</th><th>Istruttori (coordinate)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Garzone</span></td><td class="num">fino a 150</td><td>abilità 50, livello 10</td><td><strong>Dane Lindgren</strong>, Roccavento (57.0, 15.4) · Groum Stonebeard, Forgiardente (51.2, 42.4) · Argus il Fabbro, Foresta di Elwynn (41.6, 65.4) · Tognus Flintfire, Dun Morogh (45.2, 52.0) · Delfrum Flintbeard, Rivafosca (38.2, 41.0)</td></tr><tr><td><span class="pill">Esperto</span></td><td class="num">fino a 225</td><td>abilità 125, livello 20</td><td><strong>Therum Deepforge</strong>, Roccavento (56.4, 15.4) · Rotgath Stonebeard, Forgiardente (51.2, 42.4) · Clarise Gnarltree, Boscotetro (73.8, 48.6)</td></tr><tr><td><span class="pill">Artigiano</span></td><td class="num">fino a 300</td><td>abilità 200, livello 35</td><td><strong>Bengus Deepforge</strong>, Forgiardente (51.4, 42.2)</td></tr><tr><td><span class="pill">Ricette alte</span></td><td class="num">—</td><td>—</td><td>Brikk Keencraft, Valle di Rovotorto (29.0, 75.4), a Baia del Bottino</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Orda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rango</th><th>Sblocca</th><th>Requisiti</th><th>Istruttori (coordinate)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Garzone</span></td><td class="num">fino a 150</td><td>abilità 50, livello 10</td><td><strong>Ug'thok</strong>, Orgrimmar (80.4, 23.4) · Dwukk, Durotar (52.0, 40.6) · Basil Frye, Sepulcride (59.2, 29.4) · Thrag Stonehoof, Picco del Tuono (39.0, 57.8) · Guillemette Sorouy, Selva Pinargento (43.2, 41.0) · Gur'dok, Clearwater Shores (60.0, 46.2)</td></tr><tr><td><span class="pill">Esperto</span></td><td class="num">fino a 225</td><td>abilità 125, livello 20</td><td><strong>Snarl</strong>, Orgrimmar (79.2, 22.4) · James Van Brunt, Sepulcride (61.2, 29.2) · Karn Stonehoof, Picco del Tuono (38.8, 54.0) · Traugh, Savane (51.2, 28.8)</td></tr><tr><td><span class="pill">Artigiano</span></td><td class="num">fino a 300</td><td>abilità 200, livello 35</td><td><strong>Saru Steelfury</strong>, Orgrimmar (82.2, 23.0)</td></tr><tr><td><span class="pill">Ricette alte</span></td><td class="num">—</td><td>—</td><td>Brikk Keencraft, Valle di Rovotorto (29.0, 75.4), a Baia del Bottino</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">La Tintura Verde si compra dai fornitori di merci. L'Estrazione è quasi obbligatoria accanto: salire consuma oltre 800 Barre di Mithril e altrettante di Torio.</p>
+</section>
+
+<section aria-labelledby="farm-h" style="display:grid;gap:12px">
+  <h2 id="farm-h">Dove estrarre ogni minerale</h2>
+  <p class="lede" style="margin-top:0">Le zone citate hanno più filoni, con una riga per fazione per le prime fasce. Tutti i dettagli sono nella <a href="minage.html">pagina dell'Estrazione</a>.</p>
+  <div class="cols"><div class="card"><h3>Rame</h3><span class="lv">Abilità da 1 a 65</span><p><span class="fl" data-f="h"><span class="fac h">Orda</span> Durotar, Mulgore, Radure di Tirisfal, Savane.</span><span class="fl" data-f="a"><span class="fac a">Alleanza</span> Foresta di Elwynn, Dun Morogh, Loch Modan, Rivafosca.</span></p></div><div class="card"><h3>Stagno, argento, pietra grezza</h3><span class="lv">Abilità da 65 a 125</span><p><span class="fl" data-f="h"><span class="fac h">Orda</span> Savane, Selva Pinargento, Millepicchi, Alture di Colletorto.</span><span class="fl" data-f="a"><span class="fac a">Alleanza</span> Paludi Grigie, Montagne Crestarossa, Marche Occidentali, Alture di Colletorto.</span></p></div><div class="card"><h3>Ferro, oro, pietra pesante</h3><span class="lv">Abilità da 125 a 175</span><p>Altipiani di Arathi, Millepicchi, Desolanda, Valle di Rovotorto.</p></div><div class="card"><h3>Mithril, pietra solida</h3><span class="lv">Abilità da 175 a 230</span><p>Altipiani di Arathi, Maleterre, Valle di Rovotorto, Tanaris, Entroterre.</p></div><div class="card"><h3>Verargento, ferroscuro</h3><span class="lv">Abilità da 230 in su</span><p>Steppe Ardenti, Entroterre, Gola Rovente, Tanaris.</p></div><div class="card"><h3>Torio, pietra densa</h3><span class="lv">Abilità da 245 in su</span><p>Steppe Ardenti, Silitus, Fontefredda, Cratere di Un'Goro.</p></div></div>
+  <p class="foot">Le Mole Solide e Dense non sono nel percorso: la lista le conta come create a parte (4 pietre ciascuna, come in Classic, verifica in gioco).</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novità di Forever</h2>
+  <ul class="plain"><li><strong>Mola</strong> a 20: aumenta la Forza dei giocatori al campo.</li><li><strong>Incudine</strong> a 140: richiesta per alcune ricette, al campo.</li><li><strong>Forgia Maestra</strong> a 300: richiesta per alcune ricette.</li><li><strong>Punti eredità</strong> a 150, 225 e 300.</li><li><strong>Specializzazioni</strong>: Armaiolo o Fabbro d'Armi, poi Maestro Martellatore, Maestro d'Asce o Maestro di Spade. Ne scegli una sola, e le sue ricette non sono in questo percorso.</li><li>Sei ricette di maglia (Maglia Invulnerabile, Elmo del Grande Capo, Guanti del Velo di Tempesta…) sono passate alla Conciatura.</li><li>Annunciato alla BlizzCon ma non ancora confermato: <strong>Riparazione Completa</strong> (ripara tutto l'equipaggiamento, con tempo di recupero) e <strong>fibbie per cinture</strong> che aggiungono statistiche.</li><li>La professione ha 431 ricette: 197 nuove e 181 modificate.</li></ul>
+</section>
+
+<footer class="foot"><p>Fonti: <a href="https://kami-labs.fr/guide-forge-wow-forever/">Kami Labs, guida alla Forgiatura di WoW Forever</a> · <a href="https://kami-labs.fr/metiers-wow-forever/">Kami Labs, professioni di WoW Forever</a>.</p><p>I passi oltre 225 non erano giocabili in beta: sono segnati «da verificare». Se un venditore di ricette è dell'altra fazione, usa la casa d'aste. I nomi di oggetti, PNG e zone sono tradotti e possono differire un po' nel tuo client.</p><p>Guida di fan non ufficiale, aggiornata il 7 novembre 2026. World of Warcraft è un marchio di Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "forge", "src": {"Pietra Ruvida": "farm", "Pietra Grezza": "farm", "Pietra Pesante": "farm", "Pietra Solida": "farm", "Pietra Densa": "farm", "Barra di Rame": "farm", "Barra di Bronzo": "farm", "Barra d'Argento": "farm", "Barra di Ferro": "farm", "Barra d'Oro": "farm", "Barra di Mithril": "farm", "Barra di Verargento": "farm", "Barra di Torio": "farm", "Tintura Verde": "vendor", "Barra d'Acciaio": "ah", "Barra d'Arcanite": "ah", "Barra d'Azerothium": "ah", "Citrino": "ah", "Rubino Stellato": "ah", "Acquamarina": "ah", "Perla Nera": "ah", "Gemma d'Ombra": "ah", "Cuoio Spesso": "ah", "Cuoio Robusto": "ah", "Essenza dell'Aria": "ah", "Zanna Grande": "ah", "Artiglio Affilato": "ah", "Mola Ruvida": "craft", "Mola Grezza": "craft", "Mola Pesante": "craft", "Mola Solida": "craft", "Mola Densa": "craft"}, "sub": {"Mola Ruvida": {"Pietra Ruvida": 2}, "Mola Grezza": {"Pietra Grezza": 2}, "Mola Pesante": {"Pietra Pesante": 3}, "Mola Solida": {"Pietra Solida": 4}, "Mola Densa": {"Pietra Densa": 4}}, "steps": [{"f": 1, "t": 35, "r": "Cote Ruvida", "n": 41, "m": {"Pietra Ruvida": 1}}, {"f": 35, "t": 65, "r": "Mola Ruvida", "n": 37, "m": {"Pietra Ruvida": 2}, "out": "Mola Ruvida", "note": "Tienile: le Chiavi Maestre d'Argento (100-115) ne richiedono 26."}, {"f": 65, "t": 75, "r": "Cote Grezza", "n": 16, "m": {"Pietra Grezza": 1}, "note": "<strong>Impara Garzone a 50</strong> (livello 10), o resti bloccato a 75."}, {"f": 75, "t": 96, "r": "Mola Grezza", "n": 43, "m": {"Pietra Grezza": 2}, "out": "Mola Grezza", "note": "Tienine 16 per i Guanti di Bronzo Argentato (144-150)."}, {"f": 96, "t": 100, "r": "Cintura di Rame Runica", "n": 6, "m": {"Barra di Rame": 10}}, {"f": 100, "t": 115, "r": "Chiave Maestra d'Argento", "n": 26, "m": {"Barra d'Argento": 1, "Mola Ruvida": 1}}, {"f": 115, "t": 125, "r": "Gambali di Bronzo Ruvidi", "n": 10, "m": {"Barra di Bronzo": 6}}, {"f": 125, "t": 138, "r": "Cote Pesante", "n": 27, "m": {"Pietra Pesante": 1}, "note": "<strong>Impara Esperto a 125</strong> (livello 20): {exp}."}, {"f": 138, "t": 144, "r": "Mola Pesante", "n": 16, "m": {"Pietra Pesante": 3}, "out": "Mola Pesante", "note": "I passi 154-165 e 185-200 ne usano 66: la lista calcola quante crearne in più."}, {"f": 144, "t": 150, "r": "Guanti di Bronzo Argentato", "n": 8, "m": {"Barra di Bronzo": 8, "Barra d'Argento": 1, "Mola Grezza": 2}}, {"f": 150, "t": 154, "r": "Fibbia di Ferro", "n": 6, "m": {"Barra di Ferro": 1}}, {"f": 154, "t": 165, "r": "Chiave Maestra d'Oro", "n": 22, "m": {"Barra d'Oro": 1, "Mola Pesante": 1}}, {"f": 165, "t": 182, "r": "Bracciali di Ferro Verde", "n": 27, "m": {"Barra di Ferro": 6, "Tintura Verde": 1}}, {"f": 182, "t": 185, "r": "Elmo di Ferro Barbarico", "n": 4, "m": {"Barra di Ferro": 10, "Zanna Grande": 2, "Artiglio Affilato": 2}, "note": "Ricetta da missione."}, {"f": 185, "t": 200, "r": "Bracciali a Scaglie d'Oro", "n": 22, "m": {"Barra d'Acciaio": 5, "Mola Pesante": 2}, "note": "La Barra d'Acciaio la fondono i minatori (ferro + carbone): altrimenti casa d'aste."}, {"f": 200, "t": 209, "r": "Cote Solida", "n": 19, "m": {"Pietra Solida": 1}, "note": "<strong>Impara Artigiano a 200</strong> (livello 35): {art}."}, {"f": 209, "t": 215, "r": "Chiave Maestra di Verargento", "n": 15, "m": {"Barra di Verargento": 1, "Mola Solida": 1}}, {"f": 215, "t": 225, "r": "Bracciali a Scaglie di Mithril", "n": 16, "m": {"Barra di Mithril": 8, "Citrino": 2}, "note": "Ricetta per 53a 33r da Harggan (Entroterre, Picco Nidiaquila) per l'Alleanza. Orda: casa d'aste."}, {"f": 225, "t": 230, "r": "Spallaccio di Mithril Decorato", "n": 6, "m": {"Barra di Mithril": 12, "Barra di Verargento": 1, "Cuoio Spesso": 6}, "p": 1, "note": "Ricetta da missione: «L'Arte dell'Infusione»."}, {"f": 230, "t": 235, "r": "Pettorale di Mithril Pesante", "n": 6, "m": {"Barra di Mithril": 16}, "p": 1}, {"f": 235, "t": 247, "r": "Stivali di Mithril Pesanti", "n": 22, "m": {"Barra di Mithril": 14, "Cuoio Spesso": 4}, "p": 1}, {"f": 247, "t": 250, "r": "Grande Mazza Nera", "n": 11, "m": {"Barra di Mithril": 16, "Perla Nera": 1, "Gemma d'Ombra": 4, "Mola Solida": 1, "Cuoio Spesso": 2}, "p": 1}, {"f": 250, "t": 260, "r": "Cote Densa", "n": 16, "m": {"Pietra Densa": 1}, "p": 1}, {"f": 260, "t": 265, "r": "Lama d'Ebano", "n": 7, "m": {"Barra di Mithril": 12, "Barra di Verargento": 6, "Rubino Stellato": 2, "Mola Solida": 1, "Cuoio Spesso": 2}, "p": 1, "note": "Ricetta per 1o da Magnus Frostwake (Terre Infette Occidentali)."}, {"f": 265, "t": 270, "r": "Cintura a Piastre Imperiale", "n": 6, "m": {"Barra di Torio": 22, "Cuoio Robusto": 6, "Acquamarina": 1}, "p": 1, "note": "Ricetta da missione: «Cintura a Piastre Imperiale»."}, {"f": 270, "t": 275, "r": "Bracciale a Piastre Imperiale", "n": 6, "m": {"Barra di Torio": 20, "Rubino Stellato": 1}, "p": 1, "note": "Ricetta da missione: «Bracciale a Piastre Imperiale»."}, {"f": 275, "t": 285, "r": "Chiave Maestra d'Arcanite", "n": 29, "m": {"Barra d'Arcanite": 1, "Mola Densa": 1}, "p": 1}, {"f": 285, "t": 295, "r": "Misericordia Audace", "n": 11, "m": {"Barra di Torio": 30, "Essenza dell'Aria": 4, "Barra d'Azerothium": 10, "Cuoio Robusto": 4}, "p": 1, "note": "Nuova ricetta di Forever, 10o da Pexmit (Monte Hyjal)."}, {"f": 295, "t": 300, "r": "Stivali a Piastre Imperiali", "n": 6, "m": {"Barra di Torio": 34, "Rubino Stellato": 1, "Acquamarina": 1}, "p": 1, "note": "Ricetta da missione: «Stivali a Piastre Imperiali»."}], "train": {"comp": "Ug'thok a Orgrimmar (80.4, 23.4) o Dwukk a Durotar (52.0, 40.6)", "exp": "Snarl a Orgrimmar (79.2, 22.4)", "art": "Saru Steelfury a Orgrimmar (82.2, 23.0)"}, "done300": "300 raggiunto. Pensa alla Forgia Maestra per il tuo campo.", "groupTitles": {"farm": "Da estrarre (e fondere)", "vendor": "Dai venditori", "ah": "Casa d'aste o altre professioni", "craft": "Intermedi"}, "trainA": {"comp": "Dane Lindgren a Roccavento (57.0, 15.4) o Groum Stonebeard a Forgiardente (51.2, 42.4)", "exp": "Therum Deepforge a Roccavento (56.4, 15.4) o Rotgath Stonebeard a Forgiardente (51.2, 42.4)", "art": "Bengus Deepforge a Forgiardente (51.4, 42.2)"}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

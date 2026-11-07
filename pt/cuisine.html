@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Culinária WoW Forever</title>
+<meta name="description" content="Guia de Culinária 1-300 para WoW Forever (Aliança e Horda): caminho receita por receita, lista de compras, instrutores e kits de fogueira.">
+<meta property="og:title" content="Culinária WoW Forever">
+<meta property="og:description" content="Guia de Culinária 1-300 para WoW Forever (Aliança e Horda): caminho receita por receita, lista de compras, instrutores e kits de fogueira.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13110f">
+<link rel="alternate" hreflang="fr" href="../cuisine.html">
+<link rel="alternate" hreflang="en" href="../en/cuisine.html">
+<link rel="alternate" hreflang="es" href="../es/cuisine.html">
+<link rel="alternate" hreflang="de" href="../de/cuisine.html">
+<link rel="alternate" hreflang="it" href="../it/cuisine.html">
+<link rel="alternate" hreflang="ru" href="../ru/cuisine.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root {
+  --bg: #160f0d;
+  --bg-glow: #2c1712;
+  --panel: #211613;
+  --panel-2: #2c1e1a;
+  --stitch: #8a5444;
+  --accent: #ff8a66;
+  --seg1: #ffb8a3; --seg2: #f2876b; --seg3: #b8503a; --seg4: #7d3224;
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="main">
+
+<header>
+  <span class="tag">WoW Forever · Culinária</span>
+  <h1>Culinária 1 → 300</h1>
+  <p class="lede">Uma profissão secundária, além das suas duas principais. Em Forever, a Culinária também faz os kits de fogueira. Informe sua perícia: a página mostra a próxima etapa e a carne que ainda falta.</p>
+</header>
+
+<section class="stitched tool" aria-labelledby="tool-h">
+  <h2 id="tool-h">Onde você está</h2>
+  <div class="controls">
+    <div class="field">
+      <label for="skill">Perícia atual</label>
+      <div class="steppers">
+        <button type="button" id="minus" aria-label="Tirar 5 pontos">−5</button>
+        <input type="number" id="skill" min="1" max="300" value="1" inputmode="numeric">
+        <button type="button" id="plus" aria-label="Adicionar 5 pontos">+5</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="target">Lista de compras até</label>
+      <select id="target">
+        <option value="75">75 (fim de Aprendiz)</option>
+        <option value="150" selected>150 (fim de Artífice)</option>
+        <option value="225">225 (fim de Especialista)</option>
+        <option value="300">300 (Artesão)</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="bar" aria-hidden="true">
+      <div class="seg s1">Aprendiz</div><div class="seg s2">Artífice</div><div class="seg s3">Especialista</div><div class="seg s4">Artesão</div>
+      <div class="fill" id="fill"></div>
+    </div>
+    <div class="bar-scale"><span>1</span><span>75</span><span>150</span><span>225</span><span>300</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</section>
+
+<section class="stitched" aria-labelledby="shop-h">
+  <h2 id="shop-h">O que ainda falta</h2>
+  <p class="lede" id="shop-sub" style="margin-bottom:14px"></p>
+  <div class="shop-grid" id="shop"></div>
+</section>
+
+<section aria-labelledby="path-h" style="display:grid;gap:18px">
+  <div style="display:grid;gap:8px">
+    <h2 id="path-h">O caminho</h2>
+    <p class="lede" style="margin-top:0">As quantidades são estimativas: guarde sempre uma margem. Regra de ouro: assim que uma receita ficar verde, passe para a próxima etapa.</p>
+    <div class="legend" aria-label="Cores das receitas">
+      <span><span class="dot" style="background:var(--sk-orange)"></span>Laranja: +1 sempre</span> <span><span class="dot" style="background:var(--sk-yellow)"></span>Amarelo: muitas vezes</span> <span><span class="dot" style="background:var(--sk-green)"></span>Verde: raramente</span> <span><span class="dot" style="background:var(--sk-gray)"></span>Cinza: nunca</span>
+    </div>
+  </div>
+  <div id="path" style="display:grid;gap:26px"></div>
+</section>
+
+<section class="stitched" aria-labelledby="tr-h" style="display:grid;gap:12px">
+  <h2 id="tr-h">Instrutores</h2>
+  <p class="lede" style="margin-top:0">Em Forever, Especialista e Artesão também se aprendem com um instrutor de culinária, sem livro nem missão como no Classic.</p>
+  <div class="facblock" data-f="a">
+  <h3><span class="fac a">Aliança</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Grau</th><th>Libera</th><th>Requisitos</th><th>Instrutores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Artífice</span></td><td class="num">até 150</td><td>perícia 50, nível 10</td><td><strong>Stephen Ryback</strong>, Ventobravo (75.4, 37.2) · Tomas, Floresta de Elwynn (44.2, 66.0) · Daryl Riknussun, Altaforja (60.0, 36.8) · Gremlock Pilsnor, Dun Morogh (47.6, 52.4) · Cozinheiro Ghilm, Dun Morogh (68.4, 54.4) · Alegorn, Darnassus (48.4, 21.0) · Zarrin, Teldrassil (57.0, 61.2)</td></tr><tr><td><span class="pill">Especialista</span></td><td class="num">até 225</td><td>perícia 125, nível 20</td><td>Qualquer instrutor de culinária de uma capital. Também: Crystal Boughman, Montanhas Cristarrubra (17.6, 43.6) · Gorg, Clearwater Shores (58.6, 44.6)</td></tr><tr><td><span class="pill">Artesão</span></td><td class="num">até 300</td><td>perícia 200, nível 35</td><td>Um instrutor de culinária (a Kami Labs não diz qual: tente primeiro Stephen Ryback em Ventobravo)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <div class="facblock" data-f="h">
+  <h3><span class="fac h">Horda</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Grau</th><th>Libera</th><th>Requisitos</th><th>Instrutores (coordenadas)</th></tr></thead>
+      <tbody><tr><td><span class="pill">Artífice</span></td><td class="num">até 150</td><td>perícia 50, nível 10</td><td><strong>Zamja</strong>, Orgrimmar (57.4, 53.4) · Cozinheiro Torka, Durotar (51.2, 42.4) · Eunice Burch, Cidade Baixa (62.2, 44.4) · William Pickman, Clareiras de Tirisfal (61.8, 51.4) · Aska Mistrunner, Penhasco do Trovão (50.8, 52.4) · Pyall Silentstride, Mulgore (45.0, 61.6)</td></tr><tr><td><span class="pill">Especialista</span></td><td class="num">até 225</td><td>perícia 125, nível 20</td><td>Qualquer instrutor de culinária de uma capital. Neutros: Duhng, Sertões (55.2, 31.8) · Mudduk, Selva do Espinhaço (31.4, 28.0) · Gorg, Clearwater Shores (58.6, 44.6)</td></tr><tr><td><span class="pill">Artesão</span></td><td class="num">até 300</td><td>perícia 200, nível 35</td><td>Um instrutor de culinária (a Kami Labs não diz qual: tente primeiro Zamja em Orgrimmar)</td></tr></tbody>
+    </table>
+  </div>
+  </div>
+  <p class="foot">Temperos Suaves e Picantes com fornecedores de mercadorias e de culinária.</p>
+</section>
+
+<section class="stitched" aria-labelledby="fv-h" style="display:grid;gap:10px">
+  <h2 id="fv-h">Novidades de Forever</h2>
+  <ul class="plain"><li><strong>Kit de Fogueira Básico</strong> aos 20: seu acampamento comporta 3 itens.</li><li><strong>Kit de Fogueira de Artífice</strong> aos 90: 5 itens.</li><li><strong>Kit de Fogueira de Especialista</strong> aos 200: 10 itens.</li><li>Novos <strong>chás e frapês</strong> (Chá da Serenidade aos 25, Chá Real aos 100, Chá do Sábio aos 250…) e um banquete, o Banquete de Macaron aos 140.</li><li>Alguns pratos dão «Bem Alimentado» e um bônus de experiência ao matar monstros (anunciado, ainda não confirmado). A Method fala em +5% de experiência por 15 minutos.</li><li><strong>Pontos de legado</strong> aos 150, 225 e 300.</li><li>A profissão tem 125 receitas, 44 delas novas.</li></ul>
+</section>
+
+<footer class="foot"><p>Fontes: <a href="https://kami-labs.fr/guide-cuisine-wow-forever/">Kami Labs, guia de Culinária de WoW Forever</a> · <a href="https://www.method.gg/wow-forever/wow-forever-shaman-leveling-guide-and-talents">Method, guia de xamã (bônus de experiência)</a>.</p><p>As etapas acima de 225 não eram jogáveis na beta: estão marcadas «a verificar». Se um vendedor de receitas for da outra facção, use a casa de leilões. Os nomes de itens, PNJs e zonas foram traduzidos e podem diferir um pouco no seu cliente.</p><p>Guia de fãs não oficial, atualizado em 7 de novembro de 2026. World of Warcraft é uma marca da Blizzard Entertainment.</p></footer>
+
+</main>
+<script>
+var CONFIG = {"key": "cuis", "src": {"Naco de Carne de Javali": "farm", "Carne de Coiote": "farm", "Rato Escavador": "farm", "Flanco de Lobo Magro": "farm", "Carne de Lobo Vermelho": "farm", "Rabo-amarelo Pintado Cru": "farm", "Salmão Escamassol Cru": "farm", "Temperos Suaves": "vendor", "Temperos Picantes": "vendor"}, "steps": [{"f": 1, "t": 55, "r": "Carne de Javali Assada", "n": 55, "m": {"Naco de Carne de Javali": 1}, "note": "Javalis em Durotar e Mulgore (Horda), Floresta de Elwynn e Dun Morogh (Aliança)."}, {"f": 55, "t": 90, "r": "Bife de Coiote", "n": 35, "m": {"Carne de Coiote": 1}, "note": "<strong>Aprenda Artífice aos 50</strong> (nível 10), ou ficará travado em 75."}, {"f": 90, "t": 156, "r": "Gumbo de Rato", "n": 81, "m": {"Rato Escavador": 1}, "note": "Receita de missão. <strong>Aprenda Especialista aos 125</strong> (nível 20), ou ficará travado em 150."}, {"f": 156, "t": 185, "r": "Bife de Lobo Magro", "n": 36, "m": {"Flanco de Lobo Magro": 1, "Temperos Suaves": 1}, "note": "Receita por 16p com o Supervendedor 680 (Desolação). A carne cai dos lobos de Desolação e de Eira dos Montes."}, {"f": 185, "t": 209, "r": "Carne de Paleskewer Substanciosa", "n": 25, "m": {"Naco de Carne de Javali": 2, "Temperos Suaves": 1}, "note": "Nova receita de Forever, 20p com Martha Wellsworth (Clearwater Shores)."}, {"f": 209, "t": 225, "r": "Costelas de Lobo Picantes", "n": 17, "m": {"Carne de Lobo Vermelho": 1, "Temperos Picantes": 1}, "note": "Receita por 50p com Vivianna (Feralas) ou o Supervendedor 680 (Desolação). <strong>Aprenda Artesão aos 200</strong> (nível 35)."}, {"f": 225, "t": 250, "r": "Rabo-amarelo Pintado", "n": 25, "m": {"Rabo-amarelo Pintado Cru": 1}, "p": 1, "note": "Receita por 1o 60p com Gikkix (Tanaris). Pesque (ver a <a href=\"peche.html\">página de Pesca</a>) ou compre no leilão."}, {"f": 250, "t": 300, "r": "Salmão Escamassol Escalfado", "n": 51, "m": {"Salmão Escamassol Cru": 1}, "p": 1, "note": "Receita por 2o com Gikkix (Tanaris)."}], "trainMsg": {"comp": "Se ainda não fez, aprenda Artífice (nível 10) com um instrutor de culinária: Zamja em Orgrimmar (57.4, 53.4) ou Cozinheiro Torka em Durotar (51.2, 42.4).", "exp": "Se ainda não fez, aprenda Especialista (nível 20) com um instrutor de culinária.", "art": "Se ainda não fez, aprenda Artesão (nível 35) com um instrutor de culinária."}, "done300": "300 alcançado. Passe ao Kit de Fogueira de Especialista para ter 10 itens de acampamento.", "groupTitles": {"farm": "Para caçar ou pescar", "vendor": "De vendedores", "ah": "Leilão", "craft": "Intermediários"}, "trainMsgA": {"comp": "Se ainda não fez, aprenda Artífice (nível 10) com um instrutor de culinária: Stephen Ryback em Ventobravo (75.4, 37.2), Daryl Riknussun em Altaforja (60.0, 36.8) ou Alegorn em Darnassus (48.4, 21.0).", "exp": "Se ainda não fez, aprenda Especialista (nível 20) com um instrutor de culinária.", "art": "Se ainda não fez, aprenda Artesão (nível 35) com um instrutor de culinária."}};
+</script>
+<script src="../assets/metier.js"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>
