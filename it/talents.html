@@ -52,19 +52,8 @@ h1 { transition: color .2s; }
     <p>Con il bonus eredità «Talentuoso», i punti arrivano fino a 5 livelli prima: segui la colonna Punti invece della colonna Livello.</p>
   </div>
 
-  <nav class="tabs" role="tablist" aria-label="Classe">
-    <button role="tab" id="tab-chaman" aria-selected="false" data-cls="chaman">Sciamano</button>
-    <button role="tab" id="tab-chasseur" aria-selected="true" data-cls="chasseur">Cacciatore</button>
-    <button role="tab" id="tab-demoniste" aria-selected="false" data-cls="demoniste">Stregone</button>
-    <button role="tab" id="tab-druide" aria-selected="false" data-cls="druide">Druido</button>
-    <button role="tab" id="tab-guerrier" aria-selected="false" data-cls="guerrier">Guerriero</button>
-    <button role="tab" id="tab-mage" aria-selected="false" data-cls="mage">Mago</button>
-    <button role="tab" id="tab-paladin" aria-selected="false" data-cls="paladin">Paladino</button>
-    <button role="tab" id="tab-pretre" aria-selected="false" data-cls="pretre">Sacerdote</button>
-    <button role="tab" id="tab-voleur" aria-selected="false" data-cls="voleur">Ladro</button>
-  </nav>
 
-  <div id="content" class="talents" style="display:grid;gap:26px" role="tabpanel"></div>
+  <div id="content" class="talents" style="display:grid;gap:26px"></div>
 
   <footer class="foot" id="foot"></footer>
 </main>
@@ -570,7 +559,6 @@ h1 { transition: color .2s; }
     var c = CLASSES[id];
     document.body.setAttribute("data-cls", id);
     document.getElementById("title").textContent = "Talenti per salire ·" + c.name;
-    document.querySelectorAll(".tabs button").forEach(function (b) { b.setAttribute("aria-selected", b.dataset.cls === id ? "true" : "false"); });
     var h = "";
     h += '<section class="stitched verdict"><span class="tag" style="margin:0">Specializzazione consigliata</span><p class="spec">' + c.spec + "</p><p>" + c.verdict + "</p>" +
       '<div class="timeline" aria-label="Piano per salire">' + c.timeline.map(function (t, i) {
@@ -597,9 +585,6 @@ h1 { transition: color .2s; }
   }
 
   function fromHash() { var h = (location.hash || "").slice(1); return CLASSES[h] ? h : "chasseur"; }
-  document.querySelectorAll(".tabs button").forEach(function (b) {
-    b.addEventListener("click", function () { if (location.hash !== "#" + b.dataset.cls) location.hash = b.dataset.cls; else render(b.dataset.cls); });
-  });
   window.addEventListener("hashchange", function () { render(fromHash()); });
   render(fromHash());
 })();

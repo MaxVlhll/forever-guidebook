@@ -52,19 +52,8 @@ h1 { transition: color .2s; }
     <p>With the "Talented" legacy bonus, your points arrive up to 5 levels earlier: follow the Points column instead of the Level column.</p>
   </div>
 
-  <nav class="tabs" role="tablist" aria-label="Class">
-    <button role="tab" id="tab-chaman" aria-selected="false" data-cls="chaman">Shaman</button>
-    <button role="tab" id="tab-chasseur" aria-selected="true" data-cls="chasseur">Hunter</button>
-    <button role="tab" id="tab-demoniste" aria-selected="false" data-cls="demoniste">Warlock</button>
-    <button role="tab" id="tab-druide" aria-selected="false" data-cls="druide">Druid</button>
-    <button role="tab" id="tab-guerrier" aria-selected="false" data-cls="guerrier">Warrior</button>
-    <button role="tab" id="tab-mage" aria-selected="false" data-cls="mage">Mage</button>
-    <button role="tab" id="tab-paladin" aria-selected="false" data-cls="paladin">Paladin</button>
-    <button role="tab" id="tab-pretre" aria-selected="false" data-cls="pretre">Priest</button>
-    <button role="tab" id="tab-voleur" aria-selected="false" data-cls="voleur">Rogue</button>
-  </nav>
 
-  <div id="content" class="talents" style="display:grid;gap:26px" role="tabpanel"></div>
+  <div id="content" class="talents" style="display:grid;gap:26px"></div>
 
   <footer class="foot" id="foot"></footer>
 </main>
@@ -570,7 +559,6 @@ h1 { transition: color .2s; }
     var c = CLASSES[id];
     document.body.setAttribute("data-cls", id);
     document.getElementById("title").textContent = "Levelling talents · " + c.name;
-    document.querySelectorAll(".tabs button").forEach(function (b) { b.setAttribute("aria-selected", b.dataset.cls === id ? "true" : "false"); });
     var h = "";
     h += '<section class="stitched verdict"><span class="tag" style="margin:0">Recommended spec</span><p class="spec">' + c.spec + "</p><p>" + c.verdict + "</p>" +
       '<div class="timeline" aria-label="Levelling plan">' + c.timeline.map(function (t, i) {
@@ -597,9 +585,6 @@ h1 { transition: color .2s; }
   }
 
   function fromHash() { var h = (location.hash || "").slice(1); return CLASSES[h] ? h : "chasseur"; }
-  document.querySelectorAll(".tabs button").forEach(function (b) {
-    b.addEventListener("click", function () { if (location.hash !== "#" + b.dataset.cls) location.hash = b.dataset.cls; else render(b.dataset.cls); });
-  });
   window.addEventListener("hashchange", function () { render(fromHash()); });
   render(fromHash());
 })();

@@ -52,19 +52,8 @@ h1 { transition: color .2s; }
     <p>Mit dem Vermächtnisbonus „Talentiert“ kommen deine Punkte bis zu 5 Stufen früher: Folge der Spalte Punkte statt der Spalte Stufe.</p>
   </div>
 
-  <nav class="tabs" role="tablist" aria-label="Klasse">
-    <button role="tab" id="tab-chaman" aria-selected="false" data-cls="chaman">Schamane</button>
-    <button role="tab" id="tab-chasseur" aria-selected="true" data-cls="chasseur">Jäger</button>
-    <button role="tab" id="tab-demoniste" aria-selected="false" data-cls="demoniste">Hexenmeister</button>
-    <button role="tab" id="tab-druide" aria-selected="false" data-cls="druide">Druide</button>
-    <button role="tab" id="tab-guerrier" aria-selected="false" data-cls="guerrier">Krieger</button>
-    <button role="tab" id="tab-mage" aria-selected="false" data-cls="mage">Magier</button>
-    <button role="tab" id="tab-paladin" aria-selected="false" data-cls="paladin">Paladin</button>
-    <button role="tab" id="tab-pretre" aria-selected="false" data-cls="pretre">Priester</button>
-    <button role="tab" id="tab-voleur" aria-selected="false" data-cls="voleur">Schurke</button>
-  </nav>
 
-  <div id="content" class="talents" style="display:grid;gap:26px" role="tabpanel"></div>
+  <div id="content" class="talents" style="display:grid;gap:26px"></div>
 
   <footer class="foot" id="foot"></footer>
 </main>
@@ -570,7 +559,6 @@ h1 { transition: color .2s; }
     var c = CLASSES[id];
     document.body.setAttribute("data-cls", id);
     document.getElementById("title").textContent = "Leveling-Talente · " + c.name;
-    document.querySelectorAll(".tabs button").forEach(function (b) { b.setAttribute("aria-selected", b.dataset.cls === id ? "true" : "false"); });
     var h = "";
     h += '<section class="stitched verdict"><span class="tag" style="margin:0">Empfohlene Spezialisierung</span><p class="spec">' + c.spec + "</p><p>" + c.verdict + "</p>" +
       '<div class="timeline" aria-label="Leveling-Plan">' + c.timeline.map(function (t, i) {
@@ -597,9 +585,6 @@ h1 { transition: color .2s; }
   }
 
   function fromHash() { var h = (location.hash || "").slice(1); return CLASSES[h] ? h : "chasseur"; }
-  document.querySelectorAll(".tabs button").forEach(function (b) {
-    b.addEventListener("click", function () { if (location.hash !== "#" + b.dataset.cls) location.hash = b.dataset.cls; else render(b.dataset.cls); });
-  });
   window.addEventListener("hashchange", function () { render(fromHash()); });
   render(fromHash());
 })();
