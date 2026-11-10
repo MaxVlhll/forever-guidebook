@@ -44,11 +44,11 @@ h1 { transition: color .2s; }
   <header>
     <span class="tag">WoW Forever · Levelling talents</span>
     <h1 id="title">Levelling talents</h1>
-    <p class="lede">Levelling builds 10 → 60 for all nine classes, Alliance and Horde, based on the latest guides (up to 7 November). Each talent shows its in-game icon so you can spot it fast in your tree. What was played in the beta is marked <span class="badge t">tested</span>, the rest <span class="badge p">projected</span>.</p>
+    <p class="lede">Levelling builds 10 → 60 for all nine classes, Alliance and Horde, based on the latest guides (up to 10 November). Each talent shows its in-game icon so you can spot it fast in your tree. What was played in the beta is marked <span class="badge t">tested</span>, the rest <span class="badge p">projected</span>.</p>
   </header>
 
   <div class="alert" role="note">
-    <p><strong>Read this first.</strong> The beta stopped at level 30: nobody has played talents 31 to 60 yet, Blizzard moved talents again on 2 November and announced new class tuning for 10 November. If a talent isn't clickable in your tree yet, take the next one on the list and come back to it later.</p>
+    <p><strong>Read this first.</strong> The beta stopped at level 30: nobody has played talents 31 to 60 yet, Blizzard moved talents again on 2 November and the class tuning announced for 10 November is not in the official notes yet. The 9 November hotfixes are included; anything only seen in the 10 November client is marked “not confirmed” in the tips. If a talent isn't clickable in your tree yet, take the next one on the list and come back to it later.</p>
     <p>With the "Talented" legacy bonus, your points arrive up to 5 levels earlier: follow the Points column instead of the Level column.</p>
   </div>
 
@@ -69,37 +69,47 @@ h1 { transition: color .2s; }
       timeline: [["10–24", "Thunder and Ghost Wolf", "#9cc8ff"], ["25–39", "Stormstrike", "#4d9bff"], ["40–60", "Dual spec", "#1f5fb8"]],
       phases: [
         { title: "Levels 10 to 30", range: "21 points", st: "t", kind: "order", start: 1,
-          note: "Order from Mobalytics, confirmed by Icy Veins. Method puts Improved Ghost Wolf right after Stormstrike, but it's better to have it before Ghost Wolf at level 20.",
+          note: "Order from the Method guide (updated between 6 and 10 November), checked point by point against the in-game talent tree: every talent can be taken at the level shown.",
           rows: [
-            ["Thundering Strikes", 5, "Enhancement", "+ crit, the core of your melee damage."],
-            ["Mental Dexterity", 3, "Enhancement", ""],
-            ["Improved Ghost Wolf", 2, "Enhancement", "Instant Ghost Wolf from 20: +40% speed with no cast time."],
-            ["Shamanistic Focus", 1, "Enhancement", "Cheaper shocks after a crit."],
-            ["Elemental Weapons", 3, "Enhancement", "Stronger Rockbiter then Windfury Weapon."],
-            ["Ancestral Knowledge", 1, "Enhancement", "Icy Veins places it explicitly at 24."],
-            ["Stormstrike", 1, "Enhancement", "Level 25: your main attack."],
-            ["Flurry", 4, "Enhancement", "Attack speed after a crit."],
-            ["Improved Stormstrike", 1, "Enhancement", "21st point at level 30."]
+            ["Thundering Strikes", 5, "Enhancement", "Improves your chance to get a critical strike with all spells and attacks by 5%.", 5],
+            ["Mental Dexterity", 3, "Enhancement", "Increases your Attack Power by an amount equal to 150% of your Intellect.", 3],
+            ["Ancestral Knowledge", 2, "Enhancement", "Increases your Intellect by 4%.", 2],
+            ["Shamanistic Focus", 1, "Enhancement", "Reduces the mana cost of your Shock and Lightning Shield spells by 45%.", 1],
+            ["Elemental Weapons", 3, "Enhancement", "Increases the melee attack power bonus of your Rockbiter Weapon by 20%, your Windfury Weapon effect by 40% and increases the damage caused by your Flametongue Weapon and Frostbrand Weapon by…", 3],
+            ["Ancestral Knowledge", 1, "Enhancement", "Increases your Intellect by 6%.", 3],
+            ["Stormstrike", 1, "Enhancement", "Instantly strike for 150% weapon damage and increase the damage you deal to the target with your next Lightning Bolt, Chain Lightning, or Earth Shock spell by 20% for 12 sec.", 1],
+            ["Improved Ghost Wolf", 2, "Enhancement", "Reduces the cast time of your Ghost Wolf spell by 3.0 sec, and Ghost Wolf may be used indoors.", 2],
+            ["Flurry", 2, "Enhancement", "Increases your attack speed by 12% for your next 3 swings after dealing a melee critical strike.", 2],
+            ["Improved Stormstrike", 1, "Enhancement", "When you Stormstrike, you have a 50% chance to gain 50% mana regeneration while casting spells for 15 sec, and Stormstrike's cooldown has a 50% chance to reset each time you Dodge or Parry.", 1]
           ] },
-        { title: "Levels 31 to 40", range: "10 points", st: "p", kind: "list",
-          note: "Icy Veins and Mobalytics variant, not played yet. The 31st Enhancement point comes at level 40, with dual spec.",
+        { title: "Levels 31 to 40", range: "10 points", st: "p", kind: "order", start: 22,
+          note: "Order from the Method guide (updated between 6 and 10 November), checked point by point against the in-game talent tree: every talent can be taken at the level shown.",
           rows: [
-            ["Improved Stormstrike", "2/2", "Enhancement", ""],
-            ["Flurry", "5/5", "Enhancement", ""],
-            ["Spirit Weapons", "1/1", "Enhancement", "Less threat in groups."],
-            ["Mental Quickness", "2/2", "Enhancement", ""],
-            ["Enhancement capstone talent", "1/1", "Enhancement", "Level 40. Icy Veins skips Maelstrom Weapon on purpose: too weak below 5 ranks."]
+            ["Improved Stormstrike", 1, "Enhancement", "When you Stormstrike, you have a 100% chance to gain 50% mana regeneration while casting spells for 15 sec, and Stormstrike's cooldown has a 100% chance to reset each time you Dodge or Parry…", 2],
+            ["Mental Quickness", 2, "Enhancement", "Increases your spell damage and healing by up to 30% of your Intellect.", 2],
+            ["Flurry", 1, "Enhancement", "Increases your attack speed by 18% for your next 3 swings after dealing a melee critical strike.", 3],
+            ["Maelstrom Weapon", 5, "Enhancement", "When you deal damage with a melee attack, you have a chance to reduce the cast time and Mana cost of your next Lightning Bolt spell by 20%. Stacks up to 5 times. Lasts 30 sec.", 5],
+            ["Rage of the Farseer", 1, "Enhancement", "Increases your attack speed by 30% for 25 sec.", 1]
           ] },
-        { title: "Levels 41 to 60", range: "20 points", st: "p", kind: "list",
-          note: "No guide has published these 20 points yet. For dungeons, Restoration as second spec: Chain Heal and Riptide arrive at 40.",
+        { title: "Levels 41 to 60", range: "20 points", st: "p", kind: "order", start: 32,
+          note: "Order from the Method guide (updated between 6 and 10 November), checked point by point against the in-game talent tree: every talent can be taken at the level shown.",
           rows: [
-            ["Rest of the Enhancement tree", "per tree", "Enhancement", "Check in game what the patches left."],
-            ["Ancestral Knowledge", "max", "Enhancement", "More mana, so fewer breaks."]
+            ["Flurry", 2, "Enhancement", "Increases your attack speed by 30% for your next 3 swings after dealing a melee critical strike.", 5],
+            ["Spirit Weapons", 1, "Enhancement", "Gives a chance to parry enemy melee attacks, reduces all threat generated by your attacks by 30% while Rockbiter Weapon is not active, and increases all threat generated by 30% while Rockbit…", 1],
+            ["Concussion", 5, "Elemental", "Increases the damage done by your Lightning Bolt, Chain Lightning, and Earth Shock spells by 5%.", 5],
+            ["Elemental Devastation", 3, "Elemental", "Your Critical Strikes with direct damage spells increase your chance to get a Critical Strike with melee attacks by 9% for 10 sec.", 3],
+            ["Convection", 2, "Elemental", "Reduces the mana cost of your Shock, Lightning Bolt, and Chain Lightning spells by 4%.", 2],
+            ["Elemental Focus", 1, "Elemental", "Gives you a 10% chance to enter a Clearcasting state after casting any Fire, Frost, or Nature damage spell. The Clearcasting state reduces the mana cost of your next damage spell by 100%.", 1],
+            ["Convection", 3, "Elemental", "Reduces the mana cost of your Shock, Lightning Bolt, and Chain Lightning spells by 10%.", 5],
+            ["Reverberation", 1, "Elemental", "Reduces the cooldown of your Shock spells by 0.2 sec.", 1],
+            ["Earthbound", 1, "Elemental", "Your Earthbind Totem Immobilizes nearby targets for 5 sec when cast.", 1],
+            ["Trial by Fire", 1, "Elemental", "Increases the damage done by your Fire Nova spell by 10% and reduces its cooldown by 2 sec, and increases the duration of your Magma Totem by 10 sec.", 1]
           ] }
       ],
       keylevels: [["4", "Earth Shock, Earth totem quest"], ["10", "Flame Shock, Searing Totem, Fire totem quest"], ["12", "Fire Nova (new)"], ["20", "Ghost Wolf, Frost Shock, Call of the Elements, Water totem quest"], ["25", "Stormstrike (talent)"], ["26", "Magma Totem, Mana Spring Totem"], ["30", "Windfury Weapon, Reincarnation, Astral Recall, Air totem quest"], ["32", "Chain Lightning, Windfury Totem"], ["40", "Mail, Chain Heal, Rage of the Seer, dual spec"]],
       specs: [["Enhancement", "main", "The fastest according to every guide. Its only limit is mana, which drains as fast as the mobs die.", [["1–9", "Rockbiter Weapon and Lightning Shield. Lightning Bolt to pull, Earth Shock whenever it's up, then melee."], ["10–24", "Flame Shock, Searing Totem, melee, Frost Shock or Earth Shock when ready. Fire Nova (12) on packs. Icy Veins suggests healing talents (Water Shield, Mindfulness) until 25 for mana, then a respec for Stormstrike."], ["25–29", "Stormstrike on every cooldown, then spend the 20% bonus with a Lightning Bolt or a shock within 12 seconds. Magma Totem and Mana Spring Totem from 26."], ["30–39", "Slow two-hander with Windfury Weapon. Chain Lightning and Windfury Totem on packs from 32."], ["40–60", "Stormstrike first. Max-rank Lightning Bolt at 5 Maelstrom Weapon stacks, Rage of the Farseer on dangerous mobs. Restoration as second spec for dungeons. (untested)"]]], ["Elemental", "niche", "Since 15 October, Lava Burst is a level 30 talent and Chain Lightning costs about 35% less. The gap is smaller, but mana stays tighter than in Enhancement: pick it if you want to play at range.", [["1–9", "Lightning Shield, Lightning Bolt to pull, Earth Shock, Lightning Bolt until it dies."], ["10–29", "Searing Totem (Magma Totem on packs from 26) and Mana Spring Totem. Flame Shock, then Lightning Bolt as filler."], ["30–39", "Lava Burst to pull, Flame Shock right after, Lava Burst on every cooldown, Lightning Bolt in between. Chain Lightning on packs from 32."], ["40–60", "Lightning Mastery (talent, 40) on elites and big packs. Chain Lightning and Fire Nova from 3 mobs, Flame Shock always up, Lightning Bolt as filler. (untested)"]]], ["Restoration", "ko", "Warcraft Tavern calls it sub-optimal solo: it quests like an Elemental with no damage talents. Take it as your second spec at 40.", [["1–19", "Same as Elemental: Lightning Bolt, Flame Shock, Searing Totem."], ["20–39", "Water Shield instead of Lightning Shield. In groups: Healing Wave, Lesser Healing Wave (20), Healing Stream Totem or Mana Spring Totem, Mana Tide Totem (talent, 25), Nature's Swiftness (30)."], ["40–60", "Chain Heal and Riptide arrive: this is where the spec gets really good in dungeons. (untested)"]]]],
       tips: [
+        "Blizzard has announced that Strength will become Enhancement's best stat, ahead of Intellect and spell power. It is not in the official notes as of 10 November: keep your Strength gear.",
         "Stormstrike now costs 8% of base mana (instead of a flat 125 until 15 October).",
         "Fire Nova (level 12) deals damage around your fire totem, but the threat lands on you, not the totem.",
         "Two-handed axes and maces are baseline: no talent needed to wear them.",
@@ -118,36 +128,42 @@ h1 { transition: color .2s; }
       timeline: [["10–19", "Bear", "#ffc48a"], ["20–39", "Cat", "#ff8a2a"], ["40–60", "Berserk", "#a84f0a"]],
       phases: [
         { title: "Levels 10 to 30", range: "21 points", st: "t", kind: "order", start: 1,
-          note: "Order from WoW4EverNEWS (7 October). Wowforeverguides takes Feral Charge at 20 and Predatory Strikes instead of Shredding Attacks: both work.",
+          note: "Order from the Method guide (updated between 6 and 10 November), checked point by point against the in-game talent tree: every talent can be taken at the level shown.",
           rows: [
-            ["Ferocity", 5, "Feral", "Cheaper Maul, Claw and Rake."],
-            ["Feral Swiftness", 2, "Feral", "Cat speed, now indoors too."],
-            ["Feral Instinct", 3, "Feral", "Bear threat, stronger Swipe."],
-            ["Savage Fury", 2, "Feral", ""],
-            ["Shredding Attacks", 3, "Feral", "Cheaper Shred."],
-            ["Shifting Power", 1, "Feral", "Level 25: 40 energy for mana, replacing powershifting."],
-            ["Primal Bite", 1, "Feral", ""],
-            ["Sharpened Claws", 2, "Feral", "+ crit in animal form."],
-            ["Blood Frenzy", 1, "Feral", ""],
-            ["Leader of the Pack", 1, "Feral", "21st point: melee and ranged crit for the whole party."]
+            ["Ferocity", 5, "Feral", "Reduces the cost of your Maul, Primal Bite, Swipe, Claw, and Rake abilities by 5 Rage or Energy.", 5],
+            ["Furor", 3, "Feral", "Gives you a 60% chance to gain 10 Rage when shapeshifting into Bear Form or Dire Bear Form.", 3],
+            ["Feral Swiftness", 2, "Feral", "Increases your movement speed while in Cat Form by 30%, and increases your chance to Dodge by 4%.", 2],
+            ["Savage Fury", 2, "Feral", "Increases the damage caused by your Claw, Rake, Shred, Maul, and Swipe abilities by 10%.", 2],
+            ["Feral Charge", 1, "Feral", "Requires Bear Form, Dire Bear Form Charge an enemy, immobilizing them and interrupting any spell they are casting for 4 sec.", 1],
+            ["Sharpened Claws", 2, "Feral", "Increases your critical strike chance while in Bear Form, Dire Bear Form, or Cat Form by 6%.", 2],
+            ["Shredding Attacks", 3, "Feral", "Reduces the Energy cost of your Shred ability by 18 and reduces the Rage cost of your Lacerate ability by 3.", 3],
+            ["Predatory Strikes", 2, "Feral", "Increases your melee Attack Power in Cat Form, Bear Form, and Dire Bear Form by 100% of your level.", 2],
+            ["Leader of the Pack", 1, "Feral", "While in Cat Form, Bear Form, or Dire Bear Form, the Leader of the Pack increases the Critical Strike chance of all party or raid members within 45 yards by 3%.", 1]
           ] },
-        { title: "Levels 31 to 60", range: "30 points", st: "p", kind: "list",
-          note: "Projection from WoW Forever Tier List, not played yet. Berserk is the tree capstone at level 40.",
+        { title: "Levels 31 to 60", range: "30 points", st: "p", kind: "order", start: 22,
+          note: "Order from the Method guide (updated between 6 and 10 November), checked point by point against the in-game talent tree: every talent can be taken at the level shown.",
           rows: [
-            ["Natural Instinct", "2/2", "Feral", "Former name: Predatory Instincts."],
-            ["Rend and Tear", "4/4", "Feral", ""],
-            ["Berserk", "1/1", "Feral", "Level 40, along with Dire Bear Form."],
-            ["Heart of the Wild", "5/5", "Feral", ""],
-            ["Predatory Strikes", "3/3", "Feral", "If you followed the WoW4EverNEWS order."],
-            ["Thick Hide", "3/3", "Feral", ""],
-            ["Brutal Impact", "2/2", "Feral", ""],
-            ["Improved Shifting Power, then Natural Reaction", "the rest", "Feral", ""]
+            ["Predatory Strikes", 1, "Feral", "Increases your melee Attack Power in Cat Form, Bear Form, and Dire Bear Form by 150% of your level.", 3],
+            ["Natural Instinct", 2, "Feral", "Increases the critical strike damage bonus of your melee abilities by 20% and increases your spell healing by 25% of your Intellect.", 2],
+            ["Blood Frenzy", 2, "Feral", "Gives you a 100% chance to gain an additional 5 Rage any time you get a critical strike while in Bear Form or Dire Bear Form.", 2],
+            ["Rend and Tear", 3, "Feral", "Increases damage done by your melee abilities on Bleeding targets by 9%.", 3],
+            ["Predatory Discipline", 1, "Feral", "Your Ferocious Bite ability no longer converts extra Energy into damage, but still deals extra damage based on your excess Energy.", 1],
+            ["Shifting Power", 1, "Feral", "Instantly convert 0 Mana into 40 Energy. Shifting Power's cost is reduced by effects that reduce the cost of Shapeshifting.", 1],
+            ["Primal Bite", 1, "Feral", "Bite the target, dealing 100% normal damage plus 42 and generating a high amount of threat.", 1],
+            ["Rend and Tear", 2, "Feral", "Increases damage done by your melee abilities on Bleeding targets by 15%.", 5],
+            ["Lacerate", 1, "Feral", "Lacerates the enemy target, making them bleed for 20 damage over 15 sec plus 10% weapon damage per existing application of Lacerate on the target. Causes a high amount of threat.", 1],
+            ["Heart of the Wild", 5, "Restoration", "Increases your Intellect by 10%. In addition, while in Bear Form or Dire Bear Form your Stamina is increased by 20% and while in Cat Form your Strength is increased by 10%.", 5],
+            ["Furor", 2, "Feral", "Gives you a 100% chance to gain 10 Rage when shapeshifting into Bear Form or Dire Bear Form.", 5],
+            ["Genesis", 5, "Balance", "Increases the periodic damage and healing done by your spells and abilities by 10%.", 5],
+            ["Nature's Majesty", 2, "Balance", "Increases your critical strike chance with spells and melee attacks by 4%.", 2],
+            ["Nature's Reach", 2, "Balance", "Increases the range of your offensive Balance spells by 20% and improves your chance to hit by 4%.", 2]
           ] }
       ],
       keylevels: [["10", "Bear Form (class quest), Entangling Roots, Teleport: Moonglade"], ["12", "Enrage, Revive (out of combat, new)"], ["14", "Bash, Cure Poison"], ["16", "Swipe, Aquatic Form"], ["20", "Cat Form (quest), Claw, Rip, Prowl, Shred, Rebirth"], ["24", "Rake"], ["26", "Dash"], ["30", "Travel Form, Leader of the Pack"], ["32", "Ferocious Bite, Ravage"], ["36", "Frenzied Regeneration, Pounce"], ["40", "Dire Bear Form, Berserk, mount, dual spec"]],
       specs: [["Feral", "main", "Every guide recommends it: bear from 10 to 20, cat after that, and bear as a fallback when a second mob shows up.", [["1–9", "Thorns, Wrath to pull, Moonfire, Wrath until it dies. Heal between pulls."], ["10–19 (bear)", "Two Wraths and a Moonfire on approach, then Bear Form: Enrage, Demoralizing Roar, Maul. Swipe on packs."], ["20–31 (cat)", "Prowl, Rake, Claw (or Shred from behind) to 4-5 points, Rip. Ferocious Bite only arrives at 32."], ["32–39", "Ravage (Shred before you have it) from Prowl, Rake if it isn't up, Claw to 4-5 points, Rip if the mob will live a while, otherwise Ferocious Bite. Against several mobs, go bear: cat has no area damage."], ["40–60", "Shifting Power (40) below 50 energy. In Dire Bear Form: Primal Bite on every cooldown, Lacerate as filler, Swipe on packs. (untested)"]]], ["Balance", "niche", "It works, but it's slow until Moonkin Form at level 40: long casts and no instant tools before that.", [["1–9", "Wrath to pull, Moonfire, Wrath until it dies."], ["10–19", "Entangling Roots, then Wrath at range. The Overgrowth talent roots up to 3 mobs."], ["20–29", "Moonfire to open in crowded areas, Wrath otherwise. Insect Swarm (talent, 25), then Wrath as filler. Rejuvenation on yourself before the pull."], ["30–39", "Eclipse build: 2 Starfires for 1 Wrath, Moonfire and Insect Swarm always up."], ["40–60", "Moonkin Form, Hurricane on packs, Innervate when mana runs low. (untested)"]]], ["Restoration", "ko", "Good for healing dungeons, but slow to kill solo. Keep it as a second spec.", [["1–19", "Wrath, Moonfire, Entangling Roots. Rejuvenation and Healing Touch, Regrowth from 12."], ["20–29", "In groups: Rejuvenation on the tank, Regrowth, Bloom (talent, 20), Swiftmend from 25."], ["30–39", "Nature's Swiftness for an instant heal, Tranquility in groups (5 min cooldown)."], ["40–60", "Wild Growth (talent) on the group. (untested)"]]]],
       tips: [
-        "No more powershifting: changing form costs 55% of base mana. Shifting Power (talent at 25) replaces it.",
+        "9 November hotfix: Natural Instinct now applies to Lacerate and Pounce, and Feral Charge in cat form puts you in combat right away.",
+        "No more powershifting: changing form costs 55% of base mana. Shifting Power (talent at 40) replaces it.",
         "In cat form, auto-attack swings every second, in bear every 2.5 seconds, always using your weapon damage.",
         "Combo points no longer vanish when you switch targets.",
         "Faerie Fire is free in animal form and generates threat in bear since 15 October.",
@@ -163,34 +179,47 @@ h1 { transition: color .2s; }
       verdict: "Warrior is still the most demanding class to level in Forever (C in the tier list). Method recommends Protection (one-hander and shield) to level solo, and two-handed Arms if you level in a group. Your weapon does almost all your damage: upgrade it whenever you can.",
       timeline: [["10–19", "Shield Specialization", "#e8cfae"], ["20–39", "Vanguard", "#c69b6d"], ["40–60", "Shield Slam", "#7d5a33"]],
       phases: [
-        { title: "Protection, levels 10 to 30 (solo)", range: "21 points", st: "t", kind: "list",
-          note: "Order from Method (4 November), filled in with Warcraft Tavern's checkpoints at 20 and 30. Method doesn't give every rank.",
+        { title: "Protection, levels 10 to 30 (solo)", range: "21 points", st: "t", kind: "order", start: 1,
+          note: "Order from the Method guide (updated between 6 and 10 November), checked point by point against the in-game talent tree: every talent can be taken at the level shown.",
           rows: [
-            ["Shield Specialization", "max", "Protection", "Rage from blocking changes everything for your rage economy."],
-            ["Improved Thunder Clap", "per tree", "Protection", ""],
-            ["Improved Bloodrage", "2", "Protection", ""],
-            ["Master of Defense", "max", "Protection", "Level 20."],
-            ["Improved Revenge", "per tree", "Protection", ""],
-            ["Vanguard", "1", "Protection", "Stay in Defensive Stance: Charge becomes usable there."],
-            ["Defiance", "max", "Protection", "Before 30."],
-            ["Improved Sunder Armor, Bastion, Focused Rage", "the rest", "Protection", "Or Concussion Blow instead of Bastion."]
+            ["Shield Specialization", 5, "Protection", "Increases your chance to Block attacks with your shield by 5% and grants you a 100% chance to generate 5 Rage when you Block.", 5],
+            ["Improved Revenge", 3, "Protection", "Increases damage dealt by your Revenge ability by 60%.", 3],
+            ["Improved Thunder Clap", 2, "Protection", "Reduces the Rage cost of your Thunder Clap ability by 4.", 2],
+            ["Master of Defense", 2, "Protection", "Grants you a 100% chance to generate 5 Rage when you Dodge or Parry while a shield is equipped.", 2],
+            ["Last Stand", 1, "Protection", "When activated, this ability temporarily grants you 30% of your maximum health for 20 sec. After the effect expires, the health is lost.", 1],
+            ["Improved Thunder Clap", 1, "Protection", "Reduces the Rage cost of your Thunder Clap ability by 6.", 3],
+            ["Improved Bloodrage", 1, "Protection", "Increases all the Rage generated by your Bloodrage ability by 25%.", 1],
+            ["Vanguard", 1, "Protection", "Your Charge ability is now usable while in Defensive Stance.", 1],
+            ["Improved Bloodrage", 1, "Protection", "Increases all the Rage generated by your Bloodrage ability by 50%.", 2],
+            ["Anticipation", 3, "Protection", "Increases your Defense Skill by 12.", 3],
+            ["Concussion Blow", 1, "Protection", "Stuns the target for 5 sec.", 1]
           ] },
-        { title: "Arms, levels 10 to 30 (group)", range: "21 points", st: "t", kind: "list",
-          note: "Method starts with Improved Rend. The tier list summary names Cruelty (Fury) at level 10: +5% crit is the best first point. Warcraft Tavern checkpoints: 11/0/0 at 20, 21/0/0 at 30.",
+        { title: "Arms, levels 10 to 30 (group)", range: "21 points", st: "t", kind: "order", start: 1,
+          note: "Order from the Method guide (updated between 6 and 10 November), checked point by point against the in-game talent tree: every talent can be taken at the level shown.",
           rows: [
-            ["Improved Rend", "max", "Arms", "Rend scales with attack power: heavily buffed in Forever."],
-            ["Deep Wounds", "max", "Arms", ""],
-            ["Improved Heroic Strike, Improved Charge, Improved Overpower", "per tree", "Arms", "Improved Charge gives 6 extra rage on the opener."],
-            ["Impale", "max", "Arms", ""],
-            ["Two-Handed Weapon Specialization", "max", "Arms", ""],
-            ["Sweeping Strikes", "1", "Arms", "Level 30."],
-            ["Weaponmaster", "per tree", "Arms", "No more respec needed to change weapon type."]
+            ["Improved Rend", 3, "Arms", "Increases the Bleed damage done by your Rend ability by 35%.", 3],
+            ["Deflection", 2, "Arms", "Increases your Parry chance by 2%.", 2],
+            ["Improved Overpower", 2, "Arms", "Increases the critical strike chance of your Overpower ability by 50%.", 2],
+            ["Improved Tactical Mastery", 3, "Arms", "Tactical Mastery lets you retain up to an additional 15 Rage when you change stances.", 3],
+            ["Anger Management", 1, "Arms", "Generates 1 Rage every 3 sec while in combat, and reduces Rage loss while out of combat by 30%.", 1],
+            ["Deep Wounds", 3, "Arms", "Your critical strikes cause your opponent to Bleed, dealing 60% of your melee weapon's average damage over 12 sec.", 3],
+            ["Improved Charge", 1, "Arms", "Increases the Rage generated by your Charge ability by 3.", 1],
+            ["Two-Handed Weapon Specialization", 3, "Arms", "Increases the damage you deal with two-handed melee weapons by 6%.", 3],
+            ["Spearing Strike", 1, "Arms", "A brutal attack that deals 75% weapon damage. Deals an additional 75% weapon damage against Giants, Dragonkin, and mounted targets. Mounted targets are dismounted.", 1],
+            ["Improved Charge", 1, "Arms", "Increases the Rage generated by your Charge ability by 6.", 2],
+            ["Sweeping Strikes", 1, "Arms", "Your next 5 melee attacks strike an additional nearby opponent.", 1]
           ] },
-        { title: "Levels 31 to 60", range: "30 points", st: "p", kind: "list",
-          note: "No guide has published the rest. Mortal Strike, Bloodthirst and Shield Slam are learned from the trainer at 40, with dual spec.",
+        { title: "Levels 31 to 60", range: "30 points", st: "p", kind: "order", start: 22,
+          note: "Order from the Method guide (updated between 6 and 10 November), checked point by point against the in-game talent tree: every talent can be taken at the level shown.",
           rows: [
-            ["Capstone talent of your tree", "1/1", "Arms or Protection", "Level 40."],
-            ["Unbridled Wrath, Enrage", "per tree", "Fury", "Method lists them for rage in Arms."]
+            ["Focused Rage", 3, "Protection", "Reduces the Rage cost of your offensive abilities by 3.", 3],
+            ["Anticipation", 1, "Protection", "Increases your Defense Skill by 16.", 4],
+            ["Bastion", 5, "Protection", "Increases all damage you deal by 10% while a shield is equipped.", 5],
+            ["Shield Slam", 1, "Protection", "Slam the target with your shield, causing 421 to 439 damage, increased by your Block Value, and has a 50% chance of dispelling 1 magic effect on the target.", 1],
+            ["Cruelty", 5, "Fury", "Improves your chance to get a critical strike with melee attacks by 5%.", 5],
+            ["Unbridled Wrath", 5, "Fury", "Gives you a 60% chance to generate 1 additional Rage when you deal melee damage with a weapon.", 5],
+            ["Enrage", 5, "Fury", "Gives you a 30% chance to deal 10% increased Physical damage for 12 sec after being the victim of any damaging attack.", 5],
+            ["Deflection", 5, "Arms", "Increases your Parry chance by 5%.", 5]
           ] }
       ],
       keylevels: [["4", "Charge, Rend"], ["6", "Thunder Clap"], ["10", "Defensive Stance quest (Sunder Armor, Taunt), Bloodrage"], ["12", "Overpower"], ["14", "Tactical Mastery (now trained), Revenge"], ["16", "Shield Block"], ["20", "Victory Rush (heals 10% of health), Hamstring, Cleave, Retaliation"], ["24", "Execute"], ["28", "Shield Wall (15 min)"], ["30", "Berserker Stance (quest), Intercept, Pummel"], ["36", "Whirlwind"], ["40", "Mortal Strike, Bloodthirst, Shield Slam, dual spec"]],
@@ -199,7 +228,7 @@ h1 { transition: color .2s; }
         "Rage depends on your weapon's speed and type, not its damage: about 5 per dagger hit, 14 to 17 with a two-hander.",
         "Crits now give +100% rage (nothing at all when the beta opened).",
         "Blacksmithing sharpening stones make a big difference at low level: Mining + Blacksmithing is the pair Method recommends.",
-        "Run dungeons for their weapons (Heavy Hammer, Orgrimmar axe…). Dungeon mob experience was raised by 20% on 8 October.",
+        "Run dungeons for their weapons (Heavy Hammer, Orgrimmar axe…). Dungeon mob experience was raised by 20% on 8 October, then by another 50% on 8 November.",
         "Bloodthirst no longer heals. Gore Drinker restores up to 1% health on your next 3 hits after an enrage effect.",
         "The Whirlwind Axe quest (Alterac Mountains) is very hard solo: bring a group."
       ],
@@ -212,28 +241,42 @@ h1 { transition: color .2s; }
       verdict: "Frost is the spec Method and Mobalytics recommend: you freeze, back off, and Ice Lance hits hard on frozen targets. The mage's real brake in Forever is mana: always conjure food and water before heading out.",
       timeline: [["10–19", "Frostbolt", "#b8ecf8"], ["20–39", "Ice Lance", "#3fc7eb"], ["40–60", "Ice Barrier", "#1d7a96"]],
       phases: [
-        { title: "Levels 10 to 30", range: "21 points", st: "t", kind: "lv",
-          note: "Priorities from Method and Mobalytics, combined by the tier list. Method hasn't locked a level 60 build yet.",
+        { title: "Levels 10 to 30", range: "21 points", st: "t", kind: "order", start: 1,
+          note: "Order from the Method guide (updated between 6 and 10 November), checked point by point against the in-game talent tree: every talent can be taken at the level shown.",
           rows: [
-            ["10–14", "Improved Frostbolt", "5/5", "Frost", "Faster Frostbolt."],
-            ["15–19", "Frostbite", "per tree", "Frost", "Or any talent that gets you to 10 points in Frost."],
-            ["20", "Ice Lance", "1/1", "Frost", "+200% damage on a frozen target."],
-            ["21–24", "Elemental Precision", "max", "Frost", "Method takes it first from 20. Improved Blizzard optional."],
-            ["25", "Ice Block", "1/1", "Frost", ""],
-            ["26–29", "Shatter", "max", "Frost", "Or Ice Shards."],
-            ["30", "Fingers of Frost or Cold Snap", "1/1", "Frost", ""]
+            ["Improved Frostbolt", 5, "Frost", "Reduces the casting time of your Frostbolt spell by 0.5 sec.", 5],
+            ["Precision", 3, "Frost", "Improves your chance to hit with all spells by 6%.", 3],
+            ["Frostbite", 2, "Frost", "Gives your Chill effects a 10% chance to Freeze the target for 5 sec.", 2],
+            ["Ice Lance", 1, "Frost", "Deals 28 to 32 Frost damage to an enemy target. Deals 300% increased damage to Frozen targets.", 1],
+            ["Frostbite", 1, "Frost", "Gives your Chill effects a 15% chance to Freeze the target for 5 sec.", 3],
+            ["Ice Shards", 3, "Frost", "Increases the critical strike damage bonus of your Frost spells by 60%.", 3],
+            ["Ice Block", 1, "Frost", "You become encased in a block of ice, protecting you from all physical attacks and spells for 10 sec, but during that time you cannot attack, move, or cast spells.", 1],
+            ["Shatter", 3, "Frost", "Increases the critical strike chance of all your spells against Frozen targets by 50%.", 3],
+            ["Ice Shards", 1, "Frost", "Increases the critical strike damage bonus of your Frost spells by 80%.", 4],
+            ["Fingers of Frost", 1, "Frost", "Gives your Chill effects a 15% chance to grant you the Fingers of Frost effect, which treats your next 1 spell cast as if the target were Frozen. Lasts 15 sec.", 1]
           ] },
-        { title: "Levels 31 to 60", range: "30 points", st: "p", kind: "list",
-          note: "Projection from the talent text, not played yet.",
+        { title: "Levels 31 to 60", range: "30 points", st: "p", kind: "order", start: 22,
+          note: "Order from the Method guide (updated between 6 and 10 November), checked point by point against the in-game talent tree: every talent can be taken at the level shown.",
           rows: [
-            ["Ice Barrier", "1/1", "Frost", "Capstone at level 40, along with Frostfire Bolt and dual spec."],
-            ["Rest of the Frost tree", "the rest", "Frost", "No guide has published the rest."],
-            ["Arcane Meditation", "if you level Arcane", "Arcane", "Keep 50% of your regen while casting."]
+            ["Fingers of Frost", 1, "Frost", "Gives your Chill effects a 15% chance to grant you the Fingers of Frost effect, which treats your next 2 spells cast as if the target were Frozen. Lasts 15 sec.", 2],
+            ["Improved Cone of Cold", 2, "Frost", "Increases the damage dealt by your Cone of Cold spell by 23%.", 2],
+            ["Cold Snap", 1, "Frost", "Finishes the remaining cooldown on all your other Frost spells.", 1],
+            ["Winter's Chill", 5, "Frost", "Gives your Frostbolt and Fingers of Frost empowered Ice Lance spells a 100% chance to apply Winter's Chill, increasing the target's damage taken from your next Cone of Cold by 20% and it gai…", 5],
+            ["Ice Barrier", 1, "Frost", "Shield yourself, absorbing [448 + (Frost spell power * 0.1) * (1)] damage and increasing your Frost damage by 15% for 1 min.", 1],
+            ["Improved Cone of Cold", 1, "Frost", "Increases the damage dealt by your Cone of Cold spell by 35%.", 3],
+            ["Ice Shards", 1, "Frost", "Increases the critical strike damage bonus of your Frost spells by 100%.", 5],
+            ["Improved Channeling", 5, "Arcane", "Gives your Arcane Missiles spell a 100% chance and your Arcane Blast and Arcane Wrath spells a 70% chance to not lose casting time when you take damage.", 5],
+            ["Arcane Concentration", 5, "Arcane", "Gives you a 10% chance of entering a Clearcasting state after any damage spell hits a target. The Clearcasting state reduces the mana cost of your next damage spell by 100%.", 5],
+            ["Missile Barrage", 2, "Arcane", "Gives your Arcane Blast spell a 40% chance, and your Arcane Wrath, Fireball, Frostbolt, and Frostfire Bolt spells a 20% chance to reduce the channeled duration of your next Arcane Missiles s…", 2],
+            ["Arcane Subtlety", 2, "Arcane", "Reduces your target's resistance to all your spells by 15 and reduces the threat caused by your Arcane spells by 30%.", 2],
+            ["Arcane Blast", 1, "Arcane", "Blasts the target with energy, dealing 34 to 38 Arcane damage. Each time you cast Arcane Blast, you gain 12% of your Intellect as Spell Damage and the mana cost of Arcane Blast is increased…", 1],
+            ["Arcane Meditation", 3, "Arcane", "Allows 50% of your Mana regeneration to continue while casting.", 3]
           ] }
       ],
       keylevels: [["4", "Frostbolt, Conjure Water"], ["8", "Polymorph, Arcane Missiles"], ["10", "Frost Nova"], ["14", "Arcane Explosion"], ["16", "Fire Blast"], ["20", "Ice Lance, Blizzard, Blink, Evocation, Orgrimmar and Undercity teleports"], ["24", "Counterspell, Frost Blast (new)"], ["25", "Ice Block"], ["26", "Cone of Cold"], ["28", "Ice Lance rank 2: train it right away"], ["30", "Ice Armor, Thunder Bluff teleport"], ["40", "Frostfire Bolt, Ice Barrier, dual spec"]],
       specs: [["Frost", "main", "Frost Nova, slows and Ice Lance keep you alive. The weak point is mana, very expensive from 30.", [["1–9", "Fireball, then Frostbolt (4). Polymorph and Arcane Missiles at 8."], ["10–19", "Frostbolt at max range, a second one while it walks in. In melee: Frost Nova and back off. On 2 mobs, Polymorph the second. Icy Veins takes Missile Barrage (Arcane, first row) first for mana: Arcane Missiles on every proc."], ["20–29", "Same opener, then Ice Lance on the frozen target or on a Fingers of Frost proc. Frost Blast (24) to slow, Cone of Cold (26). Ice Lance rank 2 at 28."], ["30–39", "Mage Armor for mana, five-second rule, always your highest rank. Blizzard is no longer made for big pulls."], ["40–60", "Add Frostfire Bolt (40% slow) and Ice Barrier. (untested)"]]], ["Arcane", "niche", "Fine solo, but proc-dependent and demanding on mana. Guides disagree on the order: Mobalytics says Frost until 25 then Arcane, Icy Veins the reverse (Arcane early for mana, Frost around 30).", [["1–9", "Same as Frost."], ["10–24", "One or two Arcane Blasts to open, then Frostbolt or Fireball. Arcane Missiles on a Missile Barrage proc. Don't hold 4 stacks: each one adds 175% to the next cast's cost."], ["25–39", "Arcane Wrath (talent, 6 s cooldown) after one or two Arcane Blasts. Arcane Explosion on packs, Evocation when mana is low."], ["40–60", "Same rotation. (untested)"]]], ["Fire", "ko", "Not before 30 according to Warcraft Tavern and testers: weak early on. Icy Veins is alone in rating it fine earlier. It's the spec that uses the least mana once it gets going.", [["1–29", "Play Frost."], ["30–39", "Pyroblast or Fireball from max range, 1 or 2 Arcane Blasts until Missile Barrage procs, then Arcane Missiles. Fire Blast on every cooldown, Pyroblast at 3 Heating Up stacks, Scorch as filler. Flamestrike on packs."], ["40–60", "Frostfire Bolt (40) to open, then the same rotation. (untested)"]]]],
       tips: [
+        "9 November hotfix: Arcane Concentration's chance is now split between the cast and each missile (it was 10% for each), so Clearcasting procs less often with Arcane Missiles.",
         "Wands no longer scale with spell power, and you must stand still for half a second before the first shot.",
         "Spells cast at a rank well below your level get much less from spell power since 1 October.",
         "Base damage is lower than Classic at level 60, but Spirit was heavily buffed for casters.",
@@ -249,25 +292,33 @@ h1 { transition: color .2s; }
       verdict: "On the Alliance side, paladins are still human or dwarf. New in Forever: the Horde gets paladins too, Forsaken only (starting in Tirisfal Glades). Retribution is the levelling spec, mostly because it saves mana. Your level 40 mount is a free spell, so keep your gold for dual spec.",
       timeline: [["10–19", "Benediction", "#fbc6e0"], ["20–39", "Seal of Command", "#f48cba"], ["40–60", "Dual spec", "#a8467a"]],
       phases: [
-        { title: "Levels 10 to 30", range: "21 points", st: "t", kind: "list",
-          note: "No guide has published a point-by-point order. Summary of Method (4 November) and Warcraft Tavern (0/0/26 with the Talented legacy bonus).",
+        { title: "Levels 10 to 30", range: "21 points", st: "t", kind: "order", start: 1,
+          note: "Order from the Method guide (updated between 6 and 10 November), checked point by point against the in-game talent tree: every talent can be taken at the level shown.",
           rows: [
-            ["Benediction", "max", "Retribution", "Mana savings, the first goal."],
-            ["Sanctified Judgement", "per tree", "Retribution", ""],
-            ["Improved Judgement", "1", "Retribution", ""],
-            ["Pursuit of Justice", "2/2", "Retribution", "+15% speed, even mounted: get it as early as you can."],
-            ["Conviction", "per tree", "Retribution", ""],
-            ["Seal of Command", "1/1", "Retribution", "Level 20."],
-            ["Sacred Arbiter", "1/1", "Retribution", "Level 25."],
-            ["Vengeance, Two-Handed Weapon Specialization", "the rest", "Retribution", "Up to +6% two-handed damage."],
-            ["Repentance", "1/1", "Retribution", "Level 30: disables a humanoid for 6 seconds when a pull goes wrong."]
+            ["Benediction", 5, "Retribution", "Reduces the Mana cost of all instant cast spells and abilities by 10%.", 5],
+            ["Sanctified Judgement", 3, "Retribution", "Gives your Judgement ability a 100% chance to return 60% of the Mana cost of the judged seal.", 3],
+            ["Improved Judgement", 2, "Retribution", "Decreases the cooldown of your Judgement ability by 2 sec.", 2],
+            ["Pursuit of Justice", 2, "Retribution", "Increases movement speed and mounted movement speed by 15%. This does not stack with other movement speed increasing effects.", 2],
+            ["Divine Strength", 5, "Holy", "Increases your Strength by 10%.", 5],
+            ["Improved Seals", 4, "Holy", "Increases the damage done by your Seals and Judgements by 12%.", 4]
           ] },
-        { title: "Levels 31 to 60", range: "30 points", st: "p", kind: "list",
-          note: "ForeverWisp's theorycraft, not played yet: 20/0/31.",
+        { title: "Levels 31 to 60", range: "30 points", st: "p", kind: "order", start: 22,
+          note: "Method's order up to level 42. The last 18 points come from no guide: they are a logical follow-up in the tree, not played yet.",
           rows: [
-            ["Twist of Light", "1/1", "Retribution", "31st point at level 40: switch seals on every hit. Don't try to twist before that."],
-            ["Rest of Retribution", "up to 31", "Retribution", ""],
-            ["Divine Strength, Improved Seals, Holy Conduit", "20 points", "Holy", "The last 20 points."]
+            ["Improved Seals", 1, "Holy", "Increases the damage done by your Seals and Judgements by 15%.", 5],
+            ["Conviction", 3, "Retribution", "Improves your chance to get a critical strike with all spells and attacks by 6%.", 3],
+            ["Sacred Arbiter", 1, "Retribution", "Increases the damage of your Holy Strike ability by 20% and causes it to refresh all Judgement effects on the target.", 1],
+            ["Seal of Command", 1, "Retribution", "Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec.", 1],
+            ["Two-Handed Weapon Specialization", 3, "Retribution", "Increases the Physical and Holy damage you deal by 6%, and reduces all threat you generate by 20% while a two-handed melee weapon is equipped.", 3],
+            ["Vengeance", 3, "Retribution", "Increases your Physical and Holy damage dealt by 3% for 30 sec after landing a non-periodic critical strike. Stacks up to 5 times.", 3],
+            ["Repentance", 1, "Retribution", "Puts the enemy target in a state of meditation, incapacitating them for up to 6 sec. Any damage caused will awaken the target. Only works against Humanoids.", 1],
+            ["Deflection", 1, "Retribution", "Increases your Parry chance by 1%.", 1],
+            ["Champion of the Light", 5, "Retribution", "Increases your spell damage by up to 60% of your Intellect, and reduces the cast time of your Hammer of Wrath by 1.0 sec.", 5],
+            ["Unsealed Wrath", 1, "Retribution", "Your melee attacks store a copy of your active Seal for 15 sec, stacking up to 3 times.", 1],
+            ["Holy Conduit", 2, "Holy", "Reduces the mana cost of your Consecration, Holy Wrath, Exorcism, and Hammer of Wrath spells by 40%.", 2],
+            ["Deflection", 4, "Retribution", "Increases your Parry chance by 5%.", 5],
+            ["Vindication", 3, "Retribution", "Gives your damaging melee attacks a chance to reduce the target's Attack Power by (3 /- 3 * 6) for 30 sec.", 3],
+            ["Unyielding Faith", 1, "Retribution", "Reduces the duration of Fear and Disorient effects on you by 15%.", 1]
           ] }
       ],
       keylevels: [["1", "Seal of Righteousness, Devotion Aura"], ["4", "Judgement, Blessing of Might"], ["6", "Holy Strike (new, 8 ranks), Divine Protection"], ["8", "Hammer of Justice, Purify"], ["10", "Lay on Hands (drains all your mana), Blessing of Protection"], ["12", "Redemption (class quest)"], ["20", "Consecration and Blessing of Kings baseline, Exorcism, Flash of Light"], ["30", "Divine Intervention, Seal of Light"], ["32–34", "Divine Shield (guides disagree)"], ["40", "Warhorse (spell), Hammer of the Righteous, dual spec"], ["44", "Hammer of Wrath"]],
@@ -290,40 +341,50 @@ h1 { transition: color .2s; }
       timeline: [["10–19", "Sinister Strike", "#fff9b8"], ["20–39", "Poisons and Blade Flurry", "#fff468"], ["40–60", "Adrenaline Rush", "#a39a1a"]],
       phases: [
         { title: "Combat, levels 10 to 30", range: "21 points", st: "t", kind: "order", start: 1,
-          note: "Method's order, picked up by the tier list. At 30, Method moves the 2 Remorseless Attacks points into Dual Wield Specialization and Blade Flurry.",
+          note: "Order from the Method guide (updated between 6 and 10 November), checked point by point against the in-game talent tree: every talent can be taken at the level shown.",
           rows: [
-            ["Remorseless Attacks", 2, "Assassination", ""],
-            ["Improved Sinister Strike", 2, "Combat", "Cheaper Sinister Strike."],
-            ["Improved Eviscerate", 3, "Assassination", ""],
-            ["Puncturing Wounds", 3, "Combat", "Without daggers: Endurance 2/2 and Lightning Reflexes instead."],
-            ["Deflection", 3, "Combat", ""],
-            ["Riposte", 1, "Combat", "Use it whenever it's ready."],
-            ["Precision", 3, "Combat", "The hit also applies to poisons."],
-            ["Flawless Execution", 1, "Combat", ""],
-            ["Dual Wield Specialization", 3, "Combat", ""]
+            ["Remorseless Attacks", 2, "Assassination", "After killing a non-trivial enemy, gives you a 40% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, Mutilate, or Ghostly Strike. Lasts 20 sec.", 2],
+            ["Efficient Strikes", 2, "Combat", "Reduces the Energy cost of your Sinister Strike and Hemorrhage abilities by 5.", 2],
+            ["Coup de Grace", 3, "Combat", "Increases the damage done by your Eviscerate ability by 20%, and the damage and storage rate of your Death Mark ability by 20%.", 3],
+            ["Deflection", 3, "Combat", "Increases your Parry chance by 6%.", 3],
+            ["Precision", 2, "Combat", "Improves your chance to hit by 2%.", 2],
+            ["Riposte", 1, "Combat", "A strike that becomes active after parrying an opponent's attack. This attack deals 150% weapon damage and disarms the target for 6 sec.", 1],
+            ["Precision", 1, "Combat", "Improves your chance to hit by 3%.", 3],
+            ["Endurance", 2, "Combat", "Reduces the cooldown of your Sprint and Evasion abilities by 60%.", 2],
+            ["Lightning Reflexes", 1, "Combat", "Increases your Dodge chance by 1%.", 1],
+            ["Flawless Execution", 1, "Combat", "Reduces the Energy cost of your Eviscerate ability by 15.", 1],
+            ["Aggression", 3, "Combat", "Increases the damage of your Sinister Strike and Eviscerate abilities by 15%.", 3]
           ] },
         { title: "Assassination, levels 10 to 30 (daggers)", range: "21 points", st: "t", kind: "order", start: 1,
-          note: "Method's variant for playing daggers with Backstab then Mutilate.",
+          note: "Order from the Method guide (updated between 6 and 10 November), checked point by point against the in-game talent tree: every talent can be taken at the level shown.",
           rows: [
-            ["Remorseless Attacks", 2, "Assassination", ""],
-            ["Improved Sinister Strike", 2, "Combat", ""],
-            ["Malice", 3, "Assassination", "The crit also applies to poisons."],
-            ["Improved Slice and Dice", 3, "Assassination", ""],
-            ["Ruthlessness", 2, "Assassination", ""],
-            ["Relentless Strikes", 1, "Assassination", ""],
-            ["Malice", 2, "Assassination", ""],
-            ["Lethality", 2, "Assassination", ""],
-            ["Cold Blood", 1, "Assassination", ""],
-            ["Lethality", 3, "Assassination", ""]
+            ["Remorseless Attacks", 2, "Assassination", "After killing a non-trivial enemy, gives you a 40% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, Mutilate, or Ghostly Strike. Lasts 20 sec.", 2],
+            ["Efficient Strikes", 2, "Combat", "Reduces the Energy cost of your Sinister Strike and Hemorrhage abilities by 5.", 2],
+            ["Coup de Grace", 3, "Combat", "Increases the damage done by your Eviscerate ability by 20%, and the damage and storage rate of your Death Mark ability by 20%.", 3],
+            ["Puncturing Wounds", 3, "Combat", "Increases the critical strike chance of your Backstab by 30% and your Mutilate by 15%, and gives Backstab a 45% chance to add an additional Combo Point.", 3],
+            ["Precision", 3, "Combat", "Improves your chance to hit by 3%.", 3],
+            ["Malice", 3, "Assassination", "Increases your critical strike chance with all attacks and Poisons by 3%.", 3],
+            ["Improved Slice and Dice", 3, "Assassination", "Increases the duration of your Slice and Dice ability by 45%.", 3],
+            ["Ruthlessness", 2, "Assassination", "Gives your finishing moves a 40% chance to add a Combo Point to your target.", 2]
           ] },
-        { title: "Levels 31 to 60", range: "30 points", st: "p", kind: "list",
-          note: "Wowforeverguides' suggestion, not played yet.",
+        { title: "Levels 31 to 60", range: "30 points", st: "p", kind: "order", start: 22,
+          note: "Order from the Method guide (updated between 6 and 10 November), checked point by point against the in-game talent tree: every talent can be taken at the level shown.",
           rows: [
-            ["Dual Wield Specialization", "5/5", "Combat", ""],
-            ["Blade Flurry", "1/1", "Combat", "Around 36."],
-            ["Hack and Slash", "max", "Combat", "Works with every weapon type, one-handed axes included (new in Forever)."],
-            ["Adrenaline Rush", "1/1", "Combat", "Level 40, with dual spec."],
-            ["Rest", "20 points", "Combat or Assassination", "Cold Blood is a good detour in Assassination."]
+            ["Weapon Expertise", 1, "Combat", "Reduces the chance for your attacks to be Dodged or Parried by 1%.", 1],
+            ["Blade Flurry", 1, "Combat", "Increases your melee attack speed by 20% and your melee attacks strike an additional nearby opponent. Lasts 15 sec.", 1],
+            ["Weapon Expertise", 1, "Combat", "Reduces the chance for your attacks to be Dodged or Parried by 2%.", 2],
+            ["Dual Wield Specialization", 2, "Combat", "Increases the damage done by your off-hand weapon by 50%.", 2],
+            ["Hack and Slash", 5, "Combat", "Gives your melee weapon attacks a benefit depending on the weapon. Axe/Sword: Your successful melee attacks have a 5% chance to trigger an extra attack on the target.", 5],
+            ["Flash of Steel", 1, "Combat", "Increases the Energy generated by your Shank ability by 3 and reduces its cooldown by 0.4 sec.", 1],
+            ["Adrenaline Rush", 1, "Combat", "Increases your Energy regeneration rate by 100% for 15 sec.", 1],
+            ["Malice", 3, "Assassination", "Increases your critical strike chance with all attacks and Poisons by 3%.", 3],
+            ["Improved Slice and Dice", 3, "Assassination", "Increases the duration of your Slice and Dice ability by 45%.", 3],
+            ["Ruthlessness", 2, "Assassination", "Gives your finishing moves a 40% chance to add a Combo Point to your target.", 2],
+            ["Malice", 2, "Assassination", "Increases your critical strike chance with all attacks and Poisons by 5%.", 5],
+            ["Lethality", 2, "Assassination", "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Mutilate, Ghostly Strike, and Hemorrhage abilities by 20%.", 2],
+            ["Ruthlessness", 1, "Assassination", "Gives your finishing moves a 60% chance to add a Combo Point to your target.", 3],
+            ["Cold Blood", 1, "Assassination", "When activated, increases the critical strike chance of your next Sinister Strike, Backstab, Ambush, Eviscerate, or Mutilate by 100%.", 1],
+            ["Flash of Steel", 4, "Combat", "Increases the Energy generated by your Shank ability by 15 and reduces its cooldown by 2.0 sec.", 5]
           ] }
       ],
       keylevels: [["4", "Backstab, Pick Pocket"], ["6", "Gouge"], ["8", "Evasion"], ["10", "Dual Wield and Slice and Dice (train them right away), Sap, Sprint"], ["12", "Kick"], ["14", "Expose Armor, Garrote"], ["16", "Feint (doubled threat reduction)"], ["18", "Ambush"], ["20", "Rupture, poisons, Stealth rank 2"], ["22", "Vanish, Distract"], ["26", "Cheap Shot"], ["30", "Kidney Shot, Deadly Poison"], ["34", "Blind"], ["40", "Safe Fall, dual spec"]],
@@ -345,40 +406,44 @@ h1 { transition: color .2s; }
       verdict: "Hunter is the fastest class to level in Forever, and Beast Mastery is the spec every guide recommends: your pet tanks, you shoot. No respec needed along the way.",
       timeline: [["10–30", "Pet and aspects", "#cfe6a8"], ["31–40", "Towards Bestial Wrath", "#a9d271"], ["41–60", "Second tree", "#6f9a3d"]],
       phases: [
-        { title: "Levels 10 to 30", range: "21 points", st: "t", kind: "list",
-          note: "Guides agree on the priority order but not always on the ranks. Take them in this order, filling each talent before moving on.",
+        { title: "Levels 10 to 30", range: "21 points", st: "t", kind: "order", start: 1,
+          note: "Order from the Method guide (updated between 6 and 10 November), checked point by point against the in-game talent tree: every talent can be taken at the level shown.",
           rows: [
-            ["Deadly Aspects", "5/5", "Beast Mastery", "New talent: buffs your aspects, so your damage."],
-            ["Focused Fire", "2/2", "Beast Mastery", "New talent replacing Improved Eyes of the Beast: more damage."],
-            ["Unleashed Fury", "5/5", "Beast Mastery", "+ pet damage."],
-            ["Improved Revive Pet", "2/2", "Beast Mastery", "Method keeps both points: less time lost after a pet death."],
-            ["Bestial Swiftness", "1/1", "Beast Mastery", "Your pet runs faster outdoors."],
-            ["Summon Hawk", "1/1", "Beast Mastery", "New: summons a hawk alongside your pet. Method puts it at 25, but launch data lists it later (level 36): take it as soon as it's clickable."],
-            ["Ferocity", "the rest", "Beast Mastery", "Pet crit: put the remaining points here."],
-            ["Intimidation", "1/1", "Beast Mastery", "Around 30: emergency stun when a pull goes wrong."]
+            ["Deadly Aspects", 5, "Beast Mastery", "While Aspect of the Hawk is active, Auto Shot has a 10% chance of increasing ranged attack speed by 30% for 12 sec.", 5],
+            ["Focused Fire", 2, "Beast Mastery", "Increases all damage you and your pet deal by 2% while your pet is active.", 2],
+            ["Improved Revive Pet", 2, "Beast Mastery", "Revive Pet's casting time is reduced by 6 sec, mana cost is reduced by 40%, and increases the health your pet returns with by an additional 30%.", 2],
+            ["Endurance Training", 1, "Beast Mastery", "Increases the Health and Armor of your pets by 3%.", 1],
+            ["Pathfinding", 2, "Beast Mastery", "Increases the speed bonus of your Aspect of the Cheetah and Aspect of the Pack by 6%.", 2],
+            ["Unleashed Fury", 3, "Beast Mastery", "Increases the damage done by your pets and hawks by 9%.", 3],
+            ["Summon Hawk", 1, "Beast Mastery", "Command a hawk to dive-bomb your targeted enemy, dealing [32 / Ferocity: 48 / Unleashed Fury: 52 + (Ranged Attack Power * (0.05))] Physical damage and continuing its assault for 18 sec.", 1],
+            ["Bestial Swiftness", 1, "Beast Mastery", "Increases the movement speed of your pets by 30%.", 1],
+            ["Unleashed Fury", 1, "Beast Mastery", "Increases the damage done by your pets and hawks by 12%.", 4],
+            ["Ferocity", 2, "Beast Mastery", "Increases the critical strike chance of your pets and hawks by 4%.", 2],
+            ["Intimidation", 1, "Beast Mastery", "Command your pet to Stun the target for 3 sec on its next successful attack, which also gains 100% increased critical strike chance. Generates high threat.", 1]
           ] },
-        { title: "Levels 31 to 40", range: "10 points", st: "p", kind: "list",
-          note: "Goal: Bestial Wrath with your 31st point, at level 40. Pathfinding moved to row 3 on 2 November, so it comes in here.",
+        { title: "Levels 31 to 40", range: "10 points", st: "p", kind: "order", start: 22,
+          note: "Order from the Method guide (updated between 6 and 10 November), checked point by point against the in-game talent tree: every talent can be taken at the level shown.",
           rows: [
-            ["Frenzy", "5/5", "Beast Mastery", "Pet attack speed after a crit."],
-            ["Spirit Bond", "2/2", "Beast Mastery", "Health regen for you and your pet: fewer breaks."],
-            ["Pathfinding", "2/2", "Beast Mastery", "+ speed with Aspect of the Cheetah."],
-            ["Bestial Discipline", "1/2", "Beast Mastery", "More pet focus. Take it earlier if you run short on mana."],
-            ["Bestial Wrath", "1/1", "Beast Mastery", "Level 40: big pet damage cooldown."]
+            ["Bestial Discipline", 2, "Beast Mastery", "Increases the Focus regeneration of your pets by 20% and allows 50% of your Mana regeneration to continue while casting.", 2],
+            ["Ferocity", 3, "Beast Mastery", "Increases the critical strike chance of your pets and hawks by 10%.", 5],
+            ["Frenzy", 4, "Beast Mastery", "Gives your pet a 80% chance to gain a 30% attack speed increase for 8 sec after dealing a critical strike.", 4],
+            ["Bestial Wrath", 1, "Beast Mastery", "Send your pet into a rage causing 50% additional damage for 18 sec. While enraged, the beast does not feel pity or remorse or fear and it cannot be stopped unless killed.", 1]
           ] },
-        { title: "Levels 41 to 60", range: "20 points", st: "p", kind: "list",
-          note: "Two paths are going around, neither tested: 31 Beast Mastery / 20 Marksmanship (Mobalytics), or all Beast Mastery with a little Marksmanship. Both start the same way.",
+        { title: "Levels 41 to 60", range: "20 points", st: "p", kind: "order", start: 32,
+          note: "Order from the Method guide (updated between 6 and 10 November), checked point by point against the in-game talent tree: every talent can be taken at the level shown.",
           rows: [
-            ["Bestial Discipline", "2/2", "Beast Mastery", "Finish it."],
-            ["Improved Mend Pet", "2/2", "Beast Mastery", "Your pet heal also dispels."],
-            ["Lethal Attacks", "5/5", "Marksmanship", "Crit on your shots."],
-            ["Efficiency", "5/5", "Marksmanship", "Cheaper shots: fewer breaks."],
-            ["Rest of Marksmanship", "~8", "Marksmanship", "Depends on the final tree: check in game what 2 November left."]
+            ["Lethal Attacks", 5, "Marksmanship", "Increases your critical strike chance with all attacks by 5%.", 5],
+            ["Careful Aim", 5, "Marksmanship", "Increases your Attack Power by 100% of your Intellect.", 5],
+            ["Rapid Killing", 2, "Marksmanship", "Reduces the cooldown on your Rapid Fire ability by 2 min. In addition, when you kill a non-trivial enemy or it dies while afflicted by your Serpent Sting, you gain Rapid Killing, increasing…", 2],
+            ["Efficiency", 3, "Marksmanship", "Reduces the Mana cost of your Shots, Stings, and melee abilities by 9%.", 3],
+            ["Trueshot Aura", 1, "Marksmanship", "Increases the Ranged Attack Power of party or raid members within 45 yds by 20.", 1],
+            ["Mortal Shots", 4, "Marksmanship", "Increases the critical strike damage bonus on all ranged abilities by 24%.", 4]
           ] }
       ],
       keylevels: [["10", "First pet, Aspect of the Hawk, first talent"], ["12", "Mend Pet"], ["18", "Multi-Shot"], ["20", "Aimed Shot, Aspect of the Cheetah, Freezing Trap"], ["26", "Rapid Fire"], ["28", "Frost Trap"], ["30", "Feign Death, Intimidation"], ["40", "Bestial Wrath, mount, dual spec"]],
       specs: [["Beast Mastery", "main", "By far the strongest levelling spec: the pet holds the mobs and copies your crit.", [["1–9", "Aspect of the Monkey, Auto Shot, Serpent Sting, Arcane Shot, Concussive Shot to keep your distance. Raptor Strike in melee."], ["10–24", "Hunter's Mark, pet in first, then Serpent Sting. Aimed Shot on every cooldown from 20, Auto Shot in between, Arcane Shot only when mana overflows. Multi-Shot on packs from 18 (shares Aimed Shot's cooldown)."], ["25–39", "Keep 2 hawks up (Summon Hawk on every cooldown). Rapid Fire on big mobs. If you pull aggro: Disengage, or Freezing Trap if the pull goes wrong. Explosive Trap and Volley on big packs."], ["40–60", "Bestial Wrath on big mobs. (untested)"], ["Always", "Never stop Auto Shot. Since 15 October, it needs half a second standing still before it fires."]]], ["Marksmanship", "ok", "More damage potential and the right pick for groups, but the pet holds less threat: you kite more often. Lone Wolf (no pet) is not recommended for levelling.", [["1–9", "Same as Beast Mastery."], ["10–24", "Aspect of the Hawk, pet first, Serpent Sting, Arcane Shot, Aimed Shot from 20."], ["25–39", "Trueshot Aura (talent, 25), Rapid Fire (26). Rapid Killing: keep Serpent Sting on the mob until it dies, then open the next one with Sniper Shot (or Aimed Shot). Wing Clip, Concussive Shot or Frost Trap if the pet loses threat."], ["40–60", "Sniper Shot (talent). (untested)"]]], ["Survival", "niche", "The weakest of the three early on: its good talents sit in the middle of the tree. It catches up later, but Beast Mastery stays ahead.", [["1–9", "Same as Beast Mastery."], ["10–29", "Auto Shot, Serpent Sting, Arcane Shot, then in melee: Raptor Strike, Immolation Trap, Mongoose Bite. Back to range."], ["30–39", "Strider Kick and Expose Prey (talents). Explosive Trap at 34."], ["40–60", "Lacerating Strikes (talent). (untested)"]]]],
       tips: [
+        "Seen in the 10 November client, not confirmed by Blizzard: Arcane Shot and Summon Hawk cost 11% of base mana at every rank, so low ranks no longer save mana. Blizzard has also announced pets that tank almost as well as in Classic Era.",
         "Pet: the cat does the most damage, the boar takes hits better and grabs aggro fast with Charge. You can't tame above your level.",
         "Hunter damage was buffed heavily at launch: Aimed Shot +110%, Arcane Shot +30%, Serpent Sting +20%, stronger Aspect of the Hawk.",
         "All traps now share a 30-second cooldown.",
@@ -394,33 +459,35 @@ h1 { transition: color .2s; }
       timeline: [["10–29", "Instant Corruption", "#d6cdfb"], ["30–45", "Drain-tank", "#a99af5"], ["46–60", "Demonology then finishing", "#6c5bc4"]],
       phases: [
         { title: "Full order", range: "51 points", st: "mix", kind: "order", start: 1,
-          note: "Method's order (4 November). Method doesn't give every rank: those marked * are inferred so the total lands on exactly 51. Points up to level 30 are tested, the rest is projected.",
+          note: "Order from the Method guide (updated between 6 and 10 November), checked point by point against the in-game talent tree: every talent can be taken at the level shown.",
           rows: [
-            ["Suppression", 4, "Affliction", "Your spells always land on mobs of your level."],
-            ["Improved Corruption", 5, "Affliction", "Corruption becomes instant: the heart of the build."],
-            ["Improved Life Tap", 1, "Affliction", "More mana per Life Tap."],
-            ["Pandemic", 3, "Affliction", "* Stronger DoT crits. Inferred rank."],
-            ["Fel Concentration", 3, "Affliction", "* Your drains are almost never interrupted when you're hit."],
-            ["Nightfall", 2, "Affliction", "Corruption and Drain Life can make Shadow Bolt instant."],
-            ["Malevolence", 2, "Affliction", "Opens the next row."],
-            ["Soul Siphon", 3, "Affliction", "* Stronger Drain Life."],
-            ["Malevolence", 2, "Affliction", "To reach Shadow Mastery."],
-            ["Shadow Mastery", 5, "Affliction", "+ shadow damage."],
-            ["Malevolence", 1, "Affliction", "Last point."],
-            ["Siphon Life", 1, "Affliction", "A DoT that heals you. Kargoz takes it from 30."],
-            ["Improved Life Tap", 1, "Affliction", "Finish it."],
-            ["Improved Drains", 3, "Affliction", "+20% on Drain Life and Drain Soul."],
-            ["Unholy Power", 5, "Demonology", "At 46: buffs the succubus."],
-            ["Demonic Energies", 2, "Demonology", ""],
-            ["Fel Vitality", 3, "Demonology", ""],
-            ["Improved Bane of Agony", 2, "Affliction", "Back to Affliction to finish."],
-            ["Grim Reach", 2, "Affliction", "+ range on your Affliction spells (replaces Malediction since 15 October)."],
-            ["Suppression", 1, "Affliction", "5/5 at level 60."]
+            ["Suppression", 4, "Affliction", "Improves your chance to hit by 4% and reduces all threat you generate by 16%.", 4],
+            ["Improved Corruption", 5, "Affliction", "Reduces the casting time of your Corruption spell by 2 sec and increases the damage it deals by 10%.", 5],
+            ["Improved Life Tap", 1, "Affliction", "Increases the amount of Mana awarded by your Life Tap spell by 10%.", 1],
+            ["Pandemic", 3, "Affliction", "Increases the critical strike damage bonus of your Corruption, Bane of Agony, Bane of Doom, Drain Soul, Drain Life, Siphon Life, and Wrack spells by 100%.", 3],
+            ["Fel Concentration", 3, "Affliction", "Gives your Drain Life, Drain Mana, Drain Soul, and Wrack spells a 70% chance to not lose casting time when you take damage.", 3],
+            ["Nightfall", 2, "Affliction", "Gives your Corruption, Drain Soul, Drain Life, and Wrack spells a 4% chance to cause you to enter a Shadow Trance after damaging the opponent.", 2],
+            ["Malevolence", 2, "Affliction", "Increases the critical effect chance of your Shadow spells by 2%.", 2],
+            ["Soul Siphon", 3, "Affliction", "Increases the damage done or health drained by your Drain Life, Drain Soul, and Wrack spells by 12% per each of your other Affliction effects active on the target, up to a maximum increase o…", 3],
+            ["Malevolence", 2, "Affliction", "Increases the critical effect chance of your Shadow spells by 4%.", 4],
+            ["Shadow Mastery", 5, "Affliction", "Increases the damage dealt or life drained by your Shadow spells by 10%.", 5],
+            ["Malevolence", 1, "Affliction", "Increases the critical effect chance of your Shadow spells by 5%.", 5],
+            ["Siphon Life", 1, "Affliction", "Transfers 11 health from the target to the caster every 3 sec. Lasts 30 sec.", 1],
+            ["Improved Life Tap", 1, "Affliction", "Increases the amount of Mana awarded by your Life Tap spell by 20%.", 2],
+            ["Improved Drains", 3, "Affliction", "Increases Health drained, damage done, or Mana drained by your Drain Life, Drain Soul, and Drain Mana spells by 20%.", 3],
+            ["Unholy Power", 5, "Demonology", "Increases all damage done by your Imp, Voidwalker, Succubus, Incubus, and Felhunter pets by 10%.", 5],
+            ["Demonic Energies", 2, "Demonology", "You heal your pet for 15% of all spell damage you deal. When you gain Mana from Life Tap, your summoned demon gains 100% of the Mana you gain.", 2],
+            ["Fel Vitality", 3, "Demonology", "Increases the maximum health and Mana of your Imp, Voidwalker, Succubus, Incubus, and Felhunter by 15%, and increases your maximum Mana by 15%.", 3],
+            ["Improved Bane of Agony", 2, "Affliction", "Increases the damage done by your Bane of Agony by 10%.", 2],
+            ["Grim Reach", 2, "Affliction", "Increases the range of your Affliction spells by 20%.", 2],
+            ["Suppression", 1, "Affliction", "Improves your chance to hit by 5% and reduces all threat you generate by 20%.", 5]
           ] }
       ],
       keylevels: [["10", "Voidwalker (class quest), Drain Soul, Healthstone"], ["14", "Drain Life"], ["20", "Succubus, Demon Armor, Rain of Fire, Ritual of Summoning"], ["30", "Felhunter, Hellfire"], ["40", "Mount, dual spec"]],
       specs: [["Affliction", "main", "The easiest start, with no respec: instant spells, drain-tanking from 30.", [["1–9", "Shadow Bolt and Immolate, then Corruption (4) and Bane of Agony (8). Life Tap (6) between pulls, wand."], ["10–19", "Voidwalker as tank. Bane of Agony then Corruption, wand when you're not moving, Drain Life if you're low, Drain Soul to finish and get a shard. Corruption becomes instant at 18 (Improved Corruption)."], ["20–29", "Same, with the succubus to kill easy mobs faster. Nightfall (25): cast the instant Shadow Bolt as soon as it lights up."], ["30–39", "Siphon Life (30) on long-lived mobs. Drain-tank: Corruption, Bane of Agony and Siphon Life, let the mob hit you, Drain Life to heal, Life Tap for mana."], ["40–60", "Demonic Sacrifice (41): sacrifice your felhunter for passive healing when solo. Wrack (51) when you want damage rather than healing. (untested)"]]], ["Demonology", "ok", "As good as Affliction according to the guides. Icy Veins plays it from the start with no respec; Warcraft Tavern suggests Affliction until 27.", [["1–24", "Same as Affliction, with the talents that strengthen your demon."], ["25–39", "Searing Pain on your demon's target to apply Demonic Brand (25), then Bane of Agony, Corruption, Drain Life. Soul Link (30): your demon takes 30% of your damage. Life Tap when your health is above your mana."], ["40–60", "Demonic Pact (40), then 20 points in Affliction. (untested)"]]], ["Destruction", "ko", "Guides advise against levelling as Destruction before 40: slow start, more mana per kill. The best one in dungeons.", [["1–19", "Shadow Bolt, Immolate, Bane of Agony."], ["20–29", "Shadowburn to finish, Conflagrate (talent, 25) on an Immolated target. Rain of Fire on packs."], ["30–39", "Shadow Bolt as filler, Hellfire on packs."], ["40–60", "Incinerate replaces Shadow Bolt. Life Tap between pulls. (untested)"]]]],
       tips: [
+        "Voidwalker: about 40 more base health since 6 November, and Blizzard has announced it will tank almost as well as in Classic Era. Incinerate is Destruction-only since 9 November.",
+        "Seen in the 10 November client, not confirmed by Blizzard: Wrack no longer adds 10% to your Shadow damage over time. While you channel it, Corruption, Siphon Life and Bane of Agony deal their damage twice as fast, and Wrack itself deals 30% less. Put all three up before you channel.",
         "Demons lost about 73% of the health they got from your Stamina: the Voidwalker tanks worse than in the beta, which pushes even more towards drain-tanking.",
         "Improved Drains no longer buffs Wrack, but Wrack itself had its coefficient doubled at launch.",
         "Drain Soul gives far fewer shards if the target survives: finish mobs properly with it.",
@@ -436,58 +503,59 @@ h1 { transition: color .2s; }
       timeline: [["10–29", "Wand", "#f4f1ea"], ["30–39", "Penance", "#cfc8b8"], ["40–60", "Shadow", "#8d8578"]],
       phases: [
         { title: "Levels 10 to 29: wand build", range: "20 points", st: "t", kind: "order", start: 1,
-          note: "15 Discipline / 5 Shadow. Improved Power Word: Shield moved to row 3 on 15 October, hence a single point at 29.",
+          note: "Order from the Method guide (updated between 6 and 10 November), checked point by point against the in-game talent tree: every talent can be taken at the level shown.",
           rows: [
-            ["Wand Specialization", 2, "Discipline", "+25% wand damage in just 2 points."],
-            ["Spirit Tap", 5, "Shadow", "Every kill gives mana back: this is what removes the breaks."],
-            ["Twin Disciplines", 3, "Discipline", "Stronger instant spells (Shadow Word: Pain, Shield)."],
-            ["Martyrdom", 2, "Discipline", "No more interrupts when hit after a crit."],
-            ["Mental Strength", 3, "Discipline", "More mana."],
-            ["Inner Focus", 1, "Discipline", "A free, more critical spell every 3 minutes."],
-            ["Meditation", 3, "Discipline", "You regen mana even while casting."],
-            ["Improved Power Word: Shield", 1, "Discipline", "Sturdier shield."]
+            ["Wand Specialization", 2, "Discipline", "Increases your damage with Wands by 25%.", 2],
+            ["Spirit Tap", 5, "Shadow", "Gives you a 100% chance to increase your Spirit by 100% for 15 sec after killing a non-trivial target or when an enemy afflicted by your Vampiric Embrace dies.", 5],
+            ["Improved Shadow Word: Pain", 2, "Shadow", "Increases the duration of your Shadow Word: Pain spell by 6 sec.", 2],
+            ["Twin Disciplines", 5, "Discipline", "Increases the damage and healing of your instant cast spells by 5%.", 5],
+            ["Martyrdom", 2, "Discipline", "Gives you a 100% chance to gain Focused Casting for 6 sec after being the victim of a melee or ranged critical strike.", 2],
+            ["Mental Strength", 1, "Discipline", "Increases your total Intellect by 2%.", 1],
+            ["Inner Focus", 1, "Discipline", "When activated, reduces the Mana cost of your next spell by 100% and increases its critical effect chance by 25% if it is a non-periodic spell and capable of a critical effect.", 1],
+            ["Meditation", 2, "Discipline", "Allows 33% of your Mana regeneration to continue while casting.", 2]
           ] },
-        { title: "Level 30: Penance respec", range: "21 points", st: "t", kind: "set",
-          note: "Visit your trainer and put these 21 points straight into Discipline. Penance becomes your instant damage spell.",
+        { title: "Levels 30 to 39", range: "10 points", st: "p", kind: "order", start: 21,
+          note: "Order from the Method guide (updated between 6 and 10 November), checked point by point against the in-game talent tree: every talent can be taken at the level shown.",
           rows: [
-            ["Power in Light", 5, "Discipline", "Stronger Smite and Penance on a target already under Pain."],
-            ["Holy Precision", 2, "Discipline", ""],
-            ["Mental Strength", 3, "Discipline", ""],
-            ["Improved Power Word: Shield", 3, "Discipline", ""],
-            ["Inner Focus", 1, "Discipline", ""],
-            ["Meditation", 3, "Discipline", ""],
-            ["Improved Inner Fire", 3, "Discipline", ""],
-            ["Penance", 1, "Discipline", "The 21st point."]
-          ] },
-        { title: "Levels 31 to 39", range: "9 points", st: "p", kind: "order", start: 22,
-          note: "Total at 39: 21 Discipline / 4 Holy / 5 Shadow.",
-          rows: [
-            ["Spirit Tap", 5, "Shadow", "You get it back."],
-            ["Holy Specialization", 4, "Holy", ""]
+            ["Meditation", 1, "Discipline", "Allows 50% of your Mana regeneration to continue while casting.", 3],
+            ["Mental Agility", 2, "Discipline", "Reduces the mana cost of your Smite, Holy Fire, and instant cast spells by 7%.", 2],
+            ["Improved Inner Fire", 3, "Discipline", "Increases the Armor bonus of your Inner Fire spell by 45% and increases its total charges by 12.", 3],
+            ["Improved Power Word: Shield", 1, "Discipline", "Increases the damage absorbed by your Power Word: Shield by 7%.", 1],
+            ["Penance", 1, "Discipline", "Launches a volley of holy light at the target, causing 45 Holy damage to an enemy, or 134 healing to an ally, instantly and every 1 sec for 2 sec.", 1],
+            ["Improved Power Word: Shield", 2, "Discipline", "Increases the damage absorbed by your Power Word: Shield by 20%.", 3]
           ] },
         { title: "Level 40: Shadow respec", range: "31 points", st: "p", kind: "set",
           note: "Method's order. Shadowform is the 31st point: -50% mana cost on shadow spells, +10% shadow damage, x2 crits and -15% physical damage taken.",
           rows: [
-            ["Spirit Tap", 5, "Shadow", ""], ["Improved Shadow Word: Pain", 2, "Shadow", ""], ["Shadow Focus", 5, "Shadow", "Shadow spell hit."],
-            ["Mind Flay", 1, "Shadow", ""], ["Improved Mind Flay", 2, "Shadow", ""], ["Improved Mind Blast", 4, "Shadow", ""],
-            ["Shadow Weaving", 3, "Shadow", ""], ["Vampiric Embrace", 1, "Shadow", ""], ["Devouring Contagion", 1, "Shadow", ""],
-            ["Silence", 1, "Shadow", ""], ["Darkness", 5, "Shadow", ""], ["Shadowform", 1, "Shadow", "The 31st point."]
+            ["Spirit Tap", "5/5", "Shadow", "Gives you a 100% chance to increase your Spirit by 100% for 15 sec after killing a non-trivial target or when an enemy afflicted by your Vampiric Embrace dies."],
+            ["Improved Shadow Word: Pain", "2/2", "Shadow", "Increases the duration of your Shadow Word: Pain spell by 6 sec."],
+            ["Improved Mind Blast", "4/5", "Shadow", "Reduces the cooldown of your Mind Blast spell by 2 sec."],
+            ["Mind Flay", "1/1", "Shadow", "Assault the target's mind with Shadow energy, causing 63 Shadow damage over 3 sec and slowing their movement speed by 50%."],
+            ["Improved Mind Flay", "2/2", "Shadow", "Each instance of damage of Mind Flay deals 20% more damage than its previous instance of damage."],
+            ["Shadow Focus", "5/5", "Shadow", "Improves your chance to hit with Shadow spells by 5%."],
+            ["Vampiric Embrace", "1/1", "Shadow", "Afflicts your target with Shadow energy that causes all party members to be healed for 20% of any Shadow spell damage you deal for 30 sec."],
+            ["Shadow Weaving", "3/3", "Shadow", "Your Shadow damage spells have a 100% chance to increase the Shadow damage the target takes from you by 2% for 15 sec, stacking up to 5 times."],
+            ["Devouring Contagion", "2/2", "Shadow", "Reduces the mana cost of your Devouring Plague by 50%. Targets that die while Devouring Plague is active spreads it, jumping to 2 nearby enemies within 10 yds for the remaining duration."],
+            ["Darkness", "5/5", "Shadow", "Increases your Shadow damage done by 10%."],
+            ["Shadowform", "1/1", "Shadow", "Assume Shadowform, increasing your Shadow damage by 10%, reducing the Mana cost of all Shadow spells by 50%, increasing the critical strike damage bonus of your Shadow spells by 100%, and re…"]
           ] },
-        { title: "Levels 41 to 60", range: "20 points", st: "p", kind: "list",
-          note: "Nobody has placed these in a tested way yet. The most cited path: back into Discipline for wand and mana.",
+        { title: "Levels 41 to 60", range: "20 points", st: "p", kind: "order", start: 32,
+          note: "Order from the Method guide (updated between 6 and 10 November), checked point by point against the in-game talent tree: every talent can be taken at the level shown.",
           rows: [
-            ["Wand Specialization", "2/2", "Discipline", ""],
-            ["Twin Disciplines", "3/3", "Discipline", ""],
-            ["Mental Strength", "3/3", "Discipline", ""],
-            ["Meditation", "3/3", "Discipline", ""],
-            ["Inner Focus", "1/1", "Discipline", ""],
-            ["Improved Power Word: Shield", "3/3", "Discipline", ""],
-            ["Mental Agility", "the rest", "Discipline", "Cheaper instant spells."]
+            ["Twin Disciplines", 5, "Discipline", "Increases the damage and healing of your instant cast spells by 5%.", 5],
+            ["Early Demise", 2, "Shadow", "Increases Shadow Word: Death's critical strike chance on targets at or below 20% health by 30%.", 2],
+            ["Martyrdom", 2, "Discipline", "Gives you a 100% chance to gain Focused Casting for 6 sec after being the victim of a melee or ranged critical strike.", 2],
+            ["Mental Strength", 3, "Discipline", "Increases your total Intellect by 6%.", 3],
+            ["Inner Focus", 1, "Discipline", "When activated, reduces the Mana cost of your next spell by 100% and increases its critical effect chance by 25% if it is a non-periodic spell and capable of a critical effect.", 1],
+            ["Meditation", 3, "Discipline", "Allows 50% of your Mana regeneration to continue while casting.", 3],
+            ["Mental Strength", 2, "Discipline", "Increases your total Intellect by 10%.", 5],
+            ["Shadow Reach", 2, "Shadow", "Increases the range of your offensive Shadow spells by 20%.", 2]
           ] }
       ],
-      keylevels: [["4", "Shadow Word: Pain"], ["6", "Power Word: Shield"], ["~5 / 13", "Lesser then Greater Magic Wand (enchanter)"], ["14", "Psychic Scream"], ["20", "Devouring Plague and Fear Ward, now for every priest"], ["30", "Penance (talent)"], ["32", "Shadow Word: Death"], ["40", "Shadowform, mount, dual spec"]],
+      keylevels: [["4", "Shadow Word: Pain"], ["6", "Power Word: Shield"], ["~5 / 13", "Lesser then Greater Magic Wand (enchanter)"], ["14", "Psychic Scream"], ["20", "Devouring Plague and Fear Ward, now for every priest"], ["32", "Shadow Word: Death"], ["37", "Penance (talent)"], ["40", "Shadowform, mount, dual spec"]],
       specs: [["Discipline then Shadow", "main", "Few deaths thanks to the shield and heals, wand for mana. Shadow only pays off with Shadowform at 40.", [["1–9", "Wand from 5, Smite sparingly, Lesser Heal. Power Word: Shield if your casts get interrupted."], ["10–29", "Shield, Mind Blast, Shadow Word: Pain, then wand until the mob dies."], ["30–39", "Shield, Holy Fire to open, Shadow Word: Pain, Penance, then wand. On mobs that die fast, Pain alone triggers Power in Light. Icy Veins suggests going full Discipline at 35 to strengthen Penance."], ["40–60", "Shadowform: Shadow Word: Death and Mind Blast when ready, Devouring Plague every 24 s, Mind Flay as filler, channelled to the end."]]], ["Shadow from 10", "niche", "Possible, but very mana-hungry before Shadowform. Warcraft Tavern says it only really shines from 28.", [["10–19", "Same as Discipline: Shield, Mind Blast, Pain, wand."], ["20–39", "Mind Flay at range until it reaches you, Shadow Word: Pain, Mind Blast on every cooldown, Devouring Plague if mana allows, then wand. Vampiric Embrace and Silence around 30."], ["40–60", "Same as the main spec."]]], ["Holy", "ko", "Not recommended solo, kills are too slow. For players who mostly run dungeons.", [["1–19", "Shield, Smite to pull, Shadow Word: Pain, then wand."], ["20–39", "Same solo. In groups: Holy Nova (20) on packs, Binding Heal (25)."], ["40–60", "Prayer of Mending (talent) in groups. (untested)"]]]],
       tips: [
+        "9 November hotfix: casting Fear Ward no longer breaks Shadowform, and Power Infusion stays active on the ally you cast it on.",
         "Wands no longer gain damage from your spell power since 24 September: the \"wand + spell power\" trick from the beta is gone. Pick wands for their listed damage.",
         "Since 15 October, wands need half a second standing still before the first shot.",
         "Shadow Word: Death now costs 30% of your health if the target survives: save it for finishing.",
@@ -498,10 +566,10 @@ h1 { transition: color .2s; }
   };
 
   // Icône en jeu de chaque talent (sources : Wowhead Forever et wowsims), images dans assets/icons.
-  var ICONS = {"chaman":{"Thundering Strikes":"ability_thunderbolt","Mental Dexterity":"spell_nature_bloodlust","Improved Ghost Wolf":"spell_nature_spiritwolf","Shamanistic Focus":"spell_nature_elementalabsorption","Elemental Weapons":"spell_fire_flametounge","Ancestral Knowledge":"spell_shadow_grimward","Stormstrike":"ability_shaman_stormstrike","Flurry":"ability_ghoulfrenzy","Improved Stormstrike":"spell_shaman_improvedstormstrike","Spirit Weapons":"ability_parry","Mental Quickness":"spell_nature_mentalquickness"},"druide":{"Ferocity":"ability_hunter_pet_hyena","Feral Swiftness":"spell_nature_spiritwolf","Feral Instinct":"ability_ambush","Savage Fury":"ability_druid_ravage","Shredding Attacks":"spell_shadow_vampiricaura","Shifting Power":"spell_druid_displacement","Primal Bite":"ability_racial_cannibalize","Sharpened Claws":"inv_misc_monsterclaw_04","Blood Frenzy":"ability_ghoulfrenzy","Leader of the Pack":"spell_nature_unyeildingstamina","Natural Instinct":"ability_druid_predatoryinstincts","Rend and Tear":"ability_druid_primalagression","Berserk":"ability_druid_berserk","Heart of the Wild":"spell_holy_blessingofagility","Predatory Strikes":"ability_hunter_pet_cat","Thick Hide":"inv_misc_pelt_bear_03","Brutal Impact":"ability_druid_bash","Improved Shifting Power":"ability_hunter_aspectmastery","Natural Reaction":"ability_bullrush"},"guerrier":{"Shield Specialization":"inv_shield_06","Improved Thunder Clap":"ability_thunderclap","Improved Bloodrage":"ability_racial_bloodrage","Master of Defense":"ability_warrior_shieldguard","Improved Revenge":"ability_warrior_revenge","Vanguard":"ability_warrior_shieldcharge","Defiance":"ability_warrior_innerrage","Improved Sunder Armor":"ability_warrior_sunder","Bastion":"inv_shield_04","Focused Rage":"ability_warrior_focusedrage","Improved Rend":"ability_gouge","Deep Wounds":"ability_backstab","Improved Heroic Strike":"ability_rogue_ambush","Improved Charge":"ability_warrior_charge","Improved Overpower":"inv_sword_05","Impale":"ability_searingarrow","Two-Handed Weapon Specialization":"inv_axe_09","Sweeping Strikes":"ability_rogue_slicedice","Weaponmaster":"garrison_weaponupgrade","Unbridled Wrath":"spell_nature_stoneclawtotem","Enrage":"spell_shadow_unholyfrenzy"},"mage":{"Improved Frostbolt":"spell_frost_frostbolt02","Frostbite":"spell_frost_frostarmor","Ice Lance":"spell_frost_frostblast","Elemental Precision":"spell_ice_magicdamage","Ice Block":"spell_frost_wizardmark","Shatter":"spell_frost_frostshock","Fingers of Frost":"ability_mage_wintersgrasp","Cold Snap":"spell_frost_wizardmark","Ice Barrier":"spell_ice_lament","Arcane Meditation":"spell_shadow_siphonmana"},"paladin":{"Benediction":"spell_frost_windwalkon","Sanctified Judgement":"ability_paladin_judgementblue","Improved Judgement":"spell_holy_righteousfury","Pursuit of Justice":"spell_holy_persuitofjustice","Conviction":"spell_holy_retributionaura","Seal of Command":"ability_warrior_innerrage","Sacred Arbiter":"inv_sword_08","Vengeance":"ability_racial_avatar","Two-Handed Weapon Specialization":"inv_hammer_04","Repentance":"spell_holy_prayerofhealing","Divine Strength":"ability_golemthunderclap","Improved Seals":"ability_thunderbolt","Holy Conduit":"spell_holy_devineaegis"},"voleur":{"Remorseless Attacks":"ability_fiegndead","Improved Sinister Strike":"spell_shadow_ritualofsacrifice","Improved Eviscerate":"ability_rogue_eviscerate","Puncturing Wounds":"ability_backstab","Deflection":"ability_parry","Riposte":"ability_warrior_challange","Precision":"ability_marksmanship","Flawless Execution":"inv_sword_35","Dual Wield Specialization":"ability_dualwield","Malice":"ability_racial_bloodrage","Improved Slice and Dice":"ability_rogue_slicedice","Ruthlessness":"ability_druid_disembowel","Relentless Strikes":"ability_warrior_decisivestrike","Lethality":"ability_criticalstrike","Cold Blood":"spell_ice_lament","Blade Flurry":"ability_warrior_punishingblow","Hack and Slash":"inv_sword_27","Adrenaline Rush":"spell_shadow_shadowworddominate"},"chasseur":{"Deadly Aspects":"spell_nature_ravenform","Focused Fire":"ability_hunter_silenthunter","Unleashed Fury":"ability_bullrush","Improved Revive Pet":"ability_hunter_beastsoothe","Bestial Swiftness":"ability_hunter_pet_boar","Summon Hawk":"ability_hunter_animalhandler","Ferocity":"inv_misc_monsterclaw_04","Intimidation":"ability_devour","Frenzy":"inv_misc_monsterclaw_03","Spirit Bond":"classic_ability_druid_demoralizingroar","Pathfinding":"ability_mount_jungletiger","Bestial Discipline":"spell_nature_abolishmagic","Bestial Wrath":"ability_druid_ferociousbite","Improved Mend Pet":"ability_hunter_mendpet","Lethal Attacks":"ability_searingarrow","Efficiency":"spell_frost_wizardmark"},"demoniste":{"Suppression":"spell_shadow_unsummonbuilding","Improved Corruption":"spell_shadow_abominationexplosion","Improved Life Tap":"spell_shadow_burningspirit","Pandemic":"spell_shadow_unstableaffliction_2","Fel Concentration":"spell_shadow_fingerofdeath","Nightfall":"spell_shadow_twilight","Malevolence":"spell_shadow_focusedpower","Soul Siphon":"spell_shadow_lifedrain02","Shadow Mastery":"spell_shadow_shadetruesight","Siphon Life":"spell_shadow_requiem","Improved Drains":"spell_shadow_haunting","Unholy Power":"spell_shadow_shadowworddominate","Demonic Energies":"spell_shadow_felmending","Fel Vitality":"spell_holy_magicalsentry","Improved Bane of Agony":"spell_shadow_curseofsargeras","Grim Reach":"spell_shadow_callofbone"},"pretre":{"Wand Specialization":"inv_wand_01","Spirit Tap":"spell_shadow_requiem","Twin Disciplines":"spell_holy_sealofvengeance","Martyrdom":"spell_nature_tranquility","Mental Strength":"spell_nature_enchantarmor","Inner Focus":"spell_frost_windwalkon","Meditation":"spell_nature_sleep","Improved Power Word: Shield":"spell_holy_powerwordshield","Power in Light":"spell_holy_searinglight","Holy Precision":"spell_holy_divineillumination","Improved Inner Fire":"spell_holy_innerfire","Penance":"spell_holy_penance","Holy Specialization":"spell_holy_sealofsalvation","Improved Shadow Word: Pain":"spell_shadow_shadowwordpain","Shadow Focus":"spell_shadow_burningspirit","Mind Flay":"spell_shadow_siphonmana","Improved Mind Flay":"spell_shadow_soulleech_2","Improved Mind Blast":"spell_shadow_unholyfrenzy","Shadow Weaving":"spell_shadow_blackplague","Vampiric Embrace":"spell_shadow_unsummonbuilding","Devouring Contagion":"spell_shadow_devouringplague","Silence":"spell_shadow_impphaseshift","Darkness":"spell_shadow_twilight","Shadowform":"spell_shadow_shadowform","Mental Agility":"ability_hibernation"}}, cur = "";
+  var ICONS = {"pretre":{"Twin Disciplines":"spell_holy_sealofvengeance","Early Demise":"spell_shadow_demonicfortitude","Martyrdom":"spell_nature_tranquility","Mental Strength":"spell_nature_enchantarmor","Inner Focus":"spell_frost_windwalkon","Meditation":"spell_nature_sleep","Shadow Reach":"spell_shadow_chilltouch","Spirit Tap":"spell_shadow_requiem","Improved Shadow Word: Pain":"spell_shadow_shadowwordpain","Improved Mind Blast":"spell_shadow_unholyfrenzy","Mind Flay":"spell_shadow_siphonmana","Improved Mind Flay":"spell_shadow_soulleech_2","Shadow Focus":"spell_shadow_burningspirit","Vampiric Embrace":"spell_shadow_unsummonbuilding","Shadow Weaving":"spell_shadow_blackplague","Devouring Contagion":"spell_shadow_devouringplague","Darkness":"spell_shadow_twilight","Shadowform":"spell_shadow_shadowform","Mental Agility":"ability_hibernation","Improved Inner Fire":"spell_holy_innerfire","Improved Power Word: Shield":"spell_holy_powerwordshield","Penance":"spell_holy_penance","Wand Specialization":"inv_wand_01"},"demoniste":{"Suppression":"spell_shadow_unsummonbuilding","Improved Corruption":"spell_shadow_abominationexplosion","Improved Life Tap":"spell_shadow_burningspirit","Pandemic":"spell_shadow_unstableaffliction_2","Fel Concentration":"spell_shadow_fingerofdeath","Nightfall":"spell_shadow_twilight","Malevolence":"spell_shadow_focusedpower","Soul Siphon":"spell_shadow_lifedrain02","Shadow Mastery":"spell_shadow_shadetruesight","Siphon Life":"spell_shadow_requiem","Improved Drains":"spell_shadow_haunting","Unholy Power":"spell_shadow_shadowworddominate","Demonic Energies":"spell_shadow_felmending","Fel Vitality":"spell_shadow_demonictactics","Improved Bane of Agony":"spell_shadow_curseofsargeras","Grim Reach":"spell_shadow_callofbone"},"chasseur":{"Lethal Attacks":"ability_searingarrow","Careful Aim":"ability_hunter_zenarchery","Rapid Killing":"ability_hunter_rapidkilling","Efficiency":"spell_frost_wizardmark","Trueshot Aura":"ability_trueshot","Mortal Shots":"ability_piercedamage","Bestial Discipline":"spell_nature_abolishmagic","Ferocity":"inv_misc_monsterclaw_04","Frenzy":"inv_misc_monsterclaw_03","Bestial Wrath":"ability_druid_ferociousbite","Deadly Aspects":"spell_nature_ravenform","Focused Fire":"inv_weapon_crossbow_10","Improved Revive Pet":"ability_hunter_beastsoothe","Endurance Training":"spell_nature_reincarnation","Pathfinding":"ability_mount_jungletiger","Unleashed Fury":"ability_bullrush","Summon Hawk":"ability_hunter_animalhandler","Bestial Swiftness":"ability_druid_dash","Intimidation":"ability_devour"},"voleur":{"Weapon Expertise":"spell_holy_blessingofstrength","Blade Flurry":"ability_warrior_punishingblow","Dual Wield Specialization":"ability_dualwield","Hack and Slash":"inv_sword_27","Flash of Steel":"ability_rogue_restlessblades","Adrenaline Rush":"spell_shadow_shadowworddominate","Malice":"ability_racial_bloodrage","Improved Slice and Dice":"ability_rogue_slicedice","Ruthlessness":"ability_druid_disembowel","Lethality":"ability_criticalstrike","Cold Blood":"spell_ice_lament","Remorseless Attacks":"ability_fiegndead","Efficient Strikes":"spell_shadow_ritualofsacrifice","Coup de Grace":"ability_rogue_eviscerate","Puncturing Wounds":"ability_backstab","Precision":"ability_marksmanship","Deflection":"ability_parry","Riposte":"ability_warrior_challange","Endurance":"spell_shadow_shadowward","Lightning Reflexes":"spell_nature_invisibilty","Flawless Execution":"inv_sword_35","Aggression":"ability_racial_avatar"},"paladin":{"Improved Seals":"ability_thunderbolt","Conviction":"spell_holy_retributionaura","Sacred Arbiter":"inv_sword_08","Seal of Command":"ability_warrior_innerrage","Two-Handed Weapon Specialization":"inv_hammer_04","Vengeance":"ability_racial_avatar","Repentance":"spell_holy_prayerofhealing","Deflection":"ability_parry","Champion of the Light":"ability_paladin_enlightenedjudgements","Unsealed Wrath":"spell_holy_blessedresillience","Holy Conduit":"spell_holy_devineaegis","Vindication":"spell_holy_vindication","Unyielding Faith":"spell_holy_unyieldingfaith","Benediction":"spell_frost_windwalkon","Sanctified Judgement":"ability_paladin_judgementblue","Improved Judgement":"spell_holy_righteousfury","Pursuit of Justice":"spell_holy_persuitofjustice","Divine Strength":"ability_golemthunderclap"},"mage":{"Fingers of Frost":"ability_mage_wintersgrasp","Improved Cone of Cold":"spell_frost_glacier","Cold Snap":"spell_frost_wizardmark","Winter's Chill":"spell_frost_chillingblast","Ice Barrier":"spell_ice_lament","Ice Shards":"spell_frost_iceshard","Improved Channeling":"spell_nature_starfall","Arcane Concentration":"spell_shadow_manaburn","Missile Barrage":"ability_mage_missilebarrage","Arcane Subtlety":"spell_holy_dispelmagic","Arcane Blast":"spell_arcane_blast","Arcane Meditation":"spell_shadow_siphonmana","Improved Frostbolt":"spell_frost_frostbolt02","Precision":"spell_ice_magicdamage","Frostbite":"spell_frost_frostarmor","Ice Lance":"spell_frost_frostblast","Ice Block":"spell_frost_frost","Shatter":"spell_frost_frostshock"},"guerrier":{"Focused Rage":"ability_warrior_focusedrage","Anticipation":"spell_nature_mirrorimage","Bastion":"inv_shield_04","Shield Slam":"inv_shield_05","Cruelty":"ability_rogue_eviscerate","Unbridled Wrath":"spell_nature_stoneclawtotem","Enrage":"spell_shadow_unholyfrenzy","Deflection":"ability_parry","Improved Rend":"ability_gouge","Improved Overpower":"inv_sword_05","Improved Tactical Mastery":"spell_nature_enchantarmor","Anger Management":"spell_holy_blessingofstamina","Deep Wounds":"ability_backstab","Improved Charge":"ability_warrior_charge","Two-Handed Weapon Specialization":"inv_axe_09","Spearing Strike":"inv_spear_01","Sweeping Strikes":"ability_rogue_slicedice","Shield Specialization":"inv_shield_06","Improved Revenge":"ability_warrior_revenge","Improved Thunder Clap":"ability_thunderclap","Master of Defense":"ability_warrior_shieldguard","Last Stand":"spell_holy_ashestoashes","Improved Bloodrage":"ability_racial_bloodrage","Vanguard":"ability_warrior_shieldcharge","Concussion Blow":"ability_thunderbolt"},"druide":{"Predatory Strikes":"ability_hunter_pet_cat","Natural Instinct":"ability_druid_predatoryinstincts","Blood Frenzy":"ability_ghoulfrenzy","Rend and Tear":"ability_druid_primalagression","Predatory Discipline":"spell_druid_savagery","Shifting Power":"spell_druid_displacement","Primal Bite":"ability_racial_cannibalize","Lacerate":"ability_druid_lacerate","Heart of the Wild":"spell_holy_blessingofagility","Furor":"spell_holy_blessingofstamina","Genesis":"spell_arcane_arcane03","Nature's Majesty":"inv_staff_01","Nature's Reach":"spell_nature_naturetouchgrow","Ferocity":"ability_hunter_pet_hyena","Feral Swiftness":"spell_nature_spiritwolf","Savage Fury":"ability_druid_ravage","Feral Charge":"ability_hunter_pet_bear","Sharpened Claws":"inv_misc_monsterclaw_04","Shredding Attacks":"spell_shadow_vampiricaura","Leader of the Pack":"spell_nature_unyeildingstamina"},"chaman":{"Flurry":"ability_ghoulfrenzy","Spirit Weapons":"ability_parry","Concussion":"spell_nature_earthshock","Elemental Devastation":"spell_fire_elementaldevastation","Convection":"spell_nature_wispsplode","Elemental Focus":"spell_shadow_manaburn","Reverberation":"spell_frost_frostward","Earthbound":"spell_nature_stranglevines","Trial by Fire":"spell_fire_sealoffire","Improved Stormstrike":"spell_shaman_improvedstormstrike","Mental Quickness":"spell_nature_sleep","Maelstrom Weapon":"spell_shaman_maelstromweapon","Rage of the Farseer":"spell_nature_bloodlust","Thundering Strikes":"ability_thunderbolt","Mental Dexterity":"spell_nature_mentalquickness","Ancestral Knowledge":"spell_shadow_grimward","Shamanistic Focus":"spell_nature_elementalabsorption","Elemental Weapons":"spell_fire_flametounge","Stormstrike":"ability_shaman_stormstrike","Improved Ghost Wolf":"spell_nature_spiritwolf"}};
   var SPELLS = {"Rockbiter Weapon":"spell_nature_rockbiter","Lightning Shield":"spell_nature_lightningshield","Lightning Bolt":"spell_nature_lightning","Earth Shock":"spell_nature_earthshock","Flame Shock":"spell_fire_flameshock","Frost Shock":"spell_frost_frostshock","Searing Totem":"spell_fire_searingtotem","Fire Nova":"spell_fire_sealoffire","Stormstrike":"ability_shaman_stormstrike","Magma Totem":"spell_fire_selfdestruct","Mana Spring Totem":"spell_nature_manaregentotem","Windfury Weapon":"spell_nature_cyclone","Chain Lightning":"spell_nature_chainlightning","Windfury Totem":"spell_nature_windfury","Lava Burst":"spell_shaman_lavaburst","Water Shield":"ability_shaman_watershield","Healing Wave":"spell_nature_magicimmunity","Lesser Healing Wave":"spell_nature_healingwavelesser","Healing Stream Totem":"inv_spear_04","Mana Tide Totem":"spell_frost_summonwaterelemental","Nature's Swiftness":"spell_nature_ravenform","Chain Heal":"spell_nature_healingwavegreater","Riptide":"spell_nature_riptide","Thorns":"spell_nature_thorns","Wrath":"spell_nature_abolishmagic","Wraths":"spell_nature_abolishmagic","Moonfire":"spell_nature_starfall","Enrage":"ability_druid_enrage","Demoralizing Roar":"ability_druid_demoralizingroar","Maul":"ability_druid_maul","Swipe":"inv_misc_monsterclaw_03","Prowl":"ability_ambush","Rake":"ability_druid_disembowel","Claw":"ability_druid_rake","Shred":"spell_shadow_vampiricaura","Rip":"ability_ghoulfrenzy","Ferocious Bite":"ability_druid_ferociousbite","Ravage":"ability_druid_ravage","Pounce":"ability_druid_supriseattack","Faerie Fire":"spell_nature_faeriefire","Shifting Power":"spell_druid_displacement","Berserk":"ability_druid_berserk","Dire Bear Form":"ability_racial_bearform","Entangling Roots":"spell_nature_stranglevines","Starfire":"spell_arcane_starfire","Starfires":"spell_arcane_starfire","Insect Swarm":"spell_nature_insectswarm","Moonkin Form":"spell_nature_forceofnature","Hurricane":"spell_nature_cyclone","Innervate":"spell_nature_lightning","Rejuvenation":"spell_nature_rejuvenation","Healing Touch":"spell_nature_healingtouch","Regrowth":"spell_nature_resistnature","Swiftmend":"inv_relics_idolofrejuvenation","Tranquility":"spell_nature_tranquility","Wild Growth":"ability_druid_flourish","Battle Shout":"ability_warrior_battleshout","Charge":"ability_warrior_charge","Rend":"ability_gouge","Heroic Strike":"ability_rogue_ambush","Thunder Clap":"spell_nature_thunderclap","Defensive Stance":"ability_warrior_defensivestance","Sunder Armor":"ability_warrior_sunder","Revenge":"ability_warrior_revenge","Execute":"inv_sword_48","Victory Rush":"ability_warrior_devastate","Shield Slam":"inv_shield_05","Overpower":"ability_meleedamage","Cleave":"ability_warrior_cleave","Slam":"ability_warrior_decisivestrike","Improved Slam":null,"Whirlwind":"ability_whirlwind","Mortal Strike":"ability_warrior_savageblow","Recklessness":"ability_criticalstrike","Berserker Rage":"spell_nature_ancestralguardian","Bloodthirst":"spell_nature_bloodlust","Death Wish":"spell_shadow_deathpact","Sweeping Strikes":"ability_rogue_slicedice","Shield Block":"ability_defend","Fireball":"spell_fire_flamebolt","Frostbolt":"spell_frost_frostbolt02","Polymorph":"spell_nature_polymorph","Arcane Missiles":"spell_nature_starfall","Frost Nova":"spell_frost_frostnova","Ice Lance":"spell_frost_frostblast","Fingers of Frost":"ability_mage_wintersgrasp","Cone of Cold":"spell_frost_glacier","Mage Armor":"spell_magearmor","Blizzard":"spell_frost_icestorm","Frostfire Bolt":"ability_mage_frostfirebolt","Ice Barrier":"spell_ice_lament","Arcane Blast":"spell_arcane_blast","Arcane Blasts":"spell_arcane_blast","Missile Barrage":"ability_mage_missilebarrage","Arcane Wrath":null,"Arcane Explosion":"spell_nature_wispsplode","Evocation":"spell_nature_purge","Scorch":"spell_fire_soulburn","Fire Blast":"spell_fire_fireball","Pyroblast":"spell_fire_fireball02","Flamestrike":"spell_fire_selfdestruct","Seal of Righteousness":"ability_thunderbolt","Judgement":"spell_holy_righteousfury","Holy Light":"spell_holy_holybolt","Blessing of Wisdom":"spell_holy_sealofwisdom","Seal of Command":"ability_warrior_innerrage","Consecration":"spell_holy_innerfire","Exorcism":"spell_holy_excorcism_02","Repentance":"spell_holy_prayerofhealing","Hammer of Justice":"spell_holy_sealofmight","Divine Shield":"spell_holy_divineintervention","Lay on Hands":"spell_holy_layonhands","Hammer of Wrath":"ability_thunderclap","Hammer of the Righteous":"ability_paladin_hammeroftherighteous","Flash of Light":"spell_holy_flashheal","Holy Shock":"spell_holy_searinglight","Sinister Strike":"spell_shadow_ritualofsacrifice","Eviscerate":"ability_rogue_eviscerate","Slice and Dice":"ability_rogue_slicedice","Garrote":"ability_rogue_garrote","Stealth":"ability_stealth","Ambush":"ability_rogue_ambush","Riposte":"ability_warrior_challange","Rupture":"ability_rogue_rupture","Cheap Shot":"ability_cheapshot","Blade Flurry":"ability_warrior_punishingblow","Kidney Shot":"ability_rogue_kidneyshot","Evasion":"spell_shadow_shadowward","Gouge":"ability_gouge","Sprint":"ability_rogue_sprint","Vanish":"ability_vanish","Adrenaline Rush":"spell_shadow_shadowworddominate","Cold Blood":"spell_ice_lament","Mutilate":"ability_rogue_shadowstrikes","Ghostly Strike":"spell_shadow_curse","Hemorrhage":"spell_shadow_lifedrain","Blind":"spell_shadow_mindsteal","Aspect of the Monkey":"ability_hunter_aspectofthemonkey","Auto Shot":"ability_whirlwind","Serpent Sting":"ability_hunter_quickshot","Arcane Shot":"ability_impalingbolt","Concussive Shot":"spell_frost_stun","Raptor Strike":"ability_meleedamage","Multi-Shot":"ability_upgrademoonglaive","Aimed Shot":"inv_spear_07","Summon Hawk":"ability_hunter_animalhandler","Rapid Fire":"ability_hunter_runningshot","Freezing Trap":"spell_frost_chainsofice","Bestial Wrath":"ability_druid_ferociousbite","Aspect of the Hawk":"spell_nature_ravenform","Trueshot Aura":"ability_trueshot","Wing Clip":"ability_rogue_trip","Frost Trap":"spell_frost_freezingbreath","Immolation Trap":"spell_fire_flameshock","Mongoose Bite":"ability_hunter_swiftstrike","Explosive Trap":"spell_fire_selfdestruct","Shadow Bolt":"spell_shadow_shadowbolt","Immolate":"spell_fire_immolation","Immolated":"spell_fire_immolation","Corruption":"spell_shadow_abominationexplosion","Bane of Agony":"spell_shadow_curseofsargeras","Life Tap":"spell_shadow_burningspirit","Voidwalker":"spell_shadow_summonvoidwalker","Drain Life":"spell_shadow_lifedrain02","Drain Soul":"spell_shadow_haunting","succubus":"spell_shadow_summonsuccubus","Siphon Life":"spell_shadow_requiem","Searing Pain":"spell_fire_soulburn","Shadowburn":"spell_shadow_scourgebuild","Conflagrate":"spell_fire_fireball","Rain of Fire":"spell_shadow_rainoffire","Hellfire":"spell_fire_incinerate","Incinerate":"spell_fire_burnout","Smite":"spell_holy_holysmite","Lesser Heal":"spell_holy_lesserheal","Power Word: Shield":"spell_holy_powerwordshield","Shield":"spell_holy_powerwordshield","Mind Blast":"spell_shadow_unholyfrenzy","Shadow Word: Pain":"spell_shadow_shadowwordpain","Pain":"spell_shadow_shadowwordpain","Penance":"spell_holy_penance","Power in Light":"spell_holy_searinglight","Shadowform":"spell_shadow_shadowform","Shadow Word: Death":"spell_shadow_demonicfortitude","Devouring Plague":"spell_shadow_blackplague","Mind Flay":"spell_shadow_siphonmana","Vampiric Embrace":"spell_shadow_unsummonbuilding","Silence":"spell_shadow_impphaseshift","Holy Nova":"spell_holy_holynova","Binding Heal":"spell_holy_blindingheal","Prayer of Mending":"spell_holy_prayerofmendingtga","wand":"inv_wand_01","Wand":"inv_wand_01","Hunter's Mark":"ability_hunter_snipershot","Disengage":"ability_rogue_feint","Holy Fire":"spell_holy_searinglight","Seal of the Crusader":"spell_holy_holysmite","Volley":"ability_marksmanship","Lacerate":"ability_druid_lacerate","Primal Bite":"ability_racial_cannibalize","Demonic Sacrifice":"spell_shadow_psychicscream","Soul Link":"spell_shadow_gathershadows","Nightfall":"spell_shadow_twilight","Lightning Mastery":"spell_lightning_lightningbolt01","Maelstrom Weapon":"spell_shaman_maelstromweapon","Rapid Killing":"ability_hunter_rapidkilling"};
   function tal(name) {
-    var imgs = name.split(/, then |, | or /).map(function (n) {
+    var imgs = ((ICONS[cur] || {})[name] ? [name] : name.split(/, then |, | or /)).map(function (n) {
       var ic = (ICONS[cur] || {})[n];
       return ic ? '<img class="ticon" src="../assets/icons/' + ic + '.jpg" alt="" width="28" height="28" loading="lazy">' : "";
     }).join("");
@@ -535,7 +603,7 @@ h1 { transition: color .2s; }
         var lv = (a + 9) + (n > 1 ? "–" + (b + 9) : "");
         var pts = a + (n > 1 ? "–" + b : "");
         body += '<tr><td class="num">' + lv + '</td><td class="num" style="color:var(--muted);font-weight:400">' + pts + "</td><td>" + tal(r[0]) +
-          (r[3] ? '<span class="why">' + r[3] + "</span>" : "") + '</td><td class="num">' + acc[r[0]] + "</td>" + '<td class="tree">' + r[2] + "</td></tr>";
+          (r[3] ? '<span class="why">' + r[3] + "</span>" : "") + '</td><td class="num">' + (r[4] || acc[r[0]]) + "</td>" + '<td class="tree">' + r[2] + "</td></tr>";
         p = b + 1;
       });
     } else if (ph.kind === "lv") {
@@ -581,7 +649,7 @@ h1 { transition: color .2s; }
     document.getElementById("content").innerHTML = h;
     document.getElementById("foot").innerHTML = "<p>Sources: " + c.sources.map(function (s) { return '<a href="' + s[1] + '">' + s[0] + "</a>"; }).join(" · ") + "</p>" +
       "<p>Guides still disagree on some ranks: when in doubt, the in-game tree is always right.</p>" +
-      "<p>Unofficial fan guide, updated 7 November 2026. World of Warcraft is a trademark of Blizzard Entertainment.</p>";
+      "<p>Unofficial fan guide, updated 10 November 2026. World of Warcraft is a trademark of Blizzard Entertainment.</p>";
   }
 
   function fromHash() { var h = (location.hash || "").slice(1); return CLASSES[h] ? h : "chasseur"; }

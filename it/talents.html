@@ -44,11 +44,11 @@ h1 { transition: color .2s; }
   <header>
     <span class="tag">WoW Forever · Talenti per salire</span>
     <h1 id="title">Talenti per salire</h1>
-    <p class="lede">Build per salire 10 → 60 per tutte e nove le classi, Alleanza e Orda, secondo le guide più recenti (fino al 7 novembre). Ogni talento mostra la sua icona di gioco, per trovarlo subito nel tuo albero. Ciò che è stato giocato in beta è segnato <span class="badge t">testato</span>, il resto <span class="badge p">previsto</span>.</p>
+    <p class="lede">Build per salire 10 → 60 per tutte e nove le classi, Alleanza e Orda, secondo le guide più recenti (fino al 10 novembre). Ogni talento mostra la sua icona di gioco, per trovarlo subito nel tuo albero. Ciò che è stato giocato in beta è segnato <span class="badge t">testato</span>, il resto <span class="badge p">previsto</span>.</p>
   </header>
 
   <div class="alert" role="note">
-    <p><strong>Leggi prima questo.</strong> La beta si è fermata al livello 30: nessuno ha ancora giocato i talenti dal 31 al 60, Blizzard ha spostato di nuovo dei talenti il 2 novembre e annunciato nuovi ritocchi alle classi per il 10 novembre. Se un talento non è ancora selezionabile nel tuo albero, prendi il successivo della lista e tornaci più tardi.</p>
+    <p><strong>Leggi prima questo.</strong> La beta si è fermata al livello 30: nessuno ha ancora giocato i talenti dal 31 al 60, Blizzard ha spostato di nuovo dei talenti il 2 novembre e i ritocchi alle classi annunciati per il 10 novembre non sono ancora nelle note ufficiali. Le correzioni del 9 novembre sono incluse; ciò che è stato visto solo nel client del 10 è segnato «non confermato» nei consigli. Se un talento non è ancora selezionabile nel tuo albero, prendi il successivo della lista e tornaci più tardi.</p>
     <p>Con il bonus eredità «Talentuoso», i punti arrivano fino a 5 livelli prima: segui la colonna Punti invece della colonna Livello.</p>
   </div>
 
@@ -69,37 +69,47 @@ h1 { transition: color .2s; }
       timeline: [["10–24", "Tuono e Lupo Spettrale", "#9cc8ff"], ["25–39", "Assalto della Tempesta", "#4d9bff"], ["40–60", "Doppia specializzazione", "#1f5fb8"]],
       phases: [
         { title: "Livelli da 10 a 30", range: "21 punti", st: "t", kind: "order", start: 1,
-          note: "Ordine di Mobalytics, confermato da Icy Veins. Method mette Lupo Spettrale Migliorato subito dopo Assalto della Tempesta, ma conviene averlo prima di Lupo Spettrale al livello 20.",
+          note: "Ordine della guida Method (aggiornata tra il 6 e il 10 novembre), verificato punto per punto sull'albero dei talenti del gioco: ogni talento è selezionabile al livello indicato.",
           rows: [
-            ["Colpi Tonanti", 5, "Potenziamento", "+ critico, il cuore dei tuoi danni in mischia."],
-            ["Destrezza Mentale", 3, "Potenziamento", ""],
-            ["Lupo Spettrale Migliorato", 2, "Potenziamento", "Lupo Spettrale istantaneo da 20: +40% di velocità senza tempo di lancio."],
-            ["Concentrazione Sciamanica", 1, "Potenziamento", "Folgori più economiche dopo un critico."],
-            ["Armi Elementali", 3, "Potenziamento", "Arma Mordiroccia e poi Arma Furia del Vento più forti."],
-            ["Conoscenza Ancestrale", 1, "Potenziamento", "Icy Veins lo colloca esplicitamente a 24."],
-            ["Assalto della Tempesta", 1, "Potenziamento", "Livello 25: il tuo attacco principale."],
-            ["Raffica", 4, "Potenziamento", "Velocità d'attacco dopo un critico."],
-            ["Assalto della Tempesta Migliorato", 1, "Potenziamento", "21° punto al livello 30."]
+            ["Colpi Tonanti", 5, "Potenziamento", "", 5],
+            ["Destrezza Mentale", 3, "Potenziamento", "", 3],
+            ["Conoscenza Ancestrale", 2, "Potenziamento", "", 2],
+            ["Concentrazione Sciamanica", 1, "Potenziamento", "", 1],
+            ["Armi Elementali", 3, "Potenziamento", "", 3],
+            ["Conoscenza Ancestrale", 1, "Potenziamento", "", 3],
+            ["Assalto della Tempesta", 1, "Potenziamento", "", 1],
+            ["Lupo Spettrale Migliorato", 2, "Potenziamento", "", 2],
+            ["Raffica", 2, "Potenziamento", "", 2],
+            ["Assalto della Tempesta Migliorato", 1, "Potenziamento", "", 1]
           ] },
-        { title: "Livelli da 31 a 40", range: "10 punti", st: "p", kind: "list",
-          note: "Variante di Icy Veins e Mobalytics, non ancora giocata. Il 31° punto in Potenziamento arriva al livello 40, con la doppia specializzazione.",
+        { title: "Livelli da 31 a 40", range: "10 punti", st: "p", kind: "order", start: 22,
+          note: "Ordine della guida Method (aggiornata tra il 6 e il 10 novembre), verificato punto per punto sull'albero dei talenti del gioco: ogni talento è selezionabile al livello indicato.",
           rows: [
-            ["Assalto della Tempesta Migliorato", "2/2", "Potenziamento", ""],
-            ["Raffica", "5/5", "Potenziamento", ""],
-            ["Armi Spirituali", "1/1", "Potenziamento", "Meno minaccia in gruppo."],
-            ["Rapidità Mentale", "2/2", "Potenziamento", ""],
-            ["Talento finale di Potenziamento", "1/1", "Potenziamento", "Livello 40. Icy Veins salta di proposito Arma del Maelstrom: troppo debole sotto i 5 ranghi."]
+            ["Assalto della Tempesta Migliorato", 1, "Potenziamento", "", 2],
+            ["Rapidità Mentale", 2, "Potenziamento", "", 2],
+            ["Raffica", 1, "Potenziamento", "", 3],
+            ["Maelstrom Weapon", 5, "Potenziamento", "", 5],
+            ["Rage of the Farseer", 1, "Potenziamento", "", 1]
           ] },
-        { title: "Livelli da 41 a 60", range: "20 punti", st: "p", kind: "list",
-          note: "Nessuna guida ha ancora pubblicato questi 20 punti. Per le spedizioni, Rigenerazione come seconda specializzazione: Guarigione a Catena e Correnti Vitali arrivano a 40.",
+        { title: "Livelli da 41 a 60", range: "20 punti", st: "p", kind: "order", start: 32,
+          note: "Ordine della guida Method (aggiornata tra il 6 e il 10 novembre), verificato punto per punto sull'albero dei talenti del gioco: ogni talento è selezionabile al livello indicato.",
           rows: [
-            ["Resto dell'albero Potenziamento", "per albero", "Potenziamento", "Verifica in gioco cosa hanno lasciato le patch."],
-            ["Conoscenza Ancestrale", "max", "Potenziamento", "Più mana, quindi meno pause."]
+            ["Raffica", 2, "Potenziamento", "", 5],
+            ["Armi Spirituali", 1, "Potenziamento", "", 1],
+            ["Concussion", 5, "Elementale", "", 5],
+            ["Elemental Devastation", 3, "Elementale", "", 3],
+            ["Convection", 2, "Elementale", "", 2],
+            ["Elemental Focus", 1, "Elementale", "", 1],
+            ["Convection", 3, "Elementale", "", 5],
+            ["Reverberation", 1, "Elementale", "", 1],
+            ["Earthbound", 1, "Elementale", "", 1],
+            ["Trial by Fire", 1, "Elementale", "", 1]
           ] }
       ],
       keylevels: [["4", "Folgore della Terra, missione del totem della Terra"], ["10", "Folgore Fiammeggiante, Totem Ustionante, missione del totem del Fuoco"], ["12", "Nova di Fuoco (nuovo)"], ["20", "Lupo Spettrale, Folgore di Gelo, Richiamo degli Elementi, missione del totem dell'Acqua"], ["25", "Assalto della Tempesta (talento)"], ["26", "Totem del Magma, Totem della Fonte di Mana"], ["30", "Arma Furia del Vento, Reincarnazione, Richiamo Astrale, missione del totem dell'Aria"], ["32", "Catena di Fulmini, Totem Furia del Vento"], ["40", "Maglia, Guarigione a Catena, Ira del Veggente, doppia specializzazione"]],
       specs: [["Potenziamento", "main", "La più veloce secondo tutte le guide. L'unico limite è il mana, che finisce in fretta quanto muoiono i mostri.", [["1–9", "Arma Mordiroccia e Scudo di Fulmini. Dardo Fulminante per attirare, Folgore della Terra appena pronta, poi mischia."], ["10–24", "Folgore Fiammeggiante, Totem Ustionante, mischia, Folgore di Gelo o Folgore della Terra appena pronta. Nova di Fuoco (12) sui gruppi. Icy Veins consiglia i talenti di cura (Scudo d'Acqua, Mindfulness) fino al 25 per il mana, poi una nuova specializzazione per Assalto della Tempesta."], ["25–29", "Assalto della Tempesta a ogni recupero, poi spendi il bonus del 20% con un Dardo Fulminante o una folgore entro 12 secondi. Totem del Magma e Totem della Fonte di Mana da 26."], ["30–39", "Arma lenta a due mani con Furia del Vento. Catena di Fulmini e Totem Furia del Vento sui gruppi da 32."], ["40–60", "Prima Assalto della Tempesta. Dardo Fulminante di grado massimo con 5 cariche di Maelstrom Weapon, Rage of the Farseer sui mostri pericolosi. Rigenerazione come seconda specializzazione per le spedizioni. (non testato)"]]], ["Elementale", "niche", "Dal 15 ottobre, Eruzione di Lava è un talento di livello 30 e Catena di Fulmini costa circa il 35% in meno. Il divario si riduce, ma il mana resta più stretto che in Potenziamento: sceglila se vuoi giocare a distanza.", [["1–9", "Scudo di Fulmini, Dardo Fulminante per attirare, Folgore della Terra, Dardo Fulminante finché muore."], ["10–29", "Totem Ustionante (Totem del Magma sui gruppi da 26) e Totem della Fonte di Mana. Folgore Fiammeggiante, poi Dardo Fulminante come riempitivo."], ["30–39", "Eruzione di Lava per attirare, Folgore Fiammeggiante subito dopo, Eruzione di Lava a ogni recupero, Dardo Fulminante nel mezzo. Catena di Fulmini sui gruppi da 32."], ["40–60", "Lightning Mastery (talento, 40) su élite e gruppi grandi. Catena di Fulmini e Nova di Fuoco da 3 mostri, Folgore Fiammeggiante sempre attiva, Dardo Fulminante come riempitivo. (non testato)"]]], ["Rigenerazione", "ko", "Warcraft Tavern la giudica poco efficace in solitaria: fa le missioni come un Elementale senza talenti di danno. Prendila come seconda specializzazione a 40.", [["1–19", "Come in Elementale: Dardo Fulminante, Folgore Fiammeggiante, Totem Ustionante."], ["20–39", "Scudo d'Acqua al posto di Scudo di Fulmini. In gruppo: Onda di Cura, Onda di Cura Inferiore (20), Totem del Flusso Curativo o Totem della Fonte di Mana, Totem della Marea di Mana (talento, 25), Rapidità della Natura (30)."], ["40–60", "Arrivano Guarigione a Catena e Riflusso: qui la specializzazione diventa davvero buona nelle spedizioni. (non testato)"]]]],
       tips: [
+        "Blizzard ha annunciato che la Forza diventerà la statistica migliore per Potenziamento, davanti a Intelletto e potere magico. Al 10 novembre non è ancora nelle note ufficiali: tieni i pezzi con Forza.",
         "Assalto della Tempesta ora costa l'8% del mana base (invece di 125 fissi fino al 15 ottobre).",
         "Nova di Fuoco (livello 12) infligge danni attorno al tuo totem del fuoco, ma la minaccia ricade su di te, non sul totem.",
         "Asce e mazze a due mani sono di base: non serve alcun talento per usarle.",
@@ -118,36 +128,42 @@ h1 { transition: color .2s; }
       timeline: [["10–19", "Orso", "#ffc48a"], ["20–39", "Gatto", "#ff8a2a"], ["40–60", "Berserk", "#a84f0a"]],
       phases: [
         { title: "Livelli da 10 a 30", range: "21 punti", st: "t", kind: "order", start: 1,
-          note: "Ordine di WoW4EverNEWS (7 ottobre). Wowforeverguides prende Carica Ferina a 20 e Colpi Predatori invece di Attacchi Laceranti: funzionano entrambi.",
+          note: "Ordine della guida Method (aggiornata tra il 6 e il 10 novembre), verificato punto per punto sull'albero dei talenti del gioco: ogni talento è selezionabile al livello indicato.",
           rows: [
-            ["Ferocia", 5, "Aggressore Ferino", "Maciullamento, Artigliata e Squarcio più economici."],
-            ["Rapidità Ferina", 2, "Aggressore Ferino", "Velocità del gatto, ora anche al chiuso."],
-            ["Istinto Ferino", 3, "Aggressore Ferino", "Minaccia dell'orso, Fendente più forte."],
-            ["Furia Selvaggia", 2, "Aggressore Ferino", ""],
-            ["Attacchi Laceranti", 3, "Aggressore Ferino", "Dilaniamento più economico."],
-            ["Potere della Trasformazione", 1, "Aggressore Ferino", "Livello 25: 40 energia in cambio di mana, sostituisce il powershifting."],
-            ["Morso Primordiale", 1, "Aggressore Ferino", ""],
-            ["Artigli Affilati", 2, "Aggressore Ferino", "+ critico in forma animale."],
-            ["Frenesia Sanguinaria", 1, "Aggressore Ferino", ""],
-            ["Capobranco", 1, "Aggressore Ferino", "21° punto: critico in mischia e a distanza per tutto il gruppo."]
+            ["Ferocia", 5, "Aggressore Ferino", "", 5],
+            ["Furor", 3, "Aggressore Ferino", "", 3],
+            ["Rapidità Ferina", 2, "Aggressore Ferino", "", 2],
+            ["Furia Selvaggia", 2, "Aggressore Ferino", "", 2],
+            ["Feral Charge", 1, "Aggressore Ferino", "", 1],
+            ["Artigli Affilati", 2, "Aggressore Ferino", "", 2],
+            ["Attacchi Laceranti", 3, "Aggressore Ferino", "", 3],
+            ["Colpi Predatori", 2, "Aggressore Ferino", "", 2],
+            ["Capobranco", 1, "Aggressore Ferino", "", 1]
           ] },
-        { title: "Livelli da 31 a 60", range: "30 punti", st: "p", kind: "list",
-          note: "Proiezione di WoW Forever Tier List, non ancora giocata. Berserk è il talento finale dell'albero al livello 40.",
+        { title: "Livelli da 31 a 60", range: "30 punti", st: "p", kind: "order", start: 22,
+          note: "Ordine della guida Method (aggiornata tra il 6 e il 10 novembre), verificato punto per punto sull'albero dei talenti del gioco: ogni talento è selezionabile al livello indicato.",
           rows: [
-            ["Istinto Naturale", "2/2", "Aggressore Ferino", "Vecchio nome: Istinti Predatori."],
-            ["Squarcia e Lacera", "4/4", "Aggressore Ferino", ""],
-            ["Berserk", "1/1", "Aggressore Ferino", "Livello 40, insieme a Forma d'Orso Feroce."],
-            ["Cuore della Natura Selvaggia", "5/5", "Aggressore Ferino", ""],
-            ["Colpi Predatori", "3/3", "Aggressore Ferino", "Se hai seguito l'ordine di WoW4EverNEWS."],
-            ["Pelle Spessa", "3/3", "Aggressore Ferino", ""],
-            ["Impatto Brutale", "2/2", "Aggressore Ferino", ""],
-            ["Potere della Trasformazione Migliorato, poi Reazione Naturale", "il resto", "Aggressore Ferino", ""]
+            ["Colpi Predatori", 1, "Aggressore Ferino", "", 3],
+            ["Istinto Naturale", 2, "Aggressore Ferino", "", 2],
+            ["Frenesia Sanguinaria", 2, "Aggressore Ferino", "", 2],
+            ["Squarcia e Lacera", 3, "Aggressore Ferino", "", 3],
+            ["Predatory Discipline", 1, "Aggressore Ferino", "", 1],
+            ["Potere della Trasformazione", 1, "Aggressore Ferino", "", 1],
+            ["Morso Primordiale", 1, "Aggressore Ferino", "", 1],
+            ["Squarcia e Lacera", 2, "Aggressore Ferino", "", 5],
+            ["Lacerate", 1, "Aggressore Ferino", "", 1],
+            ["Cuore della Natura Selvaggia", 5, "Rigenerazione", "", 5],
+            ["Furor", 2, "Aggressore Ferino", "", 5],
+            ["Genesis", 5, "Equilibrio", "", 5],
+            ["Nature's Majesty", 2, "Equilibrio", "", 2],
+            ["Nature's Reach", 2, "Equilibrio", "", 2]
           ] }
       ],
       keylevels: [["10", "Forma d'Orso (missione di classe), Radici Avvolgenti, Teletrasporto: Radura di Lunaquieta"], ["12", "Rabbia, Rianimazione (fuori combattimento, nuovo)"], ["14", "Colpo, Cura Veleno"], ["16", "Fendente, Forma Acquatica"], ["20", "Forma di Gatto (missione), Artigliata, Squartamento, Furtività, Dilaniamento, Rinascita"], ["24", "Squarcio"], ["26", "Scatto"], ["30", "Forma di Viaggio, Capobranco"], ["32", "Morso Feroce, Sventramento"], ["36", "Rigenerazione Frenetica, Balzo"], ["40", "Forma d'Orso Feroce, Berserk, cavalcatura, doppia specializzazione"]],
       specs: [["Combattimento Ferino", "main", "Tutte le guide la consigliano: orso da 10 a 20, gatto dopo, e orso di riserva quando arriva un secondo mostro.", [["1–9", "Spine, Ira per attirare, Fuoco Lunare, Ira finché muore. Curati tra un'attirata e l'altra."], ["10–19 (orso)", "Due Ira e un Fuoco Lunare mentre si avvicina, poi Forma d'Orso: Rabbia, Ruggito Demoralizzante, Maciullamento. Fendente sui gruppi."], ["20–31 (gatto)", "Furtività, Squarcio, Artigliata (o Dilaniamento alle spalle) fino a 4-5 punti, Squartamento. Morso Feroce arriva solo a 32."], ["32–39", "Sventramento (prima Dilaniamento) da furtivo, Squarcio se non è attivo, Artigliata fino a 4-5 punti, Squartamento se il mostro vivrà ancora a lungo, altrimenti Morso Feroce. Contro più mostri passa all'orso: il felino non ha danni ad area."], ["40–60", "Potere della Trasformazione (40) sotto 50 di energia. In forma d'orso feroce: Primal Bite a ogni recupero, Lacerate come riempitivo, Fendente contro i gruppi. (non testato)"]]], ["Equilibrio", "niche", "Funziona, ma è lenta fino alla Forma di Lunagufo del livello 40: lanci lunghi e nessuno strumento istantaneo prima.", [["1–9", "Ira per attirare, Fuoco Lunare, Ira finché muore."], ["10–19", "Radici Avvolgenti, poi Ira a distanza. Il talento Overgrowth radica fino a 3 mostri."], ["20–29", "Fuoco Lunare per aprire nelle zone affollate, altrimenti Ira. Sciame d'Insetti (talento, 25), poi Ira come riempitivo. Rinnovamento su di te prima dell'attirata."], ["30–39", "Build Eclipse: 2 Fuoco Stellare per 1 Ira, Fuoco Lunare e Sciame d'Insetti sempre attivi."], ["40–60", "Forma di Lunagufo, Uragano sui gruppi, Innervazione quando il mana cala. (non testato)"]]], ["Rigenerazione", "ko", "Buona per curare nelle spedizioni, ma lenta a uccidere in solitaria. Tienila come seconda specializzazione.", [["1–19", "Ira, Fuoco Lunare, Radici Avvolgenti. Rinnovamento e Tocco Curativo, Ricrescita da 12."], ["20–29", "In gruppo: Rinnovamento sul difensore, Ricrescita, Bloom (talento, 20), Guarigione Rapida da 25."], ["30–39", "Rapidità della Natura per una cura istantanea, Tranquillità in gruppo (5 min di recupero)."], ["40–60", "Crescita Selvaggia (talento) sul gruppo. (non testato)"]]]],
       tips: [
-        "Niente più powershifting: cambiare forma costa il 55% del mana base. Potere della Trasformazione (talento a 25) lo sostituisce.",
+        "Correzione del 9 novembre: Istinto Naturale ora vale anche per Lacerate e Balzo, e Carica Ferina in forma felina ti mette subito in combattimento.",
+        "Niente più powershifting: cambiare forma costa il 55% del mana base. Potere della Trasformazione (talento a 40) lo sostituisce.",
         "In forma di gatto l'attacco automatico colpisce ogni secondo, in orso ogni 2,5 secondi, sempre con i danni della tua arma.",
         "I punti combo non spariscono più quando cambi bersaglio.",
         "Fuoco Fatato è gratuito in forma animale e genera minaccia in orso dal 15 ottobre.",
@@ -163,34 +179,47 @@ h1 { transition: color .2s; }
       verdict: "Il guerriero resta la classe più impegnativa da far salire in Forever (C nella tier list). Method consiglia Protezione (una mano e scudo) per salire da solo, e Armi a due mani se sali in gruppo. La tua arma fa quasi tutti i tuoi danni: migliorala appena puoi.",
       timeline: [["10–19", "Specializzazione negli Scudi", "#e8cfae"], ["20–39", "Avanguardia", "#c69b6d"], ["40–60", "Sbattuta di Scudo", "#7d5a33"]],
       phases: [
-        { title: "Protezione, livelli da 10 a 30 (solo)", range: "21 punti", st: "t", kind: "list",
-          note: "Ordine di Method (4 novembre), completato con le tappe di Warcraft Tavern a 20 e 30. Method non indica tutti i ranghi.",
+        { title: "Protezione, livelli da 10 a 30 (solo)", range: "21 punti", st: "t", kind: "order", start: 1,
+          note: "Ordine della guida Method (aggiornata tra il 6 e il 10 novembre), verificato punto per punto sull'albero dei talenti del gioco: ogni talento è selezionabile al livello indicato.",
           rows: [
-            ["Specializzazione negli Scudi", "max", "Protezione", "La rabbia dal bloccare cambia tutto per la tua economia di rabbia."],
-            ["Tuonata Migliorata", "per albero", "Protezione", ""],
-            ["Furia Sanguinaria Migliorata", "2", "Protezione", ""],
-            ["Maestro della Difesa", "max", "Protezione", "Livello 20."],
-            ["Vendetta Migliorata", "per albero", "Protezione", ""],
-            ["Avanguardia", "1", "Protezione", "Resta in Postura Difensiva: Carica diventa utilizzabile lì."],
-            ["Sfida", "max", "Protezione", "Prima di 30."],
-            ["Fendiarmatura Migliorato, Bastione, Rabbia Concentrata", "il resto", "Protezione", "O Colpo Commovente invece di Bastione."]
+            ["Specializzazione negli Scudi", 5, "Protezione", "", 5],
+            ["Vendetta Migliorata", 3, "Protezione", "", 3],
+            ["Tuonata Migliorata", 2, "Protezione", "", 2],
+            ["Maestro della Difesa", 2, "Protezione", "", 2],
+            ["Last Stand", 1, "Protezione", "", 1],
+            ["Tuonata Migliorata", 1, "Protezione", "", 3],
+            ["Furia Sanguinaria Migliorata", 1, "Protezione", "", 1],
+            ["Avanguardia", 1, "Protezione", "", 1],
+            ["Furia Sanguinaria Migliorata", 1, "Protezione", "", 2],
+            ["Anticipation", 3, "Protezione", "", 3],
+            ["Concussion Blow", 1, "Protezione", "", 1]
           ] },
-        { title: "Armi, livelli da 10 a 30 (gruppo)", range: "21 punti", st: "t", kind: "list",
-          note: "Method parte con Squartare Migliorato. Il riepilogo della tier list cita Crudeltà (Furia) al livello 10: +5% di critico è il miglior primo punto. Tappe di Warcraft Tavern: 11/0/0 a 20, 21/0/0 a 30.",
+        { title: "Armi, livelli da 10 a 30 (gruppo)", range: "21 punti", st: "t", kind: "order", start: 1,
+          note: "Ordine della guida Method (aggiornata tra il 6 e il 10 novembre), verificato punto per punto sull'albero dei talenti del gioco: ogni talento è selezionabile al livello indicato.",
           rows: [
-            ["Squartare Migliorato", "max", "Armi", "Squartare scala con la potenza d'attacco: molto potenziato in Forever."],
-            ["Ferite Profonde", "max", "Armi", ""],
-            ["Assalto Eroico Migliorato, Carica Migliorata, Sopraffazione Migliorata", "per albero", "Armi", "Carica Migliorata dà 6 rabbia extra in apertura."],
-            ["Impalare", "max", "Armi", ""],
-            ["Specializzazione nelle Armi a Due Mani", "max", "Armi", ""],
-            ["Colpi Travolgenti", "1", "Armi", "Livello 30."],
-            ["Maestro d'Armi", "per albero", "Armi", "Non serve più resettare per cambiare tipo di arma."]
+            ["Squartare Migliorato", 3, "Armi", "", 3],
+            ["Deflection", 2, "Armi", "", 2],
+            ["Improved Overpower", 2, "Armi", "", 2],
+            ["Improved Tactical Mastery", 3, "Armi", "", 3],
+            ["Anger Management", 1, "Armi", "", 1],
+            ["Ferite Profonde", 3, "Armi", "", 3],
+            ["Improved Charge", 1, "Armi", "", 1],
+            ["Specializzazione nelle Armi a Due Mani", 3, "Armi", "", 3],
+            ["Spearing Strike", 1, "Armi", "", 1],
+            ["Improved Charge", 1, "Armi", "", 2],
+            ["Colpi Travolgenti", 1, "Armi", "", 1]
           ] },
-        { title: "Livelli da 31 a 60", range: "30 punti", st: "p", kind: "list",
-          note: "Nessuna guida ha pubblicato il resto. Colpo Mortale, Sete di Sangue e Sbattuta di Scudo si imparano dall'istruttore a 40, con la doppia specializzazione.",
+        { title: "Livelli da 31 a 60", range: "30 punti", st: "p", kind: "order", start: 22,
+          note: "Ordine della guida Method (aggiornata tra il 6 e il 10 novembre), verificato punto per punto sull'albero dei talenti del gioco: ogni talento è selezionabile al livello indicato.",
           rows: [
-            ["Talento finale del tuo albero", "1/1", "Armi o Protezione", "Livello 40."],
-            ["Ira Sfrenata, Infuriare", "per albero", "Furia", "Method li cita per la rabbia in Armi."]
+            ["Focused Rage", 3, "Protezione", "", 3],
+            ["Anticipation", 1, "Protezione", "", 4],
+            ["Bastion", 5, "Protezione", "", 5],
+            ["Shield Slam", 1, "Protezione", "", 1],
+            ["Cruelty", 5, "Furia", "", 5],
+            ["Unbridled Wrath", 5, "Furia", "", 5],
+            ["Enrage", 5, "Furia", "", 5],
+            ["Deflection", 5, "Armi", "", 5]
           ] }
       ],
       keylevels: [["4", "Carica, Squartare"], ["6", "Tuonata"], ["10", "Missione della Postura Difensiva (Fendiarmatura, Provocazione), Furia Sanguinaria"], ["12", "Sopraffazione"], ["14", "Maestria Tattica (ora dall'istruttore), Vendetta"], ["16", "Blocco con Scudo"], ["20", "Impeto Vittorioso (cura il 10% della salute), Azzoppare, Fendente, Rappresaglia"], ["24", "Esecuzione"], ["28", "Muro di Scudi (15 min)"], ["30", "Postura Berserker (missione), Intercettare, Pugno"], ["36", "Turbine"], ["40", "Colpo Mortale, Sete di Sangue, Sbattuta di Scudo, doppia specializzazione"]],
@@ -199,7 +228,7 @@ h1 { transition: color .2s; }
         "La rabbia dipende dalla velocità e dal tipo dell'arma, non dai suoi danni: circa 5 per colpo di pugnale, da 14 a 17 con un'arma a due mani.",
         "I critici ora danno +100% di rabbia (nulla all'apertura della beta).",
         "Le coti della Forgiatura fanno una grande differenza ai livelli bassi: Estrazione + Forgiatura è la coppia consigliata da Method.",
-        "Fai le spedizioni per le loro armi (Martello Pesante, ascia di Orgrimmar…). L'esperienza dei mostri delle spedizioni è salita del 20% l'8 ottobre.",
+        "Fai le spedizioni per le loro armi (Martello Pesante, ascia di Orgrimmar…). L'esperienza dei mostri delle spedizioni è salita del 20% l'8 ottobre e di un altro 50% l'8 novembre.",
         "Sete di Sangue non cura più. Bevitore di Sangue ridà fino all'1% della salute nei tuoi 3 colpi successivi dopo un effetto di rabbia.",
         "La missione dell'Ascia Turbinante (Montagne di Alterac) è molto difficile da soli: porta un gruppo."
       ],
@@ -212,28 +241,42 @@ h1 { transition: color .2s; }
       verdict: "Gelo è la specializzazione consigliata da Method e Mobalytics: congeli, arretri, e Lancia di Ghiaccio colpisce forte i bersagli congelati. Il vero freno del mago in Forever è il mana: evoca sempre cibo e acqua prima di partire.",
       timeline: [["10–19", "Dardo di Gelo", "#b8ecf8"], ["20–39", "Lancia di Ghiaccio", "#3fc7eb"], ["40–60", "Barriera di Ghiaccio", "#1d7a96"]],
       phases: [
-        { title: "Livelli da 10 a 30", range: "21 punti", st: "t", kind: "lv",
-          note: "Priorità di Method e Mobalytics, combinate dalla tier list. Method non ha ancora fissato una build di livello 60.",
+        { title: "Livelli da 10 a 30", range: "21 punti", st: "t", kind: "order", start: 1,
+          note: "Ordine della guida Method (aggiornata tra il 6 e il 10 novembre), verificato punto per punto sull'albero dei talenti del gioco: ogni talento è selezionabile al livello indicato.",
           rows: [
-            ["10–14", "Dardo di Gelo Migliorato", "5/5", "Gelo", "Dardo di Gelo più rapido."],
-            ["15–19", "Morso del Gelo", "per albero", "Gelo", "O qualsiasi talento che ti porti a 10 punti in Gelo."],
-            ["20", "Lancia di Ghiaccio", "1/1", "Gelo", "+200% di danni a un bersaglio congelato."],
-            ["21–24", "Precisione Elementale", "max", "Gelo", "Method lo prende per primo da 20. Tormenta Migliorata facoltativa."],
-            ["25", "Blocco di Ghiaccio", "1/1", "Gelo", ""],
-            ["26–29", "Frantumazione", "max", "Gelo", "O Schegge di Ghiaccio."],
-            ["30", "Dita di Gelo o Ondata di Freddo", "1/1", "Gelo", ""]
+            ["Dardo di Gelo Migliorato", 5, "Gelo", "", 5],
+            ["Precision", 3, "Gelo", "", 3],
+            ["Morso del Gelo", 2, "Gelo", "", 2],
+            ["Lancia di Ghiaccio", 1, "Gelo", "", 1],
+            ["Morso del Gelo", 1, "Gelo", "", 3],
+            ["Ice Shards", 3, "Gelo", "", 3],
+            ["Blocco di Ghiaccio", 1, "Gelo", "", 1],
+            ["Frantumazione", 3, "Gelo", "", 3],
+            ["Ice Shards", 1, "Gelo", "", 4],
+            ["Fingers of Frost", 1, "Gelo", "", 1]
           ] },
-        { title: "Livelli da 31 a 60", range: "30 punti", st: "p", kind: "list",
-          note: "Proiezione dal testo del talento, non ancora giocata.",
+        { title: "Livelli da 31 a 60", range: "30 punti", st: "p", kind: "order", start: 22,
+          note: "Ordine della guida Method (aggiornata tra il 6 e il 10 novembre), verificato punto per punto sull'albero dei talenti del gioco: ogni talento è selezionabile al livello indicato.",
           rows: [
-            ["Barriera di Ghiaccio", "1/1", "Gelo", "Talento finale al livello 40, insieme a Dardo di Fuocogelo e doppia specializzazione."],
-            ["Resto dell'albero Gelo", "il resto", "Gelo", "Nessuna guida ha pubblicato il resto."],
-            ["Meditazione Arcana", "se sali in Arcano", "Arcano", "Mantieni il 50% della rigenerazione mentre lanci."]
+            ["Fingers of Frost", 1, "Gelo", "", 2],
+            ["Improved Cone of Cold", 2, "Gelo", "", 2],
+            ["Cold Snap", 1, "Gelo", "", 1],
+            ["Winter's Chill", 5, "Gelo", "", 5],
+            ["Barriera di Ghiaccio", 1, "Gelo", "", 1],
+            ["Improved Cone of Cold", 1, "Gelo", "", 3],
+            ["Ice Shards", 1, "Gelo", "", 5],
+            ["Improved Channeling", 5, "Arcano", "", 5],
+            ["Arcane Concentration", 5, "Arcano", "", 5],
+            ["Missile Barrage", 2, "Arcano", "", 2],
+            ["Arcane Subtlety", 2, "Arcano", "", 2],
+            ["Arcane Blast", 1, "Arcano", "", 1],
+            ["Meditazione Arcana", 3, "Arcano", "", 3]
           ] }
       ],
       keylevels: [["4", "Dardo di Gelo, Evoca Acqua"], ["8", "Metamorfosi, Dardi Arcani"], ["10", "Nova di Gelo"], ["14", "Esplosione Arcana"], ["16", "Getto di Fuoco"], ["20", "Lancia di Ghiaccio, Tormenta, Traslazione, Evocazione, teletrasporti per Orgrimmar e Sepulcride"], ["24", "Controincantesimo, Raffica di Gelo (nuovo)"], ["25", "Blocco di Ghiaccio"], ["26", "Cono di Freddo"], ["28", "Lancia di Ghiaccio rango 2: addestrala subito"], ["30", "Armatura di Ghiaccio, teletrasporto per Picco del Tuono"], ["40", "Dardo di Fuocogelo, Barriera di Ghiaccio, doppia specializzazione"]],
       specs: [["Gelo", "main", "Nova di Gelo, rallentamenti e Lancia di Ghiaccio ti tengono in vita. Il punto debole è il mana, molto caro da 30.", [["1–9", "Palla di Fuoco, poi Dardo di Gelo (4). Metamorfosi e Dardi Arcani a 8."], ["10–19", "Dardo di Gelo alla massima distanza, un secondo mentre corre verso di te. In mischia: Nova di Gelo e arretra. Con 2 mostri, Metamorfosi sul secondo. Icy Veins prende prima Raffica di Dardi (Arcano, prima riga) per il mana: Dardi Arcani a ogni proc."], ["20–29", "Stessa apertura, poi Lancia di Ghiaccio sul bersaglio congelato o con un proc di Dita di Gelo. Raffica di Gelo (24) per rallentare, Cono di Freddo (26). Lancia di Ghiaccio rango 2 a 28."], ["30–39", "Armatura del Mago per il mana, regola dei cinque secondi, sempre il rango più alto. Tormenta non è più fatta per le grandi attirate."], ["40–60", "Aggiungi Dardo di Fuocogelo (40% di rallentamento) e Barriera di Ghiaccio. (non testato)"]]], ["Arcano", "niche", "Valido in solitario, ma dipende dai proc e richiede una buona gestione del mana. Le guide non concordano sull'ordine: Mobalytics consiglia Gelo fino al 25 e poi Arcano, Icy Veins il contrario (Arcano all'inizio per il mana, Gelo verso il 30).", [["1–9", "Come in Gelo."], ["10–24", "Una o due Deflagrazioni Arcane per aprire, poi Dardo di Gelo o Palla di Fuoco. Dardi Arcani con un proc di Raffica di Dardi. Non tenere 4 cariche: ognuna aggiunge il 175% al costo della successiva."], ["25–39", "Arcane Wrath (talento, 6 s di recupero) dopo una o due Deflagrazioni Arcane. Esplosione Arcana sui gruppi, Evocazione quando il mana è basso."], ["40–60", "Stessa rotazione. (non testato)"]]], ["Fuoco", "ko", "Non prima del 30 secondo Warcraft Tavern e i tester: debole all'inizio. Solo Icy Veins la ritiene valida prima. È la specializzazione che consuma meno mana una volta avviata.", [["1–29", "Gioca Gelo."], ["30–39", "Pirosfera o Palla di Fuoco dalla distanza massima, 1 o 2 Deflagrazioni Arcane finché non scatta Raffica di Dardi, poi Dardi Arcani. Getto di Fuoco a ogni recupero, Pirosfera con 3 cariche di Heating Up, Bruciatura come riempitivo. Colpo Infuocato contro i gruppi."], ["40–60", "Dardo di Fuocogelo (40) per aprire, poi la stessa rotazione. (non testato)"]]]],
       tips: [
+        "Correzione del 9 novembre: la probabilità di Concentrazione Arcana ora è divisa tra il lancio e ogni dardo (prima era il 10% per ciascuno), quindi Clearcasting scatta meno spesso con Dardi Arcani.",
         "Le bacchette non scalano più con il potere magico, e devi stare fermo mezzo secondo prima del primo colpo.",
         "Gli incantesimi lanciati a un rango molto inferiore al tuo livello ricevono molto meno potere magico dal 1° ottobre.",
         "I danni base sono più bassi di Classic al livello 60, ma lo Spirito è stato molto potenziato per gli incantatori.",
@@ -249,25 +292,33 @@ h1 { transition: color .2s; }
       verdict: "Lato Alleanza i paladini restano umani o nani. Novità di Forever: anche l'Orda ha i paladini, solo Reietti (partenza nelle Radure di Tirisfal). Castigo è la specializzazione per salire, soprattutto perché risparmia mana. La cavalcatura del livello 40 è un incantesimo gratuito: tieni l'oro per la doppia specializzazione.",
       timeline: [["10–19", "Benedizione", "#fbc6e0"], ["20–39", "Sigillo del Comando", "#f48cba"], ["40–60", "Doppia specializzazione", "#a8467a"]],
       phases: [
-        { title: "Livelli da 10 a 30", range: "21 punti", st: "t", kind: "list",
-          note: "Nessuna guida ha pubblicato un ordine punto per punto. Riepilogo di Method (4 novembre) e Warcraft Tavern (0/0/26 con il bonus eredità «Talentuoso»).",
+        { title: "Livelli da 10 a 30", range: "21 punti", st: "t", kind: "order", start: 1,
+          note: "Ordine della guida Method (aggiornata tra il 6 e il 10 novembre), verificato punto per punto sull'albero dei talenti del gioco: ogni talento è selezionabile al livello indicato.",
           rows: [
-            ["Benedizione", "max", "Castigo", "Risparmio di mana, il primo obiettivo."],
-            ["Giudizio Santificato", "per albero", "Castigo", ""],
-            ["Giudizio Migliorato", "1", "Castigo", ""],
-            ["Ricerca della Giustizia", "2/2", "Castigo", "+15% di velocità, anche in sella: prendilo il prima possibile."],
-            ["Convinzione", "per albero", "Castigo", ""],
-            ["Sigillo del Comando", "1/1", "Castigo", "Livello 20."],
-            ["Arbitro Sacro", "1/1", "Castigo", "Livello 25."],
-            ["Vendetta Divina, Specializzazione nelle Armi a Due Mani", "il resto", "Castigo", "Fino a +6% di danni a due mani."],
-            ["Pentimento", "1/1", "Castigo", "Livello 30: rende inerme un umanoide per 6 secondi quando un'attirata va male."]
+            ["Benedizione", 5, "Castigo", "", 5],
+            ["Giudizio Santificato", 3, "Castigo", "", 3],
+            ["Giudizio Migliorato", 2, "Castigo", "", 2],
+            ["Ricerca della Giustizia", 2, "Castigo", "", 2],
+            ["Divine Strength", 5, "Sacro", "", 5],
+            ["Improved Seals", 4, "Sacro", "", 4]
           ] },
-        { title: "Livelli da 31 a 60", range: "30 punti", st: "p", kind: "list",
-          note: "Theorycraft di ForeverWisp, non ancora giocato: 20/0/31.",
+        { title: "Livelli da 31 a 60", range: "30 punti", st: "p", kind: "order", start: 22,
+          note: "Ordine di Method fino al livello 42. Gli ultimi 18 punti non vengono da nessuna guida: sono un seguito logico dell'albero, non ancora giocato.",
           rows: [
-            ["Svolta di Luce", "1/1", "Castigo", "31° punto al livello 40: cambia sigillo a ogni colpo. Non provare ad alternarli prima."],
-            ["Resto di Castigo", "fino a 31", "Castigo", ""],
-            ["Forza Divina, Sigilli Migliorati, Condotto Sacro", "20 punti", "Sacro", "Gli ultimi 20 punti."]
+            ["Improved Seals", 1, "Sacro", "", 5],
+            ["Convinzione", 3, "Castigo", "", 3],
+            ["Arbitro Sacro", 1, "Castigo", "", 1],
+            ["Sigillo del Comando", 1, "Castigo", "", 1],
+            ["Two-Handed Weapon Specialization", 3, "Castigo", "", 3],
+            ["Vengeance", 3, "Castigo", "", 3],
+            ["Pentimento", 1, "Castigo", "", 1],
+            ["Deflection", 1, "Castigo", "", 1],
+            ["Champion of the Light", 5, "Castigo", "", 5],
+            ["Unsealed Wrath", 1, "Castigo", "", 1],
+            ["Holy Conduit", 2, "Sacro", "", 2],
+            ["Deflection", 4, "Castigo", "", 5],
+            ["Vindication", 3, "Castigo", "", 3],
+            ["Unyielding Faith", 1, "Castigo", "", 1]
           ] }
       ],
       keylevels: [["1", "Sigillo della Rettitudine, Aura della Devozione"], ["4", "Giudizio, Benedizione della Potenza"], ["6", "Colpo Sacro (nuovo, 8 ranghi), Protezione Divina"], ["8", "Martello della Giustizia, Purificazione"], ["10", "Imposizione delle Mani (svuota tutto il mana), Benedizione della Protezione"], ["12", "Redenzione (missione di classe)"], ["20", "Consacrazione e Benedizione dei Re di base, Esorcismo, Lampo di Luce"], ["30", "Intervento Divino, Sigillo della Luce"], ["32–34", "Scudo Divino (le guide non concordano)"], ["40", "Destriero (incantesimo), Martello del Giusto, doppia specializzazione"], ["44", "Martello dell'Ira"]],
@@ -290,40 +341,50 @@ h1 { transition: color .2s; }
       timeline: [["10–19", "Colpo Sinistro", "#fff9b8"], ["20–39", "Veleni e Turbine di Lame", "#fff468"], ["40–60", "Scarica d'Adrenalina", "#a39a1a"]],
       phases: [
         { title: "Combattimento, livelli da 10 a 30", range: "21 punti", st: "t", kind: "order", start: 1,
-          note: "Ordine di Method, ripreso dalla tier list. A 30 Method sposta i 2 punti di Attacchi Spietati in Specializzazione nell'Ambidestria e Turbine di Lame.",
+          note: "Ordine della guida Method (aggiornata tra il 6 e il 10 novembre), verificato punto per punto sull'albero dei talenti del gioco: ogni talento è selezionabile al livello indicato.",
           rows: [
-            ["Attacchi Spietati", 2, "Assassinio", ""],
-            ["Colpo Sinistro Migliorato", 2, "Combattimento", "Colpo Sinistro più economico."],
-            ["Eviscerazione Migliorata", 3, "Assassinio", ""],
-            ["Ferite Perforanti", 3, "Combattimento", "Senza pugnali: Resistenza 2/2 e Riflessi Fulminei invece."],
-            ["Deviazione", 3, "Combattimento", ""],
-            ["Risposta", 1, "Combattimento", "Usala appena è pronta."],
-            ["Precisione", 3, "Combattimento", "L'accuratezza vale anche per i veleni."],
-            ["Esecuzione Impeccabile", 1, "Combattimento", ""],
-            ["Specializzazione nell'Ambidestria", 3, "Combattimento", ""]
+            ["Attacchi Spietati", 2, "Assassinio", "", 2],
+            ["Efficient Strikes", 2, "Combattimento", "", 2],
+            ["Coup de Grace", 3, "Combattimento", "", 3],
+            ["Deviazione", 3, "Combattimento", "", 3],
+            ["Precisione", 2, "Combattimento", "", 2],
+            ["Risposta", 1, "Combattimento", "", 1],
+            ["Precisione", 1, "Combattimento", "", 3],
+            ["Endurance", 2, "Combattimento", "", 2],
+            ["Lightning Reflexes", 1, "Combattimento", "", 1],
+            ["Esecuzione Impeccabile", 1, "Combattimento", "", 1],
+            ["Aggression", 3, "Combattimento", "", 3]
           ] },
         { title: "Assassinio, livelli da 10 a 30 (pugnali)", range: "21 punti", st: "t", kind: "order", start: 1,
-          note: "Variante di Method per giocare i pugnali con Pugnalata e poi Mutilazione.",
+          note: "Ordine della guida Method (aggiornata tra il 6 e il 10 novembre), verificato punto per punto sull'albero dei talenti del gioco: ogni talento è selezionabile al livello indicato.",
           rows: [
-            ["Attacchi Spietati", 2, "Assassinio", ""],
-            ["Colpo Sinistro Migliorato", 2, "Combattimento", ""],
-            ["Malizia", 3, "Assassinio", "Il critico vale anche per i veleni."],
-            ["Fendi e Taglia Migliorato", 3, "Assassinio", ""],
-            ["Spietatezza", 2, "Assassinio", ""],
-            ["Colpi Implacabili", 1, "Assassinio", ""],
-            ["Malizia", 2, "Assassinio", ""],
-            ["Letalità", 2, "Assassinio", ""],
-            ["Sangue Freddo", 1, "Assassinio", ""],
-            ["Letalità", 3, "Assassinio", ""]
+            ["Attacchi Spietati", 2, "Assassinio", "", 2],
+            ["Efficient Strikes", 2, "Combattimento", "", 2],
+            ["Coup de Grace", 3, "Combattimento", "", 3],
+            ["Ferite Perforanti", 3, "Combattimento", "", 3],
+            ["Precisione", 3, "Combattimento", "", 3],
+            ["Malizia", 3, "Assassinio", "", 3],
+            ["Fendi e Taglia Migliorato", 3, "Assassinio", "", 3],
+            ["Spietatezza", 2, "Assassinio", "", 2]
           ] },
-        { title: "Livelli da 31 a 60", range: "30 punti", st: "p", kind: "list",
-          note: "Suggerimento di Wowforeverguides, non ancora giocato.",
+        { title: "Livelli da 31 a 60", range: "30 punti", st: "p", kind: "order", start: 22,
+          note: "Ordine della guida Method (aggiornata tra il 6 e il 10 novembre), verificato punto per punto sull'albero dei talenti del gioco: ogni talento è selezionabile al livello indicato.",
           rows: [
-            ["Specializzazione nell'Ambidestria", "5/5", "Combattimento", ""],
-            ["Turbine di Lame", "1/1", "Combattimento", "Verso il 36."],
-            ["Taglia e Squarcia", "max", "Combattimento", "Funziona con tutti i tipi di arma, asce a una mano comprese (novità di Forever)."],
-            ["Scarica d'Adrenalina", "1/1", "Combattimento", "Livello 40, con la doppia specializzazione."],
-            ["Resto", "20 punti", "Combattimento o Assassinio", "Sangue Freddo è una buona deviazione in Assassinio."]
+            ["Weapon Expertise", 1, "Combattimento", "", 1],
+            ["Turbine di Lame", 1, "Combattimento", "", 1],
+            ["Weapon Expertise", 1, "Combattimento", "", 2],
+            ["Specializzazione nell'Ambidestria", 2, "Combattimento", "", 2],
+            ["Taglia e Squarcia", 5, "Combattimento", "", 5],
+            ["Flash of Steel", 1, "Combattimento", "", 1],
+            ["Scarica d'Adrenalina", 1, "Combattimento", "", 1],
+            ["Malizia", 3, "Assassinio", "", 3],
+            ["Fendi e Taglia Migliorato", 3, "Assassinio", "", 3],
+            ["Spietatezza", 2, "Assassinio", "", 2],
+            ["Malizia", 2, "Assassinio", "", 5],
+            ["Letalità", 2, "Assassinio", "", 2],
+            ["Spietatezza", 1, "Assassinio", "", 3],
+            ["Sangue Freddo", 1, "Assassinio", "", 1],
+            ["Flash of Steel", 4, "Combattimento", "", 5]
           ] }
       ],
       keylevels: [["4", "Pugnalata, Borseggio"], ["6", "Squarcio Accecante"], ["8", "Evasione"], ["10", "Ambidestria e Fendi e Taglia (addestrali subito), Tramortire, Scatto"], ["12", "Calcio"], ["14", "Esporre Armatura, Garrota"], ["16", "Finta (riduzione della minaccia raddoppiata)"], ["18", "Imboscata"], ["20", "Rottura, veleni, Furtività rango 2"], ["22", "Sparizione, Distrazione"], ["26", "Colpo Basso"], ["30", "Colpo ai Reni, Veleno Mortale"], ["34", "Accecare"], ["40", "Caduta Sicura, doppia specializzazione"]],
@@ -345,40 +406,44 @@ h1 { transition: color .2s; }
       verdict: "Il cacciatore è la classe più veloce da far salire in Forever, e Affinità Animale è la specializzazione che ogni guida consiglia: il tuo famiglio fa da tank, tu spari. Nessun reset necessario lungo la strada.",
       timeline: [["10–30", "Famiglio e aspetti", "#cfe6a8"], ["31–40", "Verso Ira Bestiale", "#a9d271"], ["41–60", "Secondo albero", "#6f9a3d"]],
       phases: [
-        { title: "Livelli da 10 a 30", range: "21 punti", st: "t", kind: "list",
-          note: "Le guide concordano sull'ordine di priorità ma non sempre sui ranghi. Prendili in quest'ordine, completando ogni talento prima di passare al successivo.",
+        { title: "Livelli da 10 a 30", range: "21 punti", st: "t", kind: "order", start: 1,
+          note: "Ordine della guida Method (aggiornata tra il 6 e il 10 novembre), verificato punto per punto sull'albero dei talenti del gioco: ogni talento è selezionabile al livello indicato.",
           rows: [
-            ["Aspetti Letali", "5/5", "Affinità Animale", "Nuovo talento: potenzia i tuoi aspetti, quindi i tuoi danni."],
-            ["Fuoco Concentrato", "2/2", "Affinità Animale", "Nuovo talento che sostituisce Occhi della Bestia Migliorati: più danni."],
-            ["Furia Scatenata", "5/5", "Affinità Animale", "+ danni del famiglio."],
-            ["Rianima Famiglio Migliorato", "2/2", "Affinità Animale", "Method tiene entrambi i punti: meno tempo perso dopo la morte del famiglio."],
-            ["Rapidità Bestiale", "1/1", "Affinità Animale", "Il famiglio corre più veloce all'aperto."],
-            ["Evoca Falco", "1/1", "Affinità Animale", "Nuovo: evoca un falco accanto al famiglio. Method lo mette a 25, ma i dati del lancio lo indicano più tardi (livello 36): prendilo appena è selezionabile."],
-            ["Ferocia", "il resto", "Affinità Animale", "Critico del famiglio: metti qui i punti rimasti."],
-            ["Intimidazione", "1/1", "Affinità Animale", "Verso il 30: stordimento d'emergenza quando un'attirata va male."]
+            ["Aspetti Letali", 5, "Affinità Animale", "", 5],
+            ["Fuoco Concentrato", 2, "Affinità Animale", "", 2],
+            ["Rianima Famiglio Migliorato", 2, "Affinità Animale", "", 2],
+            ["Endurance Training", 1, "Affinità Animale", "", 1],
+            ["Esploratore", 2, "Affinità Animale", "", 2],
+            ["Furia Scatenata", 3, "Affinità Animale", "", 3],
+            ["Evoca Falco", 1, "Affinità Animale", "", 1],
+            ["Rapidità Bestiale", 1, "Affinità Animale", "", 1],
+            ["Furia Scatenata", 1, "Affinità Animale", "", 4],
+            ["Ferocia", 2, "Affinità Animale", "", 2],
+            ["Intimidazione", 1, "Affinità Animale", "", 1]
           ] },
-        { title: "Livelli da 31 a 40", range: "10 punti", st: "p", kind: "list",
-          note: "Obiettivo: Ira Bestiale con il 31° punto, al livello 40. Esploratore è passato alla fila 3 il 2 novembre, per questo entra qui.",
+        { title: "Livelli da 31 a 40", range: "10 punti", st: "p", kind: "order", start: 22,
+          note: "Ordine della guida Method (aggiornata tra il 6 e il 10 novembre), verificato punto per punto sull'albero dei talenti del gioco: ogni talento è selezionabile al livello indicato.",
           rows: [
-            ["Frenesia", "5/5", "Affinità Animale", "Velocità d'attacco del famiglio dopo un critico."],
-            ["Legame Spirituale", "2/2", "Affinità Animale", "Rigenerazione della salute per te e il famiglio: meno pause."],
-            ["Esploratore", "2/2", "Affinità Animale", "+ velocità con Aspetto del Ghepardo."],
-            ["Disciplina Bestiale", "1/2", "Affinità Animale", "Più concentrazione per il famiglio. Prendilo prima se resti senza mana."],
-            ["Ira Bestiale", "1/1", "Affinità Animale", "Livello 40: grande recupero di danni del famiglio."]
+            ["Disciplina Bestiale", 2, "Affinità Animale", "", 2],
+            ["Ferocia", 3, "Affinità Animale", "", 5],
+            ["Frenesia", 4, "Affinità Animale", "", 4],
+            ["Ira Bestiale", 1, "Affinità Animale", "", 1]
           ] },
-        { title: "Livelli da 41 a 60", range: "20 punti", st: "p", kind: "list",
-          note: "Girano due percorsi, nessuno testato: 31 Affinità Animale / 20 Precisione di Tiro (Mobalytics), o tutto Affinità Animale con un po' di Precisione di Tiro. Iniziano allo stesso modo.",
+        { title: "Livelli da 41 a 60", range: "20 punti", st: "p", kind: "order", start: 32,
+          note: "Ordine della guida Method (aggiornata tra il 6 e il 10 novembre), verificato punto per punto sull'albero dei talenti del gioco: ogni talento è selezionabile al livello indicato.",
           rows: [
-            ["Disciplina Bestiale", "2/2", "Affinità Animale", "Completalo."],
-            ["Cura Famiglio Migliorata", "2/2", "Affinità Animale", "La cura del famiglio dissolve anche."],
-            ["Attacchi Letali", "5/5", "Precisione di Tiro", "Critico sui tuoi tiri."],
-            ["Efficienza", "5/5", "Precisione di Tiro", "Tiri più economici: meno pause."],
-            ["Resto di Precisione di Tiro", "~8", "Precisione di Tiro", "Dipende dall'albero finale: verifica in gioco cosa ha lasciato il 2 novembre."]
+            ["Attacchi Letali", 5, "Precisione di Tiro", "", 5],
+            ["Careful Aim", 5, "Precisione di Tiro", "", 5],
+            ["Rapid Killing", 2, "Precisione di Tiro", "", 2],
+            ["Efficienza", 3, "Precisione di Tiro", "", 3],
+            ["Trueshot Aura", 1, "Precisione di Tiro", "", 1],
+            ["Mortal Shots", 4, "Precisione di Tiro", "", 4]
           ] }
       ],
       keylevels: [["10", "Primo famiglio, Aspetto del Falco, primo talento"], ["12", "Cura Famiglio"], ["18", "Tiro Multiplo"], ["20", "Tiro Mirato, Aspetto del Ghepardo, Trappola Congelante"], ["26", "Fuoco Rapido"], ["28", "Trappola di Gelo"], ["30", "Fingersi Morto, Intimidazione"], ["40", "Ira Bestiale, cavalcatura, doppia specializzazione"]],
       specs: [["Affinità Animale", "main", "Di gran lunga la specializzazione più forte per salire: il famiglio tiene i mostri e copia il tuo critico.", [["1–9", "Aspetto della Scimmia, Tiro Automatico, Puntura di Serpe, Tiro Arcano, Tiro Stordente per mantenere la distanza. Assalto del Rapace in mischia."], ["10–24", "Marchio del Cacciatore, prima il famiglio, poi Puntura di Serpe. Tiro Mirato a ogni recupero da 20, Tiro Automatico nel mezzo, Tiro Arcano solo quando il mana avanza. Tiro Multiplo contro i gruppi da 18 (condivide il recupero con Tiro Mirato)."], ["25–39", "Tieni attivi 2 falchi (Summon Hawk a ogni recupero). Fuoco Rapido sui mostri grossi. Se prendi l'aggro: Disimpegno, o Trappola Congelante se l'attirata va male. Trappola Esplosiva e Raffica contro i gruppi grandi."], ["40–60", "Ira Bestiale sui mostri grossi. (non testato)"], ["Sempre", "Non fermare mai il Tiro Automatico. Dal 15 ottobre richiede mezzo secondo da fermo prima di sparare."]]], ["Precisione di Tiro", "ok", "Più danno potenziale e la scelta giusta in gruppo, ma il famiglio tiene meno la minaccia: kiti più spesso. Lone Wolf (senza famiglio) è sconsigliato per salire.", [["1–9", "Come in Affinità Animale."], ["10–24", "Aspetto del Falco, prima il famiglio, Puntura di Serpe, Tiro Arcano, Tiro Mirato da 20."], ["25–39", "Trueshot Aura (talento, 25), Fuoco Rapido (26). Rapid Killing: tieni Puntura di Serpe sul mostro finché muore, poi apri il successivo con Sniper Shot (o Tiro Mirato). Tarpare le Ali, Tiro Stordente o Trappola di Gelo se il famiglio perde la minaccia."], ["40–60", "Sniper Shot (talento). (non testato)"]]], ["Sopravvivenza", "niche", "La più debole delle tre all'inizio: i suoi talenti migliori sono a metà albero. Poi recupera, ma Affinità Animale resta davanti.", [["1–9", "Come in Affinità Animale."], ["10–29", "Tiro Automatico, Puntura di Serpe, Tiro Arcano, poi in mischia: Assalto del Rapace, Trappola Immolante, Morso della Mangusta. Di nuovo a distanza."], ["30–39", "Strider Kick ed Expose Prey (talenti). Trappola Esplosiva a 34."], ["40–60", "Lacerating Strikes (talento). (non testato)"]]]],
       tips: [
+        "Visto nel client del 10 novembre, non confermato da Blizzard: Tiro Arcano ed Evoca Falco costano l'11% del mana base a ogni grado, quindi i gradi bassi non fanno più risparmiare mana. Blizzard ha anche annunciato famigli che fanno da tank quasi come in Classic Era.",
         "Famiglio: il gatto fa più danni, il cinghiale incassa meglio e prende aggro in fretta con Carica. Non puoi addomesticare sopra il tuo livello.",
         "I danni del cacciatore sono stati molto potenziati al lancio: Tiro Mirato +110%, Tiro Arcano +30%, Puntura di Serpe +20%, Aspetto del Falco più forte.",
         "Tutte le trappole ora condividono un recupero di 30 secondi.",
@@ -394,33 +459,35 @@ h1 { transition: color .2s; }
       timeline: [["10–29", "Corruzione istantanea", "#d6cdfb"], ["30–45", "Drain-tank", "#a99af5"], ["46–60", "Demonologia e finale", "#6c5bc4"]],
       phases: [
         { title: "Ordine completo", range: "51 punti", st: "mix", kind: "order", start: 1,
-          note: "Ordine di Method (4 novembre). Method non indica tutti i ranghi: quelli segnati * sono dedotti perché il totale faccia esattamente 51. I punti fino al livello 30 sono testati, il resto è previsto.",
+          note: "Ordine della guida Method (aggiornata tra il 6 e il 10 novembre), verificato punto per punto sull'albero dei talenti del gioco: ogni talento è selezionabile al livello indicato.",
           rows: [
-            ["Soppressione", 4, "Afflizione", "I tuoi incantesimi colpiscono sempre i mostri del tuo livello."],
-            ["Corruzione Migliorata", 5, "Afflizione", "Corruzione diventa istantanea: il cuore della build."],
-            ["Tocco Vitale Migliorato", 1, "Afflizione", "Più mana per Tocco Vitale."],
-            ["Pandemia", 3, "Afflizione", "* Critici dei DoT più forti. Rango dedotto."],
-            ["Concentrazione Vile", 3, "Afflizione", "* I tuoi risucchi non vengono quasi mai interrotti quando sei colpito."],
-            ["Calar della Notte", 2, "Afflizione", "Corruzione e Risucchio di Vita possono rendere istantaneo il Dardo d'Ombra."],
-            ["Malevolenza", 2, "Afflizione", "Apre la fila successiva."],
-            ["Sifone d'Anima", 3, "Afflizione", "* Risucchio di Vita più forte."],
-            ["Malevolenza", 2, "Afflizione", "Per arrivare a Maestria dell'Ombra."],
-            ["Maestria dell'Ombra", 5, "Afflizione", "+ danni d'ombra."],
-            ["Malevolenza", 1, "Afflizione", "Ultimo punto."],
-            ["Sifone Vitale", 1, "Afflizione", "Un DoT che ti cura. Kargoz lo prende da 30."],
-            ["Tocco Vitale Migliorato", 1, "Afflizione", "Completalo."],
-            ["Risucchi Migliorati", 3, "Afflizione", "+20% a Risucchio di Vita e Risucchio d'Anima."],
-            ["Potere Empio", 5, "Demonologia", "A 46: potenzia la succube."],
-            ["Energie Demoniache", 2, "Demonologia", ""],
-            ["Vitalità Vile", 3, "Demonologia", ""],
-            ["Flagello dell'Agonia Migliorato", 2, "Afflizione", "Ritorno in Afflizione per finire."],
-            ["Portata Cupa", 2, "Afflizione", "+ gittata degli incantesimi di Afflizione (sostituisce Maledizione dal 15 ottobre)."],
-            ["Soppressione", 1, "Afflizione", "5/5 al livello 60."]
+            ["Soppressione", 4, "Afflizione", "", 4],
+            ["Corruzione Migliorata", 5, "Afflizione", "", 5],
+            ["Tocco Vitale Migliorato", 1, "Afflizione", "", 1],
+            ["Pandemia", 3, "Afflizione", "", 3],
+            ["Concentrazione Vile", 3, "Afflizione", "", 3],
+            ["Calar della Notte", 2, "Afflizione", "", 2],
+            ["Malevolenza", 2, "Afflizione", "", 2],
+            ["Sifone d'Anima", 3, "Afflizione", "", 3],
+            ["Malevolenza", 2, "Afflizione", "", 4],
+            ["Maestria dell'Ombra", 5, "Afflizione", "", 5],
+            ["Malevolenza", 1, "Afflizione", "", 5],
+            ["Sifone Vitale", 1, "Afflizione", "", 1],
+            ["Tocco Vitale Migliorato", 1, "Afflizione", "", 2],
+            ["Risucchi Migliorati", 3, "Afflizione", "", 3],
+            ["Potere Empio", 5, "Demonologia", "", 5],
+            ["Energie Demoniache", 2, "Demonologia", "", 2],
+            ["Vitalità Vile", 3, "Demonologia", "", 3],
+            ["Flagello dell'Agonia Migliorato", 2, "Afflizione", "", 2],
+            ["Portata Cupa", 2, "Afflizione", "", 2],
+            ["Soppressione", 1, "Afflizione", "", 5]
           ] }
       ],
       keylevels: [["10", "Ombra del Vuoto (missione di classe), Risucchio d'Anima, Pietra della Salute"], ["14", "Risucchio di Vita"], ["20", "Succube, Armatura Demoniaca, Pioggia di Fuoco, Rituale di Evocazione"], ["30", "Vilsegugio, Fuoco Infernale"], ["40", "Cavalcatura, doppia specializzazione"]],
       specs: [["Afflizione", "main", "La partenza più semplice, senza cambiare specializzazione: incantesimi istantanei, drain-tank da 30.", [["1–9", "Dardo d'Ombra e Immolazione, poi Corruzione (4) e Flagello dell'Agonia (8). Tocco Vitale (6) tra un'attirata e l'altra, bacchetta."], ["10–19", "Ombra del Vuoto come difensore. Flagello dell'Agonia poi Corruzione, bacchetta quando sei fermo, Risucchio di Vita se sei basso, Risucchio d'Anima per finire e ottenere un frammento. Corruzione diventa istantanea a 18 (Improved Corruption)."], ["20–29", "Uguale, con la succube per uccidere più in fretta i mostri facili. Nightfall (25): lancia il Dardo d'Ombra istantaneo appena si illumina."], ["30–39", "Sifone di Vita (30) sui mostri che vivono a lungo. Drain-tank: Corruzione, Flagello dell'Agonia e Sifone di Vita, lascia che il mostro ti colpisca, Risucchio di Vita per curarti, Tocco Vitale per il mana."], ["40–60", "Demonic Sacrifice (41): sacrifica il tuo vilsegugio per una cura passiva in solitario. Wrack (51) quando vuoi danni invece che cure. (non testato)"]]], ["Demonologia", "ok", "Buona quanto Afflizione secondo le guide. Icy Veins la gioca dall'inizio senza cambiare specializzazione; Warcraft Tavern consiglia Afflizione fino al 27.", [["1–24", "Come in Afflizione, con i talenti che rafforzano il tuo demone."], ["25–39", "Dolore Ardente sul bersaglio del tuo demone per applicare Demonic Brand (25), poi Flagello dell'Agonia, Corruzione, Risucchio di Vita. Soul Link (30): il tuo demone subisce il 30% dei tuoi danni. Tocco Vitale quando la tua vita supera il mana."], ["40–60", "Demonic Pact (40), poi 20 punti in Afflizione. (non testato)"]]], ["Distruzione", "ko", "Le guide sconsigliano di salire in Distruzione prima di 40: partenza lenta, più mana per uccisione. La migliore nelle spedizioni.", [["1–19", "Dardo d'Ombra, Immolazione, Flagello dell'Agonia."], ["20–29", "Bruciatura d'Ombra per finire, Conflagrazione (talento, 25) su un bersaglio sotto Immolazione. Pioggia di Fuoco sui gruppi."], ["30–39", "Dardo d'Ombra come riempitivo, Fuoco Infernale sui gruppi."], ["40–60", "Incenerimento sostituisce Dardo d'Ombra. Tocco Vitale tra un'attirata e l'altra. (non testato)"]]]],
       tips: [
+        "Ombra del Vuoto: circa 40 punti di salute base in più dal 6 novembre, e Blizzard ha annunciato che farà da tank quasi come in Classic Era. Incenerimento è riservato a Distruzione dal 9 novembre.",
+        "Visto nel client del 10 novembre, non confermato da Blizzard: Tormento non aggiunge più il 10% ai tuoi danni d'Ombra nel tempo. Mentre lo canalizzi, Corruzione, Sifone di Vita e Flagello dell'Agonia infliggono i loro danni al doppio della velocità, e Tormento stesso fa il 30% di danni in meno. Applica tutti e tre prima di canalizzare.",
         "I demoni hanno perso circa il 73% della salute ricavata dalla tua Tempra: l'Ombra del Vuoto fa da tank peggio che in beta, il che spinge ancora di più al drain-tank.",
         "Risucchi Migliorati non potenzia più Tormento, ma il coefficiente di Tormento stesso è raddoppiato al lancio.",
         "Risucchio d'Anima dà molti meno frammenti se il bersaglio sopravvive: finisci bene i mostri con esso.",
@@ -436,58 +503,59 @@ h1 { transition: color .2s; }
       timeline: [["10–29", "Bacchetta", "#f4f1ea"], ["30–39", "Penitenza", "#cfc8b8"], ["40–60", "Ombra", "#8d8578"]],
       phases: [
         { title: "Livelli da 10 a 29: build bacchetta", range: "20 punti", st: "t", kind: "order", start: 1,
-          note: "15 Disciplina / 5 Ombra. Parola del Potere: Scudo Migliorata è passata alla fila 3 il 15 ottobre, da qui un solo punto a 29.",
+          note: "Ordine della guida Method (aggiornata tra il 6 e il 10 novembre), verificato punto per punto sull'albero dei talenti del gioco: ogni talento è selezionabile al livello indicato.",
           rows: [
-            ["Specializzazione nelle Bacchette", 2, "Disciplina", "+25% di danni della bacchetta con soli 2 punti."],
-            ["Spirito Prosciugato", 5, "Ombra", "Ogni uccisione ridà mana: è questo che elimina le pause."],
-            ["Discipline Gemelle", 3, "Disciplina", "Incantesimi istantanei più forti (Parola d'Ombra: Dolore, Scudo)."],
-            ["Martirio", 2, "Disciplina", "Niente più interruzioni quando sei colpito dopo un critico."],
-            ["Forza Mentale", 3, "Disciplina", "Più mana."],
-            ["Concentrazione Interiore", 1, "Disciplina", "Un incantesimo gratuito e più critico ogni 3 minuti."],
-            ["Meditazione", 3, "Disciplina", "Rigeneri mana anche mentre lanci."],
-            ["Parola del Potere: Scudo Migliorata", 1, "Disciplina", "Scudo più robusto."]
+            ["Specializzazione nelle Bacchette", 2, "Disciplina", "", 2],
+            ["Spirito Prosciugato", 5, "Ombra", "", 5],
+            ["Parola d'Ombra: Dolore Migliorata", 2, "Ombra", "", 2],
+            ["Discipline Gemelle", 5, "Disciplina", "", 5],
+            ["Martirio", 2, "Disciplina", "", 2],
+            ["Forza Mentale", 1, "Disciplina", "", 1],
+            ["Concentrazione Interiore", 1, "Disciplina", "", 1],
+            ["Meditazione", 2, "Disciplina", "", 2]
           ] },
-        { title: "Livello 30: reset su Penitenza", range: "21 punti", st: "t", kind: "set",
-          note: "Passa dal tuo istruttore e metti subito questi 21 punti in Disciplina. Penitenza diventa il tuo incantesimo di danno istantaneo.",
+        { title: "Livelli da 30 a 39", range: "10 punti", st: "p", kind: "order", start: 21,
+          note: "Ordine della guida Method (aggiornata tra il 6 e il 10 novembre), verificato punto per punto sull'albero dei talenti del gioco: ogni talento è selezionabile al livello indicato.",
           rows: [
-            ["Potere nella Luce", 5, "Disciplina", "Punizione e Penitenza più forti su un bersaglio già sotto Dolore."],
-            ["Precisione Sacra", 2, "Disciplina", ""],
-            ["Forza Mentale", 3, "Disciplina", ""],
-            ["Parola del Potere: Scudo Migliorata", 3, "Disciplina", ""],
-            ["Concentrazione Interiore", 1, "Disciplina", ""],
-            ["Meditazione", 3, "Disciplina", ""],
-            ["Fuoco Interiore Migliorato", 3, "Disciplina", ""],
-            ["Penitenza", 1, "Disciplina", "Il 21° punto."]
-          ] },
-        { title: "Livelli da 31 a 39", range: "9 punti", st: "p", kind: "order", start: 22,
-          note: "Totale a 39: 21 Disciplina / 4 Sacro / 5 Ombra.",
-          rows: [
-            ["Spirito Prosciugato", 5, "Ombra", "Lo recuperi."],
-            ["Specializzazione Sacra", 4, "Sacro", ""]
+            ["Meditazione", 1, "Disciplina", "", 3],
+            ["Agilità Mentale", 2, "Disciplina", "", 2],
+            ["Fuoco Interiore Migliorato", 3, "Disciplina", "", 3],
+            ["Parola del Potere: Scudo Migliorata", 1, "Disciplina", "", 1],
+            ["Penitenza", 1, "Disciplina", "", 1],
+            ["Parola del Potere: Scudo Migliorata", 2, "Disciplina", "", 3]
           ] },
         { title: "Livello 40: reset su Ombra", range: "31 punti", st: "p", kind: "set",
           note: "Ordine di Method. Forma d'Ombra è il 31° punto: -50% di costo in mana degli incantesimi d'ombra, +10% di danni d'ombra, critici x2 e -15% di danni fisici subiti.",
           rows: [
-            ["Spirito Prosciugato", 5, "Ombra", ""], ["Parola d'Ombra: Dolore Migliorata", 2, "Ombra", ""], ["Concentrazione dell'Ombra", 5, "Ombra", "Accuratezza degli incantesimi d'ombra."],
-            ["Flagello Mentale", 1, "Ombra", ""], ["Flagello Mentale Migliorato", 2, "Ombra", ""], ["Esplosione Mentale Migliorata", 4, "Ombra", ""],
-            ["Intreccio d'Ombra", 3, "Ombra", ""], ["Abbraccio Vampirico", 1, "Ombra", ""], ["Contagio Divorante", 1, "Ombra", ""],
-            ["Silenzio", 1, "Ombra", ""], ["Oscurità", 5, "Ombra", ""], ["Forma d'Ombra", 1, "Ombra", "Il 31° punto."]
+            ["Spirito Prosciugato", "5/5", "Ombra", ""],
+            ["Parola d'Ombra: Dolore Migliorata", "2/2", "Ombra", ""],
+            ["Esplosione Mentale Migliorata", "4/5", "Ombra", ""],
+            ["Flagello Mentale", "1/1", "Ombra", ""],
+            ["Flagello Mentale Migliorato", "2/2", "Ombra", ""],
+            ["Concentrazione dell'Ombra", "5/5", "Ombra", ""],
+            ["Abbraccio Vampirico", "1/1", "Ombra", ""],
+            ["Intreccio d'Ombra", "3/3", "Ombra", ""],
+            ["Contagio Divorante", "2/2", "Ombra", ""],
+            ["Oscurità", "5/5", "Ombra", ""],
+            ["Forma d'Ombra", "1/1", "Ombra", ""]
           ] },
-        { title: "Livelli da 41 a 60", range: "20 punti", st: "p", kind: "list",
-          note: "Nessuno li ha ancora collocati in modo testato. Il percorso più citato: tornare in Disciplina per bacchetta e mana.",
+        { title: "Livelli da 41 a 60", range: "20 punti", st: "p", kind: "order", start: 32,
+          note: "Ordine della guida Method (aggiornata tra il 6 e il 10 novembre), verificato punto per punto sull'albero dei talenti del gioco: ogni talento è selezionabile al livello indicato.",
           rows: [
-            ["Specializzazione nelle Bacchette", "2/2", "Disciplina", ""],
-            ["Discipline Gemelle", "3/3", "Disciplina", ""],
-            ["Forza Mentale", "3/3", "Disciplina", ""],
-            ["Meditazione", "3/3", "Disciplina", ""],
-            ["Concentrazione Interiore", "1/1", "Disciplina", ""],
-            ["Parola del Potere: Scudo Migliorata", "3/3", "Disciplina", ""],
-            ["Agilità Mentale", "il resto", "Disciplina", "Incantesimi istantanei più economici."]
+            ["Discipline Gemelle", 5, "Disciplina", "", 5],
+            ["Early Demise", 2, "Ombra", "", 2],
+            ["Martirio", 2, "Disciplina", "", 2],
+            ["Forza Mentale", 3, "Disciplina", "", 3],
+            ["Concentrazione Interiore", 1, "Disciplina", "", 1],
+            ["Meditazione", 3, "Disciplina", "", 3],
+            ["Forza Mentale", 2, "Disciplina", "", 5],
+            ["Shadow Reach", 2, "Ombra", "", 2]
           ] }
       ],
-      keylevels: [["4", "Parola d'Ombra: Dolore"], ["6", "Parola del Potere: Scudo"], ["~5 / 13", "Bacchetta Magica Inferiore poi Superiore (incantatore)"], ["14", "Urlo Psichico"], ["20", "Piaga Divorante e Protezione dalla Paura, ora per tutti i sacerdoti"], ["30", "Penitenza (talento)"], ["32", "Parola d'Ombra: Morte"], ["40", "Forma d'Ombra, cavalcatura, doppia specializzazione"]],
+      keylevels: [["4", "Parola d'Ombra: Dolore"], ["6", "Parola del Potere: Scudo"], ["~5 / 13", "Bacchetta Magica Inferiore poi Superiore (incantatore)"], ["14", "Urlo Psichico"], ["20", "Piaga Divorante e Protezione dalla Paura, ora per tutti i sacerdoti"], ["32", "Parola d'Ombra: Morte"], ["37", "Penitenza (talento)"], ["40", "Forma d'Ombra, cavalcatura, doppia specializzazione"]],
       specs: [["Disciplina poi Ombra", "main", "Poche morti grazie allo scudo e alle cure, bacchetta per il mana. Ombra rende solo con Forma d'Ombra a 40.", [["1–9", "Bacchetta da 5, Punizione con parsimonia, Cura Inferiore. Parola del Potere: Scudo se i tuoi incantesimi vengono interrotti."], ["10–29", "Scudo, Esplosione Mentale, Parola d'Ombra: Dolore, poi bacchetta finché il mostro muore."], ["30–39", "Scudo, Fuoco Sacro per aprire, Parola d'Ombra: Dolore, Penitenza, poi bacchetta. Sui mostri che muoiono in fretta, Dolore basta ad attivare Potere nella Luce. Icy Veins propone di passare tutto in Disciplina a 35 per potenziare Penitenza."], ["40–60", "Forma d'Ombra: Parola d'Ombra: Morte ed Esplosione Mentale appena pronte, Piaga Divorante ogni 24 s, Flagello Mentale come riempitivo per tutta la canalizzazione."]]], ["Ombra da 10", "niche", "Possibile, ma molto affamata di mana prima di Forma d'Ombra. Warcraft Tavern dice che brilla davvero solo da 28.", [["10–19", "Come in Disciplina: Scudo, Esplosione Mentale, Dolore, bacchetta."], ["20–39", "Flagello Mentale a distanza finché arriva, Parola d'Ombra: Dolore, Esplosione Mentale a ogni recupero, Piaga Divorante se il mana basta, poi bacchetta. Abbraccio Vampirico e Silenzio verso 30."], ["40–60", "Come la specializzazione principale."]]], ["Sacro", "ko", "Sconsigliato in solitaria, le uccisioni sono troppo lente. Per chi fa soprattutto spedizioni.", [["1–19", "Scudo, Punizione per attirare, Parola d'Ombra: Dolore, poi bacchetta."], ["20–39", "Uguale in solitaria. In gruppo: Nova Sacra (20) sui gruppi, Cura Vincolante (25)."], ["40–60", "Preghiera di Guarigione (talento) in gruppo. (non testato)"]]]],
       tips: [
+        "Correzione del 9 novembre: lanciare Protezione dalla Paura non fa più uscire da Forma d'Ombra, e Infusione di Potere resta attiva sull'alleato scelto.",
         "Dal 24 settembre le bacchette non guadagnano più danni dal potere magico: il trucco «bacchetta + potere magico» della beta non esiste più. Scegli le bacchette per i danni indicati.",
         "Dal 15 ottobre le bacchette richiedono mezzo secondo da fermo prima del primo colpo.",
         "Parola d'Ombra: Morte ora costa il 30% della tua salute se il bersaglio sopravvive: tienila per finire.",
@@ -498,10 +566,10 @@ h1 { transition: color .2s; }
   };
 
   // Icône en jeu de chaque talent (sources : Wowhead Forever et wowsims), images dans assets/icons.
-  var ICONS = {"chaman":{"Colpi Tonanti":"ability_thunderbolt","Destrezza Mentale":"spell_nature_bloodlust","Lupo Spettrale Migliorato":"spell_nature_spiritwolf","Concentrazione Sciamanica":"spell_nature_elementalabsorption","Armi Elementali":"spell_fire_flametounge","Conoscenza Ancestrale":"spell_shadow_grimward","Assalto della Tempesta":"ability_shaman_stormstrike","Raffica":"ability_ghoulfrenzy","Assalto della Tempesta Migliorato":"spell_shaman_improvedstormstrike","Armi Spirituali":"ability_parry","Rapidità Mentale":"spell_nature_mentalquickness"},"druide":{"Ferocia":"ability_hunter_pet_hyena","Rapidità Ferina":"spell_nature_spiritwolf","Istinto Ferino":"ability_ambush","Furia Selvaggia":"ability_druid_ravage","Attacchi Laceranti":"spell_shadow_vampiricaura","Potere della Trasformazione":"spell_druid_displacement","Morso Primordiale":"ability_racial_cannibalize","Artigli Affilati":"inv_misc_monsterclaw_04","Frenesia Sanguinaria":"ability_ghoulfrenzy","Capobranco":"spell_nature_unyeildingstamina","Istinto Naturale":"ability_druid_predatoryinstincts","Squarcia e Lacera":"ability_druid_primalagression","Berserk":"ability_druid_berserk","Cuore della Natura Selvaggia":"spell_holy_blessingofagility","Colpi Predatori":"ability_hunter_pet_cat","Pelle Spessa":"inv_misc_pelt_bear_03","Impatto Brutale":"ability_druid_bash","Potere della Trasformazione Migliorato":"ability_hunter_aspectmastery","Reazione Naturale":"ability_bullrush"},"guerrier":{"Specializzazione negli Scudi":"inv_shield_06","Tuonata Migliorata":"ability_thunderclap","Furia Sanguinaria Migliorata":"ability_racial_bloodrage","Maestro della Difesa":"ability_warrior_shieldguard","Vendetta Migliorata":"ability_warrior_revenge","Avanguardia":"ability_warrior_shieldcharge","Sfida":"ability_warrior_innerrage","Fendiarmatura Migliorato":"ability_warrior_sunder","Bastione":"inv_shield_04","Rabbia Concentrata":"ability_warrior_focusedrage","Squartare Migliorato":"ability_gouge","Ferite Profonde":"ability_backstab","Assalto Eroico Migliorato":"ability_rogue_ambush","Carica Migliorata":"ability_warrior_charge","Sopraffazione Migliorata":"inv_sword_05","Impalare":"ability_searingarrow","Specializzazione nelle Armi a Due Mani":"inv_axe_09","Colpi Travolgenti":"ability_rogue_slicedice","Maestro d'Armi":"garrison_weaponupgrade","Ira Sfrenata":"spell_nature_stoneclawtotem","Infuriare":"spell_shadow_unholyfrenzy"},"mage":{"Dardo di Gelo Migliorato":"spell_frost_frostbolt02","Morso del Gelo":"spell_frost_frostarmor","Lancia di Ghiaccio":"spell_frost_frostblast","Precisione Elementale":"spell_ice_magicdamage","Blocco di Ghiaccio":"spell_frost_wizardmark","Frantumazione":"spell_frost_frostshock","Dita di Gelo":"ability_mage_wintersgrasp","Ondata di Freddo":"spell_frost_wizardmark","Barriera di Ghiaccio":"spell_ice_lament","Meditazione Arcana":"spell_shadow_siphonmana"},"paladin":{"Benedizione":"spell_frost_windwalkon","Giudizio Santificato":"ability_paladin_judgementblue","Giudizio Migliorato":"spell_holy_righteousfury","Ricerca della Giustizia":"spell_holy_persuitofjustice","Convinzione":"spell_holy_retributionaura","Sigillo del Comando":"ability_warrior_innerrage","Arbitro Sacro":"inv_sword_08","Vendetta Divina":"ability_racial_avatar","Specializzazione nelle Armi a Due Mani":"inv_hammer_04","Pentimento":"spell_holy_prayerofhealing","Forza Divina":"ability_golemthunderclap","Sigilli Migliorati":"ability_thunderbolt","Condotto Sacro":"spell_holy_devineaegis"},"voleur":{"Attacchi Spietati":"ability_fiegndead","Colpo Sinistro Migliorato":"spell_shadow_ritualofsacrifice","Eviscerazione Migliorata":"ability_rogue_eviscerate","Ferite Perforanti":"ability_backstab","Deviazione":"ability_parry","Risposta":"ability_warrior_challange","Precisione":"ability_marksmanship","Esecuzione Impeccabile":"inv_sword_35","Specializzazione nell'Ambidestria":"ability_dualwield","Malizia":"ability_racial_bloodrage","Fendi e Taglia Migliorato":"ability_rogue_slicedice","Spietatezza":"ability_druid_disembowel","Colpi Implacabili":"ability_warrior_decisivestrike","Letalità":"ability_criticalstrike","Sangue Freddo":"spell_ice_lament","Turbine di Lame":"ability_warrior_punishingblow","Taglia e Squarcia":"inv_sword_27","Scarica d'Adrenalina":"spell_shadow_shadowworddominate"},"chasseur":{"Aspetti Letali":"spell_nature_ravenform","Fuoco Concentrato":"ability_hunter_silenthunter","Furia Scatenata":"ability_bullrush","Rianima Famiglio Migliorato":"ability_hunter_beastsoothe","Rapidità Bestiale":"ability_hunter_pet_boar","Evoca Falco":"ability_hunter_animalhandler","Ferocia":"inv_misc_monsterclaw_04","Intimidazione":"ability_devour","Frenesia":"inv_misc_monsterclaw_03","Legame Spirituale":"classic_ability_druid_demoralizingroar","Esploratore":"ability_mount_jungletiger","Disciplina Bestiale":"spell_nature_abolishmagic","Ira Bestiale":"ability_druid_ferociousbite","Cura Famiglio Migliorata":"ability_hunter_mendpet","Attacchi Letali":"ability_searingarrow","Efficienza":"spell_frost_wizardmark"},"demoniste":{"Soppressione":"spell_shadow_unsummonbuilding","Corruzione Migliorata":"spell_shadow_abominationexplosion","Tocco Vitale Migliorato":"spell_shadow_burningspirit","Pandemia":"spell_shadow_unstableaffliction_2","Concentrazione Vile":"spell_shadow_fingerofdeath","Calar della Notte":"spell_shadow_twilight","Malevolenza":"spell_shadow_focusedpower","Sifone d'Anima":"spell_shadow_lifedrain02","Maestria dell'Ombra":"spell_shadow_shadetruesight","Sifone Vitale":"spell_shadow_requiem","Risucchi Migliorati":"spell_shadow_haunting","Potere Empio":"spell_shadow_shadowworddominate","Energie Demoniache":"spell_shadow_felmending","Vitalità Vile":"spell_holy_magicalsentry","Flagello dell'Agonia Migliorato":"spell_shadow_curseofsargeras","Portata Cupa":"spell_shadow_callofbone"},"pretre":{"Specializzazione nelle Bacchette":"inv_wand_01","Spirito Prosciugato":"spell_shadow_requiem","Discipline Gemelle":"spell_holy_sealofvengeance","Martirio":"spell_nature_tranquility","Forza Mentale":"spell_nature_enchantarmor","Concentrazione Interiore":"spell_frost_windwalkon","Meditazione":"spell_nature_sleep","Parola del Potere: Scudo Migliorata":"spell_holy_powerwordshield","Potere nella Luce":"spell_holy_searinglight","Precisione Sacra":"spell_holy_divineillumination","Fuoco Interiore Migliorato":"spell_holy_innerfire","Penitenza":"spell_holy_penance","Specializzazione Sacra":"spell_holy_sealofsalvation","Parola d'Ombra: Dolore Migliorata":"spell_shadow_shadowwordpain","Concentrazione dell'Ombra":"spell_shadow_burningspirit","Flagello Mentale":"spell_shadow_siphonmana","Flagello Mentale Migliorato":"spell_shadow_soulleech_2","Esplosione Mentale Migliorata":"spell_shadow_unholyfrenzy","Intreccio d'Ombra":"spell_shadow_blackplague","Abbraccio Vampirico":"spell_shadow_unsummonbuilding","Contagio Divorante":"spell_shadow_devouringplague","Silenzio":"spell_shadow_impphaseshift","Oscurità":"spell_shadow_twilight","Forma d'Ombra":"spell_shadow_shadowform","Agilità Mentale":"ability_hibernation"}}, cur = "";
+  var ICONS = {"pretre":{"Discipline Gemelle":"spell_holy_sealofvengeance","Early Demise":"spell_shadow_demonicfortitude","Martirio":"spell_nature_tranquility","Forza Mentale":"spell_nature_enchantarmor","Concentrazione Interiore":"spell_frost_windwalkon","Meditazione":"spell_nature_sleep","Shadow Reach":"spell_shadow_chilltouch","Spirito Prosciugato":"spell_shadow_requiem","Parola d'Ombra: Dolore Migliorata":"spell_shadow_shadowwordpain","Esplosione Mentale Migliorata":"spell_shadow_unholyfrenzy","Flagello Mentale":"spell_shadow_siphonmana","Flagello Mentale Migliorato":"spell_shadow_soulleech_2","Concentrazione dell'Ombra":"spell_shadow_burningspirit","Abbraccio Vampirico":"spell_shadow_unsummonbuilding","Intreccio d'Ombra":"spell_shadow_blackplague","Contagio Divorante":"spell_shadow_devouringplague","Oscurità":"spell_shadow_twilight","Forma d'Ombra":"spell_shadow_shadowform","Agilità Mentale":"ability_hibernation","Fuoco Interiore Migliorato":"spell_holy_innerfire","Parola del Potere: Scudo Migliorata":"spell_holy_powerwordshield","Penitenza":"spell_holy_penance","Specializzazione nelle Bacchette":"inv_wand_01"},"demoniste":{"Soppressione":"spell_shadow_unsummonbuilding","Corruzione Migliorata":"spell_shadow_abominationexplosion","Tocco Vitale Migliorato":"spell_shadow_burningspirit","Pandemia":"spell_shadow_unstableaffliction_2","Concentrazione Vile":"spell_shadow_fingerofdeath","Calar della Notte":"spell_shadow_twilight","Malevolenza":"spell_shadow_focusedpower","Sifone d'Anima":"spell_shadow_lifedrain02","Maestria dell'Ombra":"spell_shadow_shadetruesight","Sifone Vitale":"spell_shadow_requiem","Risucchi Migliorati":"spell_shadow_haunting","Potere Empio":"spell_shadow_shadowworddominate","Energie Demoniache":"spell_shadow_felmending","Vitalità Vile":"spell_shadow_demonictactics","Flagello dell'Agonia Migliorato":"spell_shadow_curseofsargeras","Portata Cupa":"spell_shadow_callofbone"},"chasseur":{"Attacchi Letali":"ability_searingarrow","Careful Aim":"ability_hunter_zenarchery","Rapid Killing":"ability_hunter_rapidkilling","Efficienza":"spell_frost_wizardmark","Trueshot Aura":"ability_trueshot","Mortal Shots":"ability_piercedamage","Disciplina Bestiale":"spell_nature_abolishmagic","Ferocia":"inv_misc_monsterclaw_04","Frenesia":"inv_misc_monsterclaw_03","Ira Bestiale":"ability_druid_ferociousbite","Aspetti Letali":"spell_nature_ravenform","Fuoco Concentrato":"inv_weapon_crossbow_10","Rianima Famiglio Migliorato":"ability_hunter_beastsoothe","Endurance Training":"spell_nature_reincarnation","Esploratore":"ability_mount_jungletiger","Furia Scatenata":"ability_bullrush","Evoca Falco":"ability_hunter_animalhandler","Rapidità Bestiale":"ability_druid_dash","Intimidazione":"ability_devour"},"voleur":{"Weapon Expertise":"spell_holy_blessingofstrength","Turbine di Lame":"ability_warrior_punishingblow","Specializzazione nell'Ambidestria":"ability_dualwield","Taglia e Squarcia":"inv_sword_27","Flash of Steel":"ability_rogue_restlessblades","Scarica d'Adrenalina":"spell_shadow_shadowworddominate","Malizia":"ability_racial_bloodrage","Fendi e Taglia Migliorato":"ability_rogue_slicedice","Spietatezza":"ability_druid_disembowel","Letalità":"ability_criticalstrike","Sangue Freddo":"spell_ice_lament","Attacchi Spietati":"ability_fiegndead","Efficient Strikes":"spell_shadow_ritualofsacrifice","Coup de Grace":"ability_rogue_eviscerate","Ferite Perforanti":"ability_backstab","Precisione":"ability_marksmanship","Deviazione":"ability_parry","Risposta":"ability_warrior_challange","Endurance":"spell_shadow_shadowward","Lightning Reflexes":"spell_nature_invisibilty","Esecuzione Impeccabile":"inv_sword_35","Aggression":"ability_racial_avatar"},"paladin":{"Improved Seals":"ability_thunderbolt","Convinzione":"spell_holy_retributionaura","Arbitro Sacro":"inv_sword_08","Sigillo del Comando":"ability_warrior_innerrage","Two-Handed Weapon Specialization":"inv_hammer_04","Vengeance":"ability_racial_avatar","Pentimento":"spell_holy_prayerofhealing","Deflection":"ability_parry","Champion of the Light":"ability_paladin_enlightenedjudgements","Unsealed Wrath":"spell_holy_blessedresillience","Holy Conduit":"spell_holy_devineaegis","Vindication":"spell_holy_vindication","Unyielding Faith":"spell_holy_unyieldingfaith","Benedizione":"spell_frost_windwalkon","Giudizio Santificato":"ability_paladin_judgementblue","Giudizio Migliorato":"spell_holy_righteousfury","Ricerca della Giustizia":"spell_holy_persuitofjustice","Divine Strength":"ability_golemthunderclap"},"mage":{"Fingers of Frost":"ability_mage_wintersgrasp","Improved Cone of Cold":"spell_frost_glacier","Cold Snap":"spell_frost_wizardmark","Winter's Chill":"spell_frost_chillingblast","Barriera di Ghiaccio":"spell_ice_lament","Ice Shards":"spell_frost_iceshard","Improved Channeling":"spell_nature_starfall","Arcane Concentration":"spell_shadow_manaburn","Missile Barrage":"ability_mage_missilebarrage","Arcane Subtlety":"spell_holy_dispelmagic","Arcane Blast":"spell_arcane_blast","Meditazione Arcana":"spell_shadow_siphonmana","Dardo di Gelo Migliorato":"spell_frost_frostbolt02","Precision":"spell_ice_magicdamage","Morso del Gelo":"spell_frost_frostarmor","Lancia di Ghiaccio":"spell_frost_frostblast","Blocco di Ghiaccio":"spell_frost_frost","Frantumazione":"spell_frost_frostshock"},"guerrier":{"Focused Rage":"ability_warrior_focusedrage","Anticipation":"spell_nature_mirrorimage","Bastion":"inv_shield_04","Shield Slam":"inv_shield_05","Cruelty":"ability_rogue_eviscerate","Unbridled Wrath":"spell_nature_stoneclawtotem","Enrage":"spell_shadow_unholyfrenzy","Deflection":"ability_parry","Squartare Migliorato":"ability_gouge","Improved Overpower":"inv_sword_05","Improved Tactical Mastery":"spell_nature_enchantarmor","Anger Management":"spell_holy_blessingofstamina","Ferite Profonde":"ability_backstab","Improved Charge":"ability_warrior_charge","Specializzazione nelle Armi a Due Mani":"inv_axe_09","Spearing Strike":"inv_spear_01","Colpi Travolgenti":"ability_rogue_slicedice","Specializzazione negli Scudi":"inv_shield_06","Vendetta Migliorata":"ability_warrior_revenge","Tuonata Migliorata":"ability_thunderclap","Maestro della Difesa":"ability_warrior_shieldguard","Last Stand":"spell_holy_ashestoashes","Furia Sanguinaria Migliorata":"ability_racial_bloodrage","Avanguardia":"ability_warrior_shieldcharge","Concussion Blow":"ability_thunderbolt"},"druide":{"Colpi Predatori":"ability_hunter_pet_cat","Istinto Naturale":"ability_druid_predatoryinstincts","Frenesia Sanguinaria":"ability_ghoulfrenzy","Squarcia e Lacera":"ability_druid_primalagression","Predatory Discipline":"spell_druid_savagery","Potere della Trasformazione":"spell_druid_displacement","Morso Primordiale":"ability_racial_cannibalize","Lacerate":"ability_druid_lacerate","Cuore della Natura Selvaggia":"spell_holy_blessingofagility","Furor":"spell_holy_blessingofstamina","Genesis":"spell_arcane_arcane03","Nature's Majesty":"inv_staff_01","Nature's Reach":"spell_nature_naturetouchgrow","Ferocia":"ability_hunter_pet_hyena","Rapidità Ferina":"spell_nature_spiritwolf","Furia Selvaggia":"ability_druid_ravage","Feral Charge":"ability_hunter_pet_bear","Artigli Affilati":"inv_misc_monsterclaw_04","Attacchi Laceranti":"spell_shadow_vampiricaura","Capobranco":"spell_nature_unyeildingstamina"},"chaman":{"Raffica":"ability_ghoulfrenzy","Armi Spirituali":"ability_parry","Concussion":"spell_nature_earthshock","Elemental Devastation":"spell_fire_elementaldevastation","Convection":"spell_nature_wispsplode","Elemental Focus":"spell_shadow_manaburn","Reverberation":"spell_frost_frostward","Earthbound":"spell_nature_stranglevines","Trial by Fire":"spell_fire_sealoffire","Assalto della Tempesta Migliorato":"spell_shaman_improvedstormstrike","Rapidità Mentale":"spell_nature_sleep","Maelstrom Weapon":"spell_shaman_maelstromweapon","Rage of the Farseer":"spell_nature_bloodlust","Colpi Tonanti":"ability_thunderbolt","Destrezza Mentale":"spell_nature_mentalquickness","Conoscenza Ancestrale":"spell_shadow_grimward","Concentrazione Sciamanica":"spell_nature_elementalabsorption","Armi Elementali":"spell_fire_flametounge","Assalto della Tempesta":"ability_shaman_stormstrike","Lupo Spettrale Migliorato":"spell_nature_spiritwolf"}};
   var SPELLS = {"Arma Mordiroccia":"spell_nature_rockbiter","Scudo di Fulmini":"spell_nature_lightningshield","Dardo Fulminante":"spell_nature_lightning","Folgore della Terra":"spell_nature_earthshock","Folgore Fiammeggiante":"spell_fire_flameshock","Folgore di Gelo":"spell_frost_frostshock","Totem Ustionante":"spell_fire_searingtotem","Nova di Fuoco":"spell_fire_sealoffire","Assalto della Tempesta":"ability_shaman_stormstrike","Totem del Magma":"spell_fire_selfdestruct","Totem della Fonte di Mana":"spell_nature_manaregentotem","Furia del Vento":"spell_nature_cyclone","Catena di Fulmini":"spell_nature_chainlightning","Totem Furia del Vento":"spell_nature_windfury","Eruzione di Lava":"spell_shaman_lavaburst","Scudo d'Acqua":"ability_shaman_watershield","Onda di Cura":"spell_nature_magicimmunity","Onda di Cura Inferiore":"spell_nature_healingwavelesser","Totem del Flusso Curativo":"inv_spear_04","Totem della Marea di Mana":"spell_frost_summonwaterelemental","Rapidità della Natura":"spell_nature_ravenform","Guarigione a Catena":"spell_nature_healingwavegreater","Riflusso":"spell_nature_riptide","Spine":"spell_nature_thorns","Ira":"spell_nature_abolishmagic","Fuoco Lunare":"spell_nature_starfall","Rabbia":"ability_druid_enrage","Ruggito Demoralizzante":"ability_druid_demoralizingroar","Maciullamento":"ability_druid_maul","Fendente":null,"Furtività":"ability_stealth","Squarcio":"ability_druid_disembowel","Artigliata":"ability_druid_rake","Dilaniamento":"spell_shadow_vampiricaura","Squartamento":"ability_ghoulfrenzy","Morso Feroce":"ability_druid_ferociousbite","Sventramento":"ability_druid_ravage","Balzo":"ability_druid_supriseattack","Fuoco Fatato":"spell_nature_faeriefire","Potere della Trasformazione":"spell_druid_displacement","Berserk":"ability_druid_berserk","Forma d'Orso Feroce":"ability_racial_bearform","Radici Avvolgenti":"spell_nature_stranglevines","Fuoco Stellare":"spell_arcane_starfire","Sciame d'Insetti":"spell_nature_insectswarm","Forma di Lunagufo":"spell_nature_forceofnature","Uragano":"spell_nature_cyclone","Innervazione":"spell_nature_lightning","Rinnovamento":"spell_nature_rejuvenation","Tocco Curativo":"spell_nature_healingtouch","Ricrescita":"spell_nature_resistnature","Guarigione Rapida":"inv_relics_idolofrejuvenation","Tranquillità":"spell_nature_tranquility","Crescita Selvaggia":"ability_druid_flourish","Grido di Battaglia":"ability_warrior_battleshout","Carica":"ability_warrior_charge","Squartare":"ability_gouge","Assalto Eroico":"ability_rogue_ambush","Tuonata":"spell_nature_thunderclap","Postura Difensiva":"ability_warrior_defensivestance","Fendiarmatura":"ability_warrior_sunder","Vendetta":"ability_warrior_revenge","Esecuzione":"inv_sword_48","Impeto Vittorioso":"ability_warrior_devastate","Sbattuta di Scudo":"inv_shield_05","Sopraffazione":"ability_meleedamage","Mazzata":"ability_warrior_decisivestrike","Turbine":"ability_whirlwind","Colpo Mortale":"ability_warrior_savageblow","Temerarietà":"ability_criticalstrike","Rabbia del Berserker":"spell_nature_ancestralguardian","Sete di Sangue":"spell_nature_bloodlust","Desiderio di Morte":"spell_shadow_deathpact","Assalti Ampi":"ability_rogue_slicedice","Blocco con Scudo":"ability_defend","Palla di Fuoco":"spell_fire_flamebolt","Dardo di Gelo":"spell_frost_frostbolt02","Metamorfosi":"spell_nature_polymorph","Dardi Arcani":"spell_nature_starfall","Nova di Gelo":"spell_frost_frostnova","Lancia di Ghiaccio":"spell_frost_frostblast","Dita di Gelo":"ability_mage_wintersgrasp","Cono di Freddo":"spell_frost_glacier","Armatura del Mago":"spell_magearmor","Tormenta":"spell_frost_icestorm","Dardo di Fuocogelo":"ability_mage_frostfirebolt","Barriera di Ghiaccio":"spell_ice_lament","Deflagrazioni Arcane":"spell_arcane_blast","Raffica di Dardi":"ability_mage_missilebarrage","Arcane Wrath":null,"Esplosione Arcana":"spell_nature_wispsplode","Evocazione":"spell_nature_purge","Bruciatura":"spell_fire_soulburn","Getto di Fuoco":"spell_fire_fireball","Pirosfera":"spell_fire_fireball02","Colpo Infuocato":"spell_fire_selfdestruct","Sigillo della Rettitudine":"ability_thunderbolt","Giudizio":"spell_holy_righteousfury","Luce Sacra":"spell_holy_holybolt","Benedizione della Saggezza":"spell_holy_sealofwisdom","Sigillo del Comando":"ability_warrior_innerrage","Consacrazione":"spell_holy_innerfire","Esorcismo":"spell_holy_excorcism_02","Pentimento":"spell_holy_prayerofhealing","Martello della Giustizia":"spell_holy_sealofmight","Scudo Divino":"spell_holy_divineintervention","Imposizione delle Mani":"spell_holy_layonhands","Martello dell'Ira":"ability_thunderclap","Martello del Giusto":"ability_paladin_hammeroftherighteous","Lampo di Luce":"spell_holy_flashheal","Shock Sacro":"spell_holy_searinglight","Colpo Sinistro":"spell_shadow_ritualofsacrifice","Eviscerazione":"ability_rogue_eviscerate","Fendi e Taglia":"ability_rogue_slicedice","Garrota":"ability_rogue_garrote","Imboscata":"ability_rogue_ambush","Riposte":"ability_warrior_challange","Rottura":"ability_rogue_rupture","Colpo Basso":"ability_cheapshot","Raffica di Lame":"ability_warrior_punishingblow","Colpo ai Reni":"ability_rogue_kidneyshot","Evasione":"spell_shadow_shadowward","Squarcio Accecante":"ability_gouge","Scatto":"ability_rogue_sprint","Sparizione":"ability_vanish","Scarica d'Adrenalina":"spell_shadow_shadowworddominate","Sangue Freddo":"spell_ice_lament","Mutilazione":"ability_rogue_shadowstrikes","Colpo Spettrale":"spell_shadow_curse","Emorragia":"spell_shadow_lifedrain","Accecare":"spell_shadow_mindsteal","Aspetto della Scimmia":"ability_hunter_aspectofthemonkey","Tiro Automatico":"ability_whirlwind","Puntura di Serpe":"ability_hunter_quickshot","Tiro Arcano":"ability_impalingbolt","Tiro Stordente":"spell_frost_stun","Assalto del Rapace":"ability_meleedamage","Tiro Multiplo":"ability_upgrademoonglaive","Tiro Mirato":"inv_spear_07","Summon Hawk":"ability_hunter_animalhandler","Fuoco Rapido":"ability_hunter_runningshot","Trappola Congelante":"spell_frost_chainsofice","Ira Bestiale":"ability_druid_ferociousbite","Aspetto del Falco":"spell_nature_ravenform","Aura dell'Infallibilità":"ability_trueshot","Tarpare le Ali":"ability_rogue_trip","Trappola di Gelo":"spell_frost_freezingbreath","Trappola Immolante":"spell_fire_flameshock","Morso della Mangusta":"ability_hunter_swiftstrike","Trappola Esplosiva":"spell_fire_selfdestruct","Dardo d'Ombra":"spell_shadow_shadowbolt","Immolazione":"spell_fire_immolation","Corruzione":"spell_shadow_abominationexplosion","Flagello dell'Agonia":"spell_shadow_curseofsargeras","Tocco Vitale":"spell_shadow_burningspirit","Ombra del Vuoto":"spell_shadow_summonvoidwalker","Risucchio di Vita":"spell_shadow_lifedrain02","Risucchio d'Anima":"spell_shadow_haunting","succube":"spell_shadow_summonsuccubus","Sifone di Vita":"spell_shadow_requiem","Dolore Ardente":"spell_fire_soulburn","Bruciatura d'Ombra":"spell_shadow_scourgebuild","Conflagrazione":"spell_fire_fireball","Pioggia di Fuoco":"spell_shadow_rainoffire","Fuoco Infernale":"spell_fire_incinerate","Incenerimento":"spell_fire_burnout","Punizione":"spell_holy_holysmite","Cura Inferiore":"spell_holy_lesserheal","Parola del Potere: Scudo":"spell_holy_powerwordshield","Scudo":"spell_holy_powerwordshield","Esplosione Mentale":"spell_shadow_unholyfrenzy","Parola d'Ombra: Dolore":"spell_shadow_shadowwordpain","Dolore":"spell_shadow_shadowwordpain","Penitenza":"spell_holy_penance","Potere nella Luce":"spell_holy_searinglight","Forma d'Ombra":"spell_shadow_shadowform","Parola d'Ombra: Morte":"spell_shadow_demonicfortitude","Piaga Divorante":"spell_shadow_blackplague","Flagello Mentale":"spell_shadow_siphonmana","Abbraccio Vampirico":"spell_shadow_unsummonbuilding","Silenzio":"spell_shadow_impphaseshift","Nova Sacra":"spell_holy_holynova","Cura Vincolante":"spell_holy_blindingheal","Preghiera di Guarigione":"spell_holy_prayerofmendingtga","bacchetta":"inv_wand_01","Bacchetta":"inv_wand_01","Marchio del Cacciatore":"ability_hunter_snipershot","Disimpegno":"ability_rogue_feint","Fuoco Sacro":"spell_holy_searinglight","Sigillo del Crociato":"spell_holy_holysmite","Raffica":"ability_marksmanship","Lacerate":"ability_druid_lacerate","Primal Bite":"ability_racial_cannibalize","Demonic Sacrifice":"spell_shadow_psychicscream","Soul Link":"spell_shadow_gathershadows","Nightfall":"spell_shadow_twilight","Lightning Mastery":"spell_lightning_lightningbolt01","Maelstrom Weapon":"spell_shaman_maelstromweapon","Rapid Killing":"ability_hunter_rapidkilling"};
   function tal(name) {
-    var imgs = name.split(/, then |, | or /).map(function (n) {
+    var imgs = ((ICONS[cur] || {})[name] ? [name] : name.split(/, then |, | or /)).map(function (n) {
       var ic = (ICONS[cur] || {})[n];
       return ic ? '<img class="ticon" src="../assets/icons/' + ic + '.jpg" alt="" width="28" height="28" loading="lazy">' : "";
     }).join("");
@@ -535,7 +603,7 @@ h1 { transition: color .2s; }
         var lv = (a + 9) + (n > 1 ? "–" + (b + 9) : "");
         var pts = a + (n > 1 ? "–" + b : "");
         body += '<tr><td class="num">' + lv + '</td><td class="num" style="color:var(--muted);font-weight:400">' + pts + "</td><td>" + tal(r[0]) +
-          (r[3] ? '<span class="why">' + r[3] + "</span>" : "") + '</td><td class="num">' + acc[r[0]] + "</td>" + '<td class="tree">' + r[2] + "</td></tr>";
+          (r[3] ? '<span class="why">' + r[3] + "</span>" : "") + '</td><td class="num">' + (r[4] || acc[r[0]]) + "</td>" + '<td class="tree">' + r[2] + "</td></tr>";
         p = b + 1;
       });
     } else if (ph.kind === "lv") {
@@ -581,7 +649,7 @@ h1 { transition: color .2s; }
     document.getElementById("content").innerHTML = h;
     document.getElementById("foot").innerHTML = "<p>Fonti: " + c.sources.map(function (s) { return '<a href="' + s[1] + '">' + s[0] + "</a>"; }).join(" · ") + "</p>" +
       "<p>Le guide non concordano ancora su alcuni ranghi: nel dubbio, l'albero in gioco ha sempre ragione. I nomi di talenti e incantesimi sono tradotti e possono differire un po' nel tuo client.</p>" +
-      "<p>Guida di fan non ufficiale, aggiornata il 7 novembre 2026. World of Warcraft è un marchio di Blizzard Entertainment.</p>";
+      "<p>Guida di fan non ufficiale, aggiornata il 10 novembre 2026. World of Warcraft è un marchio di Blizzard Entertainment.</p>";
   }
 
   function fromHash() { var h = (location.hash || "").slice(1); return CLASSES[h] ? h : "chasseur"; }
